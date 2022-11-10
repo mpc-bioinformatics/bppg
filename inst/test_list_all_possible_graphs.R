@@ -72,7 +72,7 @@ plotBipartiteGraph(G_list_tmp[[2]])
 ################################################################################
 ### m = 3
 
-m = 4
+m = 55
 ### Power set is set of possible nodes
 x <- rje::powerSet(1:m)
 x[[1]] <- NULL  ## delete empty set
