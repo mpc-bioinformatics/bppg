@@ -72,24 +72,50 @@ plotBipartiteGraph(G_list_tmp[[2]])
 ################################################################################
 ### m = 3
 
-m = 55
+source("R/helpers-isomorphisms.R")
+source("R/plotBipartiteGraph.R")
+
+m = 3
+
+library(devtools)
+# install 'binaryLogic'
+install_github("d4ndo/binaryLogic")
+library(binaryLogic)
+
+#library(R.utils)
+
+
+
 ### Power set is set of possible nodes
 x <- rje::powerSet(1:m)
 x[[1]] <- NULL  ## delete empty set
 x
 
-poss_node_comb <- t(rje::powerSetMat(length(x)))  ## alle möglichen Kombinationen von Knoten
+nr_poss_pep_nodes <- length(x)
+
+nr_poss_node_comb <- 2^nr_poss_pep_nodes-1 # wieder Potenzmenge aller möglichen Knoten (außer leere Menge)
+### leere Menge wird dann so codiert
+
+
+
+#tmp <- binaryLogic::as.binary(2^2^6-1, n = 2^6)
+
+
+#poss_node_comb <- t(rje::powerSetMat(length(x)))  ## alle möglichen Kombinationen von Knoten
 
 ### es muss mindestens log2(m+1) Knoten geben, sonst würden Proteine zusammengefasst
 
-poss_node_comb <- poss_node_comb[,colSums(poss_node_comb) >= log2(m+1)]
+#poss_node_comb <- poss_node_comb[,colSums(poss_node_comb) >= log2(m+1)]
 
 
 G_list_tmp <- list()
 
-for (i in 1:ncol(poss_node_comb)) {
+for (i in 1:nr_poss_node_comb) {
   print(i)
-  peptide_node_edges <- x[which(poss_node_comb[,i]==1)]
+
+  ind <- binaryLogic::as.binary(i, n = nr_poss_pep_nodes)
+
+  peptide_node_edges <- x[ind]
 
   ### TODO: Abfragen, dass alle Proteinknoten erwischt werden
   prot_nodes <- unique(unlist(peptide_node_edges))
