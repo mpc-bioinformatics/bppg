@@ -15,6 +15,7 @@ plotBipartiteGraph(
   vertex.size2 = 15,
   useCanonicalPermutation = FALSE,
   three_shapes = FALSE,
+  node_names = "letters&numbers",
   ...
 )
 }
@@ -39,6 +40,9 @@ plotBipartiteGraph(
 
 \item{three_shapes}{Use a separate shape for the unique peptides?}
 
+\item{node_names}{"letters&numbers" uses letters for protein nodes and numbers for peptide nodes,
+"empty" uses no node names}
+
 \item{...}{Additional arguments for plot.igraph.}
 }
 \value{
@@ -50,5 +54,5 @@ Plotting of bipartite peptide-protein graphs.
 \examples{
 biadjacency_matrix <- matrix(c(1,1,1,0), nrow = 2)
 G <- igraph::graph_from_incidence_matrix(biadjacency_matrix)
-plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
+bppg::plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
 }
