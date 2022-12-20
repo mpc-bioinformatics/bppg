@@ -11,7 +11,7 @@
 #' @param useCanonicalPermutation Convert the graph into the canonical permutation before plotting?
 #' @param three_shapes Use a separate shape for the unique peptides?
 #' @param node_names "letters&numbers" uses letters for protein nodes and numbers for peptide nodes,
-#'                   "empty" uses no node names
+#'                   "empty" uses no node names, "keep" keeps node names of G
 #' @param ... Additional arguments for plot.igraph.
 #'
 #' @return Plot of one bipartite graph.
@@ -53,7 +53,6 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
   if (node_names == "empty") {
     G <- igraph::set_vertex_attr(G, name = "name", value = rep("", igraph::gorder(G)))
   }
-  ### TODO: check what happens if node names are kept!
 
 
 
@@ -85,9 +84,9 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
 
     vertex.shapes = c("circle", "crectangle", "diamond")[type]
   } else {
-    vertex.shapes = c("circle", "crectangle")[igraph::V(G)$type+1]
+    type <- igraph::V(G)$type+1
+    vertex.shapes = c("circle", "crectangle")[type]
   }
-
 
 
 
@@ -100,8 +99,14 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
        edge.width = edge.width, vertex.size2=vertex.size2, ...)
 
   if (legend) {
-    pch = ifelse(three_shapes, c(19, 15, 18),  c(19, 15))
-    legend_text = ifelse(three_shapes, c("protein", "shared peptide", "unique peptide"), c("protein", "peptide"))
+    if (three_shapes) {
+      pch <- c(19, 15, 18)
+      legend_text <- c("protein", "shared peptide", "unique peptide")
+    } else {
+      pch <-  c(19, 15)
+      legend_text <- c("protein", "peptide")
+    }
+
 
     legend(x = -1, y = -1.3, legend = legend_text, col = vertex.color, pch = pch)
 
