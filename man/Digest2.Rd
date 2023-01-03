@@ -23,8 +23,8 @@ Digestion of a single protein sequence.
 }
 \examples{
 library(seqinr)
-#file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
-#fasta <- seqinr::read.fasta(file = file)
+file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
+fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 
-#Digest2(fasta[[1]])
+digested_proteins <- Digest2(fasta[[1]])
 }

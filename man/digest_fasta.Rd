@@ -26,8 +26,8 @@ In silico tryptic digestion of
 }
 \examples{
 library(seqinr)
-#file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
-#fasta <- seqinr::read.fasta(file = file)
-#res <- digest_fasta(fasta)
+file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
+fasta <- seqinr::read.fasta(file = file)
+res <- digest_fasta(fasta)
 
 }

@@ -1,8 +1,3 @@
-
-##### TODO: keep information about protein origin (which species)
-
-
-
 #### modified version of OrgMassSpecR::Digest
 #### - delete functionality to calculate peptide masses & enzymes other than trypsin
 #### - interpret "missed" argument as maximum number of allowed missed cleavages and
@@ -20,10 +15,10 @@
 #'
 #' @examples
 #' library(seqinr)
-#' #file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
-#' #fasta <- seqinr::read.fasta(file = file)
+#' file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
+#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #'
-#' #Digest2(fasta[[1]])
+#' digested_proteins <- Digest2(fasta[[1]])
 
 
 Digest2 <- function (sequence, enzyme = "trypsin", missed = 0, warn = TRUE) {
@@ -134,9 +129,9 @@ Digest2 <- function (sequence, enzyme = "trypsin", missed = 0, warn = TRUE) {
 #'
 #' @examples
 #' library(seqinr)
-#' #file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
-#' #fasta <- seqinr::read.fasta(file = file)
-#' #res <- digest_fasta(fasta)
+#' file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
+#' fasta <- seqinr::read.fasta(file = file)
+#' res <- digest_fasta(fasta)
 #'
 digest_fasta <- function(fasta, missed_cleavages = 2, min_aa = 6, max_aa = 50, ...)  {
 
