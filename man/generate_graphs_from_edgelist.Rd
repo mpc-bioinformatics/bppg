@@ -7,7 +7,7 @@
 generate_graphs_from_edgelist(edgelist)
 }
 \arguments{
-\item{edgelist}{Output from calculate_edgelist}
+\item{edgelist}{Output from generate_edgelist (edgelist)}
 }
 \value{
 List of subgraphs as igraph objects.
@@ -17,10 +17,10 @@ Generate bipartite peptide-protein graphs from a list of digested proteins via a
 }
 \examples{
 library(seqinr)
-#file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
-#fasta <- seqinr::read.fasta(file = file)
-#digested_proteins <- digest_fasta(fasta)
-#edgelist <- calculate_edgelist(digested_proteins)
-#res <- generate_graphs_via_edgelist(digested_proteins)
+file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
+fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+digested_proteins <- digest_fasta(fasta)
+edgelist <- generate_edgelist(digested_proteins)
+res <- generate_graphs_from_edgelist(edgelist)
 
 }
