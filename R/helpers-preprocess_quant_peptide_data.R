@@ -4,28 +4,60 @@
 ### TODO: Normalization
 
 
-#### data set with peptide sequence and intensities plus group information
+
+
+
+#' Import of MaxQuant's peptide.txt-table
+#'
+#' @param path Path to the peptides.txt table
+#' @param LFQ If TRUE, LFQ intensities are used, if FALSE, raw (unnormalized) intensities
+#' @param remove_contaminants If TRUE, peptide sequences from potential contaminants are removed
+#'
+#' @return Dataframe with sequences and intensities
+#' @export
+#'
+#' @examples
+#' file <- system.file("extdata", "peptides.txt", package = "bppg")
+#' D <- read_MQ_peptidetable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+read_MQ_peptidetable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
+                                 rename_columns = TRUE, zeroToNA = TRUE) {
+
+  D <- read.table(path, sep = "\t", header = TRUE)
+
+  ### remove decoy entries:
+  ind_decoy <- D$Reverse == "+"
+  D <- D[!ind_decoy,]
+  print(paste0("Removed ", sum(ind_decoy), " decoy sequences."))
+
+  ind_cont <- D$Potential.contaminant == "+"
+  if(remove_contaminants) {
+    D <- D[!ind_cont,]
+    print(paste0("Removed ", sum(ind_cont), " contaminant sequences."))
+  }
+
+
+  ## search for itensity columns or LFQ values
+  if(LFQ) {
+    intensities <- D[, grep("LFQ", colnames(D))]
+    if (rename_columns) colnames(intensities) <- stringr::str_replace(colnames(intensities), "LFQ.intensity.", "")
+  } else {
+    intensities <- D[, grep("Intensity.", colnames(D))]
+    if (rename_columns) colnames(intensities) <- stringr::str_replace(colnames(intensities), "Intensity.", "")
+  }
+
+  if(zeroToNA) {
+    intensities[intensities == 0] <- NA
+  }
+
+
+  RES <- data.frame(Sequence = D$Sequence, intensities)
+
+  return(RES)
+}
 
 
 
 
-# file <- "inst/extdata/peptides_D2_prep.txt"
-#
-#   #system.file("extdata", "peptides_D2_prep.txt", package = "bppg")
-# D <- read.table(file, header = TRUE, sep = "\t")
-# peptides <- D[,1]
-# intensities <- D[,-1]
-#
-# intensities[intensities == 0] <- NA
-#
-# group <- factor(limma::strsplit2(colnames(intensities), "_")[,1],
-#                 levels = c("UPS50amol", "UPS125amol", "UPS250amol", "UPS500amol", "UPS12500amol", "UPS2500amol", "UPS5000amol", "UPS25000amol", "UPS50000amol"))
-#
-# intensities <- cbind(pep_sequence = peptides, intensities)
-#
-# aggr_intensities <- aggregate_replicates(intensities, group)
-#
-# calculate_peptide_ratios(aggr_intensities)
 
 
 
@@ -40,17 +72,22 @@
 #' @export
 #'
 #' @examples
-aggregate_replicates <- function(intensities, group,  missing.limit = 0, method = "mean") {
+#' file <- system.file("extdata", "peptides.txt", package = "bppg")
+#' D <- read_MQ_peptidetable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' group <- factor(rep(1:9, each = 3))
+#' aggregate_replicates(D)
+aggregate_replicates <- function(D, group,  missing.limit = 0, method = "mean") {
 
 
-  peptides <- intensities[,1]
-  intensities <- intensities[,-1]
+  peptides <- D$Sequence
+  intensities <- D[,-1]  ## TODO: es koennten weitere Spalten vorhanden sein!
 
+  ### TODO: Aus Spaltennamen Gruppe selber erschließen!
 
   res <- NULL
   for (i in 1:length(levels(group))) {
 
-    X_tmp <- intensities[, group == levels(group)[i]]
+    X_tmp <- D[, group == levels(group)[i]]
 
     FUN <- switch(method,
                   mean  = rowMeans,

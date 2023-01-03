@@ -115,7 +115,7 @@ Digest2 <- function (sequence, enzyme = "trypsin", missed = 0, warn = TRUE) {
 
 
 
-#' In silico tryptic digestion of
+#' In silico tryptic digestion of whole FASTA file
 #'
 #' @param fasta List of protein sequences (e.g., imported FASTA file by seqinr::read.fasta).
 #' @param missed_cleavages Maximal number of missed cleavages.
@@ -130,7 +130,7 @@ Digest2 <- function (sequence, enzyme = "trypsin", missed = 0, warn = TRUE) {
 #' @examples
 #' library(seqinr)
 #' file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
-#' fasta <- seqinr::read.fasta(file = file)
+#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' res <- digest_fasta(fasta)
 #'
 digest_fasta <- function(fasta, missed_cleavages = 2, min_aa = 6, max_aa = 50, ...)  {

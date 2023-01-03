@@ -15,6 +15,7 @@ plotBipartiteGraph(
   vertex.size2 = 15,
   useCanonicalPermutation = FALSE,
   three_shapes = FALSE,
+  node_labels = "letters+numbers",
   ...
 )
 }
@@ -38,6 +39,8 @@ plotBipartiteGraph(
 \item{useCanonicalPermutation}{Convert the graph into the canonical permutation before plotting?}
 
 \item{three_shapes}{Use a separate shape for the unique peptides?}
+
+\item{node_labels}{"letters+numbers" or "keep"}
 
 \item{...}{Additional arguments for plot.igraph.}
 }

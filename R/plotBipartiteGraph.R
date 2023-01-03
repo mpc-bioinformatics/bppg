@@ -1,3 +1,6 @@
+
+### TODO: labelling of the nodes (letters/numbers or keep or )
+
 #' Plotting of bipartite peptide-protein graphs.
 #'
 #' @param G A bipartite graph (igraph object).
@@ -10,6 +13,7 @@
 #' @param vertex.size2 Vertex size 2.
 #' @param useCanonicalPermutation Convert the graph into the canonical permutation before plotting?
 #' @param three_shapes Use a separate shape for the unique peptides?
+#' @param node_labels "letters+numbers" or "keep"
 #' @param ... Additional arguments for plot.igraph.
 #'
 #' @return Plot of one bipartite graph.
@@ -22,7 +26,8 @@
 plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
                                vertex.color = c("mediumseagreen", "cadetblue2", "coral1"),
                                vertex.size = 15, vertex.label.cex = 1, edge.width = 1, vertex.size2=15,
-                               useCanonicalPermutation = FALSE, three_shapes = FALSE, ...) {
+                               useCanonicalPermutation = FALSE, three_shapes = FALSE, node_labels = "letters+numbers",
+                               ...) {
 
   igraph::V(G)$type <- !igraph::V(G)$type           # switch node types so that proteins are at the top
   # 0 = proteins, 1 = peptides
@@ -30,17 +35,17 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
   if (useCanonicalPermutation) {
     cG <- igraph::canonical_permutation(G)
     G <- igraph::permute(G, cG$labeling)
-    Layout <- igraph::layout.bipartite(G)
-    names_G <- character(length(igraph::V(G)))
+  }
+  Layout <- igraph::layout.bipartite(G)
+  names_G <- character(length(igraph::V(G)))
 
-    pos_proteins <- Layout[,1][Layout[,2] == 1]
-    pos_peptides <- Layout[,1][Layout[,2] == 0]
+  pos_proteins <- Layout[,1][Layout[,2] == 1]
+  pos_peptides <- Layout[,1][Layout[,2] == 0]
 
-    ### TODO: use this labelling also if
+  if (node_labels == "letters+numbers") {
     names_G[Layout[,2] == 1] <- LETTERS[rank(pos_proteins)]
     names_peptides <- 1:sum(Layout[,2] == 0)
     names_G[Layout[,2] == 0] <- names_peptides[rank(pos_peptides)]
-
 
     G <- igraph::set_vertex_attr(G, name = "name", value = names_G)
   }

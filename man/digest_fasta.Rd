@@ -2,7 +2,7 @@
 % Please edit documentation in R/helpers-Digest.R
 \name{digest_fasta}
 \alias{digest_fasta}
-\title{In silico tryptic digestion of}
+\title{In silico tryptic digestion of whole FASTA file}
 \usage{
 digest_fasta(fasta, missed_cleavages = 2, min_aa = 6, max_aa = 50, ...)
 }
@@ -22,12 +22,12 @@ List of vectors of peptide sequences, filtered for minimal and maximal number of
 amino acids.
 }
 \description{
-In silico tryptic digestion of
+In silico tryptic digestion of whole FASTA file
 }
 \examples{
 library(seqinr)
 file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
-fasta <- seqinr::read.fasta(file = file)
+fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 res <- digest_fasta(fasta)
 
 }

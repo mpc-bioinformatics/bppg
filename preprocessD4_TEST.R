@@ -1,83 +1,43 @@
-library(BBmisc)    # for collapse()
-library(seqinr)    # for reading in fasta files
-library(limma)     # for strsplit2()
-library(pbapply)   # for progress bars for apply functions
-library(igraph)    # for graph functionality
-library(openxlsx)
-library(tidyverse) # long format + ggplot2
+# library(BBmisc)    # for collapse()
+# library(seqinr)    # for reading in fasta files
+# library(limma)     # for strsplit2()
+# library(pbapply)   # for progress bars for apply functions
+# library(igraph)    # for graph functionality
+# library(openxlsx)
+# library(tidyverse) # long format + ggplot2
 
+library(bppg)
 
 ################################################################################
 ################################################################################
 ### prepare edgelist from FASTA file
 
-source("R Scripts/bipartite_graph_generation_and_analysis/helper_functions/Digest2.R")
+#source("R Scripts/bipartite_graph_generation_and_analysis/helper_functions/Digest2.R")
 
+# C:/Users/schorkka/UNI/Promotion/promotion_project/
 
-fasta1 <- read.fasta(file = "data/D4_without_isoforms/D4_fasta/20220722_uniprot_proteome_UP000005640_HomoSapiens_v2022_02.fasta",
+fasta1 <- seqinr::read.fasta(file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_fasta/20220722_uniprot_proteome_UP000005640_HomoSapiens_v2022_02.fasta",
                      seqtype = "AA", as.string = TRUE)
-fasta_vec <- unlist(fasta1)
-protein_accessions <- strsplit2(attr(fasta1, "name"), "\\|")[,2]
-
-fasta2 <- read.fasta(file = "data/D4_without_isoforms/D4_fasta/20220722_uniprot_proteome_UP000000589_MusMusculus_v2022_02.fasta",
+names(fasta1) <- strsplit2(names(fasta1), "\\|")[,2]
+fasta2 <- seqinr::read.fasta(file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_fasta/20220722_uniprot_proteome_UP000000589_MusMusculus_v2022_02.fasta",
                      seqtype = "AA", as.string = TRUE)
-fasta_vec <- c(fasta_vec, unlist(fasta2))
-protein_accessions <- c(protein_accessions, strsplit2(attr(fasta2, "name"), "\\|")[,2])
-
-fasta3 <- read.fasta(file = "data/D4_without_isoforms/D4_fasta/MaxQuant_contaminants_v2_3_1.fasta",
+names(fasta2) <- strsplit2(names(fasta2), "\\|")[,2]
+fasta3 <- seqinr::read.fasta(file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_fasta/MaxQuant_contaminants_v2_3_1.fasta",
                      seqtype = "AA", as.string = TRUE)
-protein_accession_tmp <- paste0("CON_", names(fasta3))
-protein_accessions <- c(protein_accessions, protein_accession_tmp)
-fasta_vec <- c(fasta_vec, unlist(fasta3))
-names(fasta_vec) <- protein_accessions
+names(fasta3) <- paste0("CON_", names(fasta3))
 
-# which(names(fasta_vec) == "E9QM38")
-# [1] 89756
-
-
-digested_proteins <- pblapply(fasta_vec, function(x) {
-  sequ <- x
-  class(sequ) <- NULL
-  y <- try({Digest2(sequ, enzyme = "trypsin", missed = 2, minAA = 7, maxAA = 50, remove_initial_M = TRUE, warn = FALSE)})
-  #ind <- nchar(as.character(y$sequence)) >= 7 & nchar(as.character(y$sequence)) <= 50 # at least 5 AA and at most 50 AA
-  return(unique(as.character(y$sequence)))
-})
-### 6-7min
+fasta <- c(fasta1, fasta2, fasta3)
+prot_origin <- c(rep("human", length(fasta1)), rep("mouse", length(fasta2)), rep("contaminant", length(fasta3)))
 
 
 
+digested_proteins <- bppg::digest_fasta(fasta, missed_cleavages = 2, min_aa = 7, max_aa = 50)
+# 4min
 
-#calculate necessary number of edges by counting the peptides belonging to each protein
-mat_length <- sum(lengths(digested_proteins))
+protein_list <- names(digested_proteins)
 
-#generate empty edge matrix of size (#edges)x2
-edgelist <- matrix(nrow = mat_length, ncol = 2)
-
-#add progress bar to loop
-number_of_iterations <- length(digested_proteins)
-pb <- startpb(0, length(digested_proteins))
-on.exit(closepb(pb))
-
-#i = 89756
-
-system.time({
-  #add an entry to the edge matrix for each peptide-protein relation in the digested_proteins matrix
-  current_row <- 1
-  for (i in 1:length(digested_proteins)){
-    if(length(digested_proteins[[i]]) != 0){
-      for (j in 1:length(digested_proteins[[i]])){
-        edgelist[current_row, 1] <- names(digested_proteins)[[i]]
-        edgelist[current_row, 2] <- digested_proteins[[i]][[j]]
-        current_row <- current_row + 1
-      }
-      setpb(pb, i)
-    }
-  }
-})
-# 1m12
-#progress bar command
-invisible(NULL)
-
+edgelist <- generate_edgelist(digested_proteins)
+# 36s
 
 write.table(edgelist, "data/D4_without_isoforms/D4_fasta/edgelist.txt", sep = "\t", row.names = FALSE)
 
@@ -85,38 +45,22 @@ write.table(edgelist, "data/D4_without_isoforms/D4_fasta/edgelist.txt", sep = "\
 ################################################################################
 ## read in quantitative peptide data
 
-library(BBmisc)    # for collapse()
-library(seqinr)    # for reading in fasta files
-library(limma)     # for strsplit2()
-library(pbapply)   # for progress bars for apply functions
-library(igraph)
+# library(BBmisc)    # for collapse()
+# library(seqinr)    # for reading in fasta files
+# library(limma)     # for strsplit2()
+# library(pbapply)   # for progress bars for apply functions
+# library(igraph)
 
 
-DATA <- read.table("data/D4_without_isoforms/D4_quant/peptides.txt",
-                   sep = "\t", header = TRUE, stringsAsFactors = FALSE)
+DATA <- bppg::read_MQ_peptidetable("C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/peptides.txt",
+                                   LFQ = TRUE, remove_contaminants = FALSE)
 
-### remove peptides from decoy proteins
-DATA <- DATA[DATA$Reverse == "", ]
+validvalues <- rowSums(!is.na(DATA[,-1]))
+barplot(table(validvalues))
 
-####  extract peptide intensities and rename columns ####
-LFQ_values <- DATA[, grepl("LFQ", colnames(DATA))]
-LFQ_values[LFQ_values == 0] <- NA
+### only keep peptides with at least one valid value
 
-y <- apply(LFQ_values, 1, function(x) sum(!is.na(x)))
-barplot(table(y))
-
-### only keep peptides with at least 4 valid values
-DATA_filtered <- DATA[y >=4,]  ###
-LFQ_values_filtered <- LFQ_values[y >= 4,]  ###
-
-
-
-
-
-
-
-
-
+DATA_filtered <- DATA[validvalues >= 1, ]
 
 
 
@@ -125,7 +69,8 @@ LFQ_values_filtered <- LFQ_values[y >= 4,]  ###
 ################################################################################
 ### map peptides to proteins (by using the edgelist from the fasta file!)
 
-edgelist <- read.table("data/D4_without_isoforms/D4_fasta/edgelist.txt", sep = "\t")
+edgelist <- read.table("C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_fasta/edgelist.txt",
+                       sep = "\t", header = TRUE)
 peptides <- DATA_filtered$Sequence
 
 edgelist_filtered <- edgelist[edgelist[,2] %in% peptides, ]
@@ -134,141 +79,43 @@ edgelist_filtered <- edgelist[edgelist[,2] %in% peptides, ]
 
 #proteins <- character(length(peptides))
 
-proteins <- pblapply(peptides, function(x, edgelist) {
-  # ind <- which()
-  return(collapse(edgelist[,1][edgelist[,2] == x], "/"))
-}, edgelist = edgelist_filtered)
-### 14min18
+proteins <- pbapply::pblapply(peptides, function(x, edgelist, prot_origin) {
+  prot <- edgelist[,1][edgelist[,2] == x]
+
+  ### TODO: mixed könnte auch gemischt zwischen contaminant und human sein?
+
+  ind <- which(protein_list %in% prot)
+  prot_origin_tmp <- unique(prot_origin[ind])
+  if (length(prot_origin_tmp) > 1) prot_origin_tmp <- "mixed"
+  if (length(prot_origin_tmp) == 0) prot_origin_tmp <- ""
 
 
-peptides[which(proteins == "")]  ### diese Peptide sind >50 AA lang!
+  return(c(proteins = BBmisc::collapse(prot, "/"), prot_origin = prot_origin_tmp))
+}, edgelist = edgelist_filtered, prot_origin = prot_origin)
+### 14min
+
+proteins2 <- BBmisc::convertListOfRowsToDataFrame(proteins)
 
 
-colnames(LFQ_values_filtered) <- limma::strsplit2(colnames(LFQ_values_filtered), "\\.")[,3]
-
-
-D <- cbind(peptides, proteins = unlist(proteins), LFQ_values_filtered)
+#peptides[which(proteins == "")]  ### diese Peptide sind >50 AA lang!
+D <- cbind(peptides = DATA_filtered$Sequence, proteins = proteins2$proteins,
+           prot_origin = proteins2$prot_origin, DATA_filtered[,-1])
 D <- D[D$proteins != "",]
 
-write.table(D, "data/D4_without_isoforms/D4_quant/preprocessed/preprocessed_peptide_data_D4.txt",
+
+write.table(D, "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/preprocessed_peptide_data_D4.txt",
             sep = "\t", row.names = FALSE)
 
 
-################################################################################
-#### calculate protein origin
-
-fasta2 <- read.fasta(file = "data/D4_without_isoforms/D4_fasta/20220722_uniprot_proteome_UP000000589_MusMusculus_v2022_02.fasta",
-                     seqtype = "AA", as.string = TRUE)
-protein_accessions_mouse <- strsplit2(attr(fasta2, "name"), "\\|")[,2]
-
-#### TODO: kann man das beschleunigen? dauert sehr lange!
-
-prot_origin <- character(nrow(D))
-
-for (i in 1:nrow(D)) {
-  print(i)
-  protein <- D$proteins[i]
-  proteins <- strsplit2(protein, "/")
-
-  origin <- character(length(proteins))
-  origin[grepl("CON", proteins)] <- "contaminant"
-
-  for (j in 1:length(proteins)) {
-    if(origin[j] == "contaminant") next
-
-    if (any(grepl(proteins[j], protein_accessions_mouse))) {
-      origin[j] <- "NIH3T3"
-    } else {
-      origin[j] <- "HeLa"
-    }
-  }
-
-  if (all(origin == "contaminant")) prot_origin[i] <- "contaminant"
-  if (any(origin == "NIH3T3") & any(origin == "HeLa")) prot_origin[i] <- "mixed"
-  if (any(origin == "NIH3T3") & all(origin != "HeLa")) prot_origin[i] <- "NIH3T3"
-  if (any(origin == "HeLa") & all(origin != "NIH3T3")) prot_origin[i] <- "HeLa"
-}
-
-table(prot_origin)
-# prot_origin
-# contaminant        HeLa       mixed      NIH3T3
-#        287       20693       27565       17833
-
-write.table(data.frame(D, prot_origin), "data/D4_without_isoforms/D4_quant/preprocessed_peptide_data_D4_without_isoforms.txt",
-            sep = "\t", row.names = FALSE)
-
-
-
-################################################################################
-### quality control of the peptide data
-
-source("R Scripts/QC_and_normalization/automatedNormalization_v1_3.R")
-source("R Scripts/QC_and_normalization/MA_Plots_v1_3.R")
-source("R Scripts/QC_and_normalization/PCA_plot_v1_3.R")
-source("R Scripts/QC_and_normalization/ValidValue_Plot_v1_3.R")
-
-
-LFQ_values_filtered2 <- LFQ_values_filtered
-colnames(LFQ_values_filtered2) <- substr(colnames(LFQ_values_filtered2), 15, 100)
-group <- factor(substr(colnames(LFQ_values_filtered2), 1, 7))
-
-
-LFQ_values_filtered2_long <- pivot_longer(LFQ_values_filtered2, 1:20)
-LFQ_values_filtered2_long$group <- factor(substr(LFQ_values_filtered2_long$name, 1, 7))
-
-Boxplots(X = LFQ_values_filtered2_long, groupvar_name = "Group", sample_filter = NULL,
-         plot_device = "png", suffix = "LFQ_peptides",
-         plot_height = 10, plot_width = 15, plot_dpi = 300,
-         log_data = TRUE, log_base = 2, group_colours = NULL,
-         method = "boxplot", base_size = 20,
-         output_path = "data/D4_without_isoforms/D4_quant/QC_and_Norm/")
-
-
-
-ValidValuePlot(X = LFQ_values_filtered2_long, groupvar_name = "Group", sample_filter=NULL,
-               suffix = "LFQ_peptides", plot_device = "png",
-               group_colours = NULL, plot_height = 10,
-               plot_width = 15, plot_dpi = 300, ylim = NULL, title = NULL,
-               output_path = "data/D4_without_isoforms/D4_quant/QC_and_Norm/")
-
-
-### TODO: Einfärbungen der verschiedenen Peptid-Arten (human, mouse, shared!)
-MAPlots(X = LFQ_values_filtered2, log = TRUE, alpha = TRUE, suffix="LFQ_peptides",
-        plot_height=15, plot_width=15, output_path = "data/D4_without_isoforms/D4_quant/QC_and_Norm/")
-
-
-### TODO: hier wäre wahrscheinlich eine LTS-Normalisierung angebracht, weil sich
-###       die Proben durch die verschiedenen Mischungen stark ändern?
-
-
-PCA_Plot(X = LFQ_values_filtered2, id = NULL, log_data = TRUE, log_base = 2,
-         impute = TRUE, impute_method = "mean", propNA = 0.3,
-         scale. = TRUE,
-         groupvar1 = group, groupvar2 = NULL, groupvar1_name = "Group", groupvar2_name = NULL,
-         point.size = 4, base_size = 11,
-         group_colours = NULL, returnPCA = FALSE, title = NULL,
-         plot_device = "png", plot_height = 10, plot_width = 10, plot_dpi = 300,
-         output_path = "data/D4_without_isoforms/D4_quant/QC_and_Norm/", suffix = "LFQ_peptides_imputed", xlim = NULL, ylim = NULL,
-         label = FALSE, PCx = 1, PCy = 2, label_size = 4)
-
-PCA_Plot(X = LFQ_values_filtered2, id = NULL, log_data = TRUE, log_base = 2,
-         impute = FALSE, impute_method = "mean", propNA = 0.5,
-         scale. = TRUE,
-         groupvar1 = group, groupvar2 = NULL, groupvar1_name = "Group", groupvar2_name = NULL,
-         point.size = 4, base_size = 11,
-         group_colours = NULL, returnPCA = FALSE, title = NULL,
-         plot_device = "png", plot_height = 20, plot_width = 20, plot_dpi = 300,
-         output_path = "data/D4_without_isoforms/D4_quant/QC_and_Norm/", suffix = "LFQ_peptides", xlim = NULL, ylim = NULL,
-         label = TRUE, PCx = 1, PCy = 2, label_size = 4)
 
 
 ################################################################################
 ### calculate peptide ratios
 
-source("R Scripts/bipartite_graph_generation_and_analysis/helper_functions/calculate_peptide_ratios.R")
+#source("R Scripts/bipartite_graph_generation_and_analysis/helper_functions/calculate_peptide_ratios.R")
 
-D <- read.table(file = "data/D4_without_isoforms/D4_quant/preprocessed/preprocessed_peptide_data_D4.txt", header = TRUE)
-group <- factor(limma::strsplit2(colnames(D)[-c(1:2)], "_")[,1])
+D <- read.table(file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/preprocessed_peptide_data_D4.txt", header = TRUE)
+group <- factor(limma::strsplit2(colnames(D)[-c(1:3)], "_")[,1])
 
 D_mean_NA_mind2 <- aggregate_replicates(D, method = "mean", use0 = FALSE, missing.limit = 0.4,
                                         group = group, accession.cols = 1:2)
@@ -757,4 +604,73 @@ for (i in 1:length(prototypes_D4)) {
 }
 
 dev.off()
+
+
+
+
+
+
+
+
+################################################################################
+### quality control of the peptide data
+
+source("R Scripts/QC_and_normalization/automatedNormalization_v1_3.R")
+source("R Scripts/QC_and_normalization/MA_Plots_v1_3.R")
+source("R Scripts/QC_and_normalization/PCA_plot_v1_3.R")
+source("R Scripts/QC_and_normalization/ValidValue_Plot_v1_3.R")
+
+
+LFQ_values_filtered2 <- LFQ_values_filtered
+colnames(LFQ_values_filtered2) <- substr(colnames(LFQ_values_filtered2), 15, 100)
+group <- factor(substr(colnames(LFQ_values_filtered2), 1, 7))
+
+
+LFQ_values_filtered2_long <- pivot_longer(LFQ_values_filtered2, 1:20)
+LFQ_values_filtered2_long$group <- factor(substr(LFQ_values_filtered2_long$name, 1, 7))
+
+Boxplots(X = LFQ_values_filtered2_long, groupvar_name = "Group", sample_filter = NULL,
+         plot_device = "png", suffix = "LFQ_peptides",
+         plot_height = 10, plot_width = 15, plot_dpi = 300,
+         log_data = TRUE, log_base = 2, group_colours = NULL,
+         method = "boxplot", base_size = 20,
+         output_path = "data/D4_without_isoforms/D4_quant/QC_and_Norm/")
+
+
+
+ValidValuePlot(X = LFQ_values_filtered2_long, groupvar_name = "Group", sample_filter=NULL,
+               suffix = "LFQ_peptides", plot_device = "png",
+               group_colours = NULL, plot_height = 10,
+               plot_width = 15, plot_dpi = 300, ylim = NULL, title = NULL,
+               output_path = "data/D4_without_isoforms/D4_quant/QC_and_Norm/")
+
+
+### TODO: Einfärbungen der verschiedenen Peptid-Arten (human, mouse, shared!)
+MAPlots(X = LFQ_values_filtered2, log = TRUE, alpha = TRUE, suffix="LFQ_peptides",
+        plot_height=15, plot_width=15, output_path = "data/D4_without_isoforms/D4_quant/QC_and_Norm/")
+
+
+### TODO: hier wäre wahrscheinlich eine LTS-Normalisierung angebracht, weil sich
+###       die Proben durch die verschiedenen Mischungen stark ändern?
+
+
+PCA_Plot(X = LFQ_values_filtered2, id = NULL, log_data = TRUE, log_base = 2,
+         impute = TRUE, impute_method = "mean", propNA = 0.3,
+         scale. = TRUE,
+         groupvar1 = group, groupvar2 = NULL, groupvar1_name = "Group", groupvar2_name = NULL,
+         point.size = 4, base_size = 11,
+         group_colours = NULL, returnPCA = FALSE, title = NULL,
+         plot_device = "png", plot_height = 10, plot_width = 10, plot_dpi = 300,
+         output_path = "data/D4_without_isoforms/D4_quant/QC_and_Norm/", suffix = "LFQ_peptides_imputed", xlim = NULL, ylim = NULL,
+         label = FALSE, PCx = 1, PCy = 2, label_size = 4)
+
+PCA_Plot(X = LFQ_values_filtered2, id = NULL, log_data = TRUE, log_base = 2,
+         impute = FALSE, impute_method = "mean", propNA = 0.5,
+         scale. = TRUE,
+         groupvar1 = group, groupvar2 = NULL, groupvar1_name = "Group", groupvar2_name = NULL,
+         point.size = 4, base_size = 11,
+         group_colours = NULL, returnPCA = FALSE, title = NULL,
+         plot_device = "png", plot_height = 20, plot_width = 20, plot_dpi = 300,
+         output_path = "data/D4_without_isoforms/D4_quant/QC_and_Norm/", suffix = "LFQ_peptides", xlim = NULL, ylim = NULL,
+         label = TRUE, PCx = 1, PCy = 2, label_size = 4)
 
