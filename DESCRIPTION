@@ -16,13 +16,13 @@ Imports:
     grDevices,
     igraph,
     limma,
+    Matrix,
     pbapply,
     robustbase,
     seqinr,
     stringr
 Suggests: 
     covr,
-    Matrix,
     rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

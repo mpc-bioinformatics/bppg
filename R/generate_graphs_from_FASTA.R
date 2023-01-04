@@ -1,5 +1,6 @@
 
-### TODO: fast = FALSE funktioniert beim collapsen der Knoten nicht
+### TODO: cat funktioniert nicht einwandfrei
+### TODO; Matrix package wird auf jeden Fall benötigt
 
 #' Generate graphs from a FASTA file
 #'
