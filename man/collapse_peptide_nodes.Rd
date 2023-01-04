@@ -4,24 +4,16 @@
 \alias{collapse_peptide_nodes}
 \title{Function to callapse peptide nodes (also the peptide ratios if present)}
 \usage{
-collapse_peptide_nodes(
-  submatrix,
-  sparse = FALSE,
-  fc = TRUE,
-  fast = FALSE,
-  matrix = TRUE
-)
+collapse_peptide_nodes(subgraphs, sparse = FALSE, fc = TRUE, fast = FALSE)
 }
 \arguments{
-\item{submatrix}{Submatrix list}
+\item{subgraphs}{Submatrix list}
 
 \item{sparse}{TRUE, if sparse matrix type is used}
 
 \item{fc}{Are peptide ratios included?}
 
 \item{fast}{TRUE, if combining of column names should be skipped (makes calculation faster if there are large subgraphs)}
-
-\item{matrix}{FALSE if submatrix is a list of subgraphs}
 }
 \value{
 Graphs with collapsed peptide nodes

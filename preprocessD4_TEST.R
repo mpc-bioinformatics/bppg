@@ -18,10 +18,10 @@ library(bppg)
 
 fasta1 <- seqinr::read.fasta(file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_fasta/20220722_uniprot_proteome_UP000005640_HomoSapiens_v2022_02.fasta",
                      seqtype = "AA", as.string = TRUE)
-names(fasta1) <- strsplit2(names(fasta1), "\\|")[,2]
+names(fasta1) <- limma::strsplit2(names(fasta1), "\\|")[,2]
 fasta2 <- seqinr::read.fasta(file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_fasta/20220722_uniprot_proteome_UP000000589_MusMusculus_v2022_02.fasta",
                      seqtype = "AA", as.string = TRUE)
-names(fasta2) <- strsplit2(names(fasta2), "\\|")[,2]
+names(fasta2) <- limma::strsplit2(names(fasta2), "\\|")[,2]
 fasta3 <- seqinr::read.fasta(file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_fasta/MaxQuant_contaminants_v2_3_1.fasta",
                      seqtype = "AA", as.string = TRUE)
 names(fasta3) <- paste0("CON_", names(fasta3))
@@ -39,18 +39,11 @@ protein_list <- names(digested_proteins)
 edgelist <- generate_edgelist(digested_proteins)
 # 36s
 
-write.table(edgelist, "data/D4_without_isoforms/D4_fasta/edgelist.txt", sep = "\t", row.names = FALSE)
+write.table(edgelist, "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_fasta/edgelist.txt", sep = "\t", row.names = FALSE)
 
 ################################################################################
 ################################################################################
 ## read in quantitative peptide data
-
-# library(BBmisc)    # for collapse()
-# library(seqinr)    # for reading in fasta files
-# library(limma)     # for strsplit2()
-# library(pbapply)   # for progress bars for apply functions
-# library(igraph)
-
 
 DATA <- bppg::read_MQ_peptidetable("C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/peptides.txt",
                                    LFQ = TRUE, remove_contaminants = FALSE)
@@ -117,413 +110,56 @@ write.table(D, "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_withou
 D <- read.table(file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/preprocessed_peptide_data_D4.txt", header = TRUE)
 group <- factor(limma::strsplit2(colnames(D)[-c(1:3)], "_")[,1])
 
-D_mean_NA_mind2 <- aggregate_replicates(D, method = "mean", use0 = FALSE, missing.limit = 0.4,
-                                        group = group, accession.cols = 1:2)
+D_aggr <- bppg::aggregate_replicates(D, method = "mean", missing.limit = 0.4,
+                                        group = group, id_cols = 1:3)
 
-write.table(D_mean_NA_mind2, file = "data/D4_without_isoforms/D4_quant/preprocessed/D4_mean_NA_mind2.txt",
+write.table(D_aggr, file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/aggr_pept_int_D4.txt",
+            row.names = FALSE, sep = "\t")
+save(group, file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/group.RData")
+
+D_aggr <- read.table("C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/aggr_pept_int_D4.txt",
+                     sep = "\t", header = TRUE)
+groups  <- levels(group)
+
+
+
+peptide_ratios <- bppg::calculate_peptide_ratios(aggr_intensities = D_aggr, id_cols = 1:3, group_levels = groups)
+write.table(peptide_ratios, file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/peptide_ratios.txt",
             row.names = FALSE, sep = "\t")
 
 
-D_aggr <- read.table("data/D4_without_isoforms/D4_quant/preprocessed/D4_mean_NA_mind2.txt", sep = "\t", header = TRUE)
-groups  <- levels(group)
-
-FC <- NULL
-
-for (i in 1:(length(groups)-1)) {
-  lev1 <- groups[[i]]
-  for(j in (i+1):length(groups)){
-    lev2 <- groups[[j]]
-    name <- paste0("FC_", lev1, "_", lev2)
-    FC <- cbind(FC, foldChange(D_aggr, lev1, lev2))
-    colnames(FC)[ncol(FC)] <- name
-  }
-
-}
-
-
-
-FC <- cbind(D_aggr[, 1:2], FC)
-write.table(data.frame(FC, prot_origin), file = "data/D4_without_isoforms/D4_quant/preprocessed/FC_NA_mind2.txt", row.names = FALSE, sep = "\t")
-
-
-
-
-### TODO: hier weitermachen!!
-
 
 ################################################################################
+### generate graphs
 
-library(igraph)
+peptide_ratios <- read.table(file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/peptide_ratios.txt",
+                 header = TRUE, sep = "\t")
 
-FC <- read.table(file = "data/D4_without_isoforms/D4_quant/preprocessed/FC_NA_mind2.txt", header = TRUE, sep = "\t")
+edgelist <- read.table("C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_fasta/edgelist.txt", sep = "\t", header = TRUE)
 
-edgelist <- read.table("data/D4_without_isoforms/D4_fasta/edgelist.txt", sep = "\t")
-edgelist_filtered <- edgelist[edgelist[,2] %in% FC$peptides, ]
-
-
-graphs <- list()
-subgraphs <- list()
-#i = 3
-
-for (i in 3:23) {
-
-  comparison <- substr(colnames(FC)[i], 4 , 100)
-
-
-  fc <- FC[,i]
-  peptides_tmp <- FC$peptides[!is.na(fc)]  ## peptides that are quantified in this specific comparison
-  fc <- na.omit(fc)
-  edgelist_filtered2 <- edgelist_filtered[edgelist_filtered[,2] %in% peptides_tmp, ]
-
-  G_tmp <- igraph::graph_from_edgelist(as.matrix(edgelist_filtered2[, 1:2]), directed = FALSE)
-  V(G_tmp)[name %in% edgelist_filtered2[,1]]$type <- TRUE
-  V(G_tmp)[name %in% edgelist_filtered2[,2]]$type <- FALSE
-
-  vertex_attr(G_tmp, "pep_ratio", index = V(G_tmp)[!V(G_tmp)$type]) <- fc[match(V(G_tmp)$name[!V(G_tmp)$type], peptides_tmp)]
-
-  subgraphs_tmp <- igraph::decompose(G_tmp)
-
-  graphs[[i-2]] <- G_tmp
-  names(graphs)[[i-2]] <- comparison
-
-  subgraphs[[i-2]] <- subgraphs_tmp
-  names(subgraphs)[[i-2]] <- comparison
-
-}
-
-
-saveRDS(graphs, file = "data/D4_without_isoforms/D4_quant/preprocessed/Graphs_with_pep_ratios.rds")
-saveRDS(subgraphs, file = "data/D4_without_isoforms/D4_quant/preprocessed/Subgraphs_with_pep_ratios.rds")
-
-x <- sapply(Subgraphs_with_pep_ratios[[1]], gorder)
-## größter Graph ist 250!
+subgraphs <- bppg::generate_quant_graphs(peptide_ratios = peptide_ratios, id_cols = 1:3, fasta_edgelist=edgelist)
+saveRDS(subgraphs, "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/subgraphs.rds")
 
 
 
 ################################################################################
-################################################################################
-### alte Version der Protein und Peptid-Zusammenfassung
+### collapse peptide and protein ratios
+subgraphs <- readRDS("C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/subgraphs.rds")
 
-source("R Scripts/bipartite_graph_generation/helper_functions/calculate_biadjacency_matrix_and_submatrices.R")
-source("R Scripts/bipartite_graph_generation/helper_functions/duplicated_for_sparse_matrices.R")
+subgraphs_coll_prot <- lapply(subgraphs, bppg::collapse_protein_nodes, sparse = FALSE, fast = FALSE, fc = TRUE)
 
-library(igraph)
 
 
-subgraphs <- readRDS("data/D4_without_isoforms/D4_quant/preprocessed/Subgraphs_with_pep_ratios.rds")
+saveRDS(subgraphs_coll_prot, "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/subgraphs_coll_prot.rds")
 
 
-#subgraphs2 <- form_proteingroups(subgraphs, )
+subgraphs_coll_prot_pep <- lapply(subgraphs_coll_prot, bppg::collapse_peptide_nodes, sparse = FALSE, fc = TRUE, fast = TRUE)
 
+saveRDS(subgraphs_coll_prot_pep, "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/subgraphs_coll_prot_pep.rds")
 
-subgraphs2 <- lapply(subgraphs, form_proteingroups, sparse = FALSE, fast = TRUE, matrix = FALSE)
 
-subgraphs3 <- lapply(subgraphs2, merge_Peptides, sparse = FALSE, fast = TRUE, matrix = FALSE, fc = FALSE)
 
-
-saveRDS(subgraphs2, file = "data/D4_without_isoforms/D4_quant/preprocessed/Subgraphs_mergedProteins.rds")
-saveRDS(subgraphs3, file = "data/D4_without_isoforms/D4_quant/preprocessed/Subgraphs_mergedPeptides.rds")
-
-
--####################### neue Version
-  ################################################################################
-################################################################################
-#### TODO: proteine müssen zusammengefasst werden, Peptide aber nicht!
-
-library(pbapply)
-
-subgraphs <- readRDS("data/D4_without_isoforms/D4_quant/preprocessed/Subgraphs_with_pep_ratios.rds")
-
-subgraphs_merged_proteins <- list()
-
-
-for (l in 1:21) {
-
-  print(l)
-
-
-  subgraphs_tmp <- subgraphs[[l]]
-
-  number_of_graphs <- length(subgraphs_tmp)
-
-  subgraphs_with_merged_proteins <- list()
-  merged_subgraphs <- vector(mode = 'list', length = number_of_graphs)
-
-  #add progress bar to loop
-  number_of_iterations <- number_of_graphs
-  pb <- startpb(0, number_of_graphs)
-  on.exit(closepb(pb))
-
-
-  merged_subgraphs_tmp <- vector(mode = 'list', length = number_of_graphs)
-
-  for(k in 1:(number_of_graphs)){
-
-    #print(k)
-
-
-    G <- subgraphs_tmp[[k]]
-
-    peptide_ids <- as.numeric(V(G)[!V(G)$type])  # ids of peptide nodes (type = FALSE)
-    protein_ids <- as.numeric(V(G)[V(G)$type])   # ids of protein nodes (type = TRUE)
-
-    #assign initial number attribute to all vertices
-
-    for(i in 1:gorder(G)){
-      vertex_attr(G, "number", index = i) <- 1
-    }
-
-    # duplicated_peptides <- list() #list of peptide ids to be deleted due to merging
-    #
-    # if(length(peptide_ids) > 1){
-    #   for(i in 1:(length(peptide_ids) - 1)){ # for all peptides i until the penultimate
-    #     for(j in (i+1):length(peptide_ids)){ # for all peptides j>i
-    #       vertex_id_1 <- peptide_ids[[i]] #id of peptide i
-    #       vertex_id_2 <- peptide_ids[[j]] #id of peptide j
-    #
-    #       # if the vertex j has not been marked for deletion yet
-    #       if(vertex_attr(G, "number", index = vertex_id_2) != 0){
-    #
-    #         # if vertices i and j have the same amount of edges
-    #         if(length(G[[vertex_id_1]][[1]]) == length(G[[vertex_id_2]][[1]])){
-    #
-    #           # if all edges of i and j are identical
-    #           if(!FALSE %in% unlist(unname(G[[vertex_id_1]][[1]] == G[[vertex_id_2]][[1]]))){
-    #
-    #             # raise number attribute of vertex i by 1 as it will be merged with vertex j
-    #             vertex_attr(G, "number", index = vertex_id_1) <- vertex_attr(G, "number", index = vertex_id_1) + 1
-    #
-    #             # set number attribute of vertex j to 0 as it has been merged and does not need to be checked again
-    #             vertex_attr(G, "number", index = vertex_id_2) <- 0
-    #
-    #             #append id of vertex j to the list of peptides to be deleted
-    #             list_length <- length(duplicated_peptides)
-    #             duplicated_peptides[[(list_length + 1)]] <- vertex_id_2
-    #           }
-    #         }
-    #       }
-    #     }
-    #   }
-    # }
-
-    duplicated_proteins <- list() #list of protein ids to be deleted due to merging
-
-    if(length(protein_ids) > 1){
-      for(i in 1:(length(protein_ids) - 1)){ # for all peptides i until the penultimate
-        for(j in (i+1):length(protein_ids)){ # for all peptides j>i
-          vertex_id_1 <- protein_ids[[i]] #id of protein i
-          vertex_id_2 <- protein_ids[[j]] #id of protein j
-
-          # if the vertex j has not been marked for deletion yet
-          if(vertex_attr(G, "number", index = vertex_id_2) != 0){
-
-            # if vertices i and j have the same amount of edges
-            if(length(G[[vertex_id_1]][[1]]) == length(G[[vertex_id_2]][[1]])){
-
-              # if all edges of i and j are identical
-              if(!FALSE %in% unlist(unname(G[[vertex_id_1]][[1]] == G[[vertex_id_2]][[1]]))){
-
-                subgraph_list_length <- length(subgraphs_with_merged_proteins)
-                subgraphs_with_merged_proteins[[subgraph_list_length + 1]] <- k
-
-                # raise number attribute of vertex i by 1 as it will be merged with vertex j
-                vertex_attr(G, "number", index = vertex_id_1) <- vertex_attr(G, "number", index = vertex_id_1) + 1
-
-                #append name of second protein to first protein's node
-
-                vertex_attr(G, "name", index = vertex_id_1) <- paste(vertex_attr(G, "name", index = vertex_id_1),  vertex_attr(G, "name", index = vertex_id_2), sep = ", ")
-
-                # set number attribute of vertex j to 0 as it has been merged and does not need to be checked again
-                vertex_attr(G, "number", index = vertex_id_2) <- 0
-
-                #append id of vertex j to the list of proteins to be deleted
-                list_length <- length(duplicated_proteins)
-                duplicated_proteins[[(list_length + 1)]] <- vertex_id_2
-              }
-            }
-          }
-        }
-      }
-    }
-
-    duplicated_vertices <- c(duplicated_proteins)
-
-    #build new graph with merged peptides and proteins
-    G2 <- delete_vertices(G, duplicated_vertices)
-
-
-    setpb(pb, (k))
-    merged_subgraphs_tmp[[k]] <- G2
-  }
-  # 1min30
-  subgraphs_merged_proteins[[l]] <- merged_subgraphs_tmp
-}
-
-
-saveRDS(subgraphs_merged_proteins, "data/D4_without_isoforms/D4_quant/preprocessed/Subgraphs_with_pep_ratios_mergedProteins.rds")
-
-
-### TODO: Namen der Liste = Comparisons! Das fehlt hier noch!
-
-
-
-
-################################################################################
-#### Fasse Protein und Peptid-Knoten zusammen
-
-library(pbapply)
-
-subgraphs <- readRDS("data/D4_without_isoforms/D4_quant/preprocessed/Subgraphs_with_pep_ratios.rds")
-
-subgraphs_merged_proteins <- list()
-
-
-for (l in 1:21) {
-
-  print(l)
-
-
-  subgraphs_tmp <- subgraphs[[l]]
-
-  number_of_graphs <- length(subgraphs_tmp)
-
-  subgraphs_with_merged_proteins <- list()
-  merged_subgraphs <- vector(mode = 'list', length = number_of_graphs)
-
-  #add progress bar to loop
-  number_of_iterations <- number_of_graphs
-  pb <- startpb(0, number_of_graphs)
-  on.exit(closepb(pb))
-
-
-  merged_subgraphs_tmp <- vector(mode = 'list', length = number_of_graphs)
-
-  for(k in 1:(number_of_graphs)){
-
-    #print(k)
-
-
-    G <- subgraphs_tmp[[k]]
-
-    peptide_ids <- as.numeric(V(G)[!V(G)$type])  # ids of peptide nodes (type = FALSE)
-    protein_ids <- as.numeric(V(G)[V(G)$type])   # ids of protein nodes (type = TRUE)
-
-    #assign initial number attribute to all vertices
-
-    for(i in 1:gorder(G)){
-      vertex_attr(G, "number", index = i) <- 1
-    }
-
-    duplicated_peptides <- list() #list of peptide ids to be deleted due to merging
-
-    if(length(peptide_ids) > 1){
-      for(i in 1:(length(peptide_ids) - 1)){ # for all peptides i until the penultimate
-        for(j in (i+1):length(peptide_ids)){ # for all peptides j>i
-          vertex_id_1 <- peptide_ids[[i]] #id of peptide i
-          vertex_id_2 <- peptide_ids[[j]] #id of peptide j
-
-          # if the vertex j has not been marked for deletion yet
-          if(vertex_attr(G, "number", index = vertex_id_2) != 0){
-
-            # if vertices i and j have the same amount of edges
-            if(length(G[[vertex_id_1]][[1]]) == length(G[[vertex_id_2]][[1]])){
-
-              # if all edges of i and j are identical
-              if(!FALSE %in% unlist(unname(G[[vertex_id_1]][[1]] == G[[vertex_id_2]][[1]]))){
-
-                # raise number attribute of vertex i by 1 as it will be merged with vertex j
-                vertex_attr(G, "number", index = vertex_id_1) <- vertex_attr(G, "number", index = vertex_id_1) + 1
-
-                # set number attribute of vertex j to 0 as it has been merged and does not need to be checked again
-                vertex_attr(G, "number", index = vertex_id_2) <- 0
-
-                #append id of vertex j to the list of peptides to be deleted
-                list_length <- length(duplicated_peptides)
-                duplicated_peptides[[(list_length + 1)]] <- vertex_id_2
-              }
-            }
-          }
-        }
-      }
-    }
-
-    duplicated_proteins <- list() #list of protein ids to be deleted due to merging
-
-    if(length(protein_ids) > 1){
-      for(i in 1:(length(protein_ids) - 1)){ # for all peptides i until the penultimate
-        for(j in (i+1):length(protein_ids)){ # for all peptides j>i
-          vertex_id_1 <- protein_ids[[i]] #id of protein i
-          vertex_id_2 <- protein_ids[[j]] #id of protein j
-
-          # if the vertex j has not been marked for deletion yet
-          if(vertex_attr(G, "number", index = vertex_id_2) != 0){
-
-            # if vertices i and j have the same amount of edges
-            if(length(G[[vertex_id_1]][[1]]) == length(G[[vertex_id_2]][[1]])){
-
-              # if all edges of i and j are identical
-              if(!FALSE %in% unlist(unname(G[[vertex_id_1]][[1]] == G[[vertex_id_2]][[1]]))){
-
-                subgraph_list_length <- length(subgraphs_with_merged_proteins)
-                subgraphs_with_merged_proteins[[subgraph_list_length + 1]] <- k
-
-                # raise number attribute of vertex i by 1 as it will be merged with vertex j
-                vertex_attr(G, "number", index = vertex_id_1) <- vertex_attr(G, "number", index = vertex_id_1) + 1
-
-                #append name of second protein to first protein's node
-
-                vertex_attr(G, "name", index = vertex_id_1) <- paste(vertex_attr(G, "name", index = vertex_id_1),  vertex_attr(G, "name", index = vertex_id_2), sep = ", ")
-
-                # set number attribute of vertex j to 0 as it has been merged and does not need to be checked again
-                vertex_attr(G, "number", index = vertex_id_2) <- 0
-
-                #append id of vertex j to the list of proteins to be deleted
-                list_length <- length(duplicated_proteins)
-                duplicated_proteins[[(list_length + 1)]] <- vertex_id_2
-              }
-            }
-          }
-        }
-      }
-    }
-
-    duplicated_vertices <- c(duplicated_proteins)
-
-    #build new graph with merged peptides and proteins
-    G2 <- delete_vertices(G, duplicated_vertices)
-
-
-    setpb(pb, (k))
-    merged_subgraphs_tmp[[k]] <- G2
-  }
-  # 1min30
-  subgraphs_merged_proteins[[l]] <- merged_subgraphs_tmp
-}
-
-
-saveRDS(subgraphs_merged_proteins, "data/D4_without_isoforms/D4_quant/preprocessed/Subgraphs_with_pep_ratios_mergedProteins_and_Peptides.rds")
-
-
-### TODO: Namen der Liste = Comparisons! Das fehlt hier noch!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#### TODO: hier weitermachen
 
 ################################################################################
 ################################################################################

@@ -4,16 +4,18 @@
 \alias{aggregate_replicates}
 \title{aggregates replicates of the same experimental group}
 \usage{
-aggregate_replicates(D, group, missing.limit = 0, method = "mean")
+aggregate_replicates(D, group, missing.limit = 0, method = "mean", id_cols = 1)
 }
 \arguments{
+\item{D}{data set with peptide intensities}
+
 \item{group}{groups for aggregation as a factor}
 
 \item{missing.limit}{proportion of missing values that is allowed (e.g. 0 means no missings allowed)}
 
 \item{method}{"mean", "sum" oder "median"}
 
-\item{intensities}{data set with peptide intensities}
+\item{id_cols}{column numbers that contain peptide sequences etc (everything except intensities)}
 }
 \value{
 data set with aggregated intensities
@@ -25,5 +27,5 @@ aggregates replicates of the same experimental group
 file <- system.file("extdata", "peptides.txt", package = "bppg")
 D <- read_MQ_peptidetable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 group <- factor(rep(1:9, each = 3))
-aggregate_replicates(D)
+aggregate_replicates(D, group = group)
 }

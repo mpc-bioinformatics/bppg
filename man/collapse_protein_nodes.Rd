@@ -4,16 +4,16 @@
 \alias{collapse_protein_nodes}
 \title{collapse protein nodes (merges duplicated columns of biadjacency submatrices)}
 \usage{
-collapse_protein_nodes(submatrix, sparse = FALSE, fast = FALSE, matrix = TRUE)
+collapse_protein_nodes(subgraphs, sparse = FALSE, fast = FALSE, fc = FALSE)
 }
 \arguments{
-\item{submatrix}{Submatrix list}
+\item{subgraphs}{subgraphs list}
 
 \item{sparse}{TRUE, if sparse matrix type is used}
 
 \item{fast}{TRUE, if combining of column names should be skipped (makes calculation faster if there are large subgraphs)}
 
-\item{matrix}{FALSE if submatrix is a list of subgraphs}
+\item{fc}{Are peptide ratios included in the graphs?}
 }
 \value{
 submatrizes or subgraphs, depending on matrix argument

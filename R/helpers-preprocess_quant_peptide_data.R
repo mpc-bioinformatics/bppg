@@ -12,6 +12,8 @@
 #' @param path Path to the peptides.txt table
 #' @param LFQ If TRUE, LFQ intensities are used, if FALSE, raw (unnormalized) intensities
 #' @param remove_contaminants If TRUE, peptide sequences from potential contaminants are removed
+#' @param rename_columns Rename columns? If TRUE, "Intensity." or "LFQ.intensity." are removed
+#' @param zeroToNA If TRUE, zeros are converted to NAs.
 #'
 #' @return Dataframe with sequences and intensities
 #' @export
@@ -22,7 +24,7 @@
 read_MQ_peptidetable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
                                  rename_columns = TRUE, zeroToNA = TRUE) {
 
-  D <- read.table(path, sep = "\t", header = TRUE)
+  D <- utils::read.table(path, sep = "\t", header = TRUE)
 
   ### remove decoy entries:
   ind_decoy <- D$Reverse == "+"
@@ -63,10 +65,11 @@ read_MQ_peptidetable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
 
 #' aggregates replicates of the same experimental group
 #'
-#' @param intensities data set with peptide intensities
+#' @param D data set with peptide intensities
 #' @param missing.limit proportion of missing values that is allowed (e.g. 0 means no missings allowed)
 #' @param method "mean", "sum" oder "median"
 #' @param group groups for aggregation as a factor
+#' @param id_cols column numbers that contain peptide sequences etc (everything except intensities)
 #'
 #' @return data set with aggregated intensities
 #' @export
@@ -75,19 +78,20 @@ read_MQ_peptidetable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
 #' file <- system.file("extdata", "peptides.txt", package = "bppg")
 #' D <- read_MQ_peptidetable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 #' group <- factor(rep(1:9, each = 3))
-#' aggregate_replicates(D)
-aggregate_replicates <- function(D, group,  missing.limit = 0, method = "mean") {
+#' aggregate_replicates(D, group = group)
+aggregate_replicates <- function(D, group, missing.limit = 0, method = "mean",
+                                 id_cols = 1) {
 
 
   peptides <- D$Sequence
-  intensities <- D[,-1]  ## TODO: es koennten weitere Spalten vorhanden sein!
+  intensities <- D[,-(id_cols)]
 
-  ### TODO: Aus Spaltennamen Gruppe selber erschließen!
+  ### TODO: Aus Spaltennamen Gruppe selber erschließen?
 
   res <- NULL
   for (i in 1:length(levels(group))) {
 
-    X_tmp <- D[, group == levels(group)[i]]
+    X_tmp <- intensities[, group == levels(group)[i]]
 
     FUN <- switch(method,
                   mean  = rowMeans,
@@ -108,18 +112,24 @@ aggregate_replicates <- function(D, group,  missing.limit = 0, method = "mean") 
 
   res <- as.data.frame(res)
   colnames(res) <- levels(group)
-  res <- cbind(pep_sequence = peptides, res)
+  res <- cbind(D[, id_cols], res)
   return(res)
 }
 
 
 
-#### calculates peptide ratios for pairwise comparisons of groups
-## D: dataset
-## X: group1 (column name)
-## Y: group2 (column name)
-## useNA: if TRUE, results 0 and Inf are possible, otherwise ratio is NA if value for X or Y is NA
-### result: fold changes (Y/X)
+#' calculates peptide ratios for pairwise comparisons of groups (Y/X)
+#'
+#' @param D data set
+#' @param X group1 (column name)
+#' @param Y group2 (column name)
+#' @param useNA if TRUE, results 0 and Inf are possible, otherwise ratio is NA if value for X or Y is NA
+#'
+#' @return fold changes (Y/X)
+#' @export
+#'
+#' @examples
+#' ### TODO
 foldChange <- function(D, X, Y, useNA = FALSE) {
   FC <- D[, Y] / D[, X]
 
@@ -133,22 +143,43 @@ foldChange <- function(D, X, Y, useNA = FALSE) {
 
 
 
-calculate_peptide_ratios <- function(aggr_intensities) {
+#' Calculation of peptide ratios from aggregated intensities
+#'
+#' @param aggr_intensities result from function aggregate_replicates
+#' @param id_cols column numbers that contain peptide sequences etc (everything except intensities)
+#' @param group_levels levels of groups in the right order
+#'
+#' @return data set with peptide ratios
+#' @export
+#'
+#' @examples
+#' ## TODO
+calculate_peptide_ratios <- function(aggr_intensities, id_cols = 1, group_levels = NULL) {
 
-  peptides <- aggr_intensities[,1]
-  aggr_intensities <- aggr_intensities[,-1]
+  id <- aggr_intensities[,id_cols]
+  aggr_intensities <- aggr_intensities[,-(id_cols)]
+
+  if(is.null(group_levels)) {
+    group_levels <- factor(colnames(aggr_intensities), levels = colnames(aggr_intensities))
+  }
+
 
   peptide_ratios <- NULL
-  for (i in 1:(ncol(aggr_intensities)-1)) {
-    for (j in 2:ncol(aggr_intensities)) {
-      name <- paste0("ratio_", colnames(aggr_intensities)[j], "_", colnames(aggr_intensities)[i])
-      FC <- foldChange(D = aggr_intensities, X = colnames(aggr_intensities)[i], Y = colnames(aggr_intensities)[j])
+
+  for (i in 1:(length(group_levels)-1)) {
+    for (j in (i+1):length(group_levels)) {
+
+      col1 <- which(colnames(aggr_intensities) == group_levels[i])
+      col2 <- which(colnames(aggr_intensities) == group_levels[j])
+
+      name <- paste0("ratio_", group_levels[j], "_", group_levels[i])
+      FC <- foldChange(D = aggr_intensities, X = col1, Y = col2)
       peptide_ratios <- cbind(peptide_ratios, FC)
       colnames(peptide_ratios)[ncol(peptide_ratios)] <- name
     }
   }
 
-  return(cbind(pep_sequence = peptides, peptide_ratios))
+  return(cbind(id, peptide_ratios))
 }
 
 

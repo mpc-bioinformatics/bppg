@@ -7,10 +7,10 @@
 
 #' collapse protein nodes (merges duplicated columns of biadjacency submatrices)
 #'
-#' @param submatrix Submatrix list
+#' @param subgraphs subgraphs list
 #' @param sparse TRUE, if sparse matrix type is used
 #' @param fast TRUE, if combining of column names should be skipped (makes calculation faster if there are large subgraphs)
-#' @param matrix FALSE if submatrix is a list of subgraphs
+#' @param fc Are peptide ratios included in the graphs?
 #'
 #' @return submatrizes or subgraphs, depending on matrix argument
 #' @export
@@ -18,16 +18,24 @@
 #' @examples
 #' ### TODO
 #'
-collapse_protein_nodes <- function(submatrix, sparse = FALSE, fast = FALSE, matrix = TRUE) {
+collapse_protein_nodes <- function(subgraphs, sparse = FALSE, fast = FALSE, fc = FALSE) {
 
-  if (!matrix) {
-    submatrix <- lapply(submatrix, igraph::as_incidence_matrix)
+  submatrix <- lapply(subgraphs, igraph::as_incidence_matrix)
+
+  if(sparse) submatrix <- lapply(submatrix, function(x) as(x, "dgCMatrix"))
+
+  if (fc) {
+  peptide_ratios <- lapply(subgraphs, function(x) igraph::V(x)$pep_ratio)
+  peptide_ratios <- lapply(peptide_ratios, stats::na.omit)
   }
 
-
   for (i in seq_along(submatrix)) { # for each submatrix in submatrix
-    print(i)
+   # print(i)
     tmp <- submatrix[[i]]
+
+
+
+
     if(ncol(tmp) == 1) next
 
     if (sparse) {
@@ -64,11 +72,22 @@ collapse_protein_nodes <- function(submatrix, sparse = FALSE, fast = FALSE, matr
     submatrix[[i]] <- tmp2
   }
 
-  if (!matrix) {
-    submatrix <- lapply(submatrix, igraph::graph_from_incidence_matrix)
+  subgraphs <- lapply(submatrix, igraph::graph_from_incidence_matrix)
+
+  if (fc) {
+    for (i in 1:length(subgraphs)) {
+      G_tmp <- subgraphs[[i]]
+      peptide_ratios_tmp <- peptide_ratios[[i]]
+
+      igraph::vertex_attr(G_tmp, "pep_ratio", index = igraph::V(G_tmp)[!igraph::V(G_tmp)$type]) <- peptide_ratios_tmp
+
+      subgraphs[[i]] <- G_tmp
+    }
   }
 
-  return(submatrix)
+
+
+  return(subgraphs)
 }
 
 
@@ -80,11 +99,10 @@ collapse_protein_nodes <- function(submatrix, sparse = FALSE, fast = FALSE, matr
 
 #' Function to callapse peptide nodes (also the peptide ratios if present)
 #'
-#' @param submatrix Submatrix list
+#' @param subgraphs Submatrix list
 #' @param sparse TRUE, if sparse matrix type is used
 #' @param fc Are peptide ratios included?
 #' @param fast TRUE, if combining of column names should be skipped (makes calculation faster if there are large subgraphs)
-#' @param matrix FALSE if submatrix is a list of subgraphs
 #'
 #' @return Graphs with collapsed peptide nodes
 #' @export
@@ -92,36 +110,56 @@ collapse_protein_nodes <- function(submatrix, sparse = FALSE, fast = FALSE, matr
 #'
 #' @examples
 #' ### TODO
-collapse_peptide_nodes <- function(submatrix, sparse = FALSE, fc = TRUE, fast = FALSE, matrix = TRUE) {
+collapse_peptide_nodes <- function(subgraphs, sparse = FALSE, fc = TRUE, fast = FALSE) {
 
 
-  if (!matrix) {
-    submatrix <- lapply(submatrix, igraph::as_incidence_matrix)
+  submatrix <- lapply(subgraphs, igraph::as_incidence_matrix)
+  if(sparse) submatrix <- lapply(submatrix, function(x) as(x, "dgCMatrix"))
+
+
+  if (fc) {
+    peptide_ratios <- lapply(subgraphs, function(x) igraph::V(x)$pep_ratio)
+    peptide_ratios <- lapply(peptide_ratios, stats::na.omit)
+
+    peptide_ratios2 <- peptide_ratios
   }
+
 
 
   if (fc) {
     for (i in seq_along(submatrix)) {
 
-      tmp <- submatrix[[i]]$X
-      fc <- submatrix[[i]]$fc
+      tmp <- submatrix[[i]]
+
+      #fc <- submatrix[[i]]$fc
       ind <- duplicated(tmp, MARGIN = 1)
       tmp2 <- tmp[!ind, , drop = FALSE]
 
+      peptide_ratios_tmp <- peptide_ratios[[i]]
+
+      fc_tmp_geom <- rep(NA, nrow(tmp2))
       fc_tmp <- rep(NA, nrow(tmp2))
+
       for (j in 1:nrow(tmp2)) {
         ind <- apply(tmp, 1, function(x) all(x == tmp2[j,]))
-        fc_tmp[j] <- 2^mean(log2(fc[ind]))
+        #print(peptide_ratios_tmp[ind])
+        fc_tmp_geom[j] <- 2^mean(log2(peptide_ratios_tmp[ind]))
+        fc_tmp[j] <- BBmisc::collapse(peptide_ratios_tmp[ind], sep = ";")
+
         groupname <- BBmisc::collapse(rownames(tmp)[ind], sep = ";")
         rownames(tmp2)[j] <- groupname
       }
-      submatrix[[i]]$X <- tmp2
-      submatrix[[i]]$fc <- fc_tmp
+      submatrix[[i]] <- tmp2
+
+      peptide_ratios[[i]] <- fc_tmp_geom
+      peptide_ratios2[[i]] <- fc_tmp
+
     }
   } else {
     for (i in seq_along(submatrix)) {
-      print(i)
+      #print(i)
       tmp <- submatrix[[i]]
+
       if(sparse) {
         ind <- duplicated(tmp, MARGIN = 1) #duplicated.dgCMatrix
 
@@ -159,11 +197,22 @@ collapse_peptide_nodes <- function(submatrix, sparse = FALSE, fc = TRUE, fast = 
     }
   }
 
-  if (!matrix) {
-    submatrix <- lapply(submatrix, igraph::graph_from_incidence_matrix)
+  subgraphs <- lapply(submatrix, igraph::graph_from_incidence_matrix)
+
+  if (fc) {
+    for (i in 1:length(subgraphs)) {
+      G_tmp <- subgraphs[[i]]
+      peptide_ratios_tmp <- peptide_ratios[[i]]
+      peptide_ratios2_tmp <- peptide_ratios2[[i]]
+
+      igraph::vertex_attr(G_tmp, "pep_ratio", index = igraph::V(G_tmp)[!igraph::V(G_tmp)$type]) <- peptide_ratios_tmp
+      igraph::vertex_attr(G_tmp, "pep_ratio2", index = igraph::V(G_tmp)[!igraph::V(G_tmp)$type]) <- peptide_ratios2_tmp
+
+      subgraphs[[i]] <- G_tmp
+    }
   }
 
-  return(submatrix)
+  return(subgraphs)
 
 }
 
