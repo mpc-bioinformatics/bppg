@@ -93,7 +93,7 @@ calculateIsomorphList <- function(Submatrix, matrix = TRUE) {
 #' ### TODO
 plotIsomorphList <- function(isomorph_list, Graphs, path, title = TRUE, pdf = TRUE,
                              cex.title = 1, which_graphs = NULL, mfrow = c(1,1), save = TRUE,
-                             title_format = "times+percent", ...) {
+                             title_format = "times+percent", ..., height = 15, width = 15) {
 
   ord_le_iso <- order(lengths(isomorph_list), decreasing = TRUE) # order by number of occurrences
   if (!is.null(which_graphs)) ord_le_iso <- ord_le_iso[which_graphs]
@@ -107,7 +107,7 @@ plotIsomorphList <- function(isomorph_list, Graphs, path, title = TRUE, pdf = TR
   graphics::par(mfrow = mfrow)
   j <- 1
   for (i in ord_le_iso) {
-    if (!pdf & save) grDevices::png(paste0(path, "_", j, ".png"), res = 500, units = "cm", height = 15, width = 15)
+    if (!pdf & save) grDevices::png(paste0(path, "_", j, ".png"), res = 500, units = "cm", height = height, width = width)
     ind <- isomorph_list[[i]][1]  # plot first element for each isomorph group
     G <- Graphs[[ind]]
     types <- igraph::vertex_attr(G)$type # type = 0 peptides, type = 1 proteins
@@ -120,8 +120,9 @@ plotIsomorphList <- function(isomorph_list, Graphs, path, title = TRUE, pdf = TR
     if(!pdf & save) grDevices::dev.off()
     j <- j + 1
   }
+  graphics::par(mfrow = c(1,1))
   if(pdf & save) grDevices::dev.off()
 
-  graphics::par(mfrow = c(1,1))
+
 }
 
