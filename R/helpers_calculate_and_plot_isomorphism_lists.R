@@ -105,6 +105,7 @@ plotIsomorphList <- function(isomorph_list, Graphs, path, title = TRUE, pdf = TR
 
   if(pdf & save) grDevices::pdf(paste0(path, ".pdf"))
   graphics::par(mfrow = mfrow)
+  graphics::par(mai = c(0.1, 0.5, 0.4, 0), oma = c(0,0,0,0), mfrow = mfrow)
   j <- 1
   for (i in ord_le_iso) {
     if (!pdf & save) grDevices::png(paste0(path, "_", j, ".png"), res = 500, units = "cm", height = height, width = width)
