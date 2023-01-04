@@ -50,7 +50,7 @@ generate_graphs_from_FASTA <- function(fasta, collapse_protein_nodes = TRUE,
     cat("Collapsing peptide nodes ...")
     graphs <- bppg::collapse_peptide_nodes(graphs, sparse = TRUE, fast = TRUE, fc = FALSE)
     if(save_intermediate) saveRDS(graphs,
-                                  file = paste0(result_path, "subgraphs_coll_prot_pep", suffix, ".rds"))
+                                  file = paste0(result_path, "subgraphs_coll_prot_pep_", suffix, ".rds"))
   }
 
   return(graphs)

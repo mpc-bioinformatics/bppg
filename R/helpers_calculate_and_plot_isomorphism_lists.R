@@ -92,7 +92,7 @@ calculateIsomorphList <- function(Submatrix, matrix = TRUE) {
 #' @examples
 #' ### TODO
 plotIsomorphList <- function(isomorph_list, Graphs, path, title = TRUE, pdf = TRUE,
-                             cex.title = 1, which_graphs = NULL, mfrow = NULL, save = TRUE,
+                             cex.title = 1, which_graphs = NULL, mfrow = c(1,1), save = TRUE,
                              title_format = "times+percent", ...) {
 
   ord_le_iso <- order(lengths(isomorph_list), decreasing = TRUE) # order by number of occurrences
@@ -102,8 +102,9 @@ plotIsomorphList <- function(isomorph_list, Graphs, path, title = TRUE, pdf = TR
   percentages <- round(le_iso/le_iso_total * 100, 2) # percentages (proportion of all graphs)
 
 
-  if (!is.null(mfrow)) {graphics::par(mfrow = mfrow)}
+
   if(pdf & save) grDevices::pdf(paste0(path, ".pdf"))
+  graphics::par(mfrow = mfrow)
   j <- 1
   for (i in ord_le_iso) {
     if (!pdf & save) grDevices::png(paste0(path, "_", j, ".png"), res = 500, units = "cm", height = 15, width = 15)
@@ -121,7 +122,6 @@ plotIsomorphList <- function(isomorph_list, Graphs, path, title = TRUE, pdf = TR
   }
   if(pdf & save) grDevices::dev.off()
 
-  if (!is.null(mfrow)) {graphics::par(mfrow = c(1,1))}
-
+  graphics::par(mfrow = c(1,1))
 }
 
