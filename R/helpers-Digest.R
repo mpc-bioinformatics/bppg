@@ -21,7 +21,7 @@
 #' digested_proteins <- Digest2(fasta[[1]])
 
 
-Digest2 <- function (sequence, enzyme = "trypsin", missed = 0, warn = TRUE) {
+Digest2 <- function (sequence, enzyme = "trypsin", missed = 0, warn = TRUE, remove_initial_M = FALSE) {
   seq_vector <- strsplit(sequence, split = "")[[1]]
   end_position <- length(seq_vector)
   if (enzyme == "trypsin") {
@@ -77,6 +77,21 @@ Digest2 <- function (sequence, enzyme = "trypsin", missed = 0, warn = TRUE) {
       results <- rbind(results, peptide)
     }
   }
+
+
+  if (remove_initial_M) {
+
+    y2 <- results[results$start == 1,] ## there should be at least 1
+    y2 <- y2[substr(y2$sequence, 1, 1) == "M"] ## is first amino acid M?
+
+    if (length(y2) > 0) {
+      y2$sequence <- substr(y2$sequence, 2, nchar(y2$sequence))
+      y2$start <- 2
+      results <- rbind(results, y2)
+    }
+
+  }
+
    return(results)
 }
 
@@ -138,7 +153,7 @@ digest_fasta <- function(fasta, missed_cleavages = 2, min_aa = 6, max_aa = 50, .
   digested_proteins <- pbapply::pblapply(fasta, function(x) {
     sequ <- x
     class(sequ) <- NULL
-    y <- try({Digest2(sequ, missed = missed_cleavages, warn = FALSE, ...)})
+    y <- try({Digest2(sequ, missed = missed_cleavages, warn = FALSE, remove_initial_M = TRUE, ...)})
     ind <- nchar(as.character(y$sequence)) >= min_aa & nchar(as.character(y$sequence)) <= max_aa
     return(as.character(y$sequence[ind]))
   })

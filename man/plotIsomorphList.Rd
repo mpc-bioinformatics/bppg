@@ -12,10 +12,12 @@ plotIsomorphList(
   pdf = TRUE,
   cex.title = 1,
   which_graphs = NULL,
-  mfrow = NULL,
+  mfrow = c(1, 1),
   save = TRUE,
   title_format = "times+percent",
-  ...
+  ...,
+  height = 15,
+  width = 15
 )
 }
 \arguments{

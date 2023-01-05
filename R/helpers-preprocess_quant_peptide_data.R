@@ -172,7 +172,7 @@ calculate_peptide_ratios <- function(aggr_intensities, id_cols = 1, group_levels
       col1 <- which(colnames(aggr_intensities) == group_levels[i])
       col2 <- which(colnames(aggr_intensities) == group_levels[j])
 
-      name <- paste0("ratio_", group_levels[j], "_", group_levels[i])
+      name <- paste0("ratio_", group_levels[i], "_", group_levels[j])
       FC <- foldChange(D = aggr_intensities, X = col1, Y = col2)
       peptide_ratios <- cbind(peptide_ratios, FC)
       colnames(peptide_ratios)[ncol(peptide_ratios)] <- name

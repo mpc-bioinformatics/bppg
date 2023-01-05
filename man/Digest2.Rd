@@ -4,7 +4,13 @@
 \alias{Digest2}
 \title{Digestion of a single protein sequence.}
 \usage{
-Digest2(sequence, enzyme = "trypsin", missed = 0, warn = TRUE)
+Digest2(
+  sequence,
+  enzyme = "trypsin",
+  missed = 0,
+  warn = TRUE,
+  remove_initial_M = FALSE
+)
 }
 \arguments{
 \item{sequence}{Protein sequence as character.}
