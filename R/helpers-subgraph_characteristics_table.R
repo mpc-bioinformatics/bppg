@@ -1,26 +1,32 @@
 
-### Calculate subgraph characteristics table
-
-### TODO: irgendwas stimmt hier nicht? ZUmindest bei den Prototypen läuft hier was falsch!
-
-
-calculate_subgraph_characteristics <- function(S, fastalevel = TRUE, comparison = NULL) {
-
-  require(igraph)
-  require(pbapply)
+#' Generates a table with characteristics for each subgraph in a list.
+#'
+#' @param S list of subgraphs, where peptide and protein nodes are collapsed
+#' @param S2 list of subgraphs, where only protein nodes are collapsed
+#' @param S3 list of subgraphs, where nodes are not collapsed
+#' @param fastalevel Are the subgraphs on fasta level?
+#' @param comparison name of comparison, for quantitative level (not in use currently)
+#' @param file where to save the table.
+#'
+#'
+#' @return
+#' @export
+#'
+#' @examples
+calculate_subgraph_characteristics <- function(S, S2, S3, fastalevel = TRUE, comparison = NULL, file = NULL) {
 
   Data <- NULL
 
   #add progress bar to loop
   number_of_iterations <- length(S)
-  pb <- startpb(0, length(S))
-  on.exit(closepb(pb))
-
-
+  pb <- pbapply::startpb(0, length(S))
+  on.exit(pbapply::closepb(pb))
 
   for (i in 1:length(S)) {
 
     G_tmp <- S[[i]]
+    G2_tmp <- S2[[i]]
+    G3_tmp <- S3[[i]]
     S_tmp <- igraph::as_incidence_matrix(G_tmp)
 
 
@@ -28,26 +34,40 @@ calculate_subgraph_characteristics <- function(S, fastalevel = TRUE, comparison 
     nr_peptides <- sum(!igraph::V(G_tmp)$type)
     nr_edges <- igraph::gsize(G_tmp)
 
-    nr_edges_per_pep_node <- degree(G_tmp)[!igraph::V(G_tmp)$type]
+    nr_edges_per_pep_node <- igraph::degree(G_tmp)[!igraph::V(G_tmp)$type]
     nr_unique_peptides <- sum(nr_edges_per_pep_node == 1)
     nr_shared_peptides <- sum(nr_edges_per_pep_node > 1)
 
+    nr_protein_accessions <- sum(igraph::V(G3_tmp)$type)
+    nr_peptide_sequences <- sum(!igraph::V(G2_tmp)$type)
+    nr_edges_per_pep_node2 <- igraph::degree(G2_tmp)[!igraph::V(G2_tmp)$type]
+    nr_peptide_sequences_unique <- sum(nr_edges_per_pep_node2 == 1)
+    nr_peptide_sequences_shared <- sum(nr_edges_per_pep_node2 > 1)
 
-    D_tmp <- data.frame(ID = i,
+
+
+    D_tmp <- data.frame(graph_ID = i,
                         nr_protein_nodes = nr_proteins,
                         nr_peptide_nodes = nr_peptides,
                         nr_unique_peptide_nodes = nr_unique_peptides,
                         nr_shared_peptide_nodes = nr_shared_peptides,
-                        nr_edges = nr_edges
+                        nr_edges = nr_edges,
+                        nr_protein_accessions = nr_protein_accessions,
+                        nr_peptide_sequences = nr_peptide_sequences,
+                        nr_peptide_sequences_unique = nr_peptide_sequences_unique,
+                        nr_peptide_sequences_shared = nr_peptide_sequences_shared
+
     )
 
     Data <- rbind(Data, D_tmp)
 
-    setpb(pb, i)
+    pbapply::setpb(pb, i)
   }
 
   #progress bar command
   invisible(NULL)
+
+  if (!is.null(file)) openxlsx::write.xlsx(Data, file, overwrite = TRUE)
 
   return(Data)
 }
