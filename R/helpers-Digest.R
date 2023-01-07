@@ -9,6 +9,7 @@
 #' @param enzyme "trypsin" (does not cut before proline) or "trypsin.strict" ().
 #' @param missed Maximal number of missed cleavages.
 #' @param warn Print out warnings, e.g. if a protein has no cleavage site.
+#' @param remove_initial_M also return peptides where intital Methionine is removed?
 #'
 #' @return vector of peptides
 #' @export

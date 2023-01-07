@@ -85,6 +85,8 @@ calculateIsomorphList <- function(Submatrix, matrix = TRUE) {
 #' @param save if TRUE, graphs will be saved as pdf or png
 #' @param title_format "times+percent" or "percent"
 #' @param ... further arguments to plotBipartiteGraph
+#' @param height height of plot
+#' @param width width of plot
 #'
 #' @return plots saved as a pdf or multiple png files
 #' @export

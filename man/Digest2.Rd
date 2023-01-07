@@ -20,6 +20,8 @@ Digest2(
 \item{missed}{Maximal number of missed cleavages.}
 
 \item{warn}{Print out warnings, e.g. if a protein has no cleavage site.}
+
+\item{remove_initial_M}{also return peptides where intital Methionine is removed?}
 }
 \value{
 vector of peptides

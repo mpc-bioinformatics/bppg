@@ -26,6 +26,12 @@ calculate_subgraph_characteristics(
 
 \item{file}{where to save the table.}
 }
+\value{
+table
+}
 \description{
 Generates a table with characteristics for each subgraph in a list.
+}
+\examples{
+# TODO
 }

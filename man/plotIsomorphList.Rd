@@ -42,6 +42,10 @@ plotIsomorphList(
 \item{title_format}{"times+percent" or "percent"}
 
 \item{...}{further arguments to plotBipartiteGraph}
+
+\item{height}{height of plot}
+
+\item{width}{width of plot}
 }
 \value{
 plots saved as a pdf or multiple png files
