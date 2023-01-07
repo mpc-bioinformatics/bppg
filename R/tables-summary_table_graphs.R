@@ -1,6 +1,4 @@
 
-### Calculate summary of graphs, for
-
 #' Calculate number for table
 #' @param subgraph_char_tab subgraphs characteristics tables
 #' @param isomorph_list isomorph lists
@@ -9,7 +7,7 @@
 #' @export
 #'
 #' @examples
-table1_calculate_numbers <- function(subgraph_char_tab, isomorph_list) {
+calculate_summary_table <- function(subgraph_char_tab, isomorph_list) {
 
   D <- subgraph_char_tab
 
