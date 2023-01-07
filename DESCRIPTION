@@ -17,6 +17,8 @@ Imports:
     igraph,
     limma,
     Matrix,
+    methods,
+    openxlsx,
     pbapply,
     robustbase,
     seqinr,

@@ -9,10 +9,11 @@
 #' @param file where to save the table.
 #'
 #'
-#' @return
+#' @return table
 #' @export
 #'
 #' @examples
+#' # TODO
 calculate_subgraph_characteristics <- function(S, S2, S3, fastalevel = TRUE, comparison = NULL, file = NULL) {
 
   Data <- NULL
