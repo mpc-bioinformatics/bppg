@@ -29,7 +29,7 @@ generate_graphs_from_FASTA <- function(fasta, collapse_protein_nodes = TRUE,
                                        ...) {
 
   cat("Digesting FASTA file...")
-  digested_proteins <- bppg::digest_fasta(fasta)#, ...)
+  digested_proteins <- bppg::digest_fasta(fasta, ...)#, ...)
   cat("Generating graphs ...")
   edgelist <- bppg::generate_edgelist(digested_proteins)
   if(save_intermediate) utils::write.table(edgelist, sep = "\t", row.names = FALSE,
