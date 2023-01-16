@@ -26,26 +26,31 @@ calculate_subgraph_characteristics <- function(S, S2, S3, fastalevel = TRUE, com
 
   for (j in 1:length(comparisons)) {
 
-    print(comparisons[j])
-
-  #add progress bar to loop
-  number_of_iterations <- length(S)
-  pb <- pbapply::startpb(0, length(S))
-  on.exit(pbapply::closepb(pb))
-
-  for (i in 1:length(S)) {
-
     if (fastalevel) {
-      G_tmp <- S[[i]]
-      G2_tmp <- S2[[i]]
-      G3_tmp <- S3[[i]]
-    } else{
-      G_tmp <- S[[j]][[i]]
-      G2_tmp <- S2[[j]][[i]]
-      G3_tmp <- S3[[j]][[i]]
+      S_tmp <- S
+      S2_tmp <- S2
+      S3_tmp <- S3
+    } else {
+      S_tmp <- S[[j]]
+      S2_tmp <- S2[[j]]
+      S3_tmp <- S3[[j]]
     }
 
-    S_tmp <- igraph::as_incidence_matrix(G_tmp)
+    print(comparisons[j])
+
+    #add progress bar to loop
+    number_of_iterations <- length(S_tmp)
+    pb <- pbapply::startpb(0, length(S_tmp))
+    on.exit(pbapply::closepb(pb))
+
+    for (i in 1:length(S_tmp)) {
+
+      G_tmp <- S_tmp[[i]]
+      G2_tmp <- S2_tmp[[i]]
+      G3_tmp <- S3_tmp[[i]]
+
+
+    #S_tmp <- igraph::as_incidence_matrix(G_tmp)
 
     nr_proteins <- sum(igraph::V(G_tmp)$type)
     nr_peptides <- sum(!igraph::V(G_tmp)$type)
