@@ -18,6 +18,16 @@ calculate_subgraph_characteristics <- function(S, S2, S3, fastalevel = TRUE, com
 
   Data <- NULL
 
+  if (fastalevel) {
+    comparisons <- 1
+  } else {
+    comparisons <- names(S)
+  }
+
+  for (j in 1:length(comparisons)) {
+
+    print(comparisons[j])
+
   #add progress bar to loop
   number_of_iterations <- length(S)
   pb <- pbapply::startpb(0, length(S))
@@ -25,11 +35,17 @@ calculate_subgraph_characteristics <- function(S, S2, S3, fastalevel = TRUE, com
 
   for (i in 1:length(S)) {
 
-    G_tmp <- S[[i]]
-    G2_tmp <- S2[[i]]
-    G3_tmp <- S3[[i]]
-    S_tmp <- igraph::as_incidence_matrix(G_tmp)
+    if (fastalevel) {
+      G_tmp <- S[[i]]
+      G2_tmp <- S2[[i]]
+      G3_tmp <- S3[[i]]
+    } else{
+      G_tmp <- S[[j]][[i]]
+      G2_tmp <- S2[[j]][[i]]
+      G3_tmp <- S3[[j]][[i]]
+    }
 
+    S_tmp <- igraph::as_incidence_matrix(G_tmp)
 
     nr_proteins <- sum(igraph::V(G_tmp)$type)
     nr_peptides <- sum(!igraph::V(G_tmp)$type)
@@ -56,7 +72,8 @@ calculate_subgraph_characteristics <- function(S, S2, S3, fastalevel = TRUE, com
                         nr_protein_accessions = nr_protein_accessions,
                         nr_peptide_sequences = nr_peptide_sequences,
                         nr_peptide_sequences_unique = nr_peptide_sequences_unique,
-                        nr_peptide_sequences_shared = nr_peptide_sequences_shared
+                        nr_peptide_sequences_shared = nr_peptide_sequences_shared,
+                        comparison = comparisons[j]
 
     )
 
@@ -64,10 +81,9 @@ calculate_subgraph_characteristics <- function(S, S2, S3, fastalevel = TRUE, com
 
     pbapply::setpb(pb, i)
   }
-
   #progress bar command
   invisible(NULL)
-
+}
   if (!is.null(file)) openxlsx::write.xlsx(Data, file, overwrite = TRUE)
 
   return(Data)
