@@ -83,9 +83,9 @@ Digest2 <- function (sequence, enzyme = "trypsin", missed = 0, warn = TRUE, remo
   if (remove_initial_M) {
 
     y2 <- results[results$start == 1,] ## there should be at least 1
-    y2 <- y2[substr(y2$sequence, 1, 1) == "M"] ## is first amino acid M?
+    y2 <- y2[substr(y2$sequence, 1, 1) == "M",] ## is first amino acid M?
 
-    if (length(y2) > 0) {
+    if (nrow(y2) > 0) {
       y2$sequence <- substr(y2$sequence, 2, nchar(y2$sequence))
       y2$start <- 2
       results <- rbind(results, y2)
