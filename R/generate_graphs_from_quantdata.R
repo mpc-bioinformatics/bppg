@@ -27,8 +27,8 @@ generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist) {
   ### broad filtering for edgelist for only quantifies peptides
   edgelist_filtered <- fasta_edgelist[fasta_edgelist[,2] %in% peptide_ratios$peptides, ]
 
-  id <- peptide_ratios[, id_cols]
-  peptide_ratios <- peptide_ratios[, -(id_cols)]
+  id <- peptide_ratios[, id_cols, drop = FALSE]
+  peptide_ratios <- peptide_ratios[, -(id_cols), drop = FALSE]
 
   colnames_split <- limma::strsplit2(colnames(peptide_ratios), "_")
   comparisons <- paste(colnames_split[,2], colnames_split[,3], sep = "_")
