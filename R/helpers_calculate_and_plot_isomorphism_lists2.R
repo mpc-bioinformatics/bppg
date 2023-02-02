@@ -4,24 +4,27 @@
 
 #' Calculation of isomorphism lists from submatrizes or subgraphs
 #'
-#' @param G list of subgraphs
-#' #'
+#' @param Submatrix list of submatrizes or subgraphs
+#' @param matrix Is submatrix a list of matrizes?
+#'
 #' @return isomorph_list is a list of indizes that belong in the same isomorphism class
 #'         Graphs are graph representatives
 #' @export
 #'
 #' @examples
 #' ### TODO
-calculateIsomorphList <- function(G) {
-
+calculateIsomorphList <- function(Submatrix, matrix = TRUE) {
+  if (matrix) {
+    Graphs <- lapply(Submatrix, convertToBipartiteGraph)
+  } else {
+    Graphs <- Submatrix
+  }
 
   isomorph_list <- list()
   k <- 1
 
-  ### TODO: progress bar
-
   for (i in 1:length(Graphs)) {
-    #print(i)
+    print(i)
     G <- Graphs[[i]]
     if (k == 1) {isomorph_list[[k]] <- i; k <- k + 1; next}
 
