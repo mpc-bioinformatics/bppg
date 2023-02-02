@@ -41,6 +41,8 @@ edgelist <- generate_edgelist(digested_proteins)
 
 write.table(edgelist, "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_fasta/edgelist.txt", sep = "\t", row.names = FALSE)
 
+
+
 ################################################################################
 ################################################################################
 ## read in quantitative peptide data
@@ -148,8 +150,6 @@ subgraphs <- readRDS("C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_
 
 subgraphs_coll_prot <- lapply(subgraphs, bppg::collapse_protein_nodes, sparse = FALSE, fast = FALSE, fc = TRUE)
 
-
-
 saveRDS(subgraphs_coll_prot, "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/subgraphs_coll_prot.rds")
 
 
@@ -159,33 +159,33 @@ saveRDS(subgraphs_coll_prot_pep, "C:/Users/schorkka/UNI/Promotion/promotion_proj
 
 
 
-#### TODO: hier weitermachen
-
 ################################################################################
 ################################################################################
 ################################################################################
 #### calculate isomorph lists separately per comparison
 
-library(igraph)
-source("R Scripts/bipartite_graph_generation_and_analysis/helper_functions/isomorph_classes_calculation_and_plotting_functions.R")
+#library(igraph)
+#source("R Scripts/bipartite_graph_generation_and_analysis/helper_functions/isomorph_classes_calculation_and_plotting_functions.R")
 
-S <- readRDS("data/D4_without_isoforms/D4_quant/preprocessed/Subgraphs_with_pep_ratios_mergedProteins.rds")
-
-S2 <- readRDS("data/D4_without_isoforms/D4_quant/preprocessed/Subgraphs_with_pep_ratios_mergedProteins.rds")
-names(S) <- names(S2)
+S <- readRDS("C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/subgraphs_coll_prot_pep.rds")
+#S2 <- readRDS("C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/Subgraphs_with_pep_ratios_mergedProteins.rds")
+#names(S) <- names(S2)
 
 isomorph_list <- list()
 
 for (i in 1:21) {
   print(i)
   S_tmp <- S[[i]]
-  isomorph_list[[i]] <- calculateIsomorphList(S_tmp, matrix = FALSE)
+  isomorph_list[[i]] <- bppg::calculateIsomorphList(S_tmp, matrix = FALSE)
 }
+### TODO: relativ langsam
 
 names(isomorph_list) <- names(S)
 
-save(isomorph_list, file = "data/D4_without_isoforms/D4_quant/isomorph_classes/isomorph_classes_merged_Proteins_D4.RData")
+save(isomorph_list, file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/isomorph_classes/isomorph_classes_coll_prot_pep_D4.RData")
 
+
+#### TODO: hier weitermachen
 
 
 
@@ -196,8 +196,8 @@ lengths(S)
 # [1] 4498 4424 3545 3594 3114 2812 4622 3796 3825 3347 3040 4263 4436 3997 3734 4351 3940 3665 4803 4549 4595
 S_all <- unlist(S, recursive = FALSE)
 
-isomorph_all <- calculateIsomorphList(S_all, matrix = FALSE)
-save(isomorph_all, file = "data/D4_without_isoforms/D4_quant/isomorph_classes/isomorph_classes_all.RData")
+isomorph_all <- bppg::calculateIsomorphList(S_all, matrix = FALSE)
+save(isomorph_all, file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/isomorph_classes/isomorph_classes_all.RData")
 
 
 

@@ -28,9 +28,9 @@ generate_graphs_from_FASTA <- function(fasta, collapse_protein_nodes = TRUE,
                                        suffix = NA, save_intermediate = FALSE,
                                        ...) {
 
-  cat("Digesting FASTA file...")
+  message("Digesting FASTA file...")
   digested_proteins <- bppg::digest_fasta(fasta, ...)#, ...)
-  cat("Generating graphs ...")
+  message("Generating graphs ...")
   edgelist <- bppg::generate_edgelist(digested_proteins)
   if(save_intermediate) utils::write.table(edgelist, sep = "\t", row.names = FALSE,
                                     file = paste0(result_path, "edgelist_", suffix, ".txt"))
@@ -40,14 +40,14 @@ generate_graphs_from_FASTA <- function(fasta, collapse_protein_nodes = TRUE,
                                     file = paste0(result_path, "subgraphs_", suffix, ".rds"))
 
   if (collapse_protein_nodes) {
-    cat("Collapsing protein nodes ...")
+    message("Collapsing protein nodes ...")
     graphs <- bppg::collapse_protein_nodes(graphs, sparse = TRUE, fast = TRUE, fc = FALSE)
     if(save_intermediate) saveRDS(graphs,
                                   file = paste0(result_path, "subgraphs_coll_prot_", suffix, ".rds"))
   }
 
   if (collapse_peptide_nodes) {
-    cat("Collapsing peptide nodes ...")
+    message("Collapsing peptide nodes ...")
     graphs <- bppg::collapse_peptide_nodes(graphs, sparse = TRUE, fast = TRUE, fc = FALSE)
     if(save_intermediate) saveRDS(graphs,
                                   file = paste0(result_path, "subgraphs_coll_prot_pep_", suffix, ".rds"))
@@ -55,3 +55,6 @@ generate_graphs_from_FASTA <- function(fasta, collapse_protein_nodes = TRUE,
 
   return(graphs)
 }
+
+
+
