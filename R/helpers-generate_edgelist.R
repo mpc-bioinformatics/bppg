@@ -10,7 +10,7 @@
 #'
 #' @examples
 #' library(seqinr)
-#' file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
+#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' digested_proteins <- digest_fasta(fasta)
 #' edgelist <- generate_edgelist(digested_proteins)
@@ -49,7 +49,10 @@ generate_edgelist <- function(digested_proteins) {
 
   #find and remove duplicate rows that would lead to duplicate edges
   duplicate_rows <- duplicated(edgelist, margin = 1)
-  edgelist <- edgelist[-which(duplicate_rows),]
+  edgelist <- edgelist[!duplicate_rows,]
+
+  edgelist <- as.data.frame(edgelist)
+  colnames(edgelist) <- c("protein", "peptide")
 
   return(edgelist)
 }

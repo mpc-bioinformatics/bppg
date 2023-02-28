@@ -17,7 +17,7 @@ Generate edgelist from list of in silico digested proteins
 }
 \examples{
 library(seqinr)
-file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
+file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 digested_proteins <- digest_fasta(fasta)
 edgelist <- generate_edgelist(digested_proteins)

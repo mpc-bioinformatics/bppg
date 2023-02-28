@@ -9,7 +9,7 @@ generate_graphs_from_FASTA(
   collapse_protein_nodes = TRUE,
   collapse_peptide_nodes = TRUE,
   result_path = NULL,
-  suffix = NA,
+  suffix = NULL,
   save_intermediate = FALSE,
   ...
 )
@@ -36,8 +36,8 @@ subgraphs (i.e. connected components) from the graph generated from the FASTA fi
 Generate graphs from a FASTA file
 }
 \examples{
-#' library(seqinr)
-file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
+library(seqinr)
+file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 graphs <- bppg::generate_graphs_from_FASTA(fasta)
 

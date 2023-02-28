@@ -4,9 +4,6 @@
 ### TODO: Normalization
 
 
-
-
-
 #' Import of MaxQuant's peptide.txt-table
 #'
 #' @param path Path to the peptides.txt table

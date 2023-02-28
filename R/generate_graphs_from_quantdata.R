@@ -1,6 +1,34 @@
 
 
-generate_graphs_from_quant_data <- function() {
+# D: data frame with peptide-level data (1st column peptide Sequence, then Intensities)
+# fasta: fasta file (to assign peptides to proteins)
+
+# fasta1 <- seqinr::read.fasta(file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_fasta/20220722_uniprot_proteome_UP000005640_HomoSapiens_v2022_02.fasta",
+#                              seqtype = "AA", as.string = TRUE)
+# names(fasta1) <- limma::strsplit2(names(fasta1), "\\|")[,2]
+# fasta2 <- seqinr::read.fasta(file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_fasta/20220722_uniprot_proteome_UP000000589_MusMusculus_v2022_02.fasta",
+#                              seqtype = "AA", as.string = TRUE)
+# names(fasta2) <- limma::strsplit2(names(fasta2), "\\|")[,2]
+# fasta3 <- seqinr::read.fasta(file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_fasta/MaxQuant_contaminants_v2_3_1.fasta",
+#                              seqtype = "AA", as.string = TRUE)
+# names(fasta3) <- paste0("CON_", names(fasta3))
+# fasta <- c(fasta1, fasta2, fasta3)
+#
+# DATA <- bppg::read_MQ_peptidetable("C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/peptides.txt",
+#                                    LFQ = TRUE, remove_contaminants = FALSE)
+#
+# DATA2 <- bppg::read_MQ_peptidetable("C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/peptides.txt",
+#                                    LFQ = FALSE, remove_contaminants = FALSE)
+#
+
+
+
+
+generate_graphs_from_quant_data <- function(D, fasta) {
+
+
+
+
 
   ### preprocessing
 

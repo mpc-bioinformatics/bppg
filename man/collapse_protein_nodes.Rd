@@ -24,4 +24,5 @@ collapse protein nodes (merges duplicated columns of biadjacency submatrices)
 \examples{
 ### TODO
 
+
 }

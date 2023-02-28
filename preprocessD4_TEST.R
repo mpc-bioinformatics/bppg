@@ -96,8 +96,6 @@ proteins2 <- BBmisc::convertListOfRowsToDataFrame(proteins)
 D <- cbind(peptides = DATA_filtered$Sequence, proteins = proteins2$proteins,
            prot_origin = proteins2$prot_origin, DATA_filtered[,-1])
 D <- D[D$proteins != "",]
-
-
 write.table(D, "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/preprocessed_peptide_data_D4.txt",
             sep = "\t", row.names = FALSE)
 

@@ -1,6 +1,4 @@
-
-### TODO: cat funktioniert nicht einwandfrei
-### TODO; Matrix package wird auf jeden Fall benötigt
+### TODO: Matrix package wird auf jeden Fall benötigt
 
 #' Generate graphs from a FASTA file
 #'
@@ -17,41 +15,56 @@
 #' @export
 #'
 #' @examples
-#' #' library(seqinr)
-#' file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
+#' library(seqinr)
+#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' graphs <- bppg::generate_graphs_from_FASTA(fasta)
 #'
 generate_graphs_from_FASTA <- function(fasta, collapse_protein_nodes = TRUE,
                                        collapse_peptide_nodes = TRUE,
                                        result_path = NULL,
-                                       suffix = NA, save_intermediate = FALSE,
+                                       suffix = NULL, save_intermediate = FALSE,
                                        ...) {
 
   message("Digesting FASTA file...")
   digested_proteins <- bppg::digest_fasta(fasta, ...)#, ...)
-  message("Generating graphs ...")
+  message("Generating edgelist ...")
   edgelist <- bppg::generate_edgelist(digested_proteins)
-  if(save_intermediate) utils::write.table(edgelist, sep = "\t", row.names = FALSE,
-                                    file = paste0(result_path, "edgelist_", suffix, ".txt"))
-
-  graphs <- bppg::generate_graphs_from_edgelist(edgelist)
-  if(save_intermediate) saveRDS(graphs,
-                                    file = paste0(result_path, "subgraphs_", suffix, ".rds"))
-
-  if (collapse_protein_nodes) {
-    message("Collapsing protein nodes ...")
-    graphs <- bppg::collapse_protein_nodes(graphs, sparse = TRUE, fast = TRUE, fc = FALSE)
-    if(save_intermediate) saveRDS(graphs,
-                                  file = paste0(result_path, "subgraphs_coll_prot_", suffix, ".rds"))
+  if (save_intermediate) {
+    message("Saving edgelist ...")
+    utils::write.table(edgelist, sep = "\t", row.names = FALSE,
+                                           file = paste0(result_path, "edgelist_", suffix, ".txt"))
   }
 
-  if (collapse_peptide_nodes) {
-    message("Collapsing peptide nodes ...")
-    graphs <- bppg::collapse_peptide_nodes(graphs, sparse = TRUE, fast = TRUE, fc = FALSE)
-    if(save_intermediate) saveRDS(graphs,
-                                  file = paste0(result_path, "subgraphs_coll_prot_pep_", suffix, ".rds"))
+
+  if (collapse_protein_nodes | collapse_peptide_nodes) {
+    message("Collapsing nodes ...")
+    edgelist_coll <- bppg::collapse_edgelist(edgelist,
+                                             collapse_protein_nodes = collapse_protein_nodes,
+                                             collapse_peptide_nodes = collapse_peptide_nodes)
   }
+
+  if(collapse_protein_nodes & collapse_peptide_nodes) suffix2 <- "collprotpept_"
+  if(collapse_peptide_nodes & !collapse_protein_nodes) suffix2 <- "collpept_"
+  if(collapse_protein_nodes & !collapse_peptide_nodes) suffix2 <- "collprot_"
+  if(!collapse_protein_nodes & !collapse_peptide_nodes) suffix2 <- NULL
+
+  if(save_intermediate & (collapse_protein_nodes | collapse_peptide_nodes)) {
+    utils::write.table(edgelist_coll, sep = "\t", row.names = FALSE,
+                       file = paste0(result_path, "edgelist_", suffix2, suffix, ".txt"))
+  }
+
+  if (collapse_protein_nodes | collapse_peptide_nodes) {
+  message("Generating graphs ...")
+  graphs <- bppg::generate_graphs_from_edgelist(edgelist_coll)
+  } else {
+    message("Generating graphs ...")
+    graphs <- bppg::generate_graphs_from_edgelist(edgelist)
+  }
+
+
+  if (save_intermediate) saveRDS(graphs,
+                                 file = paste0(result_path, "subgraphs_", suffix2, suffix, ".rds"))
 
   return(graphs)
 }

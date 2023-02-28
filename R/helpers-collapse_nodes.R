@@ -3,6 +3,7 @@
 ###       die auch die Namen der Proteine behält.
 ###       Diese Version müsste dann auch Peptid-Knoten collapsen können, sodass man nur eine
 ###       Funktion braucht.
+### TODO: progress bar!
 
 
 #' collapse protein nodes (merges duplicated columns of biadjacency submatrices)
@@ -18,11 +19,18 @@
 #' @examples
 #' ### TODO
 #'
+#'
+
+#subgraphs <- graphs
+#sparse <- TRUE
+
+
+
 collapse_protein_nodes <- function(subgraphs, sparse = FALSE, fast = FALSE, fc = FALSE) {
 
   submatrix <- lapply(subgraphs, igraph::as_incidence_matrix)
 
-  if(sparse) submatrix <- lapply(submatrix, function(x) as(x, "dgCMatrix"))
+  if(sparse) submatrix <- lapply(submatrix, function(x) as(x, "sparseMatrix"))
 
   if (fc) {
   peptide_ratios <- lapply(subgraphs, function(x) igraph::V(x)$pep_ratio)
