@@ -22,18 +22,54 @@
 #
 
 
+### TODO: save end and intermediate results
+
+#' Generate graphs from quantitative peptide-level data
+#'
+#' @param D data set with peptide sequence as first column and peptide intensities in subsequent columns
+#' (e.g. output from bppg::read_MQ_peptidetable)
+#' @param fasta fasta file used for identification of peptides in D
+#'
+#' @return list of list of graphs
+#' @export
+#'
+#' @examples
+generate_graphs_from_quant_data <- function(D, fasta, ...) {
+  message("Digesting FASTA file...")
+  digested_proteins <- bppg::digest_fasta(fasta, ...)#, ...)
+  message("Generating edgelist ...")
+  edgelist <- bppg::generate_edgelist(digested_proteins)
+  #### TODO: Möglichkeit, eine vorberechnete edgelist anzugeben!
+  #edgelist_filtered <- edgelist[edgelist[,2] %in% D$Sequence, ]
 
 
-generate_graphs_from_quant_data <- function(D, fasta) {
+  #prepare for normalization
+  #id <- D[,1]
+  intensities <- D[,-1]
+  #normalize Intensities
+  # TODO: auch Median, Quantilsnormalisierung und LFQ-Normalisierung von MaxQuant erlauben?
+  intensities <- 2^limma::normalizeBetweenArrays(log2(intensities), method = "cyclicloess")
 
 
+  #D <- read.table(file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/preprocessed_peptide_data_D4.txt", header = TRUE)
+  group <- factor(limma::strsplit2(colnames(intensities), "_")[,1])
+  D_aggr <- bppg::aggregate_replicates(D, method = "mean", missing.limit = 0.4,
+                                       group = group, id_cols = 1)
+  #write.table(D_aggr, file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/aggr_pept_int_D4.txt",
+  #            row.names = FALSE, sep = "\t")
+  #save(group, file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/group.RData")
+#  D_aggr <- read.table("C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/aggr_pept_int_D4.txt",
+ #                        sep = "\t", header = TRUE)
+  groups  <- levels(group)
 
+  peptide_ratios <- bppg::calculate_peptide_ratios(aggr_intensities = D_aggr, id_cols = 1, group_levels = groups)
+  #write.table(peptide_ratios, file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/peptide_ratios.txt",
+  #            row.names = FALSE, sep = "\t")
 
+  ## generierung der Graphen (man braucht peptide_ratios und fast_edgelist!)
 
-  ### preprocessing
-
-  ## generierung der Graphen
-
+  graphs <- bppg::generate_quant_graphs(peptide_ratios = peptide_ratios, id_cols = 1, fasta_edgelist = edgelist)
+  return(graphs)
 
 }
 

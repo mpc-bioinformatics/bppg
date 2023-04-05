@@ -19,7 +19,8 @@
 #' file <- system.file("extdata", "peptides.txt", package = "bppg")
 #' D <- read_MQ_peptidetable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 read_MQ_peptidetable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
-                                 rename_columns = TRUE, zeroToNA = TRUE) {
+                                 rename_columns = TRUE, zeroToNA = TRUE,
+                                 remove_empty_rows = TRUE) {
 
   D <- utils::read.table(path, sep = "\t", header = TRUE)
 
@@ -46,6 +47,12 @@ read_MQ_peptidetable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
 
   if(zeroToNA) {
     intensities[intensities == 0] <- NA
+
+    if (remove_empty_rows) {
+      validvalues <- rowSums(!is.na(intensities))
+      intensities <- intensities[validvalues >= 1, ]
+    }
+
   }
 
 
