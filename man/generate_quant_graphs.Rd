@@ -4,7 +4,12 @@
 \alias{generate_quant_graphs}
 \title{Generate graphs from peptide ratio table, using an edgelist calculated on the fasta file}
 \usage{
-generate_quant_graphs(peptide_ratios, id_cols = 1, fasta_edgelist)
+generate_quant_graphs(
+  peptide_ratios,
+  id_cols = 1,
+  fasta_edgelist,
+  outpath = NULL
+)
 }
 \arguments{
 \item{peptide_ratios}{table with peptide ratios}

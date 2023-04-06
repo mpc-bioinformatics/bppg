@@ -50,6 +50,7 @@ read_MQ_peptidetable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
 
     if (remove_empty_rows) {
       validvalues <- rowSums(!is.na(intensities))
+      D <- D[validvalues >= 1, ]
       intensities <- intensities[validvalues >= 1, ]
     }
 
@@ -116,7 +117,7 @@ aggregate_replicates <- function(D, group, missing.limit = 0, method = "mean",
 
   res <- as.data.frame(res)
   colnames(res) <- levels(group)
-  res <- cbind(D[, id_cols], res)
+  res <- data.frame(sequence = D[, id_cols], res)
   return(res)
 }
 
@@ -183,7 +184,7 @@ calculate_peptide_ratios <- function(aggr_intensities, id_cols = 1, group_levels
     }
   }
 
-  return(cbind(id, peptide_ratios))
+  return(data.frame(sequence = id, peptide_ratios))
 }
 
 

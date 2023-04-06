@@ -34,13 +34,18 @@
 #' @export
 #'
 #' @examples
-generate_graphs_from_quant_data <- function(D, fasta, ...) {
+generate_graphs_from_quant_data <- function(D, fasta, outpath = NULL, ...) {
+
   message("Digesting FASTA file...")
   digested_proteins <- bppg::digest_fasta(fasta, ...)#, ...)
   message("Generating edgelist ...")
   edgelist <- bppg::generate_edgelist(digested_proteins)
   #### TODO: Möglichkeit, eine vorberechnete edgelist anzugeben!
   #edgelist_filtered <- edgelist[edgelist[,2] %in% D$Sequence, ]
+
+  if (!is.null(outpath)) {
+    openxlsx::write.xlsx(edgelist, file = paste0(outpath, "edgelist_fasta.xlsx"), overwrite = TRUE, keepNA = TRUE)
+  }
 
 
   #prepare for normalization
@@ -51,24 +56,26 @@ generate_graphs_from_quant_data <- function(D, fasta, ...) {
   intensities <- 2^limma::normalizeBetweenArrays(log2(intensities), method = "cyclicloess")
 
 
-  #D <- read.table(file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/preprocessed_peptide_data_D4.txt", header = TRUE)
   group <- factor(limma::strsplit2(colnames(intensities), "_")[,1])
   D_aggr <- bppg::aggregate_replicates(D, method = "mean", missing.limit = 0.4,
                                        group = group, id_cols = 1)
-  #write.table(D_aggr, file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/aggr_pept_int_D4.txt",
-  #            row.names = FALSE, sep = "\t")
-  #save(group, file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/group.RData")
-#  D_aggr <- read.table("C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/aggr_pept_int_D4.txt",
- #                        sep = "\t", header = TRUE)
+
+  if (!is.null(outpath)) {
+    openxlsx::write.xlsx(D_aggr, file = paste0(outpath, "aggr_peptides.xlsx"), overwrite = TRUE, keepNA = TRUE)
+  }
+
   groups  <- levels(group)
 
   peptide_ratios <- bppg::calculate_peptide_ratios(aggr_intensities = D_aggr, id_cols = 1, group_levels = groups)
-  #write.table(peptide_ratios, file = "C:/Users/schorkka/UNI/Promotion/promotion_project/data/D4_without_isoforms/D4_quant/preprocessed/peptide_ratios.txt",
-  #            row.names = FALSE, sep = "\t")
 
-  ## generierung der Graphen (man braucht peptide_ratios und fast_edgelist!)
+  if (!is.null(outpath)) {
+    openxlsx::write.xlsx(peptide_ratios, file = paste0(outpath, "peptide_ratios.xlsx"), overwrite = TRUE, keepNA = TRUE)
+  }
 
-  graphs <- bppg::generate_quant_graphs(peptide_ratios = peptide_ratios, id_cols = 1, fasta_edgelist = edgelist)
+
+  ## Generierung der Graphen (man braucht peptide_ratios und fast_edgelist!)
+  graphs <- bppg::generate_quant_graphs(peptide_ratios = peptide_ratios, id_cols = 1, fasta_edgelist = edgelist,
+                                        outpath = outpath)
   return(graphs)
 
 }
@@ -86,10 +93,16 @@ generate_graphs_from_quant_data <- function(D, fasta, ...) {
 #' @export
 #'
 #' @examples
-generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist) {
+generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, outpath = NULL) {
 
   ### broad filtering for edgelist for only quantifies peptides
-  edgelist_filtered <- fasta_edgelist[fasta_edgelist[,2] %in% peptide_ratios$peptides, ]
+
+  edgelist_filtered <- fasta_edgelist[fasta_edgelist[,2] %in% peptide_ratios$sequence, ]
+
+  if (!is.null(outpath)) {
+    openxlsx::write.xlsx(edgelist_filtered, file = paste0(outpath, "edgelist_filtered.xlsx"), overwrite = TRUE, keepNA = TRUE)
+  }
+
 
   id <- peptide_ratios[, id_cols, drop = FALSE]
   peptide_ratios <- peptide_ratios[, -(id_cols), drop = FALSE]
@@ -107,7 +120,7 @@ generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist) {
     comparison <- comparisons[i]
       #substr(colnames(peptide_ratios)[i], 4 , 100)
     fc <- peptide_ratios[,i]
-    peptides_tmp <- id$peptides[!is.na(fc)]  ## peptides that are quantified in this specific comparison
+    peptides_tmp <- id$sequence[!is.na(fc)]  ## peptides that are quantified in this specific comparison
     fc <- stats::na.omit(fc)
     edgelist_filtered2 <- edgelist_filtered[edgelist_filtered[,2] %in% peptides_tmp, ]
 

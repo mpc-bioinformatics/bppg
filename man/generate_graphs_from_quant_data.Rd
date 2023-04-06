@@ -4,7 +4,7 @@
 \alias{generate_graphs_from_quant_data}
 \title{Generate graphs from quantitative peptide-level data}
 \usage{
-generate_graphs_from_quant_data(D, fasta)
+generate_graphs_from_quant_data(D, fasta, outpath = NULL, ...)
 }
 \arguments{
 \item{D}{data set with peptide sequence as first column and peptide intensities in subsequent columns
