@@ -31,38 +31,3 @@ fasta <- c(fasta1, fasta2, fasta3)
 
 
 
-
-
-
-validvalues <- rowSums(!is.na(DATA[,-1]))
-barplot(table(validvalues))
-
-
-### read in pre-calculated edgelist ############################################
-edgelist <- read.table("C:/Users/schorkka/UNI/Promotion/promotion_project/data/D2_without_isoforms/D2_fasta/preprocessed/edgelist_collprot_.txt",
-                       sep = "\t", header = TRUE)
-edgelist_filtered <- edgelist[edgelist[,2] %in% DATA$Sequence, ]
-
-
-### use edgelist to assign proteins to the peptide data and save it
-proteins <- character(nrow(DATA))
-for (i in 1:nrow(DATA)) {
-  pep_tmp <- DATA$Sequence[i]
-  prot_tmp <- edgelist_filtered$protein[edgelist_filtered$peptide == pep_tmp]
-  proteins[i] <- paste(prot_tmp, collapse = ";")
-}
-
-
-
-#prepare for normalization
-id <- DATA[,1]
-intensities <- DATA[,-1]
-
-
-#normalize Intensities
-# TODO: auch Median, Quantilsnormalisierung und LFQ-Normalisierung von MaxQuant erlauben?
-intensities <- 2^limma::normalizeBetweenArrays(log2(intensities), method = "cyclicloess")
-
-
-
-

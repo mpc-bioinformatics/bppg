@@ -20,16 +20,16 @@ calculateIsomorphList <- function(G) {
 
   ### TODO: progress bar
 
-  for (i in 1:length(Graphs)) {
-    #print(i)
-    G <- Graphs[[i]]
+  for (i in 1:length(G)) {
+    print(i)
+    G_tmp <- G[[i]]
     if (k == 1) {isomorph_list[[k]] <- i; k <- k + 1; next}
 
     for (j in 1:(k-1)) {
-      iso <- igraph::isomorphic(G, Graphs[[isomorph_list[[j]][1]]]) # compare graph with 1st element if each isomorphism class
+      iso <- igraph::isomorphic(G_tmp, G[[isomorph_list[[j]][1]]]) # compare graph with 1st element if each isomorphism class
       if (iso) {
         cG <- igraph::canonical_permutation(G)
-        cG <- igraph::permute(G, cG$labeling)
+        cG <- igraph::permute(G_tmp, cG$labeling)
         cG2 <- igraph::canonical_permutation(Graphs[[isomorph_list[[j]][1]]])
         cG2 <- igraph::permute(Graphs[[isomorph_list[[j]][1]]], cG2$labeling)
 
