@@ -1,13 +1,13 @@
-
-G <- readRDS("../promotion_project_new/data/subgraphs_collprotpept_minAA7_mc2.rds")
-
-library(igraph)
-
-
-x <- sapply(G, gorder)
-
-
-G <- G[order(x)]
+#
+# G <- readRDS("../promotion_project_new/data/subgraphs_collprotpept_minAA7_mc2.rds")
+#
+# library(igraph)
+#
+#
+# x <- sapply(G, gorder)
+#
+#
+# G <- G[order(x)]
 
 
 
@@ -88,9 +88,9 @@ generatePrototypeList <- function(G) {
   return(G)
 }
 
-P <- generatePrototypeList(G)
-
-saveRDS(P, file = "Graph_prototypes_D4.rds")
+# P <- generatePrototypeList(G)
+#
+# saveRDS(P, file = "Graph_prototypes_D4.rds")
 
 ### TODO: plotten und einzeln als graphml file abspeichern!
 
