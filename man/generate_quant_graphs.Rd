@@ -24,3 +24,6 @@ list of list of subgraphs
 \description{
 Generate graphs from peptide ratio table, using an edgelist calculated on the fasta file
 }
+\examples{
+### TODO: Einstellbar, ob Peptid-Knoten auch gemergt werden sollen (dann mit geom. Mittel als peptid-ratio).
+}

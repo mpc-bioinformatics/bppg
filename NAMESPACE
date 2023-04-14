@@ -2,6 +2,7 @@
 
 S3method(duplicated,dgCMatrix)
 export(Digest2)
+export(add_uniqueness_attributes)
 export(aggregate_replicates)
 export(assign_protein_accessions)
 export(calculateIsomorphList)

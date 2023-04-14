@@ -23,6 +23,8 @@ read_MQ_peptidetable(
 \item{rename_columns}{Rename columns? If TRUE, "Intensity." or "LFQ.intensity." are removed}
 
 \item{zeroToNA}{If TRUE, zeros are converted to NAs.}
+
+\item{remove_empty_rows}{}
 }
 \value{
 Dataframe with sequences and intensities

@@ -11,6 +11,7 @@
 #' @param remove_contaminants If TRUE, peptide sequences from potential contaminants are removed
 #' @param rename_columns Rename columns? If TRUE, "Intensity." or "LFQ.intensity." are removed
 #' @param zeroToNA If TRUE, zeros are converted to NAs.
+#' @param remove_empty_rows
 #'
 #' @return Dataframe with sequences and intensities
 #' @export

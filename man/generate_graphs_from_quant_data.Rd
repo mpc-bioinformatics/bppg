@@ -4,17 +4,33 @@
 \alias{generate_graphs_from_quant_data}
 \title{Generate graphs from quantitative peptide-level data}
 \usage{
-generate_graphs_from_quant_data(D, fasta, outpath = NULL, ...)
+generate_graphs_from_quant_data(
+  D,
+  fasta,
+  outpath = NULL,
+  normalize = TRUE,
+  missed_cleavages = 2,
+  min_aa = 6,
+  max_aa = 50,
+  ...
+)
 }
 \arguments{
 \item{D}{data set with peptide sequence as first column and peptide intensities in subsequent columns
 (e.g. output from bppg::read_MQ_peptidetable)}
 
 \item{fasta}{fasta file used for identification of peptides in D}
+
+\item{normalize}{currently only loess normalization possible}
+
+\item{...}{currently not in use}
 }
 \value{
 list of list of graphs
 }
 \description{
 Generate graphs from quantitative peptide-level data
+}
+\examples{
+# TODO
 }
