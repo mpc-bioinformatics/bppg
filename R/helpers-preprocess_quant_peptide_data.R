@@ -21,7 +21,7 @@
 #' D <- read_MQ_peptidetable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 read_MQ_peptidetable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
                                  rename_columns = TRUE, zeroToNA = TRUE,
-                                 remove_empty_rows = TRUE) {
+                                 remove_empty_rows = TRUE, further_columns_to_keep = NULL) {
 
   D <- utils::read.table(path, sep = "\t", header = TRUE)
 
@@ -57,8 +57,14 @@ read_MQ_peptidetable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
 
   }
 
+  if(is.null(further_columns_to_keep)) {
+    RES <- data.frame(Sequence = D$Sequence, intensities)
+  } else {
+    further_columns <- D[, further_columns_to_keep, drop = FALSE]
+    colnames(further_columns) <- further_columns_to_keep
+    RES <- data.frame(Sequence = D$Sequence, further_columns, intensities)
+  }
 
-  RES <- data.frame(Sequence = D$Sequence, intensities)
 
   return(RES)
 }

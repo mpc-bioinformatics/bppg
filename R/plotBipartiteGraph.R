@@ -49,6 +49,14 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
 
     G <- igraph::set_vertex_attr(G, name = "name", value = names_G)
   }
+  if (node_labels == "peptide_ratios") {
+    pep_ratios <- V(G)$pep_ratio
+    names_G[Layout[,2] == 1] <- limma::strsplit2(V(G)$name[Layout[,2] == 1], ";")[,1]
+
+   # names_peptides <- 1:sum(Layout[,2] == 0)
+    names_G[Layout[,2] == 0] <- round(pep_ratios[Layout[,2] == 0],2)
+    G <- igraph::set_vertex_attr(G, name = "name", value = names_G)
+  }
 
   type <- integer(length(igraph::V(G)))
   type[!igraph::V(G)$type] <- 1                  # "protein"
