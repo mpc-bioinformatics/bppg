@@ -8,7 +8,8 @@ generate_quant_graphs(
   peptide_ratios,
   id_cols = 1,
   fasta_edgelist,
-  outpath = NULL
+  outpath = NULL,
+  seq_column = "Sequence"
 )
 }
 \arguments{

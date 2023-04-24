@@ -8,10 +8,12 @@ generate_graphs_from_quant_data(
   D,
   fasta,
   outpath = NULL,
-  normalize = TRUE,
+  normalize = FALSE,
   missed_cleavages = 2,
   min_aa = 6,
   max_aa = 50,
+  id_columns = 1,
+  seq_column = "Sequence",
   ...
 )
 }

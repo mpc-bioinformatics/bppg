@@ -95,10 +95,8 @@ aggregate_replicates <- function(D, group, missing.limit = 0, method = "mean",
                                  id_cols = 1) {
 
 
-  peptides <- D$Sequence
+  id <- D[, id_cols, drop = FALSE]
   intensities <- D[,-(id_cols)]
-
-  ### TODO: Aus Spaltennamen Gruppe selber erschließen?
 
   res <- NULL
   for (i in 1:length(levels(group))) {
@@ -124,7 +122,7 @@ aggregate_replicates <- function(D, group, missing.limit = 0, method = "mean",
 
   res <- as.data.frame(res)
   colnames(res) <- levels(group)
-  res <- data.frame(sequence = D[, id_cols], res)
+  res <- data.frame(id, res)
   return(res)
 }
 
@@ -168,7 +166,7 @@ foldChange <- function(D, X, Y, useNA = FALSE) {
 #' ## TODO
 calculate_peptide_ratios <- function(aggr_intensities, id_cols = 1, group_levels = NULL) {
 
-  id <- aggr_intensities[,id_cols]
+  id <- aggr_intensities[,id_cols, drop = FALSE]
   aggr_intensities <- aggr_intensities[,-(id_cols)]
 
   if(is.null(group_levels)) {
@@ -191,7 +189,7 @@ calculate_peptide_ratios <- function(aggr_intensities, id_cols = 1, group_levels
     }
   }
 
-  return(data.frame(sequence = id, peptide_ratios))
+  return(data.frame(id, peptide_ratios))
 }
 
 

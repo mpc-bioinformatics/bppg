@@ -10,7 +10,8 @@ read_MQ_peptidetable(
   remove_contaminants = FALSE,
   rename_columns = TRUE,
   zeroToNA = TRUE,
-  remove_empty_rows = TRUE
+  remove_empty_rows = TRUE,
+  further_columns_to_keep = NULL
 )
 }
 \arguments{

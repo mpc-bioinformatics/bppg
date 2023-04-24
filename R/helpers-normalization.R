@@ -1,4 +1,5 @@
 
+# TODO: LTS Normalisierung einbauen, wie in stat_workflows!
 
 
 automatedNormalization <- function(D, D.name = deparse(substitute(D)),
