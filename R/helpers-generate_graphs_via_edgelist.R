@@ -15,10 +15,13 @@
 #' edgelist <- generate_edgelist(digested_proteins)
 #' res <- generate_graphs_from_edgelist(edgelist)
 #'
+
+## TODO: weitere Spalten in Edgelist (z.B. protein_origin)
+
 generate_graphs_from_edgelist <- function(edgelist) {
 
   #generate graph from edge matrix
-  G <- igraph::graph_from_edgelist(as.matrix(edgelist), directed = FALSE)
+  G <- igraph::graph_from_edgelist(as.matrix(edgelist[,1:2]), directed = FALSE)
 
   #assign vertex types to proteins and peptides for the graph to be bipartite
   igraph::V(G)[igraph::V(G)$name %in% edgelist[,1]]$type <- TRUE

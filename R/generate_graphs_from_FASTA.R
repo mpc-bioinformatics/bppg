@@ -24,12 +24,13 @@ generate_graphs_from_FASTA <- function(fasta, collapse_protein_nodes = TRUE,
                                        collapse_peptide_nodes = TRUE,
                                        result_path = NULL,
                                        suffix = NULL, save_intermediate = FALSE,
+                                       prot_origin = NULL,
                                        ...) {
 
   message("Digesting FASTA file...")
   digested_proteins <- bppg::digest_fasta(fasta, ...)#, ...)
   message("Generating edgelist ...")
-  edgelist <- bppg::generate_edgelist(digested_proteins)
+  edgelist <- bppg::generate_edgelist(digested_proteins, prot_origin = prot_origin)
   if (save_intermediate) {
     message("Saving edgelist ...")
     utils::write.table(edgelist, sep = "\t", row.names = FALSE,

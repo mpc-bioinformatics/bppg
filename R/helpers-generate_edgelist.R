@@ -19,12 +19,17 @@
 #'
 #'
 #'
-generate_edgelist <- function(digested_proteins) {
+generate_edgelist <- function(digested_proteins, prot_origin = NULL) {
   #calculate necessary number of edges by counting the peptides belonging to each protein
   mat_length <- sum(lengths(digested_proteins))
 
   #generate empty edge matrix of size (#edges)x2
-  edgelist <- matrix(nrow = mat_length, ncol = 2)
+  if (is.null(prot_origin)) {
+    edgelist <- matrix(nrow = mat_length, ncol = 2)
+  } else {
+    edgelist <- matrix(nrow = mat_length, ncol = 3)
+  }
+
 
   #add progress bar to loop
   number_of_iterations <- length(digested_proteins)
@@ -38,6 +43,10 @@ generate_edgelist <- function(digested_proteins) {
       for (j in 1:length(digested_proteins[[i]])){
         edgelist[current_row, 1] <- names(digested_proteins)[[i]]
         edgelist[current_row, 2] <- digested_proteins[[i]][[j]]
+
+        if (!is.null(prot_origin)) {
+          edgelist[current_row, 3] <- prot_origin[[i]]
+        }
         current_row <- current_row + 1
       }
       pbapply::setpb(pb, i)
@@ -52,7 +61,12 @@ generate_edgelist <- function(digested_proteins) {
   edgelist <- edgelist[!duplicate_rows,]
 
   edgelist <- as.data.frame(edgelist)
-  colnames(edgelist) <- c("protein", "peptide")
+  if(is.null(prot_origin)) {
+    colnames(edgelist) <- c("protein", "peptide")
+  } else {
+    colnames(edgelist) <- c("protein", "peptide", "prot_origin")
+  }
+
 
   return(edgelist)
 }

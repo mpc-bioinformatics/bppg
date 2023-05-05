@@ -11,7 +11,8 @@
 #'
 #' @examples
 #' ### TODO: Einstellbar, ob Peptid-Knoten auch gemergt werden sollen (dann mit geom. Mittel als peptid-ratio).
-generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, outpath = NULL, seq_column = "Sequence") {
+generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, outpath = NULL, seq_column = "Sequence",
+                                  collapse_protein_nodes = TRUE, collapse_peptide_nodes = FALSE) {
 
   ### broad filtering for edgelist for only quantifies peptides
 

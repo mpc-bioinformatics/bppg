@@ -31,7 +31,7 @@ collapse_edgelist <- function(edgelist,
     ### aggregate peptide sequences that belong to the same protein accession (1 row per protein accession)
     protEdges <- aggregate(data = edgelist, x = peptide ~ protein, function(x) paste(x, collapse = ";"))
     ### aggregate proteins with the same set of peptides (-> protein nodes)
-    protNodes <- aggregate(data = protEdges, x = protein ~ peptide, function(x) paste(sort(unique(x)), collapse = ";"))
+    protNodes <- aggregate(data = protEdges, x = protein ~ ., function(x) paste(sort(unique(x)), collapse = ";"))
   } else {
     protEdges <- aggregate(data = edgelist, x = peptide ~ protein, function(x) paste(sort(unique(x)), collapse = ";"))
     protNodes <- protEdges
