@@ -15,9 +15,9 @@ isomorphic_bipartite <- function(graph1, graph2, ...) {
 
   if(iso) {
     ### TODO: ist es nötig, die kanonische Permutation zu berechnen?
-    cG1 <- igraph::canonical_permutation(graph1)
+    cG1 <- igraph::canonical_permutation(graph1, colors  = igraph::V(graph1)$type)
     cG1 <- igraph::permute(graph1, cG1$labeling)
-    cG2 <- igraph::canonical_permutation(graph2)
+    cG2 <- igraph::canonical_permutation(graph2, colors  = igraph::V(graph2)$type)
     cG2 <- igraph::permute(graph2, cG2$labeling)
 
     iso <- all(igraph::V(cG1)$type == igraph::V(cG2)$type)
@@ -25,3 +25,7 @@ isomorphic_bipartite <- function(graph1, graph2, ...) {
   }
   return(iso)
 }
+
+
+
+

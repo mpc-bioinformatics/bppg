@@ -13,7 +13,9 @@ collapse_edgelist(
 \arguments{
 \item{edgelist}{edgelist}
 
-\item{collapse_peptide_nodes}{}
+\item{collapse_protein_nodes}{bla}
+
+\item{collapse_peptide_nodes}{bla}
 }
 \value{
 Edgelist with collapsed protein and peptide nodes

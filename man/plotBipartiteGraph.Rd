@@ -15,7 +15,8 @@ plotBipartiteGraph(
   vertex.size2 = 15,
   useCanonicalPermutation = FALSE,
   three_shapes = FALSE,
-  node_labels = "letters+numbers",
+  node_labels_proteins = "letters",
+  node_labels_peptides = "numbers",
   ...
 )
 }
@@ -40,7 +41,9 @@ plotBipartiteGraph(
 
 \item{three_shapes}{Use a separate shape for the unique peptides?}
 
-\item{node_labels}{"letters+numbers" or "keep"}
+\item{node_labels_proteins}{"letters" or "acessions"}
+
+\item{node_labels_peptides}{"numbers" or "pep_ratios"}
 
 \item{...}{Additional arguments for plot.igraph.}
 }

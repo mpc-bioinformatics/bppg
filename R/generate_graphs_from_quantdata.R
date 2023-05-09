@@ -11,6 +11,7 @@
 #'
 #' @examples
 #' ### TODO: Einstellbar, ob Peptid-Knoten auch gemergt werden sollen (dann mit geom. Mittel als peptid-ratio).
+#' ####      Das funktioniert noch nicht!!!
 generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, outpath = NULL, seq_column = "Sequence",
                                   collapse_protein_nodes = TRUE, collapse_peptide_nodes = FALSE) {
 
@@ -37,51 +38,27 @@ generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, o
   ### TODO: progress bar!
   for (i in 1:ncol(peptide_ratios)) { #
 
-    #print(i)
-
     comparison <- comparisons[i]
-    #substr(colnames(peptide_ratios)[i], 4 , 100)
+
     fc <- peptide_ratios[,i]
     peptides_tmp <- id[,seq_column][!is.na(fc)]  ## peptides that are quantified in this specific comparison
     fc <- stats::na.omit(fc)
     edgelist_filtered2 <- edgelist_filtered[edgelist_filtered[,2] %in% peptides_tmp, ]
 
     ## generate whole bipartite graph
-    #G_tmp <- igraph::graph_from_edgelist(as.matrix(edgelist_filtered2[, 1:2]), directed = FALSE)
     edgelist_coll <- bppg::collapse_edgelist(edgelist_filtered2,
-                                             collapse_protein_nodes = TRUE,
-                                             collapse_peptide_nodes = FALSE)
-    #igraph::V(G_tmp)[igraph::V(G_tmp)$name %in% edgelist_filtered2[,1]]$type <- TRUE
-    #igraph::V(G_tmp)[igraph::V(G_tmp)$name %in% edgelist_filtered2[,2]]$type <- FALSE
+                                             collapse_protein_nodes = collapse_protein_nodes,
+                                             collapse_peptide_nodes = collapse_peptide_nodes)
 
     G <- bppg::generate_graphs_from_edgelist(edgelist_coll)
 
     ### set peptide ratios as vertex attributes
     for (j in 1:length(G)){
-      #G[[i]] <- set_vertex_attr(G, "pep_ratio", value = pep_ratio)
-
-      #  print(igraph::V(G[[i]])[!igraph::V(G[[i]])$type])
-      # print(peptide_ratios[match(igraph::V(G[[i]])$name[!igraph::V(G[[i]])$type], id$Sequence), i])
-      #
-      # print(igraph::V(G[[i]])$name[!igraph::V(G[[i]])$type])
-      ## print(head(id))
-      #print(j)
 
       G[[j]] <- igraph::set_vertex_attr(graph = G[[j]], name = "pep_ratio",
                                         index = igraph::V(G[[j]])[!igraph::V(G[[j]])$type],
                                         value = peptide_ratios[match(igraph::V(G[[j]])$name[!igraph::V(G[[j]])$type], id[, seq_column]), i])
-
-      #igraph::set_vertex_attr(G[[i]], "pep_ratio", index = igraph::V(G[[i]])[!igraph::V(G[[i]])$type]) <- peptide_ratios[match(igraph::V(G[[i]])$name[!igraph::V(G[[i]])$type], id$Sequence), i]
     }
-
-    #  ## set peptide ratios as vertex attributes
-    #    igraph::vertex_attr(G_tmp, "pep_ratio", index = igraph::V(G_tmp)[!igraph::V(G_tmp)$type]) <- fc[match(igraph::V(G_tmp)$name[!igraph::V(G_tmp)$type], peptides_tmp)]
-
-    ## calculate connected components
-    #   subgraphs_tmp <- igraph::decompose(G_tmp)
-
-    #   graphs[[i-2]] <- G_tmp
-    #   names(graphs)[[i-2]] <- comparison
 
     subgraphs[[i]] <- G
     names(subgraphs)[[i]] <- comparison
@@ -101,11 +78,11 @@ generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, o
 #' @param D data set with peptide sequence as first column and peptide intensities in subsequent columns
 #' (e.g. output from bppg::read_MQ_peptidetable)
 #' @param fasta fasta file used for identification of peptides in D
-#' @param outpath
+#' @param outpath bla
 #' @param normalize currently only loess normalization possible
-#' @param missed_cleavages
-#' @param min_aa
-#' @param max_aa
+#' @param missed_cleavages bla
+#' @param min_aa bla
+#' @param max_aa bla
 #' @param ... currently not in use
 #'
 #' @return list of list of graphs
@@ -115,6 +92,7 @@ generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, o
 generate_graphs_from_quant_data <- function(D, fasta, outpath = NULL, normalize = FALSE,
                                             missed_cleavages = 2, min_aa = 6, max_aa = 50,
                                             id_columns = 1, seq_column = "Sequence",
+                                            collapse_protein_nodes = TRUE, collapse_peptide_nodes = FALSE,
                                             ...) {
 
   message("Digesting FASTA file...")
@@ -122,8 +100,6 @@ generate_graphs_from_quant_data <- function(D, fasta, outpath = NULL, normalize 
                                           min_aa = min_aa, max_aa = max_aa)#, ...)
   message("Generating edgelist ...")
   edgelist <- bppg::generate_edgelist(digested_proteins)
-  #### TODO: Möglichkeit, eine vorberechnete edgelist anzugeben!
-  #edgelist_filtered <- edgelist[edgelist[,2] %in% D$Sequence, ]
 
   if (!is.null(outpath)) {
     openxlsx::write.xlsx(edgelist, file = paste0(outpath, "edgelist_fasta.xlsx"), overwrite = TRUE, keepNA = TRUE)
@@ -135,10 +111,8 @@ generate_graphs_from_quant_data <- function(D, fasta, outpath = NULL, normalize 
   D <- D[nchar(D[, seq_column]) >= min_aa & nchar(D[, seq_column]) <= max_aa,]
 
 
-  #prepare for normalization
-  #id <- D[,1]
-  intensities <- D[,-id_columns]
   #normalize Intensities
+  intensities <- D[,-id_columns]
   # TODO: auch Median, Quantilsnormalisierung und LFQ-Normalisierung von MaxQuant erlauben?
   if (normalize) {
     intensities <- 2^limma::normalizeBetweenArrays(log2(intensities), method = "cyclicloess")
@@ -163,7 +137,9 @@ generate_graphs_from_quant_data <- function(D, fasta, outpath = NULL, normalize 
 
   ## Generierung der Graphen (man braucht peptide_ratios und fast_edgelist!)
   graphs <- bppg::generate_quant_graphs(peptide_ratios = peptide_ratios, id_cols = id_columns, fasta_edgelist = edgelist,
-                                        outpath = outpath, seq_column = seq_column)
+                                        outpath = outpath, seq_column = seq_column,
+                                        collapse_protein_nodes = collapse_protein_nodes,
+                                        collapse_peptide_nodes = collapse_peptide_nodes)
   return(graphs)
 
 }

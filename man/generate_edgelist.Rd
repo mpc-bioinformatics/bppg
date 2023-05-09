@@ -4,7 +4,7 @@
 \alias{generate_edgelist}
 \title{Generate edgelist from list of in silico digested proteins}
 \usage{
-generate_edgelist(digested_proteins)
+generate_edgelist(digested_proteins, prot_origin = NULL)
 }
 \arguments{
 \item{digested_proteins}{Output from digest_fasta() (List of vectors of peptide sequences)}

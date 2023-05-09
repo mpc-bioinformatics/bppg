@@ -9,7 +9,9 @@ generate_quant_graphs(
   id_cols = 1,
   fasta_edgelist,
   outpath = NULL,
-  seq_column = "Sequence"
+  seq_column = "Sequence",
+  collapse_protein_nodes = TRUE,
+  collapse_peptide_nodes = FALSE
 )
 }
 \arguments{
@@ -27,4 +29,5 @@ Generate graphs from peptide ratio table, using an edgelist calculated on the fa
 }
 \examples{
 ### TODO: Einstellbar, ob Peptid-Knoten auch gemergt werden sollen (dann mit geom. Mittel als peptid-ratio).
+####      Das funktioniert noch nicht!!!
 }

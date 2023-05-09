@@ -2,8 +2,8 @@
 #' Collapsing of peptide and protein nodes of an edgelist.
 #'
 #' @param edgelist edgelist
-#' @param collapse_protein_nodes
-#' @param collapse_peptide_nodes
+#' @param collapse_protein_nodes bla
+#' @param collapse_peptide_nodes bla
 #'
 #' @return Edgelist with collapsed protein and peptide nodes
 #' @export

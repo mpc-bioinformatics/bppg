@@ -11,6 +11,7 @@ generate_graphs_from_FASTA(
   result_path = NULL,
   suffix = NULL,
   save_intermediate = FALSE,
+  prot_origin = NULL,
   ...
 )
 }

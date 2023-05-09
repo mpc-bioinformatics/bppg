@@ -14,6 +14,8 @@ generate_graphs_from_quant_data(
   max_aa = 50,
   id_columns = 1,
   seq_column = "Sequence",
+  collapse_protein_nodes = TRUE,
+  collapse_peptide_nodes = FALSE,
   ...
 )
 }
@@ -23,7 +25,15 @@ generate_graphs_from_quant_data(
 
 \item{fasta}{fasta file used for identification of peptides in D}
 
+\item{outpath}{bla}
+
 \item{normalize}{currently only loess normalization possible}
+
+\item{missed_cleavages}{bla}
+
+\item{min_aa}{bla}
+
+\item{max_aa}{bla}
 
 \item{...}{currently not in use}
 }

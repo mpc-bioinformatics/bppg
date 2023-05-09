@@ -11,6 +11,12 @@ calculate_summary_table(subgraph_char_tab, isomorph_list)
 
 \item{isomorph_list}{isomorph lists}
 }
+\value{
+bla
+}
 \description{
 Calculate number for table
+}
+\examples{
+# TODO
 }

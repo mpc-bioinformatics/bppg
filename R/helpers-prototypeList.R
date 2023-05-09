@@ -33,10 +33,22 @@
 
 
 
+#' Title bla
+#'
+#' @param G bla
+#'
+#' @return bla
+#' @export
+#'
+#' @examples # TODO
 generatePrototypeList <- function(G) {
 
 
+
+
+
   prototype_list <- G
+  counter <- integer(length(prototype_list))
   k <- 1
 
   ### TODO: progress bar
@@ -48,7 +60,7 @@ generatePrototypeList <- function(G) {
   i <- 1
 
   while(i < length(G)){
-    print(length(G))
+    #print(length(G))
     G_tmp <- G[[i]]
     #if (k == 1) {prototype_list[[k]] <- G_tmp; k <- k + 1; next}
 
@@ -62,7 +74,12 @@ generatePrototypeList <- function(G) {
     # delete duplicated graphs:
     if (length(ind) > 0) {
       G <- G[-(ind+i)]
+      counter[i] <- length(ind) + 1
+      counter <- counter[-(ind+i)]
+    } else {
+      counter[i] <- 1
     }
+
     pbapply::setpb(pb, i/length(G))
     i <- i + 1
   }
@@ -85,7 +102,7 @@ generatePrototypeList <- function(G) {
   # }
 
   pbapply::closepb(pb)
-  return(G)
+  return(list(G, counter))
 }
 
 # P <- generatePrototypeList(G)

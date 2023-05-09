@@ -3,10 +3,10 @@
 #' @param subgraph_char_tab subgraphs characteristics tables
 #' @param isomorph_list isomorph lists
 #'
-#' @return
+#' @return bla
 #' @export
 #'
-#' @examples
+#' @examples # TODO
 calculate_summary_table <- function(subgraph_char_tab, isomorph_list) {
 
   D <- subgraph_char_tab
