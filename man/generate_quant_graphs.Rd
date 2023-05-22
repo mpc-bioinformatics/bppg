@@ -11,7 +11,8 @@ generate_quant_graphs(
   outpath = NULL,
   seq_column = "Sequence",
   collapse_protein_nodes = TRUE,
-  collapse_peptide_nodes = FALSE
+  collapse_peptide_nodes = FALSE,
+  suffix = ""
 )
 }
 \arguments{

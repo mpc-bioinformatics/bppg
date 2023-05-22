@@ -27,11 +27,10 @@ collapse_edgelist <- function(edgelist,
 
 
   if (collapse_protein_nodes) {
-    # function(x) paste(sort(unique(x)), collapse = ";")
     ### aggregate peptide sequences that belong to the same protein accession (1 row per protein accession)
     protEdges <- aggregate(data = edgelist, x = peptide ~ protein, function(x) paste(x, collapse = ";"))
     ### aggregate proteins with the same set of peptides (-> protein nodes)
-    protNodes <- aggregate(data = protEdges, x = protein ~ ., function(x) paste(sort(unique(x)), collapse = ";"))
+    protNodes <- aggregate(data = protEdges, x = protein ~ peptide, function(x) paste(sort(unique(x)), collapse = ";"))
   } else {
     protEdges <- aggregate(data = edgelist, x = peptide ~ protein, function(x) paste(sort(unique(x)), collapse = ";"))
     protNodes <- protEdges
@@ -57,7 +56,7 @@ collapse_edgelist <- function(edgelist,
   edgelist2 <- edgelist[edgelist$peptide %in% pepNodes2$peptide,]
 
   protNodes2 <- protNodes
-  protNodes2$protein <- limma::strsplit2(protNodes2$protein, ";")[,1]  # erstes Peptid aus Liste!
+  protNodes2$protein <- limma::strsplit2(protNodes2$protein, ";")[,1]  # erstes Protein aus Liste!
   edgelist3 <- edgelist2[edgelist2$protein %in% protNodes2$protein,]
 
   edgelist4 <- edgelist3

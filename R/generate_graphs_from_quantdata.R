@@ -13,14 +13,14 @@
 #' ### TODO: Einstellbar, ob Peptid-Knoten auch gemergt werden sollen (dann mit geom. Mittel als peptid-ratio).
 #' ####      Das funktioniert noch nicht!!!
 generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, outpath = NULL, seq_column = "Sequence",
-                                  collapse_protein_nodes = TRUE, collapse_peptide_nodes = FALSE) {
+                                  collapse_protein_nodes = TRUE, collapse_peptide_nodes = FALSE, suffix = "") {
 
   ### broad filtering for edgelist for only quantifies peptides
 
   edgelist_filtered <- fasta_edgelist[fasta_edgelist[,2] %in% peptide_ratios[,seq_column], ]
 
   if (!is.null(outpath)) {
-    openxlsx::write.xlsx(edgelist_filtered, file = paste0(outpath, "edgelist_filtered.xlsx"), overwrite = TRUE, keepNA = TRUE)
+    openxlsx::write.xlsx(edgelist_filtered, file = paste0(outpath, "edgelist_filtered_", suffix, ".xlsx"), overwrite = TRUE, keepNA = TRUE)
   }
 
 
@@ -93,6 +93,7 @@ generate_graphs_from_quant_data <- function(D, fasta, outpath = NULL, normalize 
                                             missed_cleavages = 2, min_aa = 6, max_aa = 50,
                                             id_columns = 1, seq_column = "Sequence",
                                             collapse_protein_nodes = TRUE, collapse_peptide_nodes = FALSE,
+                                            suffix = "",
                                             ...) {
 
   message("Digesting FASTA file...")
@@ -102,7 +103,7 @@ generate_graphs_from_quant_data <- function(D, fasta, outpath = NULL, normalize 
   edgelist <- bppg::generate_edgelist(digested_proteins)
 
   if (!is.null(outpath)) {
-    openxlsx::write.xlsx(edgelist, file = paste0(outpath, "edgelist_fasta.xlsx"), overwrite = TRUE, keepNA = TRUE)
+    openxlsx::write.xlsx(edgelist, file = paste0(outpath, "edgelist_fasta_", suffix, ".xlsx"), overwrite = TRUE, keepNA = TRUE)
   }
 
 
@@ -124,14 +125,14 @@ generate_graphs_from_quant_data <- function(D, fasta, outpath = NULL, normalize 
   D_aggr <- bppg::aggregate_replicates(D, method = "mean", missing.limit = 0.4,
                                        group = group, id_cols = id_columns)
   if (!is.null(outpath)) {
-    openxlsx::write.xlsx(D_aggr, file = paste0(outpath, "aggr_peptides.xlsx"), overwrite = TRUE, keepNA = TRUE)
+    openxlsx::write.xlsx(D_aggr, file = paste0(outpath, "aggr_peptides_", suffix, ".xlsx"), overwrite = TRUE, keepNA = TRUE)
   }
 
   ### calculate the peptide ratios
   groups  <- levels(group)
   peptide_ratios <- bppg::calculate_peptide_ratios(aggr_intensities = D_aggr, id_cols = id_columns, group_levels = groups)
   if (!is.null(outpath)) {
-    openxlsx::write.xlsx(peptide_ratios, file = paste0(outpath, "peptide_ratios.xlsx"), overwrite = TRUE, keepNA = TRUE)
+    openxlsx::write.xlsx(peptide_ratios, file = paste0(outpath, "peptide_ratios_", suffix, ".xlsx"), overwrite = TRUE, keepNA = TRUE)
   }
 
 
@@ -139,7 +140,8 @@ generate_graphs_from_quant_data <- function(D, fasta, outpath = NULL, normalize 
   graphs <- bppg::generate_quant_graphs(peptide_ratios = peptide_ratios, id_cols = id_columns, fasta_edgelist = edgelist,
                                         outpath = outpath, seq_column = seq_column,
                                         collapse_protein_nodes = collapse_protein_nodes,
-                                        collapse_peptide_nodes = collapse_peptide_nodes)
+                                        collapse_peptide_nodes = collapse_peptide_nodes,
+                                        suffix = suffix)
   return(graphs)
 
 }

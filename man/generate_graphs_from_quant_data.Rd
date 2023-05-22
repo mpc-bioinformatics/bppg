@@ -16,6 +16,7 @@ generate_graphs_from_quant_data(
   seq_column = "Sequence",
   collapse_protein_nodes = TRUE,
   collapse_peptide_nodes = FALSE,
+  suffix = "",
   ...
 )
 }
