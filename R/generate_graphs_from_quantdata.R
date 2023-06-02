@@ -116,7 +116,7 @@ generate_graphs_from_quant_data <- function(D, fasta, outpath = NULL, normalize 
   intensities <- D[,-id_columns]
   # TODO: auch Median, Quantilsnormalisierung und LFQ-Normalisierung von MaxQuant erlauben?
   if (normalize) {
-    intensities <- 2^limma::normalizeBetweenArrays(log2(intensities), method = "cyclicloess")
+    #intensities <- 2^limma::normalizeBetweenArrays(log2(intensities), method = "cyclicloess")
   }
 
 
