@@ -2,9 +2,9 @@
 % Please edit documentation in R/helpers-prototypeList.R
 \name{generatePrototypeList}
 \alias{generatePrototypeList}
-\title{Title bla}
+\title{Generates a list of graph prototypes for the different isomorphism classes and}
 \usage{
-generatePrototypeList(G)
+generatePrototypeList(G, sort_by_nr_edges = FALSE)
 }
 \arguments{
 \item{G}{bla}
@@ -13,7 +13,7 @@ generatePrototypeList(G)
 bla
 }
 \description{
-Title bla
+Generates a list of graph prototypes for the different isomorphism classes and
 }
 \examples{
 # TODO

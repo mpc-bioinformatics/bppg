@@ -33,7 +33,8 @@
 
 
 
-#' Title bla
+#' Generates a list of graph prototypes for the different isomorphism classes and
+#'
 #'
 #' @param G bla
 #'
@@ -41,17 +42,16 @@
 #' @export
 #'
 #' @examples # TODO
-generatePrototypeList <- function(G) {
+generatePrototypeList <- function(G, sort_by_nr_edges = FALSE) {
 
 
 
 
 
-  prototype_list <- G
-  counter <- integer(length(prototype_list))
+  #prototype_list <- G
+  counter <- integer(length(G))
   k <- 1
 
-  ### TODO: progress bar
 
   pb <- pbapply::startpb(min = 0, max = 1)
 
@@ -100,6 +100,16 @@ generatePrototypeList <- function(G) {
   #   }
   #
   # }
+
+
+  if (sort_by_nr_edges) {
+    nr_edges <- sapply(G, igraph::gsize)
+    ord <- order(nr_edges)
+
+    G <- G[ord]
+    counter <- counter[ord]
+  }
+
 
   pbapply::closepb(pb)
   return(list(G, counter))
