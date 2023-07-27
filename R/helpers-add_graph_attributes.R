@@ -34,3 +34,27 @@ add_uniqueness_attributes <- function(G) {
   G <- set_vertex_attr(G, "nr_shared_peptides", value = nr_shared_peptides)
 
 }
+
+
+
+
+
+
+#' Adds average peptide ratios as a attribute to the graphs, if a list of peptide ratios is already present
+#'
+#' @param G
+#'
+#' @return
+#' @export
+#'
+#' @examples
+add_average_pep_ratio <- function(G, type = "geom_mean") {
+
+  pep_ratio <- V(G)$pep_ratio
+  strsplit()
+
+
+}
+
+
+

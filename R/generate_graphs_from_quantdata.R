@@ -16,8 +16,8 @@ generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, o
                                   collapse_protein_nodes = TRUE, collapse_peptide_nodes = FALSE, suffix = "") {
 
   ### broad filtering for edgelist for only quantifies peptides
-
   edgelist_filtered <- fasta_edgelist[fasta_edgelist[,2] %in% peptide_ratios[,seq_column], ]
+
 
   if (!is.null(outpath)) {
     openxlsx::write.xlsx(edgelist_filtered, file = paste0(outpath, "edgelist_filtered_", suffix, ".xlsx"), overwrite = TRUE, keepNA = TRUE)
@@ -45,19 +45,26 @@ generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, o
     fc <- stats::na.omit(fc)
     edgelist_filtered2 <- edgelist_filtered[edgelist_filtered[,2] %in% peptides_tmp, ]
 
+
+    ## add peptide ratios
+    edgelist_filtered2$pep_ratio <- peptide_ratios[,i][match(edgelist_filtered2$peptide, id[, seq_column])]
+
+
     ## generate whole bipartite graph
-    edgelist_coll <- bppg::collapse_edgelist(edgelist_filtered2,
+    edgelist_coll <- bppg::collapse_edgelist_quant(edgelist_filtered2,
                                              collapse_protein_nodes = collapse_protein_nodes,
                                              collapse_peptide_nodes = collapse_peptide_nodes)
 
-    G <- bppg::generate_graphs_from_edgelist(edgelist_coll)
+    G <- bppg::generate_graphs_from_edgelist(edgelist_coll[, 1:2])
 
     ### set peptide ratios as vertex attributes
     for (j in 1:length(G)){
 
       G[[j]] <- igraph::set_vertex_attr(graph = G[[j]], name = "pep_ratio",
                                         index = igraph::V(G[[j]])[!igraph::V(G[[j]])$type],
-                                        value = peptide_ratios[match(igraph::V(G[[j]])$name[!igraph::V(G[[j]])$type], id[, seq_column]), i])
+                                        value = edgelist_coll$pep_ratio[match(igraph::V(G[[j]])$name[!igraph::V(G[[j]])$type], edgelist_coll$peptide)])
+
+      #peptide_ratios[match(igraph::V(G[[j]])$name[!igraph::V(G[[j]])$type], id[, seq_column]), i]
     }
 
     subgraphs[[i]] <- G
@@ -128,7 +135,7 @@ generate_graphs_from_quant_data <- function(D, fasta, outpath = NULL, normalize 
     openxlsx::write.xlsx(D_aggr, file = paste0(outpath, "aggr_peptides_", suffix, ".xlsx"), overwrite = TRUE, keepNA = TRUE)
   }
 
-  ### calculate the peptide ratios
+  ### calculate the peptide ratio table
   groups  <- levels(group)
   peptide_ratios <- bppg::calculate_peptide_ratios(aggr_intensities = D_aggr, id_cols = id_columns, group_levels = groups)
   if (!is.null(outpath)) {
@@ -145,5 +152,10 @@ generate_graphs_from_quant_data <- function(D, fasta, outpath = NULL, normalize 
   return(graphs)
 
 }
+
+
+
+
+
 
 

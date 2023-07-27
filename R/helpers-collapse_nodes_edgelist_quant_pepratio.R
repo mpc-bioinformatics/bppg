@@ -21,7 +21,7 @@
 ### TODO: Die Funktion funktioniert derzeit noch nicht, wenn z.B. die Proteinknoten schon collapsed sind!
 
 
-collapse_edgelist <- function(edgelist,
+collapse_edgelist_quant <- function(edgelist,
                               collapse_protein_nodes = TRUE,
                               collapse_peptide_nodes = TRUE) {
 
@@ -32,9 +32,9 @@ collapse_edgelist <- function(edgelist,
   ### Calculate list if protein nodes
   if (collapse_protein_nodes) {
     ### aggregate peptide sequences that belong to the same protein accession (1 row per protein accession)
-    protEdges <- aggregate(data = edgelist, x = peptide + pep_ratio ~ protein, function(x) paste(x, collapse = ";"))
+    protEdges <- aggregate(data = edgelist, x = cbind(peptide, pep_ratio) ~ protein, function(x) paste(x, collapse = ";"))
     ### aggregate proteins with the same set of peptides (-> protein nodes)
-    protNodes <- aggregate(data = protEdges, x = protein ~ peptide, function(x) paste(sort(unique(x)), collapse = ";"))
+    protNodes <- aggregate(data = protEdges, x = protein ~ peptide+pep_ratio, function(x) paste(sort(unique(x)), collapse = ";"))
   } else {
     protEdges <- aggregate(data = edgelist, x = peptide ~ protein, function(x) paste(sort(unique(x)), collapse = ";"))
     protNodes <- protEdges
@@ -44,9 +44,9 @@ collapse_edgelist <- function(edgelist,
   ### calculate list of peptide nodes
   if (collapse_peptide_nodes) {
     ### aggregate protein accessions belonging to the same peptide sequences (1 row per peptide sequence)
-    pepEdges <- aggregate(data = edgelist, x = protein ~ peptide, function(x) paste(sort(unique(x)), collapse = ";"))
+    pepEdges <- aggregate(data = edgelist, x = protein ~ peptide + pep_ratio, function(x) paste(sort(unique(x)), collapse = ";"))
     ### aggregate peptides with the same set of proteins (-> peptide nodes)
-    pepNodes <- aggregate(data = pepEdges, x = peptide ~ protein, function(x) paste(sort(unique(x)), collapse = ";"))
+    pepNodes <- aggregate(data = pepEdges, x = cbind(peptide, pep_ratio) ~ protein, function(x) paste(sort(unique(x)), collapse = ";"))
   } else {
     pepEdges <- aggregate(data = edgelist, x = protein ~ peptide, function(x) paste(sort(unique(x)), collapse = ";"))
     pepNodes <- pepEdges
@@ -56,9 +56,11 @@ collapse_edgelist <- function(edgelist,
   edgelist2 <- edgelist
   #keep <- logical(nrow(edgelist2))
 
+
   pepNodes2 <- pepNodes
   pepNodes2$peptide <- limma::strsplit2(pepNodes2$peptide, ";")[,1]  # erstes Peptid aus Liste!
   edgelist2 <- edgelist[edgelist$peptide %in% pepNodes2$peptide,]
+
 
   protNodes2 <- protNodes
   protNodes2$protein <- limma::strsplit2(protNodes2$protein, ";")[,1]  # erstes Protein aus Liste!
@@ -67,6 +69,7 @@ collapse_edgelist <- function(edgelist,
   edgelist4 <- edgelist3
   edgelist4$protein <- protNodes$protein[match(edgelist3$protein, protNodes2$protein)]
   edgelist4$peptide <- pepNodes$peptide[match(edgelist3$peptide, pepNodes2$peptide)]
+  edgelist4$pep_ratio <- pepNodes$pep_ratio[match(edgelist3$peptide, pepNodes2$peptide)]
 
   invisible(NULL)
 
