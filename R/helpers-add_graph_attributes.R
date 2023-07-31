@@ -51,8 +51,16 @@ add_uniqueness_attributes <- function(G) {
 add_average_pep_ratio <- function(G, type = "geom_mean") {
 
   pep_ratio <- V(G)$pep_ratio
-  strsplit()
+  pep_ratio_split <- strsplit(pep_ratio, ";")
 
+  pep_ratio_aggr <- sapply(pep_ratio_split, function(x){
+    bppg::geom_mean(as.numeric(x))})
+
+
+  nr_sequences <- sapply(pep_ratio_split, length)
+
+  G <- set_vertex_attr(G, "pep_ratio_aggr", value = pep_ratio_aggr)
+  G <- set_vertex_attr(G, "nr_sequences", value = nr_sequences)
 
 }
 
