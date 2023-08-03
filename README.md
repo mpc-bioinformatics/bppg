@@ -33,3 +33,6 @@ plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
+
+
+
