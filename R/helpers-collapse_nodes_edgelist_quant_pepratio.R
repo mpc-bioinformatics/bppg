@@ -32,7 +32,7 @@ collapse_edgelist_quant <- function(edgelist,
   ### Calculate list if protein nodes
   if (collapse_protein_nodes) {
     ### aggregate peptide sequences that belong to the same protein accession (1 row per protein accession)
-    protEdges <- aggregate(data = edgelist, x = cbind(peptide, pep_ratio) ~ protein, function(x) paste(x, collapse = ";"))
+    protEdges <- aggregate(data = edgelist, x = cbind(peptide, pep_ratio) ~ protein, function(x) paste(sort(unique(x)), collapse = ";"))
     ### aggregate proteins with the same set of peptides (-> protein nodes)
     protNodes <- aggregate(data = protEdges, x = protein ~ peptide+pep_ratio, function(x) paste(sort(unique(x)), collapse = ";"))
   } else {

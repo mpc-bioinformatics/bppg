@@ -20,7 +20,7 @@ isomorphic_bipartite <- function(graph1, graph2, ...) {
     cG2 <- igraph::canonical_permutation(graph2, colors  = igraph::V(graph2)$type)
     cG2 <- igraph::permute(graph2, cG2$labeling)
 
-    iso <- all(igraph::V(cG1)$type == igraph::V(cG2)$type)
+    iso <- identical_graphs(cG1, cG2)#all(igraph::V(cG1)$type == igraph::V(cG2)$type)
 
   }
   return(iso)

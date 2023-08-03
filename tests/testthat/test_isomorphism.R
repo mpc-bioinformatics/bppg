@@ -20,6 +20,15 @@ test_that("isomorphic_bipartite works as intended", {
   expect_false(bppg::isomorphic_bipartite(G, G3))
 
 
+  # M + 1 graph
+  M4 <- matrix(c(1,1,0,0, 1, 0,0,1,1), nrow = 3)
+  G4 <- igraph::graph_from_incidence_matrix(M4)
+
+  G5 <- G4
+  V(G5)$type <- !V(G4)$type
+
+  expect_false(bppg::isomorphic_bipartite(G4, G5))
+
 })
 
 
