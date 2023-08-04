@@ -44,25 +44,25 @@ test_that("collapsing of edgelists", {
 
 
 
-# test_that("generation of graphs from edgelist", {
-#   library(igraph)
-#
-#   graphs_coll_pept_prot <- readRDS(test_path("testfiles/graphs_coll_pept_prot_test.rds"))
-#   graphs_coll_prot <- readRDS(test_path("testfiles/graphs_coll_prot_test.rds"))
-#
-#   # with collapsing of peptide and protein nodes
-#   edgelist_coll_pept_prot <- readRDS(test_path("testfiles/edgelist_coll_pept_prot_test.rds"))
-#   res <- bppg::generate_graphs_from_edgelist(edgelist_coll_pept_prot)
-#   expect_true(igraph::identical_graphs(res[[1]], graphs_coll_pept_prot[[1]]))
-#   expect_true(igraph::identical_graphs(res[[2]], graphs_coll_pept_prot[[2]]))
-#
-#   # with collapsing of only protein nodes
-#   edgelist_coll_prot <- readRDS(test_path("testfiles/edgelist_coll_prot_test.rds"))
-#   res2 <- bppg::generate_graphs_from_edgelist(edgelist_coll_prot)
-#   expect_true(igraph::identical_graphs(res2[[1]], graphs_coll_prot[[1]]))
-#   expect_true(igraph::identical_graphs(res2[[2]], graphs_coll_prot[[2]]))
-#
-# })
+test_that("generation of graphs from edgelist", {
+  library(igraph)
+
+  graphs_coll_pept_prot <- readRDS(test_path("testfiles/graphs_coll_pept_prot_test.rds"))
+  graphs_coll_prot <- readRDS(test_path("testfiles/graphs_coll_prot_test.rds"))
+
+  # with collapsing of peptide and protein nodes
+  edgelist_coll_pept_prot <- readRDS(test_path("testfiles/edgelist_coll_pept_prot_test.rds"))
+  res <- bppg::generate_graphs_from_edgelist(edgelist_coll_pept_prot)
+  expect_true(igraph::identical_graphs(res[[1]], graphs_coll_pept_prot[[1]]))
+  expect_true(igraph::identical_graphs(res[[2]], graphs_coll_pept_prot[[2]]))
+
+  # with collapsing of only protein nodes
+  edgelist_coll_prot <- readRDS(test_path("testfiles/edgelist_coll_prot_test.rds"))
+  res2 <- bppg::generate_graphs_from_edgelist(edgelist_coll_prot)
+  expect_true(igraph::identical_graphs(res2[[1]], graphs_coll_prot[[1]]))
+  expect_true(igraph::identical_graphs(res2[[2]], graphs_coll_prot[[2]]))
+
+})
 
 
 
