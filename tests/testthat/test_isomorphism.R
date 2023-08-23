@@ -25,7 +25,7 @@ test_that("isomorphic_bipartite works as intended", {
   G4 <- igraph::graph_from_incidence_matrix(M4)
 
   G5 <- G4
-  V(G5)$type <- !V(G4)$type
+  igraph::V(G5)$type <- !igraph::V(G4)$type
 
   expect_false(bppg::isomorphic_bipartite(G4, G5))
 
@@ -64,8 +64,8 @@ test_that("generation of a prototype list", {
   expect_length(proto_list$graphs, 3)
   expect_length(proto_list2$graphs, 3)
 
-  expect_equal(proto_list$counter, c(3,2,0))
-  expect_equal(proto_list2$counter, c(2,3,0))
+  expect_equal(proto_list$counter, c(3,2,1))
+  expect_equal(proto_list2$counter, c(2,3,1))
 
 
 })

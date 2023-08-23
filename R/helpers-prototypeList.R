@@ -25,7 +25,16 @@ generatePrototypeList <- function(G, sort_by_nr_edges = FALSE) {
   i <- 1
 
   # Gehe Liste an Graphen durch
-  while(i < length(G)){
+  while(i <= length(G)){
+
+    ## if end of list is reached:
+    if (i == length(G)) {
+      counter[i] <- 1
+      i <- i + 1
+      next
+    }
+
+    #print(paste0(i, ",", length(G)))
 
     G_tmp <- G[[i]]
 

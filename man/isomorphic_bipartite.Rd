@@ -23,4 +23,6 @@ node type in bipartite graphs, e.g. that W- and M-shaped graphs are NOT isomorph
 }
 \examples{
 # TODO
+
+
 }

@@ -64,6 +64,7 @@ test_that("generation of graphs from edgelist", {
 
 
   # TODO: evtl ist es nicht ganz ideal hier mit einer Funktio aus bppg (isomorphic_bipartite) den Test zu machen
+  # evtl wegen alter igraph version (siehe testthat output?)
 })
 
 
