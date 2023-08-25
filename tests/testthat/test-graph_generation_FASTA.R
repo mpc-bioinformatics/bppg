@@ -52,7 +52,7 @@ test_that("generation of graphs from edgelist", {
 
   # with collapsing of peptide and protein nodes
   edgelist_coll_pept_prot <- readRDS(test_path("testfiles/edgelist_coll_pept_prot_test.rds"))
-  res <- bppg::generate_graphs_from_edgelist(edgelist_coll_pept_prot)
+
   expect_true(bppg::isomorphic_bipartite(res[[1]], graphs_coll_pept_prot[[1]]))
   expect_true(bppg::isomorphic_bipartite(res[[2]], graphs_coll_pept_prot[[2]]))
 
@@ -95,4 +95,20 @@ test_that("subgraph characteristics table", {
 
 
 
+#
+# edgelist <- readRDS(test_path("testfiles/edgelist_test.rds"))
+# edgelist$pep_ratio <- NA
+# # zum testen random Werte für die Peptid-Ratios, aber ein spezielles Peptid muss immer das gleiche Ratio in jeder Zeile haben
+# n <- length(unique(edgelist$peptide))
+# random <- data.frame(peptide = unique(edgelist$peptide), pep_ratio = abs(rnorm(n)))
+# for (i in 1:nrow(edgelist)) {
+#   edgelist$pep_ratio[i] <-random$pep_ratio[which(random$peptide == edgelist$peptide[i])]
+#
+# }
+#
+#
+#
+# edgelist_coll <- bppg::collapse_edgelist_quant(edgelist,
+#                                                collapse_protein_nodes = TRUE,
+#                                                collapse_peptide_nodes = TRUE)
 

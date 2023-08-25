@@ -48,7 +48,7 @@ collapse_edgelist_quant <- function(edgelist,
     ### aggregate peptides with the same set of proteins (-> peptide nodes)
     pepNodes <- aggregate(data = pepEdges, x = cbind(peptide, pep_ratio) ~ protein, function(x) paste(sort(unique(x)), collapse = ";"))
   } else {
-    pepEdges <- aggregate(data = edgelist, x = protein ~ peptide, function(x) paste(sort(unique(x)), collapse = ";"))
+    pepEdges <- aggregate(data = edgelist, x = protein ~ peptide + pep_ratio, function(x) paste(sort(unique(x)), collapse = ";"), simplify = FALSE)
     pepNodes <- pepEdges
   }
 

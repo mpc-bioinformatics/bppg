@@ -15,7 +15,7 @@
 #' @param three_shapes Use a separate shape for the unique peptides?
 #' @param ... Additional arguments for plot.igraph.
 #' @param node_labels_proteins "letters" or "acessions"
-#' @param node_labels_peptides "numbers" or "pep_ratios"
+#' @param node_labels_peptides "numbers" or "pep_ratios" or "pep_ratio_aggr"
 #'
 #' @return Plot of one bipartite graph.
 #' @export
@@ -30,6 +30,7 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
                                useCanonicalPermutation = FALSE, three_shapes = FALSE,
                                node_labels_proteins = "letters",
                                node_labels_peptides = "numbers",
+                               round_digits = 2,
                                ...) {
 
   igraph::V(G)$type <- !igraph::V(G)$type           # switch node types so that proteins are at the top
@@ -58,7 +59,11 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
   }
   if (node_labels_peptides == "pep_ratios") {
     pep_ratios <- V(G)$pep_ratio
-    names_G[Layout[,2] == 0] <- round(pep_ratios[Layout[,2] == 0],2)
+    names_G[Layout[,2] == 0] <- round(pep_ratios[Layout[,2] == 0],round_digits)
+  }
+  if (node_labels_peptides == "pep_ratio_aggr") {
+    pep_ratios <- V(G)$pep_ratio_aggr
+    names_G[Layout[,2] == 0] <- round(pep_ratios[Layout[,2] == 0],round_digits)
   }
   if (node_labels_peptides == "") {
     names_G[Layout[,2] == 0] <- NA

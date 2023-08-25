@@ -43,7 +43,7 @@ plotBipartiteGraph(
 
 \item{node_labels_proteins}{"letters" or "acessions"}
 
-\item{node_labels_peptides}{"numbers" or "pep_ratios"}
+\item{node_labels_peptides}{"numbers" or "pep_ratios" or "pep_ratio_aggr"}
 
 \item{...}{Additional arguments for plot.igraph.}
 }
