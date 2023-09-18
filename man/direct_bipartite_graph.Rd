@@ -7,8 +7,14 @@
 direct_bipartite_graph(bip_graph, from_type = FALSE)
 }
 \arguments{
-\item{from_type}{}
+\item{from_type}{TODO}
+}
+\value{
+a bipartite graph that is know directed
 }
 \description{
 Title
+}
+\examples{
+# TODO
 }

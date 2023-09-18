@@ -9,6 +9,12 @@ add_average_pep_ratio(G, type = "geom_mean")
 \arguments{
 \item{G}{}
 }
+\value{
+graphs with added attributes
+}
 \description{
 Adds average peptide ratios as a attribute to the graphs, if a list of peptide ratios is already present
+}
+\examples{
+# TODO
 }

@@ -17,6 +17,7 @@ plotBipartiteGraph(
   three_shapes = FALSE,
   node_labels_proteins = "letters",
   node_labels_peptides = "numbers",
+  round_digits = 2,
   ...
 )
 }

@@ -32,11 +32,11 @@ collapse_edgelist <- function(edgelist,
   ### Calculate list if protein nodes
   if (collapse_protein_nodes) {
     ### aggregate peptide sequences that belong to the same protein accession (1 row per protein accession)
-    protEdges <- aggregate(data = edgelist, x = peptide ~ protein, function(x) paste(sort(unique(x)), collapse = ";"))
+    protEdges <- stats::aggregate(data = edgelist, x = peptide ~ protein, function(x) paste(sort(unique(x)), collapse = ";"))
     ### aggregate proteins with the same set of peptides (-> protein nodes)
-    protNodes <- aggregate(data = protEdges, x = protein ~ peptide, function(x) paste(sort(unique(x)), collapse = ";"))
+    protNodes <- stats::aggregate(data = protEdges, x = protein ~ peptide, function(x) paste(sort(unique(x)), collapse = ";"))
   } else {
-    protEdges <- aggregate(data = edgelist, x = peptide ~ protein, function(x) paste(sort(unique(x)), collapse = ";"))
+    protEdges <- stats::aggregate(data = edgelist, x = peptide ~ protein, function(x) paste(sort(unique(x)), collapse = ";"))
     protNodes <- protEdges
   }
 
@@ -44,11 +44,11 @@ collapse_edgelist <- function(edgelist,
   ### calculate list of peptide nodes
   if (collapse_peptide_nodes) {
     ### aggregate protein accessions belonging to the same peptide sequences (1 row per peptide sequence)
-    pepEdges <- aggregate(data = edgelist, x = protein ~ peptide, function(x) paste(sort(unique(x)), collapse = ";"))
+    pepEdges <- stats::aggregate(data = edgelist, x = protein ~ peptide, function(x) paste(sort(unique(x)), collapse = ";"))
     ### aggregate peptides with the same set of proteins (-> peptide nodes)
-    pepNodes <- aggregate(data = pepEdges, x = peptide ~ protein, function(x) paste(sort(unique(x)), collapse = ";"))
+    pepNodes <- stats::aggregate(data = pepEdges, x = peptide ~ protein, function(x) paste(sort(unique(x)), collapse = ";"))
   } else {
-    pepEdges <- aggregate(data = edgelist, x = protein ~ peptide, function(x) paste(sort(unique(x)), collapse = ";"))
+    pepEdges <- stats::aggregate(data = edgelist, x = protein ~ peptide, function(x) paste(sort(unique(x)), collapse = ";"))
     pepNodes <- pepEdges
   }
 

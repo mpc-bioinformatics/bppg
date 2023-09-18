@@ -68,23 +68,24 @@ isomorphic_bipartite <- function(graph1, graph2, ...) {
 #' Title
 #'
 #' @param bip_graph
-#' @param from_type
+#' @param from_type TODO
 #'
-#' @return
+#' @return a bipartite graph that is know directed
 #' @export
 #'
 #' @examples
+#' # TODO
 direct_bipartite_graph <- function(bip_graph, from_type = FALSE){
 
 
   # turn undirected into directed edges
   bip_graph <- as.directed(bip_graph, mode = "arbitrary")
 
-  from_vertecies <- V(bip_graph)[V(bip_graph)$type == from_type]
-  to_vertecies <- V(bip_graph)[V(bip_graph)$type == !from_type]
+  from_vertices <- igraph::V(bip_graph)[igraph::V(bip_graph)$type == from_type]
+  to_vertices <- igraph::V(bip_graph)[igraph::V(bip_graph)$type == !from_type]
 
   # reverse edges going from the "to-group" to the "from-group"
-  bip_graph <- reverse_edges(bip_graph, E(bip_graph)[to_vertecies %->% from_vertecies])
+  bip_graph <- reverse_edges(bip_graph, igraph::E(bip_graph)[to_vertices %->% from_vertices])
 
   return(bip_graph)
 }

@@ -95,8 +95,8 @@ MAPlot_single <- function(x1, x2, log = TRUE, alpha = FALSE, col = "black", ...)
     col = alpha(col, 0.5)
   }
 
-  M <- na.omit(x1 - x2)
-  A <- na.omit((x1 + x2)/2)
+  M <- stats::na.omit(x1 - x2)
+  A <- stats::na.omit((x1 + x2)/2)
 
   if (length(col) > 1) {
     na.ind <- attr(M, "na.action")
@@ -153,7 +153,7 @@ MAPlots <- function(X, log = TRUE, alpha = FALSE, suffix="nonorm",
     ### TODO: auf pbapply umsteigen
     pb <- utils::txtProgressBar(min = 0,max = number_plots,char = "#",style = 3)
 
-    pdf(paste0(output_path, "MA_Plots_", suffix, ".pdf"), height = plot_height/2.54, width = plot_width/2.54)
+    grDevices::pdf(paste0(output_path, "MA_Plots_", suffix, ".pdf"), height = plot_height/2.54, width = plot_width/2.54)
 
     for(i in 1:(ncol(X)-1)) {
       for (j in (i + 1):ncol(X)) {
@@ -175,7 +175,7 @@ MAPlots <- function(X, log = TRUE, alpha = FALSE, suffix="nonorm",
     close(pb)
     print("MA-Plots finished!")
 
-    dev.off()
+    grDevices::dev.off()
 
   }
 

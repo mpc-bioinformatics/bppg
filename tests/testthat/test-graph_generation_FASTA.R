@@ -47,20 +47,21 @@ test_that("collapsing of edgelists", {
 test_that("generation of graphs from edgelist", {
   library(igraph)
 
-  graphs_coll_pept_prot <- readRDS(test_path("testfiles/graphs_coll_pept_prot_test.rds"))
-  graphs_coll_prot <- readRDS(test_path("testfiles/graphs_coll_prot_test.rds"))
+  graphs_coll_pept_prot <- readRDS(testthat::test_path("testfiles/graphs_coll_pept_prot_test.rds"))
+  graphs_coll_prot <- readRDS(testthat::test_path("testfiles/graphs_coll_prot_test.rds"))
 
   # with collapsing of peptide and protein nodes
-  edgelist_coll_pept_prot <- readRDS(test_path("testfiles/edgelist_coll_pept_prot_test.rds"))
+  edgelist_coll_pept_prot <- readRDS(testthat::test_path("testfiles/edgelist_coll_pept_prot_test.rds"))
 
-  expect_true(bppg::isomorphic_bipartite(res[[1]], graphs_coll_pept_prot[[1]]))
-  expect_true(bppg::isomorphic_bipartite(res[[2]], graphs_coll_pept_prot[[2]]))
+  res <- bppg::generate_graphs_from_edgelist(edgelist_coll_pept_prot)
+  expect_true(bppg::isomorphic_bipartite(res[[1]], igraph::upgrade_graph(graphs_coll_pept_prot[[1]])))
+  expect_true(bppg::isomorphic_bipartite(res[[2]], igraph::upgrade_graph(graphs_coll_pept_prot[[2]])))
 
   # with collapsing of only protein nodes
   edgelist_coll_prot <- readRDS(test_path("testfiles/edgelist_coll_prot_test.rds"))
   res2 <- bppg::generate_graphs_from_edgelist(edgelist_coll_prot)
-  expect_true(bppg::isomorphic_bipartite(res2[[1]], graphs_coll_prot[[1]]))
-  expect_true(bppg::isomorphic_bipartite(res2[[2]], graphs_coll_prot[[2]]))
+  expect_true(bppg::isomorphic_bipartite(res2[[1]], igraph::upgrade_graph(graphs_coll_prot[[1]])))
+  expect_true(bppg::isomorphic_bipartite(res2[[2]], igraph::upgrade_graph(graphs_coll_prot[[2]])))
 
 
   # TODO: evtl ist es nicht ganz ideal hier mit einer Funktio aus bppg (isomorphic_bipartite) den Test zu machen

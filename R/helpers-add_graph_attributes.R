@@ -15,7 +15,7 @@ add_uniqueness_attributes <- function(G) {
   ### FALSE = peptide, TRUE = protein
   igraph::V(G)$type
 
-  uniqueness <- igraph::degree(G, V(G)) == 1
+  uniqueness <- igraph::degree(G, igraph::V(G)) == 1
   uniqueness[igraph::V(G)$type] <- NA # attribute only for peptides
 
   G <- igraph::set_vertex_attr(G, "uniqueness", value = uniqueness)
@@ -44,10 +44,11 @@ add_uniqueness_attributes <- function(G) {
 #'
 #' @param G
 #'
-#' @return
+#' @return graphs with added attributes
 #' @export
 #'
 #' @examples
+#' # TODO
 add_average_pep_ratio <- function(G, type = "geom_mean") {
 
   pep_ratio <- igraph::V(G)$pep_ratio
@@ -61,7 +62,7 @@ add_average_pep_ratio <- function(G, type = "geom_mean") {
 
   G <- igraph::set_vertex_attr(G, "pep_ratio_aggr", value = pep_ratio_aggr)
   G <- igraph::set_vertex_attr(G, "nr_sequences", value = nr_sequences)
-
+  return(G)
 }
 
 
