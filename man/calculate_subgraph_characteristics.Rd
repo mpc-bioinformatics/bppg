@@ -4,20 +4,21 @@
 \alias{calculate_subgraph_characteristics}
 \title{Generates a table with characteristics for each subgraph in a list.}
 \usage{
-calculate_subgraph_characteristics(S, fastalevel = TRUE, file = NULL)
+calculate_subgraph_characteristics(
+  S,
+  fastalevel = TRUE,
+  prototype = FALSE,
+  file = NULL
+)
 }
 \arguments{
 \item{S}{list of subgraphs, where peptide and protein nodes are collapsed}
 
 \item{fastalevel}{Are the subgraphs on fasta level?}
 
+\item{prototype}{Are the subgraphs part of a prototype list?}
+
 \item{file}{where to save the table.}
-
-\item{S2}{list of subgraphs, where only protein nodes are collapsed}
-
-\item{S3}{list of subgraphs, where nodes are not collapsed}
-
-\item{comparison}{name of comparison, for quantitative level (not in use currently)}
 }
 \value{
 table

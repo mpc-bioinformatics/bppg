@@ -2,10 +2,8 @@
 #' Generates a table with characteristics for each subgraph in a list.
 #'
 #' @param S list of subgraphs, where peptide and protein nodes are collapsed
-#' @param S2 list of subgraphs, where only protein nodes are collapsed
-#' @param S3 list of subgraphs, where nodes are not collapsed
 #' @param fastalevel Are the subgraphs on fasta level?
-#' @param comparison name of comparison, for quantitative level (not in use currently)
+#' @param prototype Are the subgraphs part of a prototype list?
 #' @param file where to save the table.
 #'
 #'
@@ -16,8 +14,17 @@
 #' # TODO
 calculate_subgraph_characteristics <- function(S, #S2, S3,
                                                fastalevel = TRUE,
+                                               prototype = FALSE,
                                                #comparison = NULL,
                                                file = NULL) {
+
+  if (prototype) {
+    counter <- S$counter
+    S <- S$graph
+  }
+
+ # print(str(S, 1))
+  #print(counter)
 
   Data <- NULL
 
@@ -31,12 +38,12 @@ calculate_subgraph_characteristics <- function(S, #S2, S3,
 
     if (fastalevel) {
       S_tmp <- S
-     # S2_tmp <- S2
-     # S3_tmp <- S3
+      # S2_tmp <- S2
+      # S3_tmp <- S3
     } else {
       S_tmp <- S[[j]]
-     # S2_tmp <- S2[[j]]
-    #  S3_tmp <- S3[[j]]
+      # S2_tmp <- S2[[j]]
+      #  S3_tmp <- S3[[j]]
     }
 
     print(comparisons[j])
@@ -72,9 +79,36 @@ calculate_subgraph_characteristics <- function(S, #S2, S3,
     peptide_seq <- strsplit(peptide_seq, ";")
     nr_peptide_sequences <- sum(sapply(peptide_seq, length))
 
-    # nr_edges_per_pep_node2 <- igraph::degree(G2_tmp)[!igraph::V(G2_tmp)$type]
-    # nr_peptide_sequences_unique <- sum(nr_edges_per_pep_node2 == 1)
-    # nr_peptide_sequences_shared <- sum(nr_edges_per_pep_node2 > 1)
+
+
+    unique_peptide_nodes <- V(G_tmp)[(degree(G_tmp) == 1 & !V(G_tmp)$type)]
+
+    if (length(unique_peptide_nodes) == 0) { # Fall: keine uniquen Peptide im ganzen Graphen
+      nr_prot_node_only_unique_pep <- 0
+      nr_prot_node_unique_and_shared_pep <- 0
+      nr_prot_node_only_shared_pep <-  nr_protein_nodes
+
+    } else {
+      if (length(unique_peptide_nodes) == 1 & nr_protein_nodes == 1) { # Fall: I-shaped graph
+        nr_prot_node_only_unique_pep <- 1
+        nr_prot_node_unique_and_shared_pep <- 0
+        nr_prot_node_only_shared_pep <-  0
+      } else {
+
+        # neighborhood of the unique peptides (these are proteins with a unique peptide)
+        NH_of_unique_peptides <- ego(G_tmp, order = 1, mindist = 1, nodes = unique_peptide_nodes)
+
+        nr_prot_node_only_unique_pep <- 0
+        nr_prot_node_unique_and_shared_pep <- length(NH_of_unique_peptides) # = Anzahl uniquer Peptide??
+        nr_prot_node_only_shared_pep <-  nr_protein_nodes - length(NH_of_unique_peptides)
+      }
+    }
+
+
+
+
+
+
 
 ### TODO: add nr of unique and shared peptide sequences
 ### TODO: add infor about graph type (isomorphism list!)
@@ -90,18 +124,28 @@ calculate_subgraph_characteristics <- function(S, #S2, S3,
                         nr_peptide_sequences = as.integer(nr_peptide_sequences),
                         # nr_peptide_sequences_unique = nr_peptide_sequences_unique,
                         # nr_peptide_sequences_shared = nr_peptide_sequences_shared,
+                        nr_prot_node_only_unique_pep = nr_prot_node_only_unique_pep,
+                        nr_prot_node_unique_and_shared_pep = nr_prot_node_unique_and_shared_pep,
+                        nr_prot_node_only_shared_pep = nr_prot_node_only_shared_pep,
                         comparison = comparisons[j]
 
     )
 
     Data <- rbind(Data, D_tmp)
 
-    pbapply::setpb(pb, i)
-  }
-  #progress bar command
-  invisible(NULL)
-}
-  if (!is.null(file)) openxlsx::write.xlsx(Data, file, overwrite = TRUE)
 
-  return(Data)
+
+    pbapply::setpb(pb, i)
+    }
+    #progress bar command
+    invisible(NULL)
+  }
+
+    if (prototype) {
+      Data <- cbind(Data, counter = counter)
+    }
+
+    if (!is.null(file)) openxlsx::write.xlsx(Data, file, overwrite = TRUE)
+
+    return(Data)
 }
