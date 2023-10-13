@@ -71,6 +71,9 @@ test_that("generation of graphs from edgelist", {
 
 
 test_that("subgraph characteristics table", {
+
+  ## TODO: evtl weiteres Beispiel mit einem Graph mit mind. einem Protein ohne uniques Peptid
+
   expected <- data.frame(
     graph_ID = c(1L,2L),
     nr_protein_nodes = c(7L,1L),
@@ -80,6 +83,9 @@ test_that("subgraph characteristics table", {
     nr_edges = c(22L,1L),
     nr_protein_accessions = c(7L,1L),
     nr_peptide_sequences = c(476L, 204L),
+    nr_prot_node_only_unique_pep = c(0,1),
+    nr_prot_node_unique_and_shared_pep = c(7,0),
+    nr_prot_node_only_shared_pep = c(0, 0),
     comparison = c(1L,1L)
   )
 
