@@ -24,6 +24,11 @@
 #' biadjacency_matrix <- matrix(c(1,1,1,0), nrow = 2)
 #' G <- igraph::graph_from_incidence_matrix(biadjacency_matrix)
 #' plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
+#'
+
+#### TODO: Farbskala für die Peptid-Knoten einbauen, um die Peptid-Ratios darzustellen (Studienprojekt)
+
+
 plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
                                vertex.color = c("mediumseagreen", "cadetblue2", "coral1"),
                                vertex.size = 15, vertex.label.cex = 1, edge.width = 1, vertex.size2=15,
