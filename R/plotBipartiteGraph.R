@@ -1,6 +1,8 @@
 
 ### TODO: labelling of the nodes (letters/numbers or keep or )
 
+#### TODO: Farbskala für die Peptid-Knoten einbauen, um die Peptid-Ratios darzustellen (Studienprojekt)
+
 #' Plotting of bipartite peptide-protein graphs.
 #'
 #' @param G A bipartite graph (igraph object).
@@ -16,6 +18,8 @@
 #' @param ... Additional arguments for plot.igraph.
 #' @param node_labels_proteins "letters" or "acessions"
 #' @param node_labels_peptides "numbers" or "pep_ratios" or "pep_ratio_aggr"
+#' @param round_digits Number of digits to round the peptide ratios to.
+#' @param use_edge_attributes Use edge attributes for plotting (e.g. deleted edges will be dashed)?
 #'
 #' @return Plot of one bipartite graph.
 #' @export
@@ -24,18 +28,13 @@
 #' biadjacency_matrix <- matrix(c(1,1,1,0), nrow = 2)
 #' G <- igraph::graph_from_incidence_matrix(biadjacency_matrix)
 #' plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
-#'
-
-#### TODO: Farbskala für die Peptid-Knoten einbauen, um die Peptid-Ratios darzustellen (Studienprojekt)
-
-
 plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
                                vertex.color = c("mediumseagreen", "cadetblue2", "coral1"),
                                vertex.size = 15, vertex.label.cex = 1, edge.width = 1, vertex.size2=15,
                                useCanonicalPermutation = FALSE, three_shapes = FALSE,
                                node_labels_proteins = "letters",
                                node_labels_peptides = "numbers",
-                               round_digits = 2,
+                               round_digits = 2, use_edge_attributes = FALSE,
                                ...) {
 
   igraph::V(G)$type <- !igraph::V(G)$type           # switch node types so that proteins are at the top
@@ -124,12 +123,20 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
   }
 
   if (legend) graphics::par(mar = c(10, 4, 4, 2) + 0.1)
+
+  if (use_edge_attributes) {
+    edge.lty <- E(G)$deleted + 1
+  } else {
+    edge.lty <- 1
+  }
+
+
   plot(G, layout = igraph::layout_as_bipartite, vertex.color=vertex.color[type],
        vertex.shape = vertex.shapes,
        vertex.label.degree = c(-pi/2, pi/2)[igraph::V(G)$type+1],
        vertex.label.dist = vertex.label.dist,
        vertex.size = vertex.size, vertex.label.cex = vertex.label.cex,
-       edge.width = edge.width, vertex.size2=vertex.size2, ...)
+       edge.width = edge.width, vertex.size2=vertex.size2, edge.lty = edge.lty, ...)
 
   if (legend) {
     pch = ifelse(three_shapes, c(19, 15, 18),  c(19, 15, 15))

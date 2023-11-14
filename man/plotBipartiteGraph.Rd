@@ -18,6 +18,7 @@ plotBipartiteGraph(
   node_labels_proteins = "letters",
   node_labels_peptides = "numbers",
   round_digits = 2,
+  use_edge_attributes = FALSE,
   ...
 )
 }
@@ -45,6 +46,10 @@ plotBipartiteGraph(
 \item{node_labels_proteins}{"letters" or "acessions"}
 
 \item{node_labels_peptides}{"numbers" or "pep_ratios" or "pep_ratio_aggr"}
+
+\item{round_digits}{Number of digits to round the peptide ratios to.}
+
+\item{use_edge_attributes}{Use edge attributes for plotting (e.g. deleted edges will be dashed)?}
 
 \item{...}{Additional arguments for plot.igraph.}
 }
