@@ -51,11 +51,18 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
   pos_peptides <- Layout[,1][Layout[,2] == 0]
 
   if (node_labels_proteins == "letters") {
+    #### TODO: was ist, wenn es mehr als 26 Proteine gibt?
     names_G[Layout[,2] == 1] <- LETTERS[rank(pos_proteins)]
   }
   if (node_labels_proteins == "accessions") {
     names_G[Layout[,2] == 1] <- limma::strsplit2(V(G)$name[Layout[,2] == 1], ";")[,1]
   }
+  # nicht geordnete Zahlen
+  if (node_labels_proteins == "numbers_noord") {
+    names_G[Layout[,2] == 1] <- 1:length(pos_proteins)
+  }
+
+
 
   if (node_labels_peptides == "numbers") {
     names_peptides <- 1:sum(Layout[,2] == 0)
