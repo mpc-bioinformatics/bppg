@@ -158,13 +158,15 @@ foldChange <- function(D, X, Y, useNA = FALSE) {
 #' @param aggr_intensities result from function aggregate_replicates
 #' @param id_cols column numbers that contain peptide sequences etc (everything except intensities)
 #' @param group_levels levels of groups in the right order
+#' @param type "ratio" or "difference". Difference if values are already on log-scale
 #'
 #' @return data set with peptide ratios
 #' @export
 #'
 #' @examples
 #' ## TODO
-calculate_peptide_ratios <- function(aggr_intensities, id_cols = 1, group_levels = NULL) {
+calculate_peptide_ratios <- function(aggr_intensities, id_cols = 1,
+                                     group_levels = NULL, type = "ratio", log_base = 10) {
 
   id <- aggr_intensities[,id_cols, drop = FALSE]
   aggr_intensities <- aggr_intensities[,-(id_cols)]
@@ -183,7 +185,15 @@ calculate_peptide_ratios <- function(aggr_intensities, id_cols = 1, group_levels
       col2 <- which(colnames(aggr_intensities) == group_levels[j])
 
       name <- paste0("ratio_", group_levels[i], "_", group_levels[j])
-      FC <- foldChange(D = aggr_intensities, X = col1, Y = col2)
+
+      if (type == "ratio") {
+        FC <- foldChange(D = aggr_intensities, X = col1, Y = col2)
+      }
+      if (type == "difference") {
+        FC <- aggr_intensities[,col2] - aggr_intensities[,col1]
+        FC <- log_base^FC
+      }
+
       peptide_ratios <- cbind(peptide_ratios, FC)
       colnames(peptide_ratios)[ncol(peptide_ratios)] <- name
     }
