@@ -7,9 +7,14 @@
 #' @export
 #'
 #' @examples # TODO
-geom_mean <- function(x) {
+geom_mean <- function(x,useprod = FALSE) {
   n <- length(x)
+
+  if (useprod) {
   return(prod(x)^(1/n))
+  } else {
+    return(exp(mean(log(x))/n))
+  }
 }
 
 
