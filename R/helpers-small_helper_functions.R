@@ -13,7 +13,7 @@ geom_mean <- function(x,useprod = FALSE) {
   if (useprod) {
   return(prod(x)^(1/n))
   } else {
-    return(exp(mean(log(x))/n))
+    return(exp(mean(log(x))))
   }
 }
 
