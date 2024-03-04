@@ -35,6 +35,7 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
                                node_labels_proteins = "letters",
                                node_labels_peptides = "numbers",
                                round_digits = 2, use_edge_attributes = FALSE,
+                               legend.x = NULL, legend.y = NULL,
                                ...) {
 
   igraph::V(G)$type <- !igraph::V(G)$type           # switch node types so that proteins are at the top
@@ -129,7 +130,7 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
     vertex.shapes = c("circle", "crectangle")[igraph::V(G)$type+1]
   }
 
-  if (legend) graphics::par(mar = c(10, 4, 4, 2) + 0.1)
+  #if (legend) graphics::par(mar = c(10, 4, 4, 2) + 0.1)
 
   if (use_edge_attributes) {
     edge.lty <- E(G)$deleted + 1
@@ -147,9 +148,10 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
 
   if (legend) {
     pch = ifelse(three_shapes, c(19, 15, 18),  c(19, 15, 15))
-    legend(x = -1, y = -1.3, legend = c("protein", "shared peptide", "unique peptide"),
+    #x = -1, y = -1.3,
+    legend(x = legend.x, y = legend.y, legend = c("protein", "shared peptide", "unique peptide"),
            col = vertex.color, pch = pch)
 
-    graphics::par(mar = c(5, 4, 4, 2) + 0.1)
+    #graphics::par(mar = c(5, 4, 4, 2) + 0.1)
   }
 }
