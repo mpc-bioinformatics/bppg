@@ -6,7 +6,7 @@ test_that("test add_uniqueness_attributes", {
 
   # W shaped graph
   M <- matrix(c(1,1,0,0,1,1), nrow = 2, byrow = TRUE)
-  G <- igraph::graph_from_incidence_matrix(M)
+  G <- igraph::graph_from_biadjacency_matrix(M)
   G_new <- bppg::add_uniqueness_attributes(G)
 
   expect_equal(igraph::V(G_new)$nr_unique_peptides, c(NA, NA, 0, 0, 0))

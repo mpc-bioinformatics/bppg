@@ -5,11 +5,11 @@ test_that("isomorphic_bipartite works as intended", {
 
   # N shape graph
   M <- matrix(c(1,1,0,1), nrow = 2, byrow = TRUE)
-  G <- igraph::graph_from_incidence_matrix(M)
+  G <- igraph::graph_from_biadjacency_matrix(M)
 
   # W shape graph
   M2 <- matrix(c(1,1,0,0,1,1), nrow = 2, byrow = TRUE)
-  G2 <- igraph::graph_from_incidence_matrix(M2)
+  G2 <- igraph::graph_from_biadjacency_matrix(M2)
 
   # M shape graph
   G3 <- G2
@@ -22,7 +22,7 @@ test_that("isomorphic_bipartite works as intended", {
 
   # M + 1 graph
   M4 <- matrix(c(1,1,0,0, 1, 0,0,1,1), nrow = 3, byrow = TRUE)
-  G4 <- igraph::graph_from_incidence_matrix(M4)
+  G4 <- igraph::graph_from_biadjacency_matrix(M4)
 
   G5 <- G4
   igraph::V(G5)$type <- !igraph::V(G4)$type
@@ -38,11 +38,11 @@ test_that("generation of a prototype list", {
 
   # N shape graph
   M <- matrix(c(1,1,0,1), nrow = 2, byrow = TRUE)
-  G <- igraph::graph_from_incidence_matrix(M)
+  G <- igraph::graph_from_biadjacency_matrix(M)
 
   # W shape graph
   M2 <- matrix(c(1,1,0,0,1,1), nrow = 2, byrow = TRUE)
-  G2 <- igraph::graph_from_incidence_matrix(M2)
+  G2 <- igraph::graph_from_biadjacency_matrix(M2)
 
   # M shape graph
   G3 <- G2

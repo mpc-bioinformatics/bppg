@@ -21,8 +21,8 @@ isomorphic_bipartite <- function(graph1, graph2, ...) {
   #iso <- igraph::isomorphic(graph1, graph2)
 
   ## direct graphs if they are not directed yet
-  if (!is.directed(graph1))   graph1 <- bppg::direct_bipartite_graph(graph1)
-  if (!is.directed(graph2))   graph2 <- bppg::direct_bipartite_graph(graph2)
+  if (!igraph::is_directed(graph1))   graph1 <- bppg::direct_bipartite_graph(graph1)
+  if (!igraph::is_directed(graph2))   graph2 <- bppg::direct_bipartite_graph(graph2)
   #graph2 <- bppg::direct_bipartite_graph(graph2)
 
 
