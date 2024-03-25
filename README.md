@@ -29,7 +29,6 @@ library(bppg)
 biadjacency_matrix <- matrix(c(1,1,1,0), nrow = 2)
 G <- igraph::graph_from_incidence_matrix(biadjacency_matrix)
 plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
-#> [1] "" "" "" ""
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
