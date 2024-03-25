@@ -1,6 +1,3 @@
-
-
-
 #' Generate edgelist from list of in silico digested proteins
 #'
 #' @param digested_proteins Output from digest_fasta() (List of vectors of peptide sequences)
@@ -14,9 +11,6 @@
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' digested_proteins <- digest_fasta(fasta)
 #' edgelist <- generate_edgelist(digested_proteins)
-#'
-#'
-#'
 #'
 #'
 generate_edgelist <- function(digested_proteins, prot_origin = NULL) {

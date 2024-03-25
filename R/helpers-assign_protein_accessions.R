@@ -1,4 +1,3 @@
-
 #' Assign protein accessions to a list of peptides, depending on a FASTA file.
 #'
 #' @param sequence vector of peptide sequences
@@ -43,28 +42,3 @@ assign_protein_accessions <- function(sequence, fasta_vec) {
   return(unlist(assigned_proteins))
 }
 
-### TODO: wird abgelöst durch Grapherstellung über die Edgelist (Studienprojekt WS 22/23)
-
-# sequence, fasta_vec
-
-# protein_accessions <- names(fasta_vec)
-#
-# ### 1000 -> 12min
-#
-# x <- pblapply(sequence, function(x) {
-#   ind <- grep(paste0("(?:^M|K|R|^)(", x, ")(?=[^P]|$)"), fasta_vec, perl = TRUE)
-#   ### TODO: passt noch nicht ganz 100%ig, weil
-#   #proteins <- protein_accessions[ind]
-#   #proteins <- BBmisc::collapse(proteins, sep = "/")
-#   return(ind)
-# }
-# )
-# #
-# #
-# #
-# # table(x[[1]])
-#
-# # (?:^M|K|R|^)(WLSPEEVL)(?=[^P]|$)
-#
-# sequence[1:10]
-# fasta_vec[x[[1]]]

@@ -1,5 +1,3 @@
-
-
 #' Generate graphs from peptide ratio table, using an edgelist calculated on the fasta file
 #'
 #' @param peptide_ratios table with peptide ratios
@@ -10,8 +8,6 @@
 #' @export
 #'
 #' @examples
-#' ### TODO: Einstellbar, ob Peptid-Knoten auch gemergt werden sollen (dann mit geom. Mittel als peptid-ratio).
-#' ####      Das funktioniert noch nicht!!!
 generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, outpath = NULL, seq_column = "Sequence",
                                   collapse_protein_nodes = TRUE, collapse_peptide_nodes = FALSE, suffix = "") {
 
@@ -30,14 +26,9 @@ generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, o
   colnames_split <- limma::strsplit2(colnames(peptide_ratios), "_")
   comparisons <- paste(colnames_split[,2], colnames_split[,3], sep = "_")
 
-
-  # graphs <- list()
   subgraphs <- list()
-  #i = 3
 
-  ### TODO: progress bar!
-  for (i in 1:ncol(peptide_ratios)) { #
-
+  for (i in 1:ncol(peptide_ratios)) {
     comparison <- comparisons[i]
 
     fc <- peptide_ratios[,i]
@@ -63,8 +54,6 @@ generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, o
       G[[j]] <- igraph::set_vertex_attr(graph = G[[j]], name = "pep_ratio",
                                         index = igraph::V(G[[j]])[!igraph::V(G[[j]])$type],
                                         value = edgelist_coll$pep_ratio[match(igraph::V(G[[j]])$name[!igraph::V(G[[j]])$type], edgelist_coll$peptide)])
-
-      #peptide_ratios[match(igraph::V(G[[j]])$name[!igraph::V(G[[j]])$type], id[, seq_column]), i]
     }
 
     subgraphs[[i]] <- G
@@ -76,9 +65,6 @@ generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, o
 
 }
 
-
-
-### TODO: save end and intermediate results
 
 #' Generate graphs from quantitative peptide-level data
 #'
@@ -95,7 +81,7 @@ generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, o
 #' @return list of list of graphs
 #' @export
 #'
-#' @examples # TODO
+#' @examples
 generate_graphs_from_quant_data <- function(D, fasta, outpath = NULL, normalize = FALSE,
                                             missed_cleavages = 2, min_aa = 6, max_aa = 50,
                                             id_columns = 1, seq_column = "Sequence",
@@ -115,17 +101,11 @@ generate_graphs_from_quant_data <- function(D, fasta, outpath = NULL, normalize 
 
 
   # remove peptides outside the desired length range
-  # TODO: remove also peptides with too many missed cleavages
   D <- D[nchar(D[, seq_column]) >= min_aa & nchar(D[, seq_column]) <= max_aa,]
 
 
   #normalize Intensities
   intensities <- D[,-id_columns]
-  # TODO: auch Median, Quantilsnormalisierung und LFQ-Normalisierung von MaxQuant erlauben?
-  if (normalize) {
-    #intensities <- 2^limma::normalizeBetweenArrays(log2(intensities), method = "cyclicloess")
-  }
-
 
   ### aggregate replicates by calculating the mean
   group <- factor(limma::strsplit2(colnames(intensities), "_")[,1])

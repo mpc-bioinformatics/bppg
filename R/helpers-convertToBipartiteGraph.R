@@ -1,5 +1,4 @@
-
-#' Conversion of submatrizes to subgraphs.
+#' Conversion of submatrices to subgraphs.
 #'
 #' @param x element of a submatrix list
 #'

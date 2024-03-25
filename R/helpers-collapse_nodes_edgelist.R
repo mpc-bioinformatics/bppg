@@ -1,4 +1,3 @@
-### aus Studienprojekt WS 22/23
 #' Collapsing of peptide and protein nodes of an edgelist.
 #'
 #' @param edgelist edgelist
@@ -16,9 +15,6 @@
 #' edgelist <- bppg::generate_edgelist(digested_proteins)
 #' edgelist_collapsed <- bppg::collapse_edgelist(edgelist)
 #'
-
-
-### TODO: Die Funktion funktioniert derzeit noch nicht, wenn z.B. die Proteinknoten schon collapsed sind!
 
 
 collapse_edgelist <- function(edgelist,
@@ -57,11 +53,11 @@ collapse_edgelist <- function(edgelist,
   #keep <- logical(nrow(edgelist2))
 
   pepNodes2 <- pepNodes
-  pepNodes2$peptide <- limma::strsplit2(pepNodes2$peptide, ";")[,1]  # erstes Peptid aus Liste!
+  pepNodes2$peptide <- limma::strsplit2(pepNodes2$peptide, ";")[,1]  # first peptide from list
   edgelist2 <- edgelist[edgelist$peptide %in% pepNodes2$peptide,]
 
   protNodes2 <- protNodes
-  protNodes2$protein <- limma::strsplit2(protNodes2$protein, ";")[,1]  # erstes Protein aus Liste!
+  protNodes2$protein <- limma::strsplit2(protNodes2$protein, ";")[,1]  # first peptide from list
   edgelist3 <- edgelist2[edgelist2$protein %in% protNodes2$protein,]
 
   edgelist4 <- edgelist3

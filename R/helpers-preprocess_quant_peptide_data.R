@@ -1,9 +1,3 @@
-
-
-### TODO: read in data directly from MaxQuant and filter unnecessary columns and decoys
-### TODO: Normalization
-
-
 #' Import of MaxQuant's peptide.txt-table
 #'
 #' @param path Path to the peptides.txt table
@@ -112,10 +106,8 @@ aggregate_replicates <- function(D, group, missing.limit = 0, method = "mean",
 
     res_tmp <- FUN(X_tmp, na.rm = TRUE)
 
-   # if (!use0) {
-      missingx <- apply(X_tmp, 1, function(x) mean(is.na(x)))
-      res_tmp[missingx > missing.limit | missingx == 1] <- NA
-  #  }
+    missingx <- apply(X_tmp, 1, function(x) mean(is.na(x)))
+    res_tmp[missingx > missing.limit | missingx == 1] <- NA
 
     res <- cbind(res, res_tmp)
   }
@@ -139,7 +131,7 @@ aggregate_replicates <- function(D, group, missing.limit = 0, method = "mean",
 #' @export
 #'
 #' @examples
-#' ### TODO
+#'
 foldChange <- function(D, X, Y, useNA = FALSE) {
   FC <- D[, Y] / D[, X]
 
@@ -164,7 +156,7 @@ foldChange <- function(D, X, Y, useNA = FALSE) {
 #' @export
 #'
 #' @examples
-#' ## TODO
+#'
 calculate_peptide_ratios <- function(aggr_intensities, id_cols = 1,
                                      group_levels = NULL, type = "ratio", log_base = 10) {
 

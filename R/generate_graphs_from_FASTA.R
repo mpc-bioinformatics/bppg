@@ -1,11 +1,9 @@
-### TODO: Matrix package wird auf jeden Fall benötigt
-
 #' Generate graphs from a FASTA file
 #'
 #' @param fasta fasta file, already read into R by seqinr::read.fasta
 #' @param collapse_protein_nodes collapse protein nodes?
 #' @param collapse_peptide_nodes collapse peptide nodes?
-#' @param result_path path whereresults are saved. If NULL, results are not saved
+#' @param result_path path where results are saved. If NULL, results are not saved
 #' @param suffix suffix for saving results
 #' @param save_intermediate Save intermediate results?
 #' @param ... additional arguments to bppg::digest_fasta()
@@ -28,7 +26,7 @@ generate_graphs_from_FASTA <- function(fasta, collapse_protein_nodes = TRUE,
                                        ...) {
 
   message("Digesting FASTA file...")
-  digested_proteins <- bppg::digest_fasta(fasta, ...)#, ...)
+  digested_proteins <- bppg::digest_fasta(fasta, ...)
   message("Generating edgelist ...")
   edgelist <- bppg::generate_edgelist(digested_proteins, prot_origin = prot_origin)
   if (save_intermediate) {
@@ -70,11 +68,5 @@ generate_graphs_from_FASTA <- function(fasta, collapse_protein_nodes = TRUE,
   return(graphs)
 }
 
-
-
-###
-
-
-###
 
 

@@ -1,4 +1,3 @@
-
 #' Geometric mean
 #'
 #' @param x vector with numbers

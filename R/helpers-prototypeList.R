@@ -1,15 +1,12 @@
-
-
-
 #' Generates a list of graph prototypes for the different isomorphism classes and
 #'
 #'
-#' @param G bla
+#' @param G graph
 #'
-#' @return bla
+#' @return list of prototype graphs plus count
 #' @export
 #'
-#' @examples # TODO
+#' @examples
 #'
 #'
 generatePrototypeList <- function(G, sort_by_nr_edges = FALSE) {
@@ -20,11 +17,10 @@ generatePrototypeList <- function(G, sort_by_nr_edges = FALSE) {
 
   pb <- pbapply::startpb(min = 0, max = 1)
 
-  # for (i in 1:length(G))
 
   i <- 1
 
-  # Gehe Liste an Graphen durch
+  # go trough list of graphs
   while(i <= length(G)){
 
     ## if end of list is reached:
@@ -34,12 +30,11 @@ generatePrototypeList <- function(G, sort_by_nr_edges = FALSE) {
       next
     }
 
-    #print(paste0(i, ",", length(G)))
 
     G_tmp <- G[[i]]
 
 
-    # Welche Graphen sind isomorphic zu G_tmp?
+    # Which graphs are isomorphic to G_tmp?
     x <- sapply(G[(i+1):length(G)], function(x) {
       isomorphic_bipartite(x, G_tmp)
     })
@@ -74,12 +69,4 @@ generatePrototypeList <- function(G, sort_by_nr_edges = FALSE) {
   pbapply::closepb(pb)
   return(list(graphs = G, counter = counter))
 }
-
-# P <- generatePrototypeList(G)
-#
-# saveRDS(P, file = "Graph_prototypes_D4.rds")
-
-### TODO: plotten und einzeln als graphml file abspeichern!
-
-### WICHTIG: Laufzeit wird zu Beginn stark überschätzt, geht aber relativ schnell
 

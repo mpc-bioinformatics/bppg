@@ -1,6 +1,3 @@
-
-
-
 #' Adds vertex attributes with uniqueness of peptides and number of unique peptides
 #' for proteins
 #'
