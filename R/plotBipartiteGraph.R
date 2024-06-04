@@ -138,7 +138,6 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
     edge.lty <- 1
   }
 
-
   plot(G, layout = igraph::layout_as_bipartite, vertex.color=vertex.color[type],
        vertex.shape = vertex.shapes,
        vertex.label.degree = c(-pi/2, pi/2)[igraph::V(G)$type+1],
@@ -146,12 +145,12 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
        vertex.size = vertex.size, vertex.label.cex = vertex.label.cex,
        edge.width = edge.width, vertex.size2=vertex.size2, edge.lty = edge.lty, ...)
 
-  if (legend) {
-    pch = ifelse(three_shapes, c(19, 15, 18),  c(19, 15, 15))
-    #x = -1, y = -1.3,
+  if (legend & three_shapes) {
     legend(x = legend.x, y = legend.y, legend = c("protein", "shared peptide", "unique peptide"),
-           col = vertex.color, pch = pch)
-
-    #graphics::par(mar = c(5, 4, 4, 2) + 0.1)
+           col = vertex.color, pch = c(19, 15, 18))
+  }
+  if (legend & !three_shapes) {
+    legend(x = legend.x, y = legend.y, legend = c("protein", "shared peptide", "unique peptide"),
+           col = vertex.color, pch = c(19, 15, 15))
   }
 }
