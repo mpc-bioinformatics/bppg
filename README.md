@@ -17,7 +17,7 @@ You can install the development version of bppg from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("KarinSchork/bppg")
+devtools::install_github("mpc-bioinformatics/bppg")
 ```
 
 ## Example
