@@ -8,7 +8,8 @@
 
 The goal of bppg is to provide functionality to create and characterize
 bipartite graphs that show the relationship between peptides and
-proteins in bottom-up proteomics.
+proteins in bottom-up proteomics. Functionality to use the bipartite graphs for 
+protein quantification will be added in the future.
 
 ## Installation
 
