@@ -100,7 +100,7 @@ calculate_subgraph_characteristics <- function(S, #S2, S3,
 
         nr_prot_node_only_unique_pep <- 0
         nr_prot_node_unique_and_shared_pep <- length(NH_of_unique_peptides) # = Anzahl uniquer Peptide??
-        nr_prot_node_only_shared_pep <-  nr_protein_nodes - length(NH_of_unique_peptides)
+        nr_prot_node_only_shared_pep <-  nr_protein_nodes - nr_prot_node_unique_and_shared_pep#length(NH_of_unique_peptides)
       }
     }
 
