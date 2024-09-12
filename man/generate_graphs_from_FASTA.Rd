@@ -22,11 +22,13 @@ generate_graphs_from_FASTA(
 
 \item{collapse_peptide_nodes}{collapse peptide nodes?}
 
-\item{result_path}{path whereresults are saved. If NULL, results are not saved}
+\item{result_path}{path where results are saved. If NULL, results are not saved}
 
 \item{suffix}{suffix for saving results}
 
 \item{save_intermediate}{Save intermediate results?}
+
+\item{prot_origin}{origin of protein, e.g. organism etc.}
 
 \item{...}{additional arguments to bppg::digest_fasta()}
 }

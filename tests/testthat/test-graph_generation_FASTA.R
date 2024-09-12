@@ -1,6 +1,6 @@
 
 test_that("digestion of a FASTA file", {
-  digested_proteins <- readRDS(test_path("testfiles/digested_proteins_test.rds"))
+  digested_proteins <- readRDS(testthat::test_path("testfiles/digested_proteins_test.rds"))
 
   file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
   fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
@@ -12,9 +12,9 @@ test_that("digestion of a FASTA file", {
 
 
 test_that("generation of an edgelist", {
-  edgelist <- readRDS(test_path("testfiles/edgelist_test.rds"))
+  edgelist <- readRDS(testthat::test_path("testfiles/edgelist_test.rds"))
 
-  digested_proteins <- readRDS(test_path("testfiles/digested_proteins_test.rds"))
+  digested_proteins <- readRDS(testthat::test_path("testfiles/digested_proteins_test.rds"))
   res <- generate_edgelist(digested_proteins)
 
   expect_equal(res, edgelist)
@@ -22,9 +22,9 @@ test_that("generation of an edgelist", {
 
 
 test_that("collapsing of edgelists", {
-  edgelist_coll_pept_prot <- readRDS(test_path("testfiles/edgelist_coll_pept_prot_test.rds"))
+  edgelist_coll_pept_prot <- readRDS(testthat::test_path("testfiles/edgelist_coll_pept_prot_test.rds"))
 
-  edgelist <- readRDS(test_path("testfiles/edgelist_test.rds"))
+  edgelist <- readRDS(testthat::test_path("testfiles/edgelist_test.rds"))
   res <- bppg::collapse_edgelist(edgelist,
                                            collapse_protein_nodes = TRUE,
                                            collapse_peptide_nodes = TRUE)
@@ -32,9 +32,9 @@ test_that("collapsing of edgelists", {
   expect_equal(res, edgelist_coll_pept_prot)
 
 
-  edgelist_coll_prot <- readRDS(test_path("testfiles/edgelist_coll_prot_test.rds"))
+  edgelist_coll_prot <- readRDS(testthat::test_path("testfiles/edgelist_coll_prot_test.rds"))
 
-  edgelist <- readRDS(test_path("testfiles/edgelist_test.rds"))
+  edgelist <- readRDS(testthat::test_path("testfiles/edgelist_test.rds"))
   res2 <- bppg::collapse_edgelist(edgelist,
                                  collapse_protein_nodes = TRUE,
                                  collapse_peptide_nodes = FALSE)
@@ -54,39 +54,36 @@ test_that("generation of graphs from edgelist", {
   edgelist_coll_pept_prot <- readRDS(testthat::test_path("testfiles/edgelist_coll_pept_prot_test.rds"))
 
   res <- bppg::generate_graphs_from_edgelist(edgelist_coll_pept_prot)
-  expect_true(bppg::isomorphic_bipartite(res[[1]], igraph::upgrade_graph(graphs_coll_pept_prot[[1]])))
-  expect_true(bppg::isomorphic_bipartite(res[[2]], igraph::upgrade_graph(graphs_coll_pept_prot[[2]])))
+  expect_true(bppg::isomorphic_bipartite(res[[1]], graphs_coll_pept_prot[[1]]))
+  expect_true(bppg::isomorphic_bipartite(res[[2]], graphs_coll_pept_prot[[2]]))
+  expect_true(bppg::isomorphic_bipartite(res[[3]], graphs_coll_pept_prot[[3]]))
 
   # with collapsing of only protein nodes
   edgelist_coll_prot <- readRDS(test_path("testfiles/edgelist_coll_prot_test.rds"))
   res2 <- bppg::generate_graphs_from_edgelist(edgelist_coll_prot)
-  expect_true(bppg::isomorphic_bipartite(res2[[1]], igraph::upgrade_graph(graphs_coll_prot[[1]])))
-  expect_true(bppg::isomorphic_bipartite(res2[[2]], igraph::upgrade_graph(graphs_coll_prot[[2]])))
+  expect_true(bppg::isomorphic_bipartite(res2[[1]], graphs_coll_prot[[1]]))
+  expect_true(bppg::isomorphic_bipartite(res2[[2]], graphs_coll_prot[[2]]))
+  expect_true(bppg::isomorphic_bipartite(res2[[3]], graphs_coll_prot[[3]]))
 
-
-  # TODO: evtl ist es nicht ganz ideal hier mit einer Funktio aus bppg (isomorphic_bipartite) den Test zu machen
-  # evtl wegen alter igraph version (siehe testthat output?)
 })
 
 
 
 test_that("subgraph characteristics table", {
 
-  ## TODO: evtl weiteres Beispiel mit einem Graph mit mind. einem Protein ohne uniques Peptid
-
   expected <- data.frame(
-    graph_ID = c(1L,2L),
-    nr_protein_nodes = c(7L,1L),
-    nr_peptide_nodes = c(13L,1L),
-    nr_unique_peptide_nodes = c(7L,1L),
-    nr_shared_peptide_nodes = c(6L,0L),
-    nr_edges = c(22L,1L),
-    nr_protein_accessions = c(7L,1L),
-    nr_peptide_sequences = c(476L, 204L),
-    nr_prot_node_only_unique_pep = c(0,1),
-    nr_prot_node_unique_and_shared_pep = c(7,0),
-    nr_prot_node_only_shared_pep = c(0, 0),
-    comparison = c(1L,1L)
+    graph_ID = c(1L,2L,3L),
+    nr_protein_nodes = c(7L,1L,2L),
+    nr_peptide_nodes = c(13L,1L,2L),
+    nr_unique_peptide_nodes = c(7L,1L,1L),
+    nr_shared_peptide_nodes = c(6L,0L,1L),
+    nr_edges = c(22L,1L,3L),
+    nr_protein_accessions = c(7L,1L,2L),
+    nr_peptide_sequences = c(476L, 204L,47L),
+    nr_prot_node_only_unique_pep = c(0,1,0L),
+    nr_prot_node_unique_and_shared_pep = c(7L,0L,1L),
+    nr_prot_node_only_shared_pep = c(0L, 0L, 1L),
+    comparison = c(1L,1L, 1L)
   )
 
   G <- readRDS(test_path("testfiles/graphs_coll_pept_prot_test.rds"))

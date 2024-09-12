@@ -3,6 +3,11 @@
 #' @param peptide_ratios table with peptide ratios
 #' @param id_cols columns with ids, e.g. peptide sequences (everything except the peptide ratios)
 #' @param fasta_edgelist Edgelist created from the corresponding FASTA file
+#' @param outpath output path
+#' @param seq_column column name of the peptide sequence
+#' @param collapse_protein_nodes if TRUE protein nodes will be collapsed
+#' @param collapse_peptide_nodes if TRUE, peptide nodes will be collapsed
+#' @param suffix suffix for output files
 #'
 #' @return list of list of subgraphs
 #' @export
@@ -72,26 +77,37 @@ generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, o
 #' (e.g. output from bppg::read_MQ_peptidetable)
 #' @param fasta fasta file used for identification of peptides in D
 #' @param outpath bla
-#' @param normalize currently only loess normalization possible
 #' @param missed_cleavages bla
 #' @param min_aa bla
 #' @param max_aa bla
 #' @param ... currently not in use
+#' @param id_columns column numbers of D that contain ID information (the rest should contain only peptide intensities, properly normalized)
+#' @param seq_column column name of the peptide sequence
+#' @param collapse_protein_nodes if TRUE protein nodes will be collapsed
+#' @param collapse_peptide_nodes if TRUE, peptide nodes will be collapsed
+#' @param suffix suffix for output files
 #'
 #' @return list of list of graphs
 #' @export
 #'
 #' @examples
-generate_graphs_from_quant_data <- function(D, fasta, outpath = NULL, normalize = FALSE,
-                                            missed_cleavages = 2, min_aa = 6, max_aa = 50,
-                                            id_columns = 1, seq_column = "Sequence",
-                                            collapse_protein_nodes = TRUE, collapse_peptide_nodes = FALSE,
+generate_graphs_from_quant_data <- function(D,
+                                            fasta,
+                                            outpath = NULL,
+                                            #normalize = FALSE,
+                                            missed_cleavages = 2,
+                                            min_aa = 6,
+                                            max_aa = 50,
+                                            id_columns = 1,
+                                            seq_column = "Sequence",
+                                            collapse_protein_nodes = TRUE,
+                                            collapse_peptide_nodes = FALSE,
                                             suffix = "",
                                             ...) {
 
   message("Digesting FASTA file...")
   digested_proteins <- bppg::digest_fasta(fasta, missed_cleavages = missed_cleavages,
-                                          min_aa = min_aa, max_aa = max_aa)#, ...)
+                                          min_aa = min_aa, max_aa = max_aa)
   message("Generating edgelist ...")
   edgelist <- bppg::generate_edgelist(digested_proteins)
 
@@ -99,12 +115,9 @@ generate_graphs_from_quant_data <- function(D, fasta, outpath = NULL, normalize 
     openxlsx::write.xlsx(edgelist, file = paste0(outpath, "edgelist_fasta_", suffix, ".xlsx"), overwrite = TRUE, keepNA = TRUE)
   }
 
-
   # remove peptides outside the desired length range
   D <- D[nchar(D[, seq_column]) >= min_aa & nchar(D[, seq_column]) <= max_aa,]
 
-
-  #normalize Intensities
   intensities <- D[,-id_columns]
 
   ### aggregate replicates by calculating the mean

@@ -7,7 +7,7 @@
 #' @param suffix suffix for saving results
 #' @param save_intermediate Save intermediate results?
 #' @param ... additional arguments to bppg::digest_fasta()
-
+#' @param prot_origin origin of protein, e.g. organism etc.
 #'
 #' @return subgraphs (i.e. connected components) from the graph generated from the FASTA file.
 #' @export

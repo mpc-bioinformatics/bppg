@@ -7,16 +7,13 @@
 generatePrototypeList(G, sort_by_nr_edges = FALSE)
 }
 \arguments{
-\item{G}{bla}
+\item{G}{graph}
+
+\item{sort_by_nr_edges}{logical, if TRUE, the list of prototypes is sorted by number of edges}
 }
 \value{
-bla
+list of prototype graphs plus count
 }
 \description{
 Generates a list of graph prototypes for the different isomorphism classes and
-}
-\examples{
-# TODO
-
-
 }

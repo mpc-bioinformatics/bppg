@@ -8,6 +8,8 @@ generate_edgelist(digested_proteins, prot_origin = NULL)
 }
 \arguments{
 \item{digested_proteins}{Output from digest_fasta() (List of vectors of peptide sequences)}
+
+\item{prot_origin}{origin of the protein (e.g. organism, spike-in/background etc)}
 }
 \value{
 edgelist
@@ -21,9 +23,6 @@ file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 digested_proteins <- digest_fasta(fasta)
 edgelist <- generate_edgelist(digested_proteins)
-
-
-
 
 
 }

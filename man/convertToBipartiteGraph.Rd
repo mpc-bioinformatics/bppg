@@ -2,7 +2,7 @@
 % Please edit documentation in R/helpers-convertToBipartiteGraph.R
 \name{convertToBipartiteGraph}
 \alias{convertToBipartiteGraph}
-\title{Conversion of submatrizes to subgraphs.}
+\title{Conversion of submatrices to subgraphs.}
 \usage{
 convertToBipartiteGraph(x)
 }
@@ -13,7 +13,7 @@ convertToBipartiteGraph(x)
 graph as igraph object
 }
 \description{
-Conversion of submatrizes to subgraphs.
+Conversion of submatrices to subgraphs.
 }
 \examples{
 M <- matrix(c(1,0,1,1), nrow = 2, byrow = TRUE)

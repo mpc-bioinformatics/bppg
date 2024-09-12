@@ -7,7 +7,9 @@
 add_average_pep_ratio(G, type = "geom_mean")
 }
 \arguments{
-\item{G}{}
+\item{G}{graph}
+
+\item{type}{not used at the moment. Default is 'geom_mean'}
 }
 \value{
 graphs with added attributes

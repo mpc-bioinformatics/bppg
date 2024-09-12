@@ -2,6 +2,7 @@
 #'
 #'
 #' @param G graph
+#' @param sort_by_nr_edges logical, if TRUE, the list of prototypes is sorted by number of edges
 #'
 #' @return list of prototype graphs plus count
 #' @export
@@ -41,7 +42,7 @@ generatePrototypeList <- function(G, sort_by_nr_edges = FALSE) {
     ind <- which(x)
 
 
-    # delete Graphs isomorphic to G_tmp graphs (-> list becomes smallet)
+    # delete Graphs isomorphic to G_tmp graphs (-> list becomes smaller)
     # G_tmp itself is a new isomorphism class.
     if (length(ind) > 0) {
       G <- G[-(ind+i)]

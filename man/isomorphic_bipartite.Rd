@@ -21,8 +21,3 @@ TRUE if graphs are isomorphic, FALSE if not.
 Enchanced version of the igraph::isomorphic function that also considers the
 node type in bipartite graphs, e.g. that W- and M-shaped graphs are NOT isomorphic
 }
-\examples{
-# TODO
-
-
-}

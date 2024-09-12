@@ -4,10 +4,12 @@
 \alias{geom_mean}
 \title{Geometric mean}
 \usage{
-geom_mean(x)
+geom_mean(x, useprod = FALSE)
 }
 \arguments{
 \item{x}{vector with numbers}
+
+\item{useprod}{if TRUE, prod(x)^(1/n) will be calculated, otherwise exp(mean(log(x)))}
 }
 \value{
 geometric mean of the provided data points

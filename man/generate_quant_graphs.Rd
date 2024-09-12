@@ -21,14 +21,20 @@ generate_quant_graphs(
 \item{id_cols}{columns with ids, e.g. peptide sequences (everything except the peptide ratios)}
 
 \item{fasta_edgelist}{Edgelist created from the corresponding FASTA file}
+
+\item{outpath}{output path}
+
+\item{seq_column}{column name of the peptide sequence}
+
+\item{collapse_protein_nodes}{if TRUE protein nodes will be collapsed}
+
+\item{collapse_peptide_nodes}{if TRUE, peptide nodes will be collapsed}
+
+\item{suffix}{suffix for output files}
 }
 \value{
 list of list of subgraphs
 }
 \description{
 Generate graphs from peptide ratio table, using an edgelist calculated on the fasta file
-}
-\examples{
-### TODO: Einstellbar, ob Peptid-Knoten auch gemergt werden sollen (dann mit geom. Mittel als peptid-ratio).
-####      Das funktioniert noch nicht!!!
 }

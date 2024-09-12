@@ -1,6 +1,7 @@
 #' Generate edgelist from list of in silico digested proteins
 #'
 #' @param digested_proteins Output from digest_fasta() (List of vectors of peptide sequences)
+#' @param prot_origin origin of the protein (e.g. organism, spike-in/background etc)
 #'
 #' @return edgelist
 #' @export

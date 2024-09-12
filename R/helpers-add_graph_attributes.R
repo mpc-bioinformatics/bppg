@@ -39,7 +39,8 @@ add_uniqueness_attributes <- function(G) {
 
 #' Adds average peptide ratios as a attribute to the graphs, if a list of peptide ratios is already present
 #'
-#' @param G
+#' @param G graph
+#' @param type not used at the moment. Default is 'geom_mean'
 #'
 #' @return graphs with added attributes
 #' @export

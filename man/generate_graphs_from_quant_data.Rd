@@ -8,7 +8,6 @@ generate_graphs_from_quant_data(
   D,
   fasta,
   outpath = NULL,
-  normalize = FALSE,
   missed_cleavages = 2,
   min_aa = 6,
   max_aa = 50,
@@ -28,13 +27,21 @@ generate_graphs_from_quant_data(
 
 \item{outpath}{bla}
 
-\item{normalize}{currently only loess normalization possible}
-
 \item{missed_cleavages}{bla}
 
 \item{min_aa}{bla}
 
 \item{max_aa}{bla}
+
+\item{id_columns}{column numbers of D that contain ID information (the rest should contain only peptide intensities, properly normalized)}
+
+\item{seq_column}{column name of the peptide sequence}
+
+\item{collapse_protein_nodes}{if TRUE protein nodes will be collapsed}
+
+\item{collapse_peptide_nodes}{if TRUE, peptide nodes will be collapsed}
+
+\item{suffix}{suffix for output files}
 
 \item{...}{currently not in use}
 }
@@ -43,7 +50,4 @@ list of list of graphs
 }
 \description{
 Generate graphs from quantitative peptide-level data
-}
-\examples{
-# TODO
 }

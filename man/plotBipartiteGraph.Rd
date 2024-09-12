@@ -19,6 +19,8 @@ plotBipartiteGraph(
   node_labels_peptides = "numbers",
   round_digits = 2,
   use_edge_attributes = FALSE,
+  legend.x = "bottom",
+  legend.y = NULL,
   ...
 )
 }
@@ -51,6 +53,10 @@ plotBipartiteGraph(
 
 \item{use_edge_attributes}{Use edge attributes for plotting (e.g. deleted edges will be dashed)?}
 
+\item{legend.x}{x-coordinate of the legend.}
+
+\item{legend.y}{y-coordinate of the legend.}
+
 \item{...}{Additional arguments for plot.igraph.}
 }
 \value{
@@ -61,6 +67,6 @@ Plotting of bipartite peptide-protein graphs.
 }
 \examples{
 biadjacency_matrix <- matrix(c(1,1,1,0), nrow = 2)
-G <- igraph::graph_from_incidence_matrix(biadjacency_matrix)
-plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
+G <- igraph::graph_from_biadjacency_matrix(biadjacency_matrix)
+#plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
 }

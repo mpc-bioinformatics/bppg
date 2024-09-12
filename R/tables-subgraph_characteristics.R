@@ -2,10 +2,8 @@
 #' Generates a table with characteristics for each subgraph in a list.
 #'
 #' @param S list of subgraphs, where peptide and protein nodes are collapsed
-#' @param S2 list of subgraphs, where only protein nodes are collapsed
-#' @param S3 list of subgraphs, where nodes are not collapsed
 #' @param fastalevel Are the subgraphs on fasta level?
-#' @param comparison name of comparison, for quantitative level (not in use currently)
+#' @param prototype Are the subgraphs part of a prototype list?
 #' @param file where to save the table.
 #'
 #'
@@ -14,10 +12,21 @@
 #'
 #' @examples
 #' # TODO
-calculate_subgraph_characteristics_OLD <- function(S, S2, S3, fastalevel = TRUE, comparison = NULL, file = NULL) {
+calculate_subgraph_characteristics <- function(S, #S2, S3,
+                                               fastalevel = TRUE,
+                                               prototype = FALSE,
+                                               #comparison = NULL,
+                                               file = NULL) {
+
+  if (prototype) {
+    counter <- S$counter
+    S <- S$graph
+  }
 
   Data <- NULL
 
+
+  ### TODO: das kann man auch anders lösen, indem man guckt ob es ne liste ist? Dann würde das Argument wegfallen
   if (fastalevel) {
     comparisons <- 1
   } else {
@@ -28,12 +37,12 @@ calculate_subgraph_characteristics_OLD <- function(S, S2, S3, fastalevel = TRUE,
 
     if (fastalevel) {
       S_tmp <- S
-      S2_tmp <- S2
-      S3_tmp <- S3
+      # S2_tmp <- S2
+      # S3_tmp <- S3
     } else {
       S_tmp <- S[[j]]
-      S2_tmp <- S2[[j]]
-      S3_tmp <- S3[[j]]
+      # S2_tmp <- S2[[j]]
+      #  S3_tmp <- S3[[j]]
     }
 
     print(comparisons[j])
@@ -46,49 +55,82 @@ calculate_subgraph_characteristics_OLD <- function(S, S2, S3, fastalevel = TRUE,
     for (i in 1:length(S_tmp)) {
 
       G_tmp <- S_tmp[[i]]
-      G2_tmp <- S2_tmp[[i]]
-      G3_tmp <- S3_tmp[[i]]
 
 
-    #S_tmp <- igraph::as_incidence_matrix(G_tmp)
+      nr_protein_nodes <- sum(igraph::V(G_tmp)$type)
+      nr_peptide_nodes <- sum(!igraph::V(G_tmp)$type)
+      nr_edges <- igraph::gsize(G_tmp)
 
-    nr_proteins <- sum(igraph::V(G_tmp)$type)
-    nr_peptides <- sum(!igraph::V(G_tmp)$type)
-    nr_edges <- igraph::gsize(G_tmp)
-
-    nr_edges_per_pep_node <- igraph::degree(G_tmp)[!igraph::V(G_tmp)$type]
-    nr_unique_peptides <- sum(nr_edges_per_pep_node == 1)
-    nr_shared_peptides <- sum(nr_edges_per_pep_node > 1)
-
-    nr_protein_accessions <- sum(igraph::V(G3_tmp)$type)
-    nr_peptide_sequences <- sum(!igraph::V(G2_tmp)$type)
-    nr_edges_per_pep_node2 <- igraph::degree(G2_tmp)[!igraph::V(G2_tmp)$type]
-    nr_peptide_sequences_unique <- sum(nr_edges_per_pep_node2 == 1)
-    nr_peptide_sequences_shared <- sum(nr_edges_per_pep_node2 > 1)
+      nr_edges_per_pep_node <- igraph::degree(G_tmp)[!igraph::V(G_tmp)$type]
+      nr_unique_peptides <- sum(nr_edges_per_pep_node == 1)
+      nr_shared_peptides <- sum(nr_edges_per_pep_node > 1)
 
 
+      protein_acc <- igraph::V(G_tmp)$name[igraph::V(G_tmp)$type]
+      protein_acc <- strsplit(protein_acc, ";")
+      nr_protein_accessions <- sum(sapply(protein_acc, length))
 
-    D_tmp <- data.frame(graph_ID = i,
-                        nr_protein_nodes = nr_proteins,
-                        nr_peptide_nodes = nr_peptides,
-                        nr_unique_peptide_nodes = nr_unique_peptides,
-                        nr_shared_peptide_nodes = nr_shared_peptides,
-                        nr_edges = nr_edges,
-                        nr_protein_accessions = nr_protein_accessions,
-                        nr_peptide_sequences = nr_peptide_sequences,
-                        nr_peptide_sequences_unique = nr_peptide_sequences_unique,
-                        nr_peptide_sequences_shared = nr_peptide_sequences_shared,
-                        comparison = comparisons[j]
+      peptide_seq <- igraph::V(G_tmp)$name[!igraph::V(G_tmp)$type]
+      peptide_seq <- strsplit(peptide_seq, ";")
+      nr_peptide_sequences <- sum(sapply(peptide_seq, length))
 
-    )
 
-    Data <- rbind(Data, D_tmp)
 
-    pbapply::setpb(pb, i)
+      unique_peptide_nodes <- igraph::V(G_tmp)[(igraph::degree(G_tmp) == 1 & !igraph::V(G_tmp)$type)]
+
+      if (length(unique_peptide_nodes) == 0) { # Fall: keine uniquen Peptide im ganzen Graphen
+        nr_prot_node_only_unique_pep <- 0
+        nr_prot_node_unique_and_shared_pep <- 0
+        nr_prot_node_only_shared_pep <-  nr_protein_nodes
+
+      } else {
+        if (length(unique_peptide_nodes) == 1 & nr_protein_nodes == 1) { # Fall: I-shaped graph
+          nr_prot_node_only_unique_pep <- 1
+          nr_prot_node_unique_and_shared_pep <- 0
+          nr_prot_node_only_shared_pep <-  0
+        } else {
+
+          # neighborhood of the unique peptides (these are proteins with a unique peptide)
+          NH_of_unique_peptides <- igraph::ego(G_tmp, order = 1, mindist = 1, nodes = unique_peptide_nodes)
+
+          nr_prot_node_only_unique_pep <- 0
+          nr_prot_node_unique_and_shared_pep <- length(NH_of_unique_peptides) # = Anzahl uniquer Peptide??
+          nr_prot_node_only_shared_pep <-  nr_protein_nodes - nr_prot_node_unique_and_shared_pep#length(NH_of_unique_peptides)
+        }
+      }
+
+      ### TODO: add nr of unique and shared peptide sequences
+      ### TODO: add info about graph type (isomorphism list!)
+
+      D_tmp <- data.frame(graph_ID = i,
+                          nr_protein_nodes = nr_protein_nodes,
+                          nr_peptide_nodes = nr_peptide_nodes,
+                          nr_unique_peptide_nodes = nr_unique_peptides,
+                          nr_shared_peptide_nodes = nr_shared_peptides,
+                          nr_edges = as.integer(nr_edges),
+                          nr_protein_accessions = nr_protein_accessions,
+                          nr_peptide_sequences = as.integer(nr_peptide_sequences),
+                          # nr_peptide_sequences_unique = nr_peptide_sequences_unique,
+                          # nr_peptide_sequences_shared = nr_peptide_sequences_shared,
+                          nr_prot_node_only_unique_pep = nr_prot_node_only_unique_pep,
+                          nr_prot_node_unique_and_shared_pep = nr_prot_node_unique_and_shared_pep,
+                          nr_prot_node_only_shared_pep = nr_prot_node_only_shared_pep,
+                          comparison = comparisons[j]
+
+      )
+
+      Data <- rbind(Data, D_tmp)
+
+      pbapply::setpb(pb, i)
+    }
+    #progress bar command
+    invisible(NULL)
   }
-  #progress bar command
-  invisible(NULL)
-}
+
+  if (prototype) {
+    Data <- cbind(Data, counter = counter)
+  }
+
   if (!is.null(file)) openxlsx::write.xlsx(Data, file, overwrite = TRUE)
 
   return(Data)

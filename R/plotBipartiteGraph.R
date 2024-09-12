@@ -20,14 +20,16 @@
 #' @param node_labels_peptides "numbers" or "pep_ratios" or "pep_ratio_aggr"
 #' @param round_digits Number of digits to round the peptide ratios to.
 #' @param use_edge_attributes Use edge attributes for plotting (e.g. deleted edges will be dashed)?
+#' @param legend.x x-coordinate of the legend.
+#' @param legend.y y-coordinate of the legend.
 #'
 #' @return Plot of one bipartite graph.
 #' @export
 #'
 #' @examples
 #' biadjacency_matrix <- matrix(c(1,1,1,0), nrow = 2)
-#' G <- igraph::graph_from_incidence_matrix(biadjacency_matrix)
-#' plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
+#' G <- igraph::graph_from_biadjacency_matrix(biadjacency_matrix)
+#' #plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
 plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
                                vertex.color = c("mediumseagreen", "cadetblue2", "coral1"),
                                vertex.size = 15, vertex.label.cex = 1, edge.width = 1, vertex.size2=15,
@@ -35,7 +37,7 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
                                node_labels_proteins = "letters",
                                node_labels_peptides = "numbers",
                                round_digits = 2, use_edge_attributes = FALSE,
-                               legend.x = NULL, legend.y = NULL,
+                               legend.x = "bottom", legend.y = NULL,
                                ...) {
 
   igraph::V(G)$type <- !igraph::V(G)$type           # switch node types so that proteins are at the top
@@ -56,7 +58,7 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
     names_G[Layout[,2] == 1] <- LETTERS[rank(pos_proteins)]
   }
   if (node_labels_proteins == "accessions") {
-    names_G[Layout[,2] == 1] <- limma::strsplit2(V(G)$name[Layout[,2] == 1], ";")[,1]
+    names_G[Layout[,2] == 1] <- limma::strsplit2(igraph::V(G)$name[Layout[,2] == 1], ";")[,1]
   }
   # nicht geordnete Zahlen
   if (node_labels_proteins == "numbers_noord") {
@@ -70,11 +72,11 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
     names_G[Layout[,2] == 0] <- names_peptides[rank(pos_peptides)]
   }
   if (node_labels_peptides == "pep_ratios") {
-    pep_ratios <- V(G)$pep_ratio
+    pep_ratios <- igraph::V(G)$pep_ratio
     names_G[Layout[,2] == 0] <- round(pep_ratios[Layout[,2] == 0],round_digits)
   }
   if (node_labels_peptides == "pep_ratio_aggr") {
-    pep_ratios <- V(G)$pep_ratio_aggr
+    pep_ratios <- igraph::V(G)$pep_ratio_aggr
     names_G[Layout[,2] == 0] <- round(pep_ratios[Layout[,2] == 0],round_digits)
   }
   if (node_labels_peptides == "") {
@@ -85,23 +87,6 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
   G <- igraph::set_vertex_attr(G, name = "name", value = names_G)
 
   #################################
-
-
-  # if (node_labels == "letters+numbers") {
-  #   names_G[Layout[,2] == 1] <- LETTERS[rank(pos_proteins)]
-  #   names_peptides <- 1:sum(Layout[,2] == 0)
-  #   names_G[Layout[,2] == 0] <- names_peptides[rank(pos_peptides)]
-  #
-  #   G <- igraph::set_vertex_attr(G, name = "name", value = names_G)
-  # }
-  # if (node_labels == "peptide_ratios") {
-  #   pep_ratios <- V(G)$pep_ratio
-  #   names_G[Layout[,2] == 1] <- limma::strsplit2(V(G)$name[Layout[,2] == 1], ";")[,1]
-  #
-  #  # names_peptides <- 1:sum(Layout[,2] == 0)
-  #   names_G[Layout[,2] == 0] <- round(pep_ratios[Layout[,2] == 0],2)
-  #   G <- igraph::set_vertex_attr(G, name = "name", value = names_G)
-  # }
 
   type <- integer(length(igraph::V(G)))
   type[!igraph::V(G)$type] <- 1                  # "protein"
@@ -133,7 +118,7 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
   #if (legend) graphics::par(mar = c(10, 4, 4, 2) + 0.1)
 
   if (use_edge_attributes) {
-    edge.lty <- E(G)$deleted + 1
+    edge.lty <- igraph::E(G)$deleted + 1
   } else {
     edge.lty <- 1
   }

@@ -5,9 +5,10 @@
 #' @param remove_contaminants If TRUE, peptide sequences from potential contaminants are removed
 #' @param rename_columns Rename columns? If TRUE, "Intensity." or "LFQ.intensity." are removed
 #' @param zeroToNA If TRUE, zeros are converted to NAs.
-#' @param remove_empty_rows
+#' @param remove_empty_rows If TRUE, rows with only NAs are removed.
+#' @param further_columns_to_keep additional columns to keep, except peptide sequence and intensities
 #'
-#' @return Dataframe with sequences and intensities
+#' @return Data frame with sequences and intensities
 #' @export
 #'
 #' @examples
@@ -31,7 +32,7 @@ read_MQ_peptidetable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
   }
 
 
-  ## search for itensity columns or LFQ values
+  ## search for intensity columns or LFQ values
   if(LFQ) {
     intensities <- D[, grep("LFQ", colnames(D))]
     if (rename_columns) colnames(intensities) <- stringr::str_replace(colnames(intensities), "LFQ.intensity.", "")
@@ -151,6 +152,7 @@ foldChange <- function(D, X, Y, useNA = FALSE) {
 #' @param id_cols column numbers that contain peptide sequences etc (everything except intensities)
 #' @param group_levels levels of groups in the right order
 #' @param type "ratio" or "difference". Difference if values are already on log-scale
+#' @param log_base log base
 #'
 #' @return data set with peptide ratios
 #' @export

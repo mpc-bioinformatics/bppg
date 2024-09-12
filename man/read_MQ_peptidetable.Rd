@@ -25,10 +25,12 @@ read_MQ_peptidetable(
 
 \item{zeroToNA}{If TRUE, zeros are converted to NAs.}
 
-\item{remove_empty_rows}{}
+\item{remove_empty_rows}{If TRUE, rows with only NAs are removed.}
+
+\item{further_columns_to_keep}{additional columns to keep, except peptide sequence and intensities}
 }
 \value{
-Dataframe with sequences and intensities
+Data frame with sequences and intensities
 }
 \description{
 Import of MaxQuant's peptide.txt-table
