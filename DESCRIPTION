@@ -20,6 +20,7 @@ Imports:
     openxlsx,
     pbapply,
     robustbase,
+    Rsolnp,
     seqinr,
     stringr
 Suggests: 
