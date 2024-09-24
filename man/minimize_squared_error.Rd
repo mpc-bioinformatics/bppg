@@ -17,7 +17,7 @@ minimize_squared_error(
 \arguments{
 \item{S}{list of biadjacency matrix of the bipartite peptide-protein graph (X) and measured peptide ratios (fc)}
 
-\item{fixed.Ci}{vector of fixed protein weights, variable weights set as NA. Sum of fixed weights must not exceed 1. If NULL, all Cis will be considered as variable.}
+\item{fixed.Ci}{vector of fixed protein weights, variable weights set as NA. Sum of fixed weights must not exceed 1. If NULL, all Cis will be considered as variable. This argument is needed to fix Ci on a grid point in the iterated_Ci function.}
 
 \item{verbose}{if TRUE, additional information on each iteration of the optimization is printed (see also rsolnp function in package Rsolnp)}
 

@@ -51,3 +51,6 @@ list of list of graphs
 \description{
 Generate graphs from quantitative peptide-level data
 }
+\examples{
+# TODO
+}

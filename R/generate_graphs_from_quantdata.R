@@ -12,7 +12,7 @@
 #' @return list of list of subgraphs
 #' @export
 #'
-#' @examples
+#' @examples # TODO
 generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, outpath = NULL, seq_column = "Sequence",
                                   collapse_protein_nodes = TRUE, collapse_peptide_nodes = FALSE, suffix = "") {
 
@@ -90,7 +90,7 @@ generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, o
 #' @return list of list of graphs
 #' @export
 #'
-#' @examples
+#' @examples # TODO
 generate_graphs_from_quant_data <- function(D,
                                             fasta,
                                             outpath = NULL,

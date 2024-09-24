@@ -8,10 +8,7 @@
 #' @return TRUE if graphs are isomorphic, FALSE if not.
 #' @export
 #'
-#' @examples
-#'
-#'
-
+#' @examples # TODO
 isomorphic_bipartite <- function(graph1, graph2, ...) {
 
   ## direct graphs if they are not directed yet
@@ -34,7 +31,7 @@ isomorphic_bipartite <- function(graph1, graph2, ...) {
 #' @return a bipartite graph that is know directed
 #' @export
 #'
-#' @examples
+#' @examples # TODO
 #'
 #' @importFrom igraph %->%
 #'

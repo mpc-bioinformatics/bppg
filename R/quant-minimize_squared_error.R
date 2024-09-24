@@ -50,8 +50,6 @@ equation <- function(Ri,
 
 
 
-### TODO: use graph G directly instead of submatrix!
-
 
 #' Function to set up the optimization problem and minimize the sum of squared error terms
 #'

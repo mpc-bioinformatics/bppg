@@ -7,7 +7,7 @@
 #' @return list of prototype graphs plus count
 #' @export
 #'
-#' @examples
+#' @examples # TODO
 #'
 #'
 generatePrototypeList <- function(G, sort_by_nr_edges = FALSE) {

@@ -17,3 +17,7 @@ a bipartite graph that is know directed
 \description{
 Transform a bipartite graph into a directed graph
 }
+\examples{
+# TODO
+
+}
