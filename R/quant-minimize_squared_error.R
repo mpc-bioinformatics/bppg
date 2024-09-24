@@ -56,7 +56,7 @@ equation <- function(Ri,
 #' Function to set up the optimization problem and minimize the sum of squared error terms
 #'
 #' @param S list of biadjacency matrix of the bipartite peptide-protein graph (X) and measured peptide ratios (fc)
-#' @param fixed.Ci vector of fixed protein weights, variable weights set as NA. Sum of fixed weights must not exceed 1. If NULL, all Cis will be considered as variable.
+#' @param fixed.Ci vector of fixed protein weights, variable weights set as NA. Sum of fixed weights must not exceed 1. If NULL, all Cis will be considered as variable. This argument is needed to fix Ci on a grid point in the iterated_Ci function.
 #' @param verbose if TRUE, additional information on each iteration of the optimization is printed (see also rsolnp function in package Rsolnp)
 #' @param reciprocal if TRUE, the reciprocal of the peptide ratios is used for the optimization
 #' @param log_level if TRUE, the Ri are log2-transformed before optimization, allowing a symmetric consideration of Ri < 0 and > 0.
