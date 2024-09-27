@@ -10,7 +10,7 @@ protein_elemination(
   iter = 0,
   min_error_ref = NULL,
   min_error_current = NULL,
-  protein_nodes_list = V(G)[V(G)$type],
+  protein_nodes_list = igraph::V(G)[igraph::V(G)$type],
   combination_list = NULL,
   error_list = NULL,
   comb_current = NULL,

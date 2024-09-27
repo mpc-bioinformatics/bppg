@@ -6,6 +6,14 @@
 
 
 
+#' Table with information on each protein node
+#'
+#' @param G list of list of igraph objects: graphs with collapsed protein and peptide nodes
+#'
+#' @return data frame with information on
+#' @export
+#'
+#' @examples # TODO
 calculate_proteinnode_info <- function(G) {
 
   G2 <- lapply(G, function(x) {
