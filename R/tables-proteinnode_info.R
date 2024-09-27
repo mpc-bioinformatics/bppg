@@ -1,11 +1,4 @@
 
-
-# G: graphs, proteins and peptide nodes collapsed
-
-# G <- readRDS("data/D2_without_isoforms/D2_quant/preprocessed/subgraphs_quant_collprot_collpept_minAA6_mc2_loess.rds")
-
-
-
 #' Table with information on each protein node
 #'
 #' @param G list of list of igraph objects: graphs with collapsed protein and peptide nodes
