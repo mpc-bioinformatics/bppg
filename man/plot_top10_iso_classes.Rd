@@ -20,6 +20,12 @@ plot_top10_iso_classes(
 
 \item{plot_width}{width of plot (in inches)}
 }
+\value{
+nothing, save plot as pdf
+}
 \description{
 Plots the 10 most common isomorphism classes from a prototypelist
+}
+\examples{
+# TODO
 }

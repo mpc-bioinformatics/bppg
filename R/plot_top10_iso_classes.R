@@ -7,10 +7,10 @@
 #' @param plot_height heigh of plot (in inches)
 #' @param plot_width width of plot (in inches)
 #'
-#' @return
+#' @return nothing, save plot as pdf
 #' @export
 #'
-#' @examples
+#' @examples # TODO
 plot_top10_iso_classes <- function(prototypelist, out_file, plot_height = 10, plot_width = 4) {
 
   ### sort prototypelist decreasing by counter

@@ -17,7 +17,7 @@
 #' @export
 #'
 #' @examples # TODO
-protein_elemination <- function(G,
+protein_elimination <- function(G,
                                 threshold = 1.05,
                                 iter = 0,
                                 min_error_ref = NULL,
@@ -133,7 +133,7 @@ protein_elemination <- function(G,
     n_comb_current <- length(proteinnodes_tmp)
 
 
-    RES <- protein_elemination(G = G_tmp, threshold = threshold, iter = 1, min_error_ref = min_error_ref,
+    RES <- protein_elimination(G = G_tmp, threshold = threshold, iter = 1, min_error_ref = min_error_ref,
                                  min_error_current = min_error_current, protein_nodes_list = proteinnodes_tmp, error_list = error_list,
                                  combination_list = combination_list, comb_current = comb_current, G_current = G_current,
                                  n_comb_current = n_comb_current)
