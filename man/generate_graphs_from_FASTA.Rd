@@ -16,21 +16,28 @@ generate_graphs_from_FASTA(
 )
 }
 \arguments{
-\item{fasta}{fasta file, already read into R by seqinr::read.fasta}
+\item{fasta}{\strong{list of vector of chars} \cr
+A fasta file, already read into R by seqinr::read.fasta().}
 
-\item{collapse_protein_nodes}{collapse protein nodes?}
+\item{collapse_protein_nodes}{\strong{logical} \cr
+If \code{TRUE}, the protein nodes will be collapsed.}
 
-\item{collapse_peptide_nodes}{collapse peptide nodes?}
+\item{collapse_peptide_nodes}{\strong{logical} \cr
+If \code{TRUE}, the peptide nodes will be collapsed.}
 
-\item{result_path}{path where results are saved. If NULL, results are not saved}
+\item{result_path}{\strong{character} \cr
+The path where results are saved. If \code{NULL}, results are not saved.}
 
-\item{suffix}{suffix for saving results}
+\item{suffix}{\strong{character} \cr
+The suffix for saving results.}
 
-\item{save_intermediate}{Save intermediate results?}
+\item{save_intermediate}{\strong{logical} \cr
+If \code{TRUE}, the intermediate results will also be saved.}
 
-\item{prot_origin}{origin of protein, e.g. organism etc.}
+\item{prot_origin}{\strong{character vector} \cr
+The origin of protein, e.g. organism etc.}
 
-\item{...}{additional arguments to bppg::digest_fasta()}
+\item{...}{Additional arguments to bppg::digest_fasta()}
 }
 \value{
 subgraphs (i.e. connected components) from the graph generated from the FASTA file.

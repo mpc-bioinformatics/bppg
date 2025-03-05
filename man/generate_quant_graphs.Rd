@@ -2,7 +2,7 @@
 % Please edit documentation in R/generate_graphs_from_quantdata.R
 \name{generate_quant_graphs}
 \alias{generate_quant_graphs}
-\title{Generate graphs from peptide ratio table, using an edgelist calculated on the fasta file}
+\title{Generate graphs from peptide ratio table, using an edgelist calculated on the fasta file.}
 \usage{
 generate_quant_graphs(
   peptide_ratios,
@@ -16,25 +16,36 @@ generate_quant_graphs(
 )
 }
 \arguments{
-\item{peptide_ratios}{table with peptide ratios}
+\item{peptide_ratios}{\strong{data.frame} \cr
+A table with peptide ratios.}
 
-\item{id_cols}{columns with ids, e.g. peptide sequences (everything except the peptide ratios)}
+\item{id_cols}{\strong{integer vector} \cr
+The columns with ids, e.g. peptide sequences (everything except the peptide ratios)}
 
-\item{fasta_edgelist}{Edgelist created from the corresponding FASTA file}
+\item{fasta_edgelist}{\strong{data.frame} \cr
+An edgelist created from the corresponding FASTA file, eg. created with \code{\link[=generate_edgelist]{generate_edgelist()}}.}
 
-\item{outpath}{output path}
+\item{outpath}{\strong{character} \cr
+The output path for the results.}
 
-\item{seq_column}{column name of the peptide sequence}
+\item{seq_column}{\strong{character} \cr
+The column name of the peptide sequence.}
 
-\item{collapse_protein_nodes}{if TRUE protein nodes will be collapsed}
+\item{collapse_protein_nodes}{\strong{logical} \cr
+If \code{TRUE}, the protein nodes will be collapsed.}
 
-\item{collapse_peptide_nodes}{if TRUE, peptide nodes will be collapsed}
+\item{collapse_peptide_nodes}{\strong{logical} \cr
+If \code{TRUE}, the peptide nodes will be collapsed.}
 
-\item{suffix}{suffix for output files}
+\item{suffix}{\strong{character} \cr
+The suffix for saving results.}
 }
 \value{
-list of list of subgraphs
+A list of list of subgraphs
 }
 \description{
-Generate graphs from peptide ratio table, using an edgelist calculated on the fasta file
+Generate graphs from peptide ratio table, using an edgelist calculated on the fasta file.
+}
+\seealso{
+\code{\link[=generate_edgelist]{generate_edgelist()}}
 }
