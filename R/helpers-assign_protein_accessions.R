@@ -1,13 +1,17 @@
 #' Assign protein accessions to a list of peptides, depending on a FASTA file.
 #'
-#' @param sequence vector of peptide sequences
-#' @param fasta_vec names vector of protein sequences from fasta file(s)
+#' @param sequence    \strong{character vector} \cr
+#'                    The peptide sequences.
+#' @param fasta_vec   \strong{character vector} \cr
+#'                    The names vector of protein sequences from fasta file(s).
 #'
-#' @return list of assigned proteins
+#' @return A list of assigned proteins.
 #' @export
 #'
+#' @seealso [generate_graphs_from_FASTA()], [generate_quant_graphs()]
+#'
 #' @examples
-#' ### TODO
+
 assign_protein_accessions <- function(sequence, fasta_vec) {
 
   protein_accessions <- names(fasta_vec)

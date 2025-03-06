@@ -2,21 +2,20 @@
 % Please edit documentation in R/helpers-add_graph_attributes.R
 \name{add_uniqueness_attributes}
 \alias{add_uniqueness_attributes}
-\title{Adds vertex attributes with uniqueness of peptides and number of unique peptides
-for proteins}
+\title{Adds vertex attributes with uniqueness of peptides and number of unique peptides for proteins.}
 \usage{
 add_uniqueness_attributes(G)
 }
 \arguments{
-\item{G}{graph}
+\item{G}{\strong{igraph graph object} \cr
+A peptide-protein graph.}
 }
 \value{
-graph with 2 additional vertex attributes, uniqueness and nr_unique_peptides
+A graph with 2 additional vertex attributes, uniqueness and nr_unique_peptides
 }
 \description{
-Adds vertex attributes with uniqueness of peptides and number of unique peptides
-for proteins
+Adds vertex attributes with uniqueness of peptides and number of unique peptides for proteins.
 }
-\examples{
-# TODO
+\seealso{
+\code{\link[=generate_graphs_from_FASTA]{generate_graphs_from_FASTA()}}, \code{\link[=generate_quant_graphs]{generate_quant_graphs()}}, \code{\link[=add_average_pep_ratio]{add_average_pep_ratio()}}
 }

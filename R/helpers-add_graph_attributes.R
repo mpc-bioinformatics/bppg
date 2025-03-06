@@ -1,12 +1,15 @@
-#' Adds vertex attributes with uniqueness of peptides and number of unique peptides
-#' for proteins
+#' Adds vertex attributes with uniqueness of peptides and number of unique peptides for proteins.
 #'
-#' @param G graph
+#' @param G \strong{igraph graph object} \cr
+#'          A peptide-protein graph.
 #'
-#' @return graph with 2 additional vertex attributes, uniqueness and nr_unique_peptides
+#' @return A graph with 2 additional vertex attributes, uniqueness and nr_unique_peptides
 #' @export
 #'
-#' @examples # TODO
+#' @seealso [generate_graphs_from_FASTA()], [generate_quant_graphs()], [add_average_pep_ratio()]
+#'
+#' @examples
+
 add_uniqueness_attributes <- function(G) {
 
   ### FALSE = peptide, TRUE = protein
@@ -37,16 +40,20 @@ add_uniqueness_attributes <- function(G) {
 
 
 
-#' Adds average peptide ratios as a attribute to the graphs, if a list of peptide ratios is already present
+#' Adds average peptide ratios as a attribute to the graphs, if a list of peptide ratios is already present.
 #'
-#' @param G graph
-#' @param type not used at the moment. Default is 'geom_mean'
+#' @param G      \strong{igraph graph object} \cr
+#'               A peptide-protein graph.
+#' @param type   \strong{character} \cr
+#'               !NOT USED AT THE MOMENT!
 #'
-#' @return graphs with added attributes
+#' @return A graph with added peptide ratio attributes.
 #' @export
 #'
+#' @seealso [generate_graphs_from_FASTA()], [generate_quant_graphs()], [add_uniqueness_attributes()]
+#'
 #' @examples
-#' # TODO
+
 add_average_pep_ratio <- function(G, type = "geom_mean") {
 
   pep_ratio <- igraph::V(G)$pep_ratio
