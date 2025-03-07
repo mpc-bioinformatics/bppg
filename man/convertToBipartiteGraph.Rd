@@ -7,10 +7,11 @@
 convertToBipartiteGraph(x)
 }
 \arguments{
-\item{x}{element of a submatrix list}
+\item{x}{\strong{matrix} \cr
+An element of a submatrix list.}
 }
 \value{
-graph as igraph object
+A graph as igraph object.
 }
 \description{
 Conversion of submatrices to subgraphs.

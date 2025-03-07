@@ -13,18 +13,23 @@ Digest2(
 )
 }
 \arguments{
-\item{sequence}{Protein sequence as character.}
+\item{sequence}{\strong{character} \cr
+The protein sequence.}
 
-\item{enzyme}{"trypsin" (does not cut before proline) or "trypsin.strict" ().}
+\item{enzyme}{\strong{character} \cr
+The enzyme used in digestion e.g. "trypsin" (does not cut before proline) or "trypsin.strict" ().}
 
-\item{missed}{Maximal number of missed cleavages.}
+\item{missed}{\strong{character} \cr
+The maximal number of missed cleavages.}
 
-\item{warn}{Print out warnings, e.g. if a protein has no cleavage site.}
+\item{warn}{\strong{logical} \cr
+If \code{TRUE}, warnings will be printed e.g. if a protein has no cleavage site.}
 
-\item{remove_initial_M}{also return peptides where intital Methionine is removed?}
+\item{remove_initial_M}{\strong{logical} \cr
+If \code{TRUE}, the initial methionine will be removed from the peptides.}
 }
 \value{
-vector of peptides
+A vector of peptides.
 }
 \description{
 Digestion of a single protein sequence.
@@ -35,4 +40,8 @@ file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package 
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 
 digested_proteins <- Digest2(fasta[[1]])
+
+}
+\seealso{
+\code{\link[=digest_fasta]{digest_fasta()}}
 }

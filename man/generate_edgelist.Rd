@@ -2,20 +2,22 @@
 % Please edit documentation in R/helpers-generate_edgelist.R
 \name{generate_edgelist}
 \alias{generate_edgelist}
-\title{Generate edgelist from list of in silico digested proteins}
+\title{Generate edgelist from list of in silico digested proteins.}
 \usage{
 generate_edgelist(digested_proteins, prot_origin = NULL)
 }
 \arguments{
-\item{digested_proteins}{Output from digest_fasta() (List of vectors of peptide sequences)}
+\item{digested_proteins}{\strong{list of vector of characters} \cr
+The output from \code{\link[=digest_fasta]{digest_fasta()}} (List of vectors of peptide sequences)}
 
-\item{prot_origin}{origin of the protein (e.g. organism, spike-in/background etc)}
+\item{prot_origin}{\strong{vector of characters} \cr
+origin of the protein (e.g. organism, spike-in/background etc)}
 }
 \value{
-edgelist
+An edgelist.
 }
 \description{
-Generate edgelist from list of in silico digested proteins
+Generate edgelist from list of in silico digested proteins.
 }
 \examples{
 library(seqinr)
@@ -25,4 +27,7 @@ digested_proteins <- digest_fasta(fasta)
 edgelist <- generate_edgelist(digested_proteins)
 
 
+}
+\seealso{
+\code{\link[=digest_fasta]{digest_fasta()}}
 }

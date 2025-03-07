@@ -1,10 +1,14 @@
-#' Generate edgelist from list of in silico digested proteins
+#' Generate edgelist from list of in silico digested proteins.
 #'
-#' @param digested_proteins Output from digest_fasta() (List of vectors of peptide sequences)
-#' @param prot_origin origin of the protein (e.g. organism, spike-in/background etc)
+#' @param digested_proteins   \strong{list of vector of characters} \cr
+#'                            The output from [digest_fasta()] (List of vectors of peptide sequences)
+#' @param prot_origin         \strong{vector of characters} \cr
+#'                            origin of the protein (e.g. organism, spike-in/background etc)
 #'
-#' @return edgelist
+#' @return An edgelist.
 #' @export
+#'
+#' @seealso [digest_fasta()]
 #'
 #' @examples
 #' library(seqinr)
@@ -14,6 +18,7 @@
 #' edgelist <- generate_edgelist(digested_proteins)
 #'
 #'
+
 generate_edgelist <- function(digested_proteins, prot_origin = NULL) {
   #calculate necessary number of edges by counting the peptides belonging to each protein
   mat_length <- sum(lengths(digested_proteins))
