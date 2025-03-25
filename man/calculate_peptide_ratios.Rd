@@ -2,7 +2,7 @@
 % Please edit documentation in R/helpers-preprocess_quant_peptide_data.R
 \name{calculate_peptide_ratios}
 \alias{calculate_peptide_ratios}
-\title{Calculation of peptide ratios from aggregated intensities}
+\title{Calculation of peptide ratios from aggregated intensities.}
 \usage{
 calculate_peptide_ratios(
   aggr_intensities,
@@ -13,19 +13,24 @@ calculate_peptide_ratios(
 )
 }
 \arguments{
-\item{aggr_intensities}{result from function aggregate_replicates}
+\item{aggr_intensities}{\strong{data.frame} \cr
+The result from function \code{\link[=aggregate_replicates]{aggregate_replicates()}}.}
 
-\item{id_cols}{column numbers that contain peptide sequences etc (everything except intensities)}
+\item{id_cols}{\strong{integer vector} \cr
+The column numbers that contain peptide sequences etc (everything except intensities).}
 
-\item{group_levels}{levels of groups in the right order}
+\item{group_levels}{\strong{character factor} \cr
+The levels of groups in the right order.}
 
-\item{type}{"ratio" or "difference". Difference if values are already on log-scale}
+\item{type}{\strong{character} \cr
+Options "ratio" or "difference". Use "difference" if values are already on log-scale.}
 
-\item{log_base}{log base}
+\item{log_base}{\strong{numeric} \cr
+The log base.}
 }
 \value{
-data set with peptide ratios
+A data set with peptide ratios.
 }
 \description{
-Calculation of peptide ratios from aggregated intensities
+Calculation of peptide ratios from aggregated intensities.
 }
