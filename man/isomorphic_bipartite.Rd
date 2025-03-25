@@ -8,9 +8,11 @@ node type in bipartite graphs, e.g. that W- and M-shaped graphs are NOT isomorph
 isomorphic_bipartite(graph1, graph2, ...)
 }
 \arguments{
-\item{graph1}{First graph.}
+\item{graph1}{\strong{graph (igraph)} \cr
+First graph.}
 
-\item{graph2}{Second graph.}
+\item{graph2}{\strong{graph (igraph)} \cr
+Second graph.}
 
 \item{...}{currently unused}
 }
@@ -20,4 +22,7 @@ TRUE if graphs are isomorphic, FALSE if not.
 \description{
 Enchanced version of the igraph::isomorphic function that also considers the
 node type in bipartite graphs, e.g. that W- and M-shaped graphs are NOT isomorphic
+}
+\seealso{
+\code{\link[=generate_graphs_from_edgelist]{generate_graphs_from_edgelist()}}
 }

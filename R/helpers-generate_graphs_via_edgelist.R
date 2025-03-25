@@ -1,9 +1,12 @@
-#' Generate bipartite peptide-protein graphs from a list of digested proteins via an edgelist
+#' Generate bipartite peptide-protein graphs from a list of digested proteins via an edgelist.
 #'
-#' @param edgelist Output from generate_edgelist (edgelist)
+#' @param edgelist   \strong{data.frame} \cr
+#'                   An edgelist, output from [generate_edgelist()].
 #'
-#' @return List of subgraphs as igraph objects.
+#' @return A list of subgraphs as igraph objects.
 #' @export
+#'
+#' @seealso [generate_edgelist()]
 #'
 #' @examples
 #' library(seqinr)

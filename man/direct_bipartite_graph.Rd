@@ -2,18 +2,20 @@
 % Please edit documentation in R/helpers-isomorphisms.R
 \name{direct_bipartite_graph}
 \alias{direct_bipartite_graph}
-\title{Transform a bipartite graph into a directed graph}
+\title{Transform a bipartite graph into a directed graph.}
 \usage{
 direct_bipartite_graph(bip_graph, from_type = FALSE)
 }
 \arguments{
-\item{bip_graph}{a bipartite graph}
+\item{bip_graph}{\strong{graph (igraph)} \cr
+A bipartite graph.}
 
-\item{from_type}{determines if protein or peptide nodes are the "from" nodes}
+\item{from_type}{\strong{logical} \cr
+If \code{TRUE}, the edges will go out from the vertices with the type \code{TRUE} from the bipartite graph.}
 }
 \value{
-a bipartite graph that is know directed
+A bipartite graph that is know directed.
 }
 \description{
-Transform a bipartite graph into a directed graph
+Transform a bipartite graph into a directed graph.
 }

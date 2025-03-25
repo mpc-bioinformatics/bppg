@@ -1,15 +1,18 @@
 #' Enchanced version of the igraph::isomorphic function that also considers the
 #' node type in bipartite graphs, e.g. that W- and M-shaped graphs are NOT isomorphic
 #'
-#' @param graph1 First graph.
-#' @param graph2 Second graph.
-#' @param ... currently unused
+#' @param graph1   \strong{graph (igraph)} \cr
+#'                 First graph.
+#' @param graph2   \strong{graph (igraph)} \cr
+#'                 Second graph.
+#' @param ...      currently unused
 #'
 #' @return TRUE if graphs are isomorphic, FALSE if not.
 #' @export
 #'
-#' @examples
+#' @seealso [generate_graphs_from_edgelist()]
 #'
+#' @examples
 #'
 
 isomorphic_bipartite <- function(graph1, graph2, ...) {
@@ -26,18 +29,21 @@ isomorphic_bipartite <- function(graph1, graph2, ...) {
 
 
 
-#' Transform a bipartite graph into a directed graph
+#' Transform a bipartite graph into a directed graph.
 #'
-#' @param bip_graph a bipartite graph
-#' @param from_type determines if protein or peptide nodes are the "from" nodes
+#' @param bip_graph   \strong{graph (igraph)} \cr
+#'                    A bipartite graph.
+#' @param from_type   \strong{logical} \cr
+#'                    If \code{TRUE}, the edges will go out from the vertices with the type \code{TRUE} from the bipartite graph.
 #'
-#' @return a bipartite graph that is know directed
+#' @return A bipartite graph that is know directed.
 #' @export
 #'
 #' @examples
 #'
 #' @importFrom igraph %->%
 #'
+
 direct_bipartite_graph <- function(bip_graph, from_type = FALSE){
 
 
