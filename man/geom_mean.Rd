@@ -2,21 +2,24 @@
 % Please edit documentation in R/helpers-small_helper_functions.R
 \name{geom_mean}
 \alias{geom_mean}
-\title{Geometric mean}
+\title{Calculate the geometric mean.}
 \usage{
 geom_mean(x, useprod = FALSE)
 }
 \arguments{
-\item{x}{vector with numbers}
+\item{x}{\strong{numeric vector} \cr
+Input data.}
 
-\item{useprod}{if TRUE, prod(x)^(1/n) will be calculated, otherwise exp(mean(log(x)))}
+\item{useprod}{\strong{logical} \cr
+If \code{TRUE}, prod(x)^(1/n) will be calculated, otherwise exp(mean(log(x))).}
 }
 \value{
-geometric mean of the provided data points
+The geometric mean of the provided data points.
 }
 \description{
-Geometric mean
+Calculate the geometric mean.
 }
 \examples{
-# TODO
+data <- c(1,6,3.5)
+result <- geom_mean(data, useprod = FALSE)
 }

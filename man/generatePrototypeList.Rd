@@ -2,18 +2,20 @@
 % Please edit documentation in R/helpers-prototypeList.R
 \name{generatePrototypeList}
 \alias{generatePrototypeList}
-\title{Generates a list of graph prototypes for the different isomorphism classes and}
+\title{Generates a list of graph prototypes for the different isomorphism classes and their occurence.}
 \usage{
 generatePrototypeList(G, sort_by_nr_edges = FALSE)
 }
 \arguments{
-\item{G}{graph}
+\item{G}{\strong{igraph graph object} \cr
+A graph.}
 
-\item{sort_by_nr_edges}{logical, if TRUE, the list of prototypes is sorted by number of edges}
+\item{sort_by_nr_edges}{\strong{logical} \cr
+If \code{TRUE}, the list of prototypes is sorted by number of edges.}
 }
 \value{
-list of prototype graphs plus count
+A list of prototype graphs plus their count.
 }
 \description{
-Generates a list of graph prototypes for the different isomorphism classes and
+Generates a list of graph prototypes for the different isomorphism classes and their occurence.
 }
