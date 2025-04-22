@@ -64,3 +64,7 @@ A list of list of graphs
 \description{
 Generate graphs from quantitative peptide-level data
 }
+\seealso{
+\code{\link[=read_MQ_peptidetable]{read_MQ_peptidetable()}}, \code{\link[seqinr:read.fasta]{seqinr::read.fasta()}},
+\code{\link[=generate_quant_graphs]{generate_quant_graphs()}}, \code{\link[=generate_graphs_from_FASTA]{generate_graphs_from_FASTA()}}
+}

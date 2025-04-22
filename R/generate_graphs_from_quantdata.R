@@ -20,7 +20,7 @@
 #' @return A list of list of subgraphs
 #' @export
 #'
-#' @seealso [generate_edgelist()]
+#' @seealso [bppg::generate_edgelist()]
 #'
 #' @examples
 #'
@@ -121,7 +121,12 @@ generate_quant_graphs <- function(peptide_ratios,
 #' @return A list of list of graphs
 #' @export
 #'
+#' @seealso [bppg::read_MQ_peptidetable()], [seqinr::read.fasta()],
+#'          [bppg::generate_quant_graphs()], [bppg::generate_graphs_from_FASTA()]
+#'
 #' @examples
+#'
+
 generate_graphs_from_quant_data <- function(D,
                                             fasta,
                                             outpath = NULL,
