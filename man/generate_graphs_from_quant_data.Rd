@@ -20,33 +20,46 @@ generate_graphs_from_quant_data(
 )
 }
 \arguments{
-\item{D}{data set with peptide sequence as first column and peptide intensities in subsequent columns
-(e.g. output from bppg::read_MQ_peptidetable)}
+\item{D}{\strong{data.frame} \cr
+A data set with peptide sequence as first column
+and peptide intensities in subsequent columns
+,e.g. created with \code{\link[=read_MQ_peptidetable]{read_MQ_peptidetable()}}.}
 
-\item{fasta}{fasta file used for identification of peptides in D}
+\item{fasta}{\strong{list of vector of characters} \cr
+A fasta file used for identification of peptides in D,
+already read into R by \code{\link[seqinr:read.fasta]{seqinr::read.fasta()}}.}
 
-\item{outpath}{bla}
+\item{outpath}{\strong{character} \cr
+The output path for the results.}
 
-\item{missed_cleavages}{bla}
+\item{missed_cleavages}{\strong{integer} \cr
+The number of allowed missed cleavages in a peptide.}
 
-\item{min_aa}{bla}
+\item{min_aa}{\strong{integer} \cr
+The minimum number of amino acids in a peptide.}
 
-\item{max_aa}{bla}
+\item{max_aa}{\strong{integer} \cr
+The maximum number of amino acids in a peptide.}
 
-\item{id_columns}{column numbers of D that contain ID information (the rest should contain only peptide intensities, properly normalized)}
+\item{id_columns}{\strong{integer vector} \cr
+The columns of D that contain ID information (the rest should contain only peptide intensities, properly normalized).}
 
-\item{seq_column}{column name of the peptide sequence}
+\item{seq_column}{\strong{character} \cr
+The column name of the column with the peptide sequences.}
 
-\item{collapse_protein_nodes}{if TRUE protein nodes will be collapsed}
+\item{collapse_protein_nodes}{\strong{logical} \cr
+If \code{TRUE}, the protein nodes will be collapsed.}
 
-\item{collapse_peptide_nodes}{if TRUE, peptide nodes will be collapsed}
+\item{collapse_peptide_nodes}{\strong{logical} \cr
+If \code{TRUE}, the peptide nodes will be collapsed.}
 
-\item{suffix}{suffix for output files}
+\item{suffix}{\strong{character} \cr
+The suffix for output files.}
 
 \item{...}{currently not in use}
 }
 \value{
-list of list of graphs
+A list of list of graphs
 }
 \description{
 Generate graphs from quantitative peptide-level data

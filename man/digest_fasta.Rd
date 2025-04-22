@@ -8,7 +8,7 @@ digest_fasta(fasta, missed_cleavages = 2, min_aa = 6, max_aa = 50, ...)
 }
 \arguments{
 \item{fasta}{\strong{list of vector of characters} \cr
-A fasta file, already read into R by seqinr::read.fasta().}
+A fasta file, already read into R by \code{\link[seqinr:read.fasta]{seqinr::read.fasta()}}.}
 
 \item{missed_cleavages}{\strong{integer} \cr
 The maximal number of missed cleavages.}

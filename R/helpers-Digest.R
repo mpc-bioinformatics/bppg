@@ -141,7 +141,7 @@ Digest2 <- function (sequence, enzyme = "trypsin", missed = 0, warn = TRUE, remo
 #' In silico tryptic digestion of whole FASTA file.
 #'
 #' @param fasta              \strong{list of vector of characters} \cr
-#'                           A fasta file, already read into R by seqinr::read.fasta().
+#'                           A fasta file, already read into R by [seqinr::read.fasta()].
 #' @param missed_cleavages   \strong{integer} \cr
 #'                           The maximal number of missed cleavages.
 #' @param min_aa             \strong{integer} \cr
