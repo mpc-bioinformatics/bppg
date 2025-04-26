@@ -1,4 +1,23 @@
 
+test_that("generate graphs from fasta",{
+
+  file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+  fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+
+  res <- generate_graphs_from_FASTA(fasta = fasta)
+
+  expect_snapshot(as_edgelist(res[[1]]))
+  expect_snapshot(as_edgelist(res[[2]]))
+  expect_snapshot(as_edgelist(res[[3]]))
+
+})
+
+
+
+
+
+
+
 test_that("digestion of a FASTA file", {
   digested_proteins <- readRDS(testthat::test_path("testfiles/digested_proteins_test.rds"))
 
