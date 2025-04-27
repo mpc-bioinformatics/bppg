@@ -24,3 +24,32 @@ test_that("test add_uniqueness_attributes", {
   expect_equal(igraph::V(G_new2)$uniqueness, c(NA, NA, TRUE, FALSE, TRUE))
 
 })
+
+
+test_that("test add_average_pep_ratio", {
+
+  library(igraph)
+
+  # Create graph
+  edges <- c("prot_1", "pep_1",
+             "prot_1", "pep_2",
+             "prot_1", "pep_3",
+             "prot_2", "pep_2",
+             "prot_3", "pep_2",
+             "prot_3", "pep_3",
+             "prot_3", "pep_4")
+  types <- c(TRUE, FALSE, FALSE, FALSE, TRUE, TRUE, FALSE)
+  pep_ratios <- c(NA, "1.05;0.9", NA, "0.95;1.1", NA, NA, "1.15")
+  bipartite_graph <- igraph::make_graph(edges = edges, directed = FALSE)
+  V(bipartite_graph)$type <- types
+  V(bipartite_graph)$pep_ratio <- pep_ratios
+
+  # Check attribute creation
+  bipartite_graph <- add_average_pep_ratio(bipartite_graph)
+
+  expect_equal(V(bipartite_graph)$nr_sequences,
+               c(1, 2, 1, 2, 1, 1, 1))
+  expect_equal(round(V(bipartite_graph)$pep_ratio_aggr, digits = 5),
+               c(NA, 0.97211, NA, 1.02225, NA, NA, 1.15000))
+
+})
