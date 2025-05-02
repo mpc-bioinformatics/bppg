@@ -1,20 +1,38 @@
-#' Generate graphs from peptide ratio table, using an edgelist calculated on the fasta file
+#' Generate graphs from peptide ratio table, using an edgelist calculated on the fasta file.
 #'
-#' @param peptide_ratios table with peptide ratios
-#' @param id_cols columns with ids, e.g. peptide sequences (everything except the peptide ratios)
-#' @param fasta_edgelist Edgelist created from the corresponding FASTA file
-#' @param outpath output path
-#' @param seq_column column name of the peptide sequence
-#' @param collapse_protein_nodes if TRUE protein nodes will be collapsed
-#' @param collapse_peptide_nodes if TRUE, peptide nodes will be collapsed
-#' @param suffix suffix for output files
+#' @param peptide_ratios           \strong{data.frame} \cr
+#'                                 A table with peptide ratios.
+#' @param id_cols                  \strong{integer vector} \cr
+#'                                 The columns with ids, e.g. peptide sequences (everything except the peptide ratios)
+#' @param fasta_edgelist           \strong{data.frame} \cr
+#'                                 An edgelist created from the corresponding FASTA file, eg. created with [generate_edgelist()].
+#' @param outpath                  \strong{character} \cr
+#'                                 The output path for the results.
+#' @param seq_column               \strong{character} \cr
+#'                                 The column name of the peptide sequence.
+#' @param collapse_protein_nodes   \strong{logical} \cr
+#'                                 If \code{TRUE}, the protein nodes will be collapsed.
+#' @param collapse_peptide_nodes   \strong{logical} \cr
+#'                                 If \code{TRUE}, the peptide nodes will be collapsed.
+#' @param suffix                   \strong{character} \cr
+#'                                 The suffix for saving results.
 #'
-#' @return list of list of subgraphs
+#' @return A list of list of subgraphs
 #' @export
 #'
-#' @examples # TODO
-generate_quant_graphs <- function(peptide_ratios, id_cols = 1, fasta_edgelist, outpath = NULL, seq_column = "Sequence",
-                                  collapse_protein_nodes = TRUE, collapse_peptide_nodes = FALSE, suffix = "") {
+#' @seealso [generate_edgelist()]
+#'
+#' @examples
+#'
+
+generate_quant_graphs <- function(peptide_ratios,
+                                  id_cols = 1,
+                                  fasta_edgelist,
+                                  outpath = NULL,
+                                  seq_column = "Sequence",
+                                  collapse_protein_nodes = TRUE,
+                                  collapse_peptide_nodes = FALSE,
+                                  suffix = "") {
 
   ### broad filtering for edgelist for only quantifies peptides
   edgelist_filtered <- fasta_edgelist[fasta_edgelist[,2] %in% peptide_ratios[,seq_column], ]

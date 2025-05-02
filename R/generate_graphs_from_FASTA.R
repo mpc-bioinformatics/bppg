@@ -1,13 +1,20 @@
 #' Generate graphs from a FASTA file
 #'
-#' @param fasta fasta file, already read into R by seqinr::read.fasta
-#' @param collapse_protein_nodes collapse protein nodes?
-#' @param collapse_peptide_nodes collapse peptide nodes?
-#' @param result_path path where results are saved. If NULL, results are not saved
-#' @param suffix suffix for saving results
-#' @param save_intermediate Save intermediate results?
-#' @param ... additional arguments to bppg::digest_fasta()
-#' @param prot_origin origin of protein, e.g. organism etc.
+#' @param fasta                    \strong{list of vector of chars} \cr
+#'                                 A fasta file, already read into R by seqinr::read.fasta().
+#' @param collapse_protein_nodes   \strong{logical} \cr
+#'                                 If \code{TRUE}, the protein nodes will be collapsed.
+#' @param collapse_peptide_nodes   \strong{logical} \cr
+#'                                 If \code{TRUE}, the peptide nodes will be collapsed.
+#' @param result_path              \strong{character} \cr
+#'                                 The path where results are saved. If \code{NULL}, results are not saved.
+#' @param suffix                   \strong{character} \cr
+#'                                 The suffix for saving results.
+#' @param save_intermediate        \strong{logical} \cr
+#'                                 If \code{TRUE}, the intermediate results will also be saved.
+#' @param prot_origin              \strong{character vector} \cr
+#'                                 The origin of protein, e.g. organism etc.
+#' @param ...                      Additional arguments to bppg::digest_fasta()
 #'
 #' @return subgraphs (i.e. connected components) from the graph generated from the FASTA file.
 #' @export
@@ -18,10 +25,13 @@
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' graphs <- bppg::generate_graphs_from_FASTA(fasta)
 #'
-generate_graphs_from_FASTA <- function(fasta, collapse_protein_nodes = TRUE,
+
+generate_graphs_from_FASTA <- function(fasta,
+                                       collapse_protein_nodes = TRUE,
                                        collapse_peptide_nodes = TRUE,
                                        result_path = NULL,
-                                       suffix = NULL, save_intermediate = FALSE,
+                                       suffix = NULL,
+                                       save_intermediate = FALSE,
                                        prot_origin = NULL,
                                        ...) {
 
