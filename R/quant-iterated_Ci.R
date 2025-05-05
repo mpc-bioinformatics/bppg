@@ -189,7 +189,7 @@ automated_analysis_iterated_Ci <- function(S,
     if(!is.null(job)) {
       D_tmp$graphID <- job$pars$prob.pars$k
       D_tmp$comparison <- job$prob.name
-      D_tmp$jop.id <- job$job.id
+      D_tmp$job.id <- job$job.id
     }
 
     RES <- BBmisc::convertListOfRowsToDataFrame(list(D_tmp))
@@ -222,7 +222,7 @@ automated_analysis_iterated_Ci <- function(S,
     if (!is.null(job)) {
       D_tmp$graphID <- job$pars$prob.pars$k
       D_tmp$comparison <- job$prob.name
-      D_tmp$jop.id <- job$job.id
+      D_tmp$job.id <- job$job.id
     }
 
     if (verbose) print(paste0("Protein ", i))
