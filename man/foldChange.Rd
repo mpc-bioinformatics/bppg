@@ -25,3 +25,7 @@ The fold changes (Y/X).
 \description{
 Calculate peptide ratios for pairwise comparisons of groups (Y/X).
 }
+\examples{
+# TODO
+
+}

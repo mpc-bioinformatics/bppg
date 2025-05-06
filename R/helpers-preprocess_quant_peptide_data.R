@@ -149,7 +149,7 @@ aggregate_replicates <- function(D, group, missing.limit = 0, method = "mean",
 #' @return The fold changes (Y/X).
 #' @export
 #'
-#' @examples
+#' @examples # TODO
 #'
 
 foldChange <- function(D, X, Y, useNA = FALSE) {
@@ -181,7 +181,7 @@ foldChange <- function(D, X, Y, useNA = FALSE) {
 #' @return A data set with peptide ratios.
 #' @export
 #'
-#' @examples
+#' @examples # TODO
 #'
 
 calculate_peptide_ratios <- function(aggr_intensities, id_cols = 1,

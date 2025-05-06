@@ -34,3 +34,7 @@ A data set with peptide ratios.
 \description{
 Calculation of peptide ratios from aggregated intensities.
 }
+\examples{
+# TODO
+
+}

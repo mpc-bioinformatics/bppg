@@ -39,7 +39,7 @@ isomorphic_bipartite <- function(graph1, graph2, ...) {
 #' @return A bipartite graph that is know directed.
 #' @export
 #'
-#' @examples
+#' @examples # TODO
 #'
 #' @importFrom igraph %->%
 #'

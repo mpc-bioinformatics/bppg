@@ -19,3 +19,8 @@ A list of prototype graphs plus their count.
 \description{
 Generates a list of graph prototypes for the different isomorphism classes and their occurence.
 }
+\examples{
+# TODO
+
+
+}
