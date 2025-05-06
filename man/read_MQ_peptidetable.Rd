@@ -2,7 +2,7 @@
 % Please edit documentation in R/helpers-preprocess_quant_peptide_data.R
 \name{read_MQ_peptidetable}
 \alias{read_MQ_peptidetable}
-\title{Import of MaxQuant's peptide.txt-table}
+\title{Import of MaxQuant's peptide.txt-table.}
 \usage{
 read_MQ_peptidetable(
   path,
@@ -15,25 +15,32 @@ read_MQ_peptidetable(
 )
 }
 \arguments{
-\item{path}{Path to the peptides.txt table}
+\item{path}{\strong{character} \cr
+The path to the peptides.txt table}
 
-\item{LFQ}{If TRUE, LFQ intensities are used, if FALSE, raw (unnormalized) intensities}
+\item{LFQ}{\strong{logical} \cr
+If \code{TRUE}, LFQ intensities are used, if FALSE, raw (unnormalized) intensities}
 
-\item{remove_contaminants}{If TRUE, peptide sequences from potential contaminants are removed}
+\item{remove_contaminants}{\strong{logical} \cr
+If \code{TRUE}, peptide sequences from potential contaminants are removed}
 
-\item{rename_columns}{Rename columns? If TRUE, "Intensity." or "LFQ.intensity." are removed}
+\item{rename_columns}{\strong{logical} \cr
+If \code{TRUE}, "Intensity." or "LFQ.intensity." are removed}
 
-\item{zeroToNA}{If TRUE, zeros are converted to NAs.}
+\item{zeroToNA}{\strong{logical} \cr
+If \code{TRUE}, zeros are converted to NAs.}
 
-\item{remove_empty_rows}{If TRUE, rows with only NAs are removed.}
+\item{remove_empty_rows}{\strong{logical} \cr
+If \code{TRUE}, rows with only NAs are removed.}
 
-\item{further_columns_to_keep}{additional columns to keep, except peptide sequence and intensities}
+\item{further_columns_to_keep}{\strong{integer vector} \cr
+Indices of additional columns to keep, except peptide sequence and intensities}
 }
 \value{
-Data frame with sequences and intensities
+A data frame with sequences and intensities.
 }
 \description{
-Import of MaxQuant's peptide.txt-table
+Import of MaxQuant's peptide.txt-table.
 }
 \examples{
 file <- system.file("extdata", "peptides.txt", package = "bppg")

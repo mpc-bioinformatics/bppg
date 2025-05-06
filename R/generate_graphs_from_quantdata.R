@@ -5,7 +5,7 @@
 #' @param id_cols                  \strong{integer vector} \cr
 #'                                 The columns with ids, e.g. peptide sequences (everything except the peptide ratios)
 #' @param fasta_edgelist           \strong{data.frame} \cr
-#'                                 An edgelist created from the corresponding FASTA file, eg. created with [generate_edgelist()].
+#'                                 An edgelist created from the corresponding FASTA file, eg. created with [bppg::generate_edgelist()].
 #' @param outpath                  \strong{character} \cr
 #'                                 The output path for the results.
 #' @param seq_column               \strong{character} \cr
@@ -20,7 +20,7 @@
 #' @return A list of list of subgraphs
 #' @export
 #'
-#' @seealso [generate_edgelist()]
+#' @seealso [bppg::generate_edgelist()]
 #'
 #' @examples
 #'
@@ -91,24 +91,42 @@ generate_quant_graphs <- function(peptide_ratios,
 
 #' Generate graphs from quantitative peptide-level data
 #'
-#' @param D data set with peptide sequence as first column and peptide intensities in subsequent columns
-#' (e.g. output from bppg::read_MQ_peptidetable)
-#' @param fasta fasta file used for identification of peptides in D
-#' @param outpath bla
-#' @param missed_cleavages bla
-#' @param min_aa bla
-#' @param max_aa bla
-#' @param ... currently not in use
-#' @param id_columns column numbers of D that contain ID information (the rest should contain only peptide intensities, properly normalized)
-#' @param seq_column column name of the peptide sequence
-#' @param collapse_protein_nodes if TRUE protein nodes will be collapsed
-#' @param collapse_peptide_nodes if TRUE, peptide nodes will be collapsed
-#' @param suffix suffix for output files
+#' @param D                        \strong{data.frame} \cr
+#'                                 A data set with peptide sequence as first column
+#'                                 and peptide intensities in subsequent columns
+#'                                 ,e.g. created with [bppg::read_MQ_peptidetable()].
+#' @param fasta                    \strong{list of vector of characters} \cr
+#'                                 A fasta file used for identification of peptides in D,
+#'                                 already read into R by [seqinr::read.fasta()].
+#' @param outpath                  \strong{character} \cr
+#'                                 The output path for the results.
+#' @param missed_cleavages         \strong{integer} \cr
+#'                                 The number of allowed missed cleavages in a peptide.
+#' @param min_aa                   \strong{integer} \cr
+#'                                 The minimum number of amino acids in a peptide.
+#' @param max_aa                   \strong{integer} \cr
+#'                                 The maximum number of amino acids in a peptide.
+#' @param id_columns               \strong{integer vector} \cr
+#'                                 The columns of D that contain ID information (the rest should contain only peptide intensities, properly normalized).
+#' @param seq_column               \strong{character} \cr
+#'                                 The column name of the column with the peptide sequences.
+#' @param collapse_protein_nodes   \strong{logical} \cr
+#'                                 If \code{TRUE}, the protein nodes will be collapsed.
+#' @param collapse_peptide_nodes   \strong{logical} \cr
+#'                                 If \code{TRUE}, the peptide nodes will be collapsed.
+#' @param suffix                   \strong{character} \cr
+#'                                 The suffix for output files.
+#' @param ...                      currently not in use
 #'
-#' @return list of list of graphs
+#' @return A list of list of graphs
 #' @export
 #'
-#' @examples # TODO
+#' @seealso [bppg::read_MQ_peptidetable()], [seqinr::read.fasta()],
+#'          [bppg::generate_quant_graphs()], [bppg::generate_graphs_from_FASTA()]
+#'
+#' @examples
+#'
+
 generate_graphs_from_quant_data <- function(D,
                                             fasta,
                                             outpath = NULL,

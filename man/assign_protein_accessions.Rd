@@ -7,16 +7,18 @@
 assign_protein_accessions(sequence, fasta_vec)
 }
 \arguments{
-\item{sequence}{vector of peptide sequences}
+\item{sequence}{\strong{character vector} \cr
+The peptide sequences.}
 
-\item{fasta_vec}{names vector of protein sequences from fasta file(s)}
+\item{fasta_vec}{\strong{character vector} \cr
+The names vector of protein sequences from fasta file(s).}
 }
 \value{
-list of assigned proteins
+A list of assigned proteins.
 }
 \description{
 Assign protein accessions to a list of peptides, depending on a FASTA file.
 }
-\examples{
-### TODO
+\seealso{
+\code{\link[=generate_graphs_from_FASTA]{generate_graphs_from_FASTA()}}, \code{\link[=generate_quant_graphs]{generate_quant_graphs()}}
 }

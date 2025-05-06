@@ -2,24 +2,28 @@
 % Please edit documentation in R/helpers-preprocess_quant_peptide_data.R
 \name{foldChange}
 \alias{foldChange}
-\title{calculates peptide ratios for pairwise comparisons of groups (Y/X)}
+\title{Calculate peptide ratios for pairwise comparisons of groups (Y/X).}
 \usage{
 foldChange(D, X, Y, useNA = FALSE)
 }
 \arguments{
-\item{D}{data set}
+\item{D}{\strong{data.frame} \cr
+The data set.}
 
-\item{X}{group1 (column name)}
+\item{X}{\strong{character} \cr
+The column name of group1.}
 
-\item{Y}{group2 (column name)}
+\item{Y}{\strong{character} \cr
+The column name of group2.}
 
-\item{useNA}{if TRUE, results 0 and Inf are possible, otherwise ratio is NA if value for X or Y is NA}
+\item{useNA}{\strong{logical} \cr
+If \code{TRUE},results 0 and Inf are possible, otherwise ratio is NA if value for X or Y is NA}
 }
 \value{
-fold changes (Y/X)
+The fold changes (Y/X).
 }
 \description{
-calculates peptide ratios for pairwise comparisons of groups (Y/X)
+Calculate peptide ratios for pairwise comparisons of groups (Y/X).
 }
 \examples{
 # TODO

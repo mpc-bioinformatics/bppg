@@ -12,20 +12,21 @@ calculate_subgraph_characteristics(
 )
 }
 \arguments{
-\item{S}{list of subgraphs, where peptide and protein nodes are collapsed}
+\item{S}{\strong{list of igraph graph objects} \cr
+A list of subgraphs, where peptide and protein nodes are collapsed.}
 
-\item{fastalevel}{Are the subgraphs on fasta level?}
+\item{fastalevel}{\strong{logical} \cr
+If \code{TRUE}, the subgraphs should be on fasta level}
 
-\item{prototype}{Are the subgraphs part of a prototype list?}
+\item{prototype}{\strong{logical} \cr
+If \code{TRUE}, the subgraphs should be part of a prototype list}
 
-\item{file}{where to save the table.}
+\item{file}{\strong{character} \cr
+A file path where to save the table.}
 }
 \value{
-table
+A table with the characteristics.
 }
 \description{
 Generates a table with characteristics for each subgraph in a list.
-}
-\examples{
-# TODO
 }

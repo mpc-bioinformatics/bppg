@@ -25,37 +25,53 @@ plotBipartiteGraph(
 )
 }
 \arguments{
-\item{G}{A bipartite graph (igraph object).}
+\item{G}{\strong{igraph graph object} \cr
+A bipartite peptide-protein graph.}
 
-\item{vertex.label.dist}{Distance of the label from center of the vertex (0 = centered in vertex).}
+\item{vertex.label.dist}{\strong{numeric} \cr
+The distance of the label from center of the vertex (0 = centered in vertex).}
 
-\item{legend}{Add legend?}
+\item{legend}{\strong{logical} \cr
+If \code{TRUE}, a legend will be added.}
 
-\item{vertex.color}{Colours for the different vertex types.}
+\item{vertex.color}{\strong{character vector} \cr
+The colours for the different vertex types.}
 
-\item{vertex.size}{Size of vertices.}
+\item{vertex.size}{\strong{numeric} \cr
+The size of vertices.}
 
-\item{vertex.label.cex}{Size of vertex labels.}
+\item{vertex.label.cex}{\strong{numeric} \cr
+The size of vertex labels.}
 
-\item{edge.width}{Width of the edges.}
+\item{edge.width}{\strong{numeric} \cr
+The width of the edges.}
 
-\item{vertex.size2}{Vertex size 2.}
+\item{vertex.size2}{\strong{numeric} \cr
+The vertex size 2.}
 
-\item{useCanonicalPermutation}{Convert the graph into the canonical permutation before plotting?}
+\item{useCanonicalPermutation}{\strong{logical} \cr
+If \code{TRUE}, the graph will be converted into the canonical permutation before plotting.}
 
-\item{three_shapes}{Use a separate shape for the unique peptides?}
+\item{three_shapes}{\strong{logical} \cr
+If \code{TRUE}, a separate shape will be used for the unique peptides.}
 
-\item{node_labels_proteins}{"letters" or "acessions"}
+\item{node_labels_proteins}{\strong{character} \cr
+The type of labels for the proteins. Options are "letters" or "acessions".}
 
-\item{node_labels_peptides}{"numbers" or "pep_ratios" or "pep_ratio_aggr"}
+\item{node_labels_peptides}{\strong{character} \cr
+The type of labels for the peptides. Options are"numbers" or "pep_ratios" or "pep_ratio_aggr".}
 
-\item{round_digits}{Number of digits to round the peptide ratios to.}
+\item{round_digits}{\strong{integer} \cr
+The number of digits to round the peptide ratios to.}
 
-\item{use_edge_attributes}{Use edge attributes for plotting (e.g. deleted edges will be dashed)?}
+\item{use_edge_attributes}{\strong{logical} \cr
+If \code{TRUE}, edge attributes will be used for plotting (e.g. deleted edges will be dashed)}
 
-\item{legend.x}{x-coordinate of the legend.}
+\item{legend.x}{\strong{numeric or character} \cr
+The x-coordinate of the legend or a keyword for the position. See \code{\link[graphics:legend]{graphics::legend()}} for details.}
 
-\item{legend.y}{y-coordinate of the legend.}
+\item{legend.y}{\strong{numeric or character} \cr
+The y-coordinate of the legend or a keyword for the position. See \code{\link[graphics:legend]{graphics::legend()}} for details.}
 
 \item{...}{Additional arguments for plot.igraph.}
 }

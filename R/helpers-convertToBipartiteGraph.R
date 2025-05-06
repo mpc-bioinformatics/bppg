@@ -1,13 +1,15 @@
 #' Conversion of submatrices to subgraphs.
 #'
-#' @param x element of a submatrix list
+#' @param x   \strong{matrix} \cr
+#'            An element of a submatrix list.
 #'
-#' @return graph as igraph object
+#' @return A graph as igraph object.
 #' @export
 #'
 #' @examples
 #' M <- matrix(c(1,0,1,1), nrow = 2, byrow = TRUE)
 #' bppg::convertToBipartiteGraph(M)
+
 convertToBipartiteGraph <- function(x) {
   if ("list" %in% class(x)) { # class list if it contains peptide ratios
     S <- x$X
