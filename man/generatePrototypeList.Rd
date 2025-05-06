@@ -22,5 +22,4 @@ Generates a list of graph prototypes for the different isomorphism classes and t
 \examples{
 # TODO
 
-
 }
