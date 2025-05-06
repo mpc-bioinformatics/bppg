@@ -1,11 +1,17 @@
 #' Collapsing of peptide and protein nodes of an edgelist.
 #'
-#' @param edgelist edgelist
-#' @param collapse_protein_nodes bla
-#' @param collapse_peptide_nodes bla
+#' @param edgelist                 \strong{data.frame} \cr
+#'                                 An edgelist  with peptide ratios eg. created with [generate_edgelist()].
+#' @param collapse_protein_nodes   \strong{logical} \cr
+#'                                 If \code{TRUE}, the protein nodes will be collapsed.
+#' @param collapse_peptide_nodes   \strong{logical} \cr
+#'                                 If \code{TRUE}, the peptide nodes will be collapsed.
 #'
-#' @return Edgelist with collapsed protein and peptide nodes
+#' @return An edgelist with collapsed protein and/or peptide nodes.
 #' @export
+#'
+#' @seealso For edgelists without peptide ratios: [collapse_edgelist()] \cr
+#'          [generate_graphs_from_FASTA()], [generate_quant_graphs()], [generate_edgelist()]
 #'
 #' @examples
 #' library(seqinr)
@@ -18,8 +24,8 @@
 
 
 collapse_edgelist_quant <- function(edgelist,
-                              collapse_protein_nodes = TRUE,
-                              collapse_peptide_nodes = TRUE) {
+                                    collapse_protein_nodes = TRUE,
+                                    collapse_peptide_nodes = TRUE) {
 
   if (!collapse_protein_nodes & !collapse_peptide_nodes) {
     return(edgelist)
@@ -54,7 +60,6 @@ collapse_edgelist_quant <- function(edgelist,
   pepNodes2 <- pepNodes
   pepNodes2$peptide <- limma::strsplit2(pepNodes2$peptide, ";")[,1]  # first peptide from list
   edgelist2 <- edgelist[edgelist$peptide %in% pepNodes2$peptide,]
-
 
   protNodes2 <- protNodes
   protNodes2$protein <- limma::strsplit2(protNodes2$protein, ";")[,1]  # first peptide from list

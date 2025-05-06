@@ -1,17 +1,21 @@
-
 #' Generates a table with characteristics for each subgraph in a list.
 #'
-#' @param S list of subgraphs, where peptide and protein nodes are collapsed
-#' @param fastalevel Are the subgraphs on fasta level?
-#' @param prototype Are the subgraphs part of a prototype list?
-#' @param file where to save the table.
+#' @param S            \strong{list of igraph graph objects} \cr
+#'                     A list of subgraphs, where peptide and protein nodes are collapsed.
+#' @param fastalevel   \strong{logical} \cr
+#'                     If \code{TRUE}, the subgraphs should be on fasta level
+#' @param prototype    \strong{logical} \cr
+#'                     If \code{TRUE}, the subgraphs should be part of a prototype list
+#' @param file         \strong{character} \cr
+#'                     A file path where to save the table.
 #'
 #'
-#' @return table
+#' @return A table with the characteristics.
 #' @export
 #'
 #' @examples
-#' # TODO
+#'
+
 calculate_subgraph_characteristics <- function(S, #S2, S3,
                                                fastalevel = TRUE,
                                                prototype = FALSE,

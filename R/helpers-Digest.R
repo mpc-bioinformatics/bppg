@@ -5,14 +5,21 @@
 
 #' Digestion of a single protein sequence.
 #'
-#' @param sequence Protein sequence as character.
-#' @param enzyme "trypsin" (does not cut before proline) or "trypsin.strict" ().
-#' @param missed Maximal number of missed cleavages.
-#' @param warn Print out warnings, e.g. if a protein has no cleavage site.
-#' @param remove_initial_M also return peptides where intital Methionine is removed?
+#' @param sequence           \strong{character} \cr
+#'                           The protein sequence.
+#' @param enzyme             \strong{character} \cr
+#'                           The enzyme used in digestion e.g. "trypsin" (does not cut before proline) or "trypsin.strict" ().
+#' @param missed             \strong{character} \cr
+#'                           The maximal number of missed cleavages.
+#' @param warn               \strong{logical} \cr
+#'                           If \code{TRUE}, warnings will be printed e.g. if a protein has no cleavage site.
+#' @param remove_initial_M   \strong{logical} \cr
+#'                           If \code{TRUE}, the initial methionine will be removed from the peptides.
 #'
-#' @return vector of peptides
+#' @return A vector of peptides.
 #' @export
+#'
+#' @seealso [digest_fasta()]
 #'
 #' @examples
 #' library(seqinr)
@@ -20,7 +27,7 @@
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #'
 #' digested_proteins <- Digest2(fasta[[1]])
-
+#'
 
 Digest2 <- function (sequence, enzyme = "trypsin", missed = 0, warn = TRUE, remove_initial_M = FALSE) {
   seq_vector <- strsplit(sequence, split = "")[[1]]
@@ -131,17 +138,22 @@ Digest2 <- function (sequence, enzyme = "trypsin", missed = 0, warn = TRUE, remo
 
 
 
-#' In silico tryptic digestion of whole FASTA file
+#' In silico tryptic digestion of whole FASTA file.
 #'
-#' @param fasta List of protein sequences (e.g., imported FASTA file by seqinr::read.fasta).
-#' @param missed_cleavages Maximal number of missed cleavages.
-#' @param min_aa Minimal number of amino acids (set to 0 for no filtering).
-#' @param max_aa Maximal number of amino acids (set to Inf for no filtering).
-#' @param ... Additional arguments for Digest2().
+#' @param fasta              \strong{list of vector of characters} \cr
+#'                           A fasta file, already read into R by [seqinr::read.fasta()].
+#' @param missed_cleavages   \strong{integer} \cr
+#'                           The maximal number of missed cleavages.
+#' @param min_aa             \strong{integer} \cr
+#'                           The minimal number of amino acids (set to 0 for no filtering).
+#' @param max_aa             \strong{integer} \cr
+#'                           The maximal number of amino acids (set to Inf for no filtering).
+#' @param ...                Additional arguments for [Digest2()].
 #'
-#' @return List of vectors of peptide sequences, filtered for minimal and maximal number of
-#' amino acids.
+#' @return List of vectors of peptide sequences, filtered for minimal and maximal number of amino acids.
 #' @export
+#'
+#' @seealso [Digest2()]
 #'
 #' @examples
 #' library(seqinr)
@@ -149,7 +161,12 @@ Digest2 <- function (sequence, enzyme = "trypsin", missed = 0, warn = TRUE, remo
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' res <- digest_fasta(fasta)
 #'
-digest_fasta <- function(fasta, missed_cleavages = 2, min_aa = 6, max_aa = 50, ...)  {
+
+digest_fasta <- function(fasta,
+                         missed_cleavages = 2,
+                         min_aa = 6,
+                         max_aa = 50,
+                         ...)  {
 
   digested_proteins <- pbapply::pblapply(fasta, function(x) {
     sequ <- x

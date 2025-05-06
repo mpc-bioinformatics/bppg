@@ -49,6 +49,3 @@ Generate graphs from peptide ratio table, using an edgelist calculated on the fa
 \seealso{
 \code{\link[=generate_edgelist]{generate_edgelist()}}
 }
-\examples{
-# TODO
-}

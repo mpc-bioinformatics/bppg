@@ -2,18 +2,19 @@
 % Please edit documentation in R/helpers-generate_graphs_via_edgelist.R
 \name{generate_graphs_from_edgelist}
 \alias{generate_graphs_from_edgelist}
-\title{Generate bipartite peptide-protein graphs from a list of digested proteins via an edgelist}
+\title{Generate bipartite peptide-protein graphs from a list of digested proteins via an edgelist.}
 \usage{
 generate_graphs_from_edgelist(edgelist)
 }
 \arguments{
-\item{edgelist}{Output from generate_edgelist (edgelist)}
+\item{edgelist}{\strong{data.frame} \cr
+An edgelist, output from \code{\link[=generate_edgelist]{generate_edgelist()}}.}
 }
 \value{
-List of subgraphs as igraph objects.
+A list of subgraphs as igraph objects.
 }
 \description{
-Generate bipartite peptide-protein graphs from a list of digested proteins via an edgelist
+Generate bipartite peptide-protein graphs from a list of digested proteins via an edgelist.
 }
 \examples{
 ### TODO: example takes longer than 5s
@@ -24,4 +25,7 @@ digested_proteins <- digest_fasta(fasta)
 edgelist <- generate_edgelist(digested_proteins)
 res <- generate_graphs_from_edgelist(edgelist)
 
+}
+\seealso{
+\code{\link[=generate_edgelist]{generate_edgelist()}}
 }

@@ -1,15 +1,17 @@
-#' Generates a list of graph prototypes for the different isomorphism classes and
+#' Generates a list of graph prototypes for the different isomorphism classes and their occurence.
 #'
 #'
-#' @param G graph
-#' @param sort_by_nr_edges logical, if TRUE, the list of prototypes is sorted by number of edges
+#' @param G                  \strong{igraph graph object} \cr
+#'                           A graph.
+#' @param sort_by_nr_edges   \strong{logical} \cr
+#'                           If \code{TRUE}, the list of prototypes is sorted by number of edges.
 #'
-#' @return list of prototype graphs plus count
+#' @return A list of prototype graphs plus their count.
 #' @export
 #'
 #' @examples # TODO
 #'
-#'
+
 generatePrototypeList <- function(G, sort_by_nr_edges = FALSE) {
 
 

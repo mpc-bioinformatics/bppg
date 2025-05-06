@@ -7,16 +7,15 @@
 calculate_summary_table(subgraph_char_tab, isomorph_list)
 }
 \arguments{
-\item{subgraph_char_tab}{subgraphs characteristics tables}
+\item{subgraph_char_tab}{\strong{data.frame} \cr
+A table of subgraphs characteristics, e.g. created by \code{\link[=calculate_subgraph_characteristics]{calculate_subgraph_characteristics()}}}
 
-\item{isomorph_list}{isomorph lists}
+\item{isomorph_list}{\strong{list} \cr
+A list of occuring isomorphs.}
 }
 \value{
 bla
 }
 \description{
 Calculate number for table
-}
-\examples{
-# TODO
 }

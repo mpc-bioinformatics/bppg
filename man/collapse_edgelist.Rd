@@ -11,14 +11,17 @@ collapse_edgelist(
 )
 }
 \arguments{
-\item{edgelist}{edgelist}
+\item{edgelist}{\strong{data.frame} \cr
+An edgelist eg. created with \code{\link[=generate_edgelist]{generate_edgelist()}}.}
 
-\item{collapse_protein_nodes}{bla}
+\item{collapse_protein_nodes}{\strong{logical} \cr
+If \code{TRUE}, the protein nodes will be collapsed.}
 
-\item{collapse_peptide_nodes}{bla}
+\item{collapse_peptide_nodes}{\strong{logical} \cr
+If \code{TRUE}, the peptide nodes will be collapsed.}
 }
 \value{
-Edgelist with collapsed protein and peptide nodes
+An edgelist with collapsed protein and/or peptide nodes.
 }
 \description{
 Collapsing of peptide and protein nodes of an edgelist.
@@ -31,4 +34,8 @@ digested_proteins <- bppg::digest_fasta(fasta)
 edgelist <- bppg::generate_edgelist(digested_proteins)
 edgelist_collapsed <- bppg::collapse_edgelist(edgelist)
 
+}
+\seealso{
+For edgelists with peptide ratios: \code{\link[=collapse_edgelist_quant]{collapse_edgelist_quant()}} \cr
+\code{\link[=generate_graphs_from_FASTA]{generate_graphs_from_FASTA()}}, \code{\link[=generate_quant_graphs]{generate_quant_graphs()}}, \code{\link[=generate_edgelist]{generate_edgelist()}}
 }
