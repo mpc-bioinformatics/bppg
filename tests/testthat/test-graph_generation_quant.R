@@ -2,6 +2,7 @@
 # The tests for the following functions are covered in test-graph_generation_FASTA.R and are skipped here to avoid redundancies.
 # bppg::digest_fasta()
 # bppg::generate_edgelist()
+# bppg::generate_graphs_from_edgelist()
 ################################################################################
 
 
@@ -78,5 +79,64 @@ test_that("test calculate_peptide_ratios", {
 
 
 })
+
+
+
+test_that("test collapse_edgelist_quant", {
+
+  # Create edgelist (proteins, peptides and pep_ratios and compute the collapsing
+  set.seed(4)
+  peptides <- c(rep(paste0("pep_", 1:2), each = 2), rep(paste0("pep_", 3:3), each = 4), rep(paste0("pep_", 4:5), each = 3))
+  ratios <- round(runif(5, min = 0.9, max = 1.1), digits = 2)
+  pep_ratios <- unlist(mapply(rep, ratios, each = c(2, 2, 4, 3, 3)))
+  proteins <- c(paste0("prot_", 1:2), paste0("prot_", 1:2), paste0("prot_", 2:5), paste0("prot_", 3:5), paste0("prot_", 3:5))
+
+  edgelist <- data.frame(protein = proteins, peptide = peptides, pep_ratio = pep_ratios)
+
+  collapsed_edgelist <- collapse_edgelist_quant(edgelist = edgelist, collapse_protein_nodes = TRUE, collapse_peptide_nodes = TRUE)
+
+
+  # The expected result
+  res_proteins <- c("prot_1", rep("prot_2", each = 2), rep("prot_3;prot_4;prot_5", each = 2))
+  res_peptides <- c(rep("pep_1;pep_2", each = 2), rep("pep_3", each = 2), "pep_4;pep_5")
+  res_pep_ratios <- c(rep("0.9;1.02", each = 2), rep("0.96", each = 2), "0.96;1.06")
+  res_collapsed_edgelist <- data.frame(protein = res_proteins, peptide = res_peptides, pep_ratio = res_pep_ratios)
+
+
+  # Check expected vs. actual result
+  expect_equal(collapsed_edgelist[["protein"]],
+               res_collapsed_edgelist[["protein"]])
+  expect_equal(collapsed_edgelist[["peptide"]],
+               res_collapsed_edgelist[["peptide"]])
+  expect_equal(collapsed_edgelist[["pep_ratio"]],
+               res_collapsed_edgelist[["pep_ratio"]])
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
