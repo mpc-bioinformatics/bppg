@@ -1,12 +1,16 @@
 
 #' Table with information on each protein node
 #'
-#' @param G list of list of igraph objects: graphs with collapsed protein and peptide nodes
+#' @param G   \strong{list of list of igraph objects} \cr
+#'            The graphs with collapsed protein and peptide nodes.
 #'
-#' @return data frame with information on
+#' @return A data frame with information on number of unique/shared peptides.
 #' @export
 #'
+#' @seealso For the generation of the list of lists of igraphs: [generate_graphs_from_quant_data()]
+#'
 #' @examples # TODO
+
 calculate_proteinnode_info <- function(G) {
 
   G2 <- lapply(G, function(x) {

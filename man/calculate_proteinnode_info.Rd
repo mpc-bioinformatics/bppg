@@ -7,14 +7,18 @@
 calculate_proteinnode_info(G)
 }
 \arguments{
-\item{G}{list of list of igraph objects: graphs with collapsed protein and peptide nodes}
+\item{G}{\strong{list of list of igraph objects} \cr
+The graphs with collapsed protein and peptide nodes.}
 }
 \value{
-data frame with information on
+A data frame with information on number of unique/shared peptides.
 }
 \description{
 Table with information on each protein node
 }
 \examples{
 # TODO
+}
+\seealso{
+For the generation of the list of lists of igraphs: \code{\link[=generate_graphs_from_quant_data]{generate_graphs_from_quant_data()}}
 }
