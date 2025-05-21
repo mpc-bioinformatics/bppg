@@ -3,15 +3,20 @@
 #' For each protein node, get information about protein origin (contaminant, spike-in
 #' or a specific species).
 #'
-#' @param accessions character vector with protein accessions (inside a protein node), separated by ";"
-#' @param contaminants character vector of contaminant protein accessions
-#' @param spike_ins character vector of spike-in protein accessions
-#' @param organisms names list with character vectors of protein accessions for each organism
+#' @param accessions     \strong{character vectors} \cr
+#'                       The protein accessions (inside a protein node), separated by ";".
+#' @param contaminants   \strong{character vectors} \cr
+#'                       The contaminant protein accessions.
+#' @param spike_ins      \strong{character vectors} \cr
+#'                       The spike-in protein accessions.
+#' @param organisms      \strong{named list of character vectors} \cr
+#'                       Each organism with the corresponding protein accessions.
 #'
-#' @return character vector with protein origin for each protein accession
+#' @return A character vector with protein origin for each protein accession
 #' @export
 #'
 #' @examples # TODO
+
 get_protein_origin <- function(accessions,
                                contaminants = NULL,
                                spike_ins = NULL,
