@@ -7,15 +7,20 @@
 equation(Ri, Ci, M, rj, log_level = FALSE)
 }
 \arguments{
-\item{Ri}{vector containing protein ratios (estimated)}
+\item{Ri}{\strong{numeric vector} \cr
+Contains the (estimated) protein ratios.}
 
-\item{Ci}{vector contraining protein weights (estimated, sum up to 1)}
+\item{Ci}{\strong{numeric vector} \cr
+Contains the protein weights (estimated, sum up to 1)}
 
-\item{M}{biadjaceny matrix of the corresponding graphs}
+\item{M}{\strong{matrix} \cr
+The biadjaceny matrix of the corresponding graphs.}
 
-\item{rj}{vector containing the measured peptide ratios}
+\item{rj}{\strong{numeric vector} \cr
+Contains the measured peptide ratios.}
 
-\item{log_level}{if TRUE, the Ri are given on log2-level and need to be back-transformed here (this may allow a symmetric behaviour during optimization)}
+\item{log_level}{\strong{logical} \cr
+If \code{TRUE}, the Ri are given on log2-level and need to be back-transformed here (this may allow a symmetric behaviour during optimization)}
 }
 \value{
 list containing the following elements:

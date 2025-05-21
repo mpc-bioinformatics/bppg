@@ -1,11 +1,16 @@
 
 #' Function to set up the equations for the optimization problem
 #'
-#' @param Ri vector containing protein ratios (estimated)
-#' @param Ci vector contraining protein weights (estimated, sum up to 1)
-#' @param M biadjaceny matrix of the corresponding graphs
-#' @param rj vector containing the measured peptide ratios
-#' @param log_level if TRUE, the Ri are given on log2-level and need to be back-transformed here (this may allow a symmetric behaviour during optimization)
+#' @param Ri          \strong{numeric vector} \cr
+#'                    Contains the (estimated) protein ratios.
+#' @param Ci          \strong{numeric vector} \cr
+#'                    Contains the protein weights (estimated, sum up to 1)
+#' @param M           \strong{matrix} \cr
+#'                    The biadjaceny matrix of the corresponding graphs.
+#' @param rj          \strong{numeric vector} \cr
+#'                    Contains the measured peptide ratios.
+#' @param log_level   \strong{logical} \cr
+#'                    If \code{TRUE}, the Ri are given on log2-level and need to be back-transformed here (this may allow a symmetric behaviour during optimization)
 #'
 #' @return list containing the following elements:
 #' \item{res_Mat}{matrix containing the estimated peptide ratios using Ri and Ci}
@@ -53,13 +58,21 @@ equation <- function(Ri,
 
 #' Function to set up the optimization problem and minimize the sum of squared error terms
 #'
-#' @param S list of biadjacency matrix of the bipartite peptide-protein graph (X) and measured peptide ratios (fc)
-#' @param fixed.Ci vector of fixed protein weights, variable weights set as NA. Sum of fixed weights must not exceed 1. If NULL, all Cis will be considered as variable. This argument is needed to fix Ci on a grid point in the iterated_Ci function.
-#' @param verbose if TRUE, additional information on each iteration of the optimization is printed (see also rsolnp function in package Rsolnp)
-#' @param reciprocal if TRUE, the reciprocal of the peptide ratios is used for the optimization
-#' @param log_level if TRUE, the Ri are log2-transformed before optimization, allowing a symmetric consideration of Ri < 0 and > 0.
-#' @param control control parameters for solnp
-#' @param ... additional parameters to solnp
+#' @param S           \strong{list} \cr
+#'                    A list of biadjacency matrix of the bipartite peptide-protein graph (X) and measured peptide ratios (fc).
+#' @param fixed.Ci    \strong{numeric vector} \cr
+#'                    The fixed protein weights, variable weights set as NA. Sum of fixed weights must not exceed 1.
+#'                    If NULL, all Cis will be considered as variable.
+#'                    This argument is needed to fix Ci on a grid point in the iterated_Ci function.
+#' @param verbose     \strong{logical} \cr
+#'                    If \code{TRUE}, additional information on each iteration of the optimization is printed (see also rsolnp function in package Rsolnp).
+#' @param reciprocal  \strong{logical} \cr
+#'                    If \code{TRUE}, the reciprocal of the peptide ratios is used for the optimization.
+#' @param log_level   \strong{logical} \cr
+#'                    If \code{TRUE}, the Ri are log2-transformed before optimization, allowing a symmetric consideration of Ri < 0 and > 0.
+#' @param control     \strong{list} \cr
+#'                    The control parameters for solnp.
+#' @param ...         Additional parameters to solnp.
 #'
 #' @return list containing the following elements:
 #' \item{Ri}{estimated protein ratios}

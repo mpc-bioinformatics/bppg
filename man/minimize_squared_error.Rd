@@ -15,19 +15,27 @@ minimize_squared_error(
 )
 }
 \arguments{
-\item{S}{list of biadjacency matrix of the bipartite peptide-protein graph (X) and measured peptide ratios (fc)}
+\item{S}{\strong{list} \cr
+A list of biadjacency matrix of the bipartite peptide-protein graph (X) and measured peptide ratios (fc).}
 
-\item{fixed.Ci}{vector of fixed protein weights, variable weights set as NA. Sum of fixed weights must not exceed 1. If NULL, all Cis will be considered as variable. This argument is needed to fix Ci on a grid point in the iterated_Ci function.}
+\item{fixed.Ci}{\strong{numeric vector} \cr
+The fixed protein weights, variable weights set as NA. Sum of fixed weights must not exceed 1.
+If NULL, all Cis will be considered as variable.
+This argument is needed to fix Ci on a grid point in the iterated_Ci function.}
 
-\item{verbose}{if TRUE, additional information on each iteration of the optimization is printed (see also rsolnp function in package Rsolnp)}
+\item{verbose}{\strong{logical} \cr
+If \code{TRUE}, additional information on each iteration of the optimization is printed (see also rsolnp function in package Rsolnp).}
 
-\item{reciprocal}{if TRUE, the reciprocal of the peptide ratios is used for the optimization}
+\item{reciprocal}{\strong{logical} \cr
+If \code{TRUE}, the reciprocal of the peptide ratios is used for the optimization.}
 
-\item{log_level}{if TRUE, the Ri are log2-transformed before optimization, allowing a symmetric consideration of Ri < 0 and > 0.}
+\item{log_level}{\strong{logical} \cr
+If \code{TRUE}, the Ri are log2-transformed before optimization, allowing a symmetric consideration of Ri < 0 and > 0.}
 
-\item{control}{control parameters for solnp}
+\item{control}{\strong{list} \cr
+The control parameters for solnp.}
 
-\item{...}{additional parameters to solnp}
+\item{...}{Additional parameters to solnp.}
 }
 \value{
 list containing the following elements:
