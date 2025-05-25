@@ -58,3 +58,21 @@ test_that("test minimize_squared_error", {
 
 
 
+test_that("test iterate_over_Ci", {
+
+})
+
+
+
+test_that("test automated_analysis_iterated_Ci", {
+
+})
+
+
+
+
+test_that("test protein_elimination", {
+
+})
+
+
