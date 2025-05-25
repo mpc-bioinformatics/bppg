@@ -19,27 +19,45 @@ protein_elimination(
 )
 }
 \arguments{
-\item{G}{igraph object}
+\item{G}{\strong{igraph graph object} \cr
+The graph to eliminate the proteins in.}
 
-\item{threshold}{threshold for increase of error term, default 1.05 refers to 5\% increase}
+\item{threshold}{\strong{numeric} \cr
+The threshold for increase of error term.
+The default 1.05 refers to 5\% increase.}
 
-\item{iter}{iteration (this is a recursive function)}
+\item{iter}{\strong{numeric} \cr
+The iteration (this is a recursive function).}
 
-\item{min_error_ref}{minimal error term with all available protein nodes}
+\item{min_error_ref}{\strong{numeric} \cr
+The minimal error term with all available protein nodes.
+\code{min_error_ref} is assigned automatically.}
 
-\item{min_error_current}{current minimal error term}
+\item{min_error_current}{\strong{numeric} \cr
+The current minimal error term.
+\code{min_error_current} is assigned automatically.}
 
-\item{protein_nodes_list}{current list of protein nodes}
+\item{protein_nodes_list}{\strong{igraph node list} \cr
+A current list of protein nodes.}
 
-\item{combination_list}{list of node combinations}
+\item{combination_list}{\strong{character vector} \cr
+A list of node combinations.
+For \code{iter == 0}, \code{combination_list} is assigned automatically.}
 
-\item{error_list}{list of error terms}
+\item{error_list}{\strong{numeric vector} \cr
+A list of error terms.}
 
-\item{comb_current}{current combination of protein nodes}
+\item{comb_current}{\strong{?} \cr
+The current combination of protein nodes.
+\code{comb_current} is assigned automatically.}
 
-\item{G_current}{current graph (with removed protein nodes)}
+\item{G_current}{\strong{igraph graph object} \cr
+The current graph (with removed protein nodes).
+\code{G_current} is assigned automatically.}
 
-\item{n_comb_current}{current number of protein nodes}
+\item{n_comb_current}{\strong{integer} \cr
+The current number of protein nodes.
+For \code{iter == 0}, \code{n_comb_current} is assigned automatically.}
 }
 \value{
 list
@@ -49,4 +67,7 @@ Tries to recursively remove protein nodes from graph while keeping the error ter
 }
 \examples{
 # TODO
+}
+\seealso{
+\code{\link[=minimize_squared_error]{minimize_squared_error()}}
 }

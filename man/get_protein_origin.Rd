@@ -13,16 +13,20 @@ get_protein_origin(
 )
 }
 \arguments{
-\item{accessions}{character vector with protein accessions (inside a protein node), separated by ";"}
+\item{accessions}{\strong{character vectors} \cr
+The protein accessions (inside a protein node), separated by ";".}
 
-\item{contaminants}{character vector of contaminant protein accessions}
+\item{contaminants}{\strong{character vectors} \cr
+The contaminant protein accessions.}
 
-\item{spike_ins}{character vector of spike-in protein accessions}
+\item{spike_ins}{\strong{character vectors} \cr
+The spike-in protein accessions.}
 
-\item{organisms}{names list with character vectors of protein accessions for each organism}
+\item{organisms}{\strong{named list of character vectors} \cr
+Each organism with the corresponding protein accessions.}
 }
 \value{
-character vector with protein origin for each protein accession
+A character vector with protein origin for each protein accession
 }
 \description{
 For each protein node, get information about protein origin (contaminant, spike-in

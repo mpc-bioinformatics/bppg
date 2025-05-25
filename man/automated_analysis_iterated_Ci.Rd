@@ -14,24 +14,39 @@ automated_analysis_iterated_Ci(
 )
 }
 \arguments{
-\item{S}{igraph object or list of biadjacency matrix (M) and fold changes (fc)}
+\item{S}{\strong{igraph graph object OR list} \cr
+An igraph graph of the bipartite peptide-protein graph with peptide ratios
+OR
+a list of the biadjacency matrix of the bipartite peptide-protein graph (named "X")
+and the measured peptide ratios (named "fc"). \cr
+Set \code{S_is_graph} depending on the input type.}
 
-\item{res}{result of iterate_over_Ci()}
+\item{res}{\strong{list} \cr
+The list resulting from the \code{\link[=iterate_over_Ci]{iterate_over_Ci()}} function.}
 
-\item{use_results_from_other_proteins}{if TRUE, use the results from other proteins within the same graph to calculate the optimal solution for each protein node}
+\item{use_results_from_other_proteins}{\strong{logical} \cr
+If \code{TRUE}, the results from other proteins within the same graph will be used
+to calculate the optimal solution for each protein node.}
 
-\item{verbose}{if TRUE, print additional information}
+\item{verbose}{\strong{logical} \cr
+If \code{TRUE}, additional information will be printed.}
 
-\item{job}{job object from the BatchExperiment. Used to print the job id and parameters in the output}
+\item{job}{\strong{BatchExperiment job object} \cr
+Is used to print the job id and parameters in the output}
 
-\item{S_is_graph}{set to TRUE,if S is an igraph object and FALSE if S is a list with the biadjacency matrix and fold changes}
+\item{S_is_graph}{\strong{logical} \cr
+If \code{TRUE}, S is an igraph object and
+if \code{FALSE} S is a list with the biadjacency matrix and fold changes.}
 }
 \value{
-data frame
+A data frame
 }
 \description{
 Extract protein ratio solutions from the result of iterate_over_Ci()
 }
 \examples{
 # TODO
+}
+\seealso{
+\code{\link[=iterate_over_Ci]{iterate_over_Ci()}}, \code{\link[=minimize_squared_error]{minimize_squared_error()}}
 }

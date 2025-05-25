@@ -12,16 +12,20 @@ plot_top10_iso_classes(
 )
 }
 \arguments{
-\item{prototypelist}{prototype list, result of generatePrototypeList()}
+\item{prototypelist}{\strong{bppg prototype list} \cr
+A prototype list, result of \code{\link[=generatePrototypeList]{generatePrototypeList()}}.}
 
-\item{out_file}{output file}
+\item{out_file}{\strong{character} \cr
+The output file.}
 
-\item{plot_height}{heigh of plot (in inches)}
+\item{plot_height}{\strong{numeric} \cr
+The heigh of plot (in inches).}
 
-\item{plot_width}{width of plot (in inches)}
+\item{plot_width}{\strong{numeric} \cr
+The width of plot (in inches).}
 }
 \value{
-nothing, save plot as pdf
+Nothing, saves plot as pdf.
 }
 \description{
 Plots the 10 most common isomorphism classes from a prototypelist

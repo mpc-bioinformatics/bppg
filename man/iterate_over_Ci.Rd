@@ -18,25 +18,38 @@ iterate_over_Ci(
 )
 }
 \arguments{
-\item{S}{list of biadjacency matrix (M) and}
+\item{S}{\strong{list} \cr
+A list of biadjacency matrix of the bipartite peptide-protein graph (named "X")
+and measured peptide ratios (named "fc").}
 
-\item{grid.size}{number of grid points for the Cis}
+\item{grid.size}{\strong{integer} \cr
+The number of grid points for the Cis.}
 
-\item{omit_grid_borders}{if TRUE, omit exact value of 1 and 0 from the grid (recommended, as they may cause numerical issues)}
+\item{omit_grid_borders}{\strong{logical} \cr
+If \code{TRUE}, omit exact value of 1 and 0 from the grid (recommended, as they may cause numerical issues).}
 
-\item{grid.start}{start of the grid (default is 0)}
+\item{grid.start}{\strong{integer} \cr
+The start of the grid (default is 0).}
 
-\item{grid.stop}{end of the grid (default is 1)}
+\item{grid.stop}{\strong{integer} \cr
+The end of the grid (default is 1).}
 
-\item{verbose}{if TRUE, print additional information (see solnp function)}
+\item{verbose}{\strong{logical} \cr
+If \code{TRUE}, print additional information (see solnp function).}
 
-\item{verbose_opt}{verbose argument of the minimize_squared_error function}
+\item{verbose_opt}{\strong{logical} \cr
+The \code{verbose} argument of the \code{\link[=minimize_squared_error]{minimize_squared_error()}} function.}
 
-\item{control}{control object to be passed to minimize_squared_error}
+\item{control}{\strong{list} \cr
+The \code{control} object to be passed to the \code{\link[=minimize_squared_error]{minimize_squared_error()}} function.}
 
-\item{extend_grid_at_borders}{extend the grid close to the borders (0 and 1). While exact values of 0 and 1 may cause numerical problems, values close to those may be valuable to get a better estimate of the protein ratios}
+\item{extend_grid_at_borders}{\strong{logical} \cr
+If \code{TRUE}, the grid will be extend close to the borders (0 and 1).
+While exact values of 0 and 1 may cause numerical problems,
+values close to those may be valuable to get a better estimate of the protein ratios.}
 
-\item{log_level}{passed to minimize_squared_error}
+\item{log_level}{\strong{logical} \cr
+The \code{log_level} argument will passed to the \code{\link[=minimize_squared_error]{minimize_squared_error()}} function.}
 }
 \value{
 A dataframe containing the optimal Ci and Ri values together with the reached minimal error term.
@@ -55,4 +68,7 @@ M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
 rj <- c(0.6, 1.2)
 S <- list(X = M, fc = rj)
 minimize_squared_error(S)
+}
+\seealso{
+\code{\link[=minimize_squared_error]{minimize_squared_error()}}, \code{\link[=automated_analysis_iterated_Ci]{automated_analysis_iterated_Ci()}}
 }

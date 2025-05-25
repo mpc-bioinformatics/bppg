@@ -2,15 +2,20 @@
 
 #' Plots the 10 most common isomorphism classes from a prototypelist
 #'
-#' @param prototypelist prototype list, result of generatePrototypeList()
-#' @param out_file output file
-#' @param plot_height heigh of plot (in inches)
-#' @param plot_width width of plot (in inches)
+#' @param prototypelist   \strong{bppg prototype list} \cr
+#'                        A prototype list, result of [bppg::generatePrototypeList()].
+#' @param out_file        \strong{character} \cr
+#'                        The output file.
+#' @param plot_height     \strong{numeric} \cr
+#'                        The heigh of plot (in inches).
+#' @param plot_width      \strong{numeric} \cr
+#'                        The width of plot (in inches).
 #'
-#' @return nothing, save plot as pdf
+#' @return Nothing, saves plot as pdf.
 #' @export
 #'
 #' @examples # TODO
+
 plot_top10_iso_classes <- function(prototypelist, out_file, plot_height = 10, plot_width = 4) {
 
   ### sort prototypelist decreasing by counter

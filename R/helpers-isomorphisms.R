@@ -48,7 +48,7 @@ direct_bipartite_graph <- function(bip_graph, from_type = FALSE){
 
 
   # turn undirected into directed edges
-  bip_graph <- igraph::as.directed(bip_graph, mode = "arbitrary")
+  bip_graph <- igraph::as_directed(bip_graph, mode = "arbitrary")
 
   from_vertices <- igraph::V(bip_graph)[igraph::V(bip_graph)$type == from_type]
   to_vertices <- igraph::V(bip_graph)[igraph::V(bip_graph)$type == !from_type]

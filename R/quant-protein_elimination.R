@@ -1,22 +1,43 @@
 
 #' Tries to recursively remove protein nodes from graph while keeping the error term in the optimization step low
 #'
-#' @param G igraph object
-#' @param threshold threshold for increase of error term, default 1.05 refers to 5% increase
-#' @param iter iteration (this is a recursive function)
-#' @param min_error_ref minimal error term with all available protein nodes
-#' @param min_error_current current minimal error term
-#' @param protein_nodes_list current list of protein nodes
-#' @param combination_list list of node combinations
-#' @param error_list list of error terms
-#' @param comb_current current combination of protein nodes
-#' @param G_current current graph (with removed protein nodes)
-#' @param n_comb_current current number of protein nodes
+#' @param G                    \strong{igraph graph object} \cr
+#'                             The graph to eliminate the proteins in.
+#' @param threshold            \strong{numeric} \cr
+#'                             The threshold for increase of error term.
+#'                             The default 1.05 refers to 5% increase.
+#' @param iter                 \strong{numeric} \cr
+#'                             The iteration (this is a recursive function).
+#' @param min_error_ref        \strong{numeric} \cr
+#'                             The minimal error term with all available protein nodes.
+#'                             \code{min_error_ref} is assigned automatically.
+#' @param min_error_current    \strong{numeric} \cr
+#'                             The current minimal error term.
+#'                             \code{min_error_current} is assigned automatically.
+#' @param protein_nodes_list   \strong{igraph node list} \cr
+#'                             A current list of protein nodes.
+#' @param combination_list     \strong{character vector} \cr
+#'                             A list of node combinations.
+#'                             For \code{iter == 0}, \code{combination_list} is assigned automatically.
+#' @param error_list           \strong{numeric vector} \cr
+#'                             A list of error terms.
+#' @param comb_current         \strong{?} \cr
+#'                             The current combination of protein nodes.
+#'                             \code{comb_current} is assigned automatically.
+#' @param G_current            \strong{igraph graph object} \cr
+#'                             The current graph (with removed protein nodes).
+#'                             \code{G_current} is assigned automatically.
+#' @param n_comb_current       \strong{integer} \cr
+#'                             The current number of protein nodes.
+#'                             For \code{iter == 0}, \code{n_comb_current} is assigned automatically.
 #'
 #' @return list
 #' @export
 #'
+#' @seealso [bppg::minimize_squared_error()]
+#'
 #' @examples # TODO
+
 protein_elimination <- function(G,
                                 threshold = 1.05,
                                 iter = 0,

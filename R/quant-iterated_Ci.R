@@ -5,21 +5,36 @@
 
 #' Iterate over possible Ci values
 #'
-#' @param S list of biadjacency matrix (M) and
-#' @param grid.size number of grid points for the Cis
-#' @param omit_grid_borders if TRUE, omit exact value of 1 and 0 from the grid (recommended, as they may cause numerical issues)
-#' @param grid.start start of the grid (default is 0)
-#' @param grid.stop end of the grid (default is 1)
-#' @param verbose if TRUE, print additional information (see solnp function)
-#' @param verbose_opt verbose argument of the minimize_squared_error function
-#' @param control control object to be passed to minimize_squared_error
-#' @param extend_grid_at_borders extend the grid close to the borders (0 and 1). While exact values of 0 and 1 may cause numerical problems, values close to those may be valuable to get a better estimate of the protein ratios
-#' @param log_level passed to minimize_squared_error
+#' @param S                        \strong{list} \cr
+#'                                 A list of biadjacency matrix of the bipartite peptide-protein graph (named "X")
+#'                                 and measured peptide ratios (named "fc").
+#' @param grid.size                \strong{integer} \cr
+#'                                 The number of grid points for the Cis.
+#' @param omit_grid_borders        \strong{logical} \cr
+#'                                 If \code{TRUE}, omit exact value of 1 and 0 from the grid (recommended, as they may cause numerical issues).
+#' @param grid.start               \strong{integer} \cr
+#'                                 The start of the grid (default is 0).
+#' @param grid.stop                \strong{integer} \cr
+#'                                 The end of the grid (default is 1).
+#' @param verbose                  \strong{logical} \cr
+#'                                 If \code{TRUE}, print additional information (see solnp function).
+#' @param verbose_opt              \strong{logical} \cr
+#'                                 The \code{verbose} argument of the [bppg::minimize_squared_error()] function.
+#' @param control                  \strong{list} \cr
+#'                                 The \code{control} object to be passed to the [bppg::minimize_squared_error()] function.
+#' @param extend_grid_at_borders   \strong{logical} \cr
+#'                                 If \code{TRUE}, the grid will be extend close to the borders (0 and 1).
+#'                                 While exact values of 0 and 1 may cause numerical problems,
+#'                                 values close to those may be valuable to get a better estimate of the protein ratios.
+#' @param log_level                \strong{logical} \cr
+#'                                 The \code{log_level} argument will passed to the [bppg::minimize_squared_error()] function.
 #'
 #' @return
 #' A dataframe containing the optimal Ci and Ri values together with the reached minimal error term.
 #'
 #' @export
+#'
+#' @seealso [bppg::minimize_squared_error()], [bppg::automated_analysis_iterated_Ci()]
 #'
 #' @details
 #' With minimize_squared_error() each protein node receives one estimate for the protein ratio. However, in some cases, there are multiple possible values for the protein ratios that lead to the same, minimal error term.
@@ -115,17 +130,32 @@ iterate_over_Ci <- function(S,
 
 #' Extract protein ratio solutions from the result of iterate_over_Ci()
 #'
-#' @param S igraph object or list of biadjacency matrix (M) and fold changes (fc)
-#' @param res result of iterate_over_Ci()
-#' @param use_results_from_other_proteins if TRUE, use the results from other proteins within the same graph to calculate the optimal solution for each protein node
-#' @param verbose if TRUE, print additional information
-#' @param job job object from the BatchExperiment. Used to print the job id and parameters in the output
-#' @param S_is_graph set to TRUE,if S is an igraph object and FALSE if S is a list with the biadjacency matrix and fold changes
+#' @param S                                 \strong{igraph graph object OR list} \cr
+#'                                          An igraph graph of the bipartite peptide-protein graph with peptide ratios
+#'                                          OR
+#'                                          a list of the biadjacency matrix of the bipartite peptide-protein graph (named "X")
+#'                                          and the measured peptide ratios (named "fc"). \cr
+#'                                          Set \code{S_is_graph} depending on the input type.
+#' @param res                               \strong{list} \cr
+#'                                          The list resulting from the [bppg::iterate_over_Ci()] function.
+#' @param use_results_from_other_proteins   \strong{logical} \cr
+#'                                          If \code{TRUE}, the results from other proteins within the same graph will be used
+#'                                          to calculate the optimal solution for each protein node.
+#' @param verbose                           \strong{logical} \cr
+#'                                          If \code{TRUE}, additional information will be printed.
+#' @param job                               \strong{BatchExperiment job object} \cr
+#'                                          Is used to print the job id and parameters in the output
+#' @param S_is_graph                        \strong{logical} \cr
+#'                                          If \code{TRUE}, S is an igraph object and
+#'                                          if \code{FALSE} S is a list with the biadjacency matrix and fold changes.
 #'
-#' @return data frame
+#' @return A data frame
 #' @export
 #'
+#' @seealso [bppg::iterate_over_Ci()], [bppg::minimize_squared_error()]
+#'
 #' @examples # TODO
+
 automated_analysis_iterated_Ci <- function(S,
                                            res,
                                            use_results_from_other_proteins = FALSE,
