@@ -72,7 +72,26 @@ read_MQ_peptidetable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
   return(RES)
 }
 
+#' Impute missing values with half min value per row
+#' TODO: ist das so richtig?
+#' @param D           \strong{data.matrix} \cr
+#'                    Matrix to impute
+#' @param min_row     \strong{float vector} \cr
+#'                    possible to set unique min value
+#' @return            vector with imputation values for each row (peptide)
 
+min_2_impute <- function(D, min_row){
+  lod <- function(x) {
+    imp_val <- min(x, na.rm = TRUE) / 2 # row wise min value halfed
+    if(is.na(imp_val)){
+      imp_val <- min_row
+    }
+    return(imp_val)
+  }
+
+  D_imp <- t(apply(cbind(D, min_row), 1, lod))
+  return(D_imp)
+}
 
 
 
@@ -101,15 +120,17 @@ read_MQ_peptidetable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
 #' aggregate_replicates(D, group = group)
 
 aggregate_replicates <- function(D, group, missing.limit = 0, method = "mean",
-                                 id_cols = 1) {
+                                 id_cols = 1, imp_method = NULL) {
 
 
   id <- D[, id_cols, drop = FALSE]
-  intensities <- D[,-(id_cols)]
+  intensities <- D[, -(id_cols)]
+
+  min_row <- apply(intensities, 1, min, na.rm = TRUE)
 
   res <- NULL
+  mask_imputed <- NULL
   for (i in 1:length(levels(group))) {
-
     X_tmp <- intensities[, group == levels(group)[i]]
 
     FUN <- switch(method,
@@ -118,19 +139,36 @@ aggregate_replicates <- function(D, group, missing.limit = 0, method = "mean",
                   median = robustbase::rowMedians)
 
     X_tmp <- as.matrix(X_tmp)
-
     res_tmp <- FUN(X_tmp, na.rm = TRUE)
 
     missingx <- apply(X_tmp, 1, function(x) mean(is.na(x)))
-    res_tmp[missingx > missing.limit | missingx == 1] <- NA
+    mask_tmp <- c(missingx > missing.limit | missingx == 1)
+    res_tmp[mask_tmp] <- NA
+
+    if (!is.null(imp_method)){
+      FUN <- switch(imp_method,
+                    min_2_imp = min_2_impute)
+
+      vals_imp <- FUN(X_tmp, min_row)
+      res_tmp[mask_tmp] <- vals_imp[mask_tmp]
+    }
 
     res <- cbind(res, res_tmp)
+    mask_imputed <- cbind(mask_imputed, mask_tmp)
   }
+
+  # mask to remove rows with only imputed values
+  all_imputed <- apply(mask_imputed, 1, all)
 
   res <- as.data.frame(res)
   colnames(res) <- levels(group)
-  res <- data.frame(id, res)
-  return(res)
+  res <- data.frame(id, res)[!all_imputed, ]
+
+  mask_imputed <- as.data.frame(mask_imputed)
+  colnames(mask_imputed) <- levels(group)
+  mask_imputed <- data.frame(id, mask_imputed)[!all_imputed, ]
+  
+  return(list(agg = res, imp = mask_imputed))
 }
 
 
@@ -209,7 +247,7 @@ calculate_peptide_ratios <- function(aggr_intensities, id_cols = 1,
         FC <- foldChange(D = aggr_intensities, X = col1, Y = col2)
       }
       if (type == "difference") {
-        FC <- aggr_intensities[,col2] - aggr_intensities[,col1]
+        FC <- aggr_intensities[, col2] - aggr_intensities[, col1]
         FC <- log_base^FC
       }
 
