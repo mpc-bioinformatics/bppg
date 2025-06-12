@@ -222,21 +222,26 @@ foldChange <- function(D, X, Y, useNA = FALSE) {
 #' @examples # TODO
 #'
 
-calculate_peptide_ratios <- function(aggr_intensities, id_cols = 1,
+calculate_peptide_ratios <- function(data, id_cols = 1,
                                      group_levels = NULL, type = "ratio", log_base = 10) {
 
-  id <- aggr_intensities[,id_cols, drop = FALSE]
-  aggr_intensities <- aggr_intensities[,-(id_cols)]
+  aggr_intensities <- data$agg
+  mask_impute <- data$imp
 
-  if(is.null(group_levels)) {
+  id <- aggr_intensities[, id_cols, drop = FALSE]
+  aggr_intensities <- aggr_intensities[, -(id_cols)]
+  mask_impute <- mask_impute[, -(id_cols)]
+
+  if (is.null(group_levels)) {
     group_levels <- factor(colnames(aggr_intensities), levels = colnames(aggr_intensities))
   }
 
 
   peptide_ratios <- NULL
+  imputed_ratios <- NULL
 
-  for (i in 1:(length(group_levels)-1)) {
-    for (j in (i+1):length(group_levels)) {
+  for (i in 1:(length(group_levels) - 1)) {
+    for (j in (i + 1):length(group_levels)) {
 
       col1 <- which(colnames(aggr_intensities) == group_levels[i])
       col2 <- which(colnames(aggr_intensities) == group_levels[j])
@@ -251,12 +256,23 @@ calculate_peptide_ratios <- function(aggr_intensities, id_cols = 1,
         FC <- log_base^FC
       }
 
+      dub_fc_mask <- apply(mask_impute[, c(col1, col2)], 1,
+                          function(x) x[1] & x[2])
+      FC[dub_fc_mask] <- NA   #remove ratio of two imputed values
+      imp_fc_mask <- apply(mask_impute[, c(col1, col2)], 1,
+                          function(x) x[1] | x[2])
+      imputed_ratios <- cbind(imputed_ratios, imp_fc_mask)
+
       peptide_ratios <- cbind(peptide_ratios, FC)
       colnames(peptide_ratios)[ncol(peptide_ratios)] <- name
     }
   }
+  colnames(imputed_ratios) <- colnames(peptide_ratios)
 
-  return(data.frame(id, peptide_ratios))
+  imputed_ratios <- data.frame(id, imputed_ratios)
+  peptide_ratios <- data.frame(id, peptide_ratios)
+
+  return(list(pep = peptide_ratios, imp = imputed_ratios))
 }
 
 
