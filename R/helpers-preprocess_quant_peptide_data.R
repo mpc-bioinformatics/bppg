@@ -82,9 +82,9 @@ read_MQ_peptidetable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
 
 min_2_impute <- function(D, min_row){
   lod <- function(x) {
-    imp_val <- min(x, na.rm = TRUE) / 2 # row wise min value halfed
+    imp_val <- min(x, na.rm = TRUE) / 2 # row wise min value halfed, group specific
     if(is.na(imp_val)){
-      imp_val <- min_row
+      imp_val <- min_row / 2   # row wise min value halfed, dataset specific
     }
     return(imp_val)
   }
@@ -129,7 +129,7 @@ aggregate_replicates <- function(D, group, missing.limit = 0, method = "mean",
   min_row <- apply(intensities, 1, min, na.rm = TRUE)
 
   res <- NULL
-  mask_imputed <- NULL
+  mask_imputed <- NULL  # track imputed vales
   for (i in 1:length(levels(group))) {
     X_tmp <- intensities[, group == levels(group)[i]]
 
@@ -145,19 +145,20 @@ aggregate_replicates <- function(D, group, missing.limit = 0, method = "mean",
     mask_tmp <- c(missingx > missing.limit | missingx == 1)
     res_tmp[mask_tmp] <- NA
 
+    # apply imputation on missing values
     if (!is.null(imp_method)){
       FUN <- switch(imp_method,
                     min_2_imp = min_2_impute)
 
       vals_imp <- FUN(X_tmp, min_row)
-      res_tmp[mask_tmp] <- vals_imp[mask_tmp]
+      res_tmp[mask_tmp] <- vals_imp[mask_tmp]  # only replace missing values
     }
 
     res <- cbind(res, res_tmp)
     mask_imputed <- cbind(mask_imputed, mask_tmp)
   }
 
-  # mask to remove rows with only imputed values
+  # mask to remove rows with only imputed values, all under missing.limit
   all_imputed <- apply(mask_imputed, 1, all)
 
   res <- as.data.frame(res)
