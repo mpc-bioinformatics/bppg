@@ -72,29 +72,6 @@ read_MQ_peptidetable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
   return(RES)
 }
 
-#' Impute missing values with half min value per row
-#' TODO: ist das so richtig?
-#' @param D           \strong{data.matrix} \cr
-#'                    Matrix to impute
-#' @param min_row     \strong{float vector} \cr
-#'                    possible to set unique min value
-#' @return            vector with imputation values for each row (peptide)
-
-min_2_impute <- function(D, min_row){
-  lod <- function(x) {
-    imp_val <- min(x, na.rm = TRUE) / 2 # row wise min value halfed, group specific
-    if(is.na(imp_val)){
-      imp_val <- min_row / 2   # row wise min value halfed, dataset specific
-    }
-    return(imp_val)
-  }
-
-  D_imp <- t(apply(cbind(D, min_row), 1, lod))
-  return(D_imp)
-}
-
-
-
 
 
 #' Aggregate replicates of the same experimental group.
@@ -148,7 +125,7 @@ aggregate_replicates <- function(D, group, missing.limit = 0, method = "mean",
     # apply imputation on missing values
     if (!is.null(imp_method)){
       FUN <- switch(imp_method,
-                    min_2_imp = min_2_impute)
+                    min_2_imp = bppg::min_2_impute)
 
       vals_imp <- FUN(X_tmp, min_row)
       res_tmp[mask_tmp] <- vals_imp[mask_tmp]  # only replace missing values
@@ -238,8 +215,8 @@ calculate_peptide_ratios <- function(data, id_cols = 1,
   }
 
 
-  peptide_ratios <- NULL
-  imputed_ratios <- NULL
+  peptide_ratios <- list()
+  k <- 0
 
   for (i in 1:(length(group_levels) - 1)) {
     for (j in (i + 1):length(group_levels)) {
@@ -262,18 +239,23 @@ calculate_peptide_ratios <- function(data, id_cols = 1,
       FC[dub_fc_mask] <- NA   #remove ratio of two imputed values
       imp_fc_mask <- apply(mask_impute[, c(col1, col2)], 1,
                           function(x) x[1] | x[2])
-      imputed_ratios <- cbind(imputed_ratios, imp_fc_mask)
+      #imputed_ratios <- cbind(imputed_ratios, imp_fc_mask)
 
-      peptide_ratios <- cbind(peptide_ratios, FC)
-      colnames(peptide_ratios)[ncol(peptide_ratios)] <- name
+      #peptide_ratios <- cbind(peptide_ratios, FC)
+      #colnames(peptide_ratios)[ncol(peptide_ratios)] <- name
+      peptide_ratios[[k]] <- data.frame(id, FC, imp_fc_mask)
+      colnames(peptide_ratios[[k]])[, c(3:4)] <- c(name, "imputed")
+      names(peptide_ratios)[[k]] <- name
+      k <- k + 1
     }
   }
-  colnames(imputed_ratios) <- colnames(peptide_ratios)
+  # colnames(imputed_ratios) <- colnames(peptide_ratios)
 
-  imputed_ratios <- data.frame(id, imputed_ratios)
-  peptide_ratios <- data.frame(id, peptide_ratios)
+  # imputed_ratios <- data.frame(id, imputed_ratios)
+  # peptide_ratios <- data.frame(id, peptide_ratios)
 
-  return(list(pep = peptide_ratios, imp = imputed_ratios))
+  # return(list(pep = peptide_ratios, imp = imputed_ratios))
+  return(peptide_ratios)
 }
 
 
