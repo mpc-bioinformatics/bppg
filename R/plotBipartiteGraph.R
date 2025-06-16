@@ -26,9 +26,9 @@
 #' @param three_shapes              \strong{logical} \cr
 #'                                  If \code{TRUE}, a separate shape will be used for the unique peptides.
 #' @param node_labels_proteins      \strong{character} \cr
-#'                                  The type of labels for the proteins. Options are "letters" or "acessions".
+#'                                  The type of labels for the proteins. Options are "letters" or "accessions".
 #' @param node_labels_peptides      \strong{character} \cr
-#'                                  The type of labels for the peptides. Options are"numbers" or "pep_ratios" or "pep_ratio_aggr".
+#'                                  The type of labels for the peptides. Options are "numbers" or "pep_ratios" or "pep_ratio_aggr".
 #' @param round_digits              \strong{integer} \cr
 #'                                  The number of digits to round the peptide ratios to.
 #' @param use_edge_attributes       \strong{logical} \cr
