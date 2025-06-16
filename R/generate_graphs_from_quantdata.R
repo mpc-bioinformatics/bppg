@@ -34,8 +34,11 @@ generate_quant_graphs <- function(peptide_ratios,
                                   collapse_peptide_nodes = FALSE,
                                   suffix = "") {
 
-  ### broad filtering for edgelist for only quantifies peptides
-  edgelist_filtered <- fasta_edgelist[fasta_edgelist[,2] %in% peptide_ratios[,seq_column], ]
+  # filter out na, leave valid rows only
+  peptide_ratios <- stats::na.omit(peptide_ratios)
+
+  # filter edgelist so only valid peptides remain
+  edgelist_filtered <- fasta_edgelist[fasta_edgelist[, 2] %in% peptide_ratios[, seq_column], ]
 
 
   if (!is.null(outpath)) {
@@ -44,45 +47,43 @@ generate_quant_graphs <- function(peptide_ratios,
 
 
   id <- peptide_ratios[, id_cols, drop = FALSE]
-  peptide_ratios <- peptide_ratios[, -(id_cols), drop = FALSE]
+  fc <- peptide_ratios[, -(id_cols), drop = FALSE]
 
-  colnames_split <- limma::strsplit2(colnames(peptide_ratios), "_")
-  comparisons <- paste(colnames_split[,2], colnames_split[,3], sep = "_")
+  colnames_split <- limma::strsplit2(colnames(fc)[1], "_")
+  comparison <- paste(colnames_split[, 2], colnames_split[, 3], sep = "_")
 
   subgraphs <- list()
 
-  for (i in 1:ncol(peptide_ratios)) {
-    comparison <- comparisons[i]
-
-    fc <- peptide_ratios[,i]
-    peptides_tmp <- id[,seq_column][!is.na(fc)]  ## peptides that are quantified in this specific comparison
-    fc <- stats::na.omit(fc)
-    edgelist_filtered2 <- edgelist_filtered[edgelist_filtered[,2] %in% peptides_tmp, ]
+  ## add peptide ratios
+  edgelist_filtered$pep_ratio <- fc[match(edgelist_filtered$peptide, id[, seq_column]), 1]
+  edgelist_filtered$imputed <- fc[match(edgelist_filtered$peptide, id[, seq_column]), 2]
 
 
-    ## add peptide ratios
-    edgelist_filtered2$pep_ratio <- peptide_ratios[,i][match(edgelist_filtered2$peptide, id[, seq_column])]
+  ## generate whole bipartite graph
+  edgelist_coll <- bppg::collapse_edgelist_quant(edgelist_filtered,
+                                            collapse_protein_nodes = collapse_protein_nodes,
+                                            collapse_peptide_nodes = collapse_peptide_nodes)
 
+  edgelist_coll_pep <- bppg::collapse_edgelist_quant(edgelist_filtered,
+                                            collapse_protein_nodes = collapse_protein_nodes,
+                                            collapse_peptide_nodes = TRUE)
 
-    ## generate whole bipartite graph
-    edgelist_coll <- bppg::collapse_edgelist_quant(edgelist_filtered2,
-                                             collapse_protein_nodes = collapse_protein_nodes,
-                                             collapse_peptide_nodes = collapse_peptide_nodes)
+  # create graphs and return decomposed graph list
+  G <- bppg::generate_graphs_from_edgelist(edgelist_coll[, 1:2])
 
-    G <- bppg::generate_graphs_from_edgelist(edgelist_coll[, 1:2])
+  ### set peptide ratios as vertex attributes
+  for (j in 1:length(G)){
 
-    ### set peptide ratios as vertex attributes
-    for (j in 1:length(G)){
-
-      G[[j]] <- igraph::set_vertex_attr(graph = G[[j]], name = "pep_ratio",
-                                        index = igraph::V(G[[j]])[!igraph::V(G[[j]])$type],
-                                        value = edgelist_coll$pep_ratio[match(igraph::V(G[[j]])$name[!igraph::V(G[[j]])$type], edgelist_coll$peptide)])
-    }
-
-    subgraphs[[i]] <- G
-    names(subgraphs)[[i]] <- comparison
-
+    G[[j]] <- igraph::set_vertex_attr(graph = G[[j]], name = "pep_ratio",
+                                      index = igraph::V(G[[j]])[!igraph::V(G[[j]])$type],
+                                      value = edgelist_coll$pep_ratio[match(igraph::V(G[[j]])$name[!igraph::V(G[[j]])$type], edgelist_coll$peptide)])
+    G[[j]] <- igraph::set_vertex_attr(graph = G[[j]], name = "imputed",
+                                      index = igraph::V(G[[j]])[!igraph::V(G[[j]])$type],
+                                      value = edgelist_coll$imputed[match(igraph::V(G[[j]])$name[!igraph::V(G[[j]])$type], edgelist_coll$peptide)])
   }
+
+  subgraphs <- G
+  names(subgraphs) <- comparison
 
   return(subgraphs)
 
