@@ -52,8 +52,6 @@ generate_quant_graphs <- function(peptide_ratios,
   colnames_split <- limma::strsplit2(colnames(fc)[1], "_")
   comparison <- paste(colnames_split[, 2], colnames_split[, 3], sep = "_")
 
-  subgraphs <- list()
-
   ## add peptide ratios
   edgelist_filtered$pep_ratio <- fc[match(edgelist_filtered$peptide, id[, seq_column]), 1]
   edgelist_filtered$imputed <- fc[match(edgelist_filtered$peptide, id[, seq_column]), 2]
@@ -70,10 +68,12 @@ generate_quant_graphs <- function(peptide_ratios,
 
   # create graphs and return decomposed graph list
   G <- bppg::generate_graphs_from_edgelist(edgelist_coll[, 1:2])
+  # encode comparison in first graph
+  names(G) <- comparison
+
 
   ### set peptide ratios as vertex attributes
   for (j in 1:length(G)){
-
     G[[j]] <- igraph::set_vertex_attr(graph = G[[j]], name = "pep_ratio",
                                       index = igraph::V(G[[j]])[!igraph::V(G[[j]])$type],
                                       value = edgelist_coll$pep_ratio[match(igraph::V(G[[j]])$name[!igraph::V(G[[j]])$type], edgelist_coll$peptide)])
@@ -82,10 +82,9 @@ generate_quant_graphs <- function(peptide_ratios,
                                       value = edgelist_coll$imputed[match(igraph::V(G[[j]])$name[!igraph::V(G[[j]])$type], edgelist_coll$peptide)])
   }
 
-  subgraphs <- G
-  names(subgraphs) <- comparison
 
-  return(subgraphs)
+
+  return(G)
 
 }
 
