@@ -51,6 +51,7 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
                                vertex.color = c("mediumseagreen", "cadetblue2", "coral1"),
                                vertex.size = 15, vertex.label.cex = 1, edge.width = 1, vertex.size2=15,
                                useCanonicalPermutation = FALSE, three_shapes = FALSE,
+                               imputed_encoding = FALSE,
                                node_labels_proteins = "letters",
                                node_labels_peptides = "numbers",
                                round_digits = 2, use_edge_attributes = FALSE,
@@ -64,40 +65,40 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
     cG <- igraph::canonical_permutation(G)
     G <- igraph::permute(G, cG$labeling)
   }
-  Layout <- igraph::layout.bipartite(G)
+  Layout <- igraph::layout_as_bipartite(G)
   names_G <- character(length(igraph::V(G)))
 
-  pos_proteins <- Layout[,1][Layout[,2] == 1]
-  pos_peptides <- Layout[,1][Layout[,2] == 0]
+  pos_proteins <- Layout[, 1][Layout[, 2] == 1]
+  pos_peptides <- Layout[, 1][Layout[, 2] == 0]
 
   if (node_labels_proteins == "letters") {
     #### TODO: was ist, wenn es mehr als 26 Proteine gibt?
-    names_G[Layout[,2] == 1] <- LETTERS[rank(pos_proteins)]
+    names_G[Layout[, 2] == 1] <- LETTERS[rank(pos_proteins)]
   }
   if (node_labels_proteins == "accessions") {
-    names_G[Layout[,2] == 1] <- limma::strsplit2(igraph::V(G)$name[Layout[,2] == 1], ";")[,1]
+    names_G[Layout[, 2] == 1] <- limma::strsplit2(igraph::V(G)$name[Layout[, 2] == 1], ";")[, 1]
   }
   # nicht geordnete Zahlen
   if (node_labels_proteins == "numbers_noord") {
-    names_G[Layout[,2] == 1] <- 1:length(pos_proteins)
+    names_G[Layout[, 2] == 1] <- 1:length(pos_proteins)
   }
 
 
 
   if (node_labels_peptides == "numbers") {
-    names_peptides <- 1:sum(Layout[,2] == 0)
-    names_G[Layout[,2] == 0] <- names_peptides[rank(pos_peptides)]
+    names_peptides <- 1:sum(Layout[, 2] == 0)
+    names_G[Layout[, 2] == 0] <- names_peptides[rank(pos_peptides)]
   }
   if (node_labels_peptides == "pep_ratios") {
     pep_ratios <- igraph::V(G)$pep_ratio
-    names_G[Layout[,2] == 0] <- round(pep_ratios[Layout[,2] == 0],round_digits)
+    names_G[Layout[, 2] == 0] <- round(pep_ratios[Layout[, 2] == 0], round_digits)
   }
   if (node_labels_peptides == "pep_ratio_aggr") {
     pep_ratios <- igraph::V(G)$pep_ratio_aggr
-    names_G[Layout[,2] == 0] <- round(pep_ratios[Layout[,2] == 0],round_digits)
+    names_G[Layout[, 2] == 0] <- round(pep_ratios[Layout[, 2] == 0], round_digits)
   }
   if (node_labels_peptides == "") {
-    names_G[Layout[,2] == 0] <- NA
+    names_G[Layout[, 2] == 0] <- NA
   }
 
 
@@ -106,30 +107,39 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
   #################################
 
   type <- integer(length(igraph::V(G)))
-  type[!igraph::V(G)$type] <- 1                  # "protein"
-  type[igraph::V(G)$type] <- 2                   # "shared peptide"
+  type[!igraph::V(G)$type] <- 1                          # "protein"
+  type[igraph::V(G)$type] <- 2                           # "shared peptide"
   type[igraph::V(G)$type & igraph::degree(G) == 1] <- 3  # "unique peptide"
 
+  if (imputed_encoding){
+    type2 <- integer(length(igraph::V(G)))
+    type2[is.na(igraph::V(G)$imputed)] <- 1                           # "protein"
+    type2[!(is.na(igraph::V(G)$imputed) & igraph::V(G)$imputed)] <- 2 # "real ratio"
+    type2[!is.na(igraph::V(G)$imputed) & igraph::V(G)$imputed] <- 3   # "imputed ratio"
+  } else {
+    type2 <- type
+  }
+
   if (three_shapes) {
-    mydiamond <- function(coords, v=NULL, params) {
+    mydiamond <- function(coords, v = NULL, params) {
       vertex.color <- params("vertex", "color")
       if (length(vertex.color) != 1 && !is.null(v)) {
         vertex.color <- vertex.color[v]
       }
-      vertex.size <- 1/200 * params("vertex", "size")
+      vertex.size <- 1 / 200 * params("vertex", "size")
       if (length(vertex.size) != 1 && !is.null(v)) {
         vertex.size <- vertex.size[v]
       }
 
-      graphics::symbols(x=coords[,1], y=coords[,2], bg=vertex.color,
-              stars=1.2*cbind(vertex.size, vertex.size, vertex.size, vertex.size),
-              add=TRUE, inches=FALSE)
+      graphics::symbols(x = coords[, 1], y = coords[, 2], bg = vertex.color,
+              star = 1.2 * cbind(vertex.size, vertex.size, vertex.size, vertex.size),
+              add = TRUE, inches = FALSE)
     }
-    igraph::add_shape("diamond", clip= igraph::shape_noclip,
-              plot=mydiamond)
+    igraph::add_shape("diamond", clip = igraph::shape_noclip,
+                      plot = mydiamond)
     vertex.shapes = c("circle", "crectangle", "diamond")[type]
   } else {
-    vertex.shapes = c("circle", "crectangle")[igraph::V(G)$type+1]
+    vertex.shapes = c("circle", "crectangle")[igraph::V(G)$type + 1]
   }
 
   #if (legend) graphics::par(mar = c(10, 4, 4, 2) + 0.1)
@@ -140,18 +150,19 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
     edge.lty <- 1
   }
 
-  plot(G, layout = igraph::layout_as_bipartite, vertex.color=vertex.color[type],
+  plot(G, layout = igraph::layout_as_bipartite, vertex.color = vertex.color[type2],
        vertex.shape = vertex.shapes,
-       vertex.label.degree = c(-pi/2, pi/2)[igraph::V(G)$type+1],
+       vertex.label.degree = c(-pi / 2, pi / 2)[igraph::V(G)$type + 1],
        vertex.label.dist = vertex.label.dist,
        vertex.size = vertex.size, vertex.label.cex = vertex.label.cex,
        edge.width = edge.width, vertex.size2=vertex.size2, edge.lty = edge.lty, ...)
 
-  if (legend & three_shapes) {
+  ## TODO add imputation to legend
+  if (legend && three_shapes) {
     legend(x = legend.x, y = legend.y, legend = c("protein", "shared peptide", "unique peptide"),
            col = vertex.color, pch = c(19, 15, 18))
   }
-  if (legend & !three_shapes) {
+  if (legend && !three_shapes) {
     legend(x = legend.x, y = legend.y, legend = c("protein", "shared peptide", "unique peptide"),
            col = vertex.color, pch = c(19, 15, 15))
   }
