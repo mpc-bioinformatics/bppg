@@ -161,17 +161,19 @@ generate_graphs_from_quant_data <- function(D,
   D_aggr <- bppg::aggregate_replicates(D, method = "mean", missing.limit = 0.4,
                                        group = group, id_cols = id_columns)
   if (!is.null(outpath)) {
-    openxlsx::write.xlsx(D_aggr, file = paste0(outpath, "aggr_peptides_", suffix, ".xlsx"), overwrite = TRUE, keepNA = TRUE)
+    openxlsx::write.xlsx(D_aggr$agg, file = paste0(outpath, "aggr_peptides_", suffix, ".xlsx"), overwrite = TRUE, keepNA = TRUE)
+    openxlsx::write.xlsx(D_aggr$imp, file = paste0(outpath, "aggr_peptides_MV_", suffix, ".xlsx"), overwrite = TRUE, keepNA = TRUE)
   }
 
-  ### calculate the peptide ratio table
+  ### calculate the peptide ratio (list of data.frame per comparison)
   groups  <- levels(group)
   peptide_ratios <- bppg::calculate_peptide_ratios(aggr_intensities = D_aggr, id_cols = id_columns, group_levels = groups)
-  if (!is.null(outpath)) {
+  if (!is.null(outpath)) { 
+    # TODO: this will not work with the new data structure, per comparison
     openxlsx::write.xlsx(peptide_ratios, file = paste0(outpath, "peptide_ratios_", suffix, ".xlsx"), overwrite = TRUE, keepNA = TRUE)
   }
 
-
+  #TODO: loop per comparison, will ich dann list of graphs returnen?
   ## Generierung der Graphen (man braucht peptide_ratios und fast_edgelist!)
   graphs <- bppg::generate_quant_graphs(peptide_ratios = peptide_ratios, id_cols = id_columns, fasta_edgelist = edgelist,
                                         outpath = outpath, seq_column = seq_column,

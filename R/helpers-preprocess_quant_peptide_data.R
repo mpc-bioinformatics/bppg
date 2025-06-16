@@ -214,7 +214,7 @@ foldChange <- function(D, X, Y, useNA = FALSE) {
 #' @param log_base           \strong{numeric} \cr
 #'                           The log base.
 #'
-#' @return A data set with peptide ratios.
+#' @return                   A list of datasets of peptide ratios per comparison
 #' @export
 #'
 #' @examples # TODO
@@ -260,22 +260,14 @@ calculate_peptide_ratios <- function(data, id_cols = 1,
       FC[dub_fc_mask] <- NA   #remove ratio of two imputed values
       imp_fc_mask <- apply(mask_impute[, c(col1, col2)], 1,
                           function(x) x[1] | x[2])
-      #imputed_ratios <- cbind(imputed_ratios, imp_fc_mask)
 
-      #peptide_ratios <- cbind(peptide_ratios, FC)
-      #colnames(peptide_ratios)[ncol(peptide_ratios)] <- name
       peptide_ratios[[k]] <- data.frame(id, FC, imp_fc_mask)
       colnames(peptide_ratios[[k]])[c(3:4)] <- c(name, "imputed")
       names(peptide_ratios)[[k]] <- name
       k <- k + 1
     }
   }
-  # colnames(imputed_ratios) <- colnames(peptide_ratios)
 
-  # imputed_ratios <- data.frame(id, imputed_ratios)
-  # peptide_ratios <- data.frame(id, peptide_ratios)
-
-  # return(list(pep = peptide_ratios, imp = imputed_ratios))
   return(peptide_ratios)
 }
 
