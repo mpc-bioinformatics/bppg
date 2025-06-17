@@ -62,9 +62,6 @@ generate_quant_graphs <- function(peptide_ratios,
                                             collapse_protein_nodes = collapse_protein_nodes,
                                             collapse_peptide_nodes = collapse_peptide_nodes)
 
-  edgelist_coll_pep <- bppg::collapse_edgelist_quant(edgelist_filtered,
-                                            collapse_protein_nodes = collapse_protein_nodes,
-                                            collapse_peptide_nodes = TRUE)
 
   # create graphs and return decomposed graph list
   G <- bppg::generate_graphs_from_edgelist(edgelist_coll[, 1:2])
