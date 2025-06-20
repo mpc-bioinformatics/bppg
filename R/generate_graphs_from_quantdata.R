@@ -1,3 +1,51 @@
+#' Filter peptide ratios to exclude in peptide nodes contradicting imputed values.
+#'
+#' @param edgelist          \strong{data.frame} \cr
+#'                          An edgelist created from the corresponding FASTA file, eg. created with [bppg::generate_edgelist()].
+#' @param fc                \strong{data.frame} \cr
+#'                          peptide ratio and imputed bool, corresponding with id.
+#' @param id                \strong{data.frame} \cr
+#'                          ID columns to peptide ratio table, corresponding with fc.
+#' @param seq_column        \strong{character} \cr
+#'                          The column name of the peptide sequence in id.
+#'
+#'
+#' @return                  A dataframe which filtered out contradicting ratios of peptides. 
+
+imputation_filter <- function(edgelist, fc, id, seq_column = "Sequence") {
+  ## generate bipartite graph to identify peptide groups
+  edgelist_coll_pep <- bppg::collapse_edgelist(edgelist_filtered,
+                                               collapse_protein_nodes = TRUE,
+                                               collapse_peptide_nodes = TRUE)
+
+  # create dataframe for each edge after double collapsing (peptides decollapsed)
+  pep_node_list <- list()
+  coll_peptides <- edgelist_coll_pep[, -1]
+  coll_peptides <- coll_peptides[!duplicated(coll_peptides)]
+  for (i in seq_along(coll_peptides)){
+    peptide <- t(limma::strsplit2(coll_peptides[i], ";"))
+    # pep_ratios are sorted indepently of sequence, match ratio
+    # log directly here? so equal distance?
+    pep_ratio <- log(fc[match(peptide, id[, seq_column]), 1])
+    imputed <- fc[match(peptide, id[, seq_column]), 2]
+    pep_df <- data.frame(peptide, pep_ratio, imputed)
+    colnames(pep_df) <- c("peptide", "pep_ratio", "imputed")
+
+    #TODO find better way to determine outlier
+    pep_mean <- mean(pep_ratio)
+    pep_df$outlier <- abs(pep_ratio - pep_mean) > 0.3
+
+    pep_df <- pep_df[!(pep_df$imputed & pep_df$outlier), ]
+
+    pep_node_list[[i]] <- pep_df
+    names(pep_node_list)[[i]] <- peptide[1]
+  }
+
+  return(data.table::rbindlist(pep_node_list))
+}
+
+
+
 #' Generate graphs from peptide ratio table, using an edgelist calculated on the fasta file.
 #'
 #' @param peptide_ratios           \strong{data.frame} \cr
@@ -53,9 +101,17 @@ generate_quant_graphs <- function(peptide_ratios,
   comparison <- paste(colnames_split[, 2], colnames_split[, 3], sep = "_")
 
   ## add peptide ratios
-  edgelist_filtered$pep_ratio <- fc[match(edgelist_filtered$peptide, id[, seq_column]), 1]
-  edgelist_filtered$imputed <- fc[match(edgelist_filtered$peptide, id[, seq_column]), 2]
+  if (sum(fc[, 2] < 0)) {  # check if there are imputed values
+    filtered_pep <- edgelist_filtered(edgelist_filtered, fc, id, seq_column)
 
+    edgelist_filtered$pep_ratio <- filtered_pep$pep_ratio[match(edgelist_filtered$peptide, filtered_pep$peptide)]
+    edgelist_filtered$imputed <- filtered_pep$imputed[match(edgelist_filtered$peptide, filtered_pep$peptide)]
+  } else {
+    edgelist_filtered$pep_ratio <- fc[match(edgelist_filtered$peptide, id[, seq_column]), 1]
+    edgelist_filtered$imputed <- fc[match(edgelist_filtered$peptide, id[, seq_column]), 2]
+
+  }
+  
 
   ## generate whole bipartite graph
   edgelist_coll <- bppg::collapse_edgelist_quant(edgelist_filtered,
