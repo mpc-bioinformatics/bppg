@@ -14,7 +14,7 @@
 
 imputation_filter <- function(edgelist, fc, id, seq_column = "Sequence") {
   ## generate bipartite graph to identify peptide groups
-  edgelist_coll_pep <- bppg::collapse_edgelist(edgelist_filtered,
+  edgelist_coll_pep <- bppg::collapse_edgelist(edgelist,
                                                collapse_protein_nodes = TRUE,
                                                collapse_peptide_nodes = TRUE)
 
@@ -26,14 +26,14 @@ imputation_filter <- function(edgelist, fc, id, seq_column = "Sequence") {
     peptide <- t(limma::strsplit2(coll_peptides[i], ";"))
     # pep_ratios are sorted indepently of sequence, match ratio
     # log directly here? so equal distance?
-    pep_ratio <- log(fc[match(peptide, id[, seq_column]), 1])
+    pep_ratio <- fc[match(peptide, id[, seq_column]), 1]
     imputed <- fc[match(peptide, id[, seq_column]), 2]
     pep_df <- data.frame(peptide, pep_ratio, imputed)
     colnames(pep_df) <- c("peptide", "pep_ratio", "imputed")
 
     #TODO find better way to determine outlier
-    pep_mean <- mean(pep_ratio)
-    pep_df$outlier <- abs(pep_ratio - pep_mean) > 0.3
+    pep_mean <- mean(log(pep_ratio))
+    pep_df$outlier <- abs(log(pep_ratio) - pep_mean) > 0.3
 
     pep_df <- pep_df[!(pep_df$imputed & pep_df$outlier), ]
 
@@ -102,13 +102,14 @@ generate_quant_graphs <- function(peptide_ratios,
 
   ## add peptide ratios
   if (sum(fc[, 2] > 0)) {  # check if there are imputed values
-    filtered_pep <- edgelist_filtered(edgelist_filtered, fc, id, seq_column)
+    filtered_pep <- imputation_filter(edgelist_filtered, fc, id, seq_column)
 
     edgelist_filtered$pep_ratio <- filtered_pep$pep_ratio[match(edgelist_filtered$peptide, filtered_pep$peptide)]
     edgelist_filtered$imputed <- filtered_pep$imputed[match(edgelist_filtered$peptide, filtered_pep$peptide)]
-
+    tmp_nrow <- (nrow(edgelist_filtered))
     # remove entries without checked peptide ratio
     edgelist_filtered <- na.omit(edgelist_filtered)
+    message(paste(tmp_nrow - nrow(edgelist_filtered), "edges were omitted due to conflicting imputations"))
   } else {
     edgelist_filtered$pep_ratio <- fc[match(edgelist_filtered$peptide, id[, seq_column]), 1]
     edgelist_filtered$imputed <- fc[match(edgelist_filtered$peptide, id[, seq_column]), 2]
