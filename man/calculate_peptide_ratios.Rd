@@ -5,7 +5,7 @@
 \title{Calculation of peptide ratios from aggregated intensities.}
 \usage{
 calculate_peptide_ratios(
-  aggr_intensities,
+  data,
   id_cols = 1,
   group_levels = NULL,
   type = "ratio",
@@ -13,9 +13,6 @@ calculate_peptide_ratios(
 )
 }
 \arguments{
-\item{aggr_intensities}{\strong{data.frame} \cr
-The result from function \code{\link[=aggregate_replicates]{aggregate_replicates()}}.}
-
 \item{id_cols}{\strong{integer vector} \cr
 The column numbers that contain peptide sequences etc (everything except intensities).}
 
@@ -27,9 +24,13 @@ Options "ratio" or "difference". Use "difference" if values are already on log-s
 
 \item{log_base}{\strong{numeric} \cr
 The log base.}
+
+\item{aggr_intensities}{\strong{data.frame} \cr
+The result from function \code{\link[=aggregate_replicates]{aggregate_replicates()}}.}
 }
 \value{
-A data set with peptide ratios.
+\if{html}{\out{<div class="sourceCode">}}\preformatted{              A list of datasets of peptide ratios per comparison
+}\if{html}{\out{</div>}}
 }
 \description{
 Calculation of peptide ratios from aggregated intensities.

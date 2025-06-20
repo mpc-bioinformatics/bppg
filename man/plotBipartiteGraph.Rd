@@ -15,6 +15,7 @@ plotBipartiteGraph(
   vertex.size2 = 15,
   useCanonicalPermutation = FALSE,
   three_shapes = FALSE,
+  imputed_encoding = FALSE,
   node_labels_proteins = "letters",
   node_labels_peptides = "numbers",
   round_digits = 2,
@@ -56,10 +57,10 @@ If \code{TRUE}, the graph will be converted into the canonical permutation befor
 If \code{TRUE}, a separate shape will be used for the unique peptides.}
 
 \item{node_labels_proteins}{\strong{character} \cr
-The type of labels for the proteins. Options are "letters" or "acessions".}
+The type of labels for the proteins. Options are "letters" or "accessions".}
 
 \item{node_labels_peptides}{\strong{character} \cr
-The type of labels for the peptides. Options are"numbers" or "pep_ratios" or "pep_ratio_aggr".}
+The type of labels for the peptides. Options are "numbers" or "pep_ratios" or "pep_ratio_aggr".}
 
 \item{round_digits}{\strong{integer} \cr
 The number of digits to round the peptide ratios to.}

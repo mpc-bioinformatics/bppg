@@ -4,7 +4,14 @@
 \alias{aggregate_replicates}
 \title{Aggregate replicates of the same experimental group.}
 \usage{
-aggregate_replicates(D, group, missing.limit = 0, method = "mean", id_cols = 1)
+aggregate_replicates(
+  D,
+  group,
+  missing.limit = 0,
+  method = "mean",
+  id_cols = 1,
+  imp_method = NULL
+)
 }
 \arguments{
 \item{D}{\strong{data.frame} \cr
