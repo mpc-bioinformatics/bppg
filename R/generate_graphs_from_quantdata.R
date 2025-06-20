@@ -101,11 +101,14 @@ generate_quant_graphs <- function(peptide_ratios,
   comparison <- paste(colnames_split[, 2], colnames_split[, 3], sep = "_")
 
   ## add peptide ratios
-  if (sum(fc[, 2] < 0)) {  # check if there are imputed values
+  if (sum(fc[, 2] > 0)) {  # check if there are imputed values
     filtered_pep <- edgelist_filtered(edgelist_filtered, fc, id, seq_column)
 
     edgelist_filtered$pep_ratio <- filtered_pep$pep_ratio[match(edgelist_filtered$peptide, filtered_pep$peptide)]
     edgelist_filtered$imputed <- filtered_pep$imputed[match(edgelist_filtered$peptide, filtered_pep$peptide)]
+
+    # remove entries without checked peptide ratio
+    edgelist_filtered <- na.omit(edgelist_filtered)
   } else {
     edgelist_filtered$pep_ratio <- fc[match(edgelist_filtered$peptide, id[, seq_column]), 1]
     edgelist_filtered$imputed <- fc[match(edgelist_filtered$peptide, id[, seq_column]), 2]
