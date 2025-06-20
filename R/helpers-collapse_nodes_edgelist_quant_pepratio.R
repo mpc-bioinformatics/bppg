@@ -44,6 +44,7 @@ collapse_edgelist_quant <- function(edgelist,
 
 
   ### calculate list of peptide nodes
+  # this sorts ratio values separetly!
   if (collapse_peptide_nodes) {
     ### aggregate protein accessions belonging to the same peptide sequences (1 row per peptide sequence)
     pepEdges <- stats::aggregate(data = edgelist, x = protein ~ peptide + pep_ratio + imputed, function(x) paste(sort(unique(x)), collapse = ";"))
