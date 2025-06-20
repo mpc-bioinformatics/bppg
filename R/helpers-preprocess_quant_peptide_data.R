@@ -203,7 +203,7 @@ foldChange <- function(D, X, Y, useNA = FALSE) {
 
 #' Calculation of peptide ratios from aggregated intensities.
 #'
-#' @param aggr_intensities   \strong{data.frame} \cr
+#' @param data               \strong{data.frame} \cr
 #'                           The result from function [aggregate_replicates()].
 #' @param id_cols            \strong{integer vector} \cr
 #'                           The column numbers that contain peptide sequences etc (everything except intensities).
