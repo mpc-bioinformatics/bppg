@@ -7,9 +7,10 @@
 #' @return            vector with imputation values for each row (peptide)
 #' @export
 
-min_2_impute <- function(D, min_row){
+min_2_impute <- function(D, min_row) {
   lod <- function(x) {
-    imp_val <- min(x, na.rm = TRUE) / 2 # row wise min value halfed, group specific
+    # row wise min value halfed, group specific
+    imp_val <- min(x, na.rm = TRUE) / 2
     if(is.na(imp_val)){
       imp_val <- min_row / 2   # row wise min value halfed, dataset specific
     }
