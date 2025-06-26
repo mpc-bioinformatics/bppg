@@ -28,7 +28,7 @@
 #' @param node_labels_proteins      \strong{character} \cr
 #'                                  The type of labels for the proteins. Options are "letters" or "accessions".
 #' @param node_labels_peptides      \strong{character} \cr
-#'                                  The type of labels for the peptides. Options are "numbers" or "pep_ratios" or "pep_ratio_aggr".
+#'                                  The type of labels for the peptides. Options are "numbers" or "pep_ratios" or "log_pep_ratios" or "pep_ratio_aggr".
 #' @param round_digits              \strong{integer} \cr
 #'                                  The number of digits to round the peptide ratios to.
 #' @param use_edge_attributes       \strong{logical} \cr
@@ -91,6 +91,10 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
   }
   if (node_labels_peptides == "pep_ratios") {
     pep_ratios <- igraph::V(G)$pep_ratio
+    names_G[Layout[, 2] == 0] <- round(pep_ratios[Layout[, 2] == 0], round_digits)
+  }
+  if (node_labels_peptides == "log_pep_ratios") {
+    pep_ratios <- log2(igraph::V(G)$pep_ratio)
     names_G[Layout[, 2] == 0] <- round(pep_ratios[Layout[, 2] == 0], round_digits)
   }
   if (node_labels_peptides == "pep_ratio_aggr") {
@@ -159,11 +163,21 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
 
   ## TODO add imputation to legend
   if (legend && three_shapes) {
-    legend(x = legend.x, y = legend.y, legend = c("protein", "shared peptide", "unique peptide"),
+    if (imputed_encoding){
+      legend(x = legend.x, y = legend.y, legend = c("protein", "shared peptide", "unique peptide", "not imputed peptide", "imputed peptide"),
+           col = c(vertex.color[1], "black", "black", vertex.color[2:3]), pch = c(19, 0, 5, 20, 20))
+    } else {
+      legend(x = legend.x, y = legend.y, legend = c("protein", "shared peptide", "unique peptide"),
            col = vertex.color, pch = c(19, 15, 18))
+    }
   }
   if (legend && !three_shapes) {
+    if (imputed_encoding){
+      legend(x = legend.x, y = legend.y, legend = c("protein", "shared peptide", "unique peptide", "not imputed peptide", "imputed peptide"),
+           col = c(vertex.color[1], "black", "black", vertex.color[2:3]), pch = c(19, 0, 0, 20, 20))
+    } else {
     legend(x = legend.x, y = legend.y, legend = c("protein", "shared peptide", "unique peptide"),
-           col = vertex.color, pch = c(19, 15, 15))
+           col = c(vertex.color[1], "black", "black", vertex.color[2:3]), pch = c(19, 15, 15))
+    }
   }
 }
