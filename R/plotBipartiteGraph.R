@@ -25,6 +25,8 @@
 #'                                  If \code{TRUE}, the graph will be converted into the canonical permutation before plotting.
 #' @param three_shapes              \strong{logical} \cr
 #'                                  If \code{TRUE}, a separate shape will be used for the unique peptides.
+#' @param imputed_encoding          \strong{logical} \cr
+#'                                  If \code{TRUE}, imputed values will be colored in the third color
 #' @param node_labels_proteins      \strong{character} \cr
 #'                                  The type of labels for the proteins. Options are "letters" or "accessions".
 #' @param node_labels_peptides      \strong{character} \cr

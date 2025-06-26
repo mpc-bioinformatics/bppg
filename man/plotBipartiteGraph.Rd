@@ -56,11 +56,14 @@ If \code{TRUE}, the graph will be converted into the canonical permutation befor
 \item{three_shapes}{\strong{logical} \cr
 If \code{TRUE}, a separate shape will be used for the unique peptides.}
 
+\item{imputed_encoding}{\strong{logical} \cr
+If \code{TRUE}, imputed values will be colored in the third color}
+
 \item{node_labels_proteins}{\strong{character} \cr
 The type of labels for the proteins. Options are "letters" or "accessions".}
 
 \item{node_labels_peptides}{\strong{character} \cr
-The type of labels for the peptides. Options are "numbers" or "pep_ratios" or "pep_ratio_aggr".}
+The type of labels for the peptides. Options are "numbers" or "pep_ratios" or "log_pep_ratios" or "pep_ratio_aggr".}
 
 \item{round_digits}{\strong{integer} \cr
 The number of digits to round the peptide ratios to.}
