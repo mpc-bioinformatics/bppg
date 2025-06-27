@@ -100,7 +100,8 @@ iterate_over_Ci <- function(S,
                                #error.trans = "square",
                                reciprocal = FALSE,
                                control = control,
-                               log_level = log_level)
+                               log_level = log_level,
+                               min_ci = grid_min)
       })
       if ("try-error" %in% class(RES)) {
         if(grepl("reached elapsed time limit", RES)) {

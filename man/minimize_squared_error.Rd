@@ -11,6 +11,7 @@ minimize_squared_error(
   reciprocal = FALSE,
   log_level = TRUE,
   control = list(),
+  min_ci = 1e-04,
   ...
 )
 }
@@ -34,6 +35,9 @@ If \code{TRUE}, the Ri are log2-transformed before optimization, allowing a symm
 
 \item{control}{\strong{list} \cr
 The control parameters for solnp.}
+
+\item{min_ci}{\strong{float} \cr
+Lower bound for concentration}
 
 \item{...}{Additional parameters to solnp.}
 }

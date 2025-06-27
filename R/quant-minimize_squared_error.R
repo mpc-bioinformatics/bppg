@@ -72,6 +72,8 @@ equation <- function(Ri,
 #'                    If \code{TRUE}, the Ri are log2-transformed before optimization, allowing a symmetric consideration of Ri < 0 and > 0.
 #' @param control     \strong{list} \cr
 #'                    The control parameters for solnp.
+#' @param min_ci      \strong{float} \cr
+#'                    Lower bound for concentration
 #' @param ...         Additional parameters to solnp.
 #'
 #' @return list containing the following elements:
@@ -98,6 +100,7 @@ minimize_squared_error <- function(S,
                                       reciprocal = FALSE,
                                       log_level = TRUE,
                                       control = list(),
+                                      min_ci = 0.0001,
                                       ...) {
 
   is.Ci.fixed <- !is.null(fixed.Ci)
@@ -178,14 +181,14 @@ minimize_squared_error <- function(S,
   ### constraints
   if (is.Ci.fixed) {
     eqfun <- function(x) sum(x[(m+1):(m+m2)]) + fixed.Ci.sum - 1  ## sum Ci = 1
-    LB <- rep(0, m + m2)
-    if (log_level) LB <- c(rep(-Inf, m), rep(0, m2))
-    eqB <- 0
+    eqB <- 0 
+    LB <- c(rep(0, m), rep(min_ci, m2)) # min value in grid for Ci
+    if (log_level) LB <- c(rep(-Inf, m), rep(min_ci, m2))
   } else {
     eqfun <- function(x) sum(x[(m+1):(2*m)]) - 1  ## sum Ci = 1
-    LB <- rep(0, 2*m)
-    if (log_level) LB <- c(rep(-Inf, m), rep(0, m))
     eqB <- 0
+    LB <- c(rep(0, m), rep(min_ci, m2)) # min value in grid for Ci
+    if (log_level) LB <- c(rep(-Inf, m), rep(min_ci, m))
   }
 
 
