@@ -116,14 +116,14 @@ minimize_squared_error <- function(S,
   M <- S$X  # biadjacency matrix
 
   ### Initialization of Ci:
-  if (!is.Ci.fixed) {
-    Ci_start <- rep(1/m, m) # if no Ci is fixed, the algorithm starts with equal weights for each protein
-  } else {
+  if (is.Ci.fixed) {
     # if at least one Ci is fixed, the algorithm distributes the remaining weight equally among the non-fixed proteins
     m2 <- m - length(which.Ci.fixed)             # number of non-fixed Ci values
     fixed.Ci.sum <- sum(fixed.Ci, na.rm = TRUE)  # sum of fixed Ci (as all Ci have to sum up tp 1)
     Ci_start <- fixed.Ci
     Ci_start[is.na(Ci_start)] <- (1-fixed.Ci.sum)/m2 # starting values for the remaining Ci values
+  } else {
+    Ci_start <- rep(1/m, m) # if no Ci is fixed, the algorithm starts with equal weights for each protein
   }
 
   ### initialization of Ri as the geometric mean of (if possible only unique) peptide ratios
@@ -187,7 +187,7 @@ minimize_squared_error <- function(S,
   } else {
     eqfun <- function(x) sum(x[(m+1):(2*m)]) - 1  ## sum Ci = 1
     eqB <- 0
-    LB <- c(rep(0, m), rep(min_ci, m2)) # min value in grid for Ci
+    LB <- c(rep(0, m), rep(min_ci, m)) # min value in grid for Ci
     if (log_level) LB <- c(rep(-Inf, m), rep(min_ci, m))
   }
 
