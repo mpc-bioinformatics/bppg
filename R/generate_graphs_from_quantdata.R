@@ -140,12 +140,12 @@ generate_quant_graphs <- function(peptide_ratios,
   }
 
   ### set imputed flag for proteins, if connected to imputed peptide
-  for (j in seq_along(G)){
-      pep_imp <- V(G[[i]])[!igraph::V(G[[i]])$type & igraph::V(G[[i]])$imputed]
-      prot_imp <- adjacent_vertices(G[[i]], pep_imp)
-      G[[i]] <- igraph::set_vertex_attr(graph = G[[i]], name = "imputed",
-                                         index = prot_imp,
-                                         value = TRUE)
+  for (i in seq_along(G)){
+    pep_imp <- igraph::V(G[[i]])[!igraph::V(G[[i]])$type & igraph::V(G[[i]])$imputed]
+    prot_imp <- igraph::adjacent_vertices(G[[i]], pep_imp)
+    G[[i]] <- igraph::set_vertex_attr(graph = G[[i]], name = "imputed",
+                                      index = prot_imp,
+                                      value = TRUE)
   }
   return(G)
 
@@ -217,7 +217,7 @@ generate_graphs_from_quant_data <- function(D,
   # remove peptides outside the desired length range
   D <- D[nchar(D[, seq_column]) >= min_aa & nchar(D[, seq_column]) <= max_aa,]
 
-  intensities <- D[,-id_columns]
+  intensities <- D[, -id_columns]
 
   ### aggregate replicates by calculating the mean
   group <- factor(limma::strsplit2(colnames(intensities), "_")[,1])
@@ -231,12 +231,12 @@ generate_graphs_from_quant_data <- function(D,
   ### calculate the peptide ratio (list of data.frame per comparison)
   groups  <- levels(group)
   peptide_ratios <- bppg::calculate_peptide_ratios(aggr_intensities = D_aggr, id_cols = id_columns, group_levels = groups)
-  if (!is.null(outpath)) { 
+  if (!is.null(outpath)) {
     # TODO: this will not work with the new data structure, per comparison
     openxlsx::write.xlsx(peptide_ratios, file = paste0(outpath, "peptide_ratios_", suffix, ".xlsx"), overwrite = TRUE, keepNA = TRUE)
   }
 
-  #TODO: loop per comparison, will ich dann list of graphs returnen?
+  
   ## Generierung der Graphen (man braucht peptide_ratios und fast_edgelist!)
   graphs <- bppg::generate_quant_graphs(peptide_ratios = peptide_ratios, id_cols = id_columns, fasta_edgelist = edgelist,
                                         outpath = outpath, seq_column = seq_column,
