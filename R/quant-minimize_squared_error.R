@@ -180,15 +180,15 @@ minimize_squared_error <- function(S,
 
   ### constraints
   if (is.Ci.fixed) {
-    eqfun <- function(x) sum(x[(m+1):(m+m2)]) + fixed.Ci.sum - 1  ## sum Ci = 1
+    eqfun <- function(x) sum(x[(m + 1):(m + m2)]) + fixed.Ci.sum - 1  ## sum Ci = 1
     eqB <- 0 
-    LB <- c(rep(0, m), rep(min_ci, m2)) # min value in grid for Ci
-    if (log_level) LB <- c(rep(-Inf, m), rep(min_ci, m2))
+    LB <- c(rep(0, m), rep(min_ci / 10, m2)) # min value in grid for Ci
+    if (log_level) LB <- c(rep(-Inf, m), rep(min_ci / 10, m2))
   } else {
-    eqfun <- function(x) sum(x[(m+1):(2*m)]) - 1  ## sum Ci = 1
+    eqfun <- function(x) sum(x[(m + 1):(2 * m)]) - 1  ## sum Ci = 1
     eqB <- 0
-    LB <- c(rep(0, m), rep(min_ci, m)) # min value in grid for Ci
-    if (log_level) LB <- c(rep(-Inf, m), rep(min_ci, m))
+    LB <- c(rep(0, m), rep(min_ci / 10, m)) # min value in grid for Ci
+    if (log_level) LB <- c(rep(-Inf, m), rep(min_ci / 10, m))
   }
 
 
@@ -198,7 +198,10 @@ minimize_squared_error <- function(S,
 
 
   ### Optimization
-  res <- Rsolnp::solnp(pars = pars, fun = fun, LB = LB, eqfun = eqfun, eqB = eqB, control = control, ...)
+  #res <- Rsolnp::solnp(pars = pars, fun = fun, LB = LB, eqfun = eqfun, eqB = eqB, control = control, ...)
+  # now in c implementation
+  res <- Rsolnp::csolnp(pars = pars, fn = fun, lower = LB, eq_fn = eqfun, eq_b = eqB, control = control, ...)
+
 
   outer.iter <- res$outer.iter
   convergence <- res$convergence

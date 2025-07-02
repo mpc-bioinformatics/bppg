@@ -62,9 +62,9 @@ iterate_over_Ci <- function(S,
   n <- ncol(S$X)# number of protein groups
 
   grid <- seq(grid.start, grid.stop, length.out = grid.size+1)
+  grid_min <- grid[2] # 2. Element, da erstes 0, needed later
 
   if (extend_grid_at_borders) {
-    grid_min <- grid[2] # 2. Element, da erstes 0
     grid_max <- grid[length(grid)-1] # 1. Element, da letztes 1
 
     grid_extend_min <- seq(grid.start, grid_min, length.out = 11)
