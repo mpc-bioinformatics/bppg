@@ -138,14 +138,14 @@ generate_quant_graphs <- function(peptide_ratios,
                                       index = igraph::V(G[[j]])[!igraph::V(G[[j]])$type],
                                       value = edgelist_coll$imputed[match(igraph::V(G[[j]])$name[!igraph::V(G[[j]])$type], edgelist_coll$peptide)])
   }
-
-  ### set imputed flag for proteins, if connected to imputed peptide
-  for (i in seq_along(G)){
+  for (i in 1:length(G)){
     pep_imp <- igraph::V(G[[i]])[!igraph::V(G[[i]])$type & igraph::V(G[[i]])$imputed]
     prot_imp <- igraph::adjacent_vertices(G[[i]], pep_imp)
-    G[[i]] <- igraph::set_vertex_attr(graph = G[[i]], name = "imputed",
-                                      index = prot_imp,
+    for (k in seq_along(prot_imp)){
+      G[[i]] <- igraph::set_vertex_attr(graph = G[[i]], name = "imputed",
+                                      index = prot_imp[[k]],
                                       value = TRUE)
+    }
   }
   return(G)
 
