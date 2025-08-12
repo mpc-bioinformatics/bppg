@@ -109,6 +109,7 @@ read_spec_peptide_table <- function(path, remove_contaminants = FALSE,
   # all columns in Spectronaut are optional
   # need to check which ones are there/ communicate which ones have to be
   # Quantification Data Filtering removes decoys in Spectronaut
+  # die spalte sorgt für die duplication, da EG statt PEP
   if (remove_decoys) {
     ind_decoy <- D$EG.IsDecoy == "True"
     D <- D[!ind_decoy, ]
@@ -320,8 +321,8 @@ calculate_peptide_ratios <- function(data, id_cols = 1,
       imp_fc_mask <- apply(mask_impute[, c(col1, col2)], 1,
                           function(x) x[1] | x[2])
 
-      peptide_ratios[[k]] <- data.frame(id, FC, imp_fc_mask)
-      colnames(peptide_ratios[[k]])[c(3:4)] <- c(name, "imputed")
+      peptide_ratios[[k]] <- data.frame(id, FC, imputed = imp_fc_mask)
+      colnames(peptide_ratios[[k]])[c(1, ncol(peptide_ratios[[k]]) - 1)] <- c("Sequence", name)
       names(peptide_ratios)[[k]] <- name
       k <- k + 1
     }
