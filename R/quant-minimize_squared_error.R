@@ -100,7 +100,7 @@ minimize_squared_error <- function(S,
                                       reciprocal = FALSE,
                                       log_level = TRUE,
                                       control = list(),
-                                      min_ci = 0.0001,
+                                      min_ci = 0.000001,
                                       ...) {
 
   is.Ci.fixed <- !is.null(fixed.Ci)
