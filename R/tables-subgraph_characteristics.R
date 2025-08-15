@@ -139,3 +139,31 @@ calculate_subgraph_characteristics <- function(S, #S2, S3,
 
   return(Data)
 }
+
+#' Generates a table with characteristics in regards to complexity of the problem
+#' for each subgraph in a list. this also collapses the peptides. It can be used 
+#' to determine the need for subproblems in the optimization step.
+#'
+#' @param S            \strong{list of igraph graph objects} \cr
+#'                     A list of subgraphs, where peptide and protein nodes are collapsed.
+#'
+#' @return A table with the characteristics, c = collapsed.
+#' @export
+#'
+#' @examples
+#'
+
+graph_complexity <- function(S) {
+  g_matrix <- lapply(S, igraph::as_biadjacency_matrix)
+  n_prots <- sapply(g_matrix, function(g) ncol(g))
+  n_pepts <- sapply(g_matrix, function(g) nrow(g))
+  n_edge <- sapply(g_matrix, function(g) sum(g))
+
+  # reduce complexity to baseline with collapsed peptides
+  g_matrix_c <- lapply(g_matrix, unique)
+  n_pepts_c <- sapply(g_matrix_c, function(g) nrow(g))
+  n_edge_c <- sapply(g_matrix_c, function(g) sum(g))
+  return (data.table::data.table(n_prots, n_pepts, n_edge, prot_complexity = n_edge / n_prots,
+                     pep_complexity = n_edge / n_pepts, n_pepts_c, n_edge_c,
+                     prot_c_complexity = n_edge_c / n_prots))
+}
