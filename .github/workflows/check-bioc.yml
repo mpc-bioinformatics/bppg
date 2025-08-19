@@ -24,7 +24,6 @@ on:
   push:
     branches:
     - "devel"
-    - "SummarizedExperiment"
   pull_request:
     branches:
     - "devel"
