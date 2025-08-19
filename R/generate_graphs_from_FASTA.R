@@ -26,7 +26,7 @@
 #' graphs <- bppg::generate_graphs_from_FASTA(fasta)
 #'
 
-generate_graphs_from_FASTA <- function(fasta,
+generateGraphsFromFASTA <- function(fasta,
                                        collapse_protein_nodes = TRUE,
                                        collapse_peptide_nodes = TRUE,
                                        result_path = NULL,

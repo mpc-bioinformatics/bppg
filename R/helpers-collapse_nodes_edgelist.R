@@ -11,7 +11,7 @@
 #' @export
 #'
 #' @seealso For edgelists with peptide ratios: [collapse_edgelist_quant()] \cr
-#'          [generate_graphs_from_FASTA()], [generate_quant_graphs()], [generate_edgelist()]
+#'          [generateGraphsFromFASTA()], [generate_quant_graphs()], [generate_edgelist()]
 #'
 #' @examples
 #' library(seqinr)

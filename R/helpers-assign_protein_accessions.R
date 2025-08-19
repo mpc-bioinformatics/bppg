@@ -8,7 +8,7 @@
 #' @return A list of assigned proteins.
 #' @export
 #'
-#' @seealso [generate_graphs_from_FASTA()], [generate_quant_graphs()]
+#' @seealso [generateGraphsFromFASTA()], [generate_quant_graphs()]
 #'
 #' @examples
 

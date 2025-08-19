@@ -122,7 +122,7 @@ generate_quant_graphs <- function(peptide_ratios,
 #' @export
 #'
 #' @seealso [bppg::read_MQ_peptidetable()], [seqinr::read.fasta()],
-#'          [bppg::generate_quant_graphs()], [bppg::generate_graphs_from_FASTA()]
+#'          [bppg::generate_quant_graphs()], [bppg::generateGraphsFromFASTA()]
 #'
 #' @examples
 #'

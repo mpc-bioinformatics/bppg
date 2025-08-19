@@ -6,7 +6,7 @@
 #' @return A graph with 2 additional vertex attributes, uniqueness and nr_unique_peptides
 #' @export
 #'
-#' @seealso [generate_graphs_from_FASTA()], [generate_quant_graphs()], [add_average_pep_ratio()]
+#' @seealso [generateGraphsFromFASTA()], [generate_quant_graphs()], [add_average_pep_ratio()]
 #'
 #' @examples
 
@@ -50,7 +50,7 @@ add_uniqueness_attributes <- function(G) {
 #' @return A graph with added peptide ratio attributes.
 #' @export
 #'
-#' @seealso [generate_graphs_from_FASTA()], [generate_quant_graphs()], [add_uniqueness_attributes()]
+#' @seealso [generateGraphsFromFASTA()], [generate_quant_graphs()], [add_uniqueness_attributes()]
 #'
 #' @examples
 
