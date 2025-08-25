@@ -8,13 +8,13 @@
 }
 \arguments{
 \item{subgraph_char_tab}{\strong{data.frame} \cr
-A table of subgraphs characteristics, e.g. created by \code{\link[=calculate_subgraph_characteristics]{calculate_subgraph_characteristics()}}}
+A table of subgraphs characteristics, e.g. created by \code{\link[=.calculateSubgraphCharacteristics]{.calculateSubgraphCharacteristics()}}}
 
 \item{isomorph_list}{\strong{list} \cr
 A list of occuring isomorphs.}
 }
 \value{
-bla
+A table with the summary
 }
 \description{
 Calculate number for table
