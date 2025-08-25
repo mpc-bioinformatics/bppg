@@ -12,7 +12,7 @@
 #' @examples # TODO
 #'
 
-generatePrototypeList <- function(G, sort_by_nr_edges = FALSE) {
+.generatePrototypeList <- function(G, sort_by_nr_edges = FALSE) {
 
 
   counter <- integer(length(G))
@@ -39,7 +39,7 @@ generatePrototypeList <- function(G, sort_by_nr_edges = FALSE) {
 
     # Which graphs are isomorphic to G_tmp?
     x <- sapply(G[(i+1):length(G)], function(x) {
-      isomorphic_bipartite(x, G_tmp)
+      .isomorphicBipartite(x, G_tmp)
     })
     ind <- which(x)
 

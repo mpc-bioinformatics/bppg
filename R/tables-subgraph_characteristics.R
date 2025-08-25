@@ -16,7 +16,7 @@
 #' @examples
 #'
 
-calculate_subgraph_characteristics <- function(S, #S2, S3,
+.calculateSubgraphCharacteristics <- function(S, #S2, S3,
                                                fastalevel = TRUE,
                                                prototype = FALSE,
                                                #comparison = NULL,

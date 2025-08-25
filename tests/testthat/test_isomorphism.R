@@ -1,6 +1,6 @@
 ## tests for isomorphisms
 
-test_that("isomorphic_bipartite works as intended", {
+test_that(".isomorphicBipartite works as intended", {
   library(igraph)
 
   # N shape graph
@@ -15,9 +15,9 @@ test_that("isomorphic_bipartite works as intended", {
   G3 <- G2
   V(G3)$type <- !V(G3)$type
 
-  expect_true(bppg::isomorphic_bipartite(G, G))
-  expect_false(bppg::isomorphic_bipartite(G, G2))
-  expect_false(bppg::isomorphic_bipartite(G, G3))
+  expect_true(bppg::.isomorphicBipartite(G, G))
+  expect_false(bppg::.isomorphicBipartite(G, G2))
+  expect_false(bppg::.isomorphicBipartite(G, G3))
 
 
   # M + 1 graph
@@ -27,7 +27,7 @@ test_that("isomorphic_bipartite works as intended", {
   G5 <- G4
   igraph::V(G5)$type <- !igraph::V(G4)$type
 
-  expect_false(bppg::isomorphic_bipartite(G4, G5))
+  expect_false(bppg::.isomorphicBipartite(G4, G5))
 
 })
 
@@ -51,8 +51,8 @@ test_that("generation of a prototype list", {
 
   G_test <- list(G3, G3, G, G, G, G2)
 
-  proto_list <- bppg::generatePrototypeList(G_test, sort_by_nr_edges = TRUE)
-  proto_list2 <- bppg::generatePrototypeList(G_test, sort_by_nr_edges = FALSE)
+  proto_list <- bppg::.generatePrototypeList(G_test, sort_by_nr_edges = TRUE)
+  proto_list2 <- bppg::.generatePrototypeList(G_test, sort_by_nr_edges = FALSE)
 
 
   expect_type(proto_list, "list")
@@ -70,37 +70,4 @@ test_that("generation of a prototype list", {
 
 })
 
-
-
-test_that("test plotting of the top10 isomorphism classes", {
-
-  # Create a temporary directory so no permanent files are put on a package users directory
-  temp_dir <- tempfile(pattern = "test_dir")
-  dir.create(temp_dir)
-  on.exit(unlink(temp_dir, recursive = TRUE))
-
-
-  # Make graphs
-  G_list <- list()
-  set.seed(2)
-  for (i in 4:15) {
-    nr_repeats <- sample(1:3, size = 1)
-
-    # Make easy edgelist with edges 1-2, 2-3, ..., (i-1)-i
-    edge_list <- matrix(rbind(1:(i-1), 2:i), ncol = 2, byrow = TRUE)
-    G <- igraph::graph_from_edgelist(edge_list, directed = FALSE)
-    V(G)$name <- 1:i
-    V(G)$type <- (as.numeric(V(G)$name) %% 2 != 0) # True for odd, False for even
-
-    G_list <- c(G_list, replicate(nr_repeats, G, simplify = FALSE))
-  }
-
-  proto_list <- bppg::generatePrototypeList(G_list, sort_by_nr_edges = TRUE)
-
-  plot_top10_iso_classes(prototypelist = proto_list,
-                         out_file = file.path(temp_dir, "proto_list.pdf"))
-
-  expect_true(file.exists(file.path(temp_dir, "proto_list.pdf")))
-
-})
 

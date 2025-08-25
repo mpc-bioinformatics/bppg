@@ -1,24 +1,24 @@
 #' Generate bipartite peptide-protein graphs from a list of digested proteins via an edgelist.
 #'
 #' @param edgelist   \strong{data.frame} \cr
-#'                   An edgelist, output from [generate_edgelist()].
+#'                   An edgelist, output from [generateEdgelist()].
 #'
 #' @return A list of subgraphs as igraph objects.
 #' @export
 #'
-#' @seealso [generate_edgelist()]
+#' @seealso [generateEdgelist()]
 #'
 #' @examples
 #' ### TODO: example takes longer than 5s
 #' library(seqinr)
 #' file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-#' digested_proteins <- digest_fasta(fasta)
-#' edgelist <- generate_edgelist(digested_proteins)
-#' res <- generate_graphs_from_edgelist(edgelist)
+#' digested_proteins <- digestFASTA(fasta)
+#' edgelist <- generateEdgelist(digested_proteins)
+#' res <- .generateGraphsFromEdgelist(edgelist)
 #'
 
-generate_graphs_from_edgelist <- function(edgelist) {
+.generateGraphsFromEdgelist <- function(edgelist) {
 
   #generate graph from edge matrix
   G <- igraph::graph_from_edgelist(as.matrix(edgelist[,1:2]), directed = FALSE)

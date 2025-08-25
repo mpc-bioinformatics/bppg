@@ -1,13 +1,13 @@
 ################################################################################
 # The tests for the following functions are covered in test-graph_generation_FASTA.R and are skipped here to avoid redundancies.
-# bppg::digest_fasta()
-# bppg::generate_edgelist()
-# bppg::generate_graphs_from_edgelist()
+# bppg::digestFASTA()
+# bppg::generateEdgelist()
+# bppg::.generateGraphsFromEdgelist()
 ################################################################################
 
 
 
-test_that("test aggregate_replicates", {
+test_that("test aggregateReplicates", {
 
   # Create fake data (3 samples with 3 runs each)
   df <- list()
@@ -23,7 +23,7 @@ test_that("test aggregate_replicates", {
   df <- as.data.frame(df)
 
 
-  D <- aggregate_replicates(D = df,
+  D <- aggregateReplicates(D = df,
                             group = factor(rep(1:3, each = 3)))
 
   # Testing
@@ -39,7 +39,7 @@ test_that("test aggregate_replicates", {
   }
 
   # Test with laxer missing value limit
-  D <- aggregate_replicates(D = df,
+  D <- aggregateReplicates(D = df,
                             group = factor(rep(1:3, each = 3)),
                             missing.limit = 0.35)
   indices_na <- list(c(6), c(9), integer(0))
@@ -52,7 +52,7 @@ test_that("test aggregate_replicates", {
 
 
 
-test_that("test calculate_peptide_ratios", {
+test_that("test calculatePeptideRatios", {
 
   # Create fake data
   df <- list()
@@ -67,7 +67,7 @@ test_that("test calculate_peptide_ratios", {
   df <- as.data.frame(df)
 
 
-  ratios <- calculate_peptide_ratios(aggr_intensities = df, id_cols = 1)
+  ratios <- calculatePeptideRatios(aggr_intensities = df, id_cols = 1)
 
   res_1 <- c(   NA, 1.176,    NA, 0.693, 1.436, 1.019, 0.666, 1.080, 0.924, 1.313)
   res_2 <- c(   NA, 1.233,    NA, 0.759, 1.235, 0.877,    NA, 0.831, 0.976, 1.364)
@@ -82,7 +82,7 @@ test_that("test calculate_peptide_ratios", {
 
 
 
-test_that("test collapse_edgelist_quant", {
+test_that("test .collapseEdgelistQuant", {
 
   # Create edgelist (proteins, peptides and pep_ratios and compute the collapsing
   set.seed(4)
@@ -93,7 +93,7 @@ test_that("test collapse_edgelist_quant", {
 
   edgelist <- data.frame(protein = proteins, peptide = peptides, pep_ratio = pep_ratios)
 
-  collapsed_edgelist <- collapse_edgelist_quant(edgelist = edgelist, collapse_protein_nodes = TRUE, collapse_peptide_nodes = TRUE)
+  collapsed_edgelist <- .collapseEdgelistQuant(edgelist = edgelist, collapse_protein_nodes = TRUE, collapse_peptide_nodes = TRUE)
 
 
   # The expected result
@@ -118,7 +118,7 @@ test_that("test collapse_edgelist_quant", {
 
 
 
-test_that("test generate_quant_graphs", {
+test_that("test .generateQuantGraphs", {
 
   # Create a temporary directory so no permanent files are put on a package users directory
   temp_dir <- tempfile(pattern = "test_dir")
@@ -140,7 +140,7 @@ test_that("test generate_quant_graphs", {
   edgelist <- data.frame(protein = proteins, peptide = peptides)
 
   # Compute function
-  graphs <- generate_quant_graphs(peptide_ratios = ratio_table,
+  graphs <- .generateQuantGraphs(peptide_ratios = ratio_table,
                                   id_cols = 1,
                                   fasta_edgelist = edgelist,
                                   outpath = temp_dir,
@@ -168,7 +168,7 @@ test_that("test generate_quant_graphs", {
 
 
 
-test_that("test generate_graphs_from_quant_data", {
+test_that("test generateGraphsFromQuantData", {
 
   # Create a temporary directory so no permanent files are put on a package users directory
   temp_dir <- tempfile(pattern = "test_dir")
@@ -181,7 +181,7 @@ test_that("test generate_graphs_from_quant_data", {
 
   # Create intensity table
   set.seed(4)
-  res <- digest_fasta(fasta)
+  res <- digestFASTA(fasta)
   peptides <- c()
   for (i in 1:10) {
     peptides <- c(peptides, res[[i]][sample(1:length(res[[i]]), size = round(length(res[[i]])*0.75))])
@@ -199,7 +199,7 @@ test_that("test generate_graphs_from_quant_data", {
   }
 
   # Compute function
-  graphs <- generate_graphs_from_quant_data(D = data_table,
+  graphs <- generateGraphsFromQuantData(D = data_table,
                                             fasta = fasta,
                                             outpath = temp_dir)
 

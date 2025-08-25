@@ -1,7 +1,7 @@
-test_that("test read_MQ_peptidetable", {
+test_that("test readMqPeptideTable", {
 
   file <- system.file("extdata", "peptides.txt", package = "bppg")
-  D <- read_MQ_peptidetable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+  D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 
   expect_equal(nrow(D), 7944)
   expect_equal(ncol(D), 28)
@@ -11,7 +11,7 @@ test_that("test read_MQ_peptidetable", {
 
 
 
-  D <- read_MQ_peptidetable(path = file, LFQ = TRUE, remove_contaminants = TRUE)
+  D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = TRUE)
 
   expect_equal(nrow(D), 7864)
   expect_equal(ncol(D), 28)
@@ -19,7 +19,7 @@ test_that("test read_MQ_peptidetable", {
 
 
 
-test_that("test foldChange", {
+test_that("test .foldChange", {
 
   # Create fake data
   df <- list()
@@ -34,11 +34,11 @@ test_that("test foldChange", {
   df <- as.data.frame(df)
 
   # Calculate fold changes
-  fc_1 <- foldChange(D = df,
+  fc_1 <- .foldChange(D = df,
                      X = "sample1",
                      Y = "sample2",
                      useNA = FALSE)
-  fc_2 <- foldChange(D = df,
+  fc_2 <- .foldChange(D = df,
                      X = "sample1",
                      Y = "sample2",
                      useNA = TRUE)

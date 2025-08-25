@@ -1,10 +1,10 @@
-test_that("test equation", {
+test_that("test errorEquation", {
 
   Ri <- c(0.5, 1.3)
   Ci <- c(0.3, 0.7)
   M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
   rj <- c(0.6, 1.2)
-  e <- bppg::equation(Ri, Ci, M, rj)
+  e <- bppg::errorEquation(Ri, Ci, M, rj)
 
   e[[2]] <- round(e[[2]], digits = 4)
   e[[3]] <- round(e[[3]], digits = 4)
@@ -19,12 +19,12 @@ test_that("test equation", {
 
 
 
-test_that("test minimize_squared_error", {
+test_that("test .minimizeSquaredError", {
 
   M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
   rj <- c(0.6, 1.2)
   S <- list(X = M, fc = rj)
-  e <- minimize_squared_error(S)
+  e <- .minimizeSquaredError(S)
 
 
   e[[1]] <- round(e[[1]], digits = 4)
@@ -59,7 +59,7 @@ test_that("test minimize_squared_error", {
 
 
 
-test_that("test protein_elimination", {
+test_that("test proteinElimination", {
 
   # Create edgelist
   proteins <- rep(paste0("prot_", 1:5), times = c(3,2,3,2,3))
@@ -72,7 +72,7 @@ test_that("test protein_elimination", {
   V(g)$pep_ratio[startsWith(V(g)$name, "pep_")] <- c(1.1, 1.2, 1, 0.8, 0.9)
 
 
-  res <- protein_elimination(G = g)
+  res <- proteinElimination(G = g)
   res_graph <- res[["G_current"]][[1]]
 
   expect_equal(round(res[["error_list"]], digits = 4),
@@ -89,14 +89,14 @@ test_that("test protein_elimination", {
 
 
 
-test_that("test iterate_over_Ci", {
+test_that("test iterateOverCi", {
 
 })
 
 
 
 
-test_that("test automated_analysis_iterated_Ci", {
+test_that("test automatedAnalysisIteratedCi", {
 
 })
 

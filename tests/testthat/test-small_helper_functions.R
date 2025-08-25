@@ -6,6 +6,6 @@ test_that("geometric mean", {
   res <- exp(mean(log(x)))
   res_prod <- prod(x)^(1/n)
 
-  expect_equal(res, bppg::geom_mean(x, useprod = FALSE))
-  expect_equal(res_prod, bppg::geom_mean(x, useprod = TRUE))
+  expect_equal(res, bppg::.geomMean(x, useprod = FALSE))
+  expect_equal(res_prod, bppg::.geomMean(x, useprod = TRUE))
 })
