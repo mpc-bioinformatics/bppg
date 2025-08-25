@@ -11,7 +11,7 @@
 #' @examples
 #'
 
-calculate_summary_table <- function(subgraph_char_tab, isomorph_list) {
+.calculateSummaryTable <- function(subgraph_char_tab, isomorph_list) {
 
   D <- subgraph_char_tab
 

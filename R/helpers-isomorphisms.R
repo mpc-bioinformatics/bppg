@@ -10,16 +10,16 @@
 #' @return TRUE if graphs are isomorphic, FALSE if not.
 #' @export
 #'
-#' @seealso [generate_graphs_from_edgelist()]
+#' @seealso [.generateGraphsFromEdgelist()]
 #'
 #' @examples
 #'
 
-isomorphic_bipartite <- function(graph1, graph2, ...) {
+.isomorphicBipartite <- function(graph1, graph2, ...) {
 
   ## direct graphs if they are not directed yet
-  if (!igraph::is_directed(graph1))   graph1 <- bppg::direct_bipartite_graph(graph1)
-  if (!igraph::is_directed(graph2))   graph2 <- bppg::direct_bipartite_graph(graph2)
+  if (!igraph::is_directed(graph1))   graph1 <- bppg::.directBipartiteGraph(graph1)
+  if (!igraph::is_directed(graph2))   graph2 <- bppg::.directBipartiteGraph(graph2)
 
   iso <- igraph::isomorphic(graph1, graph2, method = "vf2")
 
@@ -44,7 +44,7 @@ isomorphic_bipartite <- function(graph1, graph2, ...) {
 #' @importFrom igraph %->%
 #'
 
-direct_bipartite_graph <- function(bip_graph, from_type = FALSE){
+.directBipartiteGraph <- function(bip_graph, from_type = FALSE){
 
 
   # turn undirected into directed edges

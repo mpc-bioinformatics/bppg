@@ -1,4 +1,4 @@
-test_that("test get_protein_origin", {
+test_that("test .getProteinOrigin", {
 
   file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
   fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
@@ -13,7 +13,7 @@ test_that("test get_protein_origin", {
   spike_ins <- names(fasta)[3:4]
   organisms <- list(human = names(fasta)[5:7], yeast = names(fasta)[8:10])
 
-  origin <- get_protein_origin(accessions = accessions,
+  origin <- .getProteinOrigin(accessions = accessions,
                                contaminants = contaminants,
                                spike_ins = spike_ins,
                                organisms = organisms)

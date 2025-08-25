@@ -24,7 +24,7 @@ test_that("digestion of a FASTA file", {
   file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
   fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
   names(fasta) <- limma::strsplit2(names(fasta), "\\|")[,2]
-  res <- digest_fasta(fasta)
+  res <- digestFASTA(fasta)
 
   expect_equal(res, digested_proteins)
 })
@@ -34,7 +34,7 @@ test_that("generation of an edgelist", {
   edgelist <- readRDS(testthat::test_path("testfiles/edgelist_test.rds"))
 
   digested_proteins <- readRDS(testthat::test_path("testfiles/digested_proteins_test.rds"))
-  res <- generate_edgelist(digested_proteins)
+  res <- generateEdgelist(digested_proteins)
 
   expect_equal(res, edgelist)
 })
@@ -44,7 +44,7 @@ test_that("collapsing of edgelists", {
   edgelist_coll_pept_prot <- readRDS(testthat::test_path("testfiles/edgelist_coll_pept_prot_test.rds"))
 
   edgelist <- readRDS(testthat::test_path("testfiles/edgelist_test.rds"))
-  res <- bppg::collapse_edgelist(edgelist,
+  res <- bppg::.collapseEdgelist(edgelist,
                                  collapse_protein_nodes = TRUE,
                                  collapse_peptide_nodes = TRUE)
 
@@ -54,7 +54,7 @@ test_that("collapsing of edgelists", {
   edgelist_coll_prot <- readRDS(testthat::test_path("testfiles/edgelist_coll_prot_test.rds"))
 
   edgelist <- readRDS(testthat::test_path("testfiles/edgelist_test.rds"))
-  res2 <- bppg::collapse_edgelist(edgelist,
+  res2 <- bppg::.collapseEdgelist(edgelist,
                                   collapse_protein_nodes = TRUE,
                                   collapse_peptide_nodes = FALSE)
 
@@ -72,17 +72,17 @@ test_that("generation of graphs from edgelist", {
   # with collapsing of peptide and protein nodes
   edgelist_coll_pept_prot <- readRDS(testthat::test_path("testfiles/edgelist_coll_pept_prot_test.rds"))
 
-  res <- bppg::generate_graphs_from_edgelist(edgelist_coll_pept_prot)
-  expect_true(bppg::isomorphic_bipartite(res[[1]], graphs_coll_pept_prot[[1]]))
-  expect_true(bppg::isomorphic_bipartite(res[[2]], graphs_coll_pept_prot[[2]]))
-  expect_true(bppg::isomorphic_bipartite(res[[3]], graphs_coll_pept_prot[[3]]))
+  res <- bppg::.generateGraphsFromEdgelist(edgelist_coll_pept_prot)
+  expect_true(bppg::.isomorphicBipartite(res[[1]], graphs_coll_pept_prot[[1]]))
+  expect_true(bppg::.isomorphicBipartite(res[[2]], graphs_coll_pept_prot[[2]]))
+  expect_true(bppg::.isomorphicBipartite(res[[3]], graphs_coll_pept_prot[[3]]))
 
   # with collapsing of only protein nodes
   edgelist_coll_prot <- readRDS(test_path("testfiles/edgelist_coll_prot_test.rds"))
-  res2 <- bppg::generate_graphs_from_edgelist(edgelist_coll_prot)
-  expect_true(bppg::isomorphic_bipartite(res2[[1]], graphs_coll_prot[[1]]))
-  expect_true(bppg::isomorphic_bipartite(res2[[2]], graphs_coll_prot[[2]]))
-  expect_true(bppg::isomorphic_bipartite(res2[[3]], graphs_coll_prot[[3]]))
+  res2 <- bppg::.generateGraphsFromEdgelist(edgelist_coll_prot)
+  expect_true(bppg::.isomorphicBipartite(res2[[1]], graphs_coll_prot[[1]]))
+  expect_true(bppg::.isomorphicBipartite(res2[[2]], graphs_coll_prot[[2]]))
+  expect_true(bppg::.isomorphicBipartite(res2[[3]], graphs_coll_prot[[3]]))
 
 })
 
@@ -107,7 +107,7 @@ test_that("subgraph characteristics table", {
 
   G <- readRDS(test_path("testfiles/graphs_coll_pept_prot_test.rds"))
 
-  res <- bppg::calculate_subgraph_characteristics(S = G, #S2, S3,
+  res <- bppg::.calculateSubgraphCharacteristics(S = G, #S2, S3,
                                                   fastalevel = TRUE,
                                                   #comparison = NULL,
                                                   file = NULL)
@@ -131,7 +131,7 @@ test_that("subgraph characteristics table", {
 #
 #
 #
-# edgelist_coll <- bppg::collapse_edgelist_quant(edgelist,
+# edgelist_coll <- bppg::.collapseEdgelistQuant(edgelist,
 #                                                collapse_protein_nodes = TRUE,
 #                                                collapse_peptide_nodes = TRUE)
 

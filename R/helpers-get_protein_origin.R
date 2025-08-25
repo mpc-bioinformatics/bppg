@@ -17,7 +17,7 @@
 #'
 #' @examples # TODO
 
-get_protein_origin <- function(accessions,
+.getProteinOrigin <- function(accessions,
                                contaminants = NULL,
                                spike_ins = NULL,
                                organisms = NULL) {

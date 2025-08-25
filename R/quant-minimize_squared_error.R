@@ -1,5 +1,5 @@
 
-#' Function to set up the equations for the optimization problem
+#' Function to set up the error equations for the optimization problem
 #'
 #' @param Ri          \strong{numeric vector} \cr
 #'                    Contains the (estimated) protein ratios.
@@ -25,8 +25,8 @@
 #' Ci <- c(0.3, 0.7)
 #' M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
 #' rj <- c(0.6, 1.2)
-#' equation(Ri, Ci, M, rj)
-equation <- function(Ri,
+#' errorEquation(Ri, Ci, M, rj)
+errorEquation <- function(Ri,
                      Ci,
                      M,
                      rj,
@@ -77,7 +77,7 @@ equation <- function(Ri,
 #' @return list containing the following elements:
 #' \item{Ri}{estimated protein ratios}
 #' \item{Ci}{estimated protein weights}
-#' \item{RES}{final result of equation(), which also contains the final, minimal error term}
+#' \item{RES}{final result of errorEquation(), which also contains the final, minimal error term}
 #' \item{Tracking}{Tracking of Ri, Ci and error term for the different iterations}
 #' \item{outer.iter}{Number of outer iterations needed for the optimization algorithm to converge or stop}
 #' \item{convergence}{Indicates whether the solver has converged (0) or not (1 or 2).}
@@ -88,9 +88,9 @@ equation <- function(Ri,
 #' M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
 #' rj <- c(0.6, 1.2)
 #' S <- list(X = M, fc = rj)
-#' minimize_squared_error(S)
+#' .minimizeSquaredError(S)
 #'
-minimize_squared_error <- function(S,
+.minimizeSquaredError <- function(S,
                                       #error.type = "multiplicative",
                                       fixed.Ci = NULL,
                                       verbose = FALSE,
@@ -138,7 +138,7 @@ minimize_squared_error <- function(S,
   if (log_level) Ri <- log2(Ri)
 
   ### initial error term
-  RES <- equation(Ri = Ri, Ci = Ci_start, M = M, rj = rj,
+  RES <- errorEquation(Ri = Ri, Ci = Ci_start, M = M, rj = rj,
                   log_level = log_level)
 
   track_colnames <- c("iter", "squ_err", paste0("R", 1:m), paste0("C", 1:m))
@@ -161,7 +161,7 @@ minimize_squared_error <- function(S,
       Ri_tmp <- x[1:m]
       Ci_tmp <- fixed.Ci
       Ci_tmp[is.na(fixed.Ci)] <- x[(m+1):(m+m2)]
-      equation(Ri = Ri_tmp, Ci = Ci_tmp, M = M, rj = rj,
+      errorEquation(Ri = Ri_tmp, Ci = Ci_tmp, M = M, rj = rj,
                   #error.type = error.type, error.trans = error.trans,
                   log_level = log_level)$res_squ_err
     }
@@ -169,7 +169,7 @@ minimize_squared_error <- function(S,
     fun <- function(x) {
       Ri_tmp <- x[1:m]
       Ci_tmp <- x[(m+1):(2*m)]
-      equation(Ri = Ri_tmp, Ci = Ci_tmp, M = M, rj = rj,
+      errorEquation(Ri = Ri_tmp, Ci = Ci_tmp, M = M, rj = rj,
                   #error.type = error.type, error.trans = error.trans,
                   log_level = log_level)$res_squ_err
     }
@@ -211,7 +211,7 @@ minimize_squared_error <- function(S,
   }
 
   ## update RES
-  RES <- equation(Ri = Ri, Ci = Ci, M = M, rj = rj,
+  RES <- errorEquation(Ri = Ri, Ci = Ci, M = M, rj = rj,
                      #error.type = error.type, error.trans = error.trans,
                      log_level = log_level)
 

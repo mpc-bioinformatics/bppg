@@ -14,7 +14,7 @@
 #'                                 If \code{TRUE}, the intermediate results will also be saved.
 #' @param prot_origin              \strong{character vector} \cr
 #'                                 The origin of protein, e.g. organism etc.
-#' @param ...                      Additional arguments to bppg::digest_fasta()
+#' @param ...                      Additional arguments to bppg::digestFASTA()
 #'
 #' @return subgraphs (i.e. connected components) from the graph generated from the FASTA file.
 #' @export
@@ -23,7 +23,7 @@
 #' library(seqinr)
 #' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-#' graphs <- bppg::generate_graphs_from_FASTA(fasta)
+#' graphs <- bppg::generateGraphsFromFASTA(fasta)
 #'
 
 generateGraphsFromFASTA <- function(fasta,
@@ -36,9 +36,9 @@ generateGraphsFromFASTA <- function(fasta,
                                        ...) {
 
   message("Digesting FASTA file ...")
-  digested_proteins <- bppg::digest_fasta(fasta, ...)
+  digested_proteins <- bppg::digestFASTA(fasta, ...)
   message("Generating edgelist ...")
-  edgelist <- bppg::generate_edgelist(digested_proteins, prot_origin = prot_origin)
+  edgelist <- bppg::generateEdgelist(digested_proteins, prot_origin = prot_origin)
   if (save_intermediate) {
     message("Saving edgelist ...")
     utils::write.table(edgelist, sep = "\t", row.names = FALSE,
@@ -48,7 +48,7 @@ generateGraphsFromFASTA <- function(fasta,
 
   if (collapse_protein_nodes | collapse_peptide_nodes) {
     message("Collapsing nodes ...")
-    edgelist_coll <- bppg::collapse_edgelist(edgelist,
+    edgelist_coll <- bppg::.collapseEdgelist(edgelist,
                                              collapse_protein_nodes = collapse_protein_nodes,
                                              collapse_peptide_nodes = collapse_peptide_nodes)
   }
@@ -65,10 +65,10 @@ generateGraphsFromFASTA <- function(fasta,
 
   if (collapse_protein_nodes | collapse_peptide_nodes) {
     message("Generating graphs ...")
-    graphs <- bppg::generate_graphs_from_edgelist(edgelist_coll)
+    graphs <- bppg::.generateGraphsFromEdgelist(edgelist_coll)
   } else {
     message("Generating graphs ...")
-    graphs <- bppg::generate_graphs_from_edgelist(edgelist)
+    graphs <- bppg::.generateGraphsFromEdgelist(edgelist)
   }
 
 

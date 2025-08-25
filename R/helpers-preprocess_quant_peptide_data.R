@@ -20,9 +20,9 @@
 #'
 #' @examples
 #' file <- system.file("extdata", "peptides.txt", package = "bppg")
-#' D <- read_MQ_peptidetable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 
-read_MQ_peptidetable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
+readMqPeptideTable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
                                  rename_columns = TRUE, zeroToNA = TRUE,
                                  remove_empty_rows = TRUE, further_columns_to_keep = NULL) {
 
@@ -96,11 +96,11 @@ read_MQ_peptidetable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
 #'
 #' @examples
 #' file <- system.file("extdata", "peptides.txt", package = "bppg")
-#' D <- read_MQ_peptidetable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 #' group <- factor(rep(1:9, each = 3))
-#' aggregate_replicates(D, group = group)
+#' aggregateReplicates(D, group = group)
 
-aggregate_replicates <- function(D, group, missing.limit = 0, method = "mean",
+aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
                                  id_cols = 1) {
 
 
@@ -152,7 +152,7 @@ aggregate_replicates <- function(D, group, missing.limit = 0, method = "mean",
 #' @examples # TODO
 #'
 
-foldChange <- function(D, X, Y, useNA = FALSE) {
+.foldChange <- function(D, X, Y, useNA = FALSE) {
   FC <- D[, Y] / D[, X]
 
   if(useNA) {
@@ -168,7 +168,7 @@ foldChange <- function(D, X, Y, useNA = FALSE) {
 #' Calculation of peptide ratios from aggregated intensities.
 #'
 #' @param aggr_intensities   \strong{data.frame} \cr
-#'                           The result from function [aggregate_replicates()].
+#'                           The result from function [aggregateReplicates()].
 #' @param id_cols            \strong{integer vector} \cr
 #'                           The column numbers that contain peptide sequences etc (everything except intensities).
 #' @param group_levels       \strong{character factor} \cr
@@ -184,7 +184,7 @@ foldChange <- function(D, X, Y, useNA = FALSE) {
 #' @examples # TODO
 #'
 
-calculate_peptide_ratios <- function(aggr_intensities, id_cols = 1,
+calculatePeptideRatios <- function(aggr_intensities, id_cols = 1,
                                      group_levels = NULL, type = "ratio", log_base = 10) {
 
   id <- aggr_intensities[,id_cols, drop = FALSE]
@@ -206,7 +206,7 @@ calculate_peptide_ratios <- function(aggr_intensities, id_cols = 1,
       name <- paste0("ratio_", group_levels[i], "_", group_levels[j])
 
       if (type == "ratio") {
-        FC <- foldChange(D = aggr_intensities, X = col1, Y = col2)
+        FC <- .foldChange(D = aggr_intensities, X = col1, Y = col2)
       }
       if (type == "difference") {
         FC <- aggr_intensities[,col2] - aggr_intensities[,col1]

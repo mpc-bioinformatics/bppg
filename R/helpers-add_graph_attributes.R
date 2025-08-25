@@ -6,11 +6,11 @@
 #' @return A graph with 2 additional vertex attributes, uniqueness and nr_unique_peptides
 #' @export
 #'
-#' @seealso [generateGraphsFromFASTA()], [generate_quant_graphs()], [add_average_pep_ratio()]
+#' @seealso [generateGraphsFromFASTA()], [.generateQuantGraphs()], [.addAveragePepRatio()]
 #'
 #' @examples
 
-add_uniqueness_attributes <- function(G) {
+.addUniquenessAttributes <- function(G) {
 
   ### FALSE = peptide, TRUE = protein
   igraph::V(G)$type
@@ -50,17 +50,17 @@ add_uniqueness_attributes <- function(G) {
 #' @return A graph with added peptide ratio attributes.
 #' @export
 #'
-#' @seealso [generateGraphsFromFASTA()], [generate_quant_graphs()], [add_uniqueness_attributes()]
+#' @seealso [generateGraphsFromFASTA()], [.generateQuantGraphs()], [.addUniquenessAttributes()]
 #'
 #' @examples
 
-add_average_pep_ratio <- function(G, type = "geom_mean") {
+.addAveragePepRatio <- function(G, type = "geom_mean") {
 
   pep_ratio <- igraph::V(G)$pep_ratio
   pep_ratio_split <- strsplit(pep_ratio, ";")
 
   pep_ratio_aggr <- sapply(pep_ratio_split, function(x){
-    bppg::geom_mean(as.numeric(x))})
+    bppg::.geomMean(as.numeric(x))})
 
 
   nr_sequences <- sapply(pep_ratio_split, length)
