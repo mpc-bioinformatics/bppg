@@ -7,14 +7,14 @@
 #' @return A data frame with information on number of unique/shared peptides.
 #' @export
 #'
-#' @seealso For the generation of the list of lists of igraphs: [generate_graphs_from_quant_data()]
+#' @seealso For the generation of the list of lists of igraphs: [generateGraphsFromQuantData()]
 #'
 #' @examples # TODO
 
-calculate_proteinnode_info <- function(G) {
+.calculateProteinNodeInfo <- function(G) {
 
   G2 <- lapply(G, function(x) {
-    pbapply::pblapply(x, bppg::add_uniqueness_attributes)
+    pbapply::pblapply(x, bppg::.addUniquenessAttributes)
   })
 
   accessions <- NULL

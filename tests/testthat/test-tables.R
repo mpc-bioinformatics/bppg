@@ -1,21 +1,21 @@
-test_that("test calculate_proteinnode_info", {
+test_that("test .calculateProteinNodeInfo", {
 
   file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
   fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 
-  g1 <- generate_graphs_from_FASTA(fasta = fasta,
+  g1 <- generateGraphsFromFASTA(fasta = fasta,
                                    collapse_protein_nodes = FALSE,
                                    collapse_peptide_nodes = TRUE)
-  g2 <- generate_graphs_from_FASTA(fasta = fasta,
+  g2 <- generateGraphsFromFASTA(fasta = fasta,
                                    collapse_protein_nodes = TRUE,
                                    collapse_peptide_nodes = FALSE)
-  g3 <- generate_graphs_from_FASTA(fasta = fasta,
+  g3 <- generateGraphsFromFASTA(fasta = fasta,
                                    collapse_protein_nodes = FALSE,
                                    collapse_peptide_nodes = FALSE)
 
   graphs <- list(s1_s2 = g1, s1_s3 = g2, s2_s3 = g3)
 
-  D <- calculate_proteinnode_info(graphs)
+  D <- .calculateProteinNodeInfo(graphs)
 
   expect_equal(nrow(D), 30)
   expect_equal(ncol(D), 7)

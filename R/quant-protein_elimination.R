@@ -34,11 +34,11 @@
 #' @return list
 #' @export
 #'
-#' @seealso [bppg::minimize_squared_error()]
+#' @seealso [bppg::.minimizeSquaredError()]
 #'
 #' @examples # TODO
 
-protein_elimination <- function(G,
+proteinElimination <- function(G,
                                 threshold = 1.05,
                                 iter = 0,
                                 min_error_ref = NULL,
@@ -52,7 +52,7 @@ protein_elimination <- function(G,
 
   #### 0: calculate reference error
   if (iter == 0) {
-    G <- bppg::add_uniqueness_attributes(G)
+    G <- bppg::.addUniquenessAttributes(G)
     proteinnodes <- igraph::V(G)[igraph::V(G)$type]
     nr_unique_peptides <- igraph::V(G)$nr_unique_peptides[igraph::V(G)$type]
 
@@ -61,7 +61,7 @@ protein_elimination <- function(G,
     S <- list(X = X, fc = fc)
     n <- ncol(S$X) # number of protein nodes
 
-    opti <- minimize_squared_error(S, #error.type = "multiplicative",
+    opti <- .minimizeSquaredError(S, #error.type = "multiplicative",
                                    fixed.Ci = NULL,
                                    verbose = FALSE, #error.trans = "square",
                                    reciprocal = FALSE, log_level = TRUE, control = list(trace = 0, delta = 1e-9))
@@ -130,7 +130,7 @@ protein_elimination <- function(G,
       n <- ncol(S$X) # number of protein groups
 
 
-      opti <- minimize_squared_error(S, #error.type = "multiplicative",
+      opti <- .minimizeSquaredError(S, #error.type = "multiplicative",
                                      fixed.Ci = NULL,
                                      verbose = FALSE, #error.trans = "square",
                                      reciprocal = FALSE, log_level = TRUE, control = list(trace = 0, delta = 1e-9))
@@ -154,7 +154,7 @@ protein_elimination <- function(G,
     n_comb_current <- length(proteinnodes_tmp)
 
 
-    RES <- protein_elimination(G = G_tmp, threshold = threshold, iter = 1, min_error_ref = min_error_ref,
+    RES <- proteinElimination(G = G_tmp, threshold = threshold, iter = 1, min_error_ref = min_error_ref,
                                  min_error_current = min_error_current, protein_nodes_list = proteinnodes_tmp, error_list = error_list,
                                  combination_list = combination_list, comb_current = comb_current, G_current = G_current,
                                  n_comb_current = n_comb_current)

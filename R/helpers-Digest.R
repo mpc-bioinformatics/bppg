@@ -19,17 +19,17 @@
 #' @return A vector of peptides.
 #' @export
 #'
-#' @seealso [digest_fasta()]
+#' @seealso [digestFASTA()]
 #'
 #' @examples
 #' library(seqinr)
 #' file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #'
-#' digested_proteins <- Digest2(fasta[[1]])
+#' digested_proteins <- .digest2(fasta[[1]])
 #'
 
-Digest2 <- function (sequence, enzyme = "trypsin", missed = 0, warn = TRUE, remove_initial_M = FALSE) {
+.digest2 <- function (sequence, enzyme = "trypsin", missed = 0, warn = TRUE, remove_initial_M = FALSE) {
   seq_vector <- strsplit(sequence, split = "")[[1]]
   end_position <- length(seq_vector)
   if (enzyme == "trypsin") {
@@ -148,21 +148,21 @@ Digest2 <- function (sequence, enzyme = "trypsin", missed = 0, warn = TRUE, remo
 #'                           The minimal number of amino acids (set to 0 for no filtering).
 #' @param max_aa             \strong{integer} \cr
 #'                           The maximal number of amino acids (set to Inf for no filtering).
-#' @param ...                Additional arguments for [Digest2()].
+#' @param ...                Additional arguments for [.digest2()].
 #'
 #' @return List of vectors of peptide sequences, filtered for minimal and maximal number of amino acids.
 #' @export
 #'
-#' @seealso [Digest2()]
+#' @seealso [.digest2()]
 #'
 #' @examples
 #' library(seqinr)
 #' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-#' res <- digest_fasta(fasta)
+#' res <- digestFASTA(fasta)
 #'
 
-digest_fasta <- function(fasta,
+digestFASTA <- function(fasta,
                          missed_cleavages = 2,
                          min_aa = 6,
                          max_aa = 50,
@@ -171,7 +171,7 @@ digest_fasta <- function(fasta,
   digested_proteins <- pbapply::pblapply(fasta, function(x) {
     sequ <- x
     class(sequ) <- NULL
-    y <- try({Digest2(sequ, missed = missed_cleavages, warn = FALSE, remove_initial_M = TRUE, ...)})
+    y <- try({.digest2(sequ, missed = missed_cleavages, warn = FALSE, remove_initial_M = TRUE, ...)})
     ind <- nchar(as.character(y$sequence)) >= min_aa & nchar(as.character(y$sequence)) <= max_aa
     return(as.character(y$sequence[ind]))
   })

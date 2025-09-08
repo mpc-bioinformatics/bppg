@@ -5,7 +5,7 @@
 #' @param id_cols                  \strong{integer vector} \cr
 #'                                 The columns with ids, e.g. peptide sequences (everything except the peptide ratios)
 #' @param fasta_edgelist           \strong{data.frame} \cr
-#'                                 An edgelist created from the corresponding FASTA file, eg. created with [bppg::generate_edgelist()].
+#'                                 An edgelist created from the corresponding FASTA file, eg. created with [bppg::generateEdgelist()].
 #' @param outpath                  \strong{character} \cr
 #'                                 The output path for the results.
 #' @param seq_column               \strong{character} \cr
@@ -20,12 +20,12 @@
 #' @return A list of list of subgraphs
 #' @export
 #'
-#' @seealso [bppg::generate_edgelist()]
+#' @seealso [bppg::generateEdgelist()]
 #'
 #' @examples
 #'
 
-generate_quant_graphs <- function(peptide_ratios,
+.generateQuantGraphs <- function(peptide_ratios,
                                   id_cols = 1,
                                   fasta_edgelist,
                                   outpath = NULL,
@@ -65,11 +65,11 @@ generate_quant_graphs <- function(peptide_ratios,
 
 
     ## generate whole bipartite graph
-    edgelist_coll <- bppg::collapse_edgelist_quant(edgelist_filtered2,
+    edgelist_coll <- bppg::.collapseEdgelistQuant(edgelist_filtered2,
                                              collapse_protein_nodes = collapse_protein_nodes,
                                              collapse_peptide_nodes = collapse_peptide_nodes)
 
-    G <- bppg::generate_graphs_from_edgelist(edgelist_coll[, 1:2])
+    G <- bppg::.generateGraphsFromEdgelist(edgelist_coll[, 1:2])
 
     ### set peptide ratios as vertex attributes
     for (j in 1:length(G)){
@@ -94,7 +94,7 @@ generate_quant_graphs <- function(peptide_ratios,
 #' @param D                        \strong{data.frame} \cr
 #'                                 A data set with peptide sequence as first column
 #'                                 and peptide intensities in subsequent columns
-#'                                 ,e.g. created with [bppg::read_MQ_peptidetable()].
+#'                                 ,e.g. created with [bppg::readMqPeptideTable()].
 #' @param fasta                    \strong{list of vector of characters} \cr
 #'                                 A fasta file used for identification of peptides in D,
 #'                                 already read into R by [seqinr::read.fasta()].
@@ -121,13 +121,13 @@ generate_quant_graphs <- function(peptide_ratios,
 #' @return A list of list of graphs
 #' @export
 #'
-#' @seealso [bppg::read_MQ_peptidetable()], [seqinr::read.fasta()],
-#'          [bppg::generate_quant_graphs()], [bppg::generate_graphs_from_FASTA()]
+#' @seealso [bppg::readMqPeptideTable()], [seqinr::read.fasta()],
+#'          [bppg::.generateQuantGraphs()], [bppg::generateGraphsFromFASTA()]
 #'
 #' @examples
 #'
 
-generate_graphs_from_quant_data <- function(D,
+generateGraphsFromQuantData <- function(D,
                                             fasta,
                                             outpath = NULL,
                                             #normalize = FALSE,
@@ -142,10 +142,10 @@ generate_graphs_from_quant_data <- function(D,
                                             ...) {
 
   message("Digesting FASTA file...")
-  digested_proteins <- bppg::digest_fasta(fasta, missed_cleavages = missed_cleavages,
+  digested_proteins <- bppg::digestFASTA(fasta, missed_cleavages = missed_cleavages,
                                           min_aa = min_aa, max_aa = max_aa)
   message("Generating edgelist ...")
-  edgelist <- bppg::generate_edgelist(digested_proteins)
+  edgelist <- bppg::generateEdgelist(digested_proteins)
 
   if (!is.null(outpath)) {
     openxlsx::write.xlsx(edgelist, file = paste0(outpath, "edgelist_fasta_", suffix, ".xlsx"), overwrite = TRUE, keepNA = TRUE)
@@ -158,7 +158,7 @@ generate_graphs_from_quant_data <- function(D,
 
   ### aggregate replicates by calculating the mean
   group <- factor(limma::strsplit2(colnames(intensities), "_")[,1])
-  D_aggr <- bppg::aggregate_replicates(D, method = "mean", missing.limit = 0.4,
+  D_aggr <- bppg::aggregateReplicates(D, method = "mean", missing.limit = 0.4,
                                        group = group, id_cols = id_columns)
   if (!is.null(outpath)) {
     openxlsx::write.xlsx(D_aggr, file = paste0(outpath, "aggr_peptides_", suffix, ".xlsx"), overwrite = TRUE, keepNA = TRUE)
@@ -166,14 +166,15 @@ generate_graphs_from_quant_data <- function(D,
 
   ### calculate the peptide ratio table
   groups  <- levels(group)
-  peptide_ratios <- bppg::calculate_peptide_ratios(aggr_intensities = D_aggr, id_cols = id_columns, group_levels = groups)
+  peptide_ratios <- bppg::calculatePeptideRatios(aggr_intensities = D_aggr, id_cols = id_columns, group_levels = groups)
   if (!is.null(outpath)) {
     openxlsx::write.xlsx(peptide_ratios, file = paste0(outpath, "peptide_ratios_", suffix, ".xlsx"), overwrite = TRUE, keepNA = TRUE)
   }
 
 
   ## Generierung der Graphen (man braucht peptide_ratios und fast_edgelist!)
-  graphs <- bppg::generate_quant_graphs(peptide_ratios = peptide_ratios, id_cols = id_columns, fasta_edgelist = edgelist,
+  #TODO gehört das so für private
+  graphs <- bppg::.generateQuantGraphs(peptide_ratios = peptide_ratios, id_cols = id_columns, fasta_edgelist = edgelist,
                                         outpath = outpath, seq_column = seq_column,
                                         collapse_protein_nodes = collapse_protein_nodes,
                                         collapse_peptide_nodes = collapse_peptide_nodes,

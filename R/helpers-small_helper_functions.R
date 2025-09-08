@@ -10,9 +10,9 @@
 #'
 #' @examples
 #' data <- c(1,6,3.5)
-#' result <- geom_mean(data, useprod = FALSE)
+#' result <- .geomMean(data, useprod = FALSE)
 
-geom_mean <- function(x, useprod = FALSE) {
+.geomMean <- function(x, useprod = FALSE) {
   n <- length(x)
 
   if (useprod) {

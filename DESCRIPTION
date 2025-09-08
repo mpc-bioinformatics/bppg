@@ -4,6 +4,8 @@ Version: 0.0.0.9000
 Authors@R: c(
     person("Karin", "Schork", , "karin.schork@rub.de", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-3756-4347")),
+    person("Julika", "Wenzel", , "karin.schork@rub.de", role = c("aut"),
+           comment = c(ORCID = "0009-0004-1468-5984")),
     person("Katharina", "Neuhaus", , "katharina.neuhaus@rub.de", role = c("aut")))
 Description: Functionality to create and characterize bipartite graphs that 
     show the relationship between peptides and proteins in bottom-up proteomics.

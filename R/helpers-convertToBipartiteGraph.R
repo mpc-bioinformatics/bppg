@@ -8,9 +8,9 @@
 #'
 #' @examples
 #' M <- matrix(c(1,0,1,1), nrow = 2, byrow = TRUE)
-#' bppg::convertToBipartiteGraph(M)
+#' bppg::.convertToBipartiteGraph(M)
 
-convertToBipartiteGraph <- function(x) {
+.convertToBipartiteGraph <- function(x) {
   if ("list" %in% class(x)) { # class list if it contains peptide ratios
     S <- x$X
   } else   {

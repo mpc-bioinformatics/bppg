@@ -1,17 +1,17 @@
 #' Calculate number for table
 #'
 #' @param subgraph_char_tab   \strong{data.frame} \cr
-#'                            A table of subgraphs characteristics, e.g. created by [calculate_subgraph_characteristics()]
+#'                            A table of subgraphs characteristics, e.g. created by [.calculateSubgraphCharacteristics()]
 #' @param isomorph_list       \strong{list} \cr
 #'                            A list of occuring isomorphs.
 #'
-#' @return bla
+#' @return A table with the summary
 #' @export
 #'
 #' @examples
 #'
 
-calculate_summary_table <- function(subgraph_char_tab, isomorph_list) {
+.calculateSummaryTable <- function(subgraph_char_tab, isomorph_list) {
 
   D <- subgraph_char_tab
 
