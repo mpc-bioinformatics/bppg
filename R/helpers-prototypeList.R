@@ -7,7 +7,7 @@
 #'                           If \code{TRUE}, the list of prototypes is sorted by number of edges.
 #'
 #' @return A list of prototype graphs plus their count.
-#' @export
+#'
 #'
 #' @examples # TODO
 #'

@@ -41,7 +41,7 @@ The control parameters for solnp.}
 list containing the following elements:
 \item{Ri}{estimated protein ratios}
 \item{Ci}{estimated protein weights}
-\item{RES}{final result of errorEquation(), which also contains the final, minimal error term}
+\item{RES}{final result of .errorEquation(), which also contains the final, minimal error term}
 \item{Tracking}{Tracking of Ri, Ci and error term for the different iterations}
 \item{outer.iter}{Number of outer iterations needed for the optimization algorithm to converge or stop}
 \item{convergence}{Indicates whether the solver has converged (0) or not (1 or 2).}

@@ -6,7 +6,7 @@
 #'                                                        A list of occuring isomorphs.
 #'
 #' @return A table with the summary
-#' @export
+#'
 #'
 #' @examples
 #'

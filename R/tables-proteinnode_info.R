@@ -5,7 +5,7 @@
 #'            The graphs with collapsed protein and peptide nodes.
 #'
 #' @return A data frame with information on number of unique/shared peptides.
-#' @export
+#'
 #'
 #' @seealso For the generation of the list of lists of igraphs: [generateGraphsFromQuantData()]
 #'

@@ -147,7 +147,7 @@ aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
 #'                If \code{TRUE},results 0 and Inf are possible, otherwise ratio is NA if value for X or Y is NA
 #'
 #' @return The fold changes (Y/X).
-#' @export
+#'
 #'
 #' @examples # TODO
 #'

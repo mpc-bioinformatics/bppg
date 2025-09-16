@@ -4,7 +4,7 @@
 #'                   An edgelist, output from [generateEdgelist()].
 #'
 #' @return A list of subgraphs as igraph objects.
-#' @export
+#' 
 #'
 #' @seealso [generateEdgelist()]
 #'

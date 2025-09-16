@@ -10,7 +10,9 @@
 #' @param rj          \strong{numeric vector} \cr
 #'                    Contains the measured peptide ratios.
 #' @param log_level   \strong{logical} \cr
-#'                    If \code{TRUE}, the Ri are given on log2-level and need to be back-transformed here (this may allow a symmetric behaviour during optimization)
+#'                    If \code{TRUE}, the Ri are given on log2-level and need
+#' to be back-transformed here
+#' (this may allow a symmetric behaviour during optimization)
 #'
 #' @return list containing the following elements:
 #' \item{res_Mat}{matrix containing the estimated peptide ratios using Ri and Ci}
@@ -18,7 +20,7 @@
 #' \item{res_squ_err}{sum of squared error terms}
 #' \item{W}{internal weight matrix}
 #'
-#' @export
+#'
 #'
 #' @examples
 #' Ri <- c(0.5, 1.3)
@@ -44,10 +46,10 @@
 
   res_Mat <- sweep(W, MARGIN = 2, Ri, '*') # multiply Ri with the corresponding weight
 
-  # error term per peptide (on log-scale)
+  ## error term per peptide (on log-scale)
   res_equ <- log(rj) - log(rowSums(res_Mat))
 
-  # sum of squared error terms
+  ## sum of squared error terms
   res_squ_err <- sum(res_equ^2)
 
   return(list(res_Mat = res_Mat, res_equ = res_equ, res_squ_err = res_squ_err, W = W))
@@ -82,7 +84,7 @@
 #' \item{outer.iter}{Number of outer iterations needed for the optimization algorithm to converge or stop}
 #' \item{convergence}{Indicates whether the solver has converged (0) or not (1 or 2).}
 #'
-#' @export
+#'
 #'
 #' @examples
 #' M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
