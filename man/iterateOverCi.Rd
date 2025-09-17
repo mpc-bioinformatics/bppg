@@ -67,7 +67,8 @@ The resulting table can be used to assess a range of possible solutions for the 
 M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
 rj <- c(0.6, 1.2)
 S <- list(X = M, fc = rj)
-.minimizeSquaredError(S)
+bppg:::.minimizeSquaredError(S)
+# example not complete? TODO
 }
 \seealso{
 \code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}}, \code{\link[=automatedAnalysisIteratedCi]{automatedAnalysisIteratedCi()}}

@@ -4,7 +4,7 @@ test_that("test .errorEquation", {
   Ci <- c(0.3, 0.7)
   M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
   rj <- c(0.6, 1.2)
-  e <- bppg::.errorEquation(Ri, Ci, M, rj)
+  e <- bppg:::.errorEquation(Ri, Ci, M, rj)
 
   e[[2]] <- round(e[[2]], digits = 4)
   e[[3]] <- round(e[[3]], digits = 4)
@@ -24,7 +24,7 @@ test_that("test .minimizeSquaredError", {
   M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
   rj <- c(0.6, 1.2)
   S <- list(X = M, fc = rj)
-  e <- .minimizeSquaredError(S)
+  e <- bppg:::.minimizeSquaredError(S)
 
 
   e[[1]] <- round(e[[1]], digits = 4)

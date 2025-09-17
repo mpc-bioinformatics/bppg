@@ -7,7 +7,7 @@ test_that("test .addUniquenessAttributes", {
   # W shaped graph
   M <- matrix(c(1,1,0,0,1,1), nrow = 2, byrow = TRUE)
   G <- igraph::graph_from_biadjacency_matrix(M)
-  G_new <- bppg::.addUniquenessAttributes(G)
+  G_new <- bppg:::.addUniquenessAttributes(G)
 
   expect_equal(igraph::V(G_new)$nr_unique_peptides, c(NA, NA, 0, 0, 0))
   expect_equal(igraph::V(G_new)$nr_shared_peptides, c(NA, NA, 1, 2, 1))
@@ -17,7 +17,7 @@ test_that("test .addUniquenessAttributes", {
 
   # M shaped graph
   V(G)$type <- !V(G)$type
-  G_new2 <- bppg::.addUniquenessAttributes(G)
+  G_new2 <- bppg:::.addUniquenessAttributes(G)
 
   expect_equal(igraph::V(G_new2)$nr_unique_peptides, c(1, 1, NA, NA, NA))
   expect_equal(igraph::V(G_new2)$nr_shared_peptides, c(1, 1, NA, NA, NA))
@@ -45,7 +45,7 @@ test_that("test .addAveragePepRatio", {
   V(bipartite_graph)$pep_ratio <- pep_ratios
 
   # Check attribute creation
-  bipartite_graph <- .addAveragePepRatio(bipartite_graph)
+  bipartite_graph <- bppg:::.addAveragePepRatio(bipartite_graph)
 
   expect_equal(V(bipartite_graph)$nr_sequences,
                c(1, 2, 1, 2, 1, 1, 1))

@@ -52,7 +52,7 @@ proteinElimination <- function(G,
 
   #### 0: calculate reference error
   if (iter == 0) {
-    G <- bppg::.addUniquenessAttributes(G)
+    G <- bppg:::.addUniquenessAttributes(G)
     proteinnodes <- igraph::V(G)[igraph::V(G)$type]
     nr_unique_peptides <- igraph::V(G)$nr_unique_peptides[igraph::V(G)$type]
 

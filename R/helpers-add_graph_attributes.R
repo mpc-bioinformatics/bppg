@@ -60,7 +60,7 @@
   pep_ratio_split <- strsplit(pep_ratio, ";")
 
   pep_ratio_aggr <- sapply(pep_ratio_split, function(x){
-    bppg::.geomMean(as.numeric(x))})
+    .geomMean(as.numeric(x))})
 
 
   nr_sequences <- sapply(pep_ratio_split, length)

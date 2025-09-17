@@ -15,7 +15,7 @@ test_that("test .calculateProteinNodeInfo", {
 
   graphs <- list(s1_s2 = g1, s1_s3 = g2, s2_s3 = g3)
 
-  D <- .calculateProteinNodeInfo(graphs)
+  D <- bppg:::.calculateProteinNodeInfo(graphs)
 
   expect_equal(nrow(D), 30)
   expect_equal(ncol(D), 7)

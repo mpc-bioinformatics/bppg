@@ -47,7 +47,8 @@
 #' M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
 #' rj <- c(0.6, 1.2)
 #' S <- list(X = M, fc = rj)
-#' .minimizeSquaredError(S)
+#' bppg:::.minimizeSquaredError(S)
+#' # example not complete? TODO
 iterateOverCi <- function(S,
                             grid.size = 1000,
                             omit_grid_borders = TRUE,

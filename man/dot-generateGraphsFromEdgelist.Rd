@@ -23,7 +23,7 @@ file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package 
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 digested_proteins <- digestFASTA(fasta)
 edgelist <- generateEdgelist(digested_proteins)
-res <- .generateGraphsFromEdgelist(edgelist)
+res <- bppg:::.generateGraphsFromEdgelist(edgelist)
 
 }
 \seealso{

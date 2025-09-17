@@ -10,7 +10,7 @@
 #'
 #' @examples
 #' data <- c(1,6,3.5)
-#' result <- .geomMean(data, useprod = FALSE)
+#' result <- bppg:::.geomMean(data, useprod = FALSE)
 
 .geomMean <- function(x, useprod = FALSE) {
   n <- length(x)

@@ -14,7 +14,7 @@
 .calculateProteinNodeInfo <- function(G) {
 
   G2 <- lapply(G, function(x) {
-    pbapply::pblapply(x, bppg::.addUniquenessAttributes)
+    pbapply::pblapply(x, .addUniquenessAttributes)
   })
 
   accessions <- NULL

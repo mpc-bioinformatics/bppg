@@ -53,6 +53,6 @@ Function to set up the optimization problem and minimize the sum of squared erro
 M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
 rj <- c(0.6, 1.2)
 S <- list(X = M, fc = rj)
-.minimizeSquaredError(S)
+bppg:::.minimizeSquaredError(S)
 
 }

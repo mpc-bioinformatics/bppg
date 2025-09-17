@@ -35,7 +35,7 @@ generateGraphsFromFASTA <- function(fasta,
                                        prot_origin = NULL,
                                        ...) {
 
-  message("Digesting FASTA file ...") 
+  message("Digesting FASTA file ...")
   digested_proteins <- bppg::digestFASTA(fasta, ...)
   message("Generating edgelist ...")
   edgelist <- bppg::generateEdgelist(digested_proteins, prot_origin = prot_origin)
@@ -48,7 +48,7 @@ generateGraphsFromFASTA <- function(fasta,
 
   if (collapse_protein_nodes | collapse_peptide_nodes) {
     message("Collapsing nodes ...")
-    edgelist_coll <- bppg::.collapseEdgelist(edgelist,
+    edgelist_coll <- .collapseEdgelist(edgelist,
                                              collapse_protein_nodes = collapse_protein_nodes,
                                              collapse_peptide_nodes = collapse_peptide_nodes)
   }
@@ -65,10 +65,10 @@ generateGraphsFromFASTA <- function(fasta,
 
   if (collapse_protein_nodes | collapse_peptide_nodes) {
     message("Generating graphs ...")
-    graphs <- bppg::.generateGraphsFromEdgelist(edgelist_coll)
+    graphs <- .generateGraphsFromEdgelist(edgelist_coll)
   } else {
     message("Generating graphs ...")
-    graphs <- bppg::.generateGraphsFromEdgelist(edgelist)
+    graphs <- .generateGraphsFromEdgelist(edgelist)
   }
 
 

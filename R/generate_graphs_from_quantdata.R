@@ -65,11 +65,11 @@
 
 
     ## generate whole bipartite graph
-    edgelist_coll <- bppg::.collapseEdgelistQuant(edgelist_filtered2,
+    edgelist_coll <- .collapseEdgelistQuant(edgelist_filtered2,
                                              collapse_protein_nodes = collapse_protein_nodes,
                                              collapse_peptide_nodes = collapse_peptide_nodes)
 
-    G <- bppg::.generateGraphsFromEdgelist(edgelist_coll[, 1:2])
+    G <- .generateGraphsFromEdgelist(edgelist_coll[, 1:2])
 
     ### set peptide ratios as vertex attributes
     for (j in 1:length(G)){
@@ -122,7 +122,7 @@
 #' @export
 #'
 #' @seealso [bppg::readMqPeptideTable()], [seqinr::read.fasta()],
-#'          [bppg::.generateQuantGraphs()], [bppg::generateGraphsFromFASTA()]
+#'          [.generateQuantGraphs()], [bppg::generateGraphsFromFASTA()]
 #'
 #' @examples
 #'
@@ -174,7 +174,7 @@ generateGraphsFromQuantData <- function(D,
 
   ## Generierung der Graphen (man braucht peptide_ratios und fast_edgelist!)
   #TODO gehört das so für private
-  graphs <- bppg::.generateQuantGraphs(peptide_ratios = peptide_ratios, id_cols = id_columns, fasta_edgelist = edgelist,
+  graphs <- .generateQuantGraphs(peptide_ratios = peptide_ratios, id_cols = id_columns, fasta_edgelist = edgelist,
                                         outpath = outpath, seq_column = seq_column,
                                         collapse_protein_nodes = collapse_protein_nodes,
                                         collapse_peptide_nodes = collapse_peptide_nodes,

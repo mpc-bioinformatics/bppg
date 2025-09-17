@@ -33,7 +33,7 @@ file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 digested_proteins <- bppg::digestFASTA(fasta)
 edgelist <- bppg::generateEdgelist(digested_proteins)
-edgelist_collapsed <- bppg::.collapseEdgelist(edgelist)
+edgelist_collapsed <- bppg:::.collapseEdgelist(edgelist)
 
 }
 \seealso{
