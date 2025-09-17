@@ -8,7 +8,7 @@
 #' @param ...      currently unused
 #'
 #' @return TRUE if graphs are isomorphic, FALSE if not.
-#' @export
+#'
 #'
 #' @seealso [.generateGraphsFromEdgelist()]
 #'
@@ -37,7 +37,7 @@
 #'                    If \code{TRUE}, the edges will go out from the vertices with the type \code{TRUE} from the bipartite graph.
 #'
 #' @return A bipartite graph that is know directed.
-#' @export
+#'
 #'
 #' @examples # TODO
 #'

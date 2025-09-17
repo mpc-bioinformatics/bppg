@@ -4,7 +4,7 @@
 #'            An element of a submatrix list.
 #'
 #' @return A graph as igraph object.
-#' @export
+#'
 #'
 #' @examples
 #' M <- matrix(c(1,0,1,1), nrow = 2, byrow = TRUE)

@@ -17,7 +17,7 @@
 #'                           If \code{TRUE}, the initial methionine will be removed from the peptides.
 #'
 #' @return A vector of peptides.
-#' @export
+#'
 #'
 #' @seealso [digestFASTA()]
 #'

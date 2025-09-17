@@ -8,7 +8,7 @@
 #'                                 If \code{TRUE}, the peptide nodes will be collapsed.
 #'
 #' @return An edgelist with collapsed protein and/or peptide nodes.
-#' @export
+#'
 #'
 #' @seealso For edgelists with peptide ratios: [.collapseEdgelistQuant()] \cr
 #'          [generateGraphsFromFASTA()], [.generateQuantGraphs()], [generateEdgelist()]

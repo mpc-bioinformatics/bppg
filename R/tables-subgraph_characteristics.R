@@ -11,7 +11,7 @@
 #'
 #'
 #' @return A table with the characteristics.
-#' @export
+#'
 #'
 #' @examples
 #'

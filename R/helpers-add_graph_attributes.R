@@ -4,7 +4,7 @@
 #'          A peptide-protein graph.
 #'
 #' @return A graph with 2 additional vertex attributes, uniqueness and nr_unique_peptides
-#' @export
+#'
 #'
 #' @seealso [generateGraphsFromFASTA()], [.generateQuantGraphs()], [.addAveragePepRatio()]
 #'
@@ -48,7 +48,7 @@
 #'               !NOT USED AT THE MOMENT!
 #'
 #' @return A graph with added peptide ratio attributes.
-#' @export
+#'
 #'
 #' @seealso [generateGraphsFromFASTA()], [.generateQuantGraphs()], [.addUniquenessAttributes()]
 #'
