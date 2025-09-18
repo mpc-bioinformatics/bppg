@@ -2,9 +2,9 @@
 #'
 #' @param edgelist                 \strong{data.frame} \cr
 #'                                 An edgelist eg. created with [generateEdgelist()].
-#' @param collapse_protein_nodes   \strong{logical} \cr
+#' @param collProtNodes   \strong{logical} \cr
 #'                                 If \code{TRUE}, the protein nodes will be collapsed.
-#' @param collapse_peptide_nodes   \strong{logical} \cr
+#' @param collPeptNodes   \strong{logical} \cr
 #'                                 If \code{TRUE}, the peptide nodes will be collapsed.
 #'
 #' @return An edgelist with collapsed protein and/or peptide nodes.
@@ -24,15 +24,15 @@
 
 
 .collapseEdgelist <- function(edgelist,
-                              collapse_protein_nodes = TRUE,
-                              collapse_peptide_nodes = TRUE) {
+                              collProtNodes = TRUE,
+                              collPeptNodes = TRUE) {
 
-  if (!collapse_protein_nodes & !collapse_peptide_nodes) {
+  if (!collProtNodes & !collPeptNodes) {
     return(edgelist)
   }
 
   ### Calculate list if protein nodes
-  if (collapse_protein_nodes) {
+  if (collProtNodes) {
     ### aggregate peptide sequences that belong to the same protein accession (1 row per protein accession)
     protEdges <- stats::aggregate(data = edgelist, x = peptide ~ protein, function(x) paste(sort(unique(x)), collapse = ";"))
     ### aggregate proteins with the same set of peptides (-> protein nodes)
@@ -44,7 +44,7 @@
 
 
   ### calculate list of peptide nodes
-  if (collapse_peptide_nodes) {
+  if (collPeptNodes) {
     ### aggregate protein accessions belonging to the same peptide sequences (1 row per peptide sequence)
     pepEdges <- stats::aggregate(data = edgelist, x = protein ~ peptide, function(x) paste(sort(unique(x)), collapse = ";"))
     ### aggregate peptides with the same set of proteins (-> peptide nodes)

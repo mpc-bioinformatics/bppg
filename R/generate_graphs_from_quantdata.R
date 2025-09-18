@@ -10,9 +10,9 @@
 #'                                 The output path for the results.
 #' @param seq_column               \strong{character} \cr
 #'                                 The column name of the peptide sequence.
-#' @param collapse_protein_nodes   \strong{logical} \cr
+#' @param collProtNodes   \strong{logical} \cr
 #'                                 If \code{TRUE}, the protein nodes will be collapsed.
-#' @param collapse_peptide_nodes   \strong{logical} \cr
+#' @param collPeptNodes   \strong{logical} \cr
 #'                                 If \code{TRUE}, the peptide nodes will be collapsed.
 #' @param suffix                   \strong{character} \cr
 #'                                 The suffix for saving results.
@@ -30,8 +30,8 @@
                                   fasta_edgelist,
                                   outpath = NULL,
                                   seq_column = "Sequence",
-                                  collapse_protein_nodes = TRUE,
-                                  collapse_peptide_nodes = FALSE,
+                                  collProtNodes = TRUE,
+                                  collPeptNodes = FALSE,
                                   suffix = "") {
 
   ### broad filtering for edgelist for only quantifies peptides
@@ -66,8 +66,8 @@
 
     ## generate whole bipartite graph
     edgelist_coll <- .collapseEdgelistQuant(edgelist_filtered2,
-                                             collapse_protein_nodes = collapse_protein_nodes,
-                                             collapse_peptide_nodes = collapse_peptide_nodes)
+                                             collProtNodes = collProtNodes,
+                                             collPeptNodes = collPeptNodes)
 
     G <- .generateGraphsFromEdgelist(edgelist_coll[, 1:2])
 
@@ -110,9 +110,9 @@
 #'                                 The columns of D that contain ID information (the rest should contain only peptide intensities, properly normalized).
 #' @param seq_column               \strong{character} \cr
 #'                                 The column name of the column with the peptide sequences.
-#' @param collapse_protein_nodes   \strong{logical} \cr
+#' @param collProtNodes   \strong{logical} \cr
 #'                                 If \code{TRUE}, the protein nodes will be collapsed.
-#' @param collapse_peptide_nodes   \strong{logical} \cr
+#' @param collPeptNodes   \strong{logical} \cr
 #'                                 If \code{TRUE}, the peptide nodes will be collapsed.
 #' @param suffix                   \strong{character} \cr
 #'                                 The suffix for output files.
@@ -136,8 +136,8 @@ generateGraphsFromQuantData <- function(D,
                                             max_aa = 50,
                                             id_columns = 1,
                                             seq_column = "Sequence",
-                                            collapse_protein_nodes = TRUE,
-                                            collapse_peptide_nodes = FALSE,
+                                            collProtNodes = TRUE,
+                                            collPeptNodes = FALSE,
                                             suffix = "",
                                             ...) {
 
@@ -176,8 +176,8 @@ generateGraphsFromQuantData <- function(D,
   #TODO gehört das so für private
   graphs <- .generateQuantGraphs(peptide_ratios = peptide_ratios, id_cols = id_columns, fasta_edgelist = edgelist,
                                         outpath = outpath, seq_column = seq_column,
-                                        collapse_protein_nodes = collapse_protein_nodes,
-                                        collapse_peptide_nodes = collapse_peptide_nodes,
+                                        collProtNodes = collProtNodes,
+                                        collPeptNodes = collPeptNodes,
                                         suffix = suffix)
   return(graphs)
 
