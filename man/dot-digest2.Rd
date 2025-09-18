@@ -39,7 +39,7 @@ library(seqinr)
 file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 
-digested_proteins <- .digest2(fasta[[1]])
+digested_proteins <- bppg:::.digest2(fasta[[1]])
 
 }
 \seealso{

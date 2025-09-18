@@ -39,5 +39,5 @@ Ri <- c(0.5, 1.3)
 Ci <- c(0.3, 0.7)
 M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
 rj <- c(0.6, 1.2)
-.errorEquation(Ri, Ci, M, rj)
+bppg:::.errorEquation(Ri, Ci, M, rj)
 }

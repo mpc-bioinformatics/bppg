@@ -27,7 +27,7 @@
 #' Ci <- c(0.3, 0.7)
 #' M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
 #' rj <- c(0.6, 1.2)
-#' .errorEquation(Ri, Ci, M, rj)
+#' bppg:::.errorEquation(Ri, Ci, M, rj)
 .errorEquation <- function(Ri,
                      Ci,
                      M,
@@ -90,7 +90,7 @@
 #' M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
 #' rj <- c(0.6, 1.2)
 #' S <- list(X = M, fc = rj)
-#' .minimizeSquaredError(S)
+#' bppg:::.minimizeSquaredError(S)
 #'
 .minimizeSquaredError <- function(S,
                                       #error.type = "multiplicative",

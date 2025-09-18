@@ -18,5 +18,5 @@ Conversion of submatrices to subgraphs.
 }
 \examples{
 M <- matrix(c(1,0,1,1), nrow = 2, byrow = TRUE)
-bppg::.convertToBipartiteGraph(M)
+bppg:::.convertToBipartiteGraph(M)
 }

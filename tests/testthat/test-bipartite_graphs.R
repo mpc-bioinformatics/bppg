@@ -32,7 +32,7 @@ test_that("test .convertToBipartiteGraph", {
 
   M <- matrix(c(1,0,0,1,1,1), nrow = 2, byrow = TRUE)
 
-  g <- bppg::.convertToBipartiteGraph(M)
+  g <- bppg:::.convertToBipartiteGraph(M)
 
   #pred_res <- cbind(c(1,2,2,2), c(3,3,4,5))
 

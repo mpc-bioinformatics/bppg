@@ -4,7 +4,7 @@
 #'                   An edgelist, output from [generateEdgelist()].
 #'
 #' @return A list of subgraphs as igraph objects.
-#' 
+#'
 #'
 #' @seealso [generateEdgelist()]
 #'
@@ -15,7 +15,7 @@
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' digested_proteins <- digestFASTA(fasta)
 #' edgelist <- generateEdgelist(digested_proteins)
-#' res <- .generateGraphsFromEdgelist(edgelist)
+#' res <- bppg:::.generateGraphsFromEdgelist(edgelist)
 #'
 
 .generateGraphsFromEdgelist <- function(edgelist) {
