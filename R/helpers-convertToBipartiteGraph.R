@@ -17,6 +17,6 @@
     S <- x
   }
 
-  G <- igraph::graph_from_incidence_matrix(S)
+  G <- igraph::graph_from_biadjacency_matrix(S)
   return(G)
 }

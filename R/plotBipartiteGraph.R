@@ -64,7 +64,7 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
     cG <- igraph::canonical_permutation(G)
     G <- igraph::permute(G, cG$labeling)
   }
-  Layout <- igraph::layout.bipartite(G)
+  Layout <- igraph::layout_as_bipartite(G)
   names_G <- character(length(igraph::V(G)))
 
   pos_proteins <- Layout[,1][Layout[,2] == 1]
