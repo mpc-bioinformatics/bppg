@@ -56,7 +56,7 @@ proteinElimination <- function(G,
     proteinnodes <- igraph::V(G)[igraph::V(G)$type]
     nr_unique_peptides <- igraph::V(G)$nr_unique_peptides[igraph::V(G)$type]
 
-    X <- igraph::as_incidence_matrix(G)
+    X <- igraph::as_biadjacency_matrix(G)
     fc <- stats::na.omit(igraph::V(G)$pep_ratio)
     S <- list(X = X, fc = fc)
     n <- ncol(S$X) # number of protein nodes
@@ -124,7 +124,7 @@ proteinElimination <- function(G,
     min_error_tmp <- 0
     for (i in 1:length(G_CC)) {
 
-      X <- igraph::as_incidence_matrix(G_CC[[i]])
+      X <- igraph::as_biadjacency_matrix(G_CC[[i]])
       fc <- stats::na.omit(igraph::V(G_CC[[i]])$pep_ratio)
       S <- list(X = X, fc = fc)
       n <- ncol(S$X) # number of protein groups

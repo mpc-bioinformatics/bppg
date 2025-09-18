@@ -165,7 +165,7 @@ automatedAnalysisIteratedCi <- function(S,
                                            S_is_graph = FALSE) {
 
   if (S_is_graph & !is.null(S)) {
-    X <- igraph::as_incidence_matrix(S)
+    X <- igraph::as_biadjacency_matrix(S)
     fc <- stats::na.omit(igraph::V(S)$pep_ratio)
     S <- list(X = X, fc = fc)
   }
