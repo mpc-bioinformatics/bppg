@@ -1,0 +1,13 @@
+linters: linters_with_defaults(
+    object_name_linter = object_name_linter(styles = c("camelCase", "symbols", "Symbols"), regexes = character()),
+    line_length_linter = line_length_linter(80),
+    boolean_arithmetic_linter = boolean_arithmetic_linter(),
+    infix_spaces_linter = infix_spaces_linter(exclude_operators = "EQ_SUB"),
+    trailing_whitespace_linter = NULL,
+    commented_code_linter(),
+    inner_combine_linter(),
+    cyclocomp_linter(complexity_limit = 20L),
+    redundant_equals_linter(),
+    indentation_linter(indent = 4L, hanging_indent_style = "never")
+    )
+
