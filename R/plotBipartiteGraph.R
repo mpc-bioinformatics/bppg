@@ -71,7 +71,7 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
     node_labels_proteins = "letters",
     node_labels_peptides = "numbers",
     round_digits = 2, use_edge_attributes = FALSE,
-    legend.x = "left", legend.y = NULL,
+    legend.x = "bottom", legend.y = NULL,
     ...) {
 
     ## switch node types so that proteins are at the top
