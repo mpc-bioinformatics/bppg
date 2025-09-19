@@ -49,8 +49,8 @@ generateGraphsFromFASTA <- function(fasta,
   if (collapse_protein_nodes | collapse_peptide_nodes) {
     message("Collapsing nodes ...")
     edgelist_coll <- .collapseEdgelist(edgelist,
-                                             collapse_protein_nodes = collapse_protein_nodes,
-                                             collapse_peptide_nodes = collapse_peptide_nodes)
+                              collapse_protein_nodes = collapse_protein_nodes,
+                              collapse_peptide_nodes = collapse_peptide_nodes)
   }
 
   if(collapse_protein_nodes & collapse_peptide_nodes) suffix2 <- "collprotpept_"
