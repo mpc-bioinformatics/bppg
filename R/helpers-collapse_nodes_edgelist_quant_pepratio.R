@@ -22,57 +22,73 @@
 #' edgelist_collapsed <- bppg:::.collapseEdgelist(edgelist)
 #'
 
-
+#### TODO TO LONG simplified
 .collapseEdgelistQuant <- function(edgelist,
-                                    collProtNodes = TRUE,
-                                    collPeptNodes = TRUE) {
+    collProtNodes = TRUE,
+    collPeptNodes = TRUE) {
 
-  if (!collProtNodes & !collPeptNodes) {
-    return(edgelist)
-  }
+    if (!collProtNodes && !collPeptNodes) {
+        return(edgelist)
+    }
 
-  ### Calculate list if protein nodes
-  if (collProtNodes) {
-    ### aggregate peptide sequences that belong to the same protein accession (1 row per protein accession)
-    protEdges <- stats::aggregate(data = edgelist, x = cbind(peptide, pep_ratio) ~ protein, function(x) paste(sort(unique(x)), collapse = ";"))
-    ### aggregate proteins with the same set of peptides (-> protein nodes)
-    protNodes <- stats::aggregate(data = protEdges, x = protein ~ peptide+pep_ratio, function(x) paste(sort(unique(x)), collapse = ";"))
-  } else {
-    protEdges <- stats::aggregate(data = edgelist, x = peptide ~ protein, function(x) paste(sort(unique(x)), collapse = ";"))
-    protNodes <- protEdges
-  }
+    ## Calculate list if protein nodes
+    if (collProtNodes) {
+        ## aggregate peptide sequences that belong to the same protein accession 
+        ## (1 row per protein accession)
+        protEdges <- stats::aggregate(data = edgelist,
+            x = cbind(peptide, pep_ratio) ~ protein,
+            function(x) paste(sort(unique(x)), collapse = ";"))
+        ## aggregate proteins with the same set of peptides (-> protein nodes)
+        protNodes <- stats::aggregate(data = protEdges,
+            x = protein ~ peptide + pep_ratio,
+            function(x) paste(sort(unique(x)), collapse = ";"))
+    } else {
+        protEdges <- stats::aggregate(data = edgelist,
+            x = peptide ~ protein,
+            function(x) paste(sort(unique(x)), collapse = ";"))
+        protNodes <- protEdges
+    }
 
+    ## calculate list of peptide nodes
+    if (collPeptNodes) {
+        ## aggregate protein accessions belonging to the same peptide sequences
+        ## (1 row per peptide sequence)
+        pepEdges <- stats::aggregate(data = edgelist,
+            x = protein ~ peptide + pep_ratio,
+            function(x) paste(sort(unique(x)), collapse = ";"))
+        ## aggregate peptides with the same set of proteins (-> peptide nodes)
+        pepNodes <- stats::aggregate(data = pepEdges,
+            x = cbind(peptide, pep_ratio) ~ protein,
+            function(x) paste(sort(unique(x)), collapse = ";"))
+    } else {
+        pepEdges <- stats::aggregate(data = edgelist,
+            x = protein ~ peptide + pep_ratio,
+            function(x) paste(sort(unique(x)), collapse = ";"),
+            simplify = FALSE)
+        pepNodes <- pepEdges
+    }
 
-  ### calculate list of peptide nodes
-  if (collPeptNodes) {
-    ### aggregate protein accessions belonging to the same peptide sequences (1 row per peptide sequence)
-    pepEdges <- stats::aggregate(data = edgelist, x = protein ~ peptide + pep_ratio, function(x) paste(sort(unique(x)), collapse = ";"))
-    ### aggregate peptides with the same set of proteins (-> peptide nodes)
-    pepNodes <- stats::aggregate(data = pepEdges, x = cbind(peptide, pep_ratio) ~ protein, function(x) paste(sort(unique(x)), collapse = ";"))
-  } else {
-    pepEdges <- stats::aggregate(data = edgelist, x = protein ~ peptide + pep_ratio, function(x) paste(sort(unique(x)), collapse = ";"), simplify = FALSE)
-    pepNodes <- pepEdges
-  }
+    edgelist2 <- edgelist
+    pepNodes2 <- pepNodes  
+    ## first peptide from list
+    pepNodes2$peptide <- limma::strsplit2(pepNodes2$peptide, ";")[, 1]
+    edgelist2 <- edgelist[edgelist$peptide %in% pepNodes2$peptide, ]
 
+    protNodes2 <- protNodes
+    protNodes2$protein <- limma::strsplit2(protNodes2$protein, ";")[, 1]  
+    ## first peptide from list
+    edgelist3 <- edgelist2[edgelist2$protein %in% protNodes2$protein, ]
 
-  edgelist2 <- edgelist
+    edgelist4 <- edgelist3
+    edgelist4$protein <- protNodes$protein[match(edgelist3$protein, 
+            protNodes2$protein)]
+    edgelist4$peptide <- pepNodes$peptide[match(edgelist3$peptide,
+            pepNodes2$peptide)]
+    edgelist4$pep_ratio <- pepNodes$pep_ratio[match(edgelist3$peptide,
+            pepNodes2$peptide)]
 
-  pepNodes2 <- pepNodes
-  pepNodes2$peptide <- limma::strsplit2(pepNodes2$peptide, ";")[,1]  # first peptide from list
-  edgelist2 <- edgelist[edgelist$peptide %in% pepNodes2$peptide,]
-
-  protNodes2 <- protNodes
-  protNodes2$protein <- limma::strsplit2(protNodes2$protein, ";")[,1]  # first peptide from list
-  edgelist3 <- edgelist2[edgelist2$protein %in% protNodes2$protein,]
-
-  edgelist4 <- edgelist3
-  edgelist4$protein <- protNodes$protein[match(edgelist3$protein, protNodes2$protein)]
-  edgelist4$peptide <- pepNodes$peptide[match(edgelist3$peptide, pepNodes2$peptide)]
-  edgelist4$pep_ratio <- pepNodes$pep_ratio[match(edgelist3$peptide, pepNodes2$peptide)]
-
-  invisible(NULL)
-
-  return(edgelist4)
+    invisible(NULL)
+    return(edgelist4)
 }
 
 

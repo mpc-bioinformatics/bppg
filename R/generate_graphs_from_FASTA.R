@@ -33,31 +33,29 @@
 #'
 
 generateGraphsFromFASTA <- function(fasta,
-                                    collProtNodes = TRUE,
-                                    collPeptNodes = TRUE,
-                                    result_path = NULL,
-                                    suffix = NULL,
-                                    save_intermediate = FALSE,
-                                    prot_origin = NULL,
-                                    ...) {
-
+    collProtNodes = TRUE,
+    collPeptNodes = TRUE,
+    result_path = NULL,
+    suffix = NULL,
+    save_intermediate = FALSE,
+    prot_origin = NULL,
+    ...) {
     message("Digesting FASTA file ...")
     digested_proteins <- bppg::digestFASTA(fasta, ...)
     message("Generating edgelist ...")
     edgelist <- bppg::generateEdgelist(digested_proteins,
-                                       prot_origin = prot_origin)
+        prot_origin = prot_origin)
     if (save_intermediate) {
         message("Saving edgelist ...")
         utils::write.table(edgelist, sep = "\t", row.names = FALSE,
-                           file = paste0(result_path, "edgelist_",
-                                         suffix, ".txt"))
+            file = paste0(result_path, "edgelist_",
+                suffix, ".txt"))
     }
 
     if (collProtNodes || collPeptNodes) {
         message("Collapsing nodes ...")
         edgelist_coll <- .collapseEdgelist(edgelist,
-                                           collProtNodes = collProtNodes,
-                                           collPeptNodes = collPeptNodes)
+            collProtNodes = collProtNodes, collPeptNodes = collPeptNodes)
     }
 
     if (collProtNodes && collPeptNodes) suffix2 <- "collprotpept_"
@@ -67,11 +65,10 @@ generateGraphsFromFASTA <- function(fasta,
 
     if (save_intermediate && (collProtNodes || collPeptNodes)) {
         utils::write.table(edgelist_coll, sep = "\t", row.names = FALSE,
-                           file = paste0(result_path, "edgelist_",
-                                         suffix2, suffix, ".txt"))
+            file = paste0(result_path, "edgelist_", suffix2, suffix, ".txt"))
     }
 
-    if (collProtNodes | collPeptNodes) {
+    if (collProtNodes || collPeptNodes) {
         message("Generating graphs ...")
         graphs <- .generateGraphsFromEdgelist(edgelist_coll)
     } else {
@@ -82,7 +79,7 @@ generateGraphsFromFASTA <- function(fasta,
 
     if (save_intermediate) {
         saveRDS(graphs, file = paste0(result_path, "subgraphs_",
-                                      suffix2, suffix, ".rds"))
+                suffix2, suffix, ".rds"))
     }
     return(graphs)
 }

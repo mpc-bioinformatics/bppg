@@ -1,38 +1,49 @@
-#' Adds vertex attributes with uniqueness of peptides and number of unique peptides for proteins.
+#' Adds vertex attributes with uniqueness of peptides and number of unique
+#' peptides for proteins.
 #'
 #' @param G \strong{igraph graph object} \cr
 #'          A peptide-protein graph.
 #'
-#' @return A graph with 2 additional vertex attributes, uniqueness and nr_unique_peptides
+#' @return A graph with 2 additional vertex attributes, uniqueness and 
+#'         nr_unique_peptides
 #'
 #'
-#' @seealso [generateGraphsFromFASTA()], [.generateQuantGraphs()], [.addAveragePepRatio()]
+#' @seealso [generateGraphsFromFASTA()], [.generateQuantGraphs()],
+#'          [.addAveragePepRatio()]
 #'
 #' @examples
 
 .addUniquenessAttributes <- function(G) {
+    ## FALSE = peptide, TRUE = protein
+    igraph::V(G)$type
 
-  ### FALSE = peptide, TRUE = protein
-  igraph::V(G)$type
+    uniqueness <- igraph::degree(G, igraph::V(G)) == 1
+    ## attribute only for peptides
+    uniqueness[igraph::V(G)$type] <- NA 
 
-  uniqueness <- igraph::degree(G, igraph::V(G)) == 1
-  uniqueness[igraph::V(G)$type] <- NA # attribute only for peptides
+    G <- igraph::set_vertex_attr(G, "uniqueness", value = uniqueness)
 
-  G <- igraph::set_vertex_attr(G, "uniqueness", value = uniqueness)
+    unique_peptide_nodes <- igraph::V(G)[igraph::V(G)$uniqueness &
+            !is.na(igraph::V(G)$uniqueness)]
+    shared_peptide_nodes <- igraph::V(G)[!igraph::V(G)$uniqueness &
+            !is.na(igraph::V(G)$uniqueness)]
 
-  unique_peptide_nodes <- igraph::V(G)[igraph::V(G)$uniqueness & !is.na(igraph::V(G)$uniqueness)]
-  shared_peptide_nodes <- igraph::V(G)[!igraph::V(G)$uniqueness & !is.na(igraph::V(G)$uniqueness)]
+    neighborhood <- igraph::ego(G, order = 1, mindist = 1, nodes = igraph::V(G))
 
-  neighborhood <-  igraph::ego(G, order = 1, mindist = 1, nodes = igraph::V(G))
+    ## TODO VAPPLY
+    nr_unique_peptides <- sapply(neighborhood, function(x) {
+        sum(x %in% unique_peptide_nodes)
+    })
+    nr_unique_peptides[!igraph::V(G)$type] <- NA ## attribute only for proteins
+    G <- igraph::set_vertex_attr(G, "nr_unique_peptides",
+        value = nr_unique_peptides)
 
-  nr_unique_peptides <- sapply(neighborhood, function(x) sum(x%in% unique_peptide_nodes))
-  nr_unique_peptides[!igraph::V(G)$type] <- NA ## attribute only for proteins
-  G <- igraph::set_vertex_attr(G, "nr_unique_peptides", value = nr_unique_peptides)
-
-  nr_shared_peptides <- sapply(neighborhood, function(x) sum(x%in% shared_peptide_nodes))
-  nr_shared_peptides[!igraph::V(G)$type] <- NA ## attribute only for proteins
-  G <- igraph::set_vertex_attr(G, "nr_shared_peptides", value = nr_shared_peptides)
-
+    nr_shared_peptides <- sapply(neighborhood, function(x) {
+        sum(x%in% shared_peptide_nodes)
+    })
+    nr_shared_peptides[!igraph::V(G)$type] <- NA ## attribute only for proteins
+    G <- igraph::set_vertex_attr(G, "nr_shared_peptides",
+        value = nr_shared_peptides)
 }
 
 
@@ -40,7 +51,8 @@
 
 
 
-#' Adds average peptide ratios as a attribute to the graphs, if a list of peptide ratios is already present.
+#' Adds average peptide ratios as a attribute to the graphs, if a list of
+#' peptide ratios is already present.
 #'
 #' @param G      \strong{igraph graph object} \cr
 #'               A peptide-protein graph.
@@ -50,24 +62,24 @@
 #' @return A graph with added peptide ratio attributes.
 #'
 #'
-#' @seealso [generateGraphsFromFASTA()], [.generateQuantGraphs()], [.addUniquenessAttributes()]
+#' @seealso [generateGraphsFromFASTA()], [.generateQuantGraphs()],
+#'          [.addUniquenessAttributes()]
 #'
 #' @examples
 
 .addAveragePepRatio <- function(G, type = "geom_mean") {
 
-  pep_ratio <- igraph::V(G)$pep_ratio
-  pep_ratio_split <- strsplit(pep_ratio, ";")
+    pep_ratio <- igraph::V(G)$pep_ratio
+    pep_ratio_split <- strsplit(pep_ratio, ";")
 
-  pep_ratio_aggr <- sapply(pep_ratio_split, function(x){
-    .geomMean(as.numeric(x))})
+    pep_ratio_aggr <- sapply(pep_ratio_split, function(x) {
+        .geomMean(as.numeric(x))})
 
+    nr_sequences <- sapply(pep_ratio_split, length)
 
-  nr_sequences <- sapply(pep_ratio_split, length)
-
-  G <- igraph::set_vertex_attr(G, "pep_ratio_aggr", value = pep_ratio_aggr)
-  G <- igraph::set_vertex_attr(G, "nr_sequences", value = nr_sequences)
-  return(G)
+    G <- igraph::set_vertex_attr(G, "pep_ratio_aggr", value = pep_ratio_aggr)
+    G <- igraph::set_vertex_attr(G, "nr_sequences", value = nr_sequences)
+    return(G)
 }
 
 

@@ -3,7 +3,8 @@
 #' @param x         \strong{numeric vector} \cr
 #'                  Input data.
 #' @param useprod   \strong{logical} \cr
-#'                  If \code{TRUE}, prod(x)^(1/n) will be calculated, otherwise exp(mean(log(x))).
+#'                  If \code{TRUE}, prod(x)^(1/n) will be calculated, otherwise
+#'                  exp(mean(log(x))).
 #'
 #' @return The geometric mean of the provided data points.
 #'
@@ -13,14 +14,11 @@
 #' result <- bppg:::.geomMean(data, useprod = FALSE)
 
 .geomMean <- function(x, useprod = FALSE) {
-  n <- length(x)
+    n <- length(x)
 
-  if (useprod) {
-  return(prod(x)^(1/n))
-  } else {
-    return(exp(mean(log(x))))
-  }
+    if (useprod) {
+        return(prod(x)^(1 / n))
+    } else {
+        return(exp(mean(log(x))))
+    }
 }
-
-
-
