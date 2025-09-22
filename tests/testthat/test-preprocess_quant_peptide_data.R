@@ -25,7 +25,7 @@ test_that("test .foldChange", {
   df <- list()
   df <- c(df, sequence = list(paste0("pep_", 1:10)))
   for (i in 1:2) {
-    set.seed(i+2)
+    set.seed(i + 2)
     df[[paste0("sample", i)]] <- runif(10, min = 15, max = 25)
     num_na <- sample(1:10, size = sample(1:2, 1))
     df[[paste0("sample", i)]][num_na] <- NA

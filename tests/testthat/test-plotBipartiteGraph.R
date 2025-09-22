@@ -3,7 +3,7 @@ test_that("plot a bipartite graph", {
   # Skip this test on continuous integration systems like GitHub Actions
   # The function expect_snapshot_file is otherwise too strict
   # and there is no way to get a few pixel of tolerance
-  #testthat::skip_on_ci()
+  testthat::skip_on_ci()
 
   # Create a temporary directory so no permanent files are put on a package users directory
   temp_dir <- tempfile(pattern = "test_dir")
@@ -29,7 +29,6 @@ test_that("plot a bipartite graph", {
   plotBipartiteGraph(bipartite_graph)
   dev.off()
 
-
-  expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph.png"), name = "plotBipartitGraph.png" )
+  expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph.png"), name = "plotBipartitGraph.png")
 
 })

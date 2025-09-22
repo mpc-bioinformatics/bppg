@@ -59,7 +59,7 @@ test_that("test generateGraphsFromQuantData", {
 
   # Create intensity table
   set.seed(4)
-  res <- digestFASTA(fasta)
+  res <- bppg::digestFASTA(fasta)
   peptides <- c()
   for (i in 1:10) {
     peptides <- c(peptides, res[[i]][sample(1:length(res[[i]]), size = round(length(res[[i]])*0.75))])
@@ -77,19 +77,23 @@ test_that("test generateGraphsFromQuantData", {
   }
 
   # Compute function
-  graphs <- generateGraphsFromQuantData(D = data_table,
+  graphs <- bppg::generateGraphsFromQuantData(D = data_table,
                                             fasta = fasta,
-                                            outpath = temp_dir)
-
+                                            outpath = paste0(temp_dir, "/"))
 
   # Check results
-  expect_true(file.exists(paste0(temp_dir, "edgelist_fasta_.xlsx")))
-  expect_true(file.exists(paste0(temp_dir, "aggr_peptides_.xlsx")))
-  expect_true(file.exists(paste0(temp_dir, "peptide_ratios_.xlsx")))
+  expect_true(file.exists(file.path(temp_dir, "edgelist_fasta_.xlsx")))
+  expect_true(file.exists(file.path(temp_dir, "aggr_peptides_.xlsx")))
+  expect_true(file.exists(file.path(temp_dir, "peptide_ratios_.xlsx")))
+  expect_true(file.exists(file.path(temp_dir, "edgelist_filtered_.xlsx")))
 
-  expect_equal(unname(lapply(graphs[[1]], length)), list(173, 67, 17))
-  expect_equal(unname(lapply(graphs[[2]], length)), list(176, 62, 22))
-  expect_equal(unname(lapply(graphs[[3]], length)), list(168, 62, 22))
+  for (i in 1:3) {
+    for (j in seq_along(graphs[[i]])) {
+      expect_snapshot(igraph::as_edgelist(graphs[[i]][[j]]))
+      expect_snapshot(igraph::vertex_attr(graphs[[1]][[1]], "pep_ratio"))
+    }
+  }
+
 
 })
 
