@@ -1,5 +1,6 @@
 #' Enchanced version of the igraph::isomorphic function that also considers the
-#' node type in bipartite graphs, e.g. that W- and M-shaped graphs are NOT isomorphic
+#' node type in bipartite graphs, e.g. that W- and M-shaped graphs are NOT 
+#' isomorphic
 #'
 #' @param graph1   \strong{graph (igraph)} \cr
 #'                 First graph.
@@ -17,13 +18,11 @@
 
 .isomorphicBipartite <- function(graph1, graph2, ...) {
 
-  ## direct graphs if they are not directed yet
-  if (!igraph::is_directed(graph1))   graph1 <- .directBipartiteGraph(graph1)
-  if (!igraph::is_directed(graph2))   graph2 <- .directBipartiteGraph(graph2)
+    ## direct graphs if they are not directed yet
+    if (!igraph::is_directed(graph1))   graph1 <- .directBipartiteGraph(graph1)
+    if (!igraph::is_directed(graph2))   graph2 <- .directBipartiteGraph(graph2)
 
-  iso <- igraph::isomorphic(graph1, graph2, method = "vf2")
-
-  return(iso)
+    igraph::isomorphic(graph1, graph2, method = "vf2")
 }
 
 
@@ -34,29 +33,28 @@
 #' @param bip_graph   \strong{graph (igraph)} \cr
 #'                    A bipartite graph.
 #' @param from_type   \strong{logical} \cr
-#'                    If \code{TRUE}, the edges will go out from the vertices with the type \code{TRUE} from the bipartite graph.
+#'                    If \code{TRUE}, the edges will go out from the vertices
+#'                    with the type \code{TRUE} from the bipartite graph.
 #'
 #' @return A bipartite graph that is know directed.
 #'
 #'
-#' @examples # TODO
+#' @examples ## TODO
 #'
 #' @importFrom igraph %->%
 #'
 
-.directBipartiteGraph <- function(bip_graph, from_type = FALSE){
+.directBipartiteGraph <- function(bip_graph, from_type = FALSE) {
 
+    ## turn undirected into directed edges
+    bip_graph <- igraph::as_directed(bip_graph, mode = "arbitrary")
 
-  # turn undirected into directed edges
-  bip_graph <- igraph::as_directed(bip_graph, mode = "arbitrary")
+    from_vs <- igraph::V(bip_graph)[igraph::V(bip_graph)$type == from_type]
+    to_vs <- igraph::V(bip_graph)[igraph::V(bip_graph)$type == !from_type]
 
-  from_vertices <- igraph::V(bip_graph)[igraph::V(bip_graph)$type == from_type]
-  to_vertices <- igraph::V(bip_graph)[igraph::V(bip_graph)$type == !from_type]
+    ## reverse edges going from the "to-group" to the "from-group"
+    bip_graph <- igraph::reverse_edges(bip_graph,
+        igraph::E(bip_graph)[to_vs %->% from_vs])
 
-  # reverse edges going from the "to-group" to the "from-group"
-  bip_graph <- igraph::reverse_edges(bip_graph, igraph::E(bip_graph)[to_vertices %->% from_vertices])
-
-  return(bip_graph)
+    return(bip_graph)
 }
-
-
