@@ -4,14 +4,14 @@ test_that("test .calculateProteinNodeInfo", {
   fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 
   g1 <- generateGraphsFromFASTA(fasta = fasta,
-                                   collapse_protein_nodes = FALSE,
-                                   collapse_peptide_nodes = TRUE)
+                                   collProtNodes = FALSE,
+                                   collPeptNodes = TRUE)
   g2 <- generateGraphsFromFASTA(fasta = fasta,
-                                   collapse_protein_nodes = TRUE,
-                                   collapse_peptide_nodes = FALSE)
+                                   collProtNodes = TRUE,
+                                   collPeptNodes = FALSE)
   g3 <- generateGraphsFromFASTA(fasta = fasta,
-                                   collapse_protein_nodes = FALSE,
-                                   collapse_peptide_nodes = FALSE)
+                                   collProtNodes = FALSE,
+                                   collPeptNodes = FALSE)
 
   graphs <- list(s1_s2 = g1, s1_s3 = g2, s2_s3 = g3)
 

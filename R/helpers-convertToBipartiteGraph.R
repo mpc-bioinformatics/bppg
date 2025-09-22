@@ -11,12 +11,13 @@
 #' bppg:::.convertToBipartiteGraph(M)
 
 .convertToBipartiteGraph <- function(x) {
-  if ("list" %in% class(x)) { # class list if it contains peptide ratios
-    S <- x$X
-  } else   {
-    S <- x
-  }
+    ## class list if it contains peptide ratios
+    if ("list" %in% class(x)) { 
+        S <- x$X
+    } else   {
+        S <- x
+    }
 
-  G <- igraph::graph_from_incidence_matrix(S)
-  return(G)
+    G <- igraph::graph_from_biadjacency_matrix(S)
+    return(G)
 }

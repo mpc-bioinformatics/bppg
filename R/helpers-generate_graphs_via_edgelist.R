@@ -1,4 +1,5 @@
-#' Generate bipartite peptide-protein graphs from a list of digested proteins via an edgelist.
+#' Generate bipartite peptide-protein graphs from a list of digested proteins 
+#' via an edgelist.
 #'
 #' @param edgelist   \strong{data.frame} \cr
 #'                   An edgelist, output from [generateEdgelist()].
@@ -9,9 +10,10 @@
 #' @seealso [generateEdgelist()]
 #'
 #' @examples
-#' ### TODO: example takes longer than 5s
+#' ## TODO: example takes longer than 5s
 #' library(seqinr)
-#' file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
+#' file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta",
+#'  package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' digested_proteins <- digestFASTA(fasta)
 #' edgelist <- generateEdgelist(digested_proteins)
@@ -19,18 +21,16 @@
 #'
 
 .generateGraphsFromEdgelist <- function(edgelist) {
+    #generate graph from edge matrix
+    G <- igraph::graph_from_edgelist(as.matrix(edgelist[,1:2]),
+        directed = FALSE)
 
-  #generate graph from edge matrix
-  G <- igraph::graph_from_edgelist(as.matrix(edgelist[,1:2]), directed = FALSE)
+    #assign vertex types to proteins and peptides for the graph to be bipartite
+    igraph::V(G)[igraph::V(G)$name %in% edgelist[, 1]]$type <- TRUE
+    igraph::V(G)[igraph::V(G)$name %in% edgelist[, 2]]$type <- FALSE
 
-  #assign vertex types to proteins and peptides for the graph to be bipartite
-  igraph::V(G)[igraph::V(G)$name %in% edgelist[,1]]$type <- TRUE
-  igraph::V(G)[igraph::V(G)$name %in% edgelist[,2]]$type <- FALSE
-
-  #decompose graph into connected components
-  subgraphs <- igraph::decompose(G)
-  return(subgraphs)
-
+    #decompose graph into connected components
+    igraph::decompose(G)
 }
 
 

@@ -45,8 +45,8 @@ test_that("collapsing of edgelists", {
 
   edgelist <- readRDS(testthat::test_path("testfiles/edgelist_test.rds"))
   res <- bppg:::.collapseEdgelist(edgelist,
-                                 collapse_protein_nodes = TRUE,
-                                 collapse_peptide_nodes = TRUE)
+                                 collProtNodes = TRUE,
+                                 collPeptNodes = TRUE)
 
   expect_equal(res, edgelist_coll_pept_prot)
 
@@ -55,8 +55,8 @@ test_that("collapsing of edgelists", {
 
   edgelist <- readRDS(testthat::test_path("testfiles/edgelist_test.rds"))
   res2 <- bppg:::.collapseEdgelist(edgelist,
-                                  collapse_protein_nodes = TRUE,
-                                  collapse_peptide_nodes = FALSE)
+                                  collProtNodes = TRUE,
+                                  collPeptNodes = FALSE)
 
   expect_equal(res2, edgelist_coll_prot)
 })
@@ -132,6 +132,6 @@ test_that("subgraph characteristics table", {
 #
 #
 # edgelist_coll <- bppg::.collapseEdgelistQuant(edgelist,
-#                                                collapse_protein_nodes = TRUE,
-#                                                collapse_peptide_nodes = TRUE)
+#                                                collProtNodes = TRUE,
+#                                                collPeptNodes = TRUE)
 

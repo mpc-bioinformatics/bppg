@@ -93,7 +93,7 @@ test_that("test .collapseEdgelistQuant", {
 
   edgelist <- data.frame(protein = proteins, peptide = peptides, pep_ratio = pep_ratios)
 
-  collapsed_edgelist <- .collapseEdgelistQuant(edgelist = edgelist, collapse_protein_nodes = TRUE, collapse_peptide_nodes = TRUE)
+  collapsed_edgelist <- .collapseEdgelistQuant(edgelist = edgelist, collProtNodes = TRUE, collPeptNodes = TRUE)
 
 
   # The expected result
@@ -145,8 +145,8 @@ test_that("test .generateQuantGraphs", {
                                   fasta_edgelist = edgelist,
                                   outpath = temp_dir,
                                   seq_column = "peptides",
-                                  collapse_protein_nodes = TRUE,
-                                  collapse_peptide_nodes = TRUE,
+                                  collProtNodes = TRUE,
+                                  collPeptNodes = TRUE,
                                   suffix = "")
 
   # The expected edgelists of the graphs from the first ratios
