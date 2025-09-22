@@ -3,7 +3,8 @@
 \name{.isomorphicBipartite}
 \alias{.isomorphicBipartite}
 \title{Enchanced version of the igraph::isomorphic function that also considers the
-node type in bipartite graphs, e.g. that W- and M-shaped graphs are NOT isomorphic}
+node type in bipartite graphs, e.g. that W- and M-shaped graphs are NOT
+isomorphic}
 \usage{
 .isomorphicBipartite(graph1, graph2, ...)
 }
@@ -21,7 +22,8 @@ TRUE if graphs are isomorphic, FALSE if not.
 }
 \description{
 Enchanced version of the igraph::isomorphic function that also considers the
-node type in bipartite graphs, e.g. that W- and M-shaped graphs are NOT isomorphic
+node type in bipartite graphs, e.g. that W- and M-shaped graphs are NOT
+isomorphic
 }
 \seealso{
 \code{\link[=.generateGraphsFromEdgelist]{.generateGraphsFromEdgelist()}}

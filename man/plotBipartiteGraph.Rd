@@ -29,7 +29,8 @@ plotBipartiteGraph(
 A bipartite peptide-protein graph.}
 
 \item{vertex.label.dist}{\strong{numeric} \cr
-The distance of the label from center of the vertex (0 = centered in vertex).}
+The distance of the label from center of the
+vertex (0 = centered in vertex).}
 
 \item{legend}{\strong{logical} \cr
 If \code{TRUE}, a legend will be added.}
@@ -50,28 +51,41 @@ The width of the edges.}
 The vertex size 2.}
 
 \item{useCanonicalPermutation}{\strong{logical} \cr
-If \code{TRUE}, the graph will be converted into the canonical permutation before plotting.}
+If \code{TRUE}, the graph will be converted
+into the canonical permutation before
+plotting.}
 
 \item{three_shapes}{\strong{logical} \cr
-If \code{TRUE}, a separate shape will be used for the unique peptides.}
+If \code{TRUE}, a separate shape will be
+used for the unique peptides.}
 
 \item{node_labels_proteins}{\strong{character} \cr
-The type of labels for the proteins. Options are "letters" or "acessions".}
+The type of labels for the proteins. Options
+are "letters" or "acessions".}
 
 \item{node_labels_peptides}{\strong{character} \cr
-The type of labels for the peptides. Options are"numbers" or "pep_ratios" or "pep_ratio_aggr".}
+The type of labels for the peptides. Options
+are"numbers" or "pep_ratios" or
+"pep_ratio_aggr".}
 
 \item{round_digits}{\strong{integer} \cr
-The number of digits to round the peptide ratios to.}
+The number of digits to round the peptide
+ratios to.}
 
 \item{use_edge_attributes}{\strong{logical} \cr
-If \code{TRUE}, edge attributes will be used for plotting (e.g. deleted edges will be dashed)}
+If \code{TRUE}, edge attributes will be used
+for plotting (e.g. deleted edges will be
+dashed)}
 
 \item{legend.x}{\strong{numeric or character} \cr
-The x-coordinate of the legend or a keyword for the position. See \code{\link[graphics:legend]{graphics::legend()}} for details.}
+The x-coordinate of the legend or a keyword
+for the position. See \code{\link[graphics:legend]{graphics::legend()}}
+for details.}
 
 \item{legend.y}{\strong{numeric or character} \cr
-The y-coordinate of the legend or a keyword for the position. See \code{\link[graphics:legend]{graphics::legend()}} for details.}
+The y-coordinate of the legend or a keyword
+for the position. See \code{\link[graphics:legend]{graphics::legend()}}
+for details.}
 
 \item{...}{Additional arguments for plot.igraph.}
 }
@@ -85,4 +99,5 @@ Plotting of bipartite peptide-protein graphs.
 biadjacency_matrix <- matrix(c(1,1,1,0), nrow = 2)
 G <- igraph::graph_from_biadjacency_matrix(biadjacency_matrix)
 plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
+
 }

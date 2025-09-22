@@ -17,7 +17,7 @@ A data frame with information on number of unique/shared peptides.
 Table with information on each protein node
 }
 \examples{
-# TODO
+## TODO
 }
 \seealso{
 For the generation of the list of lists of igraphs: \code{\link[=generateGraphsFromQuantData]{generateGraphsFromQuantData()}}

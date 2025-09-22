@@ -17,13 +17,15 @@ calculatePeptideRatios(
 The result from function \code{\link[=aggregateReplicates]{aggregateReplicates()}}.}
 
 \item{id_cols}{\strong{integer vector} \cr
-The column numbers that contain peptide sequences etc (everything except intensities).}
+The column numbers that contain peptide sequences
+etc (everything except intensities).}
 
 \item{group_levels}{\strong{character factor} \cr
 The levels of groups in the right order.}
 
 \item{type}{\strong{character} \cr
-Options "ratio" or "difference". Use "difference" if values are already on log-scale.}
+Options "ratio" or "difference". Use "difference"
+if values are already on log-scale.}
 
 \item{log_base}{\strong{numeric} \cr
 The log base.}
@@ -35,6 +37,6 @@ A data set with peptide ratios.
 Calculation of peptide ratios from aggregated intensities.
 }
 \examples{
-# TODO
+## TODO
 
 }

@@ -19,22 +19,27 @@ readMqPeptideTable(
 The path to the peptides.txt table}
 
 \item{LFQ}{\strong{logical} \cr
-If \code{TRUE}, LFQ intensities are used, if FALSE, raw (unnormalized) intensities}
+If \code{TRUE}, LFQ intensities are used,
+if FALSE, raw (unnormalized) intensities}
 
 \item{remove_contaminants}{\strong{logical} \cr
-If \code{TRUE}, peptide sequences from potential contaminants are removed}
+If \code{TRUE}, peptide sequences from
+potential contaminants are removed}
 
 \item{rename_columns}{\strong{logical} \cr
-If \code{TRUE}, "Intensity." or "LFQ.intensity." are removed}
+If \code{TRUE}, "Intensity." or
+"LFQ.intensity." are removed}
 
 \item{zeroToNA}{\strong{logical} \cr
 If \code{TRUE}, zeros are converted to NAs.}
 
 \item{remove_empty_rows}{\strong{logical} \cr
-If \code{TRUE}, rows with only NAs are removed.}
+If \code{TRUE}, rows with only NAs are
+removed.}
 
 \item{further_columns_to_keep}{\strong{integer vector} \cr
-Indices of additional columns to keep, except peptide sequence and intensities}
+Indices of additional columns to keep,
+except peptide sequence and intensities}
 }
 \value{
 A data frame with sequences and intensities.

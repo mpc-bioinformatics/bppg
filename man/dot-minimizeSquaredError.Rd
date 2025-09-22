@@ -2,7 +2,8 @@
 % Please edit documentation in R/quant-minimize_squared_error.R
 \name{.minimizeSquaredError}
 \alias{.minimizeSquaredError}
-\title{Function to set up the optimization problem and minimize the sum of squared error terms}
+\title{Function to set up the optimization problem and minimize the sum of squared
+error terms}
 \usage{
 .minimizeSquaredError(
   S,
@@ -16,21 +17,30 @@
 }
 \arguments{
 \item{S}{\strong{list} \cr
-A list of biadjacency matrix of the bipartite peptide-protein graph (X) and measured peptide ratios (fc).}
+A list of biadjacency matrix of the bipartite
+peptide-protein graph (X) and
+measured peptide ratios (fc).}
 
 \item{fixed.Ci}{\strong{numeric vector} \cr
-The fixed protein weights, variable weights set as NA. Sum of fixed weights must not exceed 1.
+The fixed protein weights, variable weights set as NA.
+Sum of fixed weights must not exceed 1.
 If NULL, all Cis will be considered as variable.
-This argument is needed to fix Ci on a grid point in the iterated_Ci function.}
+This argument is needed to fix Ci on a grid point in the
+iterated_Ci function.}
 
 \item{verbose}{\strong{logical} \cr
-If \code{TRUE}, additional information on each iteration of the optimization is printed (see also rsolnp function in package Rsolnp).}
+If \code{TRUE}, additional information on each iteration
+of the optimization is printed (see also rsolnp function
+in package Rsolnp).}
 
 \item{reciprocal}{\strong{logical} \cr
-If \code{TRUE}, the reciprocal of the peptide ratios is used for the optimization.}
+If \code{TRUE}, the reciprocal of the peptide ratios is
+used for the optimization.}
 
 \item{log_level}{\strong{logical} \cr
-If \code{TRUE}, the Ri are log2-transformed before optimization, allowing a symmetric consideration of Ri < 0 and > 0.}
+If \code{TRUE}, the Ri are log2-transformed before
+optimization, allowing a symmetric consideration of
+Ri < 0 and > 0.}
 
 \item{control}{\strong{list} \cr
 The control parameters for solnp.}
@@ -41,13 +51,18 @@ The control parameters for solnp.}
 list containing the following elements:
 \item{Ri}{estimated protein ratios}
 \item{Ci}{estimated protein weights}
-\item{RES}{final result of .errorEquation(), which also contains the final, minimal error term}
-\item{Tracking}{Tracking of Ri, Ci and error term for the different iterations}
-\item{outer.iter}{Number of outer iterations needed for the optimization algorithm to converge or stop}
-\item{convergence}{Indicates whether the solver has converged (0) or not (1 or 2).}
+\item{RES}{final result of .errorEquation(), which also contains the final,
+minimal error term}
+\item{Tracking}{Tracking of Ri, Ci and error term for the
+different iterations}
+\item{outer.iter}{Number of outer iterations needed for the optimization
+algorithm to converge or stop}
+\item{convergence}{Indicates whether the solver has converged (0) or
+not (1 or 2).}
 }
 \description{
-Function to set up the optimization problem and minimize the sum of squared error terms
+Function to set up the optimization problem and minimize the sum of squared
+error terms
 }
 \examples{
 M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)

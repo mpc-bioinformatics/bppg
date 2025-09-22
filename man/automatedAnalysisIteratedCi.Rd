@@ -15,28 +15,40 @@ automatedAnalysisIteratedCi(
 }
 \arguments{
 \item{S}{\strong{igraph graph object OR list} \cr
-An igraph graph of the bipartite peptide-protein graph with peptide ratios
+An igraph graph of the bipartite
+peptide-protein graph with peptide
+ratios
 OR
-a list of the biadjacency matrix of the bipartite peptide-protein graph (named "X")
-and the measured peptide ratios (named "fc"). \cr
-Set \code{S_is_graph} depending on the input type.}
+a list of the biadjacency matrix of the
+bipartite peptide-protein graph
+(named "X") and the measured peptide
+ratios (named "fc"). \cr
+Set \code{S_is_graph} depending on the
+input type.}
 
 \item{res}{\strong{list} \cr
-The list resulting from the \code{\link[=iterateOverCi]{iterateOverCi()}} function.}
+The list resulting from the
+\code{\link[=iterateOverCi]{iterateOverCi()}} function.}
 
 \item{use_results_from_other_proteins}{\strong{logical} \cr
-If \code{TRUE}, the results from other proteins within the same graph will be used
-to calculate the optimal solution for each protein node.}
+If \code{TRUE}, the results from
+other proteins within the same graph
+will be used to calculate the
+optimal solution for each protein
+node.}
 
 \item{verbose}{\strong{logical} \cr
-If \code{TRUE}, additional information will be printed.}
+If \code{TRUE}, additional information
+will be printed.}
 
 \item{job}{\strong{BatchExperiment job object} \cr
-Is used to print the job id and parameters in the output}
+Is used to print the job id and
+parameters in the output}
 
 \item{S_is_graph}{\strong{logical} \cr
-If \code{TRUE}, S is an igraph object and
-if \code{FALSE} S is a list with the biadjacency matrix and fold changes.}
+If \code{TRUE}, S is an igraph object
+and if \code{FALSE} S is a list with the
+biadjacency matrix and fold changes.}
 }
 \value{
 A data frame
@@ -45,7 +57,7 @@ A data frame
 Extract protein ratio solutions from the result of iterateOverCi()
 }
 \examples{
-# TODO
+## TODO
 }
 \seealso{
 \code{\link[=iterateOverCi]{iterateOverCi()}}, \code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}}

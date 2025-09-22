@@ -6,8 +6,8 @@
 \usage{
 generateGraphsFromFASTA(
   fasta,
-  collapse_protein_nodes = TRUE,
-  collapse_peptide_nodes = TRUE,
+  collProtNodes = TRUE,
+  collPeptNodes = TRUE,
   result_path = NULL,
   suffix = NULL,
   save_intermediate = FALSE,
@@ -17,22 +17,27 @@ generateGraphsFromFASTA(
 }
 \arguments{
 \item{fasta}{\strong{list of vector of chars} \cr
-A fasta file, already read into R by seqinr::read.fasta().}
+A fasta file, already read into R by
+seqinr::read.fasta().}
 
-\item{collapse_protein_nodes}{\strong{logical} \cr
-If \code{TRUE}, the protein nodes will be collapsed.}
+\item{collProtNodes}{\strong{logical} \cr
+If \code{TRUE}, the protein nodes will
+be collapsed.}
 
-\item{collapse_peptide_nodes}{\strong{logical} \cr
-If \code{TRUE}, the peptide nodes will be collapsed.}
+\item{collPeptNodes}{\strong{logical} \cr
+If \code{TRUE}, the peptide nodes will
+be collapsed.}
 
 \item{result_path}{\strong{character} \cr
-The path where results are saved. If \code{NULL}, results are not saved.}
+The path where results are saved. If
+\code{NULL}, results are not saved.}
 
 \item{suffix}{\strong{character} \cr
 The suffix for saving results.}
 
 \item{save_intermediate}{\strong{logical} \cr
-If \code{TRUE}, the intermediate results will also be saved.}
+If \code{TRUE}, the intermediate results
+will also be saved.}
 
 \item{prot_origin}{\strong{character vector} \cr
 The origin of protein, e.g. organism etc.}
@@ -40,7 +45,8 @@ The origin of protein, e.g. organism etc.}
 \item{...}{Additional arguments to bppg::digestFASTA()}
 }
 \value{
-subgraphs (i.e. connected components) from the graph generated from the FASTA file.
+subgraphs (i.e. connected components) from the graph generated from
+the FASTA file.
 }
 \description{
 Generate graphs from a FASTA file

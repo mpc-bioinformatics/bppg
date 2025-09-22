@@ -8,10 +8,12 @@ generateEdgelist(digested_proteins, prot_origin = NULL)
 }
 \arguments{
 \item{digested_proteins}{\strong{list of vector of characters} \cr
-The output from \code{\link[=digestFASTA]{digestFASTA()}} (List of vectors of peptide sequences)}
+The output from \code{\link[=digestFASTA]{digestFASTA()}}
+(List of vectors of peptide sequences)}
 
 \item{prot_origin}{\strong{vector of characters} \cr
-origin of the protein (e.g. organism, spike-in/background etc)}
+origin of the protein (e.g. organism,
+spike-in/background etc)}
 }
 \value{
 An edgelist.

@@ -17,7 +17,8 @@ The column name of group1.}
 The column name of group2.}
 
 \item{useNA}{\strong{logical} \cr
-If \code{TRUE},results 0 and Inf are possible, otherwise ratio is NA if value for X or Y is NA}
+If \code{TRUE},results 0 and Inf are possible, otherwise
+ratio is NA if value for X or Y is NA}
 }
 \value{
 The fold changes (Y/X).
@@ -26,6 +27,6 @@ The fold changes (Y/X).
 Calculate peptide ratios for pairwise comparisons of groups (Y/X).
 }
 \examples{
-# TODO
+## TODO
 
 }

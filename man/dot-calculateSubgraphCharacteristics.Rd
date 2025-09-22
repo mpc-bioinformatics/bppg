@@ -13,13 +13,15 @@
 }
 \arguments{
 \item{S}{\strong{list of igraph graph objects} \cr
-A list of subgraphs, where peptide and protein nodes are collapsed.}
+A list of subgraphs, where peptide and protein nodes
+are collapsed.}
 
 \item{fastalevel}{\strong{logical} \cr
 If \code{TRUE}, the subgraphs should be on fasta level}
 
 \item{prototype}{\strong{logical} \cr
-If \code{TRUE}, the subgraphs should be part of a prototype list}
+If \code{TRUE}, the subgraphs should be part of a
+prototype list}
 
 \item{file}{\strong{character} \cr
 A file path where to save the table.}
