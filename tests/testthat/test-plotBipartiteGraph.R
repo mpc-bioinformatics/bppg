@@ -29,7 +29,6 @@ test_that("plot a bipartite graph", {
   plotBipartiteGraph(bipartite_graph)
   dev.off()
 
-
-  expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph.png"), name = "plotBipartitGraph.png" )
+  expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph.png"), name = "plotBipartitGraph.png")
 
 })

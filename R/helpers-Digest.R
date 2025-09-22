@@ -1,7 +1,7 @@
 ### modified version of OrgMassSpecR::Digest
 ### - deleted functionality to calculate peptide masses &
 ###   enzymes other than trypsin
-### - interpret "missed" argument as maximum number of allowed missed cleavages 
+### - interpret "missed" argument as maximum number of allowed missed cleavages
 ###   and only warn if nr or missed cleavages is not possible
 
 #' Digestion of a single protein sequence.
@@ -9,15 +9,15 @@
 #' @param sequence           \strong{character} \cr
 #'                           The protein sequence.
 #' @param enzyme             \strong{character} \cr
-#'                           The enzyme used in digestion e.g. "trypsin" (does 
+#'                           The enzyme used in digestion e.g. "trypsin" (does
 #'                           not cut before proline) or "trypsin.strict" ().
 #' @param missed             \strong{character} \cr
 #'                           The maximal number of missed cleavages.
 #' @param warn               \strong{logical} \cr
-#'                           If \code{TRUE}, warnings will be printed e.g. if a 
+#'                           If \code{TRUE}, warnings will be printed e.g. if a
 #'                           protein has no cleavage site.
 #' @param remove_initial_M   \strong{logical} \cr
-#'                           If \code{TRUE}, the initial methionine will be 
+#'                           If \code{TRUE}, the initial methionine will be
 #'                           removed from the peptides.
 #'
 #' @return A vector of peptides.
@@ -159,7 +159,7 @@
 #'                           The minimal number of amino acids
 #'                           (set to 0 for no filtering).
 #' @param max_aa             \strong{integer} \cr
-#'                           The maximal number of amino acids 
+#'                           The maximal number of amino acids
 #'                           (set to Inf for no filtering).
 #' @param ...                Additional arguments for [.digest2()].
 #'

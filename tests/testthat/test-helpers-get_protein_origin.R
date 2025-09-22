@@ -5,7 +5,11 @@ test_that("test .getProteinOrigin", {
 
   accessions <- c(paste0(names(fasta)[1:3], collapse = ";"),
                   paste0(names(fasta)[4:5], collapse = ";"),
-                  paste0(names(fasta)[6:10], collapse = ";"))
+                  paste0(names(fasta)[6:10], collapse = ";"),
+                  names(fasta)[1],
+                  names(fasta)[3],
+                  names(fasta)[5],
+                  names(fasta)[8])
 
   # Make some accessions from the fasta contaminants/spike-ins
   # and split the rest between different organisms
@@ -13,12 +17,13 @@ test_that("test .getProteinOrigin", {
   spike_ins <- names(fasta)[3:4]
   organisms <- list(human = names(fasta)[5:7], yeast = names(fasta)[8:10])
 
-  origin <- .getProteinOrigin(accessions = accessions,
+  origin <- bppg:::.getProteinOrigin(accessions = accessions,
                                contaminants = contaminants,
                                spike_ins = spike_ins,
                                organisms = organisms)
 
-  res <- c(origin[[1]], origin[[2]], origin[[3]])
+  res <- unname(origin)
 
-  expect_equal(res, c("Contaminant;Spike-in", "Spike-in;human", "human;yeast"))
+  expect_equal(res, c("Contaminant;Spike-in", "Spike-in;human", "human;yeast",
+                      "Contaminant", "Spike-in", "human", "yeast"))
 })
