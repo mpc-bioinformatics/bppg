@@ -1,4 +1,4 @@
-#' Generate bipartite peptide-protein graphs from a list of digested proteins 
+#' Generate bipartite peptide-protein graphs from a list of digested proteins
 #' via an edgelist.
 #'
 #' @param edgelist   \strong{data.frame} \cr

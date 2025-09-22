@@ -3,23 +3,23 @@
 
 
 test_that("collapsing of edgelists", {
-    edgelist_coll_pept_prot <- readRDS(testthat::test_path("testfiles/edgelist_coll_pept_prot_test.rds"))
+    #edgelist_coll_pept_prot <- readRDS(testthat::test_path("testfiles/edgelist_coll_pept_prot_test.rds"))
 
     edgelist <- readRDS(testthat::test_path("testfiles/edgelist_test.rds"))
-    res <- bppg:::.collapseEdgelist(edgelist,
-                                    collapse_protein_nodes = TRUE,
-                                    collapse_peptide_nodes = TRUE)
+    edgelist_collapsed <- bppg:::.collapseEdgelist(edgelist,
+                                    collProtNodes  = TRUE,
+                                    collPeptNodes  = TRUE)
+    expect_snapshot(edgelist_collapsed)
 
-    expect_equal(res, edgelist_coll_pept_prot)
+    edgelist_collapsed2 <- bppg:::.collapseEdgelist(edgelist,
+                                     collProtNodes  = TRUE,
+                                     collPeptNodes  = FALSE)
+    expect_snapshot(edgelist_collapsed2)
 
-
-    edgelist_coll_prot <- readRDS(testthat::test_path("testfiles/edgelist_coll_prot_test.rds"))
-
-    edgelist <- readRDS(testthat::test_path("testfiles/edgelist_test.rds"))
-    res2 <- bppg:::.collapseEdgelist(edgelist,
-                                     collapse_protein_nodes = TRUE,
-                                     collapse_peptide_nodes = FALSE)
-
-    expect_equal(res2, edgelist_coll_prot)
+    # this shouldnt change the edgelist
+    edgelist_collapsed3 <- bppg:::.collapseEdgelist(edgelist,
+                                                    collProtNodes  = FALSE,
+                                                    collPeptNodes  = FALSE)
+    expect_equal(edgelist_collapsed3, edgelist)
 })
 

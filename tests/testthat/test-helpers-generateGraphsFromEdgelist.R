@@ -21,4 +21,5 @@ test_that("generation of graphs from edgelist", {
     expect_true(bppg:::.isomorphicBipartite(res2[[2]], graphs_coll_prot[[2]]))
     expect_true(bppg:::.isomorphicBipartite(res2[[3]], graphs_coll_prot[[3]]))
 
+    # NOTE: snapshots don't work here because of random graph ids
 })

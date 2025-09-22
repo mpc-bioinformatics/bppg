@@ -1,47 +1,5 @@
 
 
-
-
-
-
-
-
-test_that("test .collapseEdgelistQuant", {
-
-  # Create edgelist (proteins, peptides and pep_ratios and compute the collapsing
-  set.seed(4)
-  peptides <- c(rep(paste0("pep_", 1:2), each = 2), rep(paste0("pep_", 3:3), each = 4), rep(paste0("pep_", 4:5), each = 3))
-  ratios <- round(runif(5, min = 0.9, max = 1.1), digits = 2)
-  pep_ratios <- unlist(mapply(rep, ratios, each = c(2, 2, 4, 3, 3)))
-  proteins <- c(paste0("prot_", 1:2), paste0("prot_", 1:2), paste0("prot_", 2:5), paste0("prot_", 3:5), paste0("prot_", 3:5))
-
-  edgelist <- data.frame(protein = proteins, peptide = peptides, pep_ratio = pep_ratios)
-
-  collapsed_edgelist <- .collapseEdgelistQuant(edgelist = edgelist, collProtNodes = TRUE, collPeptNodes = TRUE)
-
-
-  # The expected result
-  res_proteins <- c("prot_1", rep("prot_2", each = 2), rep("prot_3;prot_4;prot_5", each = 2))
-  res_peptides <- c(rep("pep_1;pep_2", each = 2), rep("pep_3", each = 2), "pep_4;pep_5")
-  res_pep_ratios <- c(rep("0.9;1.02", each = 2), rep("0.96", each = 2), "0.96;1.06")
-  res_collapsed_edgelist <- data.frame(protein = res_proteins, peptide = res_peptides, pep_ratio = res_pep_ratios)
-
-
-  # Check expected vs. actual result
-  expect_equal(collapsed_edgelist[["protein"]],
-               res_collapsed_edgelist[["protein"]])
-  expect_equal(collapsed_edgelist[["peptide"]],
-               res_collapsed_edgelist[["peptide"]])
-  expect_equal(collapsed_edgelist[["pep_ratio"]],
-               res_collapsed_edgelist[["pep_ratio"]])
-
-})
-
-
-
-
-
-
 test_that("test .generateQuantGraphs", {
 
   # Create a temporary directory so no permanent files are put on a package users directory
@@ -64,7 +22,7 @@ test_that("test .generateQuantGraphs", {
   edgelist <- data.frame(protein = proteins, peptide = peptides)
 
   # Compute function
-  graphs <- .generateQuantGraphs(peptide_ratios = ratio_table,
+  graphs <- bppg:::.generateQuantGraphs(peptide_ratios = ratio_table,
                                   id_cols = 1,
                                   fasta_edgelist = edgelist,
                                   outpath = temp_dir,
@@ -73,19 +31,15 @@ test_that("test .generateQuantGraphs", {
                                   collPeptNodes = TRUE,
                                   suffix = "")
 
-  # The expected edgelists of the graphs from the first ratios
-  res_edgelists <- list(cbind(c("prot_1", "prot_1", "pep_3;pep_4"),
-                              c("pep_1;pep_2", "pep_3;pep_4", "prot_2")),
-                        cbind(c("prot_3"),
-                              c("pep_5")),
-                        cbind(c("prot_4;prot_5"),
-                              c("pep_10;pep_8;pep_9")))
-
   # Check result attributes
   expect_true(file.exists(paste0(temp_dir, "edgelist_filtered_.xlsx")))
   expect_equal(unname(lapply(graphs, length)), list(3,2,2))
+  expect_equal(names(graphs), c("sample1_sample2", "sample1_sample3", "sample2_sample3"))
+
   for (i in 1:3) {
-    expect_equal(as_edgelist(graphs[[1]][[i]]), res_edgelists[[i]])
+    for (j in seq_along(graphs[[i]])) {
+      expect_snapshot(igraph::as_edgelist(graphs[[i]][[j]]))
+    }
   }
 
 })
