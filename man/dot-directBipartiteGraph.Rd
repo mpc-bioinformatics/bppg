@@ -11,7 +11,8 @@
 A bipartite graph.}
 
 \item{from_type}{\strong{logical} \cr
-If \code{TRUE}, the edges will go out from the vertices with the type \code{TRUE} from the bipartite graph.}
+If \code{TRUE}, the edges will go out from the vertices
+with the type \code{TRUE} from the bipartite graph.}
 }
 \value{
 A bipartite graph that is know directed.
@@ -20,6 +21,6 @@ A bipartite graph that is know directed.
 Transform a bipartite graph into a directed graph.
 }
 \examples{
-# TODO
+## TODO
 
 }

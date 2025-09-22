@@ -4,21 +4,20 @@
 \alias{.collapseEdgelist}
 \title{Collapsing of peptide and protein nodes of an edgelist.}
 \usage{
-.collapseEdgelist(
-  edgelist,
-  collapse_protein_nodes = TRUE,
-  collapse_peptide_nodes = TRUE
-)
+.collapseEdgelist(edgelist, collProtNodes = TRUE, collPeptNodes = TRUE)
 }
 \arguments{
 \item{edgelist}{\strong{data.frame} \cr
-An edgelist eg. created with \code{\link[=generateEdgelist]{generateEdgelist()}}.}
+An edgelist eg. created with
+\code{\link[=generateEdgelist]{generateEdgelist()}}.}
 
-\item{collapse_protein_nodes}{\strong{logical} \cr
-If \code{TRUE}, the protein nodes will be collapsed.}
+\item{collProtNodes}{\strong{logical} \cr
+If \code{TRUE}, the protein nodes
+will be collapsed.}
 
-\item{collapse_peptide_nodes}{\strong{logical} \cr
-If \code{TRUE}, the peptide nodes will be collapsed.}
+\item{collPeptNodes}{\strong{logical} \cr
+If \code{TRUE}, the peptide nodes
+will be collapsed.}
 }
 \value{
 An edgelist with collapsed protein and/or peptide nodes.
@@ -37,5 +36,6 @@ edgelist_collapsed <- bppg:::.collapseEdgelist(edgelist)
 }
 \seealso{
 For edgelists with peptide ratios: \code{\link[=.collapseEdgelistQuant]{.collapseEdgelistQuant()}} \cr
-\code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}, \code{\link[=.generateQuantGraphs]{.generateQuantGraphs()}}, \code{\link[=generateEdgelist]{generateEdgelist()}}
+\code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}, \code{\link[=.generateQuantGraphs]{.generateQuantGraphs()}},
+\code{\link[=generateEdgelist]{generateEdgelist()}}
 }

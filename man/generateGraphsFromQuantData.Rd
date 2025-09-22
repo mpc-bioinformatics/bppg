@@ -13,45 +13,55 @@ generateGraphsFromQuantData(
   max_aa = 50,
   id_columns = 1,
   seq_column = "Sequence",
-  collapse_protein_nodes = TRUE,
-  collapse_peptide_nodes = FALSE,
+  collProtNodes = TRUE,
+  collPeptNodes = FALSE,
   suffix = "",
   ...
 )
 }
 \arguments{
 \item{D}{\strong{data.frame} \cr
-A data set with peptide sequence as first column
-and peptide intensities in subsequent columns
-,e.g. created with \code{\link[=readMqPeptideTable]{readMqPeptideTable()}}.}
+A data set with peptide sequence as first
+column and peptide intensities in subsequent
+columns, e.g. created with
+\code{\link[=readMqPeptideTable]{readMqPeptideTable()}}.}
 
 \item{fasta}{\strong{list of vector of characters} \cr
-A fasta file used for identification of peptides in D,
-already read into R by \code{\link[seqinr:read.fasta]{seqinr::read.fasta()}}.}
+A fasta file used for identification of
+peptides in already read into R by
+\code{\link[seqinr:read.fasta]{seqinr::read.fasta()}}.}
 
 \item{outpath}{\strong{character} \cr
 The output path for the results.}
 
 \item{missed_cleavages}{\strong{integer} \cr
-The number of allowed missed cleavages in a peptide.}
+The number of allowed missed cleavages
+in a peptide.}
 
 \item{min_aa}{\strong{integer} \cr
-The minimum number of amino acids in a peptide.}
+The minimum number of amino acids
+in a peptide.}
 
 \item{max_aa}{\strong{integer} \cr
-The maximum number of amino acids in a peptide.}
+The maximum number of amino acids
+in a peptide.}
 
 \item{id_columns}{\strong{integer vector} \cr
-The columns of D that contain ID information (the rest should contain only peptide intensities, properly normalized).}
+The columns of D that contain ID information
+(the rest should contain only peptide
+intensities, properly normalized).}
 
 \item{seq_column}{\strong{character} \cr
-The column name of the column with the peptide sequences.}
+The column name of the column with the
+peptide sequences.}
 
-\item{collapse_protein_nodes}{\strong{logical} \cr
-If \code{TRUE}, the protein nodes will be collapsed.}
+\item{collProtNodes}{\strong{logical} \cr
+If \code{TRUE}, the protein nodes
+will be collapsed.}
 
-\item{collapse_peptide_nodes}{\strong{logical} \cr
-If \code{TRUE}, the peptide nodes will be collapsed.}
+\item{collPeptNodes}{\strong{logical} \cr
+If \code{TRUE}, the peptide nodes
+will be collapsed.}
 
 \item{suffix}{\strong{character} \cr
 The suffix for output files.}

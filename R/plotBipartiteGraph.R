@@ -1,5 +1,89 @@
+#' Set names for plotting with plotBipartiteGraph.
+#'
+#' @param G                         \strong{igraph graph object} \cr
+#'                                  A bipartite peptide-protein graph.
+#' @param node_labels_proteins      \strong{character} \cr
+#'                                  The type of labels for the proteins. Options
+#'                                  are "letters" or "acessions".
+#' @param node_labels_peptides      \strong{character} \cr
+#'                                  The type of labels for the peptides. Options
+#'                                  are"numbers" or "pep_ratios" or
+#'                                  "pep_ratio_aggr".
+#' @param round_digits              \strong{integer} \cr
+#'                                  The number of digits to round the peptide
+#'                                  ratios to.
+#' @return Graph with updated names
+#' 
+.setNodeLabels <- function(G, node_labels_peptides, node_labels_proteins,
+    round_digits) {
+    Layout <- igraph::layout_as_bipartite(G)
+    names_G <- character(length(igraph::V(G)))
 
-### TODO: labelling of the nodes (letters/numbers or keep or )
+    pos_proteins <- Layout[, 1][Layout[, 2] == 1]
+    pos_peptides <- Layout[, 1][Layout[, 2] == 0]
+
+    if (node_labels_proteins == "letters") {
+        #### TODO: was ist, wenn es mehr als 26 Proteine gibt?
+        names_G[Layout[, 2] == 1] <- LETTERS[rank(pos_proteins)]
+    }
+    if (node_labels_proteins == "accessions") {
+        names_G[Layout[, 2] == 1] <- limma::strsplit2(
+            igraph::V(G)$name[Layout[, 2] == 1], ";")[, 1]
+    }
+    ## nicht geordnete Zahlen
+    if (node_labels_proteins == "numbers_noord") {
+        names_G[Layout[, 2] == 1] <- 1:length(pos_proteins)
+    }
+
+    if (node_labels_peptides == "numbers") {
+        names_peptides <- 1:sum(Layout[, 2] == 0)
+        names_G[Layout[, 2] == 0] <- names_peptides[rank(pos_peptides)]
+    }
+    if (node_labels_peptides == "pep_ratios") {
+        pep_ratios <- igraph::V(G)$pep_ratio
+        names_G[Layout[, 2] == 0] <- round(pep_ratios[Layout[, 2] == 0],
+            round_digits)
+    }
+    if (node_labels_peptides == "pep_ratio_aggr") {
+        pep_ratios <- igraph::V(G)$pep_ratio_aggr
+        names_G[Layout[, 2] == 0] <- round(pep_ratios[Layout[, 2] == 0],
+            round_digits)
+    }
+    if (node_labels_peptides == "") {
+        names_G[Layout[, 2] == 0] <- NA
+    }
+
+    igraph::set_vertex_attr(G, name = "name", value = names_G)
+}
+
+
+#' Function do define diamond shape for unique peptides in bipartite graph.
+#' this works for igraph.
+#' @param coords                \strong{matrix} \cr
+#'                              2D-coordinates vor vertices.
+#' @param v                     \strong{numrical} \cr
+#'                              (row) index for vertices.
+#' @param params                \strong{data.frame} \cr
+#'                              parameters for color and size.
+#' @return symbole that can be used by igraph for plotting
+
+.myDiamond <- function(coords, v = NULL, params) {
+    vertex.color <- params("vertex", "color")
+    if (length(vertex.color) != 1 && !is.null(v)) {
+        vertex.color <- vertex.color[v]
+    }
+    vertex.size <- 1 / 200 * params("vertex", "size")
+    if (length(vertex.size) != 1 && !is.null(v)) {
+        vertex.size <- vertex.size[v]
+    }
+
+    graphics::symbols(x=coords[, 1], y=coords[, 2], bg=vertex.color,
+        stars=1.2 * cbind(vertex.size, vertex.size,
+            vertex.size, vertex.size),
+        add=TRUE, inches=FALSE)
+}
+
+
 
 #### TODO: Farbskala für die Peptid-Knoten einbauen, um die Peptid-Ratios
 # darzustellen (Studienprojekt)
@@ -82,46 +166,9 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
         cG <- igraph::canonical_permutation(G)
         G <- igraph::permute(G, cG$labeling)
     }
-    Layout <- igraph::layout_as_bipartite(G)
-    names_G <- character(length(igraph::V(G)))
-
-    pos_proteins <- Layout[, 1][Layout[, 2] == 1]
-    pos_peptides <- Layout[, 1][Layout[, 2] == 0]
-
-    if (node_labels_proteins == "letters") {
-        #### TODO: was ist, wenn es mehr als 26 Proteine gibt?
-        names_G[Layout[, 2] == 1] <- LETTERS[rank(pos_proteins)]
-    }
-    if (node_labels_proteins == "accessions") {
-        names_G[Layout[, 2] == 1] <- limma::strsplit2(
-            igraph::V(G)$name[Layout[, 2] == 1], ";")[, 1]
-    }
-    ## nicht geordnete Zahlen
-    if (node_labels_proteins == "numbers_noord") {
-        names_G[Layout[, 2] == 1] <- 1:length(pos_proteins)
-    }
-
-    if (node_labels_peptides == "numbers") {
-        names_peptides <- 1:sum(Layout[, 2] == 0)
-        names_G[Layout[, 2] == 0] <- names_peptides[rank(pos_peptides)]
-    }
-    if (node_labels_peptides == "pep_ratios") {
-        pep_ratios <- igraph::V(G)$pep_ratio
-        names_G[Layout[, 2] == 0] <- round(pep_ratios[Layout[, 2] == 0],
-            round_digits)
-    }
-    if (node_labels_peptides == "pep_ratio_aggr") {
-        pep_ratios <- igraph::V(G)$pep_ratio_aggr
-        names_G[Layout[, 2] == 0] <- round(pep_ratios[Layout[, 2] == 0],
-            round_digits)
-    }
-    if (node_labels_peptides == "") {
-        names_G[Layout[, 2] == 0] <- NA
-    }
-
-
-    G <- igraph::set_vertex_attr(G, name = "name", value = names_G)
-
+    
+    G <- .setNodeLabels(G, node_labels_peptides, node_labels_proteins,
+        round_digits = 2)
     #################################
 
     type <- integer(length(igraph::V(G)))
@@ -130,23 +177,8 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
     type[igraph::V(G)$type & igraph::degree(G) == 1] <- 3  ## "unique peptide"
 
     if (three_shapes) {
-        mydiamond <- function(coords, v = NULL, params) {
-            vertex.color <- params("vertex", "color")
-            if (length(vertex.color) != 1 && !is.null(v)) {
-                vertex.color <- vertex.color[v]
-            }
-            vertex.size <- 1 / 200 * params("vertex", "size")
-            if (length(vertex.size) != 1 && !is.null(v)) {
-                vertex.size <- vertex.size[v]
-            }
-
-            graphics::symbols(x=coords[, 1], y=coords[, 2], bg=vertex.color,
-                stars=1.2 * cbind(vertex.size, vertex.size,
-                    vertex.size, vertex.size),
-                add=TRUE, inches=FALSE)
-        }
         igraph::add_shape("diamond", clip= igraph::shape_noclip,
-            plot=mydiamond)
+            plot=.myDiamond)
         vertex.shapes <- c("circle", "crectangle", "diamond")[type]
     } else {
         vertex.shapes <- c("circle", "crectangle")[igraph::V(G)$type + 1]

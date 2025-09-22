@@ -17,16 +17,19 @@
 The protein sequence.}
 
 \item{enzyme}{\strong{character} \cr
-The enzyme used in digestion e.g. "trypsin" (does not cut before proline) or "trypsin.strict" ().}
+The enzyme used in digestion e.g. "trypsin" (does
+not cut before proline) or "trypsin.strict" ().}
 
 \item{missed}{\strong{character} \cr
 The maximal number of missed cleavages.}
 
 \item{warn}{\strong{logical} \cr
-If \code{TRUE}, warnings will be printed e.g. if a protein has no cleavage site.}
+If \code{TRUE}, warnings will be printed e.g. if a
+protein has no cleavage site.}
 
 \item{remove_initial_M}{\strong{logical} \cr
-If \code{TRUE}, the initial methionine will be removed from the peptides.}
+If \code{TRUE}, the initial methionine will be
+removed from the peptides.}
 }
 \value{
 A vector of peptides.
@@ -36,7 +39,8 @@ Digestion of a single protein sequence.
 }
 \examples{
 library(seqinr)
-file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
+file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta",
+     package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 
 digested_proteins <- bppg:::.digest2(fasta[[1]])

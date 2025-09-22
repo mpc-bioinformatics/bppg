@@ -8,21 +8,25 @@ digestFASTA(fasta, missed_cleavages = 2, min_aa = 6, max_aa = 50, ...)
 }
 \arguments{
 \item{fasta}{\strong{list of vector of characters} \cr
-A fasta file, already read into R by \code{\link[seqinr:read.fasta]{seqinr::read.fasta()}}.}
+A fasta file, already read into R by
+\code{\link[seqinr:read.fasta]{seqinr::read.fasta()}}.}
 
 \item{missed_cleavages}{\strong{integer} \cr
 The maximal number of missed cleavages.}
 
 \item{min_aa}{\strong{integer} \cr
-The minimal number of amino acids (set to 0 for no filtering).}
+The minimal number of amino acids
+(set to 0 for no filtering).}
 
 \item{max_aa}{\strong{integer} \cr
-The maximal number of amino acids (set to Inf for no filtering).}
+The maximal number of amino acids
+(set to Inf for no filtering).}
 
 \item{...}{Additional arguments for \code{\link[=.digest2]{.digest2()}}.}
 }
 \value{
-List of vectors of peptide sequences, filtered for minimal and maximal number of amino acids.
+List of vectors of peptide sequences, filtered for minimal
+and maximal number of amino acids.
 }
 \description{
 In silico tryptic digestion of whole FASTA file.

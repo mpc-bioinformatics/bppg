@@ -14,13 +14,16 @@ The data set containing the peptide intensities.}
 The groups for aggregation.}
 
 \item{missing.limit}{\strong{numeric} \cr
-The proportion of missing values that is allowed (e.g. 0 means no missings allowed).}
+The proportion of missing values that is allowed
+(e.g. 0 means no missings allowed).}
 
 \item{method}{\strong{character} \cr
-The method of aggregation. Options are "mean", "sum" or "median"}
+The method of aggregation. Options are
+"mean", "sum" or "median"}
 
 \item{id_cols}{\strong{integer vector} \cr
-The column numbers that contain peptide sequences etc (everything except intensities).}
+The column numbers that contain peptide sequences etc
+(everything except intensities).}
 }
 \value{
 A data set with aggregated intensities.

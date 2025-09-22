@@ -8,7 +8,9 @@
 }
 \arguments{
 \item{subgraph_char_tab}{\strong{data.frame} \cr
-A table of subgraphs characteristics, e.g. created by \code{\link[=.calculateSubgraphCharacteristics]{.calculateSubgraphCharacteristics()}}}
+A table of subgraphs characteristics,
+e.g. created by
+\code{\link[=.calculateSubgraphCharacteristics]{.calculateSubgraphCharacteristics()}}}
 
 \item{isomorph_list}{\strong{list} \cr
 A list of occuring isomorphs.}

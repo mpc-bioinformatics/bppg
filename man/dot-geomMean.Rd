@@ -11,7 +11,8 @@
 Input data.}
 
 \item{useprod}{\strong{logical} \cr
-If \code{TRUE}, prod(x)^(1/n) will be calculated, otherwise exp(mean(log(x))).}
+If \code{TRUE}, prod(x)^(1/n) will be calculated, otherwise
+exp(mean(log(x))).}
 }
 \value{
 The geometric mean of the provided data points.
