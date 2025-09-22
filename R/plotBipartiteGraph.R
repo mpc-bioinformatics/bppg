@@ -167,7 +167,8 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
         G <- igraph::permute(G, cG$labeling)
     }
     
-    G <- .setNodeLabels(G, node_labels_peptides, node_labels_proteins)
+    G <- .setNodeLabels(G, node_labels_peptides, node_labels_proteins,
+        round_digits = 2)
     #################################
 
     type <- integer(length(igraph::V(G)))
