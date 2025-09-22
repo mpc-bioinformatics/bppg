@@ -2,7 +2,8 @@
 % Please edit documentation in R/helpers-generate_graphs_via_edgelist.R
 \name{.generateGraphsFromEdgelist}
 \alias{.generateGraphsFromEdgelist}
-\title{Generate bipartite peptide-protein graphs from a list of digested proteins via an edgelist.}
+\title{Generate bipartite peptide-protein graphs from a list of digested proteins
+via an edgelist.}
 \usage{
 .generateGraphsFromEdgelist(edgelist)
 }
@@ -14,12 +15,14 @@ An edgelist, output from \code{\link[=generateEdgelist]{generateEdgelist()}}.}
 A list of subgraphs as igraph objects.
 }
 \description{
-Generate bipartite peptide-protein graphs from a list of digested proteins via an edgelist.
+Generate bipartite peptide-protein graphs from a list of digested proteins
+via an edgelist.
 }
 \examples{
-### TODO: example takes longer than 5s
+## TODO: example takes longer than 5s
 library(seqinr)
-file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta", package = "bppg")
+file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta",
+ package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 digested_proteins <- digestFASTA(fasta)
 edgelist <- generateEdgelist(digested_proteins)

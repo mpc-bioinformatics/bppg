@@ -5,20 +5,16 @@
 \alias{.collapseEdgelistQuant}
 \title{Collapsing of peptide and protein nodes of an edgelist.}
 \usage{
-.collapseEdgelistQuant(
-  edgelist,
-  collapse_protein_nodes = TRUE,
-  collapse_peptide_nodes = TRUE
-)
+.collapseEdgelistQuant(edgelist, collProtNodes = TRUE, collPeptNodes = TRUE)
 }
 \arguments{
 \item{edgelist}{\strong{data.frame} \cr
 An edgelist  with peptide ratios eg. created with \code{\link[=generateEdgelist]{generateEdgelist()}}.}
 
-\item{collapse_protein_nodes}{\strong{logical} \cr
+\item{collProtNodes}{\strong{logical} \cr
 If \code{TRUE}, the protein nodes will be collapsed.}
 
-\item{collapse_peptide_nodes}{\strong{logical} \cr
+\item{collPeptNodes}{\strong{logical} \cr
 If \code{TRUE}, the peptide nodes will be collapsed.}
 }
 \value{

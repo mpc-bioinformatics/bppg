@@ -2,7 +2,8 @@
 % Please edit documentation in R/generate_graphs_from_quantdata.R
 \name{.generateQuantGraphs}
 \alias{.generateQuantGraphs}
-\title{Generate graphs from peptide ratio table, using an edgelist calculated on the fasta file.}
+\title{Generate graphs from peptide ratio table, using an edgelist calculated
+on the fasta file.}
 \usage{
 .generateQuantGraphs(
   peptide_ratios,
@@ -10,8 +11,8 @@
   fasta_edgelist,
   outpath = NULL,
   seq_column = "Sequence",
-  collapse_protein_nodes = TRUE,
-  collapse_peptide_nodes = FALSE,
+  collProtNodes = TRUE,
+  collPeptNodes = FALSE,
   suffix = ""
 )
 }
@@ -20,10 +21,13 @@
 A table with peptide ratios.}
 
 \item{id_cols}{\strong{integer vector} \cr
-The columns with ids, e.g. peptide sequences (everything except the peptide ratios)}
+The columns with ids, e.g. peptide sequences
+(everything except the peptide ratios)}
 
 \item{fasta_edgelist}{\strong{data.frame} \cr
-An edgelist created from the corresponding FASTA file, eg. created with \code{\link[=generateEdgelist]{generateEdgelist()}}.}
+An edgelist created from the corresponding
+FASTA file, eg. created with
+\code{\link[=generateEdgelist]{generateEdgelist()}}.}
 
 \item{outpath}{\strong{character} \cr
 The output path for the results.}
@@ -31,11 +35,13 @@ The output path for the results.}
 \item{seq_column}{\strong{character} \cr
 The column name of the peptide sequence.}
 
-\item{collapse_protein_nodes}{\strong{logical} \cr
-If \code{TRUE}, the protein nodes will be collapsed.}
+\item{collProtNodes}{\strong{logical} \cr
+If \code{TRUE}, the protein nodes will
+be collapsed.}
 
-\item{collapse_peptide_nodes}{\strong{logical} \cr
-If \code{TRUE}, the peptide nodes will be collapsed.}
+\item{collPeptNodes}{\strong{logical} \cr
+If \code{TRUE}, the peptide nodes will
+be collapsed.}
 
 \item{suffix}{\strong{character} \cr
 The suffix for saving results.}
@@ -44,7 +50,8 @@ The suffix for saving results.}
 A list of list of subgraphs
 }
 \description{
-Generate graphs from peptide ratio table, using an edgelist calculated on the fasta file.
+Generate graphs from peptide ratio table, using an edgelist calculated
+on the fasta file.
 }
 \seealso{
 \code{\link[=generateEdgelist]{generateEdgelist()}}

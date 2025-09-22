@@ -2,7 +2,8 @@
 % Please edit documentation in R/quant-protein_elimination.R
 \name{proteinElimination}
 \alias{proteinElimination}
-\title{Tries to recursively remove protein nodes from graph while keeping the error term in the optimization step low}
+\title{Tries to recursively remove protein nodes from graph while keeping the error
+term in the optimization step low}
 \usage{
 proteinElimination(
   G,
@@ -30,19 +31,22 @@ The default 1.05 refers to 5\% increase.}
 The iteration (this is a recursive function).}
 
 \item{min_error_ref}{\strong{numeric} \cr
-The minimal error term with all available protein nodes.
+The minimal error term with all available
+protein nodes.
 \code{min_error_ref} is assigned automatically.}
 
 \item{min_error_current}{\strong{numeric} \cr
 The current minimal error term.
-\code{min_error_current} is assigned automatically.}
+\code{min_error_current} is assigned
+automatically.}
 
 \item{protein_nodes_list}{\strong{igraph node list} \cr
 A current list of protein nodes.}
 
 \item{combination_list}{\strong{character vector} \cr
 A list of node combinations.
-For \code{iter == 0}, \code{combination_list} is assigned automatically.}
+For \code{iter == 0}, \code{combination_list} is
+assigned automatically.}
 
 \item{error_list}{\strong{numeric vector} \cr
 A list of error terms.}
@@ -57,16 +61,18 @@ The current graph (with removed protein nodes).
 
 \item{n_comb_current}{\strong{integer} \cr
 The current number of protein nodes.
-For \code{iter == 0}, \code{n_comb_current} is assigned automatically.}
+For \code{iter == 0}, \code{n_comb_current} is
+assigned automatically.}
 }
 \value{
 list
 }
 \description{
-Tries to recursively remove protein nodes from graph while keeping the error term in the optimization step low
+Tries to recursively remove protein nodes from graph while keeping the error
+term in the optimization step low
 }
 \examples{
-# TODO
+## TODO
 }
 \seealso{
 \code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}}

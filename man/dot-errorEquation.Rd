@@ -26,7 +26,8 @@ to be back-transformed here
 }
 \value{
 list containing the following elements:
-\item{res_Mat}{matrix containing the estimated peptide ratios using Ri and Ci}
+\item{res_Mat}{matrix containing the estimated peptide
+ratios using Ri and Ci}
 \item{res_equ}{vector of error terms for each peptide}
 \item{res_squ_err}{sum of squared error terms}
 \item{W}{internal weight matrix}

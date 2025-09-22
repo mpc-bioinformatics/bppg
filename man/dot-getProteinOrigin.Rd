@@ -2,7 +2,8 @@
 % Please edit documentation in R/helpers-get_protein_origin.R
 \name{.getProteinOrigin}
 \alias{.getProteinOrigin}
-\title{For each protein node, get information about protein origin (contaminant, spike-in
+\title{For each protein node, get information about protein origin (contaminant,
+spike-in
 or a specific species).}
 \usage{
 .getProteinOrigin(
@@ -14,7 +15,8 @@ or a specific species).}
 }
 \arguments{
 \item{accessions}{\strong{character vectors} \cr
-The protein accessions (inside a protein node), separated by ";".}
+The protein accessions (inside a protein node),
+separated by ";".}
 
 \item{contaminants}{\strong{character vectors} \cr
 The contaminant protein accessions.}
@@ -23,15 +25,17 @@ The contaminant protein accessions.}
 The spike-in protein accessions.}
 
 \item{organisms}{\strong{named list of character vectors} \cr
-Each organism with the corresponding protein accessions.}
+Each organism with the corresponding protein
+accessions.}
 }
 \value{
 A character vector with protein origin for each protein accession
 }
 \description{
-For each protein node, get information about protein origin (contaminant, spike-in
+For each protein node, get information about protein origin (contaminant,
+spike-in
 or a specific species).
 }
 \examples{
-# TODO
+## TODO
 }
