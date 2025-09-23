@@ -1,12 +1,12 @@
 #' Generates a table with characteristics for each subgraph in a list.
 #'
 #' @param S            \strong{list of igraph graph objects} \cr
-#'                     A list of subgraphs, where peptide and protein nodes 
+#'                     A list of subgraphs, where peptide and protein nodes
 #'                     are collapsed.
 #' @param fastalevel   \strong{logical} \cr
 #'                     If \code{TRUE}, the subgraphs should be on fasta level
 #' @param prototype    \strong{logical} \cr
-#'                     If \code{TRUE}, the subgraphs should be part of a 
+#'                     If \code{TRUE}, the subgraphs should be part of a
 #'                     prototype list
 #' @param file         \strong{character} \cr
 #'                     A file path where to save the table.
@@ -31,7 +31,7 @@
 
     Data <- NULL  ## TODO Allocation!
 
-    ## TODO: das kann man auch anders lösen, 
+    ## TODO: das kann man auch anders lösen,
     ## indem man guckt ob es ne liste ist? Dann würde das Argument wegfallen
     if (fastalevel) {
         comparisons <- 1
@@ -94,7 +94,7 @@
                 } else {
                     ## neighborhood of the unique peptides
                     ## (these are proteins with a unique peptide)
-                    NH_of_unique_peptides <- igraph::ego(G_tmp, order = 1, 
+                    NH_of_unique_peptides <- igraph::ego(G_tmp, order = 1,
                         mindist = 1, nodes = unique_pept_nodes)
 
                     nr_prot_node_only_unique_pep <- 0
@@ -102,7 +102,7 @@
                     nr_prot_node_unique_and_shared_pep <- length(
                         NH_of_unique_peptides)
                     ## length(NH_of_unique_peptides)
-                    nr_prot_node_only_shared_pep <-  nr_protein_nodes - 
+                    nr_prot_node_only_shared_pep <-  nr_protein_nodes -
                         nr_prot_node_unique_and_shared_pep
                 }
             }
@@ -117,17 +117,17 @@
                                 nr_shared_peptide_nodes = nr_shared_peptides,
                                 nr_edges = as.integer(nr_edges),
                                 nr_protein_accessions = nr_protein_accessions,
-                                nr_peptide_sequences = 
+                                nr_peptide_sequences =
                                     as.integer(nr_peptide_sequences),
-                                ## nr_peptide_sequences_unique = 
+                                ## nr_peptide_sequences_unique =
                                     ## nr_peptide_sequences_unique,
-                                ## nr_peptide_sequences_shared = 
+                                ## nr_peptide_sequences_shared =
                                     ## nr_peptide_sequences_shared,
-                                nr_prot_node_only_unique_pep = 
+                                nr_prot_node_only_unique_pep =
                                     nr_prot_node_only_unique_pep,
-                                nr_prot_node_unique_and_shared_pep = 
+                                nr_prot_node_unique_and_shared_pep =
                                     nr_prot_node_unique_and_shared_pep,
-                                nr_prot_node_only_shared_pep = 
+                                nr_prot_node_only_shared_pep =
                                     nr_prot_node_only_shared_pep,
                                 comparison = comparisons[j])
 

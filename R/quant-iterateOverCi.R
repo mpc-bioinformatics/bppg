@@ -24,10 +24,10 @@
 #'                                 (see solnp function).
 #' @param verbose_opt              \strong{logical} \cr
 #'                                 The \code{verbose} argument of the
-#'                                 [bppg::.minimizeSquaredError()] function.
+#'                                 [.minimizeSquaredError()] function.
 #' @param control                  \strong{list} \cr
 #'                                 The \code{control} object to be passed to the
-#'                                 [bppg::.minimizeSquaredError()] function.
+#'                                 [.minimizeSquaredError()] function.
 #' @param extend_grid_at_borders   \strong{logical} \cr
 #'                                 If \code{TRUE}, the grid will be extend close
 #'                                 to the borders (0 and 1).
@@ -37,7 +37,7 @@
 #'                                 protein ratios.
 #' @param log_level                \strong{logical} \cr
 #'                                 The \code{log_level} argument will passed to
-#'                                 the [bppg::.minimizeSquaredError()] function.
+#'                                 the [.minimizeSquaredError()] function.
 #'
 #' @return
 #' A dataframe containing the optimal Ci and Ri values together with the reached
@@ -45,7 +45,7 @@
 #'
 #' @export
 #'
-#' @seealso [bppg::.minimizeSquaredError()],
+#' @seealso [.minimizeSquaredError()],
 #'          [bppg::automatedAnalysisIteratedCi()]
 #'
 #' @details
@@ -108,7 +108,7 @@ iterateOverCi <- function(S,
             pbapply::setpb(pb, (j - 1) * length(grid) + i)
 
             if (verbose) print(paste0("j = ", j, " i = ", i))
-            
+
             Ci_tmp <- rep(NA, n)
             Ci_tmp[j] <- grid[i]
 
@@ -131,7 +131,7 @@ iterateOverCi <- function(S,
             Ris_tmp[i, ] <- RES$Ri
             Cis_tmp[i, ] <- RES$Ci
         }
-        result_tmp <- data.frame(protein = rep(j, length(grid)), 
+        result_tmp <- data.frame(protein = rep(j, length(grid)),
             grid = grid, Ris_tmp, Cis_tmp, error = err_tmp)
         result <- rbind(result, result_tmp)
     }
@@ -147,40 +147,40 @@ iterateOverCi <- function(S,
 #' Extract protein ratio solutions from the result of iterateOverCi()
 #'
 #' @param S                             \strong{igraph graph object OR list} \cr
-#'                                      An igraph graph of the bipartite 
+#'                                      An igraph graph of the bipartite
 #'                                      peptide-protein graph with peptide
 #'                                      ratios
 #'                                      OR
 #'                                      a list of the biadjacency matrix of the
-#'                                      bipartite peptide-protein graph 
+#'                                      bipartite peptide-protein graph
 #'                                      (named "X") and the measured peptide
 #'                                      ratios (named "fc"). \cr
 #'                                      Set \code{S_is_graph} depending on the
 #'                                      input type.
 #' @param res                           \strong{list} \cr
-#'                                      The list resulting from the 
+#'                                      The list resulting from the
 #'                                      [bppg::iterateOverCi()] function.
 #' @param use_results_from_other_proteins   \strong{logical} \cr
 #'                                          If \code{TRUE}, the results from
 #'                                          other proteins within the same graph
 #'                                          will be used to calculate the
-#'                                          optimal solution for each protein 
+#'                                          optimal solution for each protein
 #'                                          node.
 #' @param verbose                       \strong{logical} \cr
 #'                                      If \code{TRUE}, additional information
 #'                                      will be printed.
 #' @param job                           \strong{BatchExperiment job object} \cr
-#'                                      Is used to print the job id and 
+#'                                      Is used to print the job id and
 #'                                      parameters in the output
 #' @param S_is_graph                    \strong{logical} \cr
-#'                                      If \code{TRUE}, S is an igraph object 
+#'                                      If \code{TRUE}, S is an igraph object
 #'                                      and if \code{FALSE} S is a list with the
 #'                                      biadjacency matrix and fold changes.
 #'
 #' @return A data frame
 #' @export
 #'
-#' @seealso [bppg::iterateOverCi()], [bppg::.minimizeSquaredError()]
+#' @seealso [bppg::iterateOverCi()], [.minimizeSquaredError()]
 #'
 #' @examples ## TODO
 
@@ -212,7 +212,7 @@ automatedAnalysisIteratedCi <- function(S,
     if (nr_proteins == 1 & is.null(res)) {
         ## graph contains only one protein node and was skipped, so optimal
         ## solution has to be calculated here
-        solution_optimal <- bppg::.minimizeSquaredError(S,
+        solution_optimal <- .minimizeSquaredError(S,
             fixed.Ci = NULL,
             verbose = FALSE,
             reciprocal = FALSE, log_level = TRUE,
@@ -306,7 +306,7 @@ automatedAnalysisIteratedCi <- function(S,
 
             if (verbose) print(paste0("Error is nearly constant (abs. diff. = ",
                     abs(diff(range(error))), ")."))
-            if (verbose) print(paste0("Mean error is ", 
+            if (verbose) print(paste0("Mean error is ",
                     mean(error, na.rm = TRUE), "."))
             if (verbose) print(paste0("Minimal error is ",
                     min(error, na.rm = TRUE) , "."))
@@ -322,8 +322,8 @@ automatedAnalysisIteratedCi <- function(S,
                 D_tmp$case <- 1
             } else {
                 if (verbose) print(paste0("Constant Solution for R", i, ": ",
-                        bppg::.geomMean(R)))
-                D_tmp$Ri <- bppg::.geomMean(R)
+                        .geomMean(R)))
+                D_tmp$Ri <- .geomMean(R)
                 D_tmp$Ri_min <- NA
                 D_tmp$Ri_max <- NA
                 D_tmp$case <- 2
@@ -345,7 +345,7 @@ automatedAnalysisIteratedCi <- function(S,
 
             ## area in which the error is almost constant
             ind_min <- which.min(error)
-            ind_min_tol <- which(abs(min(error) - error) <= 1e-10) 
+            ind_min_tol <- which(abs(min(error) - error) <= 1e-10)
 
             if (length(ind_min_tol) <= 1) {
 
@@ -372,13 +372,13 @@ automatedAnalysisIteratedCi <- function(S,
 
                 ## Ri is constant but Ci is not
                 if (all(R[ind_min_tol] == 0) |
-                        abs(diff(range(log2(R[ind_min_tol])))) < 1e-4) {  
-                    D_tmp$Ri <- bppg::.geomMean(R[ind_min_tol])
+                        abs(diff(range(log2(R[ind_min_tol])))) < 1e-4) {
+                    D_tmp$Ri <- .geomMean(R[ind_min_tol])
                     D_tmp$Ri_min <- NA
                     D_tmp$Ri_max <- NA
                     D_tmp$case <- 4
                     if (verbose) print(paste0("Constant Solution for R",
-                            i, ": ", bppg::.geomMean(R[ind_min_tol])))
+                            i, ": ", .geomMean(R[ind_min_tol])))
                 } else {  ## Ri is not constant
                     D_tmp$Ri <- NA
                     D_tmp$Ri_min <- min(R[ind_min_tol])

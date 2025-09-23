@@ -15,7 +15,7 @@
 #' (this may allow a symmetric behaviour during optimization)
 #'
 #' @return list containing the following elements:
-#' \item{res_Mat}{matrix containing the estimated peptide 
+#' \item{res_Mat}{matrix containing the estimated peptide
 #'      ratios using Ri and Ci}
 #' \item{res_equ}{vector of error terms for each peptide}
 #' \item{res_squ_err}{sum of squared error terms}
@@ -41,7 +41,7 @@
     n <- length(rj) ## number of peptides
 
     ## backtransformation if necessary
-    if (log_level) Ri <- 2^Ri   
+    if (log_level) Ri <- 2^Ri
     ## multiply the delta values (biadjacency matrix) with their weights Ci
     W <- sweep(M, MARGIN = 2, Ci, "*")
     ## sum of the weights per peptide
@@ -49,7 +49,7 @@
     ## divide the weights by the sum of the weights per peptide
     W <- as.matrix(sweep(W, 1, W_sum, "/"))
     ## multiply Ri with the corresponding weight
-    res_Mat <- sweep(W, MARGIN = 2, Ri, '*') 
+    res_Mat <- sweep(W, MARGIN = 2, Ri, '*')
 
     ## error term per peptide (on log-scale)
     res_equ <- log(rj) - log(rowSums(res_Mat))
@@ -57,7 +57,7 @@
     ## sum of squared error terms
     res_squ_err <- sum(res_equ^2)
 
-    return(list(res_Mat = res_Mat, res_equ = res_equ, 
+    return(list(res_Mat = res_Mat, res_equ = res_equ,
             res_squ_err = res_squ_err, W = W))
 }
 
@@ -68,24 +68,24 @@
 #' error terms
 #'
 #' @param S           \strong{list} \cr
-#'                    A list of biadjacency matrix of the bipartite 
-#'                    peptide-protein graph (X) and 
+#'                    A list of biadjacency matrix of the bipartite
+#'                    peptide-protein graph (X) and
 #'                    measured peptide ratios (fc).
 #' @param fixed.Ci    \strong{numeric vector} \cr
-#'                    The fixed protein weights, variable weights set as NA. 
+#'                    The fixed protein weights, variable weights set as NA.
 #'                    Sum of fixed weights must not exceed 1.
 #'                    If NULL, all Cis will be considered as variable.
-#'                    This argument is needed to fix Ci on a grid point in the 
+#'                    This argument is needed to fix Ci on a grid point in the
 #'                    iterated_Ci function.
 #' @param verbose     \strong{logical} \cr
-#'                    If \code{TRUE}, additional information on each iteration 
-#'                    of the optimization is printed (see also rsolnp function 
+#'                    If \code{TRUE}, additional information on each iteration
+#'                    of the optimization is printed (see also rsolnp function
 #'                    in package Rsolnp).
 #' @param reciprocal  \strong{logical} \cr
-#'                    If \code{TRUE}, the reciprocal of the peptide ratios is 
+#'                    If \code{TRUE}, the reciprocal of the peptide ratios is
 #'                    used for the optimization.
 #' @param log_level   \strong{logical} \cr
-#'                    If \code{TRUE}, the Ri are log2-transformed before 
+#'                    If \code{TRUE}, the Ri are log2-transformed before
 #'                    optimization, allowing a symmetric consideration of
 #'                    Ri < 0 and > 0.
 #' @param control     \strong{list} \cr
@@ -95,13 +95,13 @@
 #' @return list containing the following elements:
 #' \item{Ri}{estimated protein ratios}
 #' \item{Ci}{estimated protein weights}
-#' \item{RES}{final result of .errorEquation(), which also contains the final, 
+#' \item{RES}{final result of .errorEquation(), which also contains the final,
 #'  minimal error term}
-#' \item{Tracking}{Tracking of Ri, Ci and error term for the 
+#' \item{Tracking}{Tracking of Ri, Ci and error term for the
 #'  different iterations}
-#' \item{outer.iter}{Number of outer iterations needed for the optimization 
+#' \item{outer.iter}{Number of outer iterations needed for the optimization
 #'  algorithm to converge or stop}
-#' \item{convergence}{Indicates whether the solver has converged (0) or 
+#' \item{convergence}{Indicates whether the solver has converged (0) or
 #' not (1 or 2).}
 #'
 #' @examples
@@ -123,7 +123,7 @@
 
     is.Ci.fixed <- !is.null(fixed.Ci)
     ## assesses which Cis are fixed by the user
-    if (is.Ci.fixed) which.Ci.fixed <- which(!is.na(fixed.Ci)) 
+    if (is.Ci.fixed) which.Ci.fixed <- which(!is.na(fixed.Ci))
     if (sum(fixed.Ci, na.rm = TRUE) > 1) {
         stop("Sum of chosen Ci values exceeds 1!")
     }
@@ -141,17 +141,17 @@
         ## the algorithm starts with equal weights for each protein
         Ci_start <- rep(1 / m, m)
     } else {
-        ## if at least one Ci is fixed, the algorithm distributes the remaining 
+        ## if at least one Ci is fixed, the algorithm distributes the remaining
         ## weight equally among the non-fixed proteins
         m2 <- m - length(which.Ci.fixed)
         ## sum of fixed Ci (as all Ci have to sum up tp 1)
-        fixed.Ci.sum <- sum(fixed.Ci, na.rm = TRUE)  
+        fixed.Ci.sum <- sum(fixed.Ci, na.rm = TRUE)
         Ci_start <- fixed.Ci
         ## starting values for the remaining Ci values
         Ci_start[is.na(Ci_start)] <- (1 - fixed.Ci.sum) / m2
     }
 
-    ## initialization of Ri as the geometric mean of (if possible only unique) 
+    ## initialization of Ri as the geometric mean of (if possible only unique)
     ## peptide ratios
     Ri <- rep(NA, m)
     for (j in 1:m) {
@@ -207,13 +207,13 @@
     ## constraints
     if (is.Ci.fixed) {
         ## sum Ci = 1
-        eqfun <- function(x) sum(x[(m + 1):(m + m2)]) + fixed.Ci.sum - 1  
+        eqfun <- function(x) sum(x[(m + 1):(m + m2)]) + fixed.Ci.sum - 1
         LB <- rep(0, m + m2)
         if (log_level) LB <- c(rep(-Inf, m), rep(0, m2))
         eqB <- 0
     } else {
         ## sum Ci = 1
-        eqfun <- function(x) sum(x[(m + 1):(2 * m)]) - 1  
+        eqfun <- function(x) sum(x[(m + 1):(2 * m)]) - 1
         LB <- rep(0, 2 * m)
         if (log_level) LB <- c(rep(-Inf, m), rep(0, m))
         eqB <- 0
@@ -224,7 +224,7 @@
     }
 
     ## Optimization
-    res <- Rsolnp::solnp(pars = pars, fun = fun, LB = LB, eqfun = eqfun, 
+    res <- Rsolnp::solnp(pars = pars, fun = fun, LB = LB, eqfun = eqfun,
         eqB = eqB, control = control, ...)
 
     outer.iter <- res$outer.iter
@@ -256,7 +256,7 @@
     }
 
 
-    result <- list(Ri = Ri, Ci = Ci, RES = RES, Tracking = Tracking, 
+    result <- list(Ri = Ri, Ci = Ci, RES = RES, Tracking = Tracking,
         outer.iter = outer.iter, convergence = convergence)
     class(result) <- "res_min_squ_error"
 

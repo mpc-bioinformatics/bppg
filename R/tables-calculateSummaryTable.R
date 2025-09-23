@@ -1,8 +1,8 @@
 #' Calculate number for table
 #'
 #' @param subgraph_char_tab    \strong{data.frame} \cr
-#'                             A table of subgraphs characteristics, 
-#'                             e.g. created by 
+#'                             A table of subgraphs characteristics,
+#'                             e.g. created by
 #'                             [.calculateSubgraphCharacteristics()]
 #' @param isomorph_list        \strong{list} \cr
 #'                             A list of occuring isomorphs.
@@ -14,7 +14,7 @@
 #'
 
 .calculateSummaryTable <- function(subgraph_char_tab, isomorph_list) {
-    
+
     D <- subgraph_char_tab
 
     ind_zero_pep <- which(D$nr_peptide_nodes == 0)
@@ -24,7 +24,7 @@
     ind_largest <- which.max(D$nr_protein_nodes)
 
     ## 2nd largest graph (in terms of number of protein nodes)
-    ind_largest2 <- which(D$nr_protein_nodes == sort(D$nr_protein_nodes, 
+    ind_largest2 <- which(D$nr_protein_nodes == sort(D$nr_protein_nodes,
             decreasing = TRUE)[2])
 
     c(
@@ -37,17 +37,17 @@
         as.integer(nrow(D)),                ## Nr of graphs
         ## Nr of graphs with only 1 protein node
         as.integer(sum(D$nr_protein_nodes == 1 & D$nr_peptide_nodes == 1)),
-        ## Nr of isomorphism classes       
-        as.integer(length(isomorph_list$isomorph_list) - 
+        ## Nr of isomorphism classes
+        as.integer(length(isomorph_list$isomorph_list) -
                 1*(length(ind_zero_pep) > 0)),
 
-        D$Nr_prot_node[ind_largest],        ## largest system
-        D$Nr_pep_node[ind_largest],
-        D$Nr_edge[ind_largest],
+        D$nr_protein_nodes[ind_largest],        ## largest system
+        D$nr_peptide_nodes[ind_largest],
+        D$nr_edges[ind_largest],
 
-        D$Nr_prot_node[ind_largest2],        ## 2nd largest system
-        D$Nr_pep_node[ind_largest2],
-        D$Nr_edge[ind_largest2]
+        D$nr_protein_nodes[ind_largest2],        ## 2nd largest system
+        D$nr_peptide_nodes[ind_largest2],
+        D$nr_edges[ind_largest2]
 
     )
 
