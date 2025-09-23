@@ -8,5 +8,3 @@ test_that("generation of an edgelist", {
     expect_equal(res, edgelist)
 })
 
-## TODO: Test if additional column for protein origin is present
-

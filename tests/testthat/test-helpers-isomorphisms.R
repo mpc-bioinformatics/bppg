@@ -20,13 +20,15 @@ test_that("test .directBipartiteGraph", {
   directed_graph <- bppg:::.directBipartiteGraph(bipartite_graph, from_type = FALSE)
   pred_res <- cbind(c("pep_1", "pep_3", "pep_2", "pep_2", "pep_3", "pep_2", "pep_3", "pep_4"),
                     c("prot_1", "prot_1", "prot_1", "prot_2", "prot_2", "prot_3", "prot_3", "prot_3"))
-  expect_true(igraph::is_directed(directed_graph))
-  expect_equal(igraph::as_edgelist(directed_graph), pred_res)
 
   # from protein to peptide
   directed_graph2 <- bppg:::.directBipartiteGraph(bipartite_graph, from_type = TRUE)
   pred_res2 <- cbind(c("prot_1", "prot_1", "prot_1", "prot_2", "prot_2", "prot_3", "prot_3", "prot_3"),
                     c("pep_1", "pep_3", "pep_2", "pep_2", "pep_3", "pep_2", "pep_3", "pep_4"))
+
+
+  expect_true(igraph::is_directed(directed_graph))
+  expect_equal(igraph::as_edgelist(directed_graph), pred_res)
   expect_true(igraph::is_directed(directed_graph2))
   expect_equal(igraph::as_edgelist(directed_graph2), pred_res2)
 
@@ -49,11 +51,6 @@ test_that(".isomorphicBipartite works as intended", {
   G3 <- G2
   V(G3)$type <- !V(G3)$type
 
-  expect_true(bppg:::.isomorphicBipartite(G, G)) # N = N
-  expect_false(bppg:::.isomorphicBipartite(G, G2)) # N != W
-  expect_false(bppg:::.isomorphicBipartite(G, G3)) # N != M
-  expect_false(bppg:::.isomorphicBipartite(G2, G3)) # W != M
-
   # M + 1 graph
   M4 <- matrix(c(1,1,0,0, 1, 0,0,1,1), nrow = 3, byrow = TRUE)
   G4 <- igraph::graph_from_biadjacency_matrix(M4)
@@ -61,12 +58,17 @@ test_that(".isomorphicBipartite works as intended", {
   # G5 is same as G4 but with changes role of peptides/proteins
   G5 <- G4
   igraph::V(G5)$type <- !igraph::V(G4)$type
-  expect_false(bppg:::.isomorphicBipartite(G5, G4))
 
   # G6 is same as G4 but rows and columns are in different order
   M6 <- M4
   M6 <- M4[c(3,2,1), c(2,1,3)]
   G6 <- igraph::graph_from_biadjacency_matrix(M6)
+
+  expect_true(bppg:::.isomorphicBipartite(G, G)) # N = N
+  expect_false(bppg:::.isomorphicBipartite(G, G2)) # N != W
+  expect_false(bppg:::.isomorphicBipartite(G, G3)) # N != M
+  expect_false(bppg:::.isomorphicBipartite(G2, G3)) # W != M
+  expect_false(bppg:::.isomorphicBipartite(G5, G4))
   expect_true(bppg:::.isomorphicBipartite(G6, G4))
 
 })

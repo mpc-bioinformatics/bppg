@@ -9,15 +9,13 @@ test_that("test .addUniquenessAttributes", {
   G <- igraph::graph_from_biadjacency_matrix(M)
   G_new <- bppg:::.addUniquenessAttributes(G)
 
-  expect_equal(igraph::V(G_new)$nr_unique_peptides, c(NA, NA, 0, 0, 0))
-  expect_equal(igraph::V(G_new)$nr_shared_peptides, c(NA, NA, 1, 2, 1))
-  expect_equal(igraph::V(G_new)$uniqueness, c(FALSE, FALSE, NA, NA, NA))
-
-
-
   # M shaped graph
   V(G)$type <- !V(G)$type
   G_new2 <- bppg:::.addUniquenessAttributes(G)
+
+  expect_equal(igraph::V(G_new)$nr_unique_peptides, c(NA, NA, 0, 0, 0))
+  expect_equal(igraph::V(G_new)$nr_shared_peptides, c(NA, NA, 1, 2, 1))
+  expect_equal(igraph::V(G_new)$uniqueness, c(FALSE, FALSE, NA, NA, NA))
 
   expect_equal(igraph::V(G_new2)$nr_unique_peptides, c(1, 1, NA, NA, NA))
   expect_equal(igraph::V(G_new2)$nr_shared_peptides, c(1, 1, NA, NA, NA))
