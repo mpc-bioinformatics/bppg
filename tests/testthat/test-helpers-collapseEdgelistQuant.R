@@ -10,9 +10,9 @@ test_that("test .collapseEdgelistQuant", {
     edgelist <- data.frame(protein = proteins, peptide = peptides, pep_ratio = pep_ratios)
 
     collapsed_edgelist <- bppg:::.collapseEdgelistQuant(edgelist = edgelist, collProtNodes = TRUE, collPeptNodes = TRUE)
-    expect_snapshot(collapsed_edgelist)
 
     collapsed_edgelist2 <- bppg:::.collapseEdgelistQuant(edgelist = edgelist, collProtNodes = TRUE, collPeptNodes = FALSE)
+    expect_snapshot(collapsed_edgelist)
     expect_snapshot(collapsed_edgelist2)
 
 })

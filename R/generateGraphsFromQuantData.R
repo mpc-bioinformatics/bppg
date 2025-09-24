@@ -44,7 +44,7 @@
         %in% peptide_ratios[, seq_column], ]
 
     if (!is.null(outpath)) {
-        openxlsx::write.xlsx(edgelist_filtered, 
+        openxlsx::write.xlsx(edgelist_filtered,
             file = paste0(outpath, "edgelist_filtered_", suffix, ".xlsx"),
             overwrite = TRUE, keepNA = TRUE)
     }
@@ -58,10 +58,10 @@
     for (i in 1:ncol(peptide_ratios)) {
         comparison <- comparisons[i]
         fc <- peptide_ratios[,i]
-        ## peptides that are quantified in this specific compariso
+        ## peptides that are quantified in this specific comparison
         peptides_tmp <- id[, seq_column][!is.na(fc)]
         fc <- stats::na.omit(fc)
-        edgelist_filtered2 <- edgelist_filtered[edgelist_filtered[, 2] 
+        edgelist_filtered2 <- edgelist_filtered[edgelist_filtered[, 2]
             %in% peptides_tmp, ]
 
         ## add peptide ratios
@@ -93,18 +93,18 @@
 #' Generate graphs from quantitative peptide-level data
 #'
 #' @param D                        \strong{data.frame} \cr
-#'                                 A data set with peptide sequence as first 
+#'                                 A data set with peptide sequence as first
 #'                                 column and peptide intensities in subsequent
 #'                                 columns, e.g. created with
 #'                                 [bppg::readMqPeptideTable()].
 #' @param fasta                    \strong{list of vector of characters} \cr
-#'                                 A fasta file used for identification of 
-#'                                 peptides in already read into R by 
+#'                                 A fasta file used for identification of
+#'                                 peptides in already read into R by
 #'                                 [seqinr::read.fasta()].
 #' @param outpath                  \strong{character} \cr
 #'                                 The output path for the results.
 #' @param missed_cleavages         \strong{integer} \cr
-#'                                 The number of allowed missed cleavages 
+#'                                 The number of allowed missed cleavages
 #'                                 in a peptide.
 #' @param min_aa                   \strong{integer} \cr
 #'                                 The minimum number of amino acids
@@ -117,7 +117,7 @@
 #'                                 (the rest should contain only peptide
 #'                                 intensities, properly normalized).
 #' @param seq_column               \strong{character} \cr
-#'                                 The column name of the column with the 
+#'                                 The column name of the column with the
 #'                                 peptide sequences.
 #' @param collProtNodes            \strong{logical} \cr
 #'                                 If \code{TRUE}, the protein nodes
@@ -192,7 +192,7 @@ generateGraphsFromQuantData <- function(D,
     }
 
     ## Generierung der Graphen (man braucht peptide_ratios und fast_edgelist!)
-    graphs <- .generateQuantGraphs(peptide_ratios = peptide_ratios, 
+    graphs <- .generateQuantGraphs(peptide_ratios = peptide_ratios,
         id_cols = id_columns, fasta_edgelist = edgelist,
         outpath = outpath, seq_column = seq_column,
         collProtNodes = collProtNodes,

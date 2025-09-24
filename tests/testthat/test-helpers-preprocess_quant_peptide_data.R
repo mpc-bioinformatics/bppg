@@ -1,19 +1,18 @@
 
 
 test_that("read MaxQuant Output table", {
-    expect_snapshot(bppg::readMqPeptideTable(test_path("testfiles/peptides.txt")))
-
-    expect_snapshot(bppg::readMqPeptideTable(test_path("testfiles/peptides.txt"),
-                                             LFQ = TRUE,
-                                             further_columns_to_keep = c("Proteins", "Score")))
-
+    D1 <- bppg::readMqPeptideTable(test_path("testfiles/peptides.txt"))
+    D2 <- bppg::readMqPeptideTable(test_path("testfiles/peptides.txt"),
+                                   LFQ = TRUE,
+                                   further_columns_to_keep = c("Proteins", "Score"))
+    expect_snapshot(D1)
+    expect_snapshot(D2)
 })
 
 
 test_that("test aggregateReplicates", {
 
     # Create test data (3 samples with 3 runs each)
-    # TODO: possibility to make generation of test data more simple?
     df <- list()
     df <- c(df, sequence = list(paste0("pep_", 1:10)))
     for (i in 1:3) {
@@ -26,16 +25,14 @@ test_that("test aggregateReplicates", {
     }
     df <- as.data.frame(df)
 
-    expect_snapshot(bppg::aggregateReplicates(D = df,
-                                              group = factor(rep(1:3, each = 3)))
-    )
+    D1 <- bppg::aggregateReplicates(D = df, group = factor(rep(1:3, each = 3)))
 
-    expect_snapshot(bppg::aggregateReplicates(D = df,
-                                              group = factor(rep(1:3, each = 3)),
-                                              missing.limit = 0.35,
-                                              method = "median")
-    )
-
+    D2 <- bppg::aggregateReplicates(D = df,
+                                    group = factor(rep(1:3, each = 3)),
+                                    missing.limit = 0.35,
+                                    method = "median")
+    expect_snapshot(D1)
+    expect_snapshot(D2)
 })
 
 
@@ -43,7 +40,6 @@ test_that("test aggregateReplicates", {
 test_that("test calculatePeptideRatios", {
 
     # Create test data
-    # TODO: possibility to make generation of test data more simple?
     df <- list()
     df <- c(df, sequence = list(paste0("pep_", 1:10)))
     for (i in 1:3) {
@@ -54,10 +50,11 @@ test_that("test calculatePeptideRatios", {
     }
     df <- as.data.frame(df)
 
+    D1 <- bppg::calculatePeptideRatios(aggr_intensities = df, id_cols = 1)
+    D2 <- bppg::calculatePeptideRatios(aggr_intensities = df, id_cols = 1, type = "difference")
 
-    expect_snapshot(bppg::calculatePeptideRatios(aggr_intensities = df, id_cols = 1))
-
-    expect_snapshot(bppg::calculatePeptideRatios(aggr_intensities = df, id_cols = 1, type = "difference"))
+    expect_snapshot(D1)
+    expect_snapshot(D2)
 })
 
 

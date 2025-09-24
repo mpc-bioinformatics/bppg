@@ -1,9 +1,8 @@
 # read MaxQuant Output table
 
     Code
-      bppg::readMqPeptideTable(test_path("testfiles/peptides.txt"))
+      D1
     Output
-      [1] "Removed 17 decoy sequences."
                                                  Sequence X12500amol_R1 X12500amol_R2
       1                         AAAAQDEITGDGTTTVVCLVGELLR            NA            NA
       2                                      AAADALSDLEIK            NA            NA
@@ -21441,10 +21440,8 @@
 ---
 
     Code
-      bppg::readMqPeptideTable(test_path("testfiles/peptides.txt"), LFQ = TRUE,
-      further_columns_to_keep = c("Proteins", "Score"))
+      D2
     Output
-      [1] "Removed 17 decoy sequences."
                                                  Sequence
       1                         AAAAQDEITGDGTTTVVCLVGELLR
       2                                      AAADALSDLEIK
@@ -48122,7 +48119,7 @@
 # test aggregateReplicates
 
     Code
-      bppg::aggregateReplicates(D = df, group = factor(rep(1:3, each = 3)))
+      D1
     Output
          sequence       X1       X2       X3
       1     pep_1       NA 17.44052       NA
@@ -48139,8 +48136,7 @@
 ---
 
     Code
-      bppg::aggregateReplicates(D = df, group = factor(rep(1:3, each = 3)),
-      missing.limit = 0.35, method = "median")
+      D2
     Output
          sequence       X1       X2       X3
       1     pep_1 17.60185 17.18089 20.85566
@@ -48157,7 +48153,7 @@
 # test calculatePeptideRatios
 
     Code
-      bppg::calculatePeptideRatios(aggr_intensities = df, id_cols = 1)
+      D1
     Output
          sequence ratio_sample1_sample2 ratio_sample1_sample3 ratio_sample2_sample3
       1     pep_1                    NA                    NA             0.9900048
@@ -48174,7 +48170,7 @@
 ---
 
     Code
-      bppg::calculatePeptideRatios(aggr_intensities = df, id_cols = 1, type = "difference")
+      D2
     Output
          sequence ratio_sample1_sample2 ratio_sample1_sample3 ratio_sample2_sample3
       1     pep_1                    NA                    NA          6.785669e-01

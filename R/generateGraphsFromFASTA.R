@@ -1,7 +1,7 @@
 #' Generate graphs from a FASTA file
 #'
 #' @param fasta                    \strong{list of vector of chars} \cr
-#'                                 A fasta file, already read into R by 
+#'                                 A fasta file, already read into R by
 #'                                 seqinr::read.fasta().
 #' @param collProtNodes            \strong{logical} \cr
 #'                                 If \code{TRUE}, the protein nodes will
@@ -10,7 +10,7 @@
 #'                                 If \code{TRUE}, the peptide nodes will
 #'                                 be collapsed.
 #' @param result_path              \strong{character} \cr
-#'                                 The path where results are saved. If 
+#'                                 The path where results are saved. If
 #'                                 \code{NULL}, results are not saved.
 #' @param suffix                   \strong{character} \cr
 #'                                 The suffix for saving results.
