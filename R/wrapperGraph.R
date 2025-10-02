@@ -1,92 +1,91 @@
-#' Generate graphs from peptide ratio table, using an edgelist calculated
-#' on the fasta file.
+#' Functions in this file:
+#' generateGraphsFromFASTA
+#' generateGraphsFromQuantData
+
+#' Generate graphs from a FASTA file
 #'
-#' @param peptide_ratios           \strong{data.frame} \cr
-#'                                 A table with peptide ratios.
-#' @param id_cols                  \strong{integer vector} \cr
-#'                                 The columns with ids, e.g. peptide sequences
-#'                                 (everything except the peptide ratios)
-#' @param fasta_edgelist           \strong{data.frame} \cr
-#'                                 An edgelist created from the corresponding
-#'                                 FASTA file, eg. created with
-#'                                 [bppg::generateEdgelist()].
-#' @param outpath                  \strong{character} \cr
-#'                                 The output path for the results.
-#' @param seq_column               \strong{character} \cr
-#'                                 The column name of the peptide sequence.
+#' @param fasta                    \strong{list of vector of chars} \cr
+#'                                 A fasta file, already read into R by
+#'                                 seqinr::read.fasta().
 #' @param collProtNodes            \strong{logical} \cr
 #'                                 If \code{TRUE}, the protein nodes will
 #'                                 be collapsed.
 #' @param collPeptNodes            \strong{logical} \cr
 #'                                 If \code{TRUE}, the peptide nodes will
 #'                                 be collapsed.
+#' @param result_path              \strong{character} \cr
+#'                                 The path where results are saved. If
+#'                                 \code{NULL}, results are not saved.
 #' @param suffix                   \strong{character} \cr
 #'                                 The suffix for saving results.
+#' @param save_intermediate        \strong{logical} \cr
+#'                                 If \code{TRUE}, the intermediate results
+#'                                 will also be saved.
+#' @param prot_origin              \strong{character vector} \cr
+#'                                 The origin of protein, e.g. organism etc.
+#' @param ...                      Additional arguments to bppg::digestFASTA()
 #'
-#' @return A list of list of subgraphs
+#' @return subgraphs (i.e. connected components) from the graph generated from
+#'         the FASTA file.
 #' @export
 #'
-#' @seealso [bppg::generateEdgelist()]
-#'
 #' @examples
+#' library(seqinr)
+#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+#' graphs <- bppg::generateGraphsFromFASTA(fasta)
 #'
 
-.generateQuantGraphs <- function(peptide_ratios,
-                                  id_cols = 1,
-                                  fasta_edgelist,
-                                  outpath = NULL,
-                                  seq_column = "Sequence",
-                                  collProtNodes = TRUE,
-                                  collPeptNodes = FALSE,
-                                  suffix = "") {
-    ## broad filtering for edgelist for only quantifies peptides
-    edgelist_filtered <- fasta_edgelist[fasta_edgelist[, 2]
-        %in% peptide_ratios[, seq_column], ]
-
-    if (!is.null(outpath)) {
-        openxlsx::write.xlsx(edgelist_filtered,
-            file = paste0(outpath, "edgelist_filtered_", suffix, ".xlsx"),
-            overwrite = TRUE, keepNA = TRUE)
+generateGraphsFromFASTA <- function(fasta,
+    collProtNodes = TRUE,
+    collPeptNodes = TRUE,
+    result_path = NULL,
+    suffix = NULL,
+    save_intermediate = FALSE,
+    prot_origin = NULL,
+    ...) {
+    message("Digesting FASTA file ...")
+    digested_proteins <- bppg::digestFASTA(fasta, ...)
+    message("Generating edgelist ...")
+    edgelist <- bppg::generateEdgelist(digested_proteins,
+        prot_origin = prot_origin)
+    if (save_intermediate) {
+        message("Saving edgelist ...")
+        utils::write.table(edgelist, sep = "\t", row.names = FALSE,
+            file = paste0(result_path, "edgelist_",
+                suffix, ".txt"))
     }
 
-    id <- peptide_ratios[, id_cols, drop = FALSE]
-    peptide_ratios <- peptide_ratios[, -(id_cols), drop = FALSE]
-    colnames_split <- limma::strsplit2(colnames(peptide_ratios), "_")
-    comparisons <- paste(colnames_split[,2], colnames_split[,3], sep = "_")
-
-    subgraphs <- list()
-    for (i in 1:ncol(peptide_ratios)) {
-        comparison <- comparisons[i]
-        fc <- peptide_ratios[,i]
-        ## peptides that are quantified in this specific comparison
-        peptides_tmp <- id[, seq_column][!is.na(fc)]
-        fc <- stats::na.omit(fc)
-        edgelist_filtered2 <- edgelist_filtered[edgelist_filtered[, 2]
-            %in% peptides_tmp, ]
-
-        ## add peptide ratios
-        edgelist_filtered2$pep_ratio <- peptide_ratios[, i][
-            match(edgelist_filtered2$peptide, id[, seq_column])]
-
-        ## generate whole bipartite graph
-        edgelist_coll <- .collapseEdgelistQuant(edgelist_filtered2,
+    if (collProtNodes || collPeptNodes) {
+        message("Collapsing nodes ...")
+        edgelist_coll <- .collapseEdgelist(edgelist,
             collProtNodes = collProtNodes, collPeptNodes = collPeptNodes)
-
-        G <- .generateGraphsFromEdgelist(edgelist_coll[, 1:2])
-        ## set peptide ratios as vertex attributes
-        ## TODO APPlY
-        for (j in 1:length(G)){
-            G[[j]] <- igraph::set_vertex_attr(graph = G[[j]],
-                name = "pep_ratio",
-                index = igraph::V(G[[j]])[!igraph::V(G[[j]])$type],
-                value = edgelist_coll$pep_ratio[
-                    match(igraph::V(G[[j]])$name[!igraph::V(G[[j]])$type],
-                        edgelist_coll$peptide)])
-        }
-        subgraphs[[i]] <- G
-        names(subgraphs)[[i]] <- comparison
     }
-    return(subgraphs)
+
+    if (collProtNodes && collPeptNodes) suffix2 <- "collprotpept_"
+    if (collPeptNodes && !collProtNodes) suffix2 <- "collpept_"
+    if (collProtNodes && !collPeptNodes) suffix2 <- "collprot_"
+    if (!collProtNodes && !collPeptNodes) suffix2 <- NULL
+
+    if (save_intermediate && (collProtNodes || collPeptNodes)) {
+        utils::write.table(edgelist_coll, sep = "\t", row.names = FALSE,
+            file = paste0(result_path, "edgelist_", suffix2, suffix, ".txt"))
+    }
+
+    if (collProtNodes || collPeptNodes) {
+        message("Generating graphs ...")
+        graphs <- .generateGraphsFromEdgelist(edgelist_coll)
+    } else {
+        message("Generating graphs ...")
+        graphs <- .generateGraphsFromEdgelist(edgelist)
+    }
+
+
+    if (save_intermediate) {
+        saveRDS(graphs, file = paste0(result_path, "subgraphs_",
+                suffix2, suffix, ".rds"))
+    }
+    return(graphs)
 }
 
 

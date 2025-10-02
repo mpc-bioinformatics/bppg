@@ -1,3 +1,273 @@
+#' Functions in this file:
+#' .errorEquation
+#' .minimizeSquaredError
+#' iterateOverCi
+#' automatedAnalysisIteratedCi
+
+#' Function to set up the error equations for the optimization problem
+#'
+#' @param Ri          \strong{numeric vector} \cr
+#'                    Contains the (estimated) protein ratios.
+#' @param Ci          \strong{numeric vector} \cr
+#'                    Contains the protein weights (estimated, sum up to 1)
+#' @param M           \strong{matrix} \cr
+#'                    The biadjaceny matrix of the corresponding graphs.
+#' @param rj          \strong{numeric vector} \cr
+#'                    Contains the measured peptide ratios.
+#' @param log_level   \strong{logical} \cr
+#'                    If \code{TRUE}, the Ri are given on log2-level and need
+#' to be back-transformed here
+#' (this may allow a symmetric behaviour during optimization)
+#'
+#' @return list containing the following elements:
+#' \item{res_Mat}{matrix containing the estimated peptide
+#'      ratios using Ri and Ci}
+#' \item{res_equ}{vector of error terms for each peptide}
+#' \item{res_squ_err}{sum of squared error terms}
+#' \item{W}{internal weight matrix}
+#'
+#'
+#'
+#' @examples
+#' Ri <- c(0.5, 1.3)
+#' Ci <- c(0.3, 0.7)
+#' M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
+#' rj <- c(0.6, 1.2)
+#' bppg:::.errorEquation(Ri, Ci, M, rj)
+.errorEquation <- function(Ri,
+    Ci,
+    M,
+    rj,
+    #error.type = "multiplicative",
+    #error.trans = "square",
+    log_level = FALSE) {
+
+    m <- length(Ri) ## number of proteins
+    n <- length(rj) ## number of peptides
+
+    ## backtransformation if necessary
+    if (log_level) Ri <- 2^Ri
+    ## multiply the delta values (biadjacency matrix) with their weights Ci
+    W <- sweep(M, MARGIN = 2, Ci, "*")
+    ## sum of the weights per peptide
+    W_sum <- rowSums(W)
+    ## divide the weights by the sum of the weights per peptide
+    W <- as.matrix(sweep(W, 1, W_sum, "/"))
+    ## multiply Ri with the corresponding weight
+    res_Mat <- sweep(W, MARGIN = 2, Ri, '*')
+
+    ## error term per peptide (on log-scale)
+    res_equ <- log(rj) - log(rowSums(res_Mat))
+
+    ## sum of squared error terms
+    res_squ_err <- sum(res_equ^2)
+
+    return(list(res_Mat = res_Mat, res_equ = res_equ,
+            res_squ_err = res_squ_err, W = W))
+}
+
+
+
+
+#' Function to set up the optimization problem and minimize the sum of squared
+#' error terms
+#'
+#' @param S           \strong{list} \cr
+#'                    A list of biadjacency matrix of the bipartite
+#'                    peptide-protein graph (X) and
+#'                    measured peptide ratios (fc).
+#' @param fixed.Ci    \strong{numeric vector} \cr
+#'                    The fixed protein weights, variable weights set as NA.
+#'                    Sum of fixed weights must not exceed 1.
+#'                    If NULL, all Cis will be considered as variable.
+#'                    This argument is needed to fix Ci on a grid point in the
+#'                    iterated_Ci function.
+#' @param verbose     \strong{logical} \cr
+#'                    If \code{TRUE}, additional information on each iteration
+#'                    of the optimization is printed (see also rsolnp function
+#'                    in package Rsolnp).
+#' @param reciprocal  \strong{logical} \cr
+#'                    If \code{TRUE}, the reciprocal of the peptide ratios is
+#'                    used for the optimization.
+#' @param log_level   \strong{logical} \cr
+#'                    If \code{TRUE}, the Ri are log2-transformed before
+#'                    optimization, allowing a symmetric consideration of
+#'                    Ri < 0 and > 0.
+#' @param control     \strong{list} \cr
+#'                    The control parameters for solnp.
+#' @param ...         Additional parameters to solnp.
+#'
+#' @return list containing the following elements:
+#' \item{Ri}{estimated protein ratios}
+#' \item{Ci}{estimated protein weights}
+#' \item{RES}{final result of .errorEquation(), which also contains the final,
+#'  minimal error term}
+#' \item{Tracking}{Tracking of Ri, Ci and error term for the
+#'  different iterations}
+#' \item{outer.iter}{Number of outer iterations needed for the optimization
+#'  algorithm to converge or stop}
+#' \item{convergence}{Indicates whether the solver has converged (0) or
+#' not (1 or 2).}
+#'
+#' @examples
+#' M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
+#' rj <- c(0.6, 1.2)
+#' S <- list(X = M, fc = rj)
+#' bppg:::.minimizeSquaredError(S)
+#'
+## TODO SIMPLFY -> put options into differnt functions?
+.minimizeSquaredError <- function(S,
+    #error.type = "multiplicative",
+    fixed.Ci = NULL,
+    verbose = FALSE,
+    #error.trans = "square",
+    reciprocal = FALSE,
+    log_level = TRUE,
+    control = list(),
+    ...) {
+
+    is.Ci.fixed <- !is.null(fixed.Ci)
+    ## assesses which Cis are fixed by the user
+    if (is.Ci.fixed) which.Ci.fixed <- which(!is.na(fixed.Ci))
+    if (sum(fixed.Ci, na.rm = TRUE) > 1) {
+        stop("Sum of chosen Ci values exceeds 1!")
+    }
+
+    m <- ncol(S$X) ## number of proteins
+    n <- nrow(S$X) ## number of peptides
+    rj <- S$fc     ## given peptide ratios
+    if (reciprocal) {
+        rj <- 1 / rj
+    }
+    M <- S$X  ## biadjacency matrix
+
+    ## Initialization of Ci:
+    if (!is.Ci.fixed) {
+        ## the algorithm starts with equal weights for each protein
+        Ci_start <- rep(1 / m, m)
+    } else {
+        ## if at least one Ci is fixed, the algorithm distributes the remaining
+        ## weight equally among the non-fixed proteins
+        m2 <- m - length(which.Ci.fixed)
+        ## sum of fixed Ci (as all Ci have to sum up tp 1)
+        fixed.Ci.sum <- sum(fixed.Ci, na.rm = TRUE)
+        Ci_start <- fixed.Ci
+        ## starting values for the remaining Ci values
+        Ci_start[is.na(Ci_start)] <- (1 - fixed.Ci.sum) / m2
+    }
+
+    ## initialization of Ri as the geometric mean of (if possible only unique)
+    ## peptide ratios
+    Ri <- rep(NA, m)
+    for (j in 1:m) {
+        tmp <- S$X * S$fc
+        tmp[tmp == 0] <- NA    ## 0 -> peptide is not present in the protein
+        unique <- (rowSums(M) == 1) & (M[, j] == 1)
+        if (any(unique)) {
+        Ri[j] <- 2^mean(log2(tmp[unique, j]), na.rm = TRUE)
+        } else {
+        Ri[j] <- 2^mean(log2(tmp[, j]), na.rm = TRUE)
+        }
+    }
+    if (log_level) Ri <- log2(Ri)
+
+    ## initial error term
+    RES <- .errorEquation(Ri = Ri, Ci = Ci_start, M = M, rj = rj,
+        log_level = log_level)
+
+    track_colnames <- c("iter", "squ_err", paste0("R", 1:m), paste0("C", 1:m))
+    Tracking <- matrix(c(0, RES$res_squ_err, Ri, Ci_start), nrow = 1)
+    Tracking <- as.data.frame(Tracking)
+    colnames(Tracking) <- track_colnames
+
+    iter <- 1
+
+    ## starting parameters
+    if (is.Ci.fixed) {
+        pars <- c(Ri, Ci_start[-which.Ci.fixed])
+    } else {
+        pars <- c(Ri, Ci_start)
+    }
+
+    ## function to optimize
+    if (is.Ci.fixed) {
+        fun <- function(x) {
+        Ri_tmp <- x[1:m]
+        Ci_tmp <- fixed.Ci
+        Ci_tmp[is.na(fixed.Ci)] <- x[(m + 1):(m + m2)]
+        .errorEquation(Ri = Ri_tmp, Ci = Ci_tmp, M = M, rj = rj,
+            ## error.type = error.type, error.trans = error.trans,
+            log_level = log_level)$res_squ_err
+        }
+    } else {
+        fun <- function(x) {
+        Ri_tmp <- x[1:m]
+        Ci_tmp <- x[(m + 1):(2 * m)]
+        .errorEquation(Ri = Ri_tmp, Ci = Ci_tmp, M = M, rj = rj,
+                ## error.type = error.type, error.trans = error.trans,
+                log_level = log_level)$res_squ_err
+        }
+    }
+
+    ## constraints
+    if (is.Ci.fixed) {
+        ## sum Ci = 1
+        eqfun <- function(x) sum(x[(m + 1):(m + m2)]) + fixed.Ci.sum - 1
+        LB <- rep(0, m + m2)
+        if (log_level) LB <- c(rep(-Inf, m), rep(0, m2))
+        eqB <- 0
+    } else {
+        ## sum Ci = 1
+        eqfun <- function(x) sum(x[(m + 1):(2 * m)]) - 1
+        LB <- rep(0, 2 * m)
+        if (log_level) LB <- c(rep(-Inf, m), rep(0, m))
+        eqB <- 0
+    }
+
+    if (verbose) {
+        control <- c(control, trace = 0)
+    }
+
+    ## Optimization
+    res <- Rsolnp::solnp(pars = pars, fun = fun, LB = LB, eqfun = eqfun,
+        eqB = eqB, control = control, ...)
+
+    outer.iter <- res$outer.iter
+    convergence <- res$convergence
+
+    Ri <- res$pars[1:m]
+
+    if (is.Ci.fixed) {
+        Ci_tmp <- res$pars[(m + 1):(m + m2)]
+        Ci <- fixed.Ci
+        Ci[is.na(Ci)] <- Ci_tmp
+    } else {
+        Ci <- res$pars[(m + 1):(2 * m)]
+    }
+
+    ## update RES
+    RES <- .errorEquation(Ri = Ri, Ci = Ci, M = M, rj = rj,
+        #error.type = error.type, error.trans = error.trans,
+        log_level = log_level)
+
+    Tracking <- rbind(Tracking, c(iter, RES$res_squ_err, Ri, Ci))
+
+
+    if (log_level) {
+        Ri <- 2^Ri
+    }
+    if (reciprocal) {
+        Ri <- 1 / Ri
+    }
+
+
+    result <- list(Ri = Ri, Ci = Ci, RES = RES, Tracking = Tracking,
+        outer.iter = outer.iter, convergence = convergence)
+    class(result) <- "res_min_squ_error"
+
+    return(result)
+
+}
 
 
 ## TODO: progress bar!
@@ -140,8 +410,6 @@ iterateOverCi <- function(S,
 
     return(result)
 }
-
-
 
 
 #' Extract protein ratio solutions from the result of iterateOverCi()

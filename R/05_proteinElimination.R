@@ -1,3 +1,7 @@
+#' Functions in this file:
+#' proteinElimination
+
+
 
 #' Tries to recursively remove protein nodes from graph while keeping the error
 #' term in the optimization step low
@@ -183,8 +187,3 @@ proteinElimination <- function(G,
         comb_current = comb_current, G_current = G_current,
         n_comb_current = n_comb_current))
 }
-
-
-
-
-

@@ -1,3 +1,36 @@
+#' Functions in this file:
+#' myDiamond
+#' setNodeLabels
+#' plotBipartiteGraph
+
+
+#' Function do define diamond shape for unique peptides in bipartite graph.
+#' this works for igraph.
+#' @param coords                \strong{matrix} \cr
+#'                              2D-coordinates vor vertices.
+#' @param v                     \strong{numrical} \cr
+#'                              (row) index for vertices.
+#' @param params                \strong{data.frame} \cr
+#'                              parameters for color and size.
+#' @return symbole that can be used by igraph for plotting
+
+.myDiamond <- function(coords, v = NULL, params) {
+    vertex.color <- params("vertex", "color")
+    if (length(vertex.color) != 1 && !is.null(v)) {
+        vertex.color <- vertex.color[v]
+    }
+    vertex.size <- 1 / 200 * params("vertex", "size")
+    if (length(vertex.size) != 1 && !is.null(v)) {
+        vertex.size <- vertex.size[v]
+    }
+
+    graphics::symbols(x=coords[, 1], y=coords[, 2], bg=vertex.color,
+        stars=1.2 * cbind(vertex.size, vertex.size,
+            vertex.size, vertex.size),
+        add=TRUE, inches=FALSE)
+}
+
+
 #' Set names for plotting with plotBipartiteGraph.
 #'
 #' @param G                         \strong{igraph graph object} \cr
@@ -55,34 +88,6 @@
 
     igraph::set_vertex_attr(G, name = "name", value = names_G)
 }
-
-
-#' Function do define diamond shape for unique peptides in bipartite graph.
-#' this works for igraph.
-#' @param coords                \strong{matrix} \cr
-#'                              2D-coordinates vor vertices.
-#' @param v                     \strong{numrical} \cr
-#'                              (row) index for vertices.
-#' @param params                \strong{data.frame} \cr
-#'                              parameters for color and size.
-#' @return symbole that can be used by igraph for plotting
-
-.myDiamond <- function(coords, v = NULL, params) {
-    vertex.color <- params("vertex", "color")
-    if (length(vertex.color) != 1 && !is.null(v)) {
-        vertex.color <- vertex.color[v]
-    }
-    vertex.size <- 1 / 200 * params("vertex", "size")
-    if (length(vertex.size) != 1 && !is.null(v)) {
-        vertex.size <- vertex.size[v]
-    }
-
-    graphics::symbols(x=coords[, 1], y=coords[, 2], bg=vertex.color,
-        stars=1.2 * cbind(vertex.size, vertex.size,
-            vertex.size, vertex.size),
-        add=TRUE, inches=FALSE)
-}
-
 
 
 #### TODO: Farbskala für die Peptid-Knoten einbauen, um die Peptid-Ratios

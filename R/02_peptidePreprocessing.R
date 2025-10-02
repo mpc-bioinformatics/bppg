@@ -1,91 +1,37 @@
-#' Import of MaxQuant's peptide.txt-table.
+#' Functions in this file:
+#' .foldChange
+#' aggregateReplicates
+#' calculatePeptideRatios
+
+
+#' Calculate peptide ratios for pairwise comparisons of groups (Y/X).
 #'
-#' @param path                      \strong{character} \cr
-#'                                  The path to the peptides.txt table
-#' @param LFQ                       \strong{logical} \cr
-#'                                  If \code{TRUE}, LFQ intensities are used,
-#'                                  if FALSE, raw (unnormalized) intensities
-#' @param remove_contaminants       \strong{logical} \cr
-#'                                  If \code{TRUE}, peptide sequences from
-#'                                  potential contaminants are removed
-#' @param rename_columns            \strong{logical} \cr
-#'                                  If \code{TRUE}, "Intensity." or 
-#'                                  "LFQ.intensity." are removed
-#' @param zeroToNA                  \strong{logical} \cr
-#'                                  If \code{TRUE}, zeros are converted to NAs.
-#' @param remove_empty_rows         \strong{logical} \cr
-#'                                  If \code{TRUE}, rows with only NAs are 
-#'                                  removed.
-#' @param further_columns_to_keep   \strong{integer vector} \cr
-#'                                  Indices of additional columns to keep, 
-#'                                  except peptide sequence and intensities
+#' @param D       \strong{data.frame} \cr
+#'                The data set.
+#' @param X       \strong{character} \cr
+#'                The column name of group1.
+#' @param Y       \strong{character} \cr
+#'                The column name of group2.
+#' @param useNA   \strong{logical} \cr
+#'                If \code{TRUE},results 0 and Inf are possible, otherwise
+#'                ratio is NA if value for X or Y is NA
 #'
-#' @return A data frame with sequences and intensities.
-#' @export
+#' @return The fold changes (Y/X).
 #'
-#' @examples
-#' file <- system.file("extdata", "peptides.txt", package = "bppg")
-#' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#'
+#' @examples ## TODO
+#'
 
-readMqPeptideTable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
-    rename_columns = TRUE, zeroToNA = TRUE,
-    remove_empty_rows = TRUE,
-    further_columns_to_keep = NULL) {
+.foldChange <- function(D, X, Y, useNA = FALSE) {
+    FC <- D[, Y] / D[, X]
 
-    D <- utils::read.table(path, sep = "\t", header = TRUE)
-
-    ## remove decoy entries:
-    ind_decoy <- D$Reverse == "+"
-    D <- D[!ind_decoy, ]
-    print(paste0("Removed ", sum(ind_decoy), " decoy sequences."))
-
-    ind_cont <- D$Potential.contaminant == "+"
-    if (remove_contaminants) {
-        D <- D[!ind_cont, ]
-        print(paste0("Removed ", sum(ind_cont), " contaminant sequences."))
+    if (useNA) {
+        FC[is.na(D[, Y]) & !is.na(D[, X])] <- 0
+        FC[is.na(D[, X]) & !is.na(D[, Y])] <- Inf
     }
 
-
-    ## search for intensity columns or LFQ values
-    if (LFQ) {
-        intensities <- D[, grep("LFQ", colnames(D))]
-        if (rename_columns) {
-            colnames(intensities) <- stringr::str_replace(colnames(intensities),
-                "LFQ.intensity.", "")
-        }
-    } else {
-        intensities <- D[, grep("Intensity.", colnames(D))]
-        if (rename_columns) {
-            colnames(intensities) <- stringr::str_replace(colnames(intensities),
-                "Intensity.", "")
-        }
-    }
-
-    if (zeroToNA) {
-        intensities[intensities == 0] <- NA
-
-        if (remove_empty_rows) {
-            validvalues <- rowSums(!is.na(intensities))
-            D <- D[validvalues >= 1, ]
-            intensities <- intensities[validvalues >= 1, ]
-        }
-    }
-
-    if (is.null(further_columns_to_keep)) {
-        RES <- data.frame(Sequence = D$Sequence, intensities)
-    } else {
-        further_columns <- D[, further_columns_to_keep, drop = FALSE]
-        colnames(further_columns) <- further_columns_to_keep
-        RES <- data.frame(Sequence = D$Sequence, further_columns, intensities)
-    }
-
-    return(RES)
+    return(FC)
 }
-
-
-
-
-
 
 
 #' Aggregate replicates of the same experimental group.
@@ -142,39 +88,6 @@ aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
     res <- data.frame(id, res)
     return(res)
 }
-
-
-
-#' Calculate peptide ratios for pairwise comparisons of groups (Y/X).
-#'
-#' @param D       \strong{data.frame} \cr
-#'                The data set.
-#' @param X       \strong{character} \cr
-#'                The column name of group1.
-#' @param Y       \strong{character} \cr
-#'                The column name of group2.
-#' @param useNA   \strong{logical} \cr
-#'                If \code{TRUE},results 0 and Inf are possible, otherwise
-#'                ratio is NA if value for X or Y is NA
-#'
-#' @return The fold changes (Y/X).
-#'
-#'
-#' @examples ## TODO
-#'
-
-.foldChange <- function(D, X, Y, useNA = FALSE) {
-    FC <- D[, Y] / D[, X]
-
-    if (useNA) {
-        FC[is.na(D[, Y]) & !is.na(D[, X])] <- 0
-        FC[is.na(D[, X]) & !is.na(D[, Y])] <- Inf
-    }
-
-    return(FC)
-}
-
-
 
 #' Calculation of peptide ratios from aggregated intensities.
 #'

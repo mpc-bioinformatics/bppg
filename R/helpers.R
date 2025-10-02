@@ -1,3 +1,39 @@
+#' Functions in this file:
+#' .addAveragePepRatio
+#' .addUniquenessAttributes
+#' .geomMean
+
+#' Adds average peptide ratios as a attribute to the graphs, if a list of
+#' peptide ratios is already present.
+#'
+#' @param G      \strong{igraph graph object} \cr
+#'               A peptide-protein graph.
+#' @param type   \strong{character} \cr
+#'               !NOT USED AT THE MOMENT!
+#'
+#' @return A graph with added peptide ratio attributes.
+#'
+#'
+#' @seealso [generateGraphsFromFASTA()], [.generateQuantGraphs()],
+#'          [.addUniquenessAttributes()]
+#'
+#' @examples
+
+.addAveragePepRatio <- function(G, type = "geom_mean") {
+
+    pep_ratio <- igraph::V(G)$pep_ratio
+    pep_ratio_split <- strsplit(pep_ratio, ";")
+
+    pep_ratio_aggr <- sapply(pep_ratio_split, function(x) {
+        .geomMean(as.numeric(x))})
+
+    nr_sequences <- sapply(pep_ratio_split, length)
+
+    G <- igraph::set_vertex_attr(G, "pep_ratio_aggr", value = pep_ratio_aggr)
+    G <- igraph::set_vertex_attr(G, "nr_sequences", value = nr_sequences)
+    return(G)
+}
+
 #' Adds vertex attributes with uniqueness of peptides and number of unique
 #' peptides for proteins.
 #'
@@ -46,41 +82,27 @@
         value = nr_shared_peptides)
 }
 
-
-
-
-
-
-#' Adds average peptide ratios as a attribute to the graphs, if a list of
-#' peptide ratios is already present.
+#' Calculate the geometric mean.
 #'
-#' @param G      \strong{igraph graph object} \cr
-#'               A peptide-protein graph.
-#' @param type   \strong{character} \cr
-#'               !NOT USED AT THE MOMENT!
+#' @param x         \strong{numeric vector} \cr
+#'                  Input data.
+#' @param useprod   \strong{logical} \cr
+#'                  If \code{TRUE}, prod(x)^(1/n) will be calculated, otherwise
+#'                  exp(mean(log(x))).
 #'
-#' @return A graph with added peptide ratio attributes.
+#' @return The geometric mean of the provided data points.
 #'
-#'
-#' @seealso [generateGraphsFromFASTA()], [.generateQuantGraphs()],
-#'          [.addUniquenessAttributes()]
 #'
 #' @examples
+#' data <- c(1,6,3.5)
+#' result <- bppg:::.geomMean(data, useprod = FALSE)
 
-.addAveragePepRatio <- function(G, type = "geom_mean") {
+.geomMean <- function(x, useprod = FALSE) {
+    n <- length(x)
 
-    pep_ratio <- igraph::V(G)$pep_ratio
-    pep_ratio_split <- strsplit(pep_ratio, ";")
-
-    pep_ratio_aggr <- sapply(pep_ratio_split, function(x) {
-        .geomMean(as.numeric(x))})
-
-    nr_sequences <- sapply(pep_ratio_split, length)
-
-    G <- igraph::set_vertex_attr(G, "pep_ratio_aggr", value = pep_ratio_aggr)
-    G <- igraph::set_vertex_attr(G, "nr_sequences", value = nr_sequences)
-    return(G)
+    if (useprod) {
+        return(prod(x)^(1 / n))
+    } else {
+        return(exp(mean(log(x))))
+    }
 }
-
-
-
