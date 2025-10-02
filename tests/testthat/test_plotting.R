@@ -71,8 +71,6 @@ test_that("plot a bipartite graph", {
 
 })
 
-
-
 ## only test file existence, not snapshots which can be tested also on github actions
 test_that("plot a bipartite graph file existence", {
 
@@ -141,5 +139,3 @@ test_that("plot a bipartite graph file existence", {
   expect_true(file.exists(file.path(temp_dir, "bipartitGraph4.png")))
 
 })
-
-

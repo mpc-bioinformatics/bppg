@@ -1,15 +1,3 @@
-
-
-test_that("read MaxQuant Output table", {
-    D1 <- bppg::readMqPeptideTable(test_path("testfiles/peptides.txt"))
-    D2 <- bppg::readMqPeptideTable(test_path("testfiles/peptides.txt"),
-                                   LFQ = TRUE,
-                                   further_columns_to_keep = c("Proteins", "Score"))
-    expect_snapshot(D1)
-    expect_snapshot(D2)
-})
-
-
 test_that("test aggregateReplicates", {
 
     # Create test data (3 samples with 3 runs each)
@@ -56,8 +44,3 @@ test_that("test calculatePeptideRatios", {
     expect_snapshot(D1)
     expect_snapshot(D2)
 })
-
-
-
-
-

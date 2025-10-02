@@ -1,6 +1,3 @@
-# test of digestFASTA() is in the file test-graph_generation_FASTA.R
-
-
 test_that("test .digest2", {
 
   file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
@@ -37,11 +34,6 @@ test_that("test .digest2", {
 })
 
 
-
-
-
-
-
 test_that("digestion of a FASTA file", {
   file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
   fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
@@ -54,5 +46,11 @@ test_that("digestion of a FASTA file", {
   expect_snapshot(res2)
 })
 
+test_that("generation of an edgelist", {
+    edgelist <- readRDS(testthat::test_path("testfiles/edgelist_test.rds"))
 
+    digested_proteins <- readRDS(testthat::test_path("testfiles/digested_proteins_test.rds"))
+    res <- generateEdgelist(digested_proteins)
 
+    expect_equal(res, edgelist)
+})

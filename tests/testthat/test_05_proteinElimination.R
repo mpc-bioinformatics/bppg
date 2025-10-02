@@ -1,5 +1,3 @@
-
-
 test_that("test proteinElimination", {
 
     # Create edgelist
@@ -23,13 +21,3 @@ test_that("test proteinElimination", {
     expect_snapshot(res)
 
 })
-
-
-
-
-
-
-
-
-
-

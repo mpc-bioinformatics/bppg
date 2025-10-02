@@ -1,50 +1,25 @@
-
-
-test_that("test .generateQuantGraphs", {
-
-  # Create a temporary directory so no permanent files are put on a package users directory
+test_that("generate graphs from fasta",{
   temp_dir <- tempfile(pattern = "test_dir")
   dir.create(temp_dir)
   on.exit(unlink(temp_dir, recursive = TRUE))
 
-  # Create a ratio table and edgelist
-  set.seed(8)
-  ratio_table <- data.frame(peptides = paste0("pep_", 1:10),
-                            ratio_sample1_sample2 = round(runif(10, min = 0.9, max = 1.1), digits = 3),
-                            ratio_sample1_sample3 = round(runif(10, min = 0.9, max = 1.1), digits = 3),
-                            ratio_sample2_sample3 = round(runif(10, min = 0.9, max = 1.1), digits = 3))
-  for (i in 2:4) {
-    ratio_table[sample(1:10, size = 2), i] <- NA # Insert some NAs
-  }
 
-  proteins <- rep(paste0("prot_", 1:5), times = c(4,2,3,4,4))
-  peptides <- c(paste0("pep_", 1:4), paste0("pep_", 3:4), paste0("pep_", 5:7), paste0("pep_", 7:10), paste0("pep_", 7:10))
-  edgelist <- data.frame(protein = proteins, peptide = peptides)
+  file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+  fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 
-  # Compute function
-  graphs <- bppg:::.generateQuantGraphs(peptide_ratios = ratio_table,
-                                  id_cols = 1,
-                                  fasta_edgelist = edgelist,
-                                  outpath = temp_dir,
-                                  seq_column = "peptides",
-                                  collProtNodes = TRUE,
-                                  collPeptNodes = TRUE,
-                                  suffix = "")
+  res <- bppg::generateGraphsFromFASTA(fasta = fasta,
+                                       save_intermediate = TRUE,
+                                       result_path = paste0(temp_dir, "\\"))
 
-  # Check result attributes
-  expect_true(file.exists(paste0(temp_dir, "edgelist_filtered_.xlsx")))
-  expect_equal(unname(lapply(graphs, length)), list(3,2,2))
-  expect_equal(names(graphs), c("sample1_sample2", "sample1_sample3", "sample2_sample3"))
+  expect_snapshot(igraph::as_edgelist(res[[1]]))
+  expect_snapshot(igraph::as_edgelist(res[[2]]))
+  expect_snapshot(igraph::as_edgelist(res[[3]]))
 
-  for (i in 1:3) {
-    for (j in seq_along(graphs[[i]])) {
-      expect_snapshot(igraph::as_edgelist(graphs[[i]][[j]]))
-    }
-  }
+  expect_true(file.exists(file.path(temp_dir, "edgelist_.txt")))
+  expect_true(file.exists(file.path(temp_dir, "edgelist_collprotpept_.txt")))
+  expect_true(file.exists(file.path(temp_dir, "subgraphs_collprotpept_.rds")))
 
 })
-
-
 
 test_that("test generateGraphsFromQuantData", {
 
@@ -96,5 +71,3 @@ test_that("test generateGraphsFromQuantData", {
 
 
 })
-
-
