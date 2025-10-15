@@ -6,7 +6,7 @@ test_that("test .errorEquation", {
   rj <- c(0.6, 1.2)
   e <- bppg:::.errorEquation(Ri, Ci, M, rj)
 
-  expect_snapshot()
+  expect_snapshot(e)
 })
 
 test_that("test .minimizeSquaredError", {

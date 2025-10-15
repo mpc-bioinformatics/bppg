@@ -1,6 +1,23 @@
 # test .errorEquation
 
     Code
+      e
+    Output
+      $res_Mat
+           [,1] [,2]
+      [1,] 0.50 0.00
+      [2,] 0.15 0.91
+      
+      $res_equ
+      [1] 0.1823216 0.1240526
+      
+      $res_squ_err
+      [1] 0.04863021
+      
+      $W
+           [,1] [,2]
+      [1,]  1.0  0.0
+      [2,]  0.3  0.7
       
 
 # test automated analysis
