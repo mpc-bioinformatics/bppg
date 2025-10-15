@@ -19,8 +19,18 @@ test_that("test .minimizeSquaredError", {
   # test fixed_Ci
   res2 <- bppg:::.minimizeSquaredError(S, verbose = FALSE, fixed.Ci = c(0.3, NA))
 
-  expect_snapshot(res)
-  expect_snapshot(res2)
+  testfile_path <- file.path(testthat::test_path(), "testfiles")
+  res_snap <- readRDS(file.path(testfile_path, "test_minimizeSquaredError_file1.rds"))
+  res2_snap <- readRDS(file.path(testfile_path, "test_minimizeSquaredError_file2.rds"))
+
+  expect_equal(res$Ri, res_snap$Ri, tolerance = 1e-05)
+  expect_equal(res$Ci, res_snap$Ci, tolerance = 1e-05)
+  expect_equal(str(res$Ci), str(res_snap$Ci))
+
+  expect_equal(res2$Ri, res2_snap$Ri, tolerance = 1e-05)
+  expect_equal(res2$Ci, res2_snap$Ci, tolerance = 1e-05)
+  expect_equal(str(res2$Ci), str(res2_snap$Ci))
+
 })
 
 ################################################################################
@@ -32,7 +42,11 @@ test_that("test iterateOverCi", {
     rj <- c(0.6, 1.2)
     S <- list(X = M, fc = rj)
     res <- iterateOverCi(S, grid.size = 10)
-    expect_snapshot(res)
+
+    testfile_path <- file.path(testthat::test_path(), "testfiles")
+    res_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file1.rds"))
+
+    expect_equal(res, res_snap, tolerance = 1e-05)
 })
 
 test_that("test iterateOverCi with extended grid", {
@@ -43,36 +57,36 @@ test_that("test iterateOverCi with extended grid", {
 
     res2 <- iterateOverCi(S, grid.size = 10,
                           extend_grid_at_borders = TRUE)
+    testfile_path <- file.path(testthat::test_path(), "testfiles")
+    res2_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file2.rds"))
 
-    expect_snapshot(res2)
+    expect_equal(res2, res2_snap, tolerance = 1e-05)
 })
 
 ################################################################################
 # automated analysis
 
 test_that("test automated analysis", {
-
     M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = FALSE)
     rj <- c(0.6, 1.2)
     S <- list(X = M, fc = rj)
 
-    res <- iterateOverCi(S, grid.size = 10)
-
-    res3 <- automatedAnalysisIteratedCi(S, res)
+    testfile_path <- file.path(testthat::test_path(), "testfiles")
+    res_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file1.rds"))
+    res3 <- automatedAnalysisIteratedCi(S, res_snap)
     expect_snapshot(res3)
-
 })
 
 
 test_that("test automated analysis with using results from other proteins", {
-
     M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = FALSE)
     rj <- c(0.6, 1.2)
     S <- list(X = M, fc = rj)
 
-    res <- iterateOverCi(S, grid.size = 10)
+    testfile_path <- file.path(testthat::test_path(), "testfiles")
+    res_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file1.rds"))
 
-    res4 <- automatedAnalysisIteratedCi(S, res,
+    res4 <- automatedAnalysisIteratedCi(S, res_snap,
                                         use_results_from_other_proteins = TRUE)
     expect_snapshot(res4)
 

@@ -46,7 +46,7 @@
 #'                                  The number of digits to round the peptide
 #'                                  ratios to.
 #' @return Graph with updated names
-#' 
+#'
 .setNodeLabels <- function(G, node_labels_peptides, node_labels_proteins,
     round_digits) {
     Layout <- igraph::layout_as_bipartite(G)
@@ -113,8 +113,8 @@
 #' @param vertex.size2              \strong{numeric} \cr
 #'                                  The vertex size 2.
 #' @param useCanonicalPermutation   \strong{logical} \cr
-#'                                  If \code{TRUE}, the graph will be converted 
-#'                                  into the canonical permutation before 
+#'                                  If \code{TRUE}, the graph will be converted
+#'                                  into the canonical permutation before
 #'                                  plotting.
 #' @param three_shapes              \strong{logical} \cr
 #'                                  If \code{TRUE}, a separate shape will be
@@ -150,7 +150,7 @@
 #' biadjacency_matrix <- matrix(c(1,1,1,0), nrow = 2)
 #' G <- igraph::graph_from_biadjacency_matrix(biadjacency_matrix)
 #' plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
-#' 
+#'
 # TODO way more than 50 lines
 # move costumination into sub functions?
 plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
@@ -171,7 +171,7 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
         cG <- igraph::canonical_permutation(G)
         G <- igraph::permute(G, cG$labeling)
     }
-    
+
     G <- .setNodeLabels(G, node_labels_peptides, node_labels_proteins,
         round_digits = 2)
     #################################
@@ -191,11 +191,11 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
 
     #if (legend) graphics::par(mar = c(10, 4, 4, 2) + 0.1)
 
-    if (use_edge_attributes) {
-        edge.lty <- igraph::E(G)$deleted + 1
-    } else {
+#    if (use_edge_attributes) {
+#        edge.lty <- igraph::E(G)$deleted + 1
+#    } else {
         edge.lty <- 1
-    }
+#    }
 
     plot(G, layout = igraph::layout_as_bipartite,
         vertex.color=vertex.color[type],
@@ -207,7 +207,7 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
         vertex.size2=vertex.size2, edge.lty = edge.lty, ...)
 
     if (legend && three_shapes) {
-        legend(x = legend.x, y = legend.y, legend = c("protein", 
+        legend(x = legend.x, y = legend.y, legend = c("protein",
                 "shared peptide", "unique peptide"),
             col = vertex.color, pch = c(19, 15, 18))
     }

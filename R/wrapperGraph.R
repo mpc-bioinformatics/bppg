@@ -52,8 +52,7 @@ generateGraphsFromFASTA <- function(fasta,
     if (save_intermediate) {
         message("Saving edgelist ...")
         utils::write.table(edgelist, sep = "\t", row.names = FALSE,
-            file = paste0(result_path, "edgelist_",
-                suffix, ".txt"))
+            file = file.path(result_path, paste0("edgelist_", suffix, ".txt")))
     }
 
     if (collProtNodes || collPeptNodes) {
@@ -69,7 +68,7 @@ generateGraphsFromFASTA <- function(fasta,
 
     if (save_intermediate && (collProtNodes || collPeptNodes)) {
         utils::write.table(edgelist_coll, sep = "\t", row.names = FALSE,
-            file = paste0(result_path, "edgelist_", suffix2, suffix, ".txt"))
+            file = file.path(result_path, paste0("edgelist_", suffix2, suffix, ".txt")))
     }
 
     if (collProtNodes || collPeptNodes) {
@@ -82,8 +81,7 @@ generateGraphsFromFASTA <- function(fasta,
 
 
     if (save_intermediate) {
-        saveRDS(graphs, file = paste0(result_path, "subgraphs_",
-                suffix2, suffix, ".rds"))
+        saveRDS(graphs, file = file.path(result_path, paste0("subgraphs_", suffix2, suffix, ".rds")))
     }
     return(graphs)
 }

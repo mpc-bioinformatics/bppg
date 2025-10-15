@@ -64,10 +64,10 @@ test_that("plot a bipartite graph", {
   dev.off()
 
 
-  expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph.png"), name = "plotBipartitGraph.png")
-  expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph2.png"), name = "plotBipartitGraph2.png")
-  expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph3.png"), name = "plotBipartitGraph3.png")
-  expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph4.png"), name = "plotBipartitGraph4.png")
+  expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph.png"), name = "plotBipartitGraph.png", variant = Sys.info()[["sysname"]])
+  expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph2.png"), name = "plotBipartitGraph2.png", variant = Sys.info()[["sysname"]])
+  expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph3.png"), name = "plotBipartitGraph3.png", variant = Sys.info()[["sysname"]])
+  expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph4.png"), name = "plotBipartitGraph4.png", variant = Sys.info()[["sysname"]])
 
 })
 
