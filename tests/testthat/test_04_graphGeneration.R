@@ -96,7 +96,7 @@ test_that("test .generateQuantGraphs", {
                                   suffix = "")
 
   # Check result attributes
-  expect_true(file.exists(paste0(temp_dir, "edgelist_filtered_.xlsx")))
+  expect_true(file.exists(file.path(temp_dir, "edgelist_filtered_.xlsx")))
   expect_equal(unname(lapply(graphs, length)), list(3,2,2))
   expect_equal(names(graphs), c("sample1_sample2", "sample1_sample3", "sample2_sample3"))
 

@@ -52,8 +52,7 @@ generateGraphsFromFASTA <- function(fasta,
     if (save_intermediate) {
         message("Saving edgelist ...")
         utils::write.table(edgelist, sep = "\t", row.names = FALSE,
-            file = paste0(result_path, "edgelist_",
-                suffix, ".txt"))
+            file = paste0(result_path, "edgelist_", suffix, ".txt"))
     }
 
     if (collProtNodes || collPeptNodes) {

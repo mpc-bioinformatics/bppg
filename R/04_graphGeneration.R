@@ -128,7 +128,7 @@
 
     ## Calculate list if protein nodes
     if (collProtNodes) {
-        ## aggregate peptide sequences that belong to the same protein accession 
+        ## aggregate peptide sequences that belong to the same protein accession
         ## (1 row per protein accession)
         protEdges <- stats::aggregate(data = edgelist,
             x = cbind(peptide, pep_ratio) ~ protein,
@@ -164,18 +164,18 @@
     }
 
     edgelist2 <- edgelist
-    pepNodes2 <- pepNodes  
+    pepNodes2 <- pepNodes
     ## first peptide from list
     pepNodes2$peptide <- limma::strsplit2(pepNodes2$peptide, ";")[, 1]
     edgelist2 <- edgelist[edgelist$peptide %in% pepNodes2$peptide, ]
 
     protNodes2 <- protNodes
-    protNodes2$protein <- limma::strsplit2(protNodes2$protein, ";")[, 1]  
+    protNodes2$protein <- limma::strsplit2(protNodes2$protein, ";")[, 1]
     ## first peptide from list
     edgelist3 <- edgelist2[edgelist2$protein %in% protNodes2$protein, ]
 
     edgelist4 <- edgelist3
-    edgelist4$protein <- protNodes$protein[match(edgelist3$protein, 
+    edgelist4$protein <- protNodes$protein[match(edgelist3$protein,
             protNodes2$protein)]
     edgelist4$peptide <- pepNodes$peptide[match(edgelist3$peptide,
             pepNodes2$peptide)]
@@ -270,7 +270,7 @@
 
     if (!is.null(outpath)) {
         openxlsx::write.xlsx(edgelist_filtered,
-            file = paste0(outpath, "edgelist_filtered_", suffix, ".xlsx"),
+            file = file.path(outpath, paste0("edgelist_filtered_", suffix, ".xlsx")),
             overwrite = TRUE, keepNA = TRUE)
     }
 
