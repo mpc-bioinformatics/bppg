@@ -15,7 +15,6 @@ test_that("generate graphs from fasta",{
   expect_snapshot(igraph::as_edgelist(res[[2]]))
   expect_snapshot(igraph::as_edgelist(res[[3]]))
 
-  print(file.path(temp_dir, "edgelist_.txt"))
 
   expect_true(file.exists(file.path(temp_dir, "edgelist_.txt")))
   expect_true(file.exists(file.path(temp_dir, "edgelist_collprotpept_.txt")))
