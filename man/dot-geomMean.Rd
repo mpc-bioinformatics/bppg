@@ -4,7 +4,7 @@
 \alias{.geomMean}
 \title{Calculate the geometric mean.}
 \usage{
-.geomMean(x, useprod = FALSE)
+.geomMean(x, useprod = FALSE, na.rm = FALSE)
 }
 \arguments{
 \item{x}{\strong{numeric vector} \cr
