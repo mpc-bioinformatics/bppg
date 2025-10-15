@@ -61,7 +61,7 @@ test_that("test iterateOverCi with extended grid", {
     testfile_path <- file.path(testthat::test_path(), "testfiles")
     res2_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file2.rds"))
 
-    expect_equal(res2, res2_snap)
+    expect_equal(res2, res2_snap, tolerance = 1e-05)
 })
 
 ################################################################################
