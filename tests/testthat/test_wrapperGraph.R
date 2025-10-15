@@ -9,11 +9,13 @@ test_that("generate graphs from fasta",{
 
   res <- bppg::generateGraphsFromFASTA(fasta = fasta,
                                        save_intermediate = TRUE,
-                                       result_path = paste0(temp_dir, "\\"))
+                                       result_path = temp_dir)
 
   expect_snapshot(igraph::as_edgelist(res[[1]]))
   expect_snapshot(igraph::as_edgelist(res[[2]]))
   expect_snapshot(igraph::as_edgelist(res[[3]]))
+
+  print(file.path(temp_dir, "edgelist_.txt"))
 
   expect_true(file.exists(file.path(temp_dir, "edgelist_.txt")))
   expect_true(file.exists(file.path(temp_dir, "edgelist_collprotpept_.txt")))
