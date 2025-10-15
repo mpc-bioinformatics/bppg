@@ -19,8 +19,18 @@ test_that("test .minimizeSquaredError", {
   # test fixed_Ci
   res2 <- bppg:::.minimizeSquaredError(S, verbose = FALSE, fixed.Ci = c(0.3, NA))
 
-  expect_snapshot(res)
-  expect_snapshot(res2)
+  testfile_path <- file.path("tests", "testthat", "testfiles")
+  res_snap <- readRDS(file.path(testfile_path, "test_minimizeSquaredError_file1.rds"))
+  res2_snap <- readRDS(file.path(testfile_path, "test_minimizeSquaredError_file2.rds"))
+
+  expect_equal(res$Ri, res_snap$Ri, tolerance = 1e-05)
+  expect_equal(res$Ci, res_snap$Ci, tolerance = 1e-05)
+  expect_equal(str(res$Ci), str(res_snap$Ci))
+
+  expect_equal(res2$Ri, res2_snap$Ri, tolerance = 1e-05)
+  expect_equal(res2$Ci, res2_snap$Ci, tolerance = 1e-05)
+  expect_equal(str(res$Ci), str(res_snap$Ci))
+
 })
 
 ################################################################################
