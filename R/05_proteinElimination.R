@@ -73,7 +73,8 @@ proteinElimination <- function(G,
         opti <- .minimizeSquaredError(S, #error.type = "multiplicative",
             fixed.Ci = NULL,
             verbose = FALSE, #error.trans = "square",
-            reciprocal = FALSE, log_level = TRUE,
+            #reciprocal = FALSE,
+            log_level = TRUE,
             control = list(trace = 0, delta = 1e-9))
         min_error_ref <- opti$RES$res_squ_err
 
@@ -145,7 +146,8 @@ proteinElimination <- function(G,
             opti <- .minimizeSquaredError(S, #error.type = "multiplicative",
                 fixed.Ci = NULL,
                 verbose = FALSE, #error.trans = "square",
-                reciprocal = FALSE, log_level = TRUE,
+                #reciprocal = FALSE,
+                log_level = TRUE,
                 control = list(trace = 0, delta = 1e-9))
             min_error_tmp <- min_error_tmp + opti$RES$res_squ_err
         }

@@ -27,12 +27,12 @@ Contains the measured peptide ratios.}
 \item{log_level}{\strong{logical} \cr
 If \code{TRUE}, the Ri are given on log2-level and need
 to be back-transformed here
-(this may allow a symmetric behaviour during optimization)}
+(this leads to a symmetric behavior during optimization)}
 }
 \value{
 list containing the following elements:
 \item{res_Mat}{matrix containing the estimated peptide
-ratios using Ri and Ci}
+ratios using the given Ri and Ci}
 \item{res_equ}{vector of error terms for each peptide}
 \item{res_squ_err}{sum of squared error terms}
 \item{W}{internal weight matrix}
