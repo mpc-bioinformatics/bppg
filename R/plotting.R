@@ -19,7 +19,7 @@
     if (length(vertex.color) != 1 && !is.null(v)) {
         vertex.color <- vertex.color[v]
     }
-    vertex.size <- 1 / 200 * params("vertex", "size")
+    vertex.size <- params("vertex", "size")
     if (length(vertex.size) != 1 && !is.null(v)) {
         vertex.size <- vertex.size[v]
     }
@@ -183,19 +183,23 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
 
     if (three_shapes) {
         igraph::add_shape("diamond", clip= igraph::shape_noclip,
-            plot=.myDiamond)
+                          plot=.myDiamond)
         vertex.shapes <- c("circle", "crectangle", "diamond")[type]
     } else {
         vertex.shapes <- c("circle", "crectangle")[igraph::V(G)$type + 1]
     }
 
-    #if (legend) graphics::par(mar = c(10, 4, 4, 2) + 0.1)
+    if (legend) {
+        old_par <- graphics::par(no.readonly = TRUE)
+        on.exit(graphics::par(old_par), add = TRUE)
+        graphics::par(mar = c(10, 4, 4, 2) + 0.1)
+    }
 
-#    if (use_edge_attributes) {
-#        edge.lty <- igraph::E(G)$deleted + 1
-#    } else {
+    #if (use_edge_attributes) {
+    #    edge.lty <- igraph::E(G)$deleted + 1
+    #} else {
         edge.lty <- 1
-#    }
+    #}
 
     plot(G, layout = igraph::layout_as_bipartite,
         vertex.color=vertex.color[type],
