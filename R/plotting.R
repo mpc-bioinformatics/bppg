@@ -189,7 +189,11 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
         vertex.shapes <- c("circle", "crectangle")[igraph::V(G)$type + 1]
     }
 
-    if (legend) graphics::par(mar = c(10, 4, 4, 2) + 0.1)
+    if (legend) {
+        old_par <- graphics::par(no.readonly = TRUE)
+        on.exit(graphics::par(old_par), add = TRUE)
+        graphics::par(mar = c(10, 4, 4, 2) + 0.1)
+    }
 
     #if (use_edge_attributes) {
     #    edge.lty <- igraph::E(G)$deleted + 1
