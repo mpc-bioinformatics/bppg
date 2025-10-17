@@ -36,4 +36,4 @@ Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Depends: 
-    igraph
+    igraph (>= 2.0.0)
