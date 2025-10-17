@@ -11,7 +11,6 @@ iterateOverCi(
   grid.start = 0,
   grid.stop = 1,
   verbose = FALSE,
-  verbose_opt = FALSE,
   control = list(),
   extend_grid_at_borders = FALSE,
   log_level = TRUE
@@ -40,10 +39,6 @@ The end of the grid (default is 1).}
 \item{verbose}{\strong{logical} \cr
 If \code{TRUE}, print additional information
 (see solnp function).}
-
-\item{verbose_opt}{\strong{logical} \cr
-The \code{verbose} argument of the
-\code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}} function.}
 
 \item{control}{\strong{list} \cr
 The \code{control} object to be passed to the

@@ -271,7 +271,7 @@
 #' bppg:::.minimizeSquaredError(S)
 #'
 ## TODO SIMPLFY -> put options into differnt functions?
-## TODO: parameter checks for this private function useful?
+## TODO: some parameter checks for this private function useful?
 .minimizeSquaredError <- function(S,
     fixed.Ci = NULL,
     verbose = FALSE,
@@ -282,16 +282,12 @@
     m <- ncol(S$X) ## number of proteins
     n <- nrow(S$X) ## number of peptides
     rj <- S$fc     ## given peptide ratios
-    checkmate::assertList(S, types = c("matrix", "numeric"))
     checkmate::assertMatrix(M, mode = "integerish")
     stopifnot(all(S$X %in% c(0,1)))
     checkmate::assertNumeric(rj)
     checkmate::assertNumeric(fixed.Ci, len = length(rj), lower = 0, upper = 1,
                              null.ok = TRUE)
     stopifnot(sum(fixed.Ci, na.rm = TRUE) <= 1)
-    checkmate::assertFlag(verbose)
-    checkmate::assertFlag(log_level)
-    checkmate::assertList(control)
     if (!verbose) control <- c(control, trace = 0)
     is.Ci.fixed <- !is.null(fixed.Ci)
     if (is.Ci.fixed) which.Ci.fixed <- which(!is.na(fixed.Ci))
@@ -360,9 +356,6 @@
 #' @param verbose                  \strong{logical} \cr
 #'                                 If \code{TRUE}, print additional information
 #'                                 (see solnp function).
-#' @param verbose_opt              \strong{logical} \cr
-#'                                 The \code{verbose} argument of the
-#'                                 [.minimizeSquaredError()] function.
 #' @param control                  \strong{list} \cr
 #'                                 The \code{control} object to be passed to the
 #'                                 [.minimizeSquaredError()] function.
@@ -411,72 +404,71 @@ iterateOverCi <- function(S,
     grid.start = 0,
     grid.stop = 1,
     verbose = FALSE,
-    verbose_opt = FALSE,
     control = list(),
     extend_grid_at_borders = FALSE,
     log_level = TRUE) {
+    checkmate::assertList(S, types = c("matrix", "numeric"))
+    checkmate::assertIntegerish(grid.size, lower = 1)
+    checkmate::assertFlag(omit_grid_borders)
+    checkmate::assertNumeric(grid.start, lower = 0, upper = 1)
+    checkmate::assertNumeric(grid.stop, lower = 0, upper = 1)
+    checkmate::assertFlag(verbose)
+    checkmate::assertList(control)
+    checkmate::assertFlag(extend_grid_at_borders)
+    checkmate::assertFlag(log_level)
 
     n <- ncol(S$X) ## number of protein groups
     grid <- seq(grid.start, grid.stop, length.out = grid.size + 1)
-
     if (extend_grid_at_borders) {
         grid_min <- grid[2] ## 2. Element, da erstes 0
         grid_max <- grid[length(grid) - 1] ## 1. Element, da letztes 1
-
         grid_extend_min <- seq(grid.start, grid_min, length.out = 11)
         grid_extend_max <- seq(grid_max, grid.stop, length.out = 11)
-
         grid <- sort(unique(c(grid, grid_extend_min, grid_extend_max)))
     }
-
     if (omit_grid_borders) grid <- grid[-c(1, length(grid))]
 
-    err_tmp <- rep(NA, length(grid))
-    Ris_tmp <- matrix(nrow = length(grid), ncol = n)
-    colnames(Ris_tmp) <- paste0("R", 1:n)
-    Cis_tmp <- matrix(nrow = length(grid), ncol = n)
-    colnames(Cis_tmp) <- paste0("C", 1:n)
-    result <- NULL
+    cnames <- c(paste0("R", 1:n), paste0("C", 1:n))
 
-    pb <- pbapply::startpb(0, n * length(grid))
-    ## TODO VAPPLY?
-    for (j in 1:n) {
-        for (i in seq_along(grid)) {
+    f <- function(j, gridpoint, cnames) {
+        Ci_tmp <- rep(NA, n)
+        Ci_tmp[j] <- gridpoint
 
-            pbapply::setpb(pb, (j - 1) * length(grid) + i)
-
-            if (verbose) print(paste0("j = ", j, " i = ", i))
-
-            Ci_tmp <- rep(NA, n)
-            Ci_tmp[j] <- grid[i]
-
-            RES <- try({
-                .minimizeSquaredError(S,
-                    fixed.Ci = Ci_tmp,
-                    verbose = verbose_opt,
-                    #reciprocal = FALSE,
-                    control = control,
-                    log_level = log_level)
-            })
-            if ("try-error" %in% class(RES)) {
-                if (grepl("reached elapsed time limit", RES)) {
-                stop(paste0("protein ", j, " grid point ", i))
-                } else {
-                next
-                }
+        RES <- try({
+            .minimizeSquaredError(S,
+                                  fixed.Ci = Ci_tmp,
+                                  verbose = verbose,
+                                  control = control,
+                                  log_level = log_level)
+        })
+        if ("try-error" %in% class(RES)) {
+            if (grepl("reached elapsed time limit", RES)) {
+                stop(paste0("protein ", j, " grid point ", gridpoint))
+            } else {
+                res_Ri_Ci <- rep(NA, length(cnames))
+                names(res_Ri_Ci) <- cnames
+                return(c(protein = j, grid = gridpoint, res_Ri_Ci,
+                         error = NA))
             }
-            err_tmp[i] <- RES$RES$res_squ_err
-            Ris_tmp[i, ] <- RES$Ri
-            Cis_tmp[i, ] <- RES$Ci
         }
-        result_tmp <- data.frame(protein = rep(j, length(grid)),
-            grid = grid, Ris_tmp, Cis_tmp, error = err_tmp)
-        result <- rbind(result, result_tmp)
-    }
-    invisible(NULL)
-    pbapply::closepb(pb)
+        res_Ri_Ci <- c(RES$Ri, RES$Ci)
+        names(res_Ri_Ci) <- cnames
 
-    return(result)
+        result <- c(protein = j, grid = gridpoint, res_Ri_Ci,
+                    error = RES$RES$res_squ_err)
+        return(result)
+    }
+
+    result <- pbapply::pbmapply(FUN = f,
+                      j = rep(1:n, each = length(grid)), gridpoint = grid,
+                      MoreArgs = list(cnames = cnames))
+
+    ## TODO VAPPLY? Is mapply also ok? Seems to work well in this case.
+    ## TODO: disable progress bar if "verbose = TRUE"
+    #     # if (!verbose)### pboptions(type = "none")
+
+
+    return(as.data.frame(t(result)))
 }
 
 
