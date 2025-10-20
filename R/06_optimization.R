@@ -485,8 +485,8 @@ iterateOverCi <- function(S,
 #'                                      ratios (named "fc"). \cr
 #'                                      Set \code{S_is_graph} depending on the
 #'                                      input type.
-#' @param res                           \strong{list} \cr
-#'                                      The list resulting from the
+#' @param res                           \strong{data.frame} \cr
+#'                                      The data.frame resulting from the
 #'                                      [bppg::iterateOverCi()] function.
 #' @param use_results_from_other_proteins   \strong{logical} \cr
 #'                                          If \code{TRUE}, the results from
@@ -517,7 +517,9 @@ automatedAnalysisIteratedCi <- function(S,
     use_results_from_other_proteins = FALSE,
     verbose = FALSE,
     job = NULL,
-    S_is_graph = FALSE) {
+    S_is_graph = FALSE,
+    error_tol = 1e-10,
+    ratio_tol = 1e-4) {
 
     if (S_is_graph & !is.null(S)) {
         X <- igraph::as_biadjacency_matrix(S)
@@ -580,6 +582,13 @@ automatedAnalysisIteratedCi <- function(S,
 
     D <- list()
 
+    ############################################################################
+    ###
+
+    ## remove results where error is NA
+    res <- res[!is.na(res$error),]
+
+
     for (i in 1:nr_proteins) {
         D_tmp <- list(Accession = colnames(S$X)[i],
             comparison = NA,
@@ -604,61 +613,38 @@ automatedAnalysisIteratedCi <- function(S,
             D_tmp$job.id <- job$job.id
         }
 
-        if (verbose) print(paste0("Protein ", i))
-
-        X_tmp <- res[res$protein == i, ]
-        X_tmp <- X_tmp[!is.na(X_tmp$error), ]
-        C_tmp <- X_tmp[, paste0("C", i)]
-
-        ## use results from other proteins but only when Ci is not too extreme
-        X_tmp3 <- res[res$protein != i,]
-        X_tmp3 <- X_tmp3[!is.na(X_tmp3$error),]
-        C_tmp3 <- X_tmp3[, paste0("C", i)]
-        X_tmp3 <- X_tmp3[X_tmp3$protein == i |
-            (C_tmp3 >= 0.01 & C_tmp3 < 0.99),]
-        R_3 <- X_tmp3[, paste0("R", i)]
-        C_3 <- X_tmp3[, paste0("C", i)]
+        X_tmp <- res[res$protein == i, ] # results from current protein
 
         error <- X_tmp$error
         R <- X_tmp[, paste0("R", i)]
         C <- X_tmp[, paste0("C", i)]
 
-        D_tmp$min_error <- min(error_optimal, min(error), na.rm = TRUE)
-        D_tmp$error_optimal <- error_optimal
+        D_tmp$min_error <- min(error)
+        # D_tmp$error_optimal <- error_optimal
 
         ## 1st check: is error constant?
-        if (abs(diff(range(X_tmp$error))) <= 1e-10) {
+        if (abs(diff(range(X_tmp$error))) <= error_tol) {
             ## constant error, i.e. single solution or interval with lower and
             ## upper border
 
             D_tmp$error_constant <- "yes"
 
-            if (verbose) print(paste0("Error is nearly constant (abs. diff. = ",
-                    abs(diff(range(error))), ")."))
-            if (verbose) print(paste0("Mean error is ",
-                    mean(error, na.rm = TRUE), "."))
-            if (verbose) print(paste0("Minimal error is ",
-                    min(error, na.rm = TRUE) , "."))
             ind_min <- which.min(error)
 
             ## 2nd check: Is Ri constant too?
-            if (abs(diff(range(R))) > 1e-4) {
-                if (verbose) print(paste0("Range for R", i, ": ",
-                        BBmisc::collapse(range(R), sep = " - "), "."))
+            if (abs(diff(range(R))) > ratio_tol) {
+
                 D_tmp$Ri <- NA
                 D_tmp$Ri_min <- min(R)
                 D_tmp$Ri_max <- max(R)
                 D_tmp$case <- 1
             } else {
-                if (verbose) print(paste0("Constant Solution for R", i, ": ",
-                        .geomMean(R)))
                 D_tmp$Ri <- .geomMean(R)
                 D_tmp$Ri_min <- NA
                 D_tmp$Ri_max <- NA
                 D_tmp$case <- 2
             }
-            if (verbose) print(paste0("Range for C", i, ": ",
-                    BBmisc::collapse(range(C), sep = " - "), "."))
+
             D_tmp$Ci_min <- min(C)
             D_tmp$Ci_max <- max(C)
 
@@ -666,11 +652,6 @@ automatedAnalysisIteratedCi <- function(S,
             error <- X_tmp$error
             R <- X_tmp[, paste0("R", i)]
             C <- X_tmp[, paste0("C", i)]
-
-            if (verbose & !is.na(error_optimal) & any(error < error_optimal)) {
-                warning(paste0("Lower than optimal error detected.
-                    Difference = ", abs(min(error) - error_optimal)))
-            }
 
             ## area in which the error is almost constant
             ind_min <- which.min(error)
@@ -687,39 +668,27 @@ automatedAnalysisIteratedCi <- function(S,
                 D_tmp$Ci_max <- NA
                 D_tmp$case <- 3
 
-                if (verbose) print(paste0("Single optimal solution with error ",
-                        min(error, na.rm = TRUE), "."))
 
-                if (verbose) print(paste0("Single optimal solution is R",
-                        i, "= ", Ri_optimal[i], " and C",
-                        i, " = ", Ci_optimal[i], "."))
             } else {  ## multiple data points with nearly constant error
-                D_tmp$ error_constant <- "partially"
+                D_tmp$error_constant <- "partially"
 
-                if (verbose) print(paste0("Multiple points with
-                        optimal error."))
 
                 ## Ri is constant but Ci is not
                 if (all(R[ind_min_tol] == 0) |
-                        abs(diff(range(log2(R[ind_min_tol])))) < 1e-4) {
+                        abs(diff(range(log2(R[ind_min_tol])))) < ratio_tol) {
                     D_tmp$Ri <- .geomMean(R[ind_min_tol])
                     D_tmp$Ri_min <- NA
                     D_tmp$Ri_max <- NA
                     D_tmp$case <- 4
-                    if (verbose) print(paste0("Constant Solution for R",
-                            i, ": ", .geomMean(R[ind_min_tol])))
+
                 } else {  ## Ri is not constant
                     D_tmp$Ri <- NA
                     D_tmp$Ri_min <- min(R[ind_min_tol])
                     D_tmp$Ri_max <- max(R[ind_min_tol])
                     D_tmp$case <- 5
-                    if (verbose) print(paste0("Range for R", i, ": ",
-                            BBmisc::collapse(range(R[ind_min_tol]),
-                                sep = " - "), "."))
+
                 }
-                if (verbose) print(paste0("Range for C", i, ": ",
-                        BBmisc::collapse(range(C[ind_min_tol]),
-                            sep = " - "), "."))
+
                 D_tmp$Ci <- NA
                 D_tmp$Ci_min <- min(C[ind_min_tol])
                 D_tmp$Ci_max <- max(C[ind_min_tol])
@@ -727,7 +696,16 @@ automatedAnalysisIteratedCi <- function(S,
         }
 
         if (use_results_from_other_proteins) {
-            ## see if solution can be enhanced by data form the other proteins
+            ## use results from other proteins but only when Ci is not too extreme
+            X_tmp3 <- res[res$protein != i,]
+            # X_tmp3 <- X_tmp3[!is.na(X_tmp3$error),]
+            C_tmp3 <- X_tmp3[, paste0("C", i)]
+            X_tmp3 <- X_tmp3[X_tmp3$protein == i |
+                                 (C_tmp3 >= 0.01 & C_tmp3 < 0.99),]
+            R_3 <- X_tmp3[, paste0("R", i)]
+            C_3 <- X_tmp3[, paste0("C", i)]
+
+            ## see if solution can be enhanced by data from the other proteins
             ind <- which(abs(min(error) - X_tmp3$error) <= 1e-10)
             if (length(ind) > 0) {
                 if (!is.na(D_tmp$Ri)) {
@@ -752,4 +730,40 @@ automatedAnalysisIteratedCi <- function(S,
     RES <- BBmisc::convertListOfRowsToDataFrame(D)
     return(RES)
 }
+
+
+resProt <- res[res$protein == 1, c("error", "R1", "C1")]
+colnames(resProt) <- c("error", "R", "C")
+
+# resProt: result from one specific protein
+
+f <- function(resProt, error_tol = 1e-10, ratio_tol = 1e-4) {
+    minError <- min(resProt$error)
+    indMinError <- which(abs(minError - resProt$error) <= error_tol)
+
+    R_tmp <- resProt$R[indMinError]
+    C_tmp <- resProt$C[indMinError]
+    e_tmp <- resProt$error[indMinError]
+
+    # case 1: single point with minimum error
+    if (length(indMinError) == 1) {
+        res_tmp <- c(R_tmp, NA, NA, C_tmp, NA, NA, 3)
+    } else { # case 2: error at least partially constant
+        if (abs(diff(range(log2(R_tmp)))) <= ratio_tol) {  # log2????
+            res_tmp <- c(.geomMean(R_tmp), NA, NA, NA, min(C_tmp), max(C_tmp), NA) # case 2?
+            res_tmp[7] <- ifelse(length(indMinError) == nrow(resProt), 2, 4) # all(R[ind_min_tol] == 0) |???
+        } else {
+            res_tmp <- c(NA, min(R_tmp), max(R_tmp), NA, min(C_tmp), max(C_tmp), NA) # case 1?
+            res_tmp[7] <- ifelse(length(indMinError) == nrow(resProt), 1, 5)
+        }
+    }
+
+    res_names <- c("Ri", "Ri_min", "Ri_max", "Ci", "Ci_min", "Ci_max", "case")
+    names(res_tmp) <- res_names
+    return(res_tmp)
+
+}
+
+
+
 
