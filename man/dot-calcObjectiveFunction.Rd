@@ -4,7 +4,7 @@
 \alias{.calcObjectiveFunction}
 \title{Calculate objective function for the optimization step}
 \usage{
-.calcObjectiveFunction(fixed.Ci, log_level, m, M, rj)
+.calcObjectiveFunction(fixed.Ci, log_level, m, M, rjLog)
 }
 \arguments{
 \item{fixed.Ci}{\strong{numeric vector} \cr

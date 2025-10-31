@@ -37,14 +37,14 @@
 .errorEquation <- function(Ri,
     Ci,
     M,
-    rj,
+    rjLog,
     log_level = FALSE) {
     m <- length(Ri) ## number of proteins
-    n <- length(rj) ## number of peptides
+    n <- length(rjLog) ## number of peptides
     checkmate::assertNumeric(Ri)
     checkmate::assertNumeric(Ci, len = length(Ri))
-    checkmate::assertNumeric(rj)
-    checkmate::assertMatrix(M, ncols = length(Ri), nrows = length(rj),
+    checkmate::assertNumeric(rjLog)
+    checkmate::assertMatrix(M, ncols = length(Ri), nrows = length(rjLog),
                             mode = "integerish")
     stopifnot(all(M %in% c(0,1)))
     checkmate::assertFlag(log_level)
@@ -61,7 +61,7 @@
     res_Mat <- sweep(W, MARGIN = 2, Ri, '*')
 
     ## error term per peptide (on log-scale)
-    res_equ <- log(rj) - log(rowSums(res_Mat))
+    res_equ <- rjLog - log2(rowSums(res_Mat))
 
     ## sum of squared error terms
     res_squ_err <- sum(res_equ^2)
@@ -126,19 +126,19 @@
 #'
 #' @returns Ri_start: vector with inital start values for Ri for the
 #'                    optimization step
-.initializeRi <- function(M, rj, m, log_level) {
+.initializeRi <- function(M, rjLog, m, log_level) {
     Ri_start <- rep(NA, m)
     for (j in 1:m) {
-        tmp <- M * rj
+        tmp <- M * rjLog
         tmp[tmp == 0] <- NA    ## 0 -> peptide is not present in the protein
         uniquePep <- (rowSums(M) == 1) & (M[, j] == 1)
         if (any(uniquePep)) {
-            Ri_start[j] <- .geomMean(tmp[uniquePep, j], na.rm = TRUE)
+            Ri_start[j] <- mean(tmp[uniquePep, j], na.rm = TRUE) # .geomMean
         } else {
-            Ri_start[j] <- .geomMean(tmp[, j], na.rm = TRUE)
+            Ri_start[j] <- mean(tmp[, j], na.rm = TRUE) # .geomMean
         }
     }
-    if (log_level) Ri_start <- log2(Ri_start)
+    #if (log_level) Ri_start <- log2(Ri_start)
     return(Ri_start)
 }
 
@@ -200,14 +200,14 @@
 #'                    Contains the measured peptide ratios.
 #'
 #' @returns objective function that will be minimized
-.calcObjectiveFunction <- function(fixed.Ci, log_level, m, M, rj) {
+.calcObjectiveFunction <- function(fixed.Ci, log_level, m, M, rjLog) {
     if (!is.null(fixed.Ci)) {
         m2 <- m - sum(!is.na(fixed.Ci)) # number of free weights (not fixed)
         fun <- function(x) {
             Ri_tmp <- x[1:m]
             Ci_tmp <- fixed.Ci
             Ci_tmp[is.na(fixed.Ci)] <- x[(m + 1):(m + m2)]
-            res <- .errorEquation(Ri = Ri_tmp, Ci = Ci_tmp, M = M, rj = rj,
+            res <- .errorEquation(Ri = Ri_tmp, Ci = Ci_tmp, M = M, rjLog = rjLog,
                            log_level = log_level)$res_squ_err
             return(res)
         }
@@ -215,7 +215,7 @@
         fun <- function(x) {
             Ri_tmp <- x[1:m]
             Ci_tmp <- x[(m + 1):(2 * m)]
-            res <- .errorEquation(Ri = Ri_tmp, Ci = Ci_tmp, M = M, rj = rj,
+            res <- .errorEquation(Ri = Ri_tmp, Ci = Ci_tmp, M = M, rjLog = rjLog,
                            log_level = log_level)$res_squ_err
             return(res)
         }
@@ -281,11 +281,11 @@
     M <- S$X  ## biadjacency matrix
     m <- ncol(S$X) ## number of proteins
     n <- nrow(S$X) ## number of peptides
-    rj <- S$fc     ## given peptide ratios
+    rjLog <- S$fc  ## given peptide ratios (already log2-transformed)
     checkmate::assertMatrix(M, mode = "integerish")
     stopifnot(all(S$X %in% c(0,1)))
-    checkmate::assertNumeric(rj)
-    checkmate::assertNumeric(fixed.Ci, len = length(rj), lower = 0, upper = 1,
+    checkmate::assertNumeric(rjLog)
+    checkmate::assertNumeric(fixed.Ci, len = length(rjLog), lower = 0, upper = 1,
                              null.ok = TRUE)
     stopifnot(sum(fixed.Ci, na.rm = TRUE) <= 1)
     if (!verbose) control <- c(control, trace = 0)
@@ -293,14 +293,14 @@
     if (is.Ci.fixed) which.Ci.fixed <- which(!is.na(fixed.Ci))
 
     Ci_start <- .initializeCi(fixed.Ci, m)
-    Ri_start <- .initializeRi(M, rj, m, log_level)
+    Ri_start <- .initializeRi(M, rjLog, m, log_level)
     if (is.Ci.fixed) {
         pars <- c(Ri_start, Ci_start[-which.Ci.fixed])
     } else {
         pars <- c(Ri_start, Ci_start)
     }
     ## initial error term
-    RES <- .errorEquation(Ri = Ri_start, Ci = Ci_start, M = M, rj = rj,
+    RES <- .errorEquation(Ri = Ri_start, Ci = Ci_start, M = M, rjLog = rjLog,
         log_level = log_level)
     ### TODO: do we need tracking?
     track_colnames <- c("iter", "squ_err", paste0("R", 1:m), paste0("C", 1:m))
@@ -308,7 +308,7 @@
     Tracking <- as.data.frame(Tracking)
     colnames(Tracking) <- track_colnames
 
-    fun <- .calcObjectiveFunction(fixed.Ci, log_level, m, M, rj)
+    fun <- .calcObjectiveFunction(fixed.Ci, log_level, m, M, rjLog)
     constr <- .calcConstraints(fixed.Ci, log_level, m)
 
     res <- Rsolnp::solnp(pars = pars, fun = fun, LB = constr$LB,
@@ -325,7 +325,7 @@
         Ci <- res$pars[(m + 1):(2 * m)]
     }
     ## update RES
-    RES <- .errorEquation(Ri = Ri, Ci = Ci, M = M, rj = rj,
+    RES <- .errorEquation(Ri = Ri, Ci = Ci, M = M, rjLog = rjLog,
         log_level = log_level)
     Tracking <- rbind(Tracking, c(1, RES$res_squ_err, Ri, Ci))
     if (log_level) Ri <- 2^Ri
@@ -732,37 +732,37 @@ automatedAnalysisIteratedCi <- function(S,
 }
 
 
-resProt <- res[res$protein == 1, c("error", "R1", "C1")]
-colnames(resProt) <- c("error", "R", "C")
-
-# resProt: result from one specific protein
-
-f <- function(resProt, error_tol = 1e-10, ratio_tol = 1e-4) {
-    minError <- min(resProt$error)
-    indMinError <- which(abs(minError - resProt$error) <= error_tol)
-
-    R_tmp <- resProt$R[indMinError]
-    C_tmp <- resProt$C[indMinError]
-    e_tmp <- resProt$error[indMinError]
-
-    # case 1: single point with minimum error
-    if (length(indMinError) == 1) {
-        res_tmp <- c(R_tmp, NA, NA, C_tmp, NA, NA, 3)
-    } else { # case 2: error at least partially constant
-        if (abs(diff(range(log2(R_tmp)))) <= ratio_tol) {  # log2????
-            res_tmp <- c(.geomMean(R_tmp), NA, NA, NA, min(C_tmp), max(C_tmp), NA) # case 2?
-            res_tmp[7] <- ifelse(length(indMinError) == nrow(resProt), 2, 4) # all(R[ind_min_tol] == 0) |???
-        } else {
-            res_tmp <- c(NA, min(R_tmp), max(R_tmp), NA, min(C_tmp), max(C_tmp), NA) # case 1?
-            res_tmp[7] <- ifelse(length(indMinError) == nrow(resProt), 1, 5)
-        }
-    }
-
-    res_names <- c("Ri", "Ri_min", "Ri_max", "Ci", "Ci_min", "Ci_max", "case")
-    names(res_tmp) <- res_names
-    return(res_tmp)
-
-}
+# resProt <- res[res$protein == 1, c("error", "R1", "C1")]
+# colnames(resProt) <- c("error", "R", "C")
+#
+# # resProt: result from one specific protein
+#
+# f <- function(resProt, error_tol = 1e-10, ratio_tol = 1e-4) {
+#     minError <- min(resProt$error)
+#     indMinError <- which(abs(minError - resProt$error) <= error_tol)
+#
+#     R_tmp <- resProt$R[indMinError]
+#     C_tmp <- resProt$C[indMinError]
+#     e_tmp <- resProt$error[indMinError]
+#
+#     # case 1: single point with minimum error
+#     if (length(indMinError) == 1) {
+#         res_tmp <- c(R_tmp, NA, NA, C_tmp, NA, NA, 3)
+#     } else { # case 2: error at least partially constant
+#         if (abs(diff(range(log2(R_tmp)))) <= ratio_tol) {  # log2????
+#             res_tmp <- c(.geomMean(R_tmp), NA, NA, NA, min(C_tmp), max(C_tmp), NA) # case 2?
+#             res_tmp[7] <- ifelse(length(indMinError) == nrow(resProt), 2, 4) # all(R[ind_min_tol] == 0) |???
+#         } else {
+#             res_tmp <- c(NA, min(R_tmp), max(R_tmp), NA, min(C_tmp), max(C_tmp), NA) # case 1?
+#             res_tmp[7] <- ifelse(length(indMinError) == nrow(resProt), 1, 5)
+#         }
+#     }
+#
+#     res_names <- c("Ri", "Ri_min", "Ri_max", "Ci", "Ci_min", "Ci_max", "case")
+#     names(res_tmp) <- res_names
+#     return(res_tmp)
+#
+# }
 
 
 

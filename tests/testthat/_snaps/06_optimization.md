@@ -9,10 +9,10 @@
       [2,] 0.15 0.91
       
       $res_equ
-      [1] 0.1823216 0.1240526
+      [1] 0.2630344 0.1789701
       
       $res_squ_err
-      [1] 0.04863021
+      [1] 0.1012174
       
       $W
            [,1] [,2]
@@ -50,9 +50,9 @@
       res5
     Output
         Accession comparison graphID proteinNr error_optimal Ri_optimal Ci_optimal
-      1        NA         NA      NA         1     0.2425386  0.8653497          1
-        min_error error_constant        Ri Ri_min Ri_max Ci Ci_min Ci_max case
-      1        NA             NA 0.8653497     NA     NA  1     NA     NA    6
+      1        NA         NA      NA         1          0.18   1.866066          1
+        min_error error_constant       Ri Ri_min Ri_max Ci Ci_min Ci_max case
+      1        NA             NA 1.866066     NA     NA  1     NA     NA    6
 
 # test automated analysis with constant error
 

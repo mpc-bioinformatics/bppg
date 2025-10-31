@@ -3,8 +3,8 @@ test_that("test .errorEquation", {
   Ri <- c(0.5, 1.3)
   Ci <- c(0.3, 0.7)
   M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
-  rj <- c(0.6, 1.2)
-  e <- bppg:::.errorEquation(Ri, Ci, M, rj)
+  rjLog <- log2(c(0.6, 1.2))
+  e <- bppg:::.errorEquation(Ri = Ri, Ci = Ci, M = M, rjLog = rjLog, log_level = FALSE)
 
   expect_snapshot(e)
 })
@@ -12,8 +12,8 @@ test_that("test .errorEquation", {
 test_that("test .minimizeSquaredError", {
 
   M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = FALSE)
-  rj <- c(0.6, 1.2)
-  S <- list(X = M, fc = rj)
+  rjLog <- log2(c(0.6, 1.2))
+  S <- list(X = M, fc = rjLog)
   res <- bppg:::.minimizeSquaredError(S, verbose = FALSE)
 
   # test fixed_Ci
@@ -39,8 +39,8 @@ test_that("test .minimizeSquaredError", {
 test_that("test iterateOverCi", {
 
     M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = FALSE)
-    rj <- c(0.6, 1.2)
-    S <- list(X = M, fc = rj)
+    rjLog <- log2(c(0.6, 1.2))
+    S <- list(X = M, fc = rjLog)
     res <- iterateOverCi(S, grid.size = 10)
 
     testfile_path <- file.path(testthat::test_path(), "testfiles")
@@ -52,8 +52,8 @@ test_that("test iterateOverCi", {
 test_that("test iterateOverCi with extended grid", {
 
     M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = FALSE)
-    rj <- c(0.6, 1.2)
-    S <- list(X = M, fc = rj)
+    rjLog <- log2(c(0.6, 1.2))
+    S <- list(X = M, fc = rjLog)
 
     res2 <- iterateOverCi(S, grid.size = 10,
                           extend_grid_at_borders = TRUE)

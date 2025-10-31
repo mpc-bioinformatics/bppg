@@ -10,7 +10,9 @@ automatedAnalysisIteratedCi(
   use_results_from_other_proteins = FALSE,
   verbose = FALSE,
   job = NULL,
-  S_is_graph = FALSE
+  S_is_graph = FALSE,
+  error_tol = 1e-10,
+  ratio_tol = 1e-04
 )
 }
 \arguments{
@@ -26,8 +28,8 @@ ratios (named "fc"). \cr
 Set \code{S_is_graph} depending on the
 input type.}
 
-\item{res}{\strong{list} \cr
-The list resulting from the
+\item{res}{\strong{data.frame} \cr
+The data.frame resulting from the
 \code{\link[=iterateOverCi]{iterateOverCi()}} function.}
 
 \item{use_results_from_other_proteins}{\strong{logical} \cr
