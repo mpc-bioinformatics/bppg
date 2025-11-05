@@ -134,7 +134,7 @@ generateGraphsFromFASTA <- function(fasta,
 #'
 #' @examples
 #'
-
+# TODO include imputation options to work with other functions ins this branch!
 generateGraphsFromQuantData <- function(D,
     fasta,
     outpath = NULL,

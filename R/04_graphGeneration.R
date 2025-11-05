@@ -3,6 +3,53 @@
 #' .collapseEdgelistQuant()
 #' .generateGraphsFromEdgelist()
 #' .generateQuantGraphs()
+#' .imputationFilter()
+
+#' Filter peptide ratios to exclude in peptide nodes contradicting imputed values.
+#'
+#' @param edgelist          \strong{data.frame} \cr
+#'                          An edgelist created from the corresponding FASTA file, eg. created with [bppg::generate_edgelist()].
+#' @param fc                \strong{data.frame} \cr
+#'                          peptide ratio and imputed bool, corresponding with id.
+#' @param id                \strong{data.frame} \cr
+#'                          ID columns to peptide ratio table, corresponding with fc.
+#' @param seq_column        \strong{character} \cr
+#'                          The column name of the peptide sequence in id.
+#'
+#'
+#' @return                  A dataframe which filtered out contradicting ratios of peptides. 
+
+.imputationFilter <- function(edgelist, fc, id, seq_column = "Sequence") {
+  ## generate bipartite graph to identify peptide groups
+  edgelist_coll_pep <- bppg::collapse_edgelist(edgelist,
+                                               collapse_protein_nodes = TRUE,
+                                               collapse_peptide_nodes = TRUE)
+
+  # create dataframe for each edge after double collapsing (peptides decollapsed)
+  pep_node_list <- list()
+  coll_peptides <- edgelist_coll_pep[, -1]
+  coll_peptides <- coll_peptides[!duplicated(coll_peptides)]
+  for (i in seq_along(coll_peptides)){
+    peptide <- t(limma::strsplit2(coll_peptides[i], ";"))
+    # pep_ratios are sorted indepently of sequence, match ratio
+    # log directly here? so equal distance?
+    pep_ratio <- fc[match(peptide, id[, seq_column]), 1]
+    imputed <- fc[match(peptide, id[, seq_column]), 2]
+    pep_df <- data.frame(peptide, pep_ratio, imputed)
+    colnames(pep_df) <- c("peptide", "pep_ratio", "imputed")
+
+    #TODO find better way to determine outlier
+    pep_mean <- mean(log(pep_ratio))
+    pep_df$outlier <- abs(log(pep_ratio) - pep_mean) > 0.3
+
+    pep_df <- pep_df[!(pep_df$imputed & pep_df$outlier), ]
+
+    pep_node_list[[i]] <- pep_df
+    names(pep_node_list)[[i]] <- peptide[1]
+  }
+
+  return(data.table::rbindlist(pep_node_list))
+}
 
 
 
@@ -264,6 +311,9 @@
                                   collProtNodes = TRUE,
                                   collPeptNodes = FALSE,
                                   suffix = "") {
+    # filter out na, leave valid rows only
+    peptide_ratios <- stats::na.omit(peptide_ratios)
+    
     ## broad filtering for edgelist for only quantifies peptides
     edgelist_filtered <- fasta_edgelist[fasta_edgelist[, 2]
         %in% peptide_ratios[, seq_column], ]
@@ -275,41 +325,55 @@
     }
 
     id <- peptide_ratios[, id_cols, drop = FALSE]
-    peptide_ratios <- peptide_ratios[, -(id_cols), drop = FALSE]
+    fc <- peptide_ratios[, -(id_cols), drop = FALSE]
+
     colnames_split <- limma::strsplit2(colnames(peptide_ratios), "_")
     comparisons <- paste(colnames_split[,2], colnames_split[,3], sep = "_")
 
-    subgraphs <- list()
-    for (i in 1:ncol(peptide_ratios)) {
-        comparison <- comparisons[i]
-        fc <- peptide_ratios[,i]
-        ## peptides that are quantified in this specific comparison
-        peptides_tmp <- id[, seq_column][!is.na(fc)]
-        fc <- stats::na.omit(fc)
-        edgelist_filtered2 <- edgelist_filtered[edgelist_filtered[, 2]
-            %in% peptides_tmp, ]
+    ## add peptide ratios
+    if (sum(fc[, 2] > 0)) {  # check if there are imputed values
+        filtered_pep <- .imputationFilter(edgelist_filtered, fc, id, seq_column)
 
-        ## add peptide ratios
-        edgelist_filtered2$pep_ratio <- peptide_ratios[, i][
-            match(edgelist_filtered2$peptide, id[, seq_column])]
+        edgelist_filtered$pep_ratio <- filtered_pep$pep_ratio[
+            match(edgelist_filtered$peptide, filtered_pep$peptide)]
+        edgelist_filtered$imputed <- filtered_pep$imputed[
+            match(edgelist_filtered$peptide, filtered_pep$peptide)]
+        tmp_nrow <- (nrow(edgelist_filtered))
+        # remove entries without checked peptide ratio
+        edgelist_filtered <- na.omit(edgelist_filtered)
+        message(paste(tmp_nrow - nrow(edgelist_filtered), 
+            "edges were omitted due to conflicting imputations"))
+    } else {
+        edgelist_filtered$pep_ratio <- fc[
+            match(edgelist_filtered$peptide, id[, seq_column]), 1]
+        edgelist_filtered$imputed <- fc[
+            match(edgelist_filtered$peptide, id[, seq_column]), 2]
 
-        ## generate whole bipartite graph
-        edgelist_coll <- .collapseEdgelistQuant(edgelist_filtered2,
-            collProtNodes = collProtNodes, collPeptNodes = collPeptNodes)
-
-        G <- .generateGraphsFromEdgelist(edgelist_coll[, 1:2])
-        ## set peptide ratios as vertex attributes
-        ## TODO APPlY
-        for (j in 1:length(G)){
-            G[[j]] <- igraph::set_vertex_attr(graph = G[[j]],
-                name = "pep_ratio",
-                index = igraph::V(G[[j]])[!igraph::V(G[[j]])$type],
-                value = edgelist_coll$pep_ratio[
-                    match(igraph::V(G[[j]])$name[!igraph::V(G[[j]])$type],
-                        edgelist_coll$peptide)])
-        }
-        subgraphs[[i]] <- G
-        names(subgraphs)[[i]] <- comparison
     }
-    return(subgraphs)
+
+    ## generate whole bipartite graph
+    edgelist_coll <- .collapseEdgelistQuant(edgelist_filtered2,
+        collProtNodes = collProtNodes, collPeptNodes = collPeptNodes)
+
+    # create graphs and return decomposed graph list
+    G <- .generateGraphsFromEdgelist(edgelist_coll[, 1:2])
+    names(G) <- comparison
+    ## set peptide ratios as vertex attributes
+    ## TODO APPlY
+    for (j in 1:length(G)){
+        G[[j]] <- igraph::set_vertex_attr(graph = G[[j]],
+            name = "pep_ratio",
+            index = igraph::V(G[[j]])[!igraph::V(G[[j]])$type],
+            value = edgelist_coll$pep_ratio[
+                match(igraph::V(G[[j]])$name[!igraph::V(G[[j]])$type],
+                    edgelist_coll$peptide)])
+        G[[j]] <- igraph::set_vertex_attr(graph = G[[j]], 
+            name = "imputed",
+            index = igraph::V(G[[j]])[!igraph::V(G[[j]])$type],
+            value = edgelist_coll$imputed[
+                match(igraph::V(G[[j]])$name[!igraph::V(G[[j]])$type], 
+                    edgelist_coll$peptide)])
+    }
+
+    return(G)
 }

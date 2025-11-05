@@ -119,6 +119,9 @@
 #' @param three_shapes              \strong{logical} \cr
 #'                                  If \code{TRUE}, a separate shape will be
 #'                                  used for the unique peptides.
+#' @param imputed_encoding          \strong{logical} \cr
+#'                                  If \code{TRUE} shape will indicate
+#'                                  imputation
 #' @param node_labels_proteins      \strong{character} \cr
 #'                                  The type of labels for the proteins. Options
 #'                                  are "letters" or "acessions".
@@ -157,6 +160,7 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
     vertex.color = c("mediumseagreen", "cadetblue2", "coral1"),
     vertex.size = 15, vertex.label.cex = 1, edge.width = 1, vertex.size2=15,
     useCanonicalPermutation = FALSE, three_shapes = FALSE,
+    imputed_encoding = FALSE,
     node_labels_proteins = "letters",
     node_labels_peptides = "numbers",
     round_digits = 2, use_edge_attributes = FALSE,
@@ -176,15 +180,24 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
         round_digits = 2)
     #################################
 
-    type <- integer(length(igraph::V(G)))
-    type[!igraph::V(G)$type] <- 1                          ## "protein"
-    type[igraph::V(G)$type] <- 2                           ## "shared peptide"
-    type[igraph::V(G)$type & igraph::degree(G) == 1] <- 3  ## "unique peptide"
+    typeShape <- integer(length(igraph::V(G)))
+    typeShape[!igraph::V(G)$type] <- 1                          ## "protein"
+    typeShape[igraph::V(G)$type] <- 2                           ## "shared peptide"
+    typeShape[igraph::V(G)$type & igraph::degree(G) == 1] <- 3  ## "unique peptide"
+
+    if (imputed_encoding){
+        typeColor <- integer(length(igraph::V(G)))
+        typeColor[!igraph::V(G)$type] <- 1                           # "protein"
+        typeColor[igraph::V(G)$type] <- 2                            # "peptide"
+        typeColor[igraph::V(G)$imputed] <- 3   # "imputed ratio"
+    } else {
+        typeColor <- typeShape
+    }
 
     if (three_shapes) {
         igraph::add_shape("diamond", clip= igraph::shape_noclip,
                           plot=.myDiamond)
-        vertex.shapes <- c("circle", "crectangle", "diamond")[type]
+        vertex.shapes <- c("circle", "crectangle", "diamond")[typeShape]
     } else {
         vertex.shapes <- c("circle", "crectangle")[igraph::V(G)$type + 1]
     }
@@ -202,7 +215,7 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
     #}
 
     plot(G, layout = igraph::layout_as_bipartite,
-        vertex.color=vertex.color[type],
+        vertex.color=vertex.color[typeColor],
         vertex.shape = vertex.shapes,
         vertex.label.degree = c(-pi / 2, pi / 2)[igraph::V(G)$type + 1],
         vertex.label.dist = vertex.label.dist,
@@ -211,13 +224,28 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
         vertex.size2=vertex.size2, edge.lty = edge.lty, ...)
 
     if (legend && three_shapes) {
-        legend(x = legend.x, y = legend.y, legend = c("protein",
-                "shared peptide", "unique peptide"),
+        if (imputed_encoding){
+        legend(x = legend.x, y = legend.y, legend = c("protein", 
+            "shared peptide", "unique peptide", "not imputed peptide", 
+            "imputed peptide", "imputed protein"),
+            col = c(vertex.color[1], "black", "black", vertex.color[2:3], 
+                vertex.color[3]), pch = c(19, 0, 5, 20, 20, 19))
+        } else {
+        legend(x = legend.x, y = legend.y, legend = c("protein", 
+            "shared peptide", "unique peptide"),
             col = vertex.color, pch = c(19, 15, 18))
+        }
     }
     if (legend && !three_shapes) {
+        if (imputed_encoding){
         legend(x = legend.x, y = legend.y, legend = c("protein",
-                "shared peptide", "unique peptide"),
-            col = vertex.color, pch = c(19, 15, 15))
+            "shared peptide", "unique peptide", "not imputed peptide", 
+            "imputed peptide", "imputed protein"),
+            col = c(vertex.color[1], "black", "black", vertex.color[2:3],
+                vertex.color[3]), pch = c(19, 0, 0, 20, 20, 19))
+        } else {
+        legend(x = legend.x, y = legend.y, legend = c("protein", "shared peptide", "unique peptide"),
+            col = c(vertex.color[1], "black", "black", vertex.color[2:3]), pch = c(19, 15, 15))
+        }
     }
 }
