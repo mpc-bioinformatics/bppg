@@ -1,7 +1,6 @@
 #' Functions in this file:
 #' digest2()
 #' digestFASTA
-#' generateEdgelist
 
 ### modified version of OrgMassSpecR::Digest
 ### - deleted functionality to calculate peptide masses &
@@ -184,98 +183,26 @@
 ## TODO USE https://bioconductor.org/packages/3.22/bioc/html/cleaver.html
 # cleave("LAAGKVEDSD", enzym = "trypsin", missedCleavages = 0:2)
 ## by Sebastian Gibb ehemals bei Laurent Gatto
+## TODO add prot Origin
 digestFASTA <- function(fasta,
     missed_cleavages = 2,
     min_aa = 6,
     max_aa = 50,
+    protOrigin = NULL,
     ...)  {
-
-    digested_proteins <- pbapply::pblapply(fasta, function(x) {
-        sequ <- x
+    digested_proteins <- do.call("rbind", pbapply::pblapply(names(fasta), FUN=function(x) {
+        sequ <- fasta[[x]]
         class(sequ) <- NULL
         y <- try({
             .digest2(sequ, missed = missed_cleavages, warn = FALSE,
-                remove_initial_M = TRUE, ...)})
-        ind <- nchar(as.character(y$sequence)) >= min_aa &
-            nchar(as.character(y$sequence)) <= max_aa
-        as.character(y$sequence[ind])
-    })
+                remove_initial_M = TRUE, ...)}) # test 698
+        # y <- cleaver::cleave(as.character(sequ), enzym = "trypsin-low", missedCleavages = 0:2)[[1]] # hier ist M abgespalten nicht drin? 695, welche noch nicht?
+        ind <- nchar(as.character(y)) >= min_aa &
+            nchar(as.character(y)) <= max_aa
+        data.frame(protein=x, peptide=as.character(y[ind]))
+    }))
 
     return(digested_proteins)
 }
 
 
-#' Generate edgelist from list of in silico digested proteins.
-#'
-#' @param digested_proteins   \strong{list of vector of characters} \cr
-#'                            The output from [digestFASTA()] 
-#'                            (List of vectors of peptide sequences)
-#' @param prot_origin         \strong{vector of characters} \cr
-#'                            origin of the protein (e.g. organism, 
-#'                            spike-in/background etc)
-#'
-#' @return An edgelist.
-#' @export
-#'
-#' @seealso [digestFASTA()]
-#'
-#' @examples
-#' library(seqinr)
-#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
-#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-#' digested_proteins <- digestFASTA(fasta)
-#' edgelist <- generateEdgelist(digested_proteins)
-#'
-#'
-
-generateEdgelist <- function(digested_proteins, prot_origin = NULL) {
-    ## calculate necessary number of edges by counting the peptides belonging to 
-    ## each protein
-    mat_length <- sum(lengths(digested_proteins))
-
-    ## generate empty edge matrix of size (#edges)x2
-    if (is.null(prot_origin)) {
-        edgelist <- matrix(nrow = mat_length, ncol = 2)
-    } else {
-        edgelist <- matrix(nrow = mat_length, ncol = 3)
-    }
-
-    ## add progress bar to loop
-    number_of_iterations <- length(digested_proteins)
-    pb <- pbapply::startpb(0, length(digested_proteins))
-    on.exit(pbapply::closepb(pb))
-
-    ## add an entry to the edge matrix for each peptide-protein relation in the
-    ## digested_proteins matrix
-    current_row <- 1
-    for (i in 1:length(digested_proteins)){ ## TODO VAPPLY
-        if (length(digested_proteins[[i]]) != 0) {
-            for (j in 1:length(digested_proteins[[i]])){
-                edgelist[current_row, 1] <- names(digested_proteins)[[i]]
-                edgelist[current_row, 2] <- digested_proteins[[i]][[j]]
-
-                if (!is.null(prot_origin)) {
-                    edgelist[current_row, 3] <- prot_origin[[i]]
-                }
-                current_row <- current_row + 1
-            }
-            pbapply::setpb(pb, i)
-        }
-    }
-
-    #progress bar command
-    invisible(NULL)
-
-    #find and remove duplicate rows that would lead to duplicate edges
-    duplicate_rows <- duplicated(edgelist, margin = 1)
-    edgelist <- edgelist[!duplicate_rows, ]
-
-    edgelist <- as.data.frame(edgelist)
-    if (is.null(prot_origin)) {
-        colnames(edgelist) <- c("protein", "peptide")
-    } else {
-        colnames(edgelist) <- c("protein", "peptide", "prot_origin")
-    }
-
-    return(edgelist)
-}
