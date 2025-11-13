@@ -48,8 +48,7 @@
         if (seq_vector[end_position] == "K" | seq_vector[end_position] == "R") {
             seq_vector[end_position] <- "!"
             seq_string <- paste(seq_vector, collapse = "")
-        }
-        else {
+        } else {
             seq_string <- sequence
         }
         seq_string <- gsub("KP", "!P", seq_string)
@@ -71,7 +70,6 @@
         if (warn) warning("number of specified missed cleavages is greater than
             the maximum possible")
     }
-
     cleave <- function(sequence, start, stop, misses) {
         peptide <- substring(sequence, start, stop)
         mc <- rep(misses, times = length(peptide))
@@ -140,7 +138,7 @@
 
 #' In silico tryptic digestion of whole FASTA file.
 #'
-#' @param fasta              \strong{list of vector of characters} \cr
+#' @param fasta              \strong{list of character sequence} \cr
 #'                           A fasta file, already read into R by
 #'                           [seqinr::read.fasta()].
 #' @param missed_cleavages   \strong{integer} \cr
@@ -151,6 +149,9 @@
 #' @param max_aa             \strong{integer} \cr
 #'                           The maximal number of amino acids
 #'                           (set to Inf for no filtering).
+#' @param                    \string{list} \cr
+#'                           A list with the protein orgin corresponding to 
+#'                           [fasta]
 #' @param ...                Additional arguments for [.digest2()].
 #'
 #' @return data.frame with proteins and their peptide sequences, filtered
@@ -176,17 +177,28 @@ digestFASTA <- function(fasta,
     max_aa = 50,
     protOrigin = NULL,
     ...)  {
-    digested_proteins <- do.call("rbind", pbapply::pblapply(names(fasta), FUN=function(x) {
-        sequ <- fasta[[x]]
-        class(sequ) <- NULL
-        y <- try({
-            .digest2(sequ, missed = missed_cleavages, warn = FALSE,
-                remove_initial_M = TRUE, ...)}) # test 698
-        # y <- cleaver::cleave(as.character(sequ), enzym = "trypsin-low", missedCleavages = 0:2, ...)[[1]] # hier ist M abgespalten nicht drin? 695
-        ind <- nchar(as.character(y)) >= min_aa &
-            nchar(as.character(y)) <= max_aa
-        data.frame(protein=x, peptide=as.character(y[ind]))
-    }))
-
+    checkmate::checkList(fasta)
+    if (!is.null(protOrigin)) {
+        names(protOrigin) <- names(fasta)
+    }
+    digested_proteins <- do.call("rbind", 
+        pbapply::pblapply(names(fasta), FUN=function(x) {
+            sequ <- fasta[[x]]
+            class(sequ) <- NULL
+            y <- try({
+                .digest2(sequ, missed = missed_cleavages, warn = FALSE,
+                    remove_initial_M = TRUE, ...)}) # test 698
+            # y <- cleaver::cleave(as.character(sequ), enzym = "trypsin-low",
+            # missedCleavages = 0:2, ...)[[1]] 
+            # hier ist M abgespalten nicht drin? 695
+            ind <- nchar(as.character(y)) >= min_aa &
+                nchar(as.character(y)) <= max_aa
+            if (is.null(protOrigin)) {
+                data.frame(protein=x, peptide=as.character(y[ind]))
+            } else {
+                data.frame(protein=x, peptide=as.character(y[ind]), 
+                    protOrigin=protOrigin[[x]])
+            }
+        }))
     return(digested_proteins)
 }

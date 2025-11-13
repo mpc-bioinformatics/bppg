@@ -35,6 +35,7 @@ readMqPeptideTable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
     rename_columns = TRUE, zeroToNA = TRUE,
     remove_empty_rows = TRUE,
     further_columns_to_keep = NULL) {
+    checkmate::checkFileExists(path, access = "", extension = NULL)
 
     D <- utils::read.table(path, sep = "\t", header = TRUE)
 
@@ -48,7 +49,6 @@ readMqPeptideTable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
         D <- D[!ind_cont, ]
         print(paste0("Removed ", sum(ind_cont), " contaminant sequences."))
     }
-
 
     ## search for intensity columns or LFQ values
     if (LFQ) {
@@ -82,6 +82,5 @@ readMqPeptideTable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
         colnames(further_columns) <- further_columns_to_keep
         RES <- data.frame(Sequence = D$Sequence, further_columns, intensities)
     }
-
     return(RES)
 }

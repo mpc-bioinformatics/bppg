@@ -35,15 +35,16 @@ test_that("test .digest2", {
 
 
 test_that("digestion of a FASTA file", {
-  file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
-  fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-  names(fasta) <- limma::strsplit2(names(fasta), "\\|")[,2]
-  res <- digestFASTA(fasta)
+    file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+    fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+    names(fasta) <- limma::strsplit2(names(fasta), "\\|")[,2]
+    res <- digestFASTA(fasta)
 
-  # res2 <- digestFASTA(fasta, enzyme = "trypsin.strict")
+    protOrigin <- as.list(c(rep("human", 5), rep("spike_in", 5)))
+    res2 <- digestFASTA(fasta, protOrigin = protOrigin)
 
-  expect_snapshot(res)
-  # expect_snapshot(res2)
+    expect_snapshot(res)
+    expect_snapshot(res2)
 })
 
 

@@ -61,6 +61,8 @@
 
 aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
     id_cols = 1) {
+    checkmate::checkDataFrame(D, all.missing=FALSE)
+    checkmate::checkFactor(group)
 
     id <- D[, id_cols, drop = FALSE]
     intensities <- D[, -(id_cols)]
