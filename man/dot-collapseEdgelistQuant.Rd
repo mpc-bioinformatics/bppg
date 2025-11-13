@@ -8,7 +8,7 @@
 }
 \arguments{
 \item{edgelist}{\strong{data.frame} \cr
-An edgelist  with peptide ratios eg. created with \code{\link[=generateEdgelist]{generateEdgelist()}}.}
+An edgelist  with peptide ratios eg. created with \code{\link[=digestFASTA]{digestFASTA()}}.}
 
 \item{collProtNodes}{\strong{logical} \cr
 If \code{TRUE}, the protein nodes will be collapsed.}
@@ -26,12 +26,11 @@ Collapsing of peptide and protein nodes of an edgelist.
 library(seqinr)
 file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-digested_proteins <- bppg::digestFASTA(fasta)
-edgelist <- bppg::generateEdgelist(digested_proteins)
+edgelist <- bppg::digestFASTA(fasta)
 edgelist_collapsed <- bppg:::.collapseEdgelist(edgelist)
 
 }
 \seealso{
 For edgelists without peptide ratios: \code{\link[=.collapseEdgelist]{.collapseEdgelist()}} \cr
-\code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}, \code{\link[=.generateQuantGraphs]{.generateQuantGraphs()}}, \code{\link[=generateEdgelist]{generateEdgelist()}}
+\code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}, \code{\link[=.generateQuantGraphs]{.generateQuantGraphs()}}, \code{\link[=digestFASTA]{digestFASTA()}}
 }

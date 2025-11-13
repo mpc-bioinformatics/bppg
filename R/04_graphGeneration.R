@@ -10,7 +10,7 @@
 #'
 #' @param edgelist                 \strong{data.frame} \cr
 #'                                 An edgelist eg. created with
-#'                                 [generateEdgelist()].
+#'                                 [digestFASTA()].
 #' @param collProtNodes            \strong{logical} \cr
 #'                                 If \code{TRUE}, the protein nodes
 #'                                 will be collapsed.
@@ -23,14 +23,13 @@
 #'
 #' @seealso For edgelists with peptide ratios: [.collapseEdgelistQuant()] \cr
 #'          [generateGraphsFromFASTA()], [.generateQuantGraphs()],
-#'          [generateEdgelist()]
+#'          [digestFASTA()]
 #'
 #' @examples
 #' library(seqinr)
 #' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-#' digested_proteins <- bppg::digestFASTA(fasta)
-#' edgelist <- bppg::generateEdgelist(digested_proteins)
+#' edgelist <- bppg::digestFASTA(fasta)
 #' edgelist_collapsed <- bppg:::.collapseEdgelist(edgelist)
 #'
 
@@ -96,7 +95,7 @@
 #' Collapsing of peptide and protein nodes of an edgelist.
 #'
 #' @param edgelist                 \strong{data.frame} \cr
-#'                                 An edgelist  with peptide ratios eg. created with [generateEdgelist()].
+#'                                 An edgelist  with peptide ratios eg. created with [digestFASTA()].
 #' @param collProtNodes   \strong{logical} \cr
 #'                                 If \code{TRUE}, the protein nodes will be collapsed.
 #' @param collPeptNodes   \strong{logical} \cr
@@ -106,14 +105,13 @@
 #'
 #'
 #' @seealso For edgelists without peptide ratios: [.collapseEdgelist()] \cr
-#'          [generateGraphsFromFASTA()], [.generateQuantGraphs()], [generateEdgelist()]
+#'          [generateGraphsFromFASTA()], [.generateQuantGraphs()], [digestFASTA()]
 #'
 #' @examples
 #' library(seqinr)
 #' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-#' digested_proteins <- bppg::digestFASTA(fasta)
-#' edgelist <- bppg::generateEdgelist(digested_proteins)
+#' edgelist <- bppg::digestFASTA(fasta)
 #' edgelist_collapsed <- bppg:::.collapseEdgelist(edgelist)
 #'
 
@@ -190,12 +188,12 @@
 #' via an edgelist.
 #'
 #' @param edgelist   \strong{data.frame} \cr
-#'                   An edgelist, output from [generateEdgelist()].
+#'                   An edgelist, output from [digestFASTA()].
 #'
 #' @return A list of subgraphs as igraph objects.
 #'
 #'
-#' @seealso [generateEdgelist()]
+#' @seealso [digestFASTA()]
 #'
 #' @examples
 #' ## TODO: example takes longer than 5s
@@ -203,8 +201,7 @@
 #' file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta",
 #'  package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-#' digested_proteins <- digestFASTA(fasta)
-#' edgelist <- generateEdgelist(digested_proteins)
+#' edgelist <- digestFASTA(fasta)
 #' res <- bppg:::.generateGraphsFromEdgelist(edgelist)
 #'
 
@@ -234,7 +231,7 @@
 #' @param fasta_edgelist           \strong{data.frame} \cr
 #'                                 An edgelist created from the corresponding
 #'                                 FASTA file, eg. created with
-#'                                 [bppg::generateEdgelist()].
+#'                                 [bppg::digestFASTA()].
 #' @param outpath                  \strong{character} \cr
 #'                                 The output path for the results.
 #' @param seq_column               \strong{character} \cr
@@ -251,7 +248,7 @@
 #' @return A list of list of subgraphs
 #' @export
 #'
-#' @seealso [bppg::generateEdgelist()]
+#' @seealso [bppg::digestFASTA()]
 #'
 #' @examples
 #'

@@ -1,5 +1,5 @@
 #' Functions in this file:
-#' digest2()
+#' .digest2()
 #' digestFASTA
 
 ### modified version of OrgMassSpecR::Digest
@@ -58,20 +58,9 @@
         stop <- grep("K|R", seq_vector)
         start <- stop + 1
     }
-    if (enzyme == "trypsin.strict") {
-        if (seq_vector[end_position] == "K" | seq_vector[end_position] == "R") {
-            seq_vector[end_position] <- "!"
-            seq_string <- paste(seq_vector, collapse = "")
-        }
-        else {
-            seq_string <- sequence
-        }
-        seq_vector <- strsplit(seq_string, split = "")[[1]]
-        stop <- grep("K|R", seq_vector)
-        start <- stop + 1
-    }
-    if (enzyme != "trypsin" & enzyme != "trypsin.strict")
-        stop("undefined enzyme, defined enzymes are trypsin, trypsin.strict")
+
+    if (enzyme != "trypsin")
+        stop("undefined enzyme, defined enzymes are trypsin")
     if (length(stop) == 0) {
         if (warn) warning("sequence does not contain cleavage sites")
         return(data.frame(sequence = sequence, start = 1,
@@ -93,7 +82,7 @@
     start <- c(1, start)
     stop <- c(stop, end_position)
     results <- cleave(sequence, start, stop, 0)
-    if (missed > 0) {
+    if (missed > 0) { # do that in do. call apply?
         for (i in 1:min(missed, length(stop_))) {
         start_tmp <- start[1:(length(start) - i)]
         stop_tmp <- stop[(1 + i):length(stop)]
@@ -101,7 +90,6 @@
         results <- rbind(results, peptide)
         }
     }
-
     if (remove_initial_M) {
         y2 <- results[results$start == 1,] ## there should be at least 1
         y2 <- y2[substr(y2$sequence, 1, 1) == "M", ] ## is first amino acid M?
@@ -111,10 +99,8 @@
             y2$start <- 2
             results <- rbind(results, y2)
         }
-
     }
-
-    return(results)
+    return(results$sequence)
 }
 
 
@@ -167,8 +153,8 @@
 #'                           (set to Inf for no filtering).
 #' @param ...                Additional arguments for [.digest2()].
 #'
-#' @return List of vectors of peptide sequences, filtered for minimal
-#'         and maximal number of amino acids.
+#' @return data.frame with proteins and their peptide sequences, filtered
+#'         for minimal and maximal number of amino acids.
 #' @export
 #' 
 #'
@@ -196,7 +182,7 @@ digestFASTA <- function(fasta,
         y <- try({
             .digest2(sequ, missed = missed_cleavages, warn = FALSE,
                 remove_initial_M = TRUE, ...)}) # test 698
-        # y <- cleaver::cleave(as.character(sequ), enzym = "trypsin-low", missedCleavages = 0:2)[[1]] # hier ist M abgespalten nicht drin? 695, welche noch nicht?
+        # y <- cleaver::cleave(as.character(sequ), enzym = "trypsin-low", missedCleavages = 0:2, ...)[[1]] # hier ist M abgespalten nicht drin? 695
         ind <- nchar(as.character(y)) >= min_aa &
             nchar(as.character(y)) <= max_aa
         data.frame(protein=x, peptide=as.character(y[ind]))
@@ -204,5 +190,3 @@ digestFASTA <- function(fasta,
 
     return(digested_proteins)
 }
-
-
