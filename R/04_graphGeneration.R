@@ -5,6 +5,62 @@
 #' .generateQuantGraphs()
 
 
+contractPeptidesProteins <- function(g, 
+    collProtNodes = TRUE,
+    collPeptNodes = TRUE) {
+
+    # Prüfen ob Graph leer ist
+    if (!collProtNodes && !collPeptNodes) {
+        return(g)
+    }
+    
+    # Signature based on neigbors, set of same neighbours will be contracted
+    createEdgeSignature <- function(vertexId) {
+        neighb <- igraph::neighbors(g, vertexId, mode = "all")
+        paste0(sort(as.numeric(neighb)), collapse = ",")
+    }
+    
+    # get signatures for type of interest
+    signatures <- NULL
+    if (collProtNodes) {
+        tmpSign <- sapply(igraph::V(g)[igraph::V(g)$type], createEdgeSignature)
+        signatures <- c(signatures, tmpSign)
+    }
+    if (collPeptNodes) {
+        tmpSign <- sapply(igraph::V(g)[!igraph::V(g)$type], createEdgeSignature)
+        signatures <- c(signatures, tmpSign)
+    }
+    
+    # collapse based on same signatures
+    gCollapsed <- igraph::contract(g, factor(signatures), vertex.attr.comb = c)
+    
+    # remove duplicate edges 
+    gCollapsed  <- igraph::simplify(gCollapsed)
+
+    # reset attributes
+    igraph::V(gCollapsed)$type <- sapply(igraph::V(gCollapsed)$type, "[", 1)
+    igraph::V(gCollapsed)$name <- sapply(igraph::V(gCollapsed)$name, 
+        paste, collapse=";")
+    
+    if (!is.null(igraph::V(gCollapsed)$pep_ratio)) {
+        igraph::V(gCollapsed)$pep_ratio_mean <- 
+            sapply(igraph::V(gCollapsed)$pep_ratio, mean)
+    }
+
+    if (is.null(igraph::V(gCollapsed)$protOrigin)) {
+        igraph::V(gCollapsed)$protOrigin <- 
+            sapply(igraph::V(gCollapsed)$protOrigin, "[", 1)
+    }
+
+    
+    # Anzahl fusionierter Knoten ausgeben
+    n_merged <- igraph::vcount(g) - igraph::vcount(gCollapsed)
+    message(sprintf("%d Knoten wurden fusioniert. Neuer Graph hat %d Knoten.", 
+                    n_merged, igraph::vcount(gCollapsed)))
+    
+    return(gCollapsed)
+}
+
 
 #' Collapsing of peptide and protein nodes of an edgelist.
 #'
