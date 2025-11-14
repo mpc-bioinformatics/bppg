@@ -19,8 +19,11 @@
 #' @return The fold changes (Y/X).
 #'
 #'
-#' @examples ## TODO
-#'
+#' @examples 
+#' D <- data.frame(s1 = c(1,4), s2 = c(2,5), s3 = c(3,6))
+#' X <- "s1"
+#' Y <- "s2"
+#' bppg:::.foldChange(D,X,Y)
 
 .foldChange <- function(D, X, Y, useNA = FALSE) {
     FC <- D[, Y] / D[, X]
@@ -65,16 +68,16 @@ aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
     id <- D[, id_cols, drop = FALSE]
     intensities <- D[, -(id_cols)]
 
+    FUN <- switch(method,
+        mean  = rowMeans,
+        sum = rowSums,
+        median = robustbase::rowMedians)
+
     res <- NULL
+    # TODO kann das in ein apply verwandelt werden? split(intensities, group)?
     for (i in 1:length(levels(group))) {
 
         X_tmp <- intensities[, group == levels(group)[i]]
-
-        FUN <- switch(method,
-            mean  = rowMeans,
-            sum = rowSums,
-            median = robustbase::rowMedians)
-
         X_tmp <- as.matrix(X_tmp)
 
         res_tmp <- FUN(X_tmp, na.rm = TRUE)
