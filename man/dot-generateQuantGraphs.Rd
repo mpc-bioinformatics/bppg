@@ -27,7 +27,7 @@ The columns with ids, e.g. peptide sequences
 \item{fasta_edgelist}{\strong{data.frame} \cr
 An edgelist created from the corresponding
 FASTA file, eg. created with
-\code{\link[=generateEdgelist]{generateEdgelist()}}.}
+\code{\link[=digestFASTA]{digestFASTA()}}.}
 
 \item{outpath}{\strong{character} \cr
 The output path for the results.}
@@ -54,5 +54,5 @@ Generate graphs from peptide ratio table, using an edgelist calculated
 on the fasta file.
 }
 \seealso{
-\code{\link[=generateEdgelist]{generateEdgelist()}}
+\code{\link[=digestFASTA]{digestFASTA()}}
 }

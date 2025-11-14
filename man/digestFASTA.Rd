@@ -4,7 +4,14 @@
 \alias{digestFASTA}
 \title{In silico tryptic digestion of whole FASTA file.}
 \usage{
-digestFASTA(fasta, missed_cleavages = 2, min_aa = 6, max_aa = 50, ...)
+digestFASTA(
+  fasta,
+  missed_cleavages = 2,
+  min_aa = 6,
+  max_aa = 50,
+  protOrigin = NULL,
+  ...
+)
 }
 \arguments{
 \item{fasta}{\strong{list of vector of characters} \cr
@@ -25,8 +32,8 @@ The maximal number of amino acids
 \item{...}{Additional arguments for \code{\link[=.digest2]{.digest2()}}.}
 }
 \value{
-List of vectors of peptide sequences, filtered for minimal
-and maximal number of amino acids.
+data.frame with proteins and their peptide sequences, filtered
+for minimal and maximal number of amino acids.
 }
 \description{
 In silico tryptic digestion of whole FASTA file.

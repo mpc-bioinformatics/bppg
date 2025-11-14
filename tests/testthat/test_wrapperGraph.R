@@ -36,20 +36,19 @@ test_that("test generateGraphsFromQuantData", {
   # Create intensity table
   set.seed(4)
   res <- bppg::digestFASTA(fasta)
-  peptides <- c()
-  for (i in 1:10) {
-    peptides <- c(peptides, res[[i]][sample(1:length(res[[i]]), size = round(length(res[[i]])*0.75))])
-  }
+  peptides <- res$peptide[sample(seq_along(res$peptide), 
+      size = round(length(res$peptide) * 0.75))]
   peptides <- unique(peptides)
+  n <- length(peptides)
   data_table <- data.frame(Sequence = peptides,
-                           sample1_run1 = round(rnorm(598, mean = 20), digits = 4),
-                           sample1_run2 = round(rnorm(598, mean = 20), digits = 4),
-                           sample2_run1 = round(rnorm(598, mean = 20), digits = 4),
-                           sample2_run2 = round(rnorm(598, mean = 20), digits = 4),
-                           sample3_run1 = round(rnorm(598, mean = 20), digits = 4),
-                           sample3_run2 = round(rnorm(598, mean = 20), digits = 4))
+                           sample1_run1 = round(rnorm(n, mean = 20), digits = 4),
+                           sample1_run2 = round(rnorm(n, mean = 20), digits = 4),
+                           sample2_run1 = round(rnorm(n, mean = 20), digits = 4),
+                           sample2_run2 = round(rnorm(n, mean = 20), digits = 4),
+                           sample3_run1 = round(rnorm(n, mean = 20), digits = 4),
+                           sample3_run2 = round(rnorm(n, mean = 20), digits = 4))
   for (i in 2:7) {
-    data_table[sample(1:598, size = 120), i] <- NA # Insert some NAs
+    data_table[sample(1:n, size = 120), i] <- NA # Insert some NAs
   }
 
   # Compute function

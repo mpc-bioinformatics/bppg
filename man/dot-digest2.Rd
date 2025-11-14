@@ -3,9 +3,8 @@
 \name{.digest2}
 \alias{.digest2}
 \title{Functions in this file:
-digest2()
+.digest2()
 digestFASTA
-generateEdgelist
 Digestion of a single protein sequence.}
 \usage{
 .digest2(
@@ -40,9 +39,8 @@ A vector of peptides.
 }
 \description{
 Functions in this file:
-digest2()
+.digest2()
 digestFASTA
-generateEdgelist
 Digestion of a single protein sequence.
 }
 \examples{

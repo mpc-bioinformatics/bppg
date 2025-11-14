@@ -45,10 +45,7 @@ generateGraphsFromFASTA <- function(fasta,
     prot_origin = NULL,
     ...) {
     message("Digesting FASTA file ...")
-    digested_proteins <- bppg::digestFASTA(fasta, ...)
-    message("Generating edgelist ...")
-    edgelist <- bppg::generateEdgelist(digested_proteins,
-        prot_origin = prot_origin)
+    edgelist <- bppg::digestFASTA(fasta, protOrigin = prot_origin, ...)
     if (save_intermediate) {
         message("Saving edgelist ...")
         utils::write.table(edgelist, sep = "\t", row.names = FALSE,
@@ -149,11 +146,9 @@ generateGraphsFromQuantData <- function(D,
     suffix = "",
     ...) {
     message("Digesting FASTA file...")
-    digested_proteins <- bppg::digestFASTA(fasta,
+    edgelist <- bppg::digestFASTA(fasta,
         missed_cleavages = missed_cleavages,
         min_aa = min_aa, max_aa = max_aa)
-    message("Generating edgelist ...")
-    edgelist <- bppg::generateEdgelist(digested_proteins)
 
     if (!is.null(outpath)) {
         openxlsx::write.xlsx(edgelist, file = paste0(outpath,

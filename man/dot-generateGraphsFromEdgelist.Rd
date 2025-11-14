@@ -9,7 +9,7 @@ via an edgelist.}
 }
 \arguments{
 \item{edgelist}{\strong{data.frame} \cr
-An edgelist, output from \code{\link[=generateEdgelist]{generateEdgelist()}}.}
+An edgelist, output from \code{\link[=digestFASTA]{digestFASTA()}}.}
 }
 \value{
 A list of subgraphs as igraph objects.
@@ -24,11 +24,10 @@ library(seqinr)
 file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta",
  package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-digested_proteins <- digestFASTA(fasta)
-edgelist <- generateEdgelist(digested_proteins)
+edgelist <- digestFASTA(fasta)
 res <- bppg:::.generateGraphsFromEdgelist(edgelist)
 
 }
 \seealso{
-\code{\link[=generateEdgelist]{generateEdgelist()}}
+\code{\link[=digestFASTA]{digestFASTA()}}
 }

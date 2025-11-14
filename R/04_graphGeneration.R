@@ -5,12 +5,68 @@
 #' .generateQuantGraphs()
 
 
+contractPeptidesProteins <- function(g, 
+    collProtNodes = TRUE,
+    collPeptNodes = TRUE) {
+
+    # Prüfen ob Graph leer ist
+    if (!collProtNodes && !collPeptNodes) {
+        return(g)
+    }
+    
+    # Signature based on neigbors, set of same neighbours will be contracted
+    createEdgeSignature <- function(vertexId) {
+        neighb <- igraph::neighbors(g, vertexId, mode = "all")
+        paste0(sort(as.numeric(neighb)), collapse = ",")
+    }
+    
+    # get signatures for type of interest
+    signatures <- NULL
+    if (collProtNodes) {
+        tmpSign <- sapply(igraph::V(g)[igraph::V(g)$type], createEdgeSignature)
+        signatures <- c(signatures, tmpSign)
+    }
+    if (collPeptNodes) {
+        tmpSign <- sapply(igraph::V(g)[!igraph::V(g)$type], createEdgeSignature)
+        signatures <- c(signatures, tmpSign)
+    }
+    
+    # collapse based on same signatures
+    gCollapsed <- igraph::contract(g, factor(signatures), vertex.attr.comb = c)
+    
+    # remove duplicate edges 
+    gCollapsed  <- igraph::simplify(gCollapsed)
+
+    # reset attributes
+    igraph::V(gCollapsed)$type <- sapply(igraph::V(gCollapsed)$type, "[", 1)
+    igraph::V(gCollapsed)$name <- sapply(igraph::V(gCollapsed)$name, 
+        paste, collapse=";")
+    
+    if (!is.null(igraph::V(gCollapsed)$pep_ratio)) {
+        igraph::V(gCollapsed)$pep_ratio_mean <- 
+            sapply(igraph::V(gCollapsed)$pep_ratio, mean)
+    }
+
+    if (is.null(igraph::V(gCollapsed)$protOrigin)) {
+        igraph::V(gCollapsed)$protOrigin <- 
+            sapply(igraph::V(gCollapsed)$protOrigin, "[", 1)
+    }
+
+    
+    # Anzahl fusionierter Knoten ausgeben
+    n_merged <- igraph::vcount(g) - igraph::vcount(gCollapsed)
+    message(sprintf("%d Knoten wurden fusioniert. Neuer Graph hat %d Knoten.", 
+                    n_merged, igraph::vcount(gCollapsed)))
+    
+    return(gCollapsed)
+}
+
 
 #' Collapsing of peptide and protein nodes of an edgelist.
 #'
 #' @param edgelist                 \strong{data.frame} \cr
 #'                                 An edgelist eg. created with
-#'                                 [generateEdgelist()].
+#'                                 [digestFASTA()].
 #' @param collProtNodes            \strong{logical} \cr
 #'                                 If \code{TRUE}, the protein nodes
 #'                                 will be collapsed.
@@ -23,14 +79,13 @@
 #'
 #' @seealso For edgelists with peptide ratios: [.collapseEdgelistQuant()] \cr
 #'          [generateGraphsFromFASTA()], [.generateQuantGraphs()],
-#'          [generateEdgelist()]
+#'          [digestFASTA()]
 #'
 #' @examples
 #' library(seqinr)
 #' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-#' digested_proteins <- bppg::digestFASTA(fasta)
-#' edgelist <- bppg::generateEdgelist(digested_proteins)
+#' edgelist <- bppg::digestFASTA(fasta)
 #' edgelist_collapsed <- bppg:::.collapseEdgelist(edgelist)
 #'
 
@@ -96,7 +151,7 @@
 #' Collapsing of peptide and protein nodes of an edgelist.
 #'
 #' @param edgelist                 \strong{data.frame} \cr
-#'                                 An edgelist  with peptide ratios eg. created with [generateEdgelist()].
+#'                                 An edgelist  with peptide ratios eg. created with [digestFASTA()].
 #' @param collProtNodes   \strong{logical} \cr
 #'                                 If \code{TRUE}, the protein nodes will be collapsed.
 #' @param collPeptNodes   \strong{logical} \cr
@@ -106,14 +161,13 @@
 #'
 #'
 #' @seealso For edgelists without peptide ratios: [.collapseEdgelist()] \cr
-#'          [generateGraphsFromFASTA()], [.generateQuantGraphs()], [generateEdgelist()]
+#'          [generateGraphsFromFASTA()], [.generateQuantGraphs()], [digestFASTA()]
 #'
 #' @examples
 #' library(seqinr)
 #' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-#' digested_proteins <- bppg::digestFASTA(fasta)
-#' edgelist <- bppg::generateEdgelist(digested_proteins)
+#' edgelist <- bppg::digestFASTA(fasta)
 #' edgelist_collapsed <- bppg:::.collapseEdgelist(edgelist)
 #'
 
@@ -190,12 +244,12 @@
 #' via an edgelist.
 #'
 #' @param edgelist   \strong{data.frame} \cr
-#'                   An edgelist, output from [generateEdgelist()].
+#'                   An edgelist, output from [digestFASTA()].
 #'
 #' @return A list of subgraphs as igraph objects.
 #'
 #'
-#' @seealso [generateEdgelist()]
+#' @seealso [digestFASTA()]
 #'
 #' @examples
 #' ## TODO: example takes longer than 5s
@@ -203,8 +257,7 @@
 #' file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta",
 #'  package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-#' digested_proteins <- digestFASTA(fasta)
-#' edgelist <- generateEdgelist(digested_proteins)
+#' edgelist <- digestFASTA(fasta)
 #' res <- bppg:::.generateGraphsFromEdgelist(edgelist)
 #'
 
@@ -234,7 +287,7 @@
 #' @param fasta_edgelist           \strong{data.frame} \cr
 #'                                 An edgelist created from the corresponding
 #'                                 FASTA file, eg. created with
-#'                                 [bppg::generateEdgelist()].
+#'                                 [bppg::digestFASTA()].
 #' @param outpath                  \strong{character} \cr
 #'                                 The output path for the results.
 #' @param seq_column               \strong{character} \cr
@@ -251,7 +304,7 @@
 #' @return A list of list of subgraphs
 #' @export
 #'
-#' @seealso [bppg::generateEdgelist()]
+#' @seealso [bppg::digestFASTA()]
 #'
 #' @examples
 #'
