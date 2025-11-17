@@ -9,7 +9,6 @@ error terms}
   S,
   fixed.Ci = NULL,
   verbose = FALSE,
-  log_level = TRUE,
   control = list(),
   ...
 )
@@ -32,17 +31,17 @@ If \code{TRUE}, additional information on each iteration
 of the optimization is printed (see also rsolnp function
 in package Rsolnp).}
 
-\item{log_level}{\strong{logical} \cr
-If \code{TRUE}, the Ri are log2-transformed before
-optimization, allowing a symmetric consideration of
-Ri < 0 and > 0.}
-
 \item{control}{\strong{list} \cr
 The control parameters for solnp.}
 
 \item{reciprocal}{\strong{logical} \cr
 If \code{TRUE}, the reciprocal of the peptide ratios is
 used for the optimization.}
+
+\item{log_level}{\strong{logical} \cr
+If \code{TRUE}, the Ri are log2-transformed before
+optimization, allowing a symmetric consideration of
+Ri < 0 and > 0.}
 }
 \value{
 list containing the following elements:

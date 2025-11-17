@@ -1,10 +1,10 @@
 test_that("test .errorEquation", {
 
-  Ri <- c(0.5, 1.3)
+  RiLog <- log2(c(0.5, 1.3))
   Ci <- c(0.3, 0.7)
   M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
   rjLog <- log2(c(0.6, 1.2))
-  e <- bppg:::.errorEquation(Ri = Ri, Ci = Ci, M = M, rjLog = rjLog, log_level = FALSE)
+  e <- bppg:::.errorEquation(RiLog = RiLog, Ci = Ci, M = M, rjLog = rjLog)
 
   expect_snapshot(e)
 })
@@ -20,6 +20,8 @@ test_that("test .minimizeSquaredError", {
   res2 <- bppg:::.minimizeSquaredError(S, verbose = FALSE, fixed.Ci = c(0.3, NA))
 
   testfile_path <- file.path(testthat::test_path(), "testfiles")
+  #saveRDS(res, file.path(testfile_path, "test_minimizeSquaredError_file1.rds"))
+  #saveRDS(res2, file.path(testfile_path, "test_minimizeSquaredError_file2.rds"))
   res_snap <- readRDS(file.path(testfile_path, "test_minimizeSquaredError_file1.rds"))
   res2_snap <- readRDS(file.path(testfile_path, "test_minimizeSquaredError_file2.rds"))
 
@@ -44,6 +46,7 @@ test_that("test iterateOverCi", {
     res <- iterateOverCi(S, grid.size = 10)
 
     testfile_path <- file.path(testthat::test_path(), "testfiles")
+    # saveRDS(res, file.path(testfile_path, "test_iterateOverCi_file1.rds"))
     res_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file1.rds"))
 
     expect_equal(res, res_snap, tolerance = 1e-05)
@@ -58,6 +61,7 @@ test_that("test iterateOverCi with extended grid", {
     res2 <- iterateOverCi(S, grid.size = 10,
                           extend_grid_at_borders = TRUE)
     testfile_path <- file.path(testthat::test_path(), "testfiles")
+    saveRDS(res2, file.path(testfile_path, "test_iterateOverCi_file2.rds"))
     res2_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file2.rds"))
 
     expect_equal(res2, res2_snap, tolerance = 1e-05)

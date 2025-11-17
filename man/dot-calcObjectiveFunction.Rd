@@ -4,7 +4,7 @@
 \alias{.calcObjectiveFunction}
 \title{Calculate objective function for the optimization step}
 \usage{
-.calcObjectiveFunction(fixed.Ci, log_level, m, M, rjLog)
+.calcObjectiveFunction(fixed.Ci, m, M, rjLog)
 }
 \arguments{
 \item{fixed.Ci}{\strong{numeric vector} \cr
@@ -14,14 +14,14 @@ If NULL, all Cis will be considered as variable.
 This argument is needed to fix Ci on a grid point in the
 iterated_Ci function.}
 
-\item{log_level}{\strong{logical(1)} \cr
-if TRUE, the Ri values are returned on log2-scale}
-
 \item{m}{\strong{integer(1)} \cr
 number of proteins in the respective graph}
 
 \item{M}{\strong{matrix} \cr
 Biadjacency matrix of the graph.}
+
+\item{log_level}{\strong{logical(1)} \cr
+if TRUE, the Ri values are returned on log2-scale}
 
 \item{rj}{\strong{numeric vector} \cr
 Contains the measured peptide ratios.}

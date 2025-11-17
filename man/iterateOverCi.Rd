@@ -12,8 +12,7 @@ iterateOverCi(
   grid.stop = 1,
   verbose = FALSE,
   control = list(),
-  extend_grid_at_borders = FALSE,
-  log_level = TRUE
+  extend_grid_at_borders = FALSE
 )
 }
 \arguments{

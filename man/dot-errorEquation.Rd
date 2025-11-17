@@ -9,25 +9,25 @@ iterateOverCi
 automatedAnalysisIteratedCi
 Function to set up the error equations for the optimization problem}
 \usage{
-.errorEquation(Ri, Ci, M, rjLog, log_level = FALSE)
+.errorEquation(RiLog, Ci, M, rjLog)
 }
 \arguments{
-\item{Ri}{\strong{numeric vector} \cr
-Contains the (estimated) protein ratios.}
-
 \item{Ci}{\strong{numeric vector} \cr
 Contains the protein weights (estimated, sum up to 1)}
 
 \item{M}{\strong{matrix} \cr
 The biadjaceny matrix of the corresponding graphs.}
 
+\item{Ri}{\strong{numeric vector} \cr
+Contains the (estimated) protein ratios.}
+
+\item{rj}{\strong{numeric vector} \cr
+Contains the measured peptide ratios.}
+
 \item{log_level}{\strong{logical} \cr
 If \code{TRUE}, the Ri are given on log2-level and need
 to be back-transformed here
 (this leads to a symmetric behavior during optimization)}
-
-\item{rj}{\strong{numeric vector} \cr
-Contains the measured peptide ratios.}
 }
 \value{
 list containing the following elements:

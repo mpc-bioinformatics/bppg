@@ -4,7 +4,7 @@
 \alias{.calcConstraints}
 \title{Calculate equality and inequality constraints for the optimization step}
 \usage{
-.calcConstraints(fixed.Ci, log_level, m)
+.calcConstraints(fixed.Ci, m)
 }
 \arguments{
 \item{fixed.Ci}{\strong{numeric vector} \cr
@@ -14,11 +14,11 @@ If NULL, all Cis will be considered as variable.
 This argument is needed to fix Ci on a grid point in the
 iterated_Ci function.}
 
-\item{log_level}{\strong{logical(1)} \cr
-if TRUE, the Ri values are returned on log2-scale}
-
 \item{m}{\strong{integer(1)} \cr
 number of proteins in the respective graph}
+
+\item{log_level}{\strong{logical(1)} \cr
+if TRUE, the Ri values are returned on log2-scale}
 }
 \value{
 list containing the following elements (see also
