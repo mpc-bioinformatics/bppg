@@ -20,6 +20,6 @@ Adds vertex attributes with uniqueness of peptides and number of unique
 peptides for proteins.
 }
 \seealso{
-\code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}, \code{\link[=.generateQuantGraphs]{.generateQuantGraphs()}},
+\code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}, \code{\link[=generateQuantGraphs]{generateQuantGraphs()}},
 \code{\link[=.addAveragePepRatio]{.addAveragePepRatio()}}
 }

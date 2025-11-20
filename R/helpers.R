@@ -14,7 +14,7 @@
 #' @return A graph with added peptide ratio attributes.
 #'
 #'
-#' @seealso [generateGraphsFromFASTA()], [.generateQuantGraphs()],
+#' @seealso [generateGraphsFromFASTA()], [generateQuantGraphs()],
 #'          [.addUniquenessAttributes()]
 #'
 #' @examples
@@ -44,7 +44,7 @@
 #'         nr_unique_peptides
 #'
 #'
-#' @seealso [generateGraphsFromFASTA()], [.generateQuantGraphs()],
+#' @seealso [generateGraphsFromFASTA()], [generateQuantGraphs()],
 #'          [.addAveragePepRatio()]
 #'
 #' @examples

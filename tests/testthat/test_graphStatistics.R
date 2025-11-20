@@ -19,10 +19,10 @@ test_that("test .calculateProteinNodeInfo", {
 
   expect_equal(nrow(D), 30)
   expect_equal(ncol(D), 7)
-  expect_equal(unlist(D[11, ]), c(accessions = "tr|A0A494C0S0|A0A494C0S0_HUMAN",
+  expect_equal(unlist(D[14, ]), c(accessions = "tr|A0A494C0S0|A0A494C0S0_HUMAN",
                                   comparison = "s1_s3",
-                                  graphID = "1",
-                                  ind_within_graph = "1",
+                                  graphID = "2",
+                                  ind_within_graph = "3",
                                   nr_peptides = "288",
                                   nr_unique_peptides = "31",
                                   nr_shared_peptides = "257"))

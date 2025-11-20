@@ -35,6 +35,8 @@ calculatePeptideRatios
 Calculate peptide ratios for pairwise comparisons of groups (Y/X).
 }
 \examples{
-## TODO
-
+D <- data.frame(s1 = c(1,4), s2 = c(2,5), s3 = c(3,6))
+X <- "s1"
+Y <- "s2"
+bppg:::.foldChange(D,X,Y)
 }

@@ -76,5 +76,5 @@ Generate graphs from quantitative peptide-level data
 }
 \seealso{
 \code{\link[=readMqPeptideTable]{readMqPeptideTable()}}, \code{\link[seqinr:read.fasta]{seqinr::read.fasta()}},
-\code{\link[=.generateQuantGraphs]{.generateQuantGraphs()}}, \code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}
+\code{\link[=generateQuantGraphs]{generateQuantGraphs()}}, \code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}
 }

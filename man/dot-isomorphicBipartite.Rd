@@ -26,5 +26,5 @@ node type in bipartite graphs, e.g. that W- and M-shaped graphs are NOT
 isomorphic
 }
 \seealso{
-\code{\link[=.generateGraphsFromEdgelist]{.generateGraphsFromEdgelist()}}
+\code{\link[=generateGraphsFromEdgelist]{generateGraphsFromEdgelist()}}
 }

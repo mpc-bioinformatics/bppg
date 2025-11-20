@@ -52,30 +52,12 @@ generateGraphsFromFASTA <- function(fasta,
             file = file.path(result_path, paste0("edgelist_", suffix, ".txt")))
     }
 
-    if (collProtNodes || collPeptNodes) {
-        message("Collapsing nodes ...")
-        edgelist_coll <- .collapseEdgelist(edgelist,
-            collProtNodes = collProtNodes, collPeptNodes = collPeptNodes)
-    }
+    graphs <- generateGraphsFromEdgelist(edgelist, collProtNodes, collPeptNodes)
 
     if (collProtNodes && collPeptNodes) suffix2 <- "collprotpept_"
     if (collPeptNodes && !collProtNodes) suffix2 <- "collpept_"
     if (collProtNodes && !collPeptNodes) suffix2 <- "collprot_"
     if (!collProtNodes && !collPeptNodes) suffix2 <- NULL
-
-    if (save_intermediate && (collProtNodes || collPeptNodes)) {
-        utils::write.table(edgelist_coll, sep = "\t", row.names = FALSE,
-            file = file.path(result_path, paste0("edgelist_", suffix2, suffix, ".txt")))
-    }
-
-    if (collProtNodes || collPeptNodes) {
-        message("Generating graphs ...")
-        graphs <- .generateGraphsFromEdgelist(edgelist_coll)
-    } else {
-        message("Generating graphs ...")
-        graphs <- .generateGraphsFromEdgelist(edgelist)
-    }
-
 
     if (save_intermediate) {
         saveRDS(graphs, file = file.path(result_path, paste0("subgraphs_", suffix2, suffix, ".rds")))
@@ -127,7 +109,7 @@ generateGraphsFromFASTA <- function(fasta,
 #' @export
 #'
 #' @seealso [bppg::readMqPeptideTable()], [seqinr::read.fasta()],
-#'          [.generateQuantGraphs()], [bppg::generateGraphsFromFASTA()]
+#'          [generateQuantGraphs()], [bppg::generateGraphsFromFASTA()]
 #'
 #' @examples
 #'
@@ -184,7 +166,7 @@ generateGraphsFromQuantData <- function(D,
     }
 
     ## Generierung der Graphen (man braucht peptide_ratios und fast_edgelist!)
-    graphs <- .generateQuantGraphs(peptide_ratios = peptide_ratios,
+    graphs <- generateQuantGraphs(peptide_ratios = peptide_ratios,
         id_cols = id_columns, fasta_edgelist = edgelist,
         outpath = outpath, seq_column = seq_column,
         collProtNodes = collProtNodes,

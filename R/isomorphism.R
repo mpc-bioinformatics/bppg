@@ -48,7 +48,7 @@
 #' @return TRUE if graphs are isomorphic, FALSE if not.
 #'
 #'
-#' @seealso [.generateGraphsFromEdgelist()]
+#' @seealso [generateGraphsFromEdgelist()]
 #'
 #' @examples
 #'

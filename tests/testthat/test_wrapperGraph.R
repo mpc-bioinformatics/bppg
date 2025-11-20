@@ -17,13 +17,11 @@ test_that("generate graphs from fasta",{
 
 
   expect_true(file.exists(file.path(temp_dir, "edgelist_.txt")))
-  expect_true(file.exists(file.path(temp_dir, "edgelist_collprotpept_.txt")))
   expect_true(file.exists(file.path(temp_dir, "subgraphs_collprotpept_.rds")))
 
 })
 
 test_that("test generateGraphsFromQuantData", {
-
   # Create a temporary directory so no permanent files are put on a package users directory
   temp_dir <- tempfile(pattern = "test_dir")
   dir.create(temp_dir)
@@ -65,7 +63,7 @@ test_that("test generateGraphsFromQuantData", {
   for (i in 1:3) {
     for (j in seq_along(graphs[[i]])) {
       expect_snapshot(igraph::as_edgelist(graphs[[i]][[j]]))
-      expect_snapshot(igraph::vertex_attr(graphs[[1]][[1]], "pep_ratio"))
+      expect_snapshot(igraph::vertex_attr(graphs[[i]][[j]], "pep_ratio"))
     }
   }
 

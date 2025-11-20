@@ -14,7 +14,7 @@ digestFASTA(
 )
 }
 \arguments{
-\item{fasta}{\strong{list of vector of characters} \cr
+\item{fasta}{\strong{list of character sequence} \cr
 A fasta file, already read into R by
 \code{\link[seqinr:read.fasta]{seqinr::read.fasta()}}.}
 
@@ -30,6 +30,10 @@ The maximal number of amino acids
 (set to Inf for no filtering).}
 
 \item{...}{Additional arguments for \code{\link[=.digest2]{.digest2()}}.}
+
+\item{\string{list}}{\cr
+A list with the protein orgin corresponding to
+\link[seqinr:fasta]{seqinr::fasta}}
 }
 \value{
 data.frame with proteins and their peptide sequences, filtered
