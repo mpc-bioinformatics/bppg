@@ -80,17 +80,17 @@
     start <- c(1, start)
     stop <- c(stop, end_position)
     results <- cleave(sequence, start, stop, 0)
-    if (missed > 0) { # do that in do. call apply?
+    if (missed > 0) { 
         for (i in 1:min(missed, length(stop_))) {
-        start_tmp <- start[1:(length(start) - i)]
-        stop_tmp <- stop[(1 + i):length(stop)]
-        peptide <- cleave(sequence, start_tmp, stop_tmp, i)
-        results <- rbind(results, peptide)
+            start_tmp <- start[1:(length(start) - i)]
+            stop_tmp <- stop[(1 + i):length(stop)]
+            peptide <- cleave(sequence, start_tmp, stop_tmp, i)
+            results <- rbind(results, peptide)
         }
     }
     if (remove_initial_M) {
         y2 <- results[results$start == 1,] ## there should be at least 1
-        y2 <- y2[substr(y2$sequence, 1, 1) == "M", ] ## is first amino acid M?
+        y2 <- y2[substr(y2$sequence, 1, 1) == "M", ]
 
         if (nrow(y2) > 0) {
             y2$sequence <- substr(y2$sequence, 2, nchar(y2$sequence))
@@ -178,6 +178,7 @@ digestFASTA <- function(fasta,
     protOrigin = NULL,
     ...)  {
     checkmate::checkList(fasta)
+
     if (!is.null(protOrigin)) {
         names(protOrigin) <- names(fasta)
     }

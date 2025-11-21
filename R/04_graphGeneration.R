@@ -23,13 +23,7 @@
 #'          [generateGraphsFromFASTA()], [generateQuantGraphs()]
 #'
 #' @examples
-#' library(seqinr)
-#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
-#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-#' edgelist <- bppg::digestFASTA(fasta)
-#' edgelist_collapsed <- bppg:::.getContractMapping(edgelist, collProtNodes,
-#'      collPeptNodes)
-#'
+#' TODO
 .getContractMapping <- function(edgelist,
                                   collProtNodes = TRUE,
                                   collPeptNodes = FALSE) {
@@ -118,6 +112,8 @@
 #'
 #' @param edgelist                 \strong{data.frame} \cr
 #'                                 An edgelist, output from [digestFASTA()].
+#'                                 For quant data it needs to be in the column
+#'                                 $pep_ratio.
 #' @param collProtNodes            \strong{logical} \cr
 #'                                 If \code{TRUE}, the protein nodes
 #'                                 will be collapsed.
@@ -141,6 +137,10 @@
 generateGraphsFromEdgelist <- function(edgelist,
                                   collProtNodes = FALSE,
                                   collPeptNodes = FALSE) {
+    checkmate::checkDataFrame(edgelist)
+    checkmate::checkFlag(collProtNodes)
+    checkmate::checkFlag(collPeptNodes)
+
     if(collProtNodes || collPeptNodes) {                                
         vertexMapping <- .getContractMapping(edgelist, collProtNodes,
         collPeptNodes)  
@@ -154,7 +154,6 @@ generateGraphsFromEdgelist <- function(edgelist,
     igraph::V(G)[igraph::V(G)$name %in% edgelist[, 1]]$type <- TRUE
     igraph::V(G)[igraph::V(G)$name %in% edgelist[, 2]]$type <- FALSE
     
-    # hier pep_ratios dazufügen
     if (!is.null(edgelist$pep_ratio)){
         G <- igraph::set_vertex_attr(graph = G,
             name = "pep_ratio",
@@ -212,6 +211,10 @@ generateQuantGraphs <- function(peptide_ratios,
                                   collProtNodes = TRUE,
                                   collPeptNodes = FALSE,
                                   suffix = "") {
+    checkmate::checkDataFrame(peptide_ratios)
+    checkmate::checkInteger(id_cols)
+    checkmate::checkDataFrame(fasta_edgelist)
+    
     ## broad filtering for edgelist for only quantifies peptides
     edgelist_filtered <- fasta_edgelist[fasta_edgelist[, 2]
         %in% peptide_ratios[, seq_column], ]

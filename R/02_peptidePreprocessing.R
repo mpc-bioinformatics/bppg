@@ -75,18 +75,15 @@ aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
         sum = rowSums,
         median = robustbase::rowMedians)
 
-    res <- NULL
-    # TODO kann das in ein apply verwandelt werden? split(intensities, group)?
-    for (i in 1:length(levels(group))) {
-
+    res <- vapply(1:length(levels(group)), function(i){
         X_tmp <- intensities[, group == levels(group)[i]]
         X_tmp <- as.matrix(X_tmp)
 
         res_tmp <- FUN(X_tmp, na.rm = TRUE)
         missingx <- apply(X_tmp, 1, function(x) mean(is.na(x)))
-        res_tmp[missingx > missing.limit | missingx == 1] <- NA
-        res <- cbind(res, res_tmp)
-    }
+        res_tmp[missingx > missing.limit | missingx == 1] <- NA 
+        res_tmp    
+    }, numeric(nrow(id)))
 
     res <- as.data.frame(res)
     colnames(res) <- levels(group)
@@ -112,43 +109,47 @@ aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
 #' @return A data set with peptide ratios.
 #' @export
 #'
-#' @examples ## TODO
-#'
-
+#' @examples 
+#' file <- system.file("extdata", "peptides.txt", package = "bppg")
+#' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' group <- factor(rep(1:9, each = 3))
+#' dAgg <- aggregateReplicates(D, group = group)
+#' calculatePeptideRatios(dAgg)
+# TODO, Fragen wieso Karin das so gemacht hatte
+# Nochmal klären ()
 calculatePeptideRatios <- function(aggr_intensities, id_cols = 1,
     group_levels = NULL, type = "ratio",
     log_base = 10) {
+    checkmate::checkDataFrame(aggr_intensities, all.missing=FALSE)
 
     id <- aggr_intensities[, id_cols, drop = FALSE]
     aggr_intensities <- aggr_intensities[, -(id_cols)]
 
-    if (is.null(group_levels)) {
-        group_levels <- factor(colnames(aggr_intensities),
-            levels = colnames(aggr_intensities))
+    if (is.null(group_levels)) { # TODO wieso mit faktor gemacht?
+        # group_levels <- factor(colnames(aggr_intensities),
+        #     levels = colnames(aggr_intensities))
+        group_levels <- colnames(aggr_intensities)
     }
 
-    peptide_ratios <- NULL ## could we allocate that
+    groupCombinations <- combn(group_levels, 2)
 
-    ## TODO VAPPLY?
-    for (i in 1:(length(group_levels) - 1)) {
-        for (j in (i + 1):length(group_levels)) {
-            col1 <- which(colnames(aggr_intensities) == group_levels[i])
-            col2 <- which(colnames(aggr_intensities) == group_levels[j])
+    peptide_ratios <- apply(groupCombinations, 2, function(x) {
+        col1 <- x[1] #which(colnames(aggr_intensities) == group_levels[i])
+        col2 <- x[2] #which(colnames(aggr_intensities) == group_levels[j])
 
-            name <- paste0("ratio_", group_levels[i], "_", group_levels[j])
+        name <- paste0("ratio_", x[1], "_", x[2])
 
-            if (type == "ratio") {
-                FC <- .foldChange(D = aggr_intensities, X = col1, Y = col2)
-            }
-            if (type == "difference") {
-                FC <- aggr_intensities[, col2] - aggr_intensities[, col1]
-                FC <- log_base^FC
-            }
-
-            peptide_ratios <- cbind(peptide_ratios, FC)
-            colnames(peptide_ratios)[ncol(peptide_ratios)] <- name
+        if (type == "ratio") {
+            FC <- log2(.foldChange(D = aggr_intensities, X = col1, Y = col2))
         }
-    }
+        if (type == "difference") {
+            FC <- aggr_intensities[, col2] - aggr_intensities[, col1]
+            FC <- log_base^FC
+        }
+        c(name, FC)
+    })
+    colnames(peptide_ratios) <- peptide_ratios[1,]
+    peptide_ratios <- peptide_ratios[-1,]
 
     return(data.frame(id, peptide_ratios))
 }
