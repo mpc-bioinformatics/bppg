@@ -37,6 +37,9 @@ A data set with peptide ratios.
 Calculation of peptide ratios from aggregated intensities.
 }
 \examples{
-## TODO
-
+file <- system.file("extdata", "peptides.txt", package = "bppg")
+D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+group <- factor(rep(1:9, each = 3))
+dAgg <- aggregateReplicates(D, group = group)
+calculatePeptideRatios(dAgg)
 }

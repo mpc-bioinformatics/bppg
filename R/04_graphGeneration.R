@@ -53,6 +53,12 @@
 #' @param vMapping                 \strong{list} \cr
 #'                                 A list with two dataframes from
 #'                                 [.getContractMapping()]
+#' @param collProtNodes            \strong{logical} \cr
+#'                                 If \code{TRUE}, the protein nodes
+#'                                 will be collapsed.
+#' @param collPeptNodes            \strong{logical} \cr
+#'                                 If \code{TRUE}, the peptide nodes
+#'                                 will be collapsed.
 #'
 #' @return An edgelist with collapsed protein and/or peptide nodes.
 #'
@@ -62,7 +68,9 @@
 #' @examples
 #' TODO
 #'
-.contractGraph <- function(G, vMapping){
+.contractGraph <- function(G, vMapping,
+                           collProtNodes,
+                           collPeptNodes){
     G <- igraph::set_vertex_attr(graph = G,
         name = "collSignature",
         index = igraph::V(G)[igraph::V(G)$type],
@@ -86,23 +94,20 @@
 
     # reset attributes
     # message("resetting attributes")
-    igraph::V(gCollapsed)$collSignature <- sapply(
-        igraph::V(gCollapsed)$collSignature, "[", 1)
     igraph::V(gCollapsed)$type <- sapply(igraph::V(gCollapsed)$type, "[", 1)
     igraph::V(gCollapsed)$name <- sapply(igraph::V(gCollapsed)$name, 
-        paste, collapse=";") # this is not ordered - > aber gleiche order wie ratio
+        paste, collapse=";") # this is not ordered - > same ratio order
 
-    if (!is.null(igraph::V(gCollapsed)$pep_ratio)) {
-        igraph::V(gCollapsed)$pep_ratio_mean[!igraph::V(gCollapsed)$type] <- # TODO geht das überhaupt????
+    if (!is.null(igraph::V(gCollapsed)$pep_ratio) && collPeptNodes) {
+        igraph::V(gCollapsed)$pep_ratio_mean[!igraph::V(gCollapsed)$type] <-
             sapply(igraph::V(gCollapsed)$pep_ratio[!igraph::V(gCollapsed)$type], mean)
     }
 
-    if (!is.null(igraph::V(gCollapsed)$protOrigin)) {
+    if (!is.null(igraph::V(gCollapsed)$protOrigin) && collProtNodes) {
         igraph::V(gCollapsed)$protOrigin[igraph::V(gCollapsed)$type] <- 
-            sapply(igraph::V(gCollapsed)$protOrigin[igraph::V(gCollapsed)$type], "[", 1)
+            sapply(igraph::V(gCollapsed)$protOrigin[igraph::V(gCollapsed)$type], unique)
     }
 
-    # TODO: remove signature flag
     igraph::delete_vertex_attr(gCollapsed, "collSignature")
 }
 
@@ -113,7 +118,7 @@
 #' @param edgelist                 \strong{data.frame} \cr
 #'                                 An edgelist, output from [digestFASTA()].
 #'                                 For quant data it needs to be in the column
-#'                                 $pep_ratio.
+#'                                 \strong{$pep_ratio}.
 #' @param collProtNodes            \strong{logical} \cr
 #'                                 If \code{TRUE}, the protein nodes
 #'                                 will be collapsed.
@@ -164,7 +169,7 @@ generateGraphsFromEdgelist <- function(edgelist,
     }
 
     if(collProtNodes || collPeptNodes) {                                
-        G <- .contractGraph(G, vertexMapping)
+        G <- .contractGraph(G, vertexMapping, collProtNodes, collPeptNodes)
     } 
     igraph::decompose(G)
 }

@@ -36,13 +36,7 @@ generateQuantGraphs()
 Create Mapping signature for igraph::contract function.
 }
 \examples{
-library(seqinr)
-file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
-fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-edgelist <- bppg::digestFASTA(fasta)
-edgelist_collapsed <- bppg:::.getContractMapping(edgelist, collProtNodes,
-     collPeptNodes)
-
+TODO
 }
 \seealso{
 For collapsing graphs: \cr

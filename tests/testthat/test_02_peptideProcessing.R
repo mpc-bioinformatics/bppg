@@ -39,8 +39,6 @@ test_that("test calculatePeptideRatios", {
     df <- as.data.frame(df)
 
     D1 <- bppg::calculatePeptideRatios(aggr_intensities = df, id_cols = 1)
-    D2 <- bppg::calculatePeptideRatios(aggr_intensities = df, id_cols = 1, type = "difference")
 
     expect_snapshot(D1)
-    expect_snapshot(D2)
 })

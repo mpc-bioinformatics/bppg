@@ -1,5 +1,4 @@
 test_that("generate graphs from fasta",{
-    skip("test generate graphs from fasta")
   temp_dir <- tempfile(pattern = "test_dir")
   dir.create(temp_dir)
   on.exit(unlink(temp_dir, recursive = TRUE))
@@ -23,7 +22,7 @@ test_that("generate graphs from fasta",{
 })
 
 test_that("test generateGraphsFromQuantData", {
-    skip("test generateGraphsFromQuantData")
+    # skip("test generateGraphsFromQuantData")
   # Create a temporary directory so no permanent files are put on a package users directory
   temp_dir <- tempfile(pattern = "test_dir")
   dir.create(temp_dir)

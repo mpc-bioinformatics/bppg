@@ -137,19 +137,11 @@ calculatePeptideRatios <- function(aggr_intensities, id_cols = 1,
         col1 <- x[1] #which(colnames(aggr_intensities) == group_levels[i])
         col2 <- x[2] #which(colnames(aggr_intensities) == group_levels[j])
 
-        name <- paste0("ratio_", x[1], "_", x[2])
-
-        if (type == "ratio") {
-            FC <- log2(.foldChange(D = aggr_intensities, X = col1, Y = col2))
-        }
-        if (type == "difference") {
-            FC <- aggr_intensities[, col2] - aggr_intensities[, col1]
-            FC <- log_base^FC
-        }
-        c(name, FC)
+        log2(.foldChange(D = aggr_intensities, X = col1, Y = col2))
+ 
     })
-    colnames(peptide_ratios) <- peptide_ratios[1,]
-    peptide_ratios <- peptide_ratios[-1,]
+    colnames(peptide_ratios) <- paste0("ratio_", groupCombinations[1,], "_", 
+        groupCombinations[2,])
 
     return(data.frame(id, peptide_ratios))
 }

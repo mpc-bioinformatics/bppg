@@ -13,7 +13,9 @@ generateGraphsFromEdgelist(
 }
 \arguments{
 \item{edgelist}{\strong{data.frame} \cr
-An edgelist, output from \code{\link[=digestFASTA]{digestFASTA()}}.}
+An edgelist, output from \code{\link[=digestFASTA]{digestFASTA()}}.
+For quant data it needs to be in the column
+\strong{$pep_ratio}.}
 
 \item{collProtNodes}{\strong{logical} \cr
 If \code{TRUE}, the protein nodes
