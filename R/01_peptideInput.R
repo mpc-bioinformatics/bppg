@@ -35,7 +35,13 @@ readMqPeptideTable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
     rename_columns = TRUE, zeroToNA = TRUE,
     remove_empty_rows = TRUE,
     further_columns_to_keep = NULL) {
-    checkmate::checkFileExists(path, access = "", extension = NULL)
+    checkmate::assertFileExists(path, access = "", extension = NULL)
+    checkmate::assertFlag(LFQ)
+    checkmate::assertFlag(remove_contaminants)
+    checkmate::assertFlag(rename_columns)
+    checkmate::assertFlag(zeroToNA)
+    checkmate::assertFlag(remove_empty_rows)
+    checkmate::assertVector(further_columns_to_keep, null.ok = TRUE)
 
     D <- utils::read.table(path, sep = "\t", header = TRUE)
 
@@ -67,7 +73,6 @@ readMqPeptideTable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
 
     if (zeroToNA) {
         intensities[intensities == 0] <- NA
-
         if (remove_empty_rows) {
             validvalues <- rowSums(!is.na(intensities))
             D <- D[validvalues >= 1, ]

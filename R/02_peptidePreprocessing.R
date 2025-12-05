@@ -64,8 +64,11 @@
 
 aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
     id_cols = 1) {
-    checkmate::checkDataFrame(D, all.missing=FALSE)
-    checkmate::checkFactor(group)
+    checkmate::assertDataFrame(D, all.missing=FALSE)
+    checkmate::assertFactor(group)
+    checkmate::assertNumber(missing.limit, lower = 0, upper = 1)
+    checkmate::assertCharacter(method, pattern = "mean|sum|median")
+    checkmate::assertNumber(id_cols, lower = 1, upper = ncol(D))
 
     id <- D[, id_cols, drop = FALSE]
     intensities <- D[, -(id_cols)]
@@ -100,13 +103,8 @@ aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
 #'                           etc (everything except intensities).
 #' @param group_levels       \strong{character factor} \cr
 #'                           The levels of groups in the right order.
-#' @param type               \strong{character} \cr
-#'                           Options "ratio" or "difference". Use "difference"
-#'                           if values are already on log-scale.
-#' @param log_base           \strong{numeric} \cr
-#'                           The log base.
 #'
-#' @return A data set with peptide ratios.
+#' @return A data set with log2 peptide ratios.
 #' @export
 #'
 #' @examples 
@@ -115,33 +113,28 @@ aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
 #' group <- factor(rep(1:9, each = 3))
 #' dAgg <- aggregateReplicates(D, group = group)
 #' calculatePeptideRatios(dAgg)
-# TODO, Fragen wieso Karin das so gemacht hatte
-# Nochmal klären ()
+
 calculatePeptideRatios <- function(aggr_intensities, id_cols = 1,
-    group_levels = NULL, type = "ratio",
-    log_base = 10) {
+    group_levels = NULL) {
     checkmate::checkDataFrame(aggr_intensities, all.missing=FALSE)
+    checkmate::assertNumber(id_cols, lower = 1, upper = ncol(aggr_intensities))
+    checkmate::assertVector(group_levels, unique = TRUE, null.ok = TRUE)
 
     id <- aggr_intensities[, id_cols, drop = FALSE]
     aggr_intensities <- aggr_intensities[, -(id_cols)]
 
-    if (is.null(group_levels)) { # TODO wieso mit faktor gemacht?
-        # group_levels <- factor(colnames(aggr_intensities),
-        #     levels = colnames(aggr_intensities))
+    if (is.null(group_levels)) {
         group_levels <- colnames(aggr_intensities)
     }
 
     groupCombinations <- combn(group_levels, 2)
 
-    peptide_ratios <- apply(groupCombinations, 2, function(x) {
-        col1 <- x[1] #which(colnames(aggr_intensities) == group_levels[i])
-        col2 <- x[2] #which(colnames(aggr_intensities) == group_levels[j])
-
-        log2(.foldChange(D = aggr_intensities, X = col1, Y = col2))
+    peptide_log_ratios <- apply(groupCombinations, 2, function(x) {
+        log2(.foldChange(D = aggr_intensities, X = x[1], Y = x[2]))
  
     })
-    colnames(peptide_ratios) <- paste0("ratio_", groupCombinations[1,], "_", 
+    colnames(peptide_log_ratios) <- paste0("ratio_", groupCombinations[1,], "_", 
         groupCombinations[2,])
 
-    return(data.frame(id, peptide_ratios))
+    return(data.frame(id, peptide_log_ratios))
 }
