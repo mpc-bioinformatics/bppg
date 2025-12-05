@@ -64,14 +64,16 @@
 
 aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
     id_cols = 1) {
-    checkmate::assertDataFrame(D, all.missing=FALSE)
+    checkmate::assertClass(D, "SummarizedExperiment")
+    checkmate::assertDataFrame(SummarizedExperiment::assays(D)$intensities, 
+        all.missing=FALSE)
     checkmate::assertFactor(group)
     checkmate::assertNumber(missing.limit, lower = 0, upper = 1)
     checkmate::assertCharacter(method, pattern = "mean|sum|median")
     checkmate::assertNumber(id_cols, lower = 1, upper = ncol(D))
 
-    id <- D[, id_cols, drop = FALSE]
-    intensities <- D[, -(id_cols)]
+    id <- rownames(SummarizedExperiment::assays(D)$intensities)
+    intensities <- SummarizedExperiment::assays(D)$intensities
 
     FUN <- switch(method,
         mean  = rowMeans,
@@ -83,11 +85,12 @@ aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
         X_tmp <- as.matrix(X_tmp)
 
         res_tmp <- FUN(X_tmp, na.rm = TRUE)
-        missingx <- apply(X_tmp, 1, function(x) mean(is.na(x)))
+        missingx <- rowMeans(is.na(X_tmp))
         res_tmp[missingx > missing.limit | missingx == 1] <- NA 
         res_tmp    
-    }, numeric(nrow(id)))
+    }, numeric(length(id)))
 
+    #TODO zu summarized Experiment
     res <- as.data.frame(res)
     colnames(res) <- levels(group)
     res <- data.frame(id, res)
@@ -116,7 +119,7 @@ aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
 
 calculatePeptideRatios <- function(aggr_intensities, id_cols = 1,
     group_levels = NULL) {
-    checkmate::checkDataFrame(aggr_intensities, all.missing=FALSE)
+    checkmate::assertDataFrame(aggr_intensities, all.missing=FALSE)
     checkmate::assertNumber(id_cols, lower = 1, upper = ncol(aggr_intensities))
     checkmate::assertVector(group_levels, unique = TRUE, null.ok = TRUE)
 

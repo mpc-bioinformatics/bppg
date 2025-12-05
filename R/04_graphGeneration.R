@@ -117,7 +117,7 @@
 #'
 #' @param edgelist                 \strong{data.frame} \cr
 #'                                 An edgelist, output from [digestFASTA()].
-#'                                 For quant data it needs to be in the column
+#'                                 For quant data needs to be in the column
 #'                                 \strong{$pep_ratio}.
 #' @param collProtNodes            \strong{logical} \cr
 #'                                 If \code{TRUE}, the protein nodes
@@ -142,9 +142,9 @@
 generateGraphsFromEdgelist <- function(edgelist,
                                   collProtNodes = FALSE,
                                   collPeptNodes = FALSE) {
-    checkmate::checkDataFrame(edgelist)
-    checkmate::checkFlag(collProtNodes)
-    checkmate::checkFlag(collPeptNodes)
+    checkmate::assertDataFrame(edgelist)
+    checkmate::assertFlag(collProtNodes)
+    checkmate::assertFlag(collPeptNodes)
 
     if(collProtNodes || collPeptNodes) {                                
         vertexMapping <- .getContractMapping(edgelist, collProtNodes,
@@ -216,15 +216,20 @@ generateQuantGraphs <- function(peptide_ratios,
                                   collProtNodes = TRUE,
                                   collPeptNodes = FALSE,
                                   suffix = "") {
-    checkmate::checkDataFrame(peptide_ratios)
-    checkmate::checkInteger(id_cols)
-    checkmate::checkDataFrame(fasta_edgelist)
+    checkmate::assertDataFrame(peptide_ratios, all.missing=FALSE)
+    checkmate::assertInteger(id_cols)
+    checkmate::assertDataFrame(fasta_edgelist)
+    checkmate::assertDataFrame(peptide_ratios[, seq_column], all.missing=FALSE)
+    checkmate::assertFlag(collProtNodes)
+    checkmate::assertFlag(collPeptNodes)
+    checkmate::assertCharacter(suffix)
     
     ## broad filtering for edgelist for only quantifies peptides
     edgelist_filtered <- fasta_edgelist[fasta_edgelist[, 2]
         %in% peptide_ratios[, seq_column], ]
 
     if (!is.null(outpath)) {
+        checkmate::assertPathForOutput(outpath)
         openxlsx::write.xlsx(edgelist_filtered,
             file = file.path(outpath, paste0("edgelist_filtered_", suffix, ".xlsx")),
             overwrite = TRUE, keepNA = TRUE)

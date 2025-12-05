@@ -44,6 +44,7 @@ readMqPeptideTable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
     checkmate::assertVector(further_columns_to_keep, null.ok = TRUE)
 
     D <- utils::read.table(path, sep = "\t", header = TRUE)
+    rownames(D) <- D$Sequence
 
     ## remove decoy entries:
     ind_decoy <- D$Reverse == "+"
@@ -81,11 +82,17 @@ readMqPeptideTable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
     }
 
     if (is.null(further_columns_to_keep)) {
-        RES <- data.frame(Sequence = D$Sequence, intensities)
+        RES <- SummarizedExperiment::SummarizedExperiment(
+            assays = list(intensities=intensities),
+            colData = data.frame(sample = colnames(intensities)),
+            rowData = data.frame(Sequence = D$Sequence)) # TODO hier Gruppen info hinzufügen?
     } else {
         further_columns <- D[, further_columns_to_keep, drop = FALSE]
         colnames(further_columns) <- further_columns_to_keep
-        RES <- data.frame(Sequence = D$Sequence, further_columns, intensities)
+        RES <- SummarizedExperiment::SummarizedExperiment(
+            assays = list(intensities=intensities), 
+            colData = data.frame(sample = colnames(intensities)),
+            rowData = data.frame(Sequence = D$Sequence, further_columns))
     }
     return(RES)
 }

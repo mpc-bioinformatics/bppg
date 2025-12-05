@@ -12,6 +12,10 @@ test_that("test aggregateReplicates", {
         }
     }
     df <- as.data.frame(df)
+    rownames(df) <- df$sequence
+    df$sequence <- NULL
+    df <- SummarizedExperiment::SummarizedExperiment(
+            assays = list(intensities = df))
 
     D1 <- bppg::aggregateReplicates(D = df, group = factor(rep(1:3, each = 3)))
 

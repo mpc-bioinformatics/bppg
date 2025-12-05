@@ -149,7 +149,7 @@
 #' @param max_aa             \strong{integer} \cr
 #'                           The maximal number of amino acids
 #'                           (set to Inf for no filtering).
-#' @param                    \string{list} \cr
+#' @param protOrigin         \string{list} \cr
 #'                           A list with the protein orgin corresponding to 
 #'                           [fasta]
 #' @param ...                Additional arguments for [.digest2()].
@@ -167,9 +167,6 @@
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' res <- digestFASTA(fasta)
 #'
-## TODO USE https://bioconductor.org/packages/3.22/bioc/html/cleaver.html
-# cleave("LAAGKVEDSD", enzym = "trypsin", missedCleavages = 0:2)
-## by Sebastian Gibb ehemals bei Laurent Gatto
 ## TODO add prot Origin
 digestFASTA <- function(fasta,
     missed_cleavages = 2,
@@ -177,7 +174,11 @@ digestFASTA <- function(fasta,
     max_aa = 50,
     protOrigin = NULL,
     ...)  {
-    checkmate::checkList(fasta)
+    checkmate::assertList(fasta)
+    checkmate::assertInt(missed_cleavages, lower = 0)
+    checkmate::assertInt(min_aa, lower = 0, upper = max_aa - 1)
+    checkmate::assertInt(max_aa, lower = min_aa + 1)
+    checkmate::assertList(protOrigin, len = length(fasta), null.ok = TRUE)
 
     if (!is.null(protOrigin)) {
         names(protOrigin) <- names(fasta)
@@ -188,10 +189,7 @@ digestFASTA <- function(fasta,
             class(sequ) <- NULL
             y <- try({
                 .digest2(sequ, missed = missed_cleavages, warn = FALSE,
-                    remove_initial_M = TRUE, ...)}) # test 698
-            # y <- cleaver::cleave(as.character(sequ), enzym = "trypsin-low",
-            # missedCleavages = 0:2, ...)[[1]] 
-            # hier ist M abgespalten nicht drin? 695
+                    remove_initial_M = TRUE, ...)}) # TODO HARDCODEDED
             ind <- nchar(as.character(y)) >= min_aa &
                 nchar(as.character(y)) <= max_aa
             if (is.null(protOrigin)) {
