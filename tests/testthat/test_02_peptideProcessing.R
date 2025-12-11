@@ -14,16 +14,20 @@ test_that("test aggregateReplicates", {
     df <- as.data.frame(df)
     rownames(df) <- df$sequence
     df$sequence <- NULL
-    df <- SummarizedExperiment::SummarizedExperiment(
-            assays = list(intensities = df))
+    D <- SummarizedExperiment::SummarizedExperiment(
+            assays = list(intensities = df),
+            colData = data.frame(sample = colnames(df)),
+            rowData = data.frame(Sequence = rownames(df)))
 
-    D1 <- bppg::aggregateReplicates(D = df, group = factor(rep(1:3, each = 3)))
+    D1 <- bppg::aggregateReplicates(D = D, group = factor(rep(1:3, each = 3)))
 
-    D2 <- bppg::aggregateReplicates(D = df,
+    D2 <- bppg::aggregateReplicates(D = D,
                                     group = factor(rep(1:3, each = 3)),
                                     missing.limit = 0.35,
                                     method = "median")
-    expect_snapshot(D1)
+    expect_snapshot(SummarizedExperiment::assays(D1)$intensities)
+    expect_snapshot(SummarizedExperiment::assays(D2)$intensities)
+    expect_snapshot(D2)
     expect_snapshot(D2)
 })
 
@@ -41,8 +45,15 @@ test_that("test calculatePeptideRatios", {
         df[[paste0("sample", i)]][num_na] <- NA
     }
     df <- as.data.frame(df)
+    rownames(df) <- df$sequence
+    df$sequence <- NULL
+    D <- SummarizedExperiment::SummarizedExperiment(
+        assays = list(intensities = df),
+        colData = data.frame(group = colnames(df)),
+        rowData = data.frame(Sequence = rownames(df)))
 
-    D1 <- bppg::calculatePeptideRatios(aggr_intensities = df, id_cols = 1)
+    D1 <- bppg::calculatePeptideRatios(D = D, id_cols = 1)
 
+    expect_snapshot(SummarizedExperiment::assays(D1)$logRatios)
     expect_snapshot(D1)
 })

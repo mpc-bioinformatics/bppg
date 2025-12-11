@@ -149,8 +149,8 @@
 #' @param max_aa             \strong{integer} \cr
 #'                           The maximal number of amino acids
 #'                           (set to Inf for no filtering).
-#' @param protOrigin         \string{list} \cr
-#'                           A list with the protein orgin corresponding to 
+#' @param protOrigin         \string{vector} \cr
+#'                           A vector with the protein orgin corresponding to 
 #'                           [fasta]
 #' @param ...                Additional arguments for [.digest2()].
 #'
@@ -178,7 +178,7 @@ digestFASTA <- function(fasta,
     checkmate::assertInt(missed_cleavages, lower = 0)
     checkmate::assertInt(min_aa, lower = 0, upper = max_aa - 1)
     checkmate::assertInt(max_aa, lower = min_aa + 1)
-    checkmate::assertList(protOrigin, len = length(fasta), null.ok = TRUE)
+    checkmate::assertCharacter(protOrigin, len = length(fasta), null.ok = TRUE)
 
     if (!is.null(protOrigin)) {
         names(protOrigin) <- names(fasta)
@@ -196,7 +196,7 @@ digestFASTA <- function(fasta,
                 data.frame(protein=x, peptide=as.character(y[ind]))
             } else {
                 data.frame(protein=x, peptide=as.character(y[ind]), 
-                    protOrigin=protOrigin[[x]])
+                    protOrigin=protOrigin[x])
             }
         }))
     return(digested_proteins)

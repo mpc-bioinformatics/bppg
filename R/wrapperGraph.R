@@ -138,36 +138,31 @@ generateGraphsFromQuantData <- function(D,
             overwrite = TRUE, keepNA = TRUE)
     }
 
-    ## remove peptides outside the desired length range
-    D <- D[nchar(D[, seq_column]) >= min_aa &
-            nchar(D[, seq_column]) <= max_aa, ]
-
-    intensities <- D[, -id_columns]
-
     ## aggregate replicates by calculating the mean
-    group <- factor(limma::strsplit2(colnames(intensities), "_")[, 1])
+    group <- factor(limma::strsplit2(colnames(D), split = "_")[, 1])
     D_aggr <- bppg::aggregateReplicates(D, method = "mean", missing.limit = 0.4,
         group = group, id_cols = id_columns)
 
     if (!is.null(outpath)) {
-        openxlsx::write.xlsx(D_aggr, file = paste0(outpath,
-                "aggr_peptides_", suffix, ".xlsx"),
+        openxlsx::write.xlsx(SummarizedExperiment::assays(D_aggr)$intensities, 
+            file = paste0(outpath, "aggr_peptides_", suffix, ".xlsx"),
             overwrite = TRUE, keepNA = TRUE)
     }
 
     ## calculate the peptide ratio table
     groups  <- levels(group)
-    peptide_ratios <- bppg::calculatePeptideRatios(aggr_intensities = D_aggr,
+    peptide_ratios <- bppg::calculatePeptideRatios(D = D_aggr,
         id_cols = id_columns, group_levels = groups)
     if (!is.null(outpath)) {
-        openxlsx::write.xlsx(peptide_ratios, file = paste0(outpath,
-                "peptide_ratios_", suffix, ".xlsx"),
+        openxlsx::write.xlsx(
+            SummarizedExperiment::assays(peptide_ratios)$logRatios, 
+            file = paste0(outpath,"peptide_ratios_", suffix, ".xlsx"),
             overwrite = TRUE, keepNA = TRUE)
     }
 
     ## Generierung der Graphen (man braucht peptide_ratios und fast_edgelist!)
-    graphs <- generateQuantGraphs(peptide_ratios = peptide_ratios,
-        id_cols = id_columns, fasta_edgelist = edgelist,
+    graphs <- generateQuantGraphs(exp_peptide_ratios = peptide_ratios,
+        fasta_edgelist = edgelist,
         outpath = outpath, seq_column = seq_column,
         collProtNodes = collProtNodes,
         collPeptNodes = collPeptNodes,

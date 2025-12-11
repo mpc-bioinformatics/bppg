@@ -39,8 +39,8 @@
 
 #' Aggregate replicates of the same experimental group.
 #'
-#' @param D               \strong{data.frame} \cr
-#'                        The data set containing the peptide intensities.
+#' @param D               \strong{SummarizedExperiment} \cr
+#'                        The data experiment containing the peptide intensities.
 #' @param missing.limit   \strong{numeric} \cr
 #'                        The proportion of missing values that is allowed 
 #'                        (e.g. 0 means no missings allowed).
@@ -53,7 +53,7 @@
 #'                        The column numbers that contain peptide sequences etc
 #'                        (everything except intensities).
 #'
-#' @return A data set with aggregated intensities.
+#' @return A SummarizedExperiment with aggregated intensities.
 #' @export
 #'
 #' @examples
@@ -90,16 +90,19 @@ aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
         res_tmp    
     }, numeric(length(id)))
 
-    #TODO zu summarized Experiment
     res <- as.data.frame(res)
     colnames(res) <- levels(group)
-    res <- data.frame(id, res)
+    rownames <- id
+    res <- SummarizedExperiment::SummarizedExperiment(
+        assays = list(intensities=res), 
+        colData = data.frame(group = colnames(res)),
+        rowData = SummarizedExperiment::rowData(D))
     return(res)
 }
 
 #' Calculation of peptide ratios from aggregated intensities.
 #'
-#' @param aggr_intensities   \strong{data.frame} \cr
+#' @param D                  \strong{SummarizedExperiment} \cr
 #'                           The result from function [aggregateReplicates()].
 #' @param id_cols            \strong{integer vector} \cr
 #'                           The column numbers that contain peptide sequences
@@ -107,7 +110,7 @@ aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
 #' @param group_levels       \strong{character factor} \cr
 #'                           The levels of groups in the right order.
 #'
-#' @return A data set with log2 peptide ratios.
+#' @return A SummarizedExperiment with log2 peptide ratios (logRatios).
 #' @export
 #'
 #' @examples 
@@ -117,17 +120,20 @@ aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
 #' dAgg <- aggregateReplicates(D, group = group)
 #' calculatePeptideRatios(dAgg)
 
-calculatePeptideRatios <- function(aggr_intensities, id_cols = 1,
+calculatePeptideRatios <- function(D, id_cols = 1,
     group_levels = NULL) {
-    checkmate::assertDataFrame(aggr_intensities, all.missing=FALSE)
-    checkmate::assertNumber(id_cols, lower = 1, upper = ncol(aggr_intensities))
+    checkmate::assertClass(D, "SummarizedExperiment")
+    checkmate::assertDataFrame(SummarizedExperiment::assays(
+        D)$intensities, all.missing=FALSE)
+    checkmate::assertNumber(id_cols, lower = 1, upper = ncol(D))
     checkmate::assertVector(group_levels, unique = TRUE, null.ok = TRUE)
 
-    id <- aggr_intensities[, id_cols, drop = FALSE]
-    aggr_intensities <- aggr_intensities[, -(id_cols)]
 
-    if (is.null(group_levels)) {
-        group_levels <- colnames(aggr_intensities)
+    aggr_intensities <- SummarizedExperiment::assays(
+        D)$intensities
+
+    if (is.null(group_levels)) { # TODO, wollen wir das Übergeben so machen, wenn das eigentlich hinterlegt in in colData?
+        group_levels <- SummarizedExperiment::colData(D)$group
     }
 
     groupCombinations <- combn(group_levels, 2)
@@ -136,8 +142,14 @@ calculatePeptideRatios <- function(aggr_intensities, id_cols = 1,
         log2(.foldChange(D = aggr_intensities, X = x[1], Y = x[2]))
  
     })
+    peptide_log_ratios <- data.frame(peptide_log_ratios)
     colnames(peptide_log_ratios) <- paste0("ratio_", groupCombinations[1,], "_", 
         groupCombinations[2,])
+    rownames(peptide_log_ratios) <- rownames(aggr_intensities)
 
-    return(data.frame(id, peptide_log_ratios))
+    res <- SummarizedExperiment::SummarizedExperiment(
+        assays = list(logRatios = peptide_log_ratios), 
+        colData = data.frame(comparison = colnames(peptide_log_ratios)),
+        rowData = SummarizedExperiment::rowData(D))
+    return(res)
 }

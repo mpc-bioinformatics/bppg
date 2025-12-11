@@ -24,7 +24,8 @@
 #'                                  Indices of additional columns to keep, 
 #'                                  except peptide sequence and intensities
 #'
-#' @return A data frame with sequences and intensities.
+#' @return A SummarizedExperiment with intensities, sequences, and optional data
+#'         for the rowData dataframe.
 #' @export
 #'
 #' @examples

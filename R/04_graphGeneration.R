@@ -179,8 +179,10 @@ generateGraphsFromEdgelist <- function(edgelist,
 #' Generate graphs from peptide ratio table, using an edgelist calculated
 #' on the fasta file.
 #'
-#' @param peptide_ratios           \strong{data.frame} \cr
-#'                                 A table with peptide ratios.
+#' @param exp_peptide_ratios       \strong{SummarizedExperiment} \cr
+#'                                 A SummarizedExperiment from 
+#'                                 [bppg::calculatePeptideRatios] with peptide
+#'                                 ratios.
 #' @param id_cols                  \strong{integer vector} \cr
 #'                                 The columns with ids, e.g. peptide sequences
 #'                                 (everything except the peptide ratios)
@@ -208,35 +210,35 @@ generateGraphsFromEdgelist <- function(edgelist,
 #'
 #' @examples
 #' TODO
-generateQuantGraphs <- function(peptide_ratios,
-                                  id_cols = 1,
+generateQuantGraphs <- function(exp_peptide_ratios,
                                   fasta_edgelist,
+                                  seq_column = "Sequence", ## How to assert? could be int
                                   outpath = NULL,
-                                  seq_column = "Sequence",
                                   collProtNodes = TRUE,
                                   collPeptNodes = FALSE,
                                   suffix = "") {
-    checkmate::assertDataFrame(peptide_ratios, all.missing=FALSE)
-    checkmate::assertInteger(id_cols)
+    checkmate::assertClass(exp_peptide_ratios, "SummarizedExperiment")
+    checkmate::assertDataFrame(SummarizedExperiment::assays(
+        exp_peptide_ratios)$logRatios, all.missing=FALSE)
     checkmate::assertDataFrame(fasta_edgelist)
-    checkmate::assertDataFrame(peptide_ratios[, seq_column], all.missing=FALSE)
     checkmate::assertFlag(collProtNodes)
     checkmate::assertFlag(collPeptNodes)
     checkmate::assertCharacter(suffix)
     
+    peptide_ratios <- SummarizedExperiment::assays(exp_peptide_ratios)$logRatios
+    id <- SummarizedExperiment::rowData(exp_peptide_ratios)[,seq_column]
+
     ## broad filtering for edgelist for only quantifies peptides
     edgelist_filtered <- fasta_edgelist[fasta_edgelist[, 2]
-        %in% peptide_ratios[, seq_column], ]
+        %in% id, ]
 
     if (!is.null(outpath)) {
-        checkmate::assertPathForOutput(outpath)
+        checkmate::assertPathForOutput(outpath, overwrite = TRUE)
         openxlsx::write.xlsx(edgelist_filtered,
             file = file.path(outpath, paste0("edgelist_filtered_", suffix, ".xlsx")),
             overwrite = TRUE, keepNA = TRUE)
     }
 
-    id <- peptide_ratios[, id_cols, drop = FALSE]
-    peptide_ratios <- peptide_ratios[, -(id_cols), drop = FALSE]
     colnames_split <- limma::strsplit2(colnames(peptide_ratios), "_")
     comparisons <- paste(colnames_split[,2], colnames_split[,3], sep = "_")
 
@@ -245,14 +247,14 @@ generateQuantGraphs <- function(peptide_ratios,
         comparison <- comparisons[i]
         fc <- peptide_ratios[,i]
         ## peptides that are quantified in this specific comparison
-        peptides_tmp <- id[, seq_column][!is.na(fc)]
+        peptides_tmp <- id[!is.na(fc)]
         fc <- stats::na.omit(fc)
         edgelist_filtered2 <- edgelist_filtered[edgelist_filtered[, 2]
             %in% peptides_tmp, ]
 
         ## add peptide ratios
         edgelist_filtered2$pep_ratio <- peptide_ratios[, i][
-            match(edgelist_filtered2$peptide, id[, seq_column])]
+            match(edgelist_filtered2$peptide, id)]
 
         G <- generateGraphsFromEdgelist(edgelist_filtered2, 
             collProtNodes, collPeptNodes)
