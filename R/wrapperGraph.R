@@ -35,7 +35,6 @@
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' graphs <- bppg::generateGraphsFromFASTA(fasta)
 #'
-
 generateGraphsFromFASTA <- function(fasta,
     collProtNodes = TRUE,
     collPeptNodes = TRUE,
@@ -112,7 +111,7 @@ generateGraphsFromFASTA <- function(fasta,
 #'          [generateQuantGraphs()], [bppg::generateGraphsFromFASTA()]
 #'
 #' @examples
-#'
+#' TODO!!!
 
 generateGraphsFromQuantData <- function(D,
     fasta,
