@@ -141,7 +141,7 @@ generateGraphsFromQuantData <- function(D,
     ## aggregate replicates by calculating the mean
     group <- factor(limma::strsplit2(colnames(D), split = "_")[, 1])
     D_aggr <- bppg::aggregateReplicates(D, method = "mean", missing.limit = 0.4,
-        group = group, id_cols = id_columns)
+        group = group, id_col = id_columns)
 
     if (!is.null(outpath)) {
         openxlsx::write.xlsx(SummarizedExperiment::assays(D_aggr)$intensities, 
@@ -152,7 +152,7 @@ generateGraphsFromQuantData <- function(D,
     ## calculate the peptide ratio table
     groups  <- levels(group)
     peptide_ratios <- bppg::calculatePeptideRatios(D = D_aggr,
-        id_cols = id_columns, group_levels = groups)
+        group_levels = groups)
     if (!is.null(outpath)) {
         openxlsx::write.xlsx(
             SummarizedExperiment::assays(peptide_ratios)$logRatios, 

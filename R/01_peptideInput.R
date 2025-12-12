@@ -85,8 +85,8 @@ readMqPeptideTable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
     if (is.null(further_columns_to_keep)) {
         RES <- SummarizedExperiment::SummarizedExperiment(
             assays = list(intensities=intensities),
-            colData = data.frame(sample = colnames(intensities)),
-            rowData = data.frame(Sequence = D$Sequence)) # TODO hier Gruppen info hinzufügen?
+            colData = data.frame(sample = colnames(intensities)),# TODO hier Gruppen info hinzufügen?
+            rowData = data.frame(Sequence = D$Sequence)) 
     } else {
         further_columns <- D[, further_columns_to_keep, drop = FALSE]
         colnames(further_columns) <- further_columns_to_keep

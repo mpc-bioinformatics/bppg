@@ -17,13 +17,19 @@
 #'                                 If \code{TRUE}, the peptide nodes
 #'                                 will be collapsed.
 #'
-#' @return A list with two dataframes, one for peptides one for proteins.
+#' @return A list with two dataframes, one for peptide and one for protein 
+#'         signatures.
 #'
 #' @seealso For collapsing graphs: \cr
 #'          [generateGraphsFromFASTA()], [generateQuantGraphs()]
 #'
 #' @examples
-#' TODO
+# ' library(seqinr)
+# ' file <- system.file("extdata", "uniprot_test.fasta",
+# '  package = "bppg")
+# ' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+# ' edgelist <- digestFASTA(fasta)
+# ' res <- bppg:::.getContractMapping(edgelist)
 .getContractMapping <- function(edgelist,
                                   collProtNodes = TRUE,
                                   collPeptNodes = FALSE) {
@@ -66,8 +72,17 @@
 #'          [generateGraphsFromEdgelist()]
 #'
 #' @examples
-#' TODO
-#'
+# ' library(seqinr)
+# ' file <- system.file("extdata", "uniprot_test.fasta",
+# '  package = "bppg")
+# ' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+# ' edgelist <- digestFASTA(fasta)
+# ' vMapping <- bppg:::.getContractMapping(edgelist)
+#'  G <- igraph::graph_from_edgelist(as.matrix(edgelist), directed = FALSE)
+#' igraph::V(G)[igraph::V(G)$name %in% edgelist[, 1]]$type <- TRUE
+#' igraph::V(G)[igraph::V(G)$name %in% edgelist[, 2]]$type <- FALSE
+#' res <- bppg:::.contractGraph(G, vMapping)
+    
 .contractGraph <- function(G, vMapping,
                            collProtNodes,
                            collPeptNodes){
@@ -131,13 +146,12 @@
 #' @seealso [digestFASTA()]
 #'
 #' @examples
-#' ## TODO: example takes longer than 5s
-#' library(seqinr)
-#' file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta",
-#'  package = "bppg")
-#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-#' edgelist <- digestFASTA(fasta)
-#' res <- bppg::generateGraphsFromEdgelist(edgelist)
+# ' library(seqinr)
+# ' file <- system.file("extdata", "uniprot_test.fasta",
+# '  package = "bppg")
+# ' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+# ' edgelist <- digestFASTA(fasta)
+# ' res <- bppg::generateGraphsFromEdgelist(edgelist)
 #'
 generateGraphsFromEdgelist <- function(edgelist,
                                   collProtNodes = FALSE,

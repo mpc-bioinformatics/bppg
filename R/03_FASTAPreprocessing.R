@@ -8,6 +8,29 @@
 ### - interpret "missed" argument as maximum number of allowed missed cleavages
 ###   and only warn if nr or missed cleavages is not possible
 
+#' Cleavage of a single protein sequence.
+#'
+#' @param sequence           \strong{character} \cr
+#'                           The protein sequence.
+#' @param start              \strong{integer vector} \cr
+#'                           Index of where peptides start
+#' @param stop               \strong{integer vector} \cr
+#'                           Index of where peptides stop
+#' @param miss               \strong{integer} \cr
+#'                           which order miss cleavage 0 = no mis cleavage
+#'
+#' @return A dataframe with information (inkl. peptide sequwnce and start value)
+#'         of the peptides.
+#'
+#' @seealso [.digest2, digestFASTA()]
+#'
+.cleave <- function(sequence, start, stop, misses) {
+    peptide <- substring(sequence, start, stop)
+    mc <- rep(misses, times = length(peptide))
+    data.frame(sequence = peptide, start, stop, mc,
+        stringsAsFactors = FALSE)
+}
+
 #' Digestion of a single protein sequence.
 #'
 #' @param sequence           \strong{character} \cr
@@ -41,9 +64,11 @@
     enzyme = "trypsin",
     missed = 0,
     warn = TRUE,
-    remove_initial_M = FALSE) {
+    remove_initial_M = FALSE, ...) {
     seq_vector <- strsplit(sequence, split = "")[[1]]
     end_position <- length(seq_vector)
+
+    #cleaving rule
     if (enzyme == "trypsin") {
         if (seq_vector[end_position] == "K" | seq_vector[end_position] == "R") {
             seq_vector[end_position] <- "!"
@@ -58,38 +83,32 @@
         start <- stop + 1
     }
 
-    if (enzyme != "trypsin")
-        stop("undefined enzyme, defined enzymes are trypsin")
+    if (enzyme != "trypsin") stop("undefined enzyme, 
+        only trypsin is currently supported")
     if (length(stop) == 0) {
         if (warn) warning("sequence does not contain cleavage sites")
         return(data.frame(sequence = sequence, start = 1,
                 stop = nchar(sequence), mc = 0))
     }
-
     if (missed > length(stop)) {
         if (warn) warning("number of specified missed cleavages is greater than
             the maximum possible")
     }
-    cleave <- function(sequence, start, stop, misses) {
-        peptide <- substring(sequence, start, stop)
-        mc <- rep(misses, times = length(peptide))
-        data.frame(sequence = peptide, start, stop, mc,
-            stringsAsFactors = FALSE)
-    }
+
     stop_ <- stop
     start <- c(1, start)
     stop <- c(stop, end_position)
-    results <- cleave(sequence, start, stop, 0)
+    results <- .cleave(sequence, start, stop, 0)
     if (missed > 0) { 
         for (i in 1:min(missed, length(stop_))) {
             start_tmp <- start[1:(length(start) - i)]
             stop_tmp <- stop[(1 + i):length(stop)]
-            peptide <- cleave(sequence, start_tmp, stop_tmp, i)
+            peptide <- .cleave(sequence, start_tmp, stop_tmp, i)
             results <- rbind(results, peptide)
         }
     }
     if (remove_initial_M) {
-        y2 <- results[results$start == 1,] ## there should be at least 1
+        y2 <- results[results$start == 1, ] ## there should be at least 1
         y2 <- y2[substr(y2$sequence, 1, 1) == "M", ]
 
         if (nrow(y2) > 0) {
@@ -149,9 +168,9 @@
 #' @param max_aa             \strong{integer} \cr
 #'                           The maximal number of amino acids
 #'                           (set to Inf for no filtering).
-#' @param protOrigin         \string{vector} \cr
-#'                           A vector with the protein orgin corresponding to 
-#'                           [fasta]
+#' @param protOrigin         \strong{list or data.frame} \cr
+#'                           A list with the protein orgin corresponding to 
+#'                           [fasta], proteins are used as rownames/index.
 #' @param ...                Additional arguments for [.digest2()].
 #'
 #' @return data.frame with proteins and their peptide sequences, filtered
@@ -166,8 +185,7 @@
 #' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' res <- digestFASTA(fasta)
-#'
-## TODO add prot Origin
+#'n
 digestFASTA <- function(fasta,
     missed_cleavages = 2,
     min_aa = 6,
@@ -178,25 +196,26 @@ digestFASTA <- function(fasta,
     checkmate::assertInt(missed_cleavages, lower = 0)
     checkmate::assertInt(min_aa, lower = 0, upper = max_aa - 1)
     checkmate::assertInt(max_aa, lower = min_aa + 1)
-    checkmate::assertCharacter(protOrigin, len = length(fasta), null.ok = TRUE)
+    checkmate::assertList(protOrigin, len = length(fasta), null.ok = TRUE)
 
     if (!is.null(protOrigin)) {
         names(protOrigin) <- names(fasta)
     }
     digested_proteins <- do.call("rbind", 
-        pbapply::pblapply(names(fasta), FUN=function(x) {
+        pbapply::pblapply(names(fasta), FUN = function(x) {
             sequ <- fasta[[x]]
             class(sequ) <- NULL
-            y <- try({
-                .digest2(sequ, missed = missed_cleavages, warn = FALSE,
-                    remove_initial_M = TRUE, ...)}) # TODO HARDCODEDED
+            y <- .digest2(sequ, missed = missed_cleavages, warn = FALSE,
+                    remove_initial_M = TRUE) # TODO HARDCODED
             ind <- nchar(as.character(y)) >= min_aa &
                 nchar(as.character(y)) <= max_aa
-            if (is.null(protOrigin)) {
-                data.frame(protein=x, peptide=as.character(y[ind]))
-            } else {
-                data.frame(protein=x, peptide=as.character(y[ind]), 
-                    protOrigin=protOrigin[x])
+            if (sum(ind) > 0){
+                if (!is.null(protOrigin)) {
+                    data.frame(protein = x, peptide = as.character(y[ind]), 
+                    protOrigin = protOrigin[[x]])
+                } else {
+                    data.frame(protein = x, peptide = as.character(y[ind]))
+            }
             }
         }))
     return(digested_proteins)

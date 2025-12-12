@@ -49,11 +49,11 @@
 #'                        "mean", "sum" or "median"
 #' @param group           \strong{character factor} \cr
 #'                        The groups for aggregation.
-#' @param id_cols         \strong{integer vector} \cr
-#'                        The column numbers that contain peptide sequences etc
-#'                        (everything except intensities).
+#' @param id_col         \strong{integer} \cr
+#'                        The column number containaining the peptide sequences in
+#'                        the rowData of the SummarizedExperiment.
 #'
-#' @return A SummarizedExperiment with aggregated intensities.
+#' @return A SummarizedExperiment with aggregated intensities ($intensities).
 #' @export
 #'
 #' @examples
@@ -63,16 +63,16 @@
 #' aggregateReplicates(D, group = group)
 
 aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
-    id_cols = 1) {
+    id_col = 1) {
     checkmate::assertClass(D, "SummarizedExperiment")
     checkmate::assertDataFrame(SummarizedExperiment::assays(D)$intensities, 
         all.missing=FALSE)
     checkmate::assertFactor(group)
     checkmate::assertNumber(missing.limit, lower = 0, upper = 1)
     checkmate::assertCharacter(method, pattern = "mean|sum|median")
-    checkmate::assertNumber(id_cols, lower = 1, upper = ncol(D))
+    checkmate::assertNumber(id_col, lower = 1, upper = ncol(D))
 
-    id <- rownames(SummarizedExperiment::assays(D)$intensities)
+    id <- SummarizedExperiment::rowData(D)[, id_col]
     intensities <- SummarizedExperiment::assays(D)$intensities
 
     FUN <- switch(method,
@@ -92,9 +92,9 @@ aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
 
     res <- as.data.frame(res)
     colnames(res) <- levels(group)
-    rownames <- id
+    rownames(res) <- id
     res <- SummarizedExperiment::SummarizedExperiment(
-        assays = list(intensities=res), 
+        assays = list(intensities = res), 
         colData = data.frame(group = colnames(res)),
         rowData = SummarizedExperiment::rowData(D))
     return(res)
@@ -104,9 +104,6 @@ aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
 #'
 #' @param D                  \strong{SummarizedExperiment} \cr
 #'                           The result from function [aggregateReplicates()].
-#' @param id_cols            \strong{integer vector} \cr
-#'                           The column numbers that contain peptide sequences
-#'                           etc (everything except intensities).
 #' @param group_levels       \strong{character factor} \cr
 #'                           The levels of groups in the right order.
 #'
@@ -120,31 +117,27 @@ aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
 #' dAgg <- aggregateReplicates(D, group = group)
 #' calculatePeptideRatios(dAgg)
 
-calculatePeptideRatios <- function(D, id_cols = 1,
-    group_levels = NULL) {
+calculatePeptideRatios <- function(D, group_levels = NULL) {
     checkmate::assertClass(D, "SummarizedExperiment")
     checkmate::assertDataFrame(SummarizedExperiment::assays(
         D)$intensities, all.missing=FALSE)
-    checkmate::assertNumber(id_cols, lower = 1, upper = ncol(D))
     checkmate::assertVector(group_levels, unique = TRUE, null.ok = TRUE)
 
-
-    aggr_intensities <- SummarizedExperiment::assays(
-        D)$intensities
+    aggr_intensities <- SummarizedExperiment::assays(D)$intensities
 
     if (is.null(group_levels)) { # TODO, wollen wir das Übergeben so machen, wenn das eigentlich hinterlegt in in colData?
         group_levels <- SummarizedExperiment::colData(D)$group
     }
 
+    # create pairwise groups for ratio calculation
     groupCombinations <- combn(group_levels, 2)
-
     peptide_log_ratios <- apply(groupCombinations, 2, function(x) {
         log2(.foldChange(D = aggr_intensities, X = x[1], Y = x[2]))
- 
     })
+
     peptide_log_ratios <- data.frame(peptide_log_ratios)
-    colnames(peptide_log_ratios) <- paste0("ratio_", groupCombinations[1,], "_", 
-        groupCombinations[2,])
+    colnames(peptide_log_ratios) <- paste0("ratio_", groupCombinations[1, ], "_", 
+        groupCombinations[2, ])
     rownames(peptide_log_ratios) <- rownames(aggr_intensities)
 
     res <- SummarizedExperiment::SummarizedExperiment(

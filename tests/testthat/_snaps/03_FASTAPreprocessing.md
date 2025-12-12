@@ -129,7 +129,7 @@
 ---
 
     Code
-      digested_proteins3
+      digested_proteins2
     Output
         [1] "MHPDATDSGGAGPSPAR"                                                                  
         [2] "AAGAGGRPVSGFR"                                                                      

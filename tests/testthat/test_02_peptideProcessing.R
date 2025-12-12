@@ -27,7 +27,7 @@ test_that("test aggregateReplicates", {
                                     method = "median")
     expect_snapshot(SummarizedExperiment::assays(D1)$intensities)
     expect_snapshot(SummarizedExperiment::assays(D2)$intensities)
-    expect_snapshot(D2)
+    expect_snapshot(D1)
     expect_snapshot(D2)
 })
 
@@ -52,7 +52,7 @@ test_that("test calculatePeptideRatios", {
         colData = data.frame(group = colnames(df)),
         rowData = data.frame(Sequence = rownames(df)))
 
-    D1 <- bppg::calculatePeptideRatios(D = D, id_cols = 1)
+    D1 <- bppg::calculatePeptideRatios(D = D)
 
     expect_snapshot(SummarizedExperiment::assays(D1)$logRatios)
     expect_snapshot(D1)
