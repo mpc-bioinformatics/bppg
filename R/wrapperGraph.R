@@ -111,7 +111,14 @@ generateGraphsFromFASTA <- function(fasta,
 #'          [generateQuantGraphs()], [bppg::generateGraphsFromFASTA()]
 #'
 #' @examples
-#' TODO!!!
+#' library(seqinr)
+#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+#' 
+#' file <- system.file("extdata", "peptides.txt", package = "bppg")
+#' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' 
+#' graphs <- bppg::generateGraphsFromQuantData(D, fasta)
 
 generateGraphsFromQuantData <- function(D,
     fasta,

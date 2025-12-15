@@ -220,7 +220,19 @@ generateGraphsFromEdgelist <- function(edgelist,
 #' @seealso [bppg::digestFASTA()]
 #'
 #' @examples
-#' TODO
+#' library(seqinr)
+#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+#' edgelist <- digestFASTA(fasta)
+#' 
+#' file <- system.file("extdata", "peptides.txt", package = "bppg")
+#' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' group <- factor(rep(1:9, each = 3))
+#' dAgg <- aggregateReplicates(D, group = group)
+#' exp_peptide_ratios <- calculatePeptideRatios(dAgg)
+#' 
+#' res <- generateQuantGraphs(exp_peptide_ratios, edgelist)
+
 generateQuantGraphs <- function(exp_peptide_ratios,
                                   fasta_edgelist,
                                   seq_column = "Sequence", ## How to assert? could be int
