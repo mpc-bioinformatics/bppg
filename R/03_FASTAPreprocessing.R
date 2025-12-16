@@ -1,8 +1,9 @@
 #' Functions in this file:
+#' .cleave()
 #' .digest2()
 #' digestFASTA
 
-### modified version of OrgMassSpecR::Digest
+### modified version of OrgMassSpecR::Digest (.cleave() and .digest2())
 ### - deleted functionality to calculate peptide masses &
 ###   enzymes other than trypsin
 ### - interpret "missed" argument as maximum number of allowed missed cleavages
@@ -19,7 +20,7 @@
 #' @param miss               \strong{integer} \cr
 #'                           which order miss cleavage 0 = no mis cleavage
 #'
-#' @return A dataframe with information (inkl. peptide sequwnce and start value)
+#' @return A dataframe with information (inkl. peptide sequence and start value)
 #'         of the peptides.
 #'
 #' @seealso [.digest2, digestFASTA()]
@@ -37,7 +38,7 @@
 #'                           The protein sequence.
 #' @param enzyme             \strong{character} \cr
 #'                           The enzyme used in digestion e.g. "trypsin" (does
-#'                           not cut before proline) or "trypsin.strict" ().
+#'                           not cut before proline).
 #' @param missed             \strong{character} \cr
 #'                           The maximal number of missed cleavages.
 #' @param warn               \strong{logical} \cr
@@ -57,8 +58,7 @@
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #'
 #' digested_proteins <- bppg:::.digest2(fasta[[1]])
-#'
-## TODO way to long
+
 .digest2 <- function(sequence,
     enzyme = "trypsin",
     missed = 0,
@@ -91,7 +91,7 @@
     }
     if (missed > length(stop)) {
         if (warn) warning("number of specified missed cleavages is greater than
-            the maximum possible")
+            the possible maximum")
     }
 
     stop_ <- stop
@@ -99,7 +99,7 @@
     stop <- c(stop, end_position)
     results <- .cleave(sequence, start, stop, 0)
     if (missed > 0) { 
-        for (i in 1:min(missed, length(stop_))) {
+        for (i in 1:min(missed, length(stop_))) { # limited by missed
             start_tmp <- start[1:(length(start) - i)]
             stop_tmp <- stop[(1 + i):length(stop)]
             peptide <- .cleave(sequence, start_tmp, stop_tmp, i)
@@ -184,7 +184,7 @@
 #' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' res <- digestFASTA(fasta)
-#'n
+#'
 digestFASTA <- function(fasta,
     missed_cleavages = 2,
     min_aa = 6,
@@ -205,7 +205,7 @@ digestFASTA <- function(fasta,
             sequ <- fasta[[x]]
             class(sequ) <- NULL
             y <- .digest2(sequ, missed = missed_cleavages, warn = FALSE,
-                    remove_initial_M = TRUE) # TODO HARDCODED
+                    remove_initial_M = TRUE, ...) # TODO HARDCODED
             ind <- nchar(as.character(y)) >= min_aa &
                 nchar(as.character(y)) <= max_aa
             if (sum(ind) > 0){

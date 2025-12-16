@@ -30,7 +30,7 @@ test_that("digestion of a FASTA file", {
     names(fasta) <- limma::strsplit2(names(fasta), "\\|")[,2]
     res <- digestFASTA(fasta)
 
-    protOrigin <- as.list(c(rep("human", 5), rep("spike_in", 5)))
+    protOrigin <- as.list(c(rep("yeast", 4), rep("spike_in", 3)))
     res2 <- digestFASTA(fasta, protOrigin = protOrigin)
 
     expect_snapshot(res)

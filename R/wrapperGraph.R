@@ -4,28 +4,29 @@
 
 #' Generate graphs from a FASTA file
 #'
-#' @param fasta                    \strong{list of vector of chars} \cr
-#'                                 A fasta file, already read into R by
-#'                                 seqinr::read.fasta().
-#' @param collProtNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the protein nodes will
-#'                                 be collapsed.
-#' @param collPeptNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the peptide nodes will
-#'                                 be collapsed.
-#' @param result_path              \strong{character} \cr
-#'                                 The path where results are saved. If
-#'                                 \code{NULL}, results are not saved.
-#' @param suffix                   \strong{character} \cr
-#'                                 The suffix for saving results.
-#' @param save_intermediate        \strong{logical} \cr
-#'                                 If \code{TRUE}, the intermediate results
-#'                                 will also be saved.
-#' @param prot_origin              \strong{character vector} \cr
-#'                                 The origin of protein, e.g. organism etc.
-#' @param ...                      Additional arguments to bppg::digestFASTA()
+#' @param fasta                   \strong{list of vector of chars} \cr
+#'                                A fasta file, already read into R by
+#'                                seqinr::read.fasta().
+#' @param collProtNodes           \strong{logical} \cr
+#'                                If \code{TRUE}, the protein nodes will
+#'                                be collapsed.
+#' @param collPeptNodes           \strong{logical} \cr
+#'                                If \code{TRUE}, the peptide nodes will
+#'                                be collapsed.
+#' @param outpath                 \strong{character} \cr
+#'                                The path where intermetdiate results are 
+#'                                saved. If \code{NULL}, results are not saved.
+#' @param suffix                  \strong{character} \cr
+#'                                The suffix for saving results.
+#' @param save_intermediate       \strong{logical} \cr
+#'                                If \code{TRUE}, the intermediate results
+#'                                will also be saved.
+#' @param protOrigin             \strong{list or data.frame} \cr
+#'                                A list with the protein orgin corresponding to 
+#'                               [fasta], proteins are used as rownames/index.
+#' @param ...                     Additional arguments to bppg::digestFASTA()
 #'
-#' @return subgraphs (i.e. connected components) from the graph generated from
+#' @return Subgraphs (i.e. connected components) from the graph generated from
 #'         the FASTA file.
 #' @export
 #'
@@ -38,17 +39,18 @@
 generateGraphsFromFASTA <- function(fasta,
     collProtNodes = TRUE,
     collPeptNodes = TRUE,
-    result_path = NULL,
+    outpath = NULL,
     suffix = NULL,
     save_intermediate = FALSE,
-    prot_origin = NULL,
+    protOrigin = NULL,
     ...) {
     message("Digesting FASTA file ...")
-    edgelist <- bppg::digestFASTA(fasta, protOrigin = prot_origin, ...)
+    edgelist <- bppg::digestFASTA(fasta, protOrigin = protOrigin, ...)
     if (save_intermediate) {
         message("Saving edgelist ...")
+        checkmate::assertPathForOutput(outpath, overwrite = TRUE)
         utils::write.table(edgelist, sep = "\t", row.names = FALSE,
-            file = file.path(result_path, paste0("edgelist_", suffix, ".txt")))
+            file = file.path(outpath, paste0("edgelist_", suffix, ".txt")))
     }
 
     graphs <- generateGraphsFromEdgelist(edgelist, collProtNodes, collPeptNodes)
@@ -59,7 +61,7 @@ generateGraphsFromFASTA <- function(fasta,
     if (!collProtNodes && !collPeptNodes) suffix2 <- NULL
 
     if (save_intermediate) {
-        saveRDS(graphs, file = file.path(result_path, paste0("subgraphs_", suffix2, suffix, ".rds")))
+        saveRDS(graphs, file = file.path(outpath, paste0("subgraphs_", suffix2, suffix, ".rds")))
     }
     return(graphs)
 }
@@ -102,9 +104,12 @@ generateGraphsFromFASTA <- function(fasta,
 #'                                 will be collapsed.
 #' @param suffix                   \strong{character} \cr
 #'                                 The suffix for output files.
-#' @param ...                      currently not in use
+#' @param protOrigin               \strong{list or data.frame} \cr
+#'                                 A list with the protein orgin corresponding to 
+#'                                 [fasta], proteins are used as rownames/index.
+#' @param ...                      Additional arguments for [.digest2()].
 #'
-#' @return A list of list of graphs
+#' @return A list of list of graphs.
 #' @export
 #'
 #' @seealso [bppg::readMqPeptideTable()], [seqinr::read.fasta()],
@@ -123,7 +128,6 @@ generateGraphsFromFASTA <- function(fasta,
 generateGraphsFromQuantData <- function(D,
     fasta,
     outpath = NULL,
-    #normalize = FALSE,
     missed_cleavages = 2,
     min_aa = 6,
     max_aa = 50,
@@ -132,13 +136,15 @@ generateGraphsFromQuantData <- function(D,
     collProtNodes = TRUE,
     collPeptNodes = FALSE,
     suffix = "",
+    protOrigin = NULL,
     ...) {
+
     message("Digesting FASTA file...")
-    edgelist <- bppg::digestFASTA(fasta,
-        missed_cleavages = missed_cleavages,
-        min_aa = min_aa, max_aa = max_aa)
+    edgelist <- bppg::digestFASTA(fasta, missed_cleavages = missed_cleavages,
+        min_aa = min_aa, max_aa = max_aa, protOrigin = protOrigin)
 
     if (!is.null(outpath)) {
+        checkmate::assertPathForOutput(outpath, overwrite = TRUE)
         openxlsx::write.xlsx(edgelist, file = paste0(outpath,
                 "edgelist_fasta_", suffix, ".xlsx"),
             overwrite = TRUE, keepNA = TRUE)
@@ -174,5 +180,4 @@ generateGraphsFromQuantData <- function(D,
         collPeptNodes = collPeptNodes,
         suffix = suffix)
     return(graphs)
-
 }

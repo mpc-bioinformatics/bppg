@@ -1,6 +1,29 @@
 #' Functions in this file:
+#' .extractIntensities
 #' readMqPeptideTable
 #' 
+
+
+#' Import of MaxQuant's peptide.txt-table.
+#'
+#' @param D                         \strong{data.frame} \cr                
+#'                                  Data frame of peptides.txt from MaxQuant
+#' @param col_pattern               \strong{character} \cr
+#'                                  Pattern to recognize intensity columns by. 
+#'                                  Should be "Intensity." or "LFQ.intensity."
+#' @param rename_columns            \strong{logical} \cr
+#'                                  If \code{TRUE}, "Intensity." or 
+#'                                  "LFQ.intensity." are removed
+#' @return returns intensity dataframe 
+#' 
+.extractIntensities <- function(D, col_pattern, rename_columns){
+    intensities <- D[, grep(col_pattern, colnames(D))]
+    if (rename_columns) {
+        colnames(intensities) <- stringr::str_replace(colnames(intensities),
+            col_pattern, "")
+    }
+    intensities
+}
 
 #' Import of MaxQuant's peptide.txt-table.
 #'
@@ -57,20 +80,11 @@ readMqPeptideTable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
         D <- D[!ind_cont, ]
         print(paste0("Removed ", sum(ind_cont), " contaminant sequences."))
     }
-
-    ## search for intensity columns or LFQ values
+    
     if (LFQ) {
-        intensities <- D[, grep("LFQ", colnames(D))]
-        if (rename_columns) {
-            colnames(intensities) <- stringr::str_replace(colnames(intensities),
-                "LFQ.intensity.", "")
-        }
+        intensities <- .extractIntensities(D, "LFQ.intensity.", rename_columns)
     } else {
-        intensities <- D[, grep("Intensity.", colnames(D))]
-        if (rename_columns) {
-            colnames(intensities) <- stringr::str_replace(colnames(intensities),
-                "Intensity.", "")
-        }
+        intensities <- .extractIntensities(D, "Intensity.", rename_columns)
     }
 
     if (zeroToNA) {

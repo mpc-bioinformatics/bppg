@@ -9,7 +9,7 @@ test_that("generate graphs from fasta",{
 
   res <- bppg::generateGraphsFromFASTA(fasta = fasta,
                                        save_intermediate = TRUE,
-                                       result_path = temp_dir)
+                                       outpath = temp_dir)
 
   expect_snapshot(igraph::as_edgelist(res[[1]]))
   expect_snapshot(igraph::as_edgelist(res[[2]]))
@@ -71,7 +71,7 @@ test_that("test generateGraphsFromQuantData", {
     for (i in 1:3) {
     for (j in seq_along(graphs[[i]])) {
         expect_snapshot(igraph::as_edgelist(graphs[[i]][[j]]))
-        expect_snapshot(igraph::vertex_attr(graphs[[i]][[j]], "pep_ratio"))
+        expect_snapshot(igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio"))
     }
     }
 

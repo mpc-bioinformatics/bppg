@@ -9,7 +9,7 @@
 ---
 
     Code
-      igraph::vertex_attr(graphs[[i]][[j]], "pep_ratio")
+      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
     Output
       [[1]]
       [1] NA NA
@@ -31,7 +31,7 @@
 ---
 
     Code
-      igraph::vertex_attr(graphs[[i]][[j]], "pep_ratio")
+      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
     Output
       [[1]]
       [1] NA
@@ -57,7 +57,7 @@
 ---
 
     Code
-      igraph::vertex_attr(graphs[[i]][[j]], "pep_ratio")
+      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
     Output
       [[1]]
       [1] NA
@@ -80,7 +80,7 @@
 ---
 
     Code
-      igraph::vertex_attr(graphs[[i]][[j]], "pep_ratio")
+      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
     Output
       [[1]]
       [1] NA NA
@@ -111,7 +111,7 @@
 ---
 
     Code
-      igraph::vertex_attr(graphs[[i]][[j]], "pep_ratio")
+      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
     Output
       [[1]]
       [1] NA
@@ -139,7 +139,7 @@
 ---
 
     Code
-      igraph::vertex_attr(graphs[[i]][[j]], "pep_ratio")
+      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
     Output
       [[1]]
       [1] NA
@@ -168,7 +168,7 @@
 ---
 
     Code
-      igraph::vertex_attr(graphs[[i]][[j]], "pep_ratio")
+      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
     Output
       [[1]]
       [1] NA

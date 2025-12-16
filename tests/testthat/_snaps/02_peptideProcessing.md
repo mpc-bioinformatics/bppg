@@ -65,17 +65,28 @@
     Code
       SummarizedExperiment::assays(D1)$logRatios
     Output
-             ratio_sample1_sample2 ratio_sample1_sample3 ratio_sample2_sample3
-      pep_1                     NA                    NA           -0.01449257
-      pep_2             0.23438359            0.30166498            0.06728139
-      pep_3                     NA                    NA           -0.13742681
-      pep_4            -0.52979568           -0.39790351            0.13189218
-      pep_5             0.52218804            0.30487036           -0.21731768
-      pep_6             0.02686824           -0.18866120           -0.21552944
-      pep_7            -0.58551545                    NA                    NA
-      pep_8             0.11089975           -0.26790101           -0.37880076
-      pep_9            -0.11350943           -0.03532842            0.07818101
-      pep_10            0.39241543            0.44831953            0.05590409
+             logRatio_sample1_sample2 logRatio_sample1_sample3
+      pep_1                        NA                       NA
+      pep_2                0.23438359               0.30166498
+      pep_3                        NA                       NA
+      pep_4               -0.52979568              -0.39790351
+      pep_5                0.52218804               0.30487036
+      pep_6                0.02686824              -0.18866120
+      pep_7               -0.58551545                       NA
+      pep_8                0.11089975              -0.26790101
+      pep_9               -0.11350943              -0.03532842
+      pep_10               0.39241543               0.44831953
+             logRatio_sample2_sample3
+      pep_1               -0.01449257
+      pep_2                0.06728139
+      pep_3               -0.13742681
+      pep_4                0.13189218
+      pep_5               -0.21731768
+      pep_6               -0.21552944
+      pep_7                        NA
+      pep_8               -0.37880076
+      pep_9                0.07818101
+      pep_10               0.05590409
 
 ---
 
@@ -88,7 +99,7 @@
       assays(1): logRatios
       rownames(10): pep_1 pep_2 ... pep_9 pep_10
       rowData names(1): Sequence
-      colnames(3): ratio_sample1_sample2 ratio_sample1_sample3
-        ratio_sample2_sample3
+      colnames(3): logRatio_sample1_sample2 logRatio_sample1_sample3
+        logRatio_sample2_sample3
       colData names(1): comparison
 

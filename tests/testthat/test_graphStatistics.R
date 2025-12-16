@@ -17,22 +17,22 @@ test_that("test .calculateProteinNodeInfo", {
 
   D <- bppg:::.calculateProteinNodeInfo(graphs)
 
-  expect_equal(nrow(D), 30)
+  expect_equal(nrow(D), 21)
   expect_equal(ncol(D), 7)
-  expect_equal(unlist(D[14, ]), c(accessions = "tr|A0A494C0S0|A0A494C0S0_HUMAN",
+  expect_equal(unlist(D[10, ]), c(accessions = "sp|Q03483|YD22A_YEAST",
                                   comparison = "s1_s3",
                                   graphID = "2",
-                                  ind_within_graph = "3",
-                                  nr_peptides = "288",
-                                  nr_unique_peptides = "31",
-                                  nr_shared_peptides = "257"))
-  expect_equal(unlist(D[22, ]), c(accessions = "tr|H0Y9R5|H0Y9R5_HUMAN",
+                                  ind_within_graph = "2",
+                                  nr_peptides = "88",
+                                  nr_unique_peptides = "30",
+                                  nr_shared_peptides = "58"))
+  expect_equal(unlist(D[19, ]), c(accessions = "sp|Q07793|YD13B_YEAST",
                                   comparison = "s2_s3",
                                   graphID = "1",
-                                  ind_within_graph = "2",
-                                  nr_peptides = "44",
-                                  nr_unique_peptides = "3",
-                                  nr_shared_peptides = "41"))
+                                  ind_within_graph = "5",
+                                  nr_peptides = "380",
+                                  nr_unique_peptides = "254",
+                                  nr_shared_peptides = "126"))
 })
 
 test_that("subgraph characteristics table", {

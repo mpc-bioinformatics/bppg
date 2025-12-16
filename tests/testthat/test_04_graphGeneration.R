@@ -71,7 +71,7 @@ test_that("test generateQuantGraphs", {
     for (i in 1:3) {
         for (j in seq_along(graphs[[i]])) {
         expect_snapshot(igraph::as_edgelist(graphs[[i]][[j]]))
-        expect_snapshot(igraph::vertex_attr(graphs[[i]][[j]], "pep_ratio"))
+        expect_snapshot(igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio"))
         }
     }
 

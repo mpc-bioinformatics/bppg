@@ -13,8 +13,8 @@
 #' @param Y       \strong{character} \cr
 #'                The column name of group2.
 #' @param useNA   \strong{logical} \cr
-#'                If \code{TRUE},results 0 and Inf are possible, otherwise
-#'                ratio is NA if value for X or Y is NA
+#'                If \code{TRUE}, results 0 and Inf are possible, otherwise
+#'                ratio is NA, if value for X or Y is NA
 #'
 #' @return The fold changes (Y/X).
 #'
@@ -39,19 +39,19 @@
 
 #' Aggregate replicates of the same experimental group.
 #'
-#' @param D               \strong{SummarizedExperiment} \cr
-#'                        The data experiment containing the peptide intensities.
-#' @param missing.limit   \strong{numeric} \cr
-#'                        The proportion of missing values that is allowed 
-#'                        (e.g. 0 means no missings allowed).
-#' @param method          \strong{character} \cr
-#'                        The method of aggregation. Options are 
-#'                        "mean", "sum" or "median"
-#' @param group           \strong{character factor} \cr
-#'                        The groups for aggregation.
+#' @param D              \strong{SummarizedExperiment} \cr
+#'                       The data experiment containing the peptide intensities.
+#' @param group          \strong{character factor} \cr
+#'                       The groups for aggregation.
+#' @param missing.limit  \strong{numeric} \cr
+#'                       The proportion of missing values that is allowed 
+#'                       (e.g. 0 means no missings allowed).
+#' @param method         \strong{character} \cr
+#'                       The method of aggregation. Options are 
+#'                       "mean", "sum" or "median"
 #' @param id_col         \strong{integer} \cr
-#'                        The column number containaining the peptide sequences in
-#'                        the rowData of the SummarizedExperiment.
+#'                       The column number containaining the peptide sequences 
+#'                       in the rowData of the SummarizedExperiment.
 #'
 #' @return A SummarizedExperiment with aggregated intensities ($intensities).
 #' @export
@@ -125,18 +125,19 @@ calculatePeptideRatios <- function(D, group_levels = NULL) {
 
     aggr_intensities <- SummarizedExperiment::assays(D)$intensities
 
-    if (is.null(group_levels)) { # TODO, wollen wir das Übergeben so machen, wenn das eigentlich hinterlegt in in colData?
+    if (is.null(group_levels)) {
         group_levels <- SummarizedExperiment::colData(D)$group
     }
 
     # create pairwise groups for ratio calculation
     groupCombinations <- combn(group_levels, 2)
-    peptide_log_ratios <- apply(groupCombinations, 2, function(x) {
-        log2(.foldChange(D = aggr_intensities, X = x[1], Y = x[2]))
-    })
+    peptide_log_ratios <- vapply(seq_len(ncol(groupCombinations)), function(i) {
+        log2(.foldChange(D = aggr_intensities, X = groupCombinations[1, i],
+            Y = groupCombinations[2, i]))
+    }, numeric(nrow(aggr_intensities)))
 
     peptide_log_ratios <- data.frame(peptide_log_ratios)
-    colnames(peptide_log_ratios) <- paste0("ratio_", groupCombinations[1, ], "_", 
+    colnames(peptide_log_ratios) <- paste0("logRatio_", groupCombinations[1, ], "_", 
         groupCombinations[2, ])
     rownames(peptide_log_ratios) <- rownames(aggr_intensities)
 
