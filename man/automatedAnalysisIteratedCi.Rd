@@ -5,7 +5,7 @@
 \title{Extract protein ratio solutions from the result of iterateOverCi()}
 \usage{
 automatedAnalysisIteratedCi(
-  S,
+  G,
   res,
   use_results_from_other_proteins = FALSE,
   verbose = FALSE,
@@ -16,17 +16,10 @@ automatedAnalysisIteratedCi(
 )
 }
 \arguments{
-\item{S}{\strong{igraph graph object OR list} \cr
+\item{G}{\strong{igraph graph object} \cr
 An igraph graph of the bipartite
 peptide-protein graph with peptide
-ratios
-OR
-a list of the biadjacency matrix of the
-bipartite peptide-protein graph
-(named "X") and the measured peptide
-ratios (named "fc"). \cr
-Set \code{S_is_graph} depending on the
-input type.}
+ratios}
 
 \item{res}{\strong{data.frame} \cr
 The data.frame resulting from the

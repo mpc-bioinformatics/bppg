@@ -2,13 +2,20 @@
 % Please edit documentation in R/06_optimization.R
 \name{.analyseResultSingleProt}
 \alias{.analyseResultSingleProt}
-\title{Title}
+\title{Analyse results for a single protein}
 \usage{
 .analyseResultSingleProt(resProt, error_tol = 1e-10, ratioLog_tol = 1e-06)
 }
 \arguments{
-\item{ratioLog_tol}{}
+\item{resProt}{\strong{data.frame} \cr
+The data.frame resulting from the
+\code{\link[=iterateOverCi]{iterateOverCi()}} function,
+filtered for a specific protein.}
+
+\item{error_tol}{\strong{numeric(1)} \cr tolerance for the error term.}
+
+\item{ratioLog_tol}{\strong{numeric(1)} \cr tolerance for the log protein ratios.}
 }
 \description{
-Title
+Analyse results for a single protein
 }

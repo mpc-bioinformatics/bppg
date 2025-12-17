@@ -232,10 +232,8 @@
 #' Function to set up the optimization problem and minimize the sum of squared
 #' error terms
 #'
-#' @param S           \strong{list} \cr
-#'                    A list of biadjacency matrix of the bipartite
-#'                    peptide-protein graph (X) and
-#'                    measured peptide ratios (fc).
+#' @param G           \strong{igraph object} \cr
+#'                      bipartite peptide-protein graph
 #' @param fixed.Ci    \strong{numeric vector} \cr
 #'                    The fixed protein weights, variable weights set as NA.
 #'                    Sum of fixed weights must not exceed 1.
@@ -276,20 +274,20 @@
 #'
 ## TODO SIMPLFY -> put options into differnt functions?
 ## TODO: some parameter checks for this private function useful?
-.minimizeSquaredError <- function(S,
+.minimizeSquaredError <- function(G,
     fixed.Ci = NULL,
     verbose = FALSE,
     #log_level = TRUE,
     control = list(),
     ...) {
-    M <- S$X  ## biadjacency matrix
-    m <- ncol(S$X) ## number of proteins
-    n <- nrow(S$X) ## number of peptides
-    rjLog <- S$fc  ## given peptide ratios (already log2-transformed)
-    checkmate::assertMatrix(M, mode = "integerish")
-    stopifnot(all(S$X %in% c(0,1)))
+    M <- igraph::as_biadjacency_matrix(G)
+    m <- ncol(M) ## number of proteins
+    n <- nrow(M) ## number of peptides
+    rjLog <- na.omit(igraph::vertex_attr(G, "pep_logRatio")) # na.omit because protein nodes do not have a peptide ratio
+
+    if (is.null(rjLog)) stop("G does not contain peptide ratios.")
     checkmate::assertNumeric(rjLog)
-    checkmate::assertNumeric(fixed.Ci, len = length(rjLog), lower = 0, upper = 1,
+    checkmate::assertNumeric(fixed.Ci, len = m, lower = 0, upper = 1,
                              null.ok = TRUE)
     stopifnot(sum(fixed.Ci, na.rm = TRUE) <= 1)
     if (!verbose) control <- c(control, trace = 0)
@@ -407,7 +405,9 @@ iterateOverCi <- function(G,
     verbose = FALSE,
     control = list(),
     extend_grid_at_borders = FALSE ) {# ,
-    checkmate::assertList(S, types = c("matrix", "numeric"))
+    checkmate::assertClass(G, classes = c("igraph"))
+    checkmate::checkTRUE(igraph::is_bipartite(G))
+    ### check if pep_logRatio is present as attribute?
     checkmate::assertIntegerish(grid.size, lower = 1)
     checkmate::assertFlag(omit_grid_borders)
     checkmate::assertNumeric(grid.start, lower = 0, upper = 1)
@@ -415,68 +415,69 @@ iterateOverCi <- function(G,
     checkmate::assertFlag(verbose)
     checkmate::assertList(control)
 
-    n <- ncol(S$X) ## number of protein groups
+    n <- sum(igraph::V(G)$type) #ncol(S$X) ## number of protein groups
+    if (n == 1) { # special case for only a single protein group in the graph
+        RES <-  .minimizeSquaredError(G,
+                                      fixed.Ci = NULL,
+                                      verbose = verbose,
+                                      control = control)
+        result <- data.frame(protein = 1, grid = 1, RLog1 = RES$RiLog, C1 = 1, error = RES$RES$res_squ_err)
 
-    ### TODO: fall mit 1 Protein
-    #### Grid überspringen und direkt einzelne Lösung ausspucken
-    #### bzw. Grid mit nur einer Zeile
-
-
-    grid <- seq(grid.start, grid.stop, length.out = grid.size + 1)
-    if (extend_grid_at_borders) {
-        grid_min <- grid[2] ## 2. element, as first is 0
-        grid_max <- grid[length(grid) - 1] ## 2nd to last, as last element is 1
-        grid_extend_min <- seq(grid.start, grid_min, length.out = 11)
-        grid_extend_max <- seq(grid_max, grid.stop, length.out = 11)
-        grid <- sort(unique(c(grid, grid_extend_min, grid_extend_max)))
-    }
-    if (omit_grid_borders) grid <- grid[-c(1, length(grid))]
-
-    cnames <- c(paste0("RLog", 1:n), paste0("C", 1:n))
-
-    f <- function(j, gridpoint, cnames, S) {
-        Ci_tmp <- rep(NA, n)
-        Ci_tmp[j] <- gridpoint
-
-        RES <- try({
-            .minimizeSquaredError(S,
-                                  fixed.Ci = Ci_tmp,
-                                  verbose = verbose,
-                                  control = control)
-        })
-        if ("try-error" %in% class(RES)) {
-            res_Ri_Ci <- rep(NA, length(cnames))
-            error <- NA
-        } else {
-            res_Ri_Ci <- c(RES$RiLog, RES$Ci)
-        }
-        names(res_Ri_Ci) <- cnames
-        error <- RES$RES$res_squ_err
-        result <- c(protein = j, grid = gridpoint, res_Ri_Ci, error = error)
         return(result)
+
+    } else { # n > 1
+
+        grid <- seq(grid.start, grid.stop, length.out = grid.size + 1)
+        if (extend_grid_at_borders) {
+            grid_min <- grid[2] ## 2. element, as first is 0
+            grid_max <- grid[length(grid) - 1] ## 2nd to last, as last element is 1
+            grid_extend_min <- seq(grid.start, grid_min, length.out = 11)
+            grid_extend_max <- seq(grid_max, grid.stop, length.out = 11)
+            grid <- sort(unique(c(grid, grid_extend_min, grid_extend_max)))
+        }
+        if (omit_grid_borders) grid <- grid[-c(1, length(grid))]
+
+        cnames <- c(paste0("RLog", 1:n), paste0("C", 1:n))
+
+        f <- function(j, gridpoint, cnames, G) {
+            Ci_tmp <- rep(NA, n)
+            Ci_tmp[j] <- gridpoint
+
+            RES <- try({
+                .minimizeSquaredError(G,
+                                      fixed.Ci = Ci_tmp,
+                                      verbose = verbose,
+                                      control = control)
+            })
+            if ("try-error" %in% class(RES)) {
+                res_Ri_Ci <- rep(NA, length(cnames))
+                error <- NA
+            } else {
+                res_Ri_Ci <- c(RES$RiLog, RES$Ci)
+            }
+            names(res_Ri_Ci) <- cnames
+            error <- RES$RES$res_squ_err
+            result <- c(protein = j, grid = gridpoint, res_Ri_Ci, error = error)
+            return(result)
+        }
+        result <- pbapply::pbmapply(FUN = f,
+                                    j = rep(1:n, each = length(grid)), gridpoint = grid,
+                                    MoreArgs = list(cnames = cnames, G = G))
+        ## TODO: disable progress bar if "verbose = TRUE"
+        #     # if (!verbose)### pboptions(type = "none")
+        return(as.data.frame(t(result)))
     }
-    result <- pbapply::pbmapply(FUN = f,
-                      j = rep(1:n, each = length(grid)), gridpoint = grid,
-                      MoreArgs = list(cnames = cnames, S = S))
-    ## TODO: disable progress bar if "verbose = TRUE"
-    #     # if (!verbose)### pboptions(type = "none")
-    return(as.data.frame(t(result)))
+
+
 }
 
 
 #' Extract protein ratio solutions from the result of iterateOverCi()
 #'
-#' @param S                             \strong{igraph graph object OR list} \cr
+#' @param G                             \strong{igraph graph object} \cr
 #'                                      An igraph graph of the bipartite
 #'                                      peptide-protein graph with peptide
 #'                                      ratios
-#'                                      OR
-#'                                      a list of the biadjacency matrix of the
-#'                                      bipartite peptide-protein graph
-#'                                      (named "X") and the measured peptide
-#'                                      ratios (named "fc"). \cr
-#'                                      Set \code{S_is_graph} depending on the
-#'                                      input type.
 #' @param res                           \strong{data.frame} \cr
 #'                                      The data.frame resulting from the
 #'                                      [bppg::iterateOverCi()] function.
@@ -504,7 +505,7 @@ iterateOverCi <- function(G,
 #'
 #' @examples ## TODO
 
-automatedAnalysisIteratedCi <- function(S,
+automatedAnalysisIteratedCi <- function(G,
                                         res,
                                         use_results_from_other_proteins = FALSE,
                                         verbose = FALSE,
@@ -513,14 +514,12 @@ automatedAnalysisIteratedCi <- function(S,
                                         error_tol = 1e-10,
                                         ratioLog_tol = 1e-6) {
 
-    if (S_is_graph) {
-        X <- igraph::as_biadjacency_matrix(S)
-        fc <- stats::na.omit(igraph::V(S)$pep_ratio)
-        S <- list(X = X, fc = fc)  ### TODO: logFC nennen??
-    }
+    ### TODO: do I need S in this form?
+    X <- igraph::as_biadjacency_matrix(G)
+    fc <- stats::na.omit(igraph::V(G)$pep_logRatio)
+    S <- list(X = X, fc = fc)  ### TODO: logFC nennen??
 
     n <- ncol(S$X) ## number of protein groups
-
 
     if(!is.null(job)) {
         graphID <- job$pars$prob.pars$k
@@ -557,10 +556,14 @@ automatedAnalysisIteratedCi <- function(S,
                   res = res, error_tol = error_tol, ratioLog_tol = ratioLog_tol,
                   use_results_from_other_proteins = use_results_from_other_proteins)
 
+    RES_info <- data.frame(comparison = rep(comparison, n), graphID = rep(graphID, n), proteinNr = 1:n)
 
-    RES <- cbind(comparison = rep(comparison, n), graphID = rep(graphID, n), proteinNr = 1:n, RES)
+    RES <- cbind(RES_info, as.data.frame(t(RES)))
 
-    return(as.data.frame(t(RES)))
+
+    ### TODO: add accessions as first column (get from graph object)
+
+    return(RES)
 }
 
 

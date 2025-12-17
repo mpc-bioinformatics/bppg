@@ -5,7 +5,7 @@
 \title{Iterate over possible Ci values}
 \usage{
 iterateOverCi(
-  S,
+  G,
   grid.size = 1000,
   omit_grid_borders = TRUE,
   grid.start = 0,
@@ -16,10 +16,8 @@ iterateOverCi(
 )
 }
 \arguments{
-\item{S}{\strong{list} \cr
-A list of biadjacency matrix of the bipartite
-peptide-protein graph (named "X")
-and measured peptide ratios (named "fc").}
+\item{G}{\strong{igraph object} \cr
+Bppg graph object}
 
 \item{grid.size}{\strong{integer} \cr
 The number of grid points for the Cis.}

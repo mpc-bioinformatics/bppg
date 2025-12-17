@@ -6,7 +6,7 @@
 error terms}
 \usage{
 .minimizeSquaredError(
-  S,
+  G,
   fixed.Ci = NULL,
   verbose = FALSE,
   control = list(),
@@ -14,10 +14,8 @@ error terms}
 )
 }
 \arguments{
-\item{S}{\strong{list} \cr
-A list of biadjacency matrix of the bipartite
-peptide-protein graph (X) and
-measured peptide ratios (fc).}
+\item{G}{\strong{igraph object} \cr
+bipartite peptide-protein graph}
 
 \item{fixed.Ci}{\strong{numeric vector} \cr
 The fixed protein weights, variable weights set as NA.
