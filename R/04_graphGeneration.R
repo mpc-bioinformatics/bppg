@@ -109,10 +109,15 @@
     igraph::V(gCollapsed)$name <- sapply(igraph::V(gCollapsed)$name, 
         paste, collapse=";") # this is not ordered - > same ratio order
 
-    if (!is.null(igraph::V(gCollapsed)$pep_logRatio) && collPeptNodes) {
+
+    if (!is.null(igraph::V(gCollapsed)$pep_logRatio)){ 
+        if(collPeptNodes) {
         igraph::V(gCollapsed)$pep_ratio_mean[!igraph::V(gCollapsed)$type] <-
             sapply(igraph::V(gCollapsed)$pep_logRatio[!igraph::V(gCollapsed)$type], mean)
-    }
+        } else {
+                igraph::V(gCollapsed)$pep_logRatio <- sapply(
+                    igraph::V(gCollapsed)$pep_logRatio,  "[", 1)
+    }}
 
     if (!is.null(igraph::V(gCollapsed)$protOrigin) && collProtNodes) {
         igraph::V(gCollapsed)$protOrigin[igraph::V(gCollapsed)$type] <- 
@@ -250,7 +255,7 @@ generateQuantGraphs <- function(exp_peptide_ratios,
 
     ## broad filtering for edgelist for only quantifies peptides
     edgelist_filtered <- fasta_edgelist[fasta_edgelist[, 2]
-        %in% id, ]
+        %in% SummarizedExperiment::rowData(exp_peptide_ratios)[, seq_column], ]
 
     if (!is.null(outpath)) {
         checkmate::assertPathForOutput(outpath, overwrite = TRUE)
@@ -259,12 +264,31 @@ generateQuantGraphs <- function(exp_peptide_ratios,
             overwrite = TRUE, keepNA = TRUE)
     }
 
-    colnames_split <- limma::strsplit2(colnames(peptide_logRatios), "_")
+    colnames_split <- limma::strsplit2(colnames(exp_peptide_ratios), "_")
     comparisons <- paste(colnames_split[,2], colnames_split[,3], sep = "_")
 
+    # subgraphs <- lapply(
+    #     SummarizedExperiment::assays(exp_peptide_ratios)$logRatios,
+    #     function(compRatio){
+    #         id <- names(compRatio)
+    #         print(id)
+    #         compRatio <- compRatio[!is.na(compRatio)]
+    #         id <- names(compRatio)
+    #         print(compRatio)
+    #         compEdgelist <- edgelist_filtered[edgelist_filtered$peptide
+    #             %in% names(compRatio), ]
+    #         print(compEdgelist)
+    #         compEdgelist$pep_logRatios <- compRatio[match(names(compRatio), 
+    #             compEdgelist$peptide)]
+    #         generateGraphsFromEdgelist(compEdgelist, collProtNodes, collPeptNodes)
+    #     })
+
+
+
+
+
     subgraphs <- list()
-    for (i in 1:ncol(peptide_logRatios)) { # TODO apply? v apply nicht möglich, weil wir nicht wissen wie viele graphen erstellt werden
-        comparison <- comparisons[i]
+    for (i in 1:ncol(exp_peptide_ratios)) { # TODO apply? v apply nicht möglich, weil wir nicht wissen wie viele graphen erstellt werden
         fc <- peptide_logRatios[, i]
         ## peptides that are quantified in this specific comparison
         peptides_tmp <- id[!is.na(fc)]
@@ -280,7 +304,8 @@ generateQuantGraphs <- function(exp_peptide_ratios,
             collProtNodes, collPeptNodes)
         ## set peptide ratios as vertex attributes
         subgraphs[[i]] <- G
-        names(subgraphs)[[i]] <- comparison
+        names(subgraphs)[[i]] <- comparisons[i]
     }
+    names(subgraphs) <- comparisons
     return(subgraphs)
 }
