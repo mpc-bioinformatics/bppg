@@ -1,12 +1,17 @@
 test_that("test .errorEquation", {
 
+  # constructed example
   RiLog <- log2(c(0.5, 1.3))
   Ci <- c(0.3, 0.7)
   M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
   rjLog <- log2(c(0.6, 1.2))
   e <- bppg:::.errorEquation(RiLog = RiLog, Ci = Ci, M = M, rjLog = rjLog)
-
   expect_snapshot(e)
+
+  # real example
+  testfile_path <- file.path(testthat::test_path(), "testfiles")
+  graphs <- readRDS(file.path(testfile_path, "quantGraphsForTesting.rds"))
+
 })
 
 test_that("test .minimizeSquaredError", {

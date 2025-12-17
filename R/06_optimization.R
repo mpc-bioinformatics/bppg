@@ -342,10 +342,8 @@
 
 #' Iterate over possible Ci values
 #'
-#' @param S                        \strong{list} \cr
-#'                                 A list of biadjacency matrix of the bipartite
-#'                                 peptide-protein graph (named "X")
-#'                                 and measured peptide ratios (named "fc").
+#' @param G                        \strong{igraph object} \cr
+#'                                 Bppg graph object
 #' @param grid.size                \strong{integer} \cr
 #'                                 The number of grid points for the Cis.
 #' @param omit_grid_borders        \strong{logical} \cr
@@ -401,7 +399,7 @@
 #' S <- list(X = M, fc = rj)
 #' bppg:::.minimizeSquaredError(S)
 #' ## example not complete? TODO
-iterateOverCi <- function(S,
+iterateOverCi <- function(G,
     grid.size = 1000,
     omit_grid_borders = TRUE,
     grid.start = 0,
@@ -528,6 +526,10 @@ automatedAnalysisIteratedCi <- function(S,
         graphID <- job$pars$prob.pars$k
         comparison <- job$prob.name
         job.id <- job$job.id
+    } else {
+        graphID <- NA
+        comparison <- NA
+        job.id <- NA
     }
 
 
@@ -550,10 +552,13 @@ automatedAnalysisIteratedCi <- function(S,
 
 
     RES <- vapply(1:n, FUN = f,
-                  FUN.VALUE = c("RiLog" = 0, "RiLog_min" = 0, "RiLog_max" = 0,
+                  FUN.VALUE = c("error_min" = 0, "RiLog" = 0, "RiLog_min" = 0, "RiLog_max" = 0,
                                  "Ci" = 0, "Ci_min" = 0, "Ci_max" = 0, "case" = 0),
                   res = res, error_tol = error_tol, ratioLog_tol = ratioLog_tol,
                   use_results_from_other_proteins = use_results_from_other_proteins)
+
+
+    RES <- cbind(comparison = rep(comparison, n), graphID = rep(graphID, n), proteinNr = 1:n, RES)
 
     return(as.data.frame(t(RES)))
 }
@@ -561,11 +566,14 @@ automatedAnalysisIteratedCi <- function(S,
 
 
 
-#' Title
+#' Analyse results for a single protein
 #'
-#' @param resProt
-#' @param error_tol
-#' @param ratioLog_tol
+#' @param resProt \strong{data.frame} \cr
+#'                                      The data.frame resulting from the
+#'                                      [bppg::iterateOverCi()] function,
+#'                                      filtered for a specific protein.
+#' @param error_tol \strong{numeric(1)} \cr tolerance for the error term.
+#' @param ratioLog_tol \strong{numeric(1)} \cr tolerance for the log protein ratios.
 #'
 #' @returns
 #' @export
@@ -582,18 +590,24 @@ automatedAnalysisIteratedCi <- function(S,
 
     # case 1: single point with minimum error
     if (length(indMinError) == 1) {
-        res_tmp <- c(RLog_tmp, NA, NA, C_tmp, NA, NA, 3)
-    } else { # case 2: error at least partially constant
-        if (abs(diff(range((RLog_tmp)))) <= ratioLog_tol) {  # log2????
-            res_tmp <- c(mean(RLog_tmp), NA, NA, NA, min(C_tmp), max(C_tmp), NA) # case 2?
-            res_tmp[7] <- ifelse(length(indMinError) == nrow(resProt), 1, 4) # all(R[ind_min_tol] == 0) |???
+        # case 3: single solution with one optimal data point
+        res_tmp <- c(minError, RLog_tmp, NA, NA, C_tmp, NA, NA, 3)
+    } else {
+        if (abs(diff(range((RLog_tmp)))) <= ratioLog_tol) {
+            # case 1 and 4: RLog is almost constant
+            #e_tmp_mean_rounded <- round(mean(e_tmp), digits = ceiling(-log10(error_tol)))
+            RLog_tmp_mean_rounded <- round(mean(RLog_tmp), digits = ceiling(-log10(ratioLog_tol)))
+            res_tmp <- c(mean(e_tmp), RLog_tmp_mean_rounded, NA, NA, NA, min(C_tmp), max(C_tmp), NA)
+            res_tmp[8] <- ifelse(length(indMinError) == nrow(resProt), 1, 4) # all(R[ind_min_tol] == 0) |???
         } else {
-            res_tmp <- c(NA, min(RLog_tmp), max(RLog_tmp), NA, min(C_tmp), max(C_tmp), NA) # case 1?
-            res_tmp[7] <- ifelse(length(indMinError) == nrow(resProt), 2, 5)
+            # case 2 and 5: range solution for Rlog
+            #e_tmp_mean_rounded <- round(mean(e_tmp), digits = ceiling(-log10(error_tol)))
+            res_tmp <- c(mean(e_tmp), NA, min(RLog_tmp), max(RLog_tmp), NA, min(C_tmp), max(C_tmp), NA)
+            res_tmp[8] <- ifelse(length(indMinError) == nrow(resProt), 2, 5)
         }
     }
 
-    res_names <- c("RiLog", "RiLog_min", "RiLog_max", "Ci", "Ci_min", "Ci_max", "case")
+    res_names <- c("error_min", "RiLog", "RiLog_min", "RiLog_max", "Ci", "Ci_min", "Ci_max", "case")
     names(res_tmp) <- res_names
     return(res_tmp)
 

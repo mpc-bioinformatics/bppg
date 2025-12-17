@@ -95,6 +95,10 @@ test_that("test .generateQuantGraphs", {
                                   collPeptNodes = TRUE,
                                   suffix = "")
 
+  #testfile_path <- file.path(testthat::test_path(), "testfiles")
+  #saveRDS(graphs, file.path(testfile_path, "quantGraphsForTesting.rds"))
+
+
   # Check result attributes
   expect_true(file.exists(file.path(temp_dir, "edgelist_filtered_.xlsx")))
   expect_equal(unname(lapply(graphs, length)), list(3,2,2))
