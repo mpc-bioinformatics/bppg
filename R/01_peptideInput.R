@@ -28,7 +28,10 @@
 #' Import of MaxQuant's peptide.txt-table.
 #'
 #' @param path                      \strong{character} \cr
-#'                                  The path to the peptides.txt table
+#'                                  The path to the peptides.txt table.
+#' @param group                     \strong{character} \cr
+#'                                  List or vector of group names corresponding
+#'                                  to the order of samples.
 #' @param LFQ                       \strong{logical} \cr
 #'                                  If \code{TRUE}, LFQ intensities are used,
 #'                                  if FALSE, raw (unnormalized) intensities
@@ -55,7 +58,8 @@
 #' file <- system.file("extdata", "peptides.txt", package = "bppg")
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 
-readMqPeptideTable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
+readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE, 
+    remove_contaminants = FALSE,
     rename_columns = TRUE, zeroToNA = TRUE,
     remove_empty_rows = TRUE,
     further_columns_to_keep = NULL) {
@@ -96,18 +100,20 @@ readMqPeptideTable <- function(path, LFQ = FALSE, remove_contaminants = FALSE,
         }
     }
 
+    if(is.null(group)){
+        colDF <- data.frame(sample = colnames(intensities))
+    } else {
+        colDF <- data.frame(sample = colnames(intensities), group = group)
+    }  
+
     if (is.null(further_columns_to_keep)) {
-        RES <- SummarizedExperiment::SummarizedExperiment(
-            assays = list(intensities=intensities),
-            colData = data.frame(sample = colnames(intensities)),# TODO hier Gruppen info hinzufügen?
-            rowData = data.frame(Sequence = D$Sequence)) 
+        rowDF <- data.frame(Sequence = D$Sequence)
     } else {
         further_columns <- D[, further_columns_to_keep, drop = FALSE]
         colnames(further_columns) <- further_columns_to_keep
-        RES <- SummarizedExperiment::SummarizedExperiment(
-            assays = list(intensities=intensities), 
-            colData = data.frame(sample = colnames(intensities)),
-            rowData = data.frame(Sequence = D$Sequence, further_columns))
+        rowDF <- data.frame(Sequence = D$Sequence, further_columns)
     }
-    return(RES)
+    SummarizedExperiment::SummarizedExperiment(
+        assays = list(intensities=intensities), 
+        colData = colDF, rowData = rowDF)
 }

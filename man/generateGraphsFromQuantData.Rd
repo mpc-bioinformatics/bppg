@@ -11,7 +11,6 @@ generateGraphsFromQuantData(
   missed_cleavages = 2,
   min_aa = 6,
   max_aa = 50,
-  id_columns = 1,
   seq_column = "Sequence",
   collProtNodes = TRUE,
   collPeptNodes = FALSE,
@@ -47,13 +46,8 @@ in a peptide.}
 The maximum number of amino acids
 in a peptide.}
 
-\item{id_columns}{\strong{integer vector} \cr
-The columns of D that contain ID information
-(the rest should contain only peptide
-intensities, properly normalized).}
-
 \item{seq_column}{\strong{character} \cr
-The column name of the column with the
+The column name of the column of D with the
 peptide sequences.}
 
 \item{collProtNodes}{\strong{logical} \cr

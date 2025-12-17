@@ -42,16 +42,18 @@
 #' @param D              \strong{SummarizedExperiment} \cr
 #'                       The data experiment containing the peptide intensities.
 #' @param group          \strong{character factor} \cr
-#'                       The groups for aggregation.
+#'                       The groups for aggregation, if not already in 
+#'                       SummarizedExperiment::colData(D)$group. 
 #' @param missing.limit  \strong{numeric} \cr
 #'                       The proportion of missing values that is allowed 
 #'                       (e.g. 0 means no missings allowed).
 #' @param method         \strong{character} \cr
 #'                       The method of aggregation. Options are 
 #'                       "mean", "sum" or "median"
-#' @param id_col         \strong{integer} \cr
-#'                       The column number containaining the peptide sequences 
-#'                       in the rowData of the SummarizedExperiment.
+#' @param seq_col         \strong{character} \cr
+#'                       The column name containaining the peptide sequences 
+#'                       in the rowData of the SummarizedExperiment. 
+#'                       Default is "Sequence"
 #'
 #' @return A SummarizedExperiment with aggregated intensities ($intensities).
 #' @export
@@ -62,18 +64,22 @@
 #' group <- factor(rep(1:9, each = 3))
 #' aggregateReplicates(D, group = group)
 
-aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
-    id_col = 1) {
+aggregateReplicates <- function(D, group = NULL, missing.limit = 0, method = "mean",
+    seq_col = "Sequence") {
     checkmate::assertClass(D, "SummarizedExperiment")
     checkmate::assertDataFrame(SummarizedExperiment::assays(D)$intensities, 
         all.missing=FALSE)
     checkmate::assertFactor(group)
     checkmate::assertNumber(missing.limit, lower = 0, upper = 1)
     checkmate::assertCharacter(method, pattern = "mean|sum|median")
-    checkmate::assertNumber(id_col, lower = 1, upper = ncol(D))
+    checkmate::assertCharacter(seq_col)
 
-    id <- SummarizedExperiment::rowData(D)[, id_col]
+    id <- SummarizedExperiment::rowData(D)[, seq_col]
     intensities <- SummarizedExperiment::assays(D)$intensities
+
+    if(is.null(group)){
+        group <- factor(SummarizedExperiment::colData(D)$group)
+    }
 
     FUN <- switch(method,
         mean  = rowMeans,

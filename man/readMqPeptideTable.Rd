@@ -6,6 +6,7 @@
 \usage{
 readMqPeptideTable(
   path,
+  group = NULL,
   LFQ = FALSE,
   remove_contaminants = FALSE,
   rename_columns = TRUE,
@@ -16,7 +17,11 @@ readMqPeptideTable(
 }
 \arguments{
 \item{path}{\strong{character} \cr
-The path to the peptides.txt table}
+The path to the peptides.txt table.}
+
+\item{group}{\strong{character} \cr
+List or vector of group names corresponding
+to the order of samples.}
 
 \item{LFQ}{\strong{logical} \cr
 If \code{TRUE}, LFQ intensities are used,

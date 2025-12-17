@@ -13,7 +13,6 @@ generateGraphsFromFASTA(
   collPeptNodes = TRUE,
   outpath = NULL,
   suffix = NULL,
-  save_intermediate = FALSE,
   protOrigin = NULL,
   ...
 )
@@ -36,10 +35,7 @@ The path where intermetdiate results are
 saved. If \code{NULL}, results are not saved.}
 
 \item{suffix}{\strong{character} \cr
-The suffix for saving results.}
-
-\item{save_intermediate}{\strong{logical} \cr
-If \code{TRUE}, the intermediate results
+The suffix for saving results.
 will also be saved.}
 
 \item{protOrigin}{\strong{list or data.frame} \cr

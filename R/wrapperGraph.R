@@ -18,8 +18,6 @@
 #'                                saved. If \code{NULL}, results are not saved.
 #' @param suffix                  \strong{character} \cr
 #'                                The suffix for saving results.
-#' @param save_intermediate       \strong{logical} \cr
-#'                                If \code{TRUE}, the intermediate results
 #'                                will also be saved.
 #' @param protOrigin             \strong{list or data.frame} \cr
 #'                                A list with the protein orgin corresponding to 
@@ -41,12 +39,11 @@ generateGraphsFromFASTA <- function(fasta,
     collPeptNodes = TRUE,
     outpath = NULL,
     suffix = NULL,
-    save_intermediate = FALSE,
     protOrigin = NULL,
     ...) {
     message("Digesting FASTA file ...")
     edgelist <- bppg::digestFASTA(fasta, protOrigin = protOrigin, ...)
-    if (save_intermediate) {
+    if (!is.null(outpath)) {
         message("Saving edgelist ...")
         checkmate::assertPathForOutput(outpath, overwrite = TRUE)
         utils::write.table(edgelist, sep = "\t", row.names = FALSE,
@@ -60,7 +57,7 @@ generateGraphsFromFASTA <- function(fasta,
     if (collProtNodes && !collPeptNodes) suffix2 <- "collprot_"
     if (!collProtNodes && !collPeptNodes) suffix2 <- NULL
 
-    if (save_intermediate) {
+    if (!is.null(outpath)) {
         saveRDS(graphs, file = file.path(outpath, paste0("subgraphs_", suffix2, suffix, ".rds")))
     }
     return(graphs)
@@ -89,12 +86,8 @@ generateGraphsFromFASTA <- function(fasta,
 #' @param max_aa                   \strong{integer} \cr
 #'                                 The maximum number of amino acids
 #'                                 in a peptide.
-#' @param id_columns               \strong{integer vector} \cr
-#'                                 The columns of D that contain ID information
-#'                                 (the rest should contain only peptide
-#'                                 intensities, properly normalized).
 #' @param seq_column               \strong{character} \cr
-#'                                 The column name of the column with the
+#'                                 The column name of the column of D with the
 #'                                 peptide sequences.
 #' @param collProtNodes            \strong{logical} \cr
 #'                                 If \code{TRUE}, the protein nodes
@@ -131,7 +124,6 @@ generateGraphsFromQuantData <- function(D,
     missed_cleavages = 2,
     min_aa = 6,
     max_aa = 50,
-    id_columns = 1,
     seq_column = "Sequence",
     collProtNodes = TRUE,
     collPeptNodes = FALSE,
@@ -153,7 +145,7 @@ generateGraphsFromQuantData <- function(D,
     ## aggregate replicates by calculating the mean
     group <- factor(limma::strsplit2(colnames(D), split = "_")[, 1])
     D_aggr <- bppg::aggregateReplicates(D, method = "mean", missing.limit = 0.4,
-        group = group, id_col = id_columns)
+        group = group, seq_col = seq_column)
 
     if (!is.null(outpath)) {
         openxlsx::write.xlsx(SummarizedExperiment::assays(D_aggr)$intensities, 

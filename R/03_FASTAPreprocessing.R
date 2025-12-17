@@ -63,7 +63,7 @@
     enzyme = "trypsin",
     missed = 0,
     warn = TRUE,
-    remove_initial_M = FALSE, ...) {
+    remove_initial_M = TRUE, ...) {
     seq_vector <- strsplit(sequence, split = "")[[1]]
     end_position <- length(seq_vector)
 
@@ -204,8 +204,7 @@ digestFASTA <- function(fasta,
         pbapply::pblapply(names(fasta), FUN = function(x) {
             sequ <- fasta[[x]]
             class(sequ) <- NULL
-            y <- .digest2(sequ, missed = missed_cleavages, warn = FALSE,
-                    remove_initial_M = TRUE, ...) # TODO HARDCODED
+            y <- .digest2(sequ, missed = missed_cleavages, warn = FALSE, ...)
             ind <- nchar(as.character(y)) >= min_aa &
                 nchar(as.character(y)) <= max_aa
             if (sum(ind) > 0){
