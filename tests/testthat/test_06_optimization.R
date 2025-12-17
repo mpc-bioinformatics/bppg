@@ -57,9 +57,9 @@ test_that("test iterateOverCi with extended grid", {
     M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = FALSE)
     rjLog <- log2(c(0.6, 1.2))
     S <- list(X = M, fc = rjLog)
-
     res2 <- iterateOverCi(S, grid.size = 10,
                           extend_grid_at_borders = TRUE)
+
     testfile_path <- file.path(testthat::test_path(), "testfiles")
     # saveRDS(res2, file.path(testfile_path, "test_iterateOverCi_file2.rds"))
     res2_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file2.rds"))
@@ -81,7 +81,7 @@ test_that("test automated analysis", {
     expect_snapshot(res3)
 })
 
-
+### TODO: anderer usecase wo das wirklich nen Unterschied macht?
 test_that("test automated analysis with using results from other proteins", {
     M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = FALSE)
     rj <- c(0.6, 1.2)

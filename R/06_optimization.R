@@ -506,14 +506,14 @@ iterateOverCi <- function(S,
 #'
 #' @examples ## TODO
 
-automatedAnalysisIteratedCi_old <- function(S,
-    res,
-    use_results_from_other_proteins = FALSE,
-    verbose = FALSE,
-    job = NULL,
-    S_is_graph = FALSE,
-    error_tol = 1e-10,
-    ratioLog_tol = 1e-6) {
+automatedAnalysisIteratedCi <- function(S,
+                                        res,
+                                        use_results_from_other_proteins = FALSE,
+                                        verbose = FALSE,
+                                        job = NULL,
+                                        S_is_graph = FALSE,
+                                        error_tol = 1e-10,
+                                        ratioLog_tol = 1e-6) {
 
     if (S_is_graph) {
         X <- igraph::as_biadjacency_matrix(S)
@@ -521,69 +521,56 @@ automatedAnalysisIteratedCi_old <- function(S,
         S <- list(X = X, fc = fc)  ### TODO: logFC nennen??
     }
 
-
-
     n <- ncol(S$X) ## number of protein groups
 
-    vapply(1:n, FUN = function(x, error_tol, ratioLog_tol) {
-        resProt <- res[res$protein == x, c("error", "RLog1", "C1")]
-        colnames(resProt) <- c("error", "RLog", "C")
-        return(.analyseResultSingleProt(resProt, error_tol = error_tol, ratioLog_tol = ratioLog_tol))
-    }, FUN.VALUES = ,
-    error_tol = error_tol, ratioLog_tol = ratioLog_tol)
 
-
-
-        if (use_results_from_other_proteins) {
-            ## use results from other proteins but only when Ci is not too extreme
-            X_tmp3 <- res[res$protein != i,]
-            # X_tmp3 <- X_tmp3[!is.na(X_tmp3$error),]
-            C_tmp3 <- X_tmp3[, paste0("C", i)]
-            X_tmp3 <- X_tmp3[X_tmp3$protein == i |
-                                 (C_tmp3 >= 0.01 & C_tmp3 < 0.99),]
-            R_3 <- X_tmp3[, paste0("R", i)]
-            C_3 <- X_tmp3[, paste0("C", i)]
-
-            ## see if solution can be enhanced by data from the other proteins
-            ind <- which(abs(min(error) - X_tmp3$error) <= 1e-10)
-            if (length(ind) > 0) {
-                if (!is.na(D_tmp$Ri)) {
-                    if (abs(diff(range(
-                        log2(c(D_tmp$Ri, R_3[ind]))))) >= 1e-04) {
-                        ## if there was 1 solution before there are multiple now
-                        D_tmp$Ri_min <- min(c(D_tmp$Ri, R_3[ind]))
-                        D_tmp$Ri_max <- max(c(D_tmp$Ri, R_3[ind]))
-                        D_tmp$Ri <- NA
-                    }
-                } else {
-                  ## if the range of solutions can be enhanced
-                  D_tmp$Ri_min <- min(c(D_tmp$Ri_min, R_3[ind]))
-                  D_tmp$Ri_max <- max(c(D_tmp$Ri_max, R_3[ind]))
-                }
-            }
-        }
-        D[[i]] <- D_tmp
-
+    if(!is.null(job)) {
+        graphID <- job$pars$prob.pars$k
+        comparison <- job$prob.name
+        job.id <- job$job.id
     }
 
-    RES <- BBmisc::convertListOfRowsToDataFrame(D)
-    return(RES)
+
+    f <- function(x, res, error_tol, ratioLog_tol, use_results_from_other_proteins) {
+
+        cols <- c("error", paste0("RLog", x), paste0("C", x))
+
+        resProt <- res[res$protein == x, cols]
+        colnames(resProt) <- c("error", "RLog", "C")
+
+        if (use_results_from_other_proteins) {
+            resProt2 <- res[res$protein != x, cols]
+            colnames(resProt2) <- c("error", "RLog", "C")
+            resProt2 <- resProt2[resProt2$C > 0.01 | resProt2$C < 0.99,]
+            resProt <- rbind(resProt, resProt2)
+        }
+
+        return(.analyseResultSingleProt(resProt, error_tol = error_tol, ratioLog_tol = ratioLog_tol))
+    }
+
+
+    RES <- vapply(1:n, FUN = f,
+                  FUN.VALUE = c("RiLog" = 0, "RiLog_min" = 0, "RiLog_max" = 0,
+                                 "Ci" = 0, "Ci_min" = 0, "Ci_max" = 0, "case" = 0),
+                  res = res, error_tol = error_tol, ratioLog_tol = ratioLog_tol,
+                  use_results_from_other_proteins = use_results_from_other_proteins)
+
+    return(as.data.frame(t(RES)))
 }
 
 
-resProt <- res2[res2$protein == 1, c("error", "RLog1", "C1")]
-colnames(resProt) <- c("error", "RLog", "C")
-
-resProt2 <- res2[res2$protein == 2, c("error", "RLog2", "C2")]
-colnames(resProt) <- c("error", "RLog", "C")
-
-# resProt: result from one specific protein
 
 
-.analyseResultSingleProt(resProt)
-.analyseResultSingleProt(resProt2)
-
-
+#' Title
+#'
+#' @param resProt
+#' @param error_tol
+#' @param ratioLog_tol
+#'
+#' @returns
+#' @export
+#'
+#' @examples
 .analyseResultSingleProt <- function(resProt, error_tol = 1e-10,
                                      ratioLog_tol = 1e-6) {
     minError <- min(resProt$error)
