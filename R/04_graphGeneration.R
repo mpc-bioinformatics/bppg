@@ -24,11 +24,11 @@
 #'          [generateGraphsFromFASTA()], [generateQuantGraphs()]
 #'
 #' @examples
-# ' library(seqinr)
-# ' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
-# ' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-# ' edgelist <- digestFASTA(fasta)
-# ' res <- bppg:::.getContractMapping(edgelist)
+#' library(seqinr)
+#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+#' edgelist <- digestFASTA(fasta)
+#' res <- bppg:::.getContractMapping(edgelist)
 .getContractMapping <- function(edgelist,
                                   collProtNodes = TRUE,
                                   collPeptNodes = FALSE) {
@@ -147,11 +147,11 @@
 #' @seealso [digestFASTA()]
 #'
 #' @examples
-# ' library(seqinr)
-# ' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
-# ' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-# ' edgelist <- digestFASTA(fasta)
-# ' res <- bppg::generateGraphsFromEdgelist(edgelist)
+#' library(seqinr)
+#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+#' edgelist <- digestFASTA(fasta)
+#' res <- bppg::generateGraphsFromEdgelist(edgelist)
 #'
 generateGraphsFromEdgelist <- function(edgelist,
                                   collProtNodes = FALSE,

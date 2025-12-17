@@ -1,7 +1,7 @@
 #' Functions in this file:
 #' .cleave()
 #' .digest2()
-#' digestFASTA
+#' digestFASTA()
 
 ### modified version of OrgMassSpecR::Digest (.cleave() and .digest2())
 ### - deleted functionality to calculate peptide masses &
@@ -23,7 +23,7 @@
 #' @return A dataframe with information (inkl. peptide sequence and start value)
 #'         of the peptides.
 #'
-#' @seealso [.digest2, digestFASTA()]
+#' @seealso [.digest2()], [digestFASTA()]
 #'
 .cleave <- function(sequence, start, stop, misses) {
     peptide <- substring(sequence, start, stop)

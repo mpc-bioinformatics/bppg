@@ -16,6 +16,7 @@ generateGraphsFromQuantData(
   collProtNodes = TRUE,
   collPeptNodes = FALSE,
   suffix = "",
+  protOrigin = NULL,
   ...
 )
 }
@@ -66,13 +67,27 @@ will be collapsed.}
 \item{suffix}{\strong{character} \cr
 The suffix for output files.}
 
-\item{...}{currently not in use}
+\item{protOrigin}{\strong{list or data.frame} \cr
+A list with the protein orgin corresponding to
+\link[seqinr:fasta]{seqinr::fasta}, proteins are used as rownames/index.}
+
+\item{...}{Additional arguments for \code{\link[=.digest2]{.digest2()}}.}
 }
 \value{
-A list of list of graphs
+A list of list of graphs.
 }
 \description{
 Generate graphs from quantitative peptide-level data
+}
+\examples{
+library(seqinr)
+file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+
+file <- system.file("extdata", "peptides.txt", package = "bppg")
+D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+
+graphs <- bppg::generateGraphsFromQuantData(D, fasta)
 }
 \seealso{
 \code{\link[=readMqPeptideTable]{readMqPeptideTable()}}, \code{\link[seqinr:read.fasta]{seqinr::read.fasta()}},

@@ -6,34 +6,31 @@
 on the fasta file.}
 \usage{
 generateQuantGraphs(
-  peptide_ratios,
-  id_cols = 1,
+  exp_peptide_ratios,
   fasta_edgelist,
-  outpath = NULL,
   seq_column = "Sequence",
+  outpath = NULL,
   collProtNodes = TRUE,
   collPeptNodes = FALSE,
   suffix = ""
 )
 }
 \arguments{
-\item{peptide_ratios}{\strong{data.frame} \cr
-A table with peptide ratios.}
-
-\item{id_cols}{\strong{integer vector} \cr
-The columns with ids, e.g. peptide sequences
-(everything except the peptide ratios)}
+\item{exp_peptide_ratios}{\strong{SummarizedExperiment} \cr
+A SummarizedExperiment from
+\link{calculatePeptideRatios} with peptide
+ratios.}
 
 \item{fasta_edgelist}{\strong{data.frame} \cr
 An edgelist created from the corresponding
 FASTA file, eg. created with
 \code{\link[=digestFASTA]{digestFASTA()}}.}
 
-\item{outpath}{\strong{character} \cr
-The output path for the results.}
-
 \item{seq_column}{\strong{character} \cr
 The column name of the peptide sequence.}
+
+\item{outpath}{\strong{character} \cr
+The output path for the results.}
 
 \item{collProtNodes}{\strong{logical} \cr
 If \code{TRUE}, the protein nodes will
@@ -45,6 +42,9 @@ be collapsed.}
 
 \item{suffix}{\strong{character} \cr
 The suffix for saving results.}
+
+\item{id_cols}{\strong{integer vector} \cr
+The columns with ids, e.g. peptide sequences.}
 }
 \value{
 A list of list of subgraphs
@@ -54,7 +54,18 @@ Generate graphs from peptide ratio table, using an edgelist calculated
 on the fasta file.
 }
 \examples{
-TODO
+library(seqinr)
+file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+edgelist <- digestFASTA(fasta)
+
+file <- system.file("extdata", "peptides.txt", package = "bppg")
+D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+group <- factor(rep(1:9, each = 3))
+dAgg <- aggregateReplicates(D, group = group)
+exp_peptide_ratios <- calculatePeptideRatios(dAgg)
+
+res <- generateQuantGraphs(exp_peptide_ratios, edgelist)
 }
 \seealso{
 \code{\link[=digestFASTA]{digestFASTA()}}

@@ -29,11 +29,11 @@ The minimal number of amino acids
 The maximal number of amino acids
 (set to Inf for no filtering).}
 
-\item{...}{Additional arguments for \code{\link[=.digest2]{.digest2()}}.}
-
-\item{\string{list}}{\cr
+\item{protOrigin}{\strong{list or data.frame} \cr
 A list with the protein orgin corresponding to
-\link[seqinr:fasta]{seqinr::fasta}}
+\link[seqinr:fasta]{seqinr::fasta}, proteins are used as rownames/index.}
+
+\item{...}{Additional arguments for \code{\link[=.digest2]{.digest2()}}.}
 }
 \value{
 data.frame with proteins and their peptide sequences, filtered

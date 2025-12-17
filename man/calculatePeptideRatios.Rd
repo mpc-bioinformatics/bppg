@@ -4,34 +4,17 @@
 \alias{calculatePeptideRatios}
 \title{Calculation of peptide ratios from aggregated intensities.}
 \usage{
-calculatePeptideRatios(
-  aggr_intensities,
-  id_cols = 1,
-  group_levels = NULL,
-  type = "ratio",
-  log_base = 10
-)
+calculatePeptideRatios(D, group_levels = NULL)
 }
 \arguments{
-\item{aggr_intensities}{\strong{data.frame} \cr
+\item{D}{\strong{SummarizedExperiment} \cr
 The result from function \code{\link[=aggregateReplicates]{aggregateReplicates()}}.}
-
-\item{id_cols}{\strong{integer vector} \cr
-The column numbers that contain peptide sequences
-etc (everything except intensities).}
 
 \item{group_levels}{\strong{character factor} \cr
 The levels of groups in the right order.}
-
-\item{type}{\strong{character} \cr
-Options "ratio" or "difference". Use "difference"
-if values are already on log-scale.}
-
-\item{log_base}{\strong{numeric} \cr
-The log base.}
 }
 \value{
-A data set with peptide ratios.
+A SummarizedExperiment with log2 peptide ratios (logRatios).
 }
 \description{
 Calculation of peptide ratios from aggregated intensities.

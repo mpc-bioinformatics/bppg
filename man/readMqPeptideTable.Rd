@@ -2,8 +2,7 @@
 % Please edit documentation in R/01_peptideInput.R
 \name{readMqPeptideTable}
 \alias{readMqPeptideTable}
-\title{Functions in this file:
-readMqPeptideTable}
+\title{Import of MaxQuant's peptide.txt-table.}
 \usage{
 readMqPeptideTable(
   path,
@@ -43,7 +42,8 @@ Indices of additional columns to keep,
 except peptide sequence and intensities}
 }
 \value{
-A data frame with sequences and intensities.
+A SummarizedExperiment with intensities, sequences, and optional data
+for the rowData dataframe.
 }
 \description{
 Import of MaxQuant's peptide.txt-table.

@@ -21,6 +21,13 @@
 ---
 
     Code
+      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
+    Output
+      [1]    NA 1.029 1.086 1.054
+
+---
+
+    Code
       igraph::as_edgelist(graphs[[i]][[j]])
     Output
            [,1]     [,2]         
@@ -49,6 +56,13 @@
 ---
 
     Code
+      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
+    Output
+      [1]    NA    NA 0.993 0.942 1.060 1.030
+
+---
+
+    Code
       igraph::as_edgelist(graphs[[i]][[j]])
     Output
            [,1]     [,2]   
@@ -65,6 +79,13 @@
       [[2]]
       [1] 0.964
       
+
+---
+
+    Code
+      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
+    Output
+      [1]    NA 0.964
 
 ---
 
@@ -101,6 +122,13 @@
 ---
 
     Code
+      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
+    Output
+      [1]    NA    NA 1.004 1.086 0.900 0.953 0.955
+
+---
+
+    Code
       igraph::as_edgelist(graphs[[i]][[j]])
     Output
            [,1]     [,2]         
@@ -125,6 +153,13 @@
       [[4]]
       [1] 0.986 1.009
       
+
+---
+
+    Code
+      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
+    Output
+      [1]    NA    NA 0.991 0.986 1.009
 
 ---
 
@@ -157,6 +192,13 @@
 ---
 
     Code
+      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
+    Output
+      [1]    NA    NA 0.945 0.982 1.023 0.943
+
+---
+
+    Code
       igraph::as_edgelist(graphs[[i]][[j]])
     Output
            [,1]            [,2]         
@@ -185,4 +227,11 @@
       [[5]]
       [1] 1.022 1.006
       
+
+---
+
+    Code
+      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
+    Output
+      [1]    NA    NA 1.033 0.920 1.022 1.006
 

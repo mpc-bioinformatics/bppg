@@ -2,27 +2,37 @@
 % Please edit documentation in R/04_graphGeneration.R
 \name{.contractGraph}
 \alias{.contractGraph}
-\title{Contracting of peptide and protein nodes of in a graph.}
+\title{Contracting of peptide and protein nodes.}
 \usage{
-.contractGraph(G, vMapping)
+.contractGraph(G, vMapping, collProtNodes, collPeptNodes)
 }
 \arguments{
 \item{G}{\strong{igraph graph} \cr
-bipartrite peptide protein graph}
+Bipartrite peptide protein graph.}
 
 \item{vMapping}{\strong{list} \cr
 A list with two dataframes from
-\code{\link[=.getContractMapping]{.getContractMapping()}}}
+\code{\link[=.getContractMapping]{.getContractMapping()}}.}
+
+\item{collProtNodes}{\strong{logical} \cr
+If \code{TRUE}, the protein nodes
+will be collapsed.}
+
+\item{collPeptNodes}{\strong{logical} \cr
+If \code{TRUE}, the peptide nodes
+will be collapsed.}
 }
 \value{
 An edgelist with collapsed protein and/or peptide nodes.
 }
 \description{
-Contracting of peptide and protein nodes of in a graph.
+Contracting of peptide and protein nodes.
 }
 \examples{
-TODO
-
+ G <- igraph::graph_from_edgelist(as.matrix(edgelist), directed = FALSE)
+igraph::V(G)[igraph::V(G)$name \%in\% edgelist[, 1]]$type <- TRUE
+igraph::V(G)[igraph::V(G)$name \%in\% edgelist[, 2]]$type <- FALSE
+res <- bppg:::.contractGraph(G, vMapping)
 }
 \seealso{
 For graph collapsing: \code{\link[=.getContractMapping]{.getContractMapping()}} \cr

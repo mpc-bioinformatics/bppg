@@ -25,7 +25,8 @@ If \code{TRUE}, the peptide nodes
 will be collapsed.}
 }
 \value{
-A list with two dataframes, one for peptides one for proteins.
+A list with two dataframes, one for peptide and one for protein
+signatures.
 }
 \description{
 Functions in this file:
@@ -36,7 +37,11 @@ generateQuantGraphs()
 Create Mapping signature for igraph::contract function.
 }
 \examples{
-TODO
+library(seqinr)
+file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+edgelist <- digestFASTA(fasta)
+res <- bppg:::.getContractMapping(edgelist)
 }
 \seealso{
 For collapsing graphs: \cr

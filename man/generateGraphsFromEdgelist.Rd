@@ -3,7 +3,7 @@
 \name{generateGraphsFromEdgelist}
 \alias{generateGraphsFromEdgelist}
 \title{Generate bipartite peptide-protein graphs from a list of digested proteins
-via an edgelist. Peptide and Proteins can be contracted.}
+via an edgelist. Peptide and protein nodes can be contracted.}
 \usage{
 generateGraphsFromEdgelist(
   edgelist,
@@ -14,29 +14,27 @@ generateGraphsFromEdgelist(
 \arguments{
 \item{edgelist}{\strong{data.frame} \cr
 An edgelist, output from \code{\link[=digestFASTA]{digestFASTA()}}.
-For quant data it needs to be in the column
-\strong{$pep_ratio}.}
+Quant data needs to be in the column
+\strong{$pep_logRatio}.}
 
 \item{collProtNodes}{\strong{logical} \cr
 If \code{TRUE}, the protein nodes
-will be collapsed.}
+will be contracted.}
 
 \item{collPeptNodes}{\strong{logical} \cr
 If \code{TRUE}, the peptide nodes
-will be collapsed.}
+will be contracted.}
 }
 \value{
 A list of subgraphs as igraph objects.
 }
 \description{
 Generate bipartite peptide-protein graphs from a list of digested proteins
-via an edgelist. Peptide and Proteins can be contracted.
+via an edgelist. Peptide and protein nodes can be contracted.
 }
 \examples{
-## TODO: example takes longer than 5s
 library(seqinr)
-file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta",
- package = "bppg")
+file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 edgelist <- digestFASTA(fasta)
 res <- bppg::generateGraphsFromEdgelist(edgelist)
