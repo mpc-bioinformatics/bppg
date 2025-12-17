@@ -53,7 +53,7 @@ test_that("test generateQuantGraphs", {
         assays = list(logRatios = ratio_table[, -1]),
         rowData = data.frame(peptides = rownames(ratio_table)),
         colData = data.frame(comparison = colnames(ratio_table[, -1]))
-    )    
+    )
     # Compute function
     graphs <- bppg::generateQuantGraphs(exp_peptide_ratios = expData,
                                     fasta_edgelist = edgelist,
@@ -62,6 +62,22 @@ test_that("test generateQuantGraphs", {
                                     collProtNodes = TRUE,
                                     collPeptNodes = TRUE,
                                     suffix = "")
+
+
+    ###########
+    ### save graphs for optimization later
+    graphs2 <- bppg::generateQuantGraphs(exp_peptide_ratios = expData,
+                                        fasta_edgelist = edgelist,
+                                        outpath = temp_dir,
+                                        seq_column = "peptides",
+                                        collProtNodes = TRUE,
+                                        collPeptNodes = FALSE,
+                                        suffix = "")
+
+    testfile_path <- file.path(testthat::test_path(), "testfiles")
+    # saveRDS(graphs2, file.path(testfile_path, "quantGraphsForTesting.rds"))
+    ###################
+
 
     # Check result attributes
     expect_true(file.exists(file.path(temp_dir, "edgelist_filtered_.xlsx")))
