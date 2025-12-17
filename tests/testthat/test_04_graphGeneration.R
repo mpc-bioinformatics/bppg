@@ -65,7 +65,7 @@ test_that("test generateQuantGraphs", {
 
 
     ###########
-    ### save graphs for optimization later
+    ### save graphs for optimization later and not collapsed peptides
     graphs2 <- bppg::generateQuantGraphs(exp_peptide_ratios = expData,
                                         fasta_edgelist = edgelist,
                                         outpath = temp_dir,
@@ -88,6 +88,7 @@ test_that("test generateQuantGraphs", {
         for (j in seq_along(graphs[[i]])) {
         expect_snapshot(igraph::as_edgelist(graphs[[i]][[j]]))
         expect_snapshot(igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio"))
+        expect_snapshot(igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio"))
         }
     }
 
