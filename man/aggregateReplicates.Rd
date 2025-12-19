@@ -4,14 +4,21 @@
 \alias{aggregateReplicates}
 \title{Aggregate replicates of the same experimental group.}
 \usage{
-aggregateReplicates(D, group, missing.limit = 0, method = "mean", id_cols = 1)
+aggregateReplicates(
+  D,
+  group = NULL,
+  missing.limit = 0,
+  method = "mean",
+  seq_col = "Sequence"
+)
 }
 \arguments{
-\item{D}{\strong{data.frame} \cr
-The data set containing the peptide intensities.}
+\item{D}{\strong{SummarizedExperiment} \cr
+The data experiment containing the peptide intensities.}
 
 \item{group}{\strong{character factor} \cr
-The groups for aggregation.}
+The groups for aggregation, if not already in
+SummarizedExperiment::colData(D)$group.}
 
 \item{missing.limit}{\strong{numeric} \cr
 The proportion of missing values that is allowed
@@ -21,12 +28,13 @@ The proportion of missing values that is allowed
 The method of aggregation. Options are
 "mean", "sum" or "median"}
 
-\item{id_cols}{\strong{integer vector} \cr
-The column numbers that contain peptide sequences etc
-(everything except intensities).}
+\item{seq_col}{\strong{character} \cr
+The column name containaining the peptide sequences
+in the rowData of the SummarizedExperiment.
+Default is "Sequence"}
 }
 \value{
-A data set with aggregated intensities.
+A SummarizedExperiment with aggregated intensities ($intensities).
 }
 \description{
 Aggregate replicates of the same experimental group.
