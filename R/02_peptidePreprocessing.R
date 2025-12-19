@@ -13,14 +13,17 @@
 #' @param Y       \strong{character} \cr
 #'                The column name of group2.
 #' @param useNA   \strong{logical} \cr
-#'                If \code{TRUE},results 0 and Inf are possible, otherwise
-#'                ratio is NA if value for X or Y is NA
+#'                If \code{TRUE}, results 0 and Inf are possible, otherwise
+#'                ratio is NA, if value for X or Y is NA
 #'
 #' @return The fold changes (Y/X).
 #'
 #'
-#' @examples ## TODO
-#'
+#' @examples 
+#' D <- data.frame(s1 = c(1,4), s2 = c(2,5), s3 = c(3,6))
+#' X <- "s1"
+#' Y <- "s2"
+#' bppg:::.foldChange(D,X,Y)
 
 .foldChange <- function(D, X, Y, useNA = FALSE) {
     FC <- D[, Y] / D[, X]
@@ -36,21 +39,23 @@
 
 #' Aggregate replicates of the same experimental group.
 #'
-#' @param D               \strong{data.frame} \cr
-#'                        The data set containing the peptide intensities.
-#' @param missing.limit   \strong{numeric} \cr
-#'                        The proportion of missing values that is allowed 
-#'                        (e.g. 0 means no missings allowed).
-#' @param method          \strong{character} \cr
-#'                        The method of aggregation. Options are 
-#'                        "mean", "sum" or "median"
-#' @param group           \strong{character factor} \cr
-#'                        The groups for aggregation.
-#' @param id_cols         \strong{integer vector} \cr
-#'                        The column numbers that contain peptide sequences etc
-#'                        (everything except intensities).
+#' @param D              \strong{SummarizedExperiment} \cr
+#'                       The data experiment containing the peptide intensities.
+#' @param group          \strong{character factor} \cr
+#'                       The groups for aggregation, if not already in 
+#'                       SummarizedExperiment::colData(D)$group. 
+#' @param missing.limit  \strong{numeric} \cr
+#'                       The proportion of missing values that is allowed 
+#'                       (e.g. 0 means no missings allowed).
+#' @param method         \strong{character} \cr
+#'                       The method of aggregation. Options are 
+#'                       "mean", "sum" or "median"
+#' @param seq_col         \strong{character} \cr
+#'                       The column name containaining the peptide sequences 
+#'                       in the rowData of the SummarizedExperiment. 
+#'                       Default is "Sequence"
 #'
-#' @return A data set with aggregated intensities.
+#' @return A SummarizedExperiment with aggregated intensities ($intensities).
 #' @export
 #'
 #' @examples
@@ -59,91 +64,92 @@
 #' group <- factor(rep(1:9, each = 3))
 #' aggregateReplicates(D, group = group)
 
-aggregateReplicates <- function(D, group, missing.limit = 0, method = "mean",
-    id_cols = 1) {
+aggregateReplicates <- function(D, group = NULL, missing.limit = 0, method = "mean",
+    seq_col = "Sequence") {
+    checkmate::assertClass(D, "SummarizedExperiment")
+    checkmate::assertDataFrame(SummarizedExperiment::assays(D)$intensities, 
+        all.missing=FALSE)
+    checkmate::assertFactor(group)
+    checkmate::assertNumber(missing.limit, lower = 0, upper = 1)
+    checkmate::assertCharacter(method, pattern = "mean|sum|median")
+    checkmate::assertCharacter(seq_col)
 
-    id <- D[, id_cols, drop = FALSE]
-    intensities <- D[, -(id_cols)]
+    id <- SummarizedExperiment::rowData(D)[, seq_col]
+    intensities <- SummarizedExperiment::assays(D)$intensities
 
-    res <- NULL
-    for (i in 1:length(levels(group))) {
+    if(is.null(group)){
+        group <- factor(SummarizedExperiment::colData(D)$group)
+    }
 
+    FUN <- switch(method,
+        mean  = rowMeans,
+        sum = rowSums,
+        median = robustbase::rowMedians)
+
+    res <- vapply(1:length(levels(group)), function(i){
         X_tmp <- intensities[, group == levels(group)[i]]
-
-        FUN <- switch(method,
-            mean  = rowMeans,
-            sum = rowSums,
-            median = robustbase::rowMedians)
-
         X_tmp <- as.matrix(X_tmp)
 
         res_tmp <- FUN(X_tmp, na.rm = TRUE)
-        missingx <- apply(X_tmp, 1, function(x) mean(is.na(x)))
-        res_tmp[missingx > missing.limit | missingx == 1] <- NA
-        res <- cbind(res, res_tmp)
-    }
+        missingx <- rowMeans(is.na(X_tmp))
+        res_tmp[missingx > missing.limit | missingx == 1] <- NA 
+        res_tmp    
+    }, numeric(length(id)))
 
     res <- as.data.frame(res)
     colnames(res) <- levels(group)
-    res <- data.frame(id, res)
+    rownames(res) <- id
+    res <- SummarizedExperiment::SummarizedExperiment(
+        assays = list(intensities = res), 
+        colData = data.frame(group = colnames(res)),
+        rowData = SummarizedExperiment::rowData(D))
     return(res)
 }
 
 #' Calculation of peptide ratios from aggregated intensities.
 #'
-#' @param aggr_intensities   \strong{data.frame} \cr
+#' @param D                  \strong{SummarizedExperiment} \cr
 #'                           The result from function [aggregateReplicates()].
-#' @param id_cols            \strong{integer vector} \cr
-#'                           The column numbers that contain peptide sequences
-#'                           etc (everything except intensities).
 #' @param group_levels       \strong{character factor} \cr
 #'                           The levels of groups in the right order.
-#' @param type               \strong{character} \cr
-#'                           Options "ratio" or "difference". Use "difference"
-#'                           if values are already on log-scale.
-#' @param log_base           \strong{numeric} \cr
-#'                           The log base.
 #'
-#' @return A data set with peptide ratios.
+#' @return A SummarizedExperiment with log2 peptide ratios (logRatios).
 #' @export
 #'
-#' @examples ## TODO
-#'
+#' @examples 
+#' file <- system.file("extdata", "peptides.txt", package = "bppg")
+#' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' group <- factor(rep(1:9, each = 3))
+#' dAgg <- aggregateReplicates(D, group = group)
+#' calculatePeptideRatios(dAgg)
 
-calculatePeptideRatios <- function(aggr_intensities, id_cols = 1,
-    group_levels = NULL, type = "ratio",
-    log_base = 10) {
+calculatePeptideRatios <- function(D, group_levels = NULL) {
+    checkmate::assertClass(D, "SummarizedExperiment")
+    checkmate::assertDataFrame(SummarizedExperiment::assays(
+        D)$intensities, all.missing=FALSE)
+    checkmate::assertVector(group_levels, unique = TRUE, null.ok = TRUE)
 
-    id <- aggr_intensities[, id_cols, drop = FALSE]
-    aggr_intensities <- aggr_intensities[, -(id_cols)]
+    aggr_intensities <- SummarizedExperiment::assays(D)$intensities
 
     if (is.null(group_levels)) {
-        group_levels <- factor(colnames(aggr_intensities),
-            levels = colnames(aggr_intensities))
+        group_levels <- SummarizedExperiment::colData(D)$group
     }
 
-    peptide_ratios <- NULL ## could we allocate that
+    # create pairwise groups for ratio calculation
+    groupCombinations <- combn(group_levels, 2)
+    peptide_log_ratios <- vapply(seq_len(ncol(groupCombinations)), function(i) {
+        log2(.foldChange(D = aggr_intensities, X = groupCombinations[1, i],
+            Y = groupCombinations[2, i]))
+    }, numeric(nrow(aggr_intensities)))
 
-    ## TODO VAPPLY?
-    for (i in 1:(length(group_levels) - 1)) {
-        for (j in (i + 1):length(group_levels)) {
-            col1 <- which(colnames(aggr_intensities) == group_levels[i])
-            col2 <- which(colnames(aggr_intensities) == group_levels[j])
+    peptide_log_ratios <- data.frame(peptide_log_ratios)
+    colnames(peptide_log_ratios) <- paste0("logRatio_", groupCombinations[1, ], "_", 
+        groupCombinations[2, ])
+    rownames(peptide_log_ratios) <- rownames(aggr_intensities)
 
-            name <- paste0("ratio_", group_levels[i], "_", group_levels[j])
-
-            if (type == "ratio") {
-                FC <- .foldChange(D = aggr_intensities, X = col1, Y = col2)
-            }
-            if (type == "difference") {
-                FC <- aggr_intensities[, col2] - aggr_intensities[, col1]
-                FC <- log_base^FC
-            }
-
-            peptide_ratios <- cbind(peptide_ratios, FC)
-            colnames(peptide_ratios)[ncol(peptide_ratios)] <- name
-        }
-    }
-
-    return(data.frame(id, peptide_ratios))
+    res <- SummarizedExperiment::SummarizedExperiment(
+        assays = list(logRatios = peptide_log_ratios), 
+        colData = data.frame(comparison = colnames(peptide_log_ratios)),
+        rowData = SummarizedExperiment::rowData(D))
+    return(res)
 }

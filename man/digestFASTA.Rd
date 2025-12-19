@@ -4,10 +4,17 @@
 \alias{digestFASTA}
 \title{In silico tryptic digestion of whole FASTA file.}
 \usage{
-digestFASTA(fasta, missed_cleavages = 2, min_aa = 6, max_aa = 50, ...)
+digestFASTA(
+  fasta,
+  missed_cleavages = 2,
+  min_aa = 6,
+  max_aa = 50,
+  protOrigin = NULL,
+  ...
+)
 }
 \arguments{
-\item{fasta}{\strong{list of vector of characters} \cr
+\item{fasta}{\strong{list of character sequence} \cr
 A fasta file, already read into R by
 \code{\link[seqinr:read.fasta]{seqinr::read.fasta()}}.}
 
@@ -22,11 +29,15 @@ The minimal number of amino acids
 The maximal number of amino acids
 (set to Inf for no filtering).}
 
+\item{protOrigin}{\strong{list or data.frame} \cr
+A list with the protein orgin corresponding to
+\link[seqinr:fasta]{seqinr::fasta}, proteins are used as rownames/index.}
+
 \item{...}{Additional arguments for \code{\link[=.digest2]{.digest2()}}.}
 }
 \value{
-List of vectors of peptide sequences, filtered for minimal
-and maximal number of amino acids.
+data.frame with proteins and their peptide sequences, filtered
+for minimal and maximal number of amino acids.
 }
 \description{
 In silico tryptic digestion of whole FASTA file.

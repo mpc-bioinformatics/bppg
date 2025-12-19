@@ -3,3893 +3,2610 @@
     Code
       digested_proteins1
     Output
-                                        sequence start stop mc
-      1                        MHPDATDSGGAGPSPAR     1   17  0
-      2                            AAGAGGRPVSGFR    18   30  0
-      3                                      GER    31   33  0
-      4                   RPESPGDAEAAAAAAPGAPGGR    34   55  0
-      5   SWWKPVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFR    56   93  0
-      6                  LSLYLSCAAAAFLLGILFALVCR    94  116  0
-      7                                      SPR   117  119  0
-      8                             AQPPDFAAAWSR   120  131  0
-      9                                 LAATSAAR   132  139  0
-      10                      RPPGSPVYGNSHESAQSR   140  157  0
-      11                                       R   158  158  0
-      12                               VVISHNMDK   159  167  0
-      13                                     ALK   168  170  0
-      14                                EVFDYSYR   171  178  0
-      15                            DYILSWYGNLSR   179  190  0
-      16                      DEGQLYHLLLEDFWEIAR   191  208  0
-      17                                   QLHHR   209  213  0
-      18                                LSHVDVVK   214  221  0
-      19                                VVCNDVVR   222  229  0
-      20                              TLLTHFCDLK   230  239  0
-      21                                   AANAR   240  244  0
-      22                         HEEQPRPFVLHACLR   245  259  0
-      23                                 NSDDEVR   260  266  0
-      24                                 FLQTCSR   267  273  0
-      25                              VLVFCLLPSK   274  283  0
-      26                                DVQSLSLR   284  291  0
-      27                              IMLAEILTTK   292  301  0
-      28              VLKPVVELLSNPDYINQMLLAQLAYR   302  327  0
-      29                                EQMNEHHK   328  335  0
-      30                                       R   336  336  0
-      31                           AYTYAPSYEDFIK   337  349  0
-      32                            LINSNSDVEFLK   350  361  0
-      33                                     QLR   362  364  0
-      34                    YQIVVEIIQATTISSFPQLK   365  384  0
-      35                                       R   385  385  0
-      36                                      HK   386  387  0
-      37                                      GK   388  389  0
-      38                                  ETAAMK   390  395  0
-      39                                   ADLLR   396  400  0
-      40                                      AR   401  402  0
-      41                                     NMK   403  405  0
-      42                                       R   406  406  0
-      43                               YINQLTVAK   407  415  0
-      44                                       K   416  416  0
-      45                                    QCEK   417  420  0
-      46                                       R   421  421  0
-      47                                      IR   422  423  0
-      48               ILGGPAYDQQEDGALDEGEGPQSQK   424  448  0
-      49                          ILQFEDILANTFYR   449  462  0
-      50                               EHFGMYMER   463  471  0
-      51                                     MDK   472  474  0
-      52                                       R   475  475  0
-      53                           ALISFWESVEHLK   476  488  0
-      54                                    NANK   489  492  0
-      55                     NEIPQLVGEIYQNFFVESK   493  511  0
-      56                                  EISVEK   512  517  0
-      57                                    SLYK   518  521  0
-      58                              EIQQCLVGNK   522  531  0
-      59                                 GIEVFYK   532  538  0
-      60                              IQEDVYETLK   539  548  0
-      61                                      DR   549  550  0
-      62                           YYPSFIVSDLYEK   551  563  0
-      63                                    LLIK   564  567  0
-      64                                    EEEK   568  571  0
-      65                               HASQMISNK   572  580  0
-      66                                  DEMGPR   581  586  0
-      67               DEAGEEAVDDGTNQINEQASFAVNK   587  611  0
-      68                                      LR   612  613  0
-      69                                   ELNEK   614  618  0
-      70                                    LEYK   619  622  0
-      71                                       R   623  623  0
-      72                          QALNSIQNAPKPDK   624  637  0
-      73                                       K   638  638  0
-      74                                    IVSK   639  642  0
-      75                                      LK   643  644  0
-      76                                DEIILIEK   645  652  0
-      77                                      ER   653  654  0
-      78                               TDLQLHMAR   655  663  0
-      79                            TDWWCENLGMWK   664  675  0
-      80      ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK   676  709  0
-      81                                  NWTVPR   710  715  0
-      82                                       R   716  716  0
-      83                               LSEFQNLHR   717  725  0
-      84                                       K   726  726  0
-      85                               LSECVPSLK   727  735  0
-      86                                       K   736  736  0
-      87                                VQLPSLSK   737  744  0
-      88                                    LPFK   745  748  0
-      89                                   SIDQK   749  753  0
-      90                                    FMEK   754  757  0
-      91                                      SK   758  759  0
-      92                                   NQLNK   760  764  0
-      93                              FLQNLLSDER   765  774  0
-      94                     LCQSEALYAFLSPSPDYLK   775  793  0
-      95                                 VIDVQGK   794  800  0
-      96                                       K   801  801  0
-      97                             NSFSLSSFLER   802  812  0
-      98                                     LPR   813  815  0
-      99              DFFSHQEEETEEDSDLSDYGDDVDGR   816  841  0
-      100                                      K   842  842  0
-      101                     DALAEPCFMLIGEIFELR   843  860  0
-      102                                   GMFK   861  864  0
-      103                                    WVR   865  867  0
-      104                                      R   868  868  0
-      105                           TLIALVQVTFGR   869  880  0
-      106                                   TINK   881  884  0
-      107                                    QIR   885  887  0
-      108                   DTVSWIFSEQMLVYYINIFR   888  907  0
-      109                               DAFWPNGK   908  915  0
-      110                               LAPPTTIR   916  923  0
-      111                                     SK   924  925  0
-      112                                EQSQETK   926  932  0
-      113                                     QR   933  934  0
-      114                                   AQQK   935  938  0
-      115                    LLENIPDMLQSLVGQQNAR   939  957  0
-      116                                  HGIIK   958  962  0
-      117                              IFNALQETR   963  971  0
-      118                                    ANK   972  974  0
-      119                    HLLYALMELLLIELCPELR   975  993  0
-      120                                VHLDQLK   994 1000  0
-      121                                   AGQV  1001 1004  0
-      122                       HPDATDSGGAGPSPAR     2   17  0
+       [1] "MESQQLHQNPHSQHGSAYASVTSK"                                       
+       [2] "EVPSNQDPLAVSASNLPEFDR"                                          
+       [3] "DSTK"                                                           
+       [4] "VNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK"                 
+       [5] "AMASNWAHYQQPSMMTCSHYQTSPAYYQPDPHYPLPQYIPPLSTSSPDPIDSQDQHSEVPQAK"
+       [6] "TK"                                                             
+       [7] "VR"                                                             
+       [8] "NNVLPPHTLTSEENFSTWVK"                                           
+       [9] "FYIR"                                                           
+      [10] "FLK"                                                            
+      [11] "NSNLGDIIPNDQGEIK"                                               
+      [12] "R"                                                              
+      [13] "QMTYEEHAYIYNTFQAFAPFHLLPTWVK"                                   
+      [14] "QILEINYSDILTVLCK"                                               
+      [15] "SVSK"                                                           
+      [16] "MQTNNQELK"                                                      
+      [17] "DWIALANLEYNGSTSADTFEITVSTIIQR"                                  
+      [18] "LK"                                                             
+      [19] "ENNINVSDR"                                                      
+      [20] "LACQLILK"                                                       
+      [21] "GLSGDFK"                                                        
+      [22] "YLR"                                                            
+      [23] "NQYR"                                                           
+      [24] "TK"                                                             
+      [25] "TNMK"                                                           
+      [26] "LSQLFAEIQLIYDENK"                                               
+      [27] "IMNLNKPSQYK"                                                    
+      [28] "QHSEYK"                                                         
+      [29] "NVSR"                                                           
+      [30] "TSPNTTNTK"                                                      
+      [31] "VTTR"                                                           
+      [32] "NYHR"                                                           
+      [33] "TNSSKPR"                                                        
+      [34] "AAK"                                                            
+      [35] "AHNIATSSK"                                                      
+      [36] "FSR"                                                            
+      [37] "VNSDHINESTVSSQYLSDDNELSLRPATER"                                 
+      [38] "I"                                                              
+      [39] "ESQQLHQNPHSQHGSAYASVTSK"                                        
 
 ---
 
     Code
       digested_proteins2
     Output
-                                                               sequence start stop mc
-      1                                               MHPDATDSGGAGPSPAR     1   17  0
-      2                                                         AAGAGGR    18   24  0
-      3                                                          PVSGFR    25   30  0
-      4                                                             GER    31   33  0
-      5                                                               R    34   34  0
-      6                                           PESPGDAEAAAAAAPGAPGGR    35   55  0
-      7                                                            SWWK    56   59  0
-      8                              PVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFR    60   93  0
-      9                                         LSLYLSCAAAAFLLGILFALVCR    94  116  0
-      10                                                            SPR   117  119  0
-      11                                                   AQPPDFAAAWSR   120  131  0
-      12                                                       LAATSAAR   132  139  0
-      13                                                              R   140  140  0
-      14                                              PPGSPVYGNSHESAQSR   141  157  0
-      15                                                              R   158  158  0
-      16                                                      VVISHNMDK   159  167  0
-      17                                                            ALK   168  170  0
-      18                                                       EVFDYSYR   171  178  0
-      19                                                   DYILSWYGNLSR   179  190  0
-      20                                             DEGQLYHLLLEDFWEIAR   191  208  0
-      21                                                          QLHHR   209  213  0
-      22                                                       LSHVDVVK   214  221  0
-      23                                                       VVCNDVVR   222  229  0
-      24                                                     TLLTHFCDLK   230  239  0
-      25                                                          AANAR   240  244  0
-      26                                                         HEEQPR   245  250  0
-      27                                                      PFVLHACLR   251  259  0
-      28                                                        NSDDEVR   260  266  0
-      29                                                        FLQTCSR   267  273  0
-      30                                                     VLVFCLLPSK   274  283  0
-      31                                                       DVQSLSLR   284  291  0
-      32                                                     IMLAEILTTK   292  301  0
-      33                                                            VLK   302  304  0
-      34                                        PVVELLSNPDYINQMLLAQLAYR   305  327  0
-      35                                                       EQMNEHHK   328  335  0
-      36                                                              R   336  336  0
-      37                                                  AYTYAPSYEDFIK   337  349  0
-      38                                                   LINSNSDVEFLK   350  361  0
-      39                                                            QLR   362  364  0
-      40                                           YQIVVEIIQATTISSFPQLK   365  384  0
-      41                                                              R   385  385  0
-      42                                                             HK   386  387  0
-      43                                                             GK   388  389  0
-      44                                                         ETAAMK   390  395  0
-      45                                                          ADLLR   396  400  0
-      46                                                             AR   401  402  0
-      47                                                            NMK   403  405  0
-      48                                                              R   406  406  0
-      49                                                      YINQLTVAK   407  415  0
-      50                                                              K   416  416  0
-      51                                                           QCEK   417  420  0
-      52                                                              R   421  421  0
-      53                                                             IR   422  423  0
-      54                                      ILGGPAYDQQEDGALDEGEGPQSQK   424  448  0
-      55                                                 ILQFEDILANTFYR   449  462  0
-      56                                                      EHFGMYMER   463  471  0
-      57                                                            MDK   472  474  0
-      58                                                              R   475  475  0
-      59                                                  ALISFWESVEHLK   476  488  0
-      60                                                           NANK   489  492  0
-      61                                            NEIPQLVGEIYQNFFVESK   493  511  0
-      62                                                         EISVEK   512  517  0
-      63                                                           SLYK   518  521  0
-      64                                                     EIQQCLVGNK   522  531  0
-      65                                                        GIEVFYK   532  538  0
-      66                                                     IQEDVYETLK   539  548  0
-      67                                                             DR   549  550  0
-      68                                                  YYPSFIVSDLYEK   551  563  0
-      69                                                           LLIK   564  567  0
-      70                                                           EEEK   568  571  0
-      71                                                      HASQMISNK   572  580  0
-      72                                                         DEMGPR   581  586  0
-      73                                      DEAGEEAVDDGTNQINEQASFAVNK   587  611  0
-      74                                                             LR   612  613  0
-      75                                                          ELNEK   614  618  0
-      76                                                           LEYK   619  622  0
-      77                                                              R   623  623  0
-      78                                                    QALNSIQNAPK   624  634  0
-      79                                                            PDK   635  637  0
-      80                                                              K   638  638  0
-      81                                                           IVSK   639  642  0
-      82                                                             LK   643  644  0
-      83                                                       DEIILIEK   645  652  0
-      84                                                             ER   653  654  0
-      85                                                      TDLQLHMAR   655  663  0
-      86                                                   TDWWCENLGMWK   664  675  0
-      87                             ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK   676  709  0
-      88                                                         NWTVPR   710  715  0
-      89                                                              R   716  716  0
-      90                                                      LSEFQNLHR   717  725  0
-      91                                                              K   726  726  0
-      92                                                      LSECVPSLK   727  735  0
-      93                                                              K   736  736  0
-      94                                                       VQLPSLSK   737  744  0
-      95                                                           LPFK   745  748  0
-      96                                                          SIDQK   749  753  0
-      97                                                           FMEK   754  757  0
-      98                                                             SK   758  759  0
-      99                                                          NQLNK   760  764  0
-      100                                                    FLQNLLSDER   765  774  0
-      101                                           LCQSEALYAFLSPSPDYLK   775  793  0
-      102                                                       VIDVQGK   794  800  0
-      103                                                             K   801  801  0
-      104                                                   NSFSLSSFLER   802  812  0
-      105                                                           LPR   813  815  0
-      106                                    DFFSHQEEETEEDSDLSDYGDDVDGR   816  841  0
-      107                                                             K   842  842  0
-      108                                            DALAEPCFMLIGEIFELR   843  860  0
-      109                                                          GMFK   861  864  0
-      110                                                           WVR   865  867  0
-      111                                                             R   868  868  0
-      112                                                  TLIALVQVTFGR   869  880  0
-      113                                                          TINK   881  884  0
-      114                                                           QIR   885  887  0
-      115                                          DTVSWIFSEQMLVYYINIFR   888  907  0
-      116                                                      DAFWPNGK   908  915  0
-      117                                                      LAPPTTIR   916  923  0
-      118                                                            SK   924  925  0
-      119                                                       EQSQETK   926  932  0
-      120                                                            QR   933  934  0
-      121                                                          AQQK   935  938  0
-      122                                           LLENIPDMLQSLVGQQNAR   939  957  0
-      123                                                         HGIIK   958  962  0
-      124                                                     IFNALQETR   963  971  0
-      125                                                           ANK   972  974  0
-      126                                           HLLYALMELLLIELCPELR   975  993  0
-      127                                                       VHLDQLK   994 1000  0
-      128                                                          AGQV  1001 1004  0
-      129                                      MHPDATDSGGAGPSPARAAGAGGR     1   24  1
-      130                                                 AAGAGGRPVSGFR    18   30  1
-      131                                                     PVSGFRGER    25   33  1
-      132                                                          GERR    31   34  1
-      133                                        RPESPGDAEAAAAAAPGAPGGR    34   55  1
-      134                                     PESPGDAEAAAAAAPGAPGGRSWWK    35   59  1
-      135                        SWWKPVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFR    56   93  1
-      136     PVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFRLSLYLSCAAAAFLLGILFALVCR    60  116  1
-      137                                    LSLYLSCAAAAFLLGILFALVCRSPR    94  119  1
-      138                                               SPRAQPPDFAAAWSR   117  131  1
-      139                                          AQPPDFAAAWSRLAATSAAR   120  139  1
-      140                                                     LAATSAARR   132  140  1
-      141                                            RPPGSPVYGNSHESAQSR   140  157  1
-      142                                            PPGSPVYGNSHESAQSRR   141  158  1
-      143                                                    RVVISHNMDK   158  167  1
-      144                                                  VVISHNMDKALK   159  170  1
-      145                                                   ALKEVFDYSYR   168  178  1
-      146                                          EVFDYSYRDYILSWYGNLSR   171  190  1
-      147                                DYILSWYGNLSRDEGQLYHLLLEDFWEIAR   179  208  1
-      148                                       DEGQLYHLLLEDFWEIARQLHHR   191  213  1
-      149                                                 QLHHRLSHVDVVK   209  221  1
-      150                                              LSHVDVVKVVCNDVVR   214  229  1
-      151                                            VVCNDVVRTLLTHFCDLK   222  239  1
-      152                                               TLLTHFCDLKAANAR   230  244  1
-      153                                                   AANARHEEQPR   240  250  1
-      154                                               HEEQPRPFVLHACLR   245  259  1
-      155                                              PFVLHACLRNSDDEVR   251  266  1
-      156                                                NSDDEVRFLQTCSR   260  273  1
-      157                                             FLQTCSRVLVFCLLPSK   267  283  1
-      158                                            VLVFCLLPSKDVQSLSLR   274  291  1
-      159                                            DVQSLSLRIMLAEILTTK   284  301  1
-      160                                                 IMLAEILTTKVLK   292  304  1
-      161                                    VLKPVVELLSNPDYINQMLLAQLAYR   302  327  1
-      162                               PVVELLSNPDYINQMLLAQLAYREQMNEHHK   305  335  1
-      163                                                     EQMNEHHKR   328  336  1
-      164                                                RAYTYAPSYEDFIK   336  349  1
-      165                                     AYTYAPSYEDFIKLINSNSDVEFLK   337  361  1
-      166                                               LINSNSDVEFLKQLR   350  364  1
-      167                                       QLRYQIVVEIIQATTISSFPQLK   362  384  1
-      168                                         YQIVVEIIQATTISSFPQLKR   365  385  1
-      169                                                           RHK   385  387  1
-      170                                                          HKGK   386  389  1
-      171                                                      GKETAAMK   388  395  1
-      172                                                   ETAAMKADLLR   390  400  1
-      173                                                       ADLLRAR   396  402  1
-      174                                                         ARNMK   401  405  1
-      175                                                          NMKR   403  406  1
-      176                                                    RYINQLTVAK   406  415  1
-      177                                                    YINQLTVAKK   407  416  1
-      178                                                         KQCEK   416  420  1
-      179                                                         QCEKR   417  421  1
-      180                                                           RIR   421  423  1
-      181                                   IRILGGPAYDQQEDGALDEGEGPQSQK   422  448  1
-      182                       ILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYR   424  462  1
-      183                                       ILQFEDILANTFYREHFGMYMER   449  471  1
-      184                                                  EHFGMYMERMDK   463  474  1
-      185                                                          MDKR   472  475  1
-      186                                                RALISFWESVEHLK   475  488  1
-      187                                             ALISFWESVEHLKNANK   476  492  1
-      188                                       NANKNEIPQLVGEIYQNFFVESK   489  511  1
-      189                                     NEIPQLVGEIYQNFFVESKEISVEK   493  517  1
-      190                                                    EISVEKSLYK   512  521  1
-      191                                                SLYKEIQQCLVGNK   518  531  1
-      192                                             EIQQCLVGNKGIEVFYK   522  538  1
-      193                                             GIEVFYKIQEDVYETLK   532  548  1
-      194                                                  IQEDVYETLKDR   539  550  1
-      195                                               DRYYPSFIVSDLYEK   549  563  1
-      196                                             YYPSFIVSDLYEKLLIK   551  567  1
-      197                                                      LLIKEEEK   564  571  1
-      198                                                 EEEKHASQMISNK   568  580  1
-      199                                               HASQMISNKDEMGPR   572  586  1
-      200                               DEMGPRDEAGEEAVDDGTNQINEQASFAVNK   581  611  1
-      201                                   DEAGEEAVDDGTNQINEQASFAVNKLR   587  613  1
-      202                                                       LRELNEK   612  618  1
-      203                                                     ELNEKLEYK   614  622  1
-      204                                                         LEYKR   619  623  1
-      205                                                  RQALNSIQNAPK   623  634  1
-      206                                                QALNSIQNAPKPDK   624  637  1
-      207                                                          PDKK   635  638  1
-      208                                                         KIVSK   638  642  1
-      209                                                        IVSKLK   639  644  1
-      210                                                    LKDEIILIEK   643  652  1
-      211                                                    DEIILIEKER   645  654  1
-      212                                                   ERTDLQLHMAR   653  663  1
-      213                                         TDLQLHMARTDWWCENLGMWK   655  675  1
-      214                TDWWCENLGMWKASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK   664  709  1
-      215                      ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETKNWTVPR   676  715  1
-      216                                                       NWTVPRR   710  716  1
-      217                                                    RLSEFQNLHR   716  725  1
-      218                                                    LSEFQNLHRK   717  726  1
-      219                                                    KLSECVPSLK   726  735  1
-      220                                                    LSECVPSLKK   727  736  1
-      221                                                     KVQLPSLSK   736  744  1
-      222                                                  VQLPSLSKLPFK   737  748  1
-      223                                                     LPFKSIDQK   745  753  1
-      224                                                     SIDQKFMEK   749  757  1
-      225                                                        FMEKSK   754  759  1
-      226                                                       SKNQLNK   758  764  1
-      227                                               NQLNKFLQNLLSDER   760  774  1
-      228                                 FLQNLLSDERLCQSEALYAFLSPSPDYLK   765  793  1
-      229                                    LCQSEALYAFLSPSPDYLKVIDVQGK   775  800  1
-      230                                                      VIDVQGKK   794  801  1
-      231                                                  KNSFSLSSFLER   801  812  1
-      232                                                NSFSLSSFLERLPR   802  815  1
-      233                                 LPRDFFSHQEEETEEDSDLSDYGDDVDGR   813  841  1
-      234                                   DFFSHQEEETEEDSDLSDYGDDVDGRK   816  842  1
-      235                                           KDALAEPCFMLIGEIFELR   842  860  1
-      236                                        DALAEPCFMLIGEIFELRGMFK   843  864  1
-      237                                                       GMFKWVR   861  867  1
-      238                                                          WVRR   865  868  1
-      239                                                 RTLIALVQVTFGR   868  880  1
-      240                                              TLIALVQVTFGRTINK   869  884  1
-      241                                                       TINKQIR   881  887  1
-      242                                       QIRDTVSWIFSEQMLVYYINIFR   885  907  1
-      243                                  DTVSWIFSEQMLVYYINIFRDAFWPNGK   888  915  1
-      244                                              DAFWPNGKLAPPTTIR   908  923  1
-      245                                                    LAPPTTIRSK   916  925  1
-      246                                                     SKEQSQETK   924  932  1
-      247                                                     EQSQETKQR   926  934  1
-      248                                                        QRAQQK   933  938  1
-      249                                       AQQKLLENIPDMLQSLVGQQNAR   935  957  1
-      250                                      LLENIPDMLQSLVGQQNARHGIIK   939  962  1
-      251                                                HGIIKIFNALQETR   958  971  1
-      252                                                  IFNALQETRANK   963  974  1
-      253                                        ANKHLLYALMELLLIELCPELR   972  993  1
-      254                                    HLLYALMELLLIELCPELRVHLDQLK   975 1000  1
-      255                                                   VHLDQLKAGQV   994 1004  1
-      256                                MHPDATDSGGAGPSPARAAGAGGRPVSGFR     1   30  2
-      257                                              AAGAGGRPVSGFRGER    18   33  2
-      258                                                    PVSGFRGERR    25   34  2
-      259                                     GERRPESPGDAEAAAAAAPGAPGGR    31   55  2
-      260                                    RPESPGDAEAAAAAAPGAPGGRSWWK    34   59  2
-      261   PESPGDAEAAAAAAPGAPGGRSWWKPVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFR    35   93  2
-      262 SWWKPVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFRLSLYLSCAAAAFLLGILFALVCR    56  116  2
-      263  PVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFRLSLYLSCAAAAFLLGILFALVCRSPR    60  119  2
-      264                        LSLYLSCAAAAFLLGILFALVCRSPRAQPPDFAAAWSR    94  131  2
-      265                                       SPRAQPPDFAAAWSRLAATSAAR   117  139  2
-      266                                         AQPPDFAAAWSRLAATSAARR   120  140  2
-      267                                    LAATSAARRPPGSPVYGNSHESAQSR   132  157  2
-      268                                           RPPGSPVYGNSHESAQSRR   140  158  2
-      269                                   PPGSPVYGNSHESAQSRRVVISHNMDK   141  167  2
-      270                                                 RVVISHNMDKALK   158  170  2
-      271                                          VVISHNMDKALKEVFDYSYR   159  178  2
-      272                                       ALKEVFDYSYRDYILSWYGNLSR   168  190  2
-      273                        EVFDYSYRDYILSWYGNLSRDEGQLYHLLLEDFWEIAR   171  208  2
-      274                           DYILSWYGNLSRDEGQLYHLLLEDFWEIARQLHHR   179  213  2
-      275                               DEGQLYHLLLEDFWEIARQLHHRLSHVDVVK   191  221  2
-      276                                         QLHHRLSHVDVVKVVCNDVVR   209  229  2
-      277                                    LSHVDVVKVVCNDVVRTLLTHFCDLK   214  239  2
-      278                                       VVCNDVVRTLLTHFCDLKAANAR   222  244  2
-      279                                         TLLTHFCDLKAANARHEEQPR   230  250  2
-      280                                          AANARHEEQPRPFVLHACLR   240  259  2
-      281                                        HEEQPRPFVLHACLRNSDDEVR   245  266  2
-      282                                       PFVLHACLRNSDDEVRFLQTCSR   251  273  2
-      283                                      NSDDEVRFLQTCSRVLVFCLLPSK   260  283  2
-      284                                     FLQTCSRVLVFCLLPSKDVQSLSLR   267  291  2
-      285                                  VLVFCLLPSKDVQSLSLRIMLAEILTTK   274  301  2
-      286                                         DVQSLSLRIMLAEILTTKVLK   284  304  2
-      287                          IMLAEILTTKVLKPVVELLSNPDYINQMLLAQLAYR   292  327  2
-      288                            VLKPVVELLSNPDYINQMLLAQLAYREQMNEHHK   302  335  2
-      289                              PVVELLSNPDYINQMLLAQLAYREQMNEHHKR   305  336  2
-      290                                        EQMNEHHKRAYTYAPSYEDFIK   328  349  2
-      291                                    RAYTYAPSYEDFIKLINSNSDVEFLK   336  361  2
-      292                                  AYTYAPSYEDFIKLINSNSDVEFLKQLR   337  364  2
-      293                           LINSNSDVEFLKQLRYQIVVEIIQATTISSFPQLK   350  384  2
-      294                                      QLRYQIVVEIIQATTISSFPQLKR   362  385  2
-      295                                       YQIVVEIIQATTISSFPQLKRHK   365  387  2
-      296                                                         RHKGK   385  389  2
-      297                                                    HKGKETAAMK   386  395  2
-      298                                                 GKETAAMKADLLR   388  400  2
-      299                                                 ETAAMKADLLRAR   390  402  2
-      300                                                    ADLLRARNMK   396  405  2
-      301                                                        ARNMKR   401  406  2
-      302                                                 NMKRYINQLTVAK   403  415  2
-      303                                                   RYINQLTVAKK   406  416  2
-      304                                                YINQLTVAKKQCEK   407  420  2
-      305                                                        KQCEKR   416  421  2
-      306                                                       QCEKRIR   417  423  2
-      307                                  RIRILGGPAYDQQEDGALDEGEGPQSQK   421  448  2
-      308                     IRILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYR   422  462  2
-      309              ILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYREHFGMYMER   424  471  2
-      310                                    ILQFEDILANTFYREHFGMYMERMDK   449  474  2
-      311                                                 EHFGMYMERMDKR   463  475  2
-      312                                             MDKRALISFWESVEHLK   472  488  2
-      313                                            RALISFWESVEHLKNANK   475  492  2
-      314                          ALISFWESVEHLKNANKNEIPQLVGEIYQNFFVESK   476  511  2
-      315                                 NANKNEIPQLVGEIYQNFFVESKEISVEK   489  517  2
-      316                                 NEIPQLVGEIYQNFFVESKEISVEKSLYK   493  521  2
-      317                                          EISVEKSLYKEIQQCLVGNK   512  531  2
-      318                                         SLYKEIQQCLVGNKGIEVFYK   518  538  2
-      319                                   EIQQCLVGNKGIEVFYKIQEDVYETLK   522  548  2
-      320                                           GIEVFYKIQEDVYETLKDR   532  550  2
-      321                                     IQEDVYETLKDRYYPSFIVSDLYEK   539  563  2
-      322                                           DRYYPSFIVSDLYEKLLIK   549  567  2
-      323                                         YYPSFIVSDLYEKLLIKEEEK   551  571  2
-      324                                             LLIKEEEKHASQMISNK   564  580  2
-      325                                           EEEKHASQMISNKDEMGPR   568  586  2
-      326                      HASQMISNKDEMGPRDEAGEEAVDDGTNQINEQASFAVNK   572  611  2
-      327                             DEMGPRDEAGEEAVDDGTNQINEQASFAVNKLR   581  613  2
-      328                              DEAGEEAVDDGTNQINEQASFAVNKLRELNEK   587  618  2
-      329                                                   LRELNEKLEYK   612  622  2
-      330                                                    ELNEKLEYKR   614  623  2
-      331                                              LEYKRQALNSIQNAPK   619  634  2
-      332                                               RQALNSIQNAPKPDK   623  637  2
-      333                                               QALNSIQNAPKPDKK   624  638  2
-      334                                                      PDKKIVSK   635  642  2
-      335                                                       KIVSKLK   638  644  2
-      336                                                IVSKLKDEIILIEK   639  652  2
-      337                                                  LKDEIILIEKER   643  654  2
-      338                                           DEIILIEKERTDLQLHMAR   645  663  2
-      339                                       ERTDLQLHMARTDWWCENLGMWK   653  675  2
-      340       TDLQLHMARTDWWCENLGMWKASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK   655  709  2
-      341          TDWWCENLGMWKASITSGEVTEENGEQLPCYFVMVSLQEVGGVETKNWTVPR   664  715  2
-      342                     ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETKNWTVPRR   676  716  2
-      343                                              NWTVPRRLSEFQNLHR   710  725  2
-      344                                                   RLSEFQNLHRK   716  726  2
-      345                                           LSEFQNLHRKLSECVPSLK   717  735  2
-      346                                                   KLSECVPSLKK   726  736  2
-      347                                            LSECVPSLKKVQLPSLSK   727  744  2
-      348                                                 KVQLPSLSKLPFK   736  748  2
-      349                                             VQLPSLSKLPFKSIDQK   737  753  2
-      350                                                 LPFKSIDQKFMEK   745  757  2
-      351                                                   SIDQKFMEKSK   749  759  2
-      352                                                   FMEKSKNQLNK   754  764  2
-      353                                             SKNQLNKFLQNLLSDER   758  774  2
-      354                            NQLNKFLQNLLSDERLCQSEALYAFLSPSPDYLK   760  793  2
-      355                          FLQNLLSDERLCQSEALYAFLSPSPDYLKVIDVQGK   765  800  2
-      356                                   LCQSEALYAFLSPSPDYLKVIDVQGKK   775  801  2
-      357                                           VIDVQGKKNSFSLSSFLER   794  812  2
-      358                                               KNSFSLSSFLERLPR   801  815  2
-      359                      NSFSLSSFLERLPRDFFSHQEEETEEDSDLSDYGDDVDGR   802  841  2
-      360                                LPRDFFSHQEEETEEDSDLSDYGDDVDGRK   813  842  2
-      361                 DFFSHQEEETEEDSDLSDYGDDVDGRKDALAEPCFMLIGEIFELR   816  860  2
-      362                                       KDALAEPCFMLIGEIFELRGMFK   842  864  2
-      363                                     DALAEPCFMLIGEIFELRGMFKWVR   843  867  2
-      364                                                      GMFKWVRR   861  868  2
-      365                                              WVRRTLIALVQVTFGR   865  880  2
-      366                                             RTLIALVQVTFGRTINK   868  884  2
-      367                                           TLIALVQVTFGRTINKQIR   869  887  2
-      368                                   TINKQIRDTVSWIFSEQMLVYYINIFR   881  907  2
-      369                               QIRDTVSWIFSEQMLVYYINIFRDAFWPNGK   885  915  2
-      370                          DTVSWIFSEQMLVYYINIFRDAFWPNGKLAPPTTIR   888  923  2
-      371                                            DAFWPNGKLAPPTTIRSK   908  925  2
-      372                                             LAPPTTIRSKEQSQETK   916  932  2
-      373                                                   SKEQSQETKQR   924  934  2
-      374                                                 EQSQETKQRAQQK   926  938  2
-      375                                     QRAQQKLLENIPDMLQSLVGQQNAR   933  957  2
-      376                                  AQQKLLENIPDMLQSLVGQQNARHGIIK   935  962  2
-      377                             LLENIPDMLQSLVGQQNARHGIIKIFNALQETR   939  971  2
-      378                                             HGIIKIFNALQETRANK   958  974  2
-      379                               IFNALQETRANKHLLYALMELLLIELCPELR   963  993  2
-      380                                 ANKHLLYALMELLLIELCPELRVHLDQLK   972 1000  2
-      381                                HLLYALMELLLIELCPELRVHLDQLKAGQV   975 1004  2
-
----
-
-    Code
-      digested_proteins3
-    Output
-                                                                                     sequence
-      1                                                                     MHPDATDSGGAGPSPAR
-      2                                                                         AAGAGGRPVSGFR
-      3                                                                                   GER
-      4                                                                RPESPGDAEAAAAAAPGAPGGR
-      5                                                SWWKPVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFR
-      6                                                               LSLYLSCAAAAFLLGILFALVCR
-      7                                                                                   SPR
-      8                                                                          AQPPDFAAAWSR
-      9                                                                              LAATSAAR
-      10                                                                   RPPGSPVYGNSHESAQSR
-      11                                                                                    R
-      12                                                                            VVISHNMDK
-      13                                                                                  ALK
-      14                                                                             EVFDYSYR
-      15                                                                         DYILSWYGNLSR
-      16                                                                   DEGQLYHLLLEDFWEIAR
-      17                                                                                QLHHR
-      18                                                                             LSHVDVVK
-      19                                                                             VVCNDVVR
-      20                                                                           TLLTHFCDLK
-      21                                                                                AANAR
-      22                                                                      HEEQPRPFVLHACLR
-      23                                                                              NSDDEVR
-      24                                                                              FLQTCSR
-      25                                                                           VLVFCLLPSK
-      26                                                                             DVQSLSLR
-      27                                                                           IMLAEILTTK
-      28                                                           VLKPVVELLSNPDYINQMLLAQLAYR
-      29                                                                             EQMNEHHK
-      30                                                                                    R
-      31                                                                        AYTYAPSYEDFIK
-      32                                                                         LINSNSDVEFLK
-      33                                                                                  QLR
-      34                                                                 YQIVVEIIQATTISSFPQLK
-      35                                                                                    R
-      36                                                                                   HK
-      37                                                                                   GK
-      38                                                                               ETAAMK
-      39                                                                                ADLLR
-      40                                                                                   AR
-      41                                                                                  NMK
-      42                                                                                    R
-      43                                                                            YINQLTVAK
-      44                                                                                    K
-      45                                                                                 QCEK
-      46                                                                                    R
-      47                                                                                   IR
-      48                                                            ILGGPAYDQQEDGALDEGEGPQSQK
-      49                                                                       ILQFEDILANTFYR
-      50                                                                            EHFGMYMER
-      51                                                                                  MDK
-      52                                                                                    R
-      53                                                                        ALISFWESVEHLK
-      54                                                                                 NANK
-      55                                                                  NEIPQLVGEIYQNFFVESK
-      56                                                                               EISVEK
-      57                                                                                 SLYK
-      58                                                                           EIQQCLVGNK
-      59                                                                              GIEVFYK
-      60                                                                           IQEDVYETLK
-      61                                                                                   DR
-      62                                                                        YYPSFIVSDLYEK
-      63                                                                                 LLIK
-      64                                                                                 EEEK
-      65                                                                            HASQMISNK
-      66                                                                               DEMGPR
-      67                                                            DEAGEEAVDDGTNQINEQASFAVNK
-      68                                                                                   LR
-      69                                                                                ELNEK
-      70                                                                                 LEYK
-      71                                                                                    R
-      72                                                                       QALNSIQNAPKPDK
-      73                                                                                    K
-      74                                                                                 IVSK
-      75                                                                                   LK
-      76                                                                             DEIILIEK
-      77                                                                                   ER
-      78                                                                            TDLQLHMAR
-      79                                                                         TDWWCENLGMWK
-      80                                                   ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK
-      81                                                                               NWTVPR
-      82                                                                                    R
-      83                                                                            LSEFQNLHR
-      84                                                                                    K
-      85                                                                            LSECVPSLK
-      86                                                                                    K
-      87                                                                             VQLPSLSK
-      88                                                                                 LPFK
-      89                                                                                SIDQK
-      90                                                                                 FMEK
-      91                                                                                   SK
-      92                                                                                NQLNK
-      93                                                                           FLQNLLSDER
-      94                                                                  LCQSEALYAFLSPSPDYLK
-      95                                                                              VIDVQGK
-      96                                                                                    K
-      97                                                                          NSFSLSSFLER
-      98                                                                                  LPR
-      99                                                           DFFSHQEEETEEDSDLSDYGDDVDGR
-      100                                                                                   K
-      101                                                                  DALAEPCFMLIGEIFELR
-      102                                                                                GMFK
-      103                                                                                 WVR
-      104                                                                                   R
-      105                                                                        TLIALVQVTFGR
-      106                                                                                TINK
-      107                                                                                 QIR
-      108                                                                DTVSWIFSEQMLVYYINIFR
-      109                                                                            DAFWPNGK
-      110                                                                            LAPPTTIR
-      111                                                                                  SK
-      112                                                                             EQSQETK
-      113                                                                                  QR
-      114                                                                                AQQK
-      115                                                                 LLENIPDMLQSLVGQQNAR
-      116                                                                               HGIIK
-      117                                                                           IFNALQETR
-      118                                                                                 ANK
-      119                                                                 HLLYALMELLLIELCPELR
-      120                                                                             VHLDQLK
-      121                                                                               AGQVR
-      122                                                      MHPDATDSGGAGPSPARAAGAGGRPVSGFR
-      123                                                                    AAGAGGRPVSGFRGER
-      124                                                           GERRPESPGDAEAAAAAAPGAPGGR
-      125                        RPESPGDAEAAAAAAPGAPGGRSWWKPVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFR
-      126                       SWWKPVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFRLSLYLSCAAAAFLLGILFALVCR
-      127                                                          LSLYLSCAAAAFLLGILFALVCRSPR
-      128                                                                     SPRAQPPDFAAAWSR
-      129                                                                AQPPDFAAAWSRLAATSAAR
-      130                                                          LAATSAARRPPGSPVYGNSHESAQSR
-      131                                                                 RPPGSPVYGNSHESAQSRR
-      132                                                                          RVVISHNMDK
-      133                                                                        VVISHNMDKALK
-      134                                                                         ALKEVFDYSYR
-      135                                                                EVFDYSYRDYILSWYGNLSR
-      136                                                      DYILSWYGNLSRDEGQLYHLLLEDFWEIAR
-      137                                                             DEGQLYHLLLEDFWEIARQLHHR
-      138                                                                       QLHHRLSHVDVVK
-      139                                                                    LSHVDVVKVVCNDVVR
-      140                                                                  VVCNDVVRTLLTHFCDLK
-      141                                                                     TLLTHFCDLKAANAR
-      142                                                                AANARHEEQPRPFVLHACLR
-      143                                                              HEEQPRPFVLHACLRNSDDEVR
-      144                                                                      NSDDEVRFLQTCSR
-      145                                                                   FLQTCSRVLVFCLLPSK
-      146                                                                  VLVFCLLPSKDVQSLSLR
-      147                                                                  DVQSLSLRIMLAEILTTK
-      148                                                IMLAEILTTKVLKPVVELLSNPDYINQMLLAQLAYR
-      149                                                  VLKPVVELLSNPDYINQMLLAQLAYREQMNEHHK
-      150                                                                           EQMNEHHKR
-      151                                                                      RAYTYAPSYEDFIK
-      152                                                           AYTYAPSYEDFIKLINSNSDVEFLK
-      153                                                                     LINSNSDVEFLKQLR
-      154                                                             QLRYQIVVEIIQATTISSFPQLK
-      155                                                               YQIVVEIIQATTISSFPQLKR
-      156                                                                                 RHK
-      157                                                                                HKGK
-      158                                                                            GKETAAMK
-      159                                                                         ETAAMKADLLR
-      160                                                                             ADLLRAR
-      161                                                                               ARNMK
-      162                                                                                NMKR
-      163                                                                          RYINQLTVAK
-      164                                                                          YINQLTVAKK
-      165                                                                               KQCEK
-      166                                                                               QCEKR
-      167                                                                                 RIR
-      168                                                         IRILGGPAYDQQEDGALDEGEGPQSQK
-      169                                             ILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYR
-      170                                                             ILQFEDILANTFYREHFGMYMER
-      171                                                                        EHFGMYMERMDK
-      172                                                                                MDKR
-      173                                                                      RALISFWESVEHLK
-      174                                                                   ALISFWESVEHLKNANK
-      175                                                             NANKNEIPQLVGEIYQNFFVESK
-      176                                                           NEIPQLVGEIYQNFFVESKEISVEK
-      177                                                                          EISVEKSLYK
-      178                                                                      SLYKEIQQCLVGNK
-      179                                                                   EIQQCLVGNKGIEVFYK
-      180                                                                   GIEVFYKIQEDVYETLK
-      181                                                                        IQEDVYETLKDR
-      182                                                                     DRYYPSFIVSDLYEK
-      183                                                                   YYPSFIVSDLYEKLLIK
-      184                                                                            LLIKEEEK
-      185                                                                       EEEKHASQMISNK
-      186                                                                     HASQMISNKDEMGPR
-      187                                                     DEMGPRDEAGEEAVDDGTNQINEQASFAVNK
-      188                                                         DEAGEEAVDDGTNQINEQASFAVNKLR
-      189                                                                             LRELNEK
-      190                                                                           ELNEKLEYK
-      191                                                                               LEYKR
-      192                                                                     RQALNSIQNAPKPDK
-      193                                                                     QALNSIQNAPKPDKK
-      194                                                                               KIVSK
-      195                                                                              IVSKLK
-      196                                                                          LKDEIILIEK
-      197                                                                          DEIILIEKER
-      198                                                                         ERTDLQLHMAR
-      199                                                               TDLQLHMARTDWWCENLGMWK
-      200                                      TDWWCENLGMWKASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK
-      201                                            ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETKNWTVPR
-      202                                                                             NWTVPRR
-      203                                                                          RLSEFQNLHR
-      204                                                                          LSEFQNLHRK
-      205                                                                          KLSECVPSLK
-      206                                                                          LSECVPSLKK
-      207                                                                           KVQLPSLSK
-      208                                                                        VQLPSLSKLPFK
-      209                                                                           LPFKSIDQK
-      210                                                                           SIDQKFMEK
-      211                                                                              FMEKSK
-      212                                                                             SKNQLNK
-      213                                                                     NQLNKFLQNLLSDER
-      214                                                       FLQNLLSDERLCQSEALYAFLSPSPDYLK
-      215                                                          LCQSEALYAFLSPSPDYLKVIDVQGK
-      216                                                                            VIDVQGKK
-      217                                                                        KNSFSLSSFLER
-      218                                                                      NSFSLSSFLERLPR
-      219                                                       LPRDFFSHQEEETEEDSDLSDYGDDVDGR
-      220                                                         DFFSHQEEETEEDSDLSDYGDDVDGRK
-      221                                                                 KDALAEPCFMLIGEIFELR
-      222                                                              DALAEPCFMLIGEIFELRGMFK
-      223                                                                             GMFKWVR
-      224                                                                                WVRR
-      225                                                                       RTLIALVQVTFGR
-      226                                                                    TLIALVQVTFGRTINK
-      227                                                                             TINKQIR
-      228                                                             QIRDTVSWIFSEQMLVYYINIFR
-      229                                                        DTVSWIFSEQMLVYYINIFRDAFWPNGK
-      230                                                                    DAFWPNGKLAPPTTIR
-      231                                                                          LAPPTTIRSK
-      232                                                                           SKEQSQETK
-      233                                                                           EQSQETKQR
-      234                                                                              QRAQQK
-      235                                                             AQQKLLENIPDMLQSLVGQQNAR
-      236                                                            LLENIPDMLQSLVGQQNARHGIIK
-      237                                                                      HGIIKIFNALQETR
-      238                                                                        IFNALQETRANK
-      239                                                              ANKHLLYALMELLLIELCPELR
-      240                                                          HLLYALMELLLIELCPELRVHLDQLK
-      241                                                                        VHLDQLKAGQVR
-      242                                                   MHPDATDSGGAGPSPARAAGAGGRPVSGFRGER
-      243                                              AAGAGGRPVSGFRGERRPESPGDAEAAAAAAPGAPGGR
-      244                     GERRPESPGDAEAAAAAAPGAPGGRSWWKPVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFR
-      245 RPESPGDAEAAAAAAPGAPGGRSWWKPVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFRLSLYLSCAAAAFLLGILFALVCR
-      246                    SWWKPVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFRLSLYLSCAAAAFLLGILFALVCRSPR
-      247                                              LSLYLSCAAAAFLLGILFALVCRSPRAQPPDFAAAWSR
-      248                                                             SPRAQPPDFAAAWSRLAATSAAR
-      249                                              AQPPDFAAAWSRLAATSAARRPPGSPVYGNSHESAQSR
-      250                                                         LAATSAARRPPGSPVYGNSHESAQSRR
-      251                                                        RPPGSPVYGNSHESAQSRRVVISHNMDK
-      252                                                                       RVVISHNMDKALK
-      253                                                                VVISHNMDKALKEVFDYSYR
-      254                                                             ALKEVFDYSYRDYILSWYGNLSR
-      255                                              EVFDYSYRDYILSWYGNLSRDEGQLYHLLLEDFWEIAR
-      256                                                 DYILSWYGNLSRDEGQLYHLLLEDFWEIARQLHHR
-      257                                                     DEGQLYHLLLEDFWEIARQLHHRLSHVDVVK
-      258                                                               QLHHRLSHVDVVKVVCNDVVR
-      259                                                          LSHVDVVKVVCNDVVRTLLTHFCDLK
-      260                                                             VVCNDVVRTLLTHFCDLKAANAR
-      261                                                      TLLTHFCDLKAANARHEEQPRPFVLHACLR
-      262                                                         AANARHEEQPRPFVLHACLRNSDDEVR
-      263                                                       HEEQPRPFVLHACLRNSDDEVRFLQTCSR
-      264                                                            NSDDEVRFLQTCSRVLVFCLLPSK
-      265                                                           FLQTCSRVLVFCLLPSKDVQSLSLR
-      266                                                        VLVFCLLPSKDVQSLSLRIMLAEILTTK
-      267                                        DVQSLSLRIMLAEILTTKVLKPVVELLSNPDYINQMLLAQLAYR
-      268                                        IMLAEILTTKVLKPVVELLSNPDYINQMLLAQLAYREQMNEHHK
-      269                                                 VLKPVVELLSNPDYINQMLLAQLAYREQMNEHHKR
-      270                                                              EQMNEHHKRAYTYAPSYEDFIK
-      271                                                          RAYTYAPSYEDFIKLINSNSDVEFLK
-      272                                                        AYTYAPSYEDFIKLINSNSDVEFLKQLR
-      273                                                 LINSNSDVEFLKQLRYQIVVEIIQATTISSFPQLK
-      274                                                            QLRYQIVVEIIQATTISSFPQLKR
-      275                                                             YQIVVEIIQATTISSFPQLKRHK
-      276                                                                               RHKGK
-      277                                                                          HKGKETAAMK
-      278                                                                       GKETAAMKADLLR
-      279                                                                       ETAAMKADLLRAR
-      280                                                                          ADLLRARNMK
-      281                                                                              ARNMKR
-      282                                                                       NMKRYINQLTVAK
-      283                                                                         RYINQLTVAKK
-      284                                                                      YINQLTVAKKQCEK
-      285                                                                              KQCEKR
-      286                                                                             QCEKRIR
-      287                                                        RIRILGGPAYDQQEDGALDEGEGPQSQK
-      288                                           IRILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYR
-      289                                    ILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYREHFGMYMER
-      290                                                          ILQFEDILANTFYREHFGMYMERMDK
-      291                                                                       EHFGMYMERMDKR
-      292                                                                   MDKRALISFWESVEHLK
-      293                                                                  RALISFWESVEHLKNANK
-      294                                                ALISFWESVEHLKNANKNEIPQLVGEIYQNFFVESK
-      295                                                       NANKNEIPQLVGEIYQNFFVESKEISVEK
-      296                                                       NEIPQLVGEIYQNFFVESKEISVEKSLYK
-      297                                                                EISVEKSLYKEIQQCLVGNK
-      298                                                               SLYKEIQQCLVGNKGIEVFYK
-      299                                                         EIQQCLVGNKGIEVFYKIQEDVYETLK
-      300                                                                 GIEVFYKIQEDVYETLKDR
-      301                                                           IQEDVYETLKDRYYPSFIVSDLYEK
-      302                                                                 DRYYPSFIVSDLYEKLLIK
-      303                                                               YYPSFIVSDLYEKLLIKEEEK
-      304                                                                   LLIKEEEKHASQMISNK
-      305                                                                 EEEKHASQMISNKDEMGPR
-      306                                            HASQMISNKDEMGPRDEAGEEAVDDGTNQINEQASFAVNK
-      307                                                   DEMGPRDEAGEEAVDDGTNQINEQASFAVNKLR
-      308                                                    DEAGEEAVDDGTNQINEQASFAVNKLRELNEK
-      309                                                                         LRELNEKLEYK
-      310                                                                          ELNEKLEYKR
-      311                                                                 LEYKRQALNSIQNAPKPDK
-      312                                                                    RQALNSIQNAPKPDKK
-      313                                                                 QALNSIQNAPKPDKKIVSK
-      314                                                                             KIVSKLK
-      315                                                                      IVSKLKDEIILIEK
-      316                                                                        LKDEIILIEKER
-      317                                                                 DEIILIEKERTDLQLHMAR
-      318                                                             ERTDLQLHMARTDWWCENLGMWK
-      319                             TDLQLHMARTDWWCENLGMWKASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK
-      320                                TDWWCENLGMWKASITSGEVTEENGEQLPCYFVMVSLQEVGGVETKNWTVPR
-      321                                           ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETKNWTVPRR
-      322                                                                    NWTVPRRLSEFQNLHR
-      323                                                                         RLSEFQNLHRK
-      324                                                                 LSEFQNLHRKLSECVPSLK
-      325                                                                         KLSECVPSLKK
-      326                                                                  LSECVPSLKKVQLPSLSK
-      327                                                                       KVQLPSLSKLPFK
-      328                                                                   VQLPSLSKLPFKSIDQK
-      329                                                                       LPFKSIDQKFMEK
-      330                                                                         SIDQKFMEKSK
-      331                                                                         FMEKSKNQLNK
-      332                                                                   SKNQLNKFLQNLLSDER
-      333                                                  NQLNKFLQNLLSDERLCQSEALYAFLSPSPDYLK
-      334                                                FLQNLLSDERLCQSEALYAFLSPSPDYLKVIDVQGK
-      335                                                         LCQSEALYAFLSPSPDYLKVIDVQGKK
-      336                                                                 VIDVQGKKNSFSLSSFLER
-      337                                                                     KNSFSLSSFLERLPR
-      338                                            NSFSLSSFLERLPRDFFSHQEEETEEDSDLSDYGDDVDGR
-      339                                                      LPRDFFSHQEEETEEDSDLSDYGDDVDGRK
-      340                                       DFFSHQEEETEEDSDLSDYGDDVDGRKDALAEPCFMLIGEIFELR
-      341                                                             KDALAEPCFMLIGEIFELRGMFK
-      342                                                           DALAEPCFMLIGEIFELRGMFKWVR
-      343                                                                            GMFKWVRR
-      344                                                                    WVRRTLIALVQVTFGR
-      345                                                                   RTLIALVQVTFGRTINK
-      346                                                                 TLIALVQVTFGRTINKQIR
-      347                                                         TINKQIRDTVSWIFSEQMLVYYINIFR
-      348                                                     QIRDTVSWIFSEQMLVYYINIFRDAFWPNGK
-      349                                                DTVSWIFSEQMLVYYINIFRDAFWPNGKLAPPTTIR
-      350                                                                  DAFWPNGKLAPPTTIRSK
-      351                                                                   LAPPTTIRSKEQSQETK
-      352                                                                         SKEQSQETKQR
-      353                                                                       EQSQETKQRAQQK
-      354                                                           QRAQQKLLENIPDMLQSLVGQQNAR
-      355                                                        AQQKLLENIPDMLQSLVGQQNARHGIIK
-      356                                                   LLENIPDMLQSLVGQQNARHGIIKIFNALQETR
-      357                                                                   HGIIKIFNALQETRANK
-      358                                                     IFNALQETRANKHLLYALMELLLIELCPELR
-      359                                                       ANKHLLYALMELLLIELCPELRVHLDQLK
-      360                                                     HLLYALMELLLIELCPELRVHLDQLKAGQVR
-          start stop mc
-      1       1   17  0
-      2      18   30  0
-      3      31   33  0
-      4      34   55  0
-      5      56   93  0
-      6      94  116  0
-      7     117  119  0
-      8     120  131  0
-      9     132  139  0
-      10    140  157  0
-      11    158  158  0
-      12    159  167  0
-      13    168  170  0
-      14    171  178  0
-      15    179  190  0
-      16    191  208  0
-      17    209  213  0
-      18    214  221  0
-      19    222  229  0
-      20    230  239  0
-      21    240  244  0
-      22    245  259  0
-      23    260  266  0
-      24    267  273  0
-      25    274  283  0
-      26    284  291  0
-      27    292  301  0
-      28    302  327  0
-      29    328  335  0
-      30    336  336  0
-      31    337  349  0
-      32    350  361  0
-      33    362  364  0
-      34    365  384  0
-      35    385  385  0
-      36    386  387  0
-      37    388  389  0
-      38    390  395  0
-      39    396  400  0
-      40    401  402  0
-      41    403  405  0
-      42    406  406  0
-      43    407  415  0
-      44    416  416  0
-      45    417  420  0
-      46    421  421  0
-      47    422  423  0
-      48    424  448  0
-      49    449  462  0
-      50    463  471  0
-      51    472  474  0
-      52    475  475  0
-      53    476  488  0
-      54    489  492  0
-      55    493  511  0
-      56    512  517  0
-      57    518  521  0
-      58    522  531  0
-      59    532  538  0
-      60    539  548  0
-      61    549  550  0
-      62    551  563  0
-      63    564  567  0
-      64    568  571  0
-      65    572  580  0
-      66    581  586  0
-      67    587  611  0
-      68    612  613  0
-      69    614  618  0
-      70    619  622  0
-      71    623  623  0
-      72    624  637  0
-      73    638  638  0
-      74    639  642  0
-      75    643  644  0
-      76    645  652  0
-      77    653  654  0
-      78    655  663  0
-      79    664  675  0
-      80    676  709  0
-      81    710  715  0
-      82    716  716  0
-      83    717  725  0
-      84    726  726  0
-      85    727  735  0
-      86    736  736  0
-      87    737  744  0
-      88    745  748  0
-      89    749  753  0
-      90    754  757  0
-      91    758  759  0
-      92    760  764  0
-      93    765  774  0
-      94    775  793  0
-      95    794  800  0
-      96    801  801  0
-      97    802  812  0
-      98    813  815  0
-      99    816  841  0
-      100   842  842  0
-      101   843  860  0
-      102   861  864  0
-      103   865  867  0
-      104   868  868  0
-      105   869  880  0
-      106   881  884  0
-      107   885  887  0
-      108   888  907  0
-      109   908  915  0
-      110   916  923  0
-      111   924  925  0
-      112   926  932  0
-      113   933  934  0
-      114   935  938  0
-      115   939  957  0
-      116   958  962  0
-      117   963  971  0
-      118   972  974  0
-      119   975  993  0
-      120   994 1000  0
-      121  1001 1005  0
-      122     1   30  1
-      123    18   33  1
-      124    31   55  1
-      125    34   93  1
-      126    56  116  1
-      127    94  119  1
-      128   117  131  1
-      129   120  139  1
-      130   132  157  1
-      131   140  158  1
-      132   158  167  1
-      133   159  170  1
-      134   168  178  1
-      135   171  190  1
-      136   179  208  1
-      137   191  213  1
-      138   209  221  1
-      139   214  229  1
-      140   222  239  1
-      141   230  244  1
-      142   240  259  1
-      143   245  266  1
-      144   260  273  1
-      145   267  283  1
-      146   274  291  1
-      147   284  301  1
-      148   292  327  1
-      149   302  335  1
-      150   328  336  1
-      151   336  349  1
-      152   337  361  1
-      153   350  364  1
-      154   362  384  1
-      155   365  385  1
-      156   385  387  1
-      157   386  389  1
-      158   388  395  1
-      159   390  400  1
-      160   396  402  1
-      161   401  405  1
-      162   403  406  1
-      163   406  415  1
-      164   407  416  1
-      165   416  420  1
-      166   417  421  1
-      167   421  423  1
-      168   422  448  1
-      169   424  462  1
-      170   449  471  1
-      171   463  474  1
-      172   472  475  1
-      173   475  488  1
-      174   476  492  1
-      175   489  511  1
-      176   493  517  1
-      177   512  521  1
-      178   518  531  1
-      179   522  538  1
-      180   532  548  1
-      181   539  550  1
-      182   549  563  1
-      183   551  567  1
-      184   564  571  1
-      185   568  580  1
-      186   572  586  1
-      187   581  611  1
-      188   587  613  1
-      189   612  618  1
-      190   614  622  1
-      191   619  623  1
-      192   623  637  1
-      193   624  638  1
-      194   638  642  1
-      195   639  644  1
-      196   643  652  1
-      197   645  654  1
-      198   653  663  1
-      199   655  675  1
-      200   664  709  1
-      201   676  715  1
-      202   710  716  1
-      203   716  725  1
-      204   717  726  1
-      205   726  735  1
-      206   727  736  1
-      207   736  744  1
-      208   737  748  1
-      209   745  753  1
-      210   749  757  1
-      211   754  759  1
-      212   758  764  1
-      213   760  774  1
-      214   765  793  1
-      215   775  800  1
-      216   794  801  1
-      217   801  812  1
-      218   802  815  1
-      219   813  841  1
-      220   816  842  1
-      221   842  860  1
-      222   843  864  1
-      223   861  867  1
-      224   865  868  1
-      225   868  880  1
-      226   869  884  1
-      227   881  887  1
-      228   885  907  1
-      229   888  915  1
-      230   908  923  1
-      231   916  925  1
-      232   924  932  1
-      233   926  934  1
-      234   933  938  1
-      235   935  957  1
-      236   939  962  1
-      237   958  971  1
-      238   963  974  1
-      239   972  993  1
-      240   975 1000  1
-      241   994 1005  1
-      242     1   33  2
-      243    18   55  2
-      244    31   93  2
-      245    34  116  2
-      246    56  119  2
-      247    94  131  2
-      248   117  139  2
-      249   120  157  2
-      250   132  158  2
-      251   140  167  2
-      252   158  170  2
-      253   159  178  2
-      254   168  190  2
-      255   171  208  2
-      256   179  213  2
-      257   191  221  2
-      258   209  229  2
-      259   214  239  2
-      260   222  244  2
-      261   230  259  2
-      262   240  266  2
-      263   245  273  2
-      264   260  283  2
-      265   267  291  2
-      266   274  301  2
-      267   284  327  2
-      268   292  335  2
-      269   302  336  2
-      270   328  349  2
-      271   336  361  2
-      272   337  364  2
-      273   350  384  2
-      274   362  385  2
-      275   365  387  2
-      276   385  389  2
-      277   386  395  2
-      278   388  400  2
-      279   390  402  2
-      280   396  405  2
-      281   401  406  2
-      282   403  415  2
-      283   406  416  2
-      284   407  420  2
-      285   416  421  2
-      286   417  423  2
-      287   421  448  2
-      288   422  462  2
-      289   424  471  2
-      290   449  474  2
-      291   463  475  2
-      292   472  488  2
-      293   475  492  2
-      294   476  511  2
-      295   489  517  2
-      296   493  521  2
-      297   512  531  2
-      298   518  538  2
-      299   522  548  2
-      300   532  550  2
-      301   539  563  2
-      302   549  567  2
-      303   551  571  2
-      304   564  580  2
-      305   568  586  2
-      306   572  611  2
-      307   581  613  2
-      308   587  618  2
-      309   612  622  2
-      310   614  623  2
-      311   619  637  2
-      312   623  638  2
-      313   624  642  2
-      314   638  644  2
-      315   639  652  2
-      316   643  654  2
-      317   645  663  2
-      318   653  675  2
-      319   655  709  2
-      320   664  715  2
-      321   676  716  2
-      322   710  725  2
-      323   716  726  2
-      324   717  735  2
-      325   726  736  2
-      326   727  744  2
-      327   736  748  2
-      328   737  753  2
-      329   745  757  2
-      330   749  759  2
-      331   754  764  2
-      332   758  774  2
-      333   760  793  2
-      334   765  800  2
-      335   775  801  2
-      336   794  812  2
-      337   801  815  2
-      338   802  841  2
-      339   813  842  2
-      340   816  860  2
-      341   842  864  2
-      342   843  867  2
-      343   861  868  2
-      344   865  880  2
-      345   868  884  2
-      346   869  887  2
-      347   881  907  2
-      348   885  915  2
-      349   888  923  2
-      350   908  925  2
-      351   916  932  2
-      352   924  934  2
-      353   926  938  2
-      354   933  957  2
-      355   935  962  2
-      356   939  971  2
-      357   958  974  2
-      358   963  993  2
-      359   972 1000  2
-      360   975 1005  2
-
----
-
-    Code
-      digested_proteins4
-    Output
-                                                               sequence start stop mc
-      1                                               MHPDATDSGGAGPSPAR     1   17  0
-      2                                                         AAGAGGR    18   24  0
-      3                                                          PVSGFR    25   30  0
-      4                                                             GER    31   33  0
-      5                                                               R    34   34  0
-      6                                           PESPGDAEAAAAAAPGAPGGR    35   55  0
-      7                                                            SWWK    56   59  0
-      8                              PVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFR    60   93  0
-      9                                         LSLYLSCAAAAFLLGILFALVCR    94  116  0
-      10                                                            SPR   117  119  0
-      11                                                   AQPPDFAAAWSR   120  131  0
-      12                                                       LAATSAAR   132  139  0
-      13                                                              R   140  140  0
-      14                                              PPGSPVYGNSHESAQSR   141  157  0
-      15                                                              R   158  158  0
-      16                                                      VVISHNMDK   159  167  0
-      17                                                            ALK   168  170  0
-      18                                                       EVFDYSYR   171  178  0
-      19                                                   DYILSWYGNLSR   179  190  0
-      20                                             DEGQLYHLLLEDFWEIAR   191  208  0
-      21                                                          QLHHR   209  213  0
-      22                                                       LSHVDVVK   214  221  0
-      23                                                       VVCNDVVR   222  229  0
-      24                                                     TLLTHFCDLK   230  239  0
-      25                                                          AANAR   240  244  0
-      26                                                         HEEQPR   245  250  0
-      27                                                      PFVLHACLR   251  259  0
-      28                                                        NSDDEVR   260  266  0
-      29                                                        FLQTCSR   267  273  0
-      30                                                     VLVFCLLPSK   274  283  0
-      31                                                       DVQSLSLR   284  291  0
-      32                                                     IMLAEILTTK   292  301  0
-      33                                                            VLK   302  304  0
-      34                                        PVVELLSNPDYINQMLLAQLAYR   305  327  0
-      35                                                       EQMNEHHK   328  335  0
-      36                                                              R   336  336  0
-      37                                                  AYTYAPSYEDFIK   337  349  0
-      38                                                   LINSNSDVEFLK   350  361  0
-      39                                                            QLR   362  364  0
-      40                                           YQIVVEIIQATTISSFPQLK   365  384  0
-      41                                                              R   385  385  0
-      42                                                             HK   386  387  0
-      43                                                             GK   388  389  0
-      44                                                         ETAAMK   390  395  0
-      45                                                          ADLLR   396  400  0
-      46                                                             AR   401  402  0
-      47                                                            NMK   403  405  0
-      48                                                              R   406  406  0
-      49                                                      YINQLTVAK   407  415  0
-      50                                                              K   416  416  0
-      51                                                           QCEK   417  420  0
-      52                                                              R   421  421  0
-      53                                                             IR   422  423  0
-      54                                      ILGGPAYDQQEDGALDEGEGPQSQK   424  448  0
-      55                                                 ILQFEDILANTFYR   449  462  0
-      56                                                      EHFGMYMER   463  471  0
-      57                                                            MDK   472  474  0
-      58                                                              R   475  475  0
-      59                                                  ALISFWESVEHLK   476  488  0
-      60                                                           NANK   489  492  0
-      61                                            NEIPQLVGEIYQNFFVESK   493  511  0
-      62                                                         EISVEK   512  517  0
-      63                                                           SLYK   518  521  0
-      64                                                     EIQQCLVGNK   522  531  0
-      65                                                        GIEVFYK   532  538  0
-      66                                                     IQEDVYETLK   539  548  0
-      67                                                             DR   549  550  0
-      68                                                  YYPSFIVSDLYEK   551  563  0
-      69                                                           LLIK   564  567  0
-      70                                                           EEEK   568  571  0
-      71                                                      HASQMISNK   572  580  0
-      72                                                         DEMGPR   581  586  0
-      73                                      DEAGEEAVDDGTNQINEQASFAVNK   587  611  0
-      74                                                             LR   612  613  0
-      75                                                          ELNEK   614  618  0
-      76                                                           LEYK   619  622  0
-      77                                                              R   623  623  0
-      78                                                    QALNSIQNAPK   624  634  0
-      79                                                            PDK   635  637  0
-      80                                                              K   638  638  0
-      81                                                           IVSK   639  642  0
-      82                                                             LK   643  644  0
-      83                                                       DEIILIEK   645  652  0
-      84                                                             ER   653  654  0
-      85                                                      TDLQLHMAR   655  663  0
-      86                                                   TDWWCENLGMWK   664  675  0
-      87                             ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK   676  709  0
-      88                                                         NWTVPR   710  715  0
-      89                                                              R   716  716  0
-      90                                                      LSEFQNLHR   717  725  0
-      91                                                              K   726  726  0
-      92                                                      LSECVPSLK   727  735  0
-      93                                                              K   736  736  0
-      94                                                       VQLPSLSK   737  744  0
-      95                                                           LPFK   745  748  0
-      96                                                          SIDQK   749  753  0
-      97                                                           FMEK   754  757  0
-      98                                                             SK   758  759  0
-      99                                                          NQLNK   760  764  0
-      100                                                    FLQNLLSDER   765  774  0
-      101                                           LCQSEALYAFLSPSPDYLK   775  793  0
-      102                                                       VIDVQGK   794  800  0
-      103                                                             K   801  801  0
-      104                                                   NSFSLSSFLER   802  812  0
-      105                                                           LPR   813  815  0
-      106                                    DFFSHQEEETEEDSDLSDYGDDVDGR   816  841  0
-      107                                                             K   842  842  0
-      108                                            DALAEPCFMLIGEIFELR   843  860  0
-      109                                                          GMFK   861  864  0
-      110                                                           WVR   865  867  0
-      111                                                             R   868  868  0
-      112                                                  TLIALVQVTFGR   869  880  0
-      113                                                          TINK   881  884  0
-      114                                                           QIR   885  887  0
-      115                                          DTVSWIFSEQMLVYYINIFR   888  907  0
-      116                                                      DAFWPNGK   908  915  0
-      117                                                      LAPPTTIR   916  923  0
-      118                                                            SK   924  925  0
-      119                                                       EQSQETK   926  932  0
-      120                                                            QR   933  934  0
-      121                                                          AQQK   935  938  0
-      122                                           LLENIPDMLQSLVGQQNAR   939  957  0
-      123                                                         HGIIK   958  962  0
-      124                                                     IFNALQETR   963  971  0
-      125                                                           ANK   972  974  0
-      126                                           HLLYALMELLLIELCPELR   975  993  0
-      127                                                       VHLDQLK   994 1000  0
-      128                                                         AGQVR  1001 1005  0
-      129                                      MHPDATDSGGAGPSPARAAGAGGR     1   24  1
-      130                                                 AAGAGGRPVSGFR    18   30  1
-      131                                                     PVSGFRGER    25   33  1
-      132                                                          GERR    31   34  1
-      133                                        RPESPGDAEAAAAAAPGAPGGR    34   55  1
-      134                                     PESPGDAEAAAAAAPGAPGGRSWWK    35   59  1
-      135                        SWWKPVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFR    56   93  1
-      136     PVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFRLSLYLSCAAAAFLLGILFALVCR    60  116  1
-      137                                    LSLYLSCAAAAFLLGILFALVCRSPR    94  119  1
-      138                                               SPRAQPPDFAAAWSR   117  131  1
-      139                                          AQPPDFAAAWSRLAATSAAR   120  139  1
-      140                                                     LAATSAARR   132  140  1
-      141                                            RPPGSPVYGNSHESAQSR   140  157  1
-      142                                            PPGSPVYGNSHESAQSRR   141  158  1
-      143                                                    RVVISHNMDK   158  167  1
-      144                                                  VVISHNMDKALK   159  170  1
-      145                                                   ALKEVFDYSYR   168  178  1
-      146                                          EVFDYSYRDYILSWYGNLSR   171  190  1
-      147                                DYILSWYGNLSRDEGQLYHLLLEDFWEIAR   179  208  1
-      148                                       DEGQLYHLLLEDFWEIARQLHHR   191  213  1
-      149                                                 QLHHRLSHVDVVK   209  221  1
-      150                                              LSHVDVVKVVCNDVVR   214  229  1
-      151                                            VVCNDVVRTLLTHFCDLK   222  239  1
-      152                                               TLLTHFCDLKAANAR   230  244  1
-      153                                                   AANARHEEQPR   240  250  1
-      154                                               HEEQPRPFVLHACLR   245  259  1
-      155                                              PFVLHACLRNSDDEVR   251  266  1
-      156                                                NSDDEVRFLQTCSR   260  273  1
-      157                                             FLQTCSRVLVFCLLPSK   267  283  1
-      158                                            VLVFCLLPSKDVQSLSLR   274  291  1
-      159                                            DVQSLSLRIMLAEILTTK   284  301  1
-      160                                                 IMLAEILTTKVLK   292  304  1
-      161                                    VLKPVVELLSNPDYINQMLLAQLAYR   302  327  1
-      162                               PVVELLSNPDYINQMLLAQLAYREQMNEHHK   305  335  1
-      163                                                     EQMNEHHKR   328  336  1
-      164                                                RAYTYAPSYEDFIK   336  349  1
-      165                                     AYTYAPSYEDFIKLINSNSDVEFLK   337  361  1
-      166                                               LINSNSDVEFLKQLR   350  364  1
-      167                                       QLRYQIVVEIIQATTISSFPQLK   362  384  1
-      168                                         YQIVVEIIQATTISSFPQLKR   365  385  1
-      169                                                           RHK   385  387  1
-      170                                                          HKGK   386  389  1
-      171                                                      GKETAAMK   388  395  1
-      172                                                   ETAAMKADLLR   390  400  1
-      173                                                       ADLLRAR   396  402  1
-      174                                                         ARNMK   401  405  1
-      175                                                          NMKR   403  406  1
-      176                                                    RYINQLTVAK   406  415  1
-      177                                                    YINQLTVAKK   407  416  1
-      178                                                         KQCEK   416  420  1
-      179                                                         QCEKR   417  421  1
-      180                                                           RIR   421  423  1
-      181                                   IRILGGPAYDQQEDGALDEGEGPQSQK   422  448  1
-      182                       ILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYR   424  462  1
-      183                                       ILQFEDILANTFYREHFGMYMER   449  471  1
-      184                                                  EHFGMYMERMDK   463  474  1
-      185                                                          MDKR   472  475  1
-      186                                                RALISFWESVEHLK   475  488  1
-      187                                             ALISFWESVEHLKNANK   476  492  1
-      188                                       NANKNEIPQLVGEIYQNFFVESK   489  511  1
-      189                                     NEIPQLVGEIYQNFFVESKEISVEK   493  517  1
-      190                                                    EISVEKSLYK   512  521  1
-      191                                                SLYKEIQQCLVGNK   518  531  1
-      192                                             EIQQCLVGNKGIEVFYK   522  538  1
-      193                                             GIEVFYKIQEDVYETLK   532  548  1
-      194                                                  IQEDVYETLKDR   539  550  1
-      195                                               DRYYPSFIVSDLYEK   549  563  1
-      196                                             YYPSFIVSDLYEKLLIK   551  567  1
-      197                                                      LLIKEEEK   564  571  1
-      198                                                 EEEKHASQMISNK   568  580  1
-      199                                               HASQMISNKDEMGPR   572  586  1
-      200                               DEMGPRDEAGEEAVDDGTNQINEQASFAVNK   581  611  1
-      201                                   DEAGEEAVDDGTNQINEQASFAVNKLR   587  613  1
-      202                                                       LRELNEK   612  618  1
-      203                                                     ELNEKLEYK   614  622  1
-      204                                                         LEYKR   619  623  1
-      205                                                  RQALNSIQNAPK   623  634  1
-      206                                                QALNSIQNAPKPDK   624  637  1
-      207                                                          PDKK   635  638  1
-      208                                                         KIVSK   638  642  1
-      209                                                        IVSKLK   639  644  1
-      210                                                    LKDEIILIEK   643  652  1
-      211                                                    DEIILIEKER   645  654  1
-      212                                                   ERTDLQLHMAR   653  663  1
-      213                                         TDLQLHMARTDWWCENLGMWK   655  675  1
-      214                TDWWCENLGMWKASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK   664  709  1
-      215                      ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETKNWTVPR   676  715  1
-      216                                                       NWTVPRR   710  716  1
-      217                                                    RLSEFQNLHR   716  725  1
-      218                                                    LSEFQNLHRK   717  726  1
-      219                                                    KLSECVPSLK   726  735  1
-      220                                                    LSECVPSLKK   727  736  1
-      221                                                     KVQLPSLSK   736  744  1
-      222                                                  VQLPSLSKLPFK   737  748  1
-      223                                                     LPFKSIDQK   745  753  1
-      224                                                     SIDQKFMEK   749  757  1
-      225                                                        FMEKSK   754  759  1
-      226                                                       SKNQLNK   758  764  1
-      227                                               NQLNKFLQNLLSDER   760  774  1
-      228                                 FLQNLLSDERLCQSEALYAFLSPSPDYLK   765  793  1
-      229                                    LCQSEALYAFLSPSPDYLKVIDVQGK   775  800  1
-      230                                                      VIDVQGKK   794  801  1
-      231                                                  KNSFSLSSFLER   801  812  1
-      232                                                NSFSLSSFLERLPR   802  815  1
-      233                                 LPRDFFSHQEEETEEDSDLSDYGDDVDGR   813  841  1
-      234                                   DFFSHQEEETEEDSDLSDYGDDVDGRK   816  842  1
-      235                                           KDALAEPCFMLIGEIFELR   842  860  1
-      236                                        DALAEPCFMLIGEIFELRGMFK   843  864  1
-      237                                                       GMFKWVR   861  867  1
-      238                                                          WVRR   865  868  1
-      239                                                 RTLIALVQVTFGR   868  880  1
-      240                                              TLIALVQVTFGRTINK   869  884  1
-      241                                                       TINKQIR   881  887  1
-      242                                       QIRDTVSWIFSEQMLVYYINIFR   885  907  1
-      243                                  DTVSWIFSEQMLVYYINIFRDAFWPNGK   888  915  1
-      244                                              DAFWPNGKLAPPTTIR   908  923  1
-      245                                                    LAPPTTIRSK   916  925  1
-      246                                                     SKEQSQETK   924  932  1
-      247                                                     EQSQETKQR   926  934  1
-      248                                                        QRAQQK   933  938  1
-      249                                       AQQKLLENIPDMLQSLVGQQNAR   935  957  1
-      250                                      LLENIPDMLQSLVGQQNARHGIIK   939  962  1
-      251                                                HGIIKIFNALQETR   958  971  1
-      252                                                  IFNALQETRANK   963  974  1
-      253                                        ANKHLLYALMELLLIELCPELR   972  993  1
-      254                                    HLLYALMELLLIELCPELRVHLDQLK   975 1000  1
-      255                                                  VHLDQLKAGQVR   994 1005  1
-      256                                MHPDATDSGGAGPSPARAAGAGGRPVSGFR     1   30  2
-      257                                              AAGAGGRPVSGFRGER    18   33  2
-      258                                                    PVSGFRGERR    25   34  2
-      259                                     GERRPESPGDAEAAAAAAPGAPGGR    31   55  2
-      260                                    RPESPGDAEAAAAAAPGAPGGRSWWK    34   59  2
-      261   PESPGDAEAAAAAAPGAPGGRSWWKPVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFR    35   93  2
-      262 SWWKPVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFRLSLYLSCAAAAFLLGILFALVCR    56  116  2
-      263  PVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFRLSLYLSCAAAAFLLGILFALVCRSPR    60  119  2
-      264                        LSLYLSCAAAAFLLGILFALVCRSPRAQPPDFAAAWSR    94  131  2
-      265                                       SPRAQPPDFAAAWSRLAATSAAR   117  139  2
-      266                                         AQPPDFAAAWSRLAATSAARR   120  140  2
-      267                                    LAATSAARRPPGSPVYGNSHESAQSR   132  157  2
-      268                                           RPPGSPVYGNSHESAQSRR   140  158  2
-      269                                   PPGSPVYGNSHESAQSRRVVISHNMDK   141  167  2
-      270                                                 RVVISHNMDKALK   158  170  2
-      271                                          VVISHNMDKALKEVFDYSYR   159  178  2
-      272                                       ALKEVFDYSYRDYILSWYGNLSR   168  190  2
-      273                        EVFDYSYRDYILSWYGNLSRDEGQLYHLLLEDFWEIAR   171  208  2
-      274                           DYILSWYGNLSRDEGQLYHLLLEDFWEIARQLHHR   179  213  2
-      275                               DEGQLYHLLLEDFWEIARQLHHRLSHVDVVK   191  221  2
-      276                                         QLHHRLSHVDVVKVVCNDVVR   209  229  2
-      277                                    LSHVDVVKVVCNDVVRTLLTHFCDLK   214  239  2
-      278                                       VVCNDVVRTLLTHFCDLKAANAR   222  244  2
-      279                                         TLLTHFCDLKAANARHEEQPR   230  250  2
-      280                                          AANARHEEQPRPFVLHACLR   240  259  2
-      281                                        HEEQPRPFVLHACLRNSDDEVR   245  266  2
-      282                                       PFVLHACLRNSDDEVRFLQTCSR   251  273  2
-      283                                      NSDDEVRFLQTCSRVLVFCLLPSK   260  283  2
-      284                                     FLQTCSRVLVFCLLPSKDVQSLSLR   267  291  2
-      285                                  VLVFCLLPSKDVQSLSLRIMLAEILTTK   274  301  2
-      286                                         DVQSLSLRIMLAEILTTKVLK   284  304  2
-      287                          IMLAEILTTKVLKPVVELLSNPDYINQMLLAQLAYR   292  327  2
-      288                            VLKPVVELLSNPDYINQMLLAQLAYREQMNEHHK   302  335  2
-      289                              PVVELLSNPDYINQMLLAQLAYREQMNEHHKR   305  336  2
-      290                                        EQMNEHHKRAYTYAPSYEDFIK   328  349  2
-      291                                    RAYTYAPSYEDFIKLINSNSDVEFLK   336  361  2
-      292                                  AYTYAPSYEDFIKLINSNSDVEFLKQLR   337  364  2
-      293                           LINSNSDVEFLKQLRYQIVVEIIQATTISSFPQLK   350  384  2
-      294                                      QLRYQIVVEIIQATTISSFPQLKR   362  385  2
-      295                                       YQIVVEIIQATTISSFPQLKRHK   365  387  2
-      296                                                         RHKGK   385  389  2
-      297                                                    HKGKETAAMK   386  395  2
-      298                                                 GKETAAMKADLLR   388  400  2
-      299                                                 ETAAMKADLLRAR   390  402  2
-      300                                                    ADLLRARNMK   396  405  2
-      301                                                        ARNMKR   401  406  2
-      302                                                 NMKRYINQLTVAK   403  415  2
-      303                                                   RYINQLTVAKK   406  416  2
-      304                                                YINQLTVAKKQCEK   407  420  2
-      305                                                        KQCEKR   416  421  2
-      306                                                       QCEKRIR   417  423  2
-      307                                  RIRILGGPAYDQQEDGALDEGEGPQSQK   421  448  2
-      308                     IRILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYR   422  462  2
-      309              ILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYREHFGMYMER   424  471  2
-      310                                    ILQFEDILANTFYREHFGMYMERMDK   449  474  2
-      311                                                 EHFGMYMERMDKR   463  475  2
-      312                                             MDKRALISFWESVEHLK   472  488  2
-      313                                            RALISFWESVEHLKNANK   475  492  2
-      314                          ALISFWESVEHLKNANKNEIPQLVGEIYQNFFVESK   476  511  2
-      315                                 NANKNEIPQLVGEIYQNFFVESKEISVEK   489  517  2
-      316                                 NEIPQLVGEIYQNFFVESKEISVEKSLYK   493  521  2
-      317                                          EISVEKSLYKEIQQCLVGNK   512  531  2
-      318                                         SLYKEIQQCLVGNKGIEVFYK   518  538  2
-      319                                   EIQQCLVGNKGIEVFYKIQEDVYETLK   522  548  2
-      320                                           GIEVFYKIQEDVYETLKDR   532  550  2
-      321                                     IQEDVYETLKDRYYPSFIVSDLYEK   539  563  2
-      322                                           DRYYPSFIVSDLYEKLLIK   549  567  2
-      323                                         YYPSFIVSDLYEKLLIKEEEK   551  571  2
-      324                                             LLIKEEEKHASQMISNK   564  580  2
-      325                                           EEEKHASQMISNKDEMGPR   568  586  2
-      326                      HASQMISNKDEMGPRDEAGEEAVDDGTNQINEQASFAVNK   572  611  2
-      327                             DEMGPRDEAGEEAVDDGTNQINEQASFAVNKLR   581  613  2
-      328                              DEAGEEAVDDGTNQINEQASFAVNKLRELNEK   587  618  2
-      329                                                   LRELNEKLEYK   612  622  2
-      330                                                    ELNEKLEYKR   614  623  2
-      331                                              LEYKRQALNSIQNAPK   619  634  2
-      332                                               RQALNSIQNAPKPDK   623  637  2
-      333                                               QALNSIQNAPKPDKK   624  638  2
-      334                                                      PDKKIVSK   635  642  2
-      335                                                       KIVSKLK   638  644  2
-      336                                                IVSKLKDEIILIEK   639  652  2
-      337                                                  LKDEIILIEKER   643  654  2
-      338                                           DEIILIEKERTDLQLHMAR   645  663  2
-      339                                       ERTDLQLHMARTDWWCENLGMWK   653  675  2
-      340       TDLQLHMARTDWWCENLGMWKASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK   655  709  2
-      341          TDWWCENLGMWKASITSGEVTEENGEQLPCYFVMVSLQEVGGVETKNWTVPR   664  715  2
-      342                     ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETKNWTVPRR   676  716  2
-      343                                              NWTVPRRLSEFQNLHR   710  725  2
-      344                                                   RLSEFQNLHRK   716  726  2
-      345                                           LSEFQNLHRKLSECVPSLK   717  735  2
-      346                                                   KLSECVPSLKK   726  736  2
-      347                                            LSECVPSLKKVQLPSLSK   727  744  2
-      348                                                 KVQLPSLSKLPFK   736  748  2
-      349                                             VQLPSLSKLPFKSIDQK   737  753  2
-      350                                                 LPFKSIDQKFMEK   745  757  2
-      351                                                   SIDQKFMEKSK   749  759  2
-      352                                                   FMEKSKNQLNK   754  764  2
-      353                                             SKNQLNKFLQNLLSDER   758  774  2
-      354                            NQLNKFLQNLLSDERLCQSEALYAFLSPSPDYLK   760  793  2
-      355                          FLQNLLSDERLCQSEALYAFLSPSPDYLKVIDVQGK   765  800  2
-      356                                   LCQSEALYAFLSPSPDYLKVIDVQGKK   775  801  2
-      357                                           VIDVQGKKNSFSLSSFLER   794  812  2
-      358                                               KNSFSLSSFLERLPR   801  815  2
-      359                      NSFSLSSFLERLPRDFFSHQEEETEEDSDLSDYGDDVDGR   802  841  2
-      360                                LPRDFFSHQEEETEEDSDLSDYGDDVDGRK   813  842  2
-      361                 DFFSHQEEETEEDSDLSDYGDDVDGRKDALAEPCFMLIGEIFELR   816  860  2
-      362                                       KDALAEPCFMLIGEIFELRGMFK   842  864  2
-      363                                     DALAEPCFMLIGEIFELRGMFKWVR   843  867  2
-      364                                                      GMFKWVRR   861  868  2
-      365                                              WVRRTLIALVQVTFGR   865  880  2
-      366                                             RTLIALVQVTFGRTINK   868  884  2
-      367                                           TLIALVQVTFGRTINKQIR   869  887  2
-      368                                   TINKQIRDTVSWIFSEQMLVYYINIFR   881  907  2
-      369                               QIRDTVSWIFSEQMLVYYINIFRDAFWPNGK   885  915  2
-      370                          DTVSWIFSEQMLVYYINIFRDAFWPNGKLAPPTTIR   888  923  2
-      371                                            DAFWPNGKLAPPTTIRSK   908  925  2
-      372                                             LAPPTTIRSKEQSQETK   916  932  2
-      373                                                   SKEQSQETKQR   924  934  2
-      374                                                 EQSQETKQRAQQK   926  938  2
-      375                                     QRAQQKLLENIPDMLQSLVGQQNAR   933  957  2
-      376                                  AQQKLLENIPDMLQSLVGQQNARHGIIK   935  962  2
-      377                             LLENIPDMLQSLVGQQNARHGIIKIFNALQETR   939  971  2
-      378                                             HGIIKIFNALQETRANK   958  974  2
-      379                               IFNALQETRANKHLLYALMELLLIELCPELR   963  993  2
-      380                                 ANKHLLYALMELLLIELCPELRVHLDQLK   972 1000  2
-      381                               HLLYALMELLLIELCPELRVHLDQLKAGQVR   975 1005  2
+        [1] "MESQQLHQNPHSQHGSAYASVTSK"                                                                                         
+        [2] "EVPSNQDPLAVSASNLPEFDR"                                                                                            
+        [3] "DSTK"                                                                                                             
+        [4] "VNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK"                                                                   
+        [5] "AMASNWAHYQQPSMMTCSHYQTSPAYYQPDPHYPLPQYIPPLSTSSPDPIDSQDQHSEVPQAK"                                                  
+        [6] "TK"                                                                                                               
+        [7] "VR"                                                                                                               
+        [8] "NNVLPPHTLTSEENFSTWVK"                                                                                             
+        [9] "FYIR"                                                                                                             
+       [10] "FLK"                                                                                                              
+       [11] "NSNLGDIIPNDQGEIK"                                                                                                 
+       [12] "R"                                                                                                                
+       [13] "QMTYEEHAYIYNTFQAFAPFHLLPTWVK"                                                                                     
+       [14] "QILEINYSDILTVLCK"                                                                                                 
+       [15] "SVSK"                                                                                                             
+       [16] "MQTNNQELK"                                                                                                        
+       [17] "DWIALANLEYNGSTSADTFEITVSTIIQR"                                                                                    
+       [18] "LK"                                                                                                               
+       [19] "ENNINVSDR"                                                                                                        
+       [20] "LACQLILK"                                                                                                         
+       [21] "GLSGDFK"                                                                                                          
+       [22] "YLR"                                                                                                              
+       [23] "NQYR"                                                                                                             
+       [24] "TK"                                                                                                               
+       [25] "TNMK"                                                                                                             
+       [26] "LSQLFAEIQLIYDENK"                                                                                                 
+       [27] "IMNLNKPSQYK"                                                                                                      
+       [28] "QHSEYK"                                                                                                           
+       [29] "NVSR"                                                                                                             
+       [30] "TSPNTTNTK"                                                                                                        
+       [31] "VTTR"                                                                                                             
+       [32] "NYHR"                                                                                                             
+       [33] "TNSSKPR"                                                                                                          
+       [34] "AAK"                                                                                                              
+       [35] "AHNIATSSK"                                                                                                        
+       [36] "FSR"                                                                                                              
+       [37] "VNSDHINESTVSSQYLSDDNELSLRPATER"                                                                                   
+       [38] "IR"                                                                                                               
+       [39] "MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDR"                                                                    
+       [40] "EVPSNQDPLAVSASNLPEFDRDSTK"                                                                                        
+       [41] "DSTKVNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK"                                                               
+       [42] "VNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNKAMASNWAHYQQPSMMTCSHYQTSPAYYQPDPHYPLPQYIPPLSTSSPDPIDSQDQHSEVPQAK"    
+       [43] "AMASNWAHYQQPSMMTCSHYQTSPAYYQPDPHYPLPQYIPPLSTSSPDPIDSQDQHSEVPQAKTK"                                                
+       [44] "TKVR"                                                                                                             
+       [45] "VRNNVLPPHTLTSEENFSTWVK"                                                                                           
+       [46] "NNVLPPHTLTSEENFSTWVKFYIR"                                                                                         
+       [47] "FYIRFLK"                                                                                                          
+       [48] "FLKNSNLGDIIPNDQGEIK"                                                                                              
+       [49] "NSNLGDIIPNDQGEIKR"                                                                                                
+       [50] "RQMTYEEHAYIYNTFQAFAPFHLLPTWVK"                                                                                    
+       [51] "QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK"                                                                     
+       [52] "QILEINYSDILTVLCKSVSK"                                                                                             
+       [53] "SVSKMQTNNQELK"                                                                                                    
+       [54] "MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR"                                                                           
+       [55] "DWIALANLEYNGSTSADTFEITVSTIIQRLK"                                                                                  
+       [56] "LKENNINVSDR"                                                                                                      
+       [57] "ENNINVSDRLACQLILK"                                                                                                
+       [58] "LACQLILKGLSGDFK"                                                                                                  
+       [59] "GLSGDFKYLR"                                                                                                       
+       [60] "YLRNQYR"                                                                                                          
+       [61] "NQYRTK"                                                                                                           
+       [62] "TKTNMK"                                                                                                           
+       [63] "TNMKLSQLFAEIQLIYDENK"                                                                                             
+       [64] "LSQLFAEIQLIYDENKIMNLNKPSQYK"                                                                                      
+       [65] "IMNLNKPSQYKQHSEYK"                                                                                                
+       [66] "QHSEYKNVSR"                                                                                                       
+       [67] "NVSRTSPNTTNTK"                                                                                                    
+       [68] "TSPNTTNTKVTTR"                                                                                                    
+       [69] "VTTRNYHR"                                                                                                         
+       [70] "NYHRTNSSKPR"                                                                                                      
+       [71] "TNSSKPRAAK"                                                                                                       
+       [72] "AAKAHNIATSSK"                                                                                                     
+       [73] "AHNIATSSKFSR"                                                                                                     
+       [74] "FSRVNSDHINESTVSSQYLSDDNELSLRPATER"                                                                                
+       [75] "VNSDHINESTVSSQYLSDDNELSLRPATERIR"                                                                                 
+       [76] "MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDRDSTK"                                                                
+       [77] "EVPSNQDPLAVSASNLPEFDRDSTKVNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK"                                          
+       [78] "DSTKVNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNKAMASNWAHYQQPSMMTCSHYQTSPAYYQPDPHYPLPQYIPPLSTSSPDPIDSQDQHSEVPQAK"
+       [79] "VNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNKAMASNWAHYQQPSMMTCSHYQTSPAYYQPDPHYPLPQYIPPLSTSSPDPIDSQDQHSEVPQAKTK"  
+       [80] "AMASNWAHYQQPSMMTCSHYQTSPAYYQPDPHYPLPQYIPPLSTSSPDPIDSQDQHSEVPQAKTKVR"                                              
+       [81] "TKVRNNVLPPHTLTSEENFSTWVK"                                                                                         
+       [82] "VRNNVLPPHTLTSEENFSTWVKFYIR"                                                                                       
+       [83] "NNVLPPHTLTSEENFSTWVKFYIRFLK"                                                                                      
+       [84] "FYIRFLKNSNLGDIIPNDQGEIK"                                                                                          
+       [85] "FLKNSNLGDIIPNDQGEIKR"                                                                                             
+       [86] "NSNLGDIIPNDQGEIKRQMTYEEHAYIYNTFQAFAPFHLLPTWVK"                                                                    
+       [87] "RQMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK"                                                                    
+       [88] "QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCKSVSK"                                                                 
+       [89] "QILEINYSDILTVLCKSVSKMQTNNQELK"                                                                                    
+       [90] "SVSKMQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR"                                                                       
+       [91] "MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQRLK"                                                                         
+       [92] "DWIALANLEYNGSTSADTFEITVSTIIQRLKENNINVSDR"                                                                         
+       [93] "LKENNINVSDRLACQLILK"                                                                                              
+       [94] "ENNINVSDRLACQLILKGLSGDFK"                                                                                         
+       [95] "LACQLILKGLSGDFKYLR"                                                                                               
+       [96] "GLSGDFKYLRNQYR"                                                                                                   
+       [97] "YLRNQYRTK"                                                                                                        
+       [98] "NQYRTKTNMK"                                                                                                       
+       [99] "TKTNMKLSQLFAEIQLIYDENK"                                                                                           
+      [100] "TNMKLSQLFAEIQLIYDENKIMNLNKPSQYK"                                                                                  
+      [101] "LSQLFAEIQLIYDENKIMNLNKPSQYKQHSEYK"                                                                                
+      [102] "IMNLNKPSQYKQHSEYKNVSR"                                                                                            
+      [103] "QHSEYKNVSRTSPNTTNTK"                                                                                              
+      [104] "NVSRTSPNTTNTKVTTR"                                                                                                
+      [105] "TSPNTTNTKVTTRNYHR"                                                                                                
+      [106] "VTTRNYHRTNSSKPR"                                                                                                  
+      [107] "NYHRTNSSKPRAAK"                                                                                                   
+      [108] "TNSSKPRAAKAHNIATSSK"                                                                                              
+      [109] "AAKAHNIATSSKFSR"                                                                                                  
+      [110] "AHNIATSSKFSRVNSDHINESTVSSQYLSDDNELSLRPATER"                                                                       
+      [111] "FSRVNSDHINESTVSSQYLSDDNELSLRPATERIR"                                                                              
 
 # digestion of a FASTA file
 
     Code
       res
     Output
-      $A0A494C0S0
-        [1] "MHPDATDSGGAGPSPAR"                               
-        [2] "AAGAGGRPVSGFR"                                   
-        [3] "RPESPGDAEAAAAAAPGAPGGR"                          
-        [4] "SWWKPVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFR"          
-        [5] "LSLYLSCAAAAFLLGILFALVCR"                         
-        [6] "AQPPDFAAAWSR"                                    
-        [7] "LAATSAAR"                                        
-        [8] "RPPGSPVYGNSHESAQSR"                              
-        [9] "VVISHNMDK"                                       
-       [10] "EVFDYSYR"                                        
-       [11] "DYILSWYGNLSR"                                    
-       [12] "DEGQLYHLLLEDFWEIAR"                              
-       [13] "LSHVDVVK"                                        
-       [14] "VVCNDVVR"                                        
-       [15] "TLLTHFCDLK"                                      
-       [16] "HEEQPRPFVLHACLR"                                 
-       [17] "NSDDEVR"                                         
-       [18] "FLQTCSR"                                         
-       [19] "VLVFCLLPSK"                                      
-       [20] "DVQSLSLR"                                        
-       [21] "IMLAEILTTK"                                      
-       [22] "VLKPVVELLSNPDYINQMLLAQLAYR"                      
-       [23] "EQMNEHHK"                                        
-       [24] "AYTYAPSYEDFIK"                                   
-       [25] "LINSNSDVEFLK"                                    
-       [26] "YQIVVEIIQATTISSFPQLK"                            
-       [27] "ETAAMK"                                          
-       [28] "YINQLTVAK"                                       
-       [29] "ILGGPAYDQQEDGALDEGEGPQSQK"                       
-       [30] "ILQFEDILANTFYR"                                  
-       [31] "EHFGMYMER"                                       
-       [32] "ALISFWESVEHLK"                                   
-       [33] "NEIPQLVGEIYQNFFVESK"                             
-       [34] "EISVEK"                                          
-       [35] "EIQQCLVGNK"                                      
-       [36] "GIEVFYK"                                         
-       [37] "IQEDVYETLK"                                      
-       [38] "YYPSFIVSDLYEK"                                   
-       [39] "HASQMISNK"                                       
-       [40] "DEMGPR"                                          
-       [41] "DEAGEEAVDDGTNQINEQASFAVNK"                       
-       [42] "QALNSIQNAPKPDK"                                  
-       [43] "DEIILIEK"                                        
-       [44] "TDLQLHMAR"                                       
-       [45] "TDWWCENLGMWK"                                    
-       [46] "ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK"              
-       [47] "NWTVPR"                                          
-       [48] "LSEFQNLHR"                                       
-       [49] "LSECVPSLK"                                       
-       [50] "VQLPSLSK"                                        
-       [51] "FLQNLLSDER"                                      
-       [52] "LCQSEALYAFLSPSPDYLK"                             
-       [53] "VIDVQGK"                                         
-       [54] "NSFSLSSFLER"                                     
-       [55] "DFFSHQEEETEEDSDLSDYGDDVDGR"                      
-       [56] "DALAEPCFMLIGEIFELR"                              
-       [57] "TLIALVQVTFGR"                                    
-       [58] "DTVSWIFSEQMLVYYINIFR"                            
-       [59] "DAFWPNGK"                                        
-       [60] "LAPPTTIR"                                        
-       [61] "EQSQETK"                                         
-       [62] "LLENIPDMLQSLVGQQNAR"                             
-       [63] "IFNALQETR"                                       
-       [64] "HLLYALMELLLIELCPELR"                             
-       [65] "VHLDQLK"                                         
-       [66] "MHPDATDSGGAGPSPARAAGAGGRPVSGFR"                  
-       [67] "AAGAGGRPVSGFRGER"                                
-       [68] "GERRPESPGDAEAAAAAAPGAPGGR"                       
-       [69] "LSLYLSCAAAAFLLGILFALVCRSPR"                      
-       [70] "SPRAQPPDFAAAWSR"                                 
-       [71] "AQPPDFAAAWSRLAATSAAR"                            
-       [72] "LAATSAARRPPGSPVYGNSHESAQSR"                      
-       [73] "RPPGSPVYGNSHESAQSRR"                             
-       [74] "RVVISHNMDK"                                      
-       [75] "VVISHNMDKALK"                                    
-       [76] "ALKEVFDYSYR"                                     
-       [77] "EVFDYSYRDYILSWYGNLSR"                            
-       [78] "DYILSWYGNLSRDEGQLYHLLLEDFWEIAR"                  
-       [79] "DEGQLYHLLLEDFWEIARQLHHR"                         
-       [80] "QLHHRLSHVDVVK"                                   
-       [81] "LSHVDVVKVVCNDVVR"                                
-       [82] "VVCNDVVRTLLTHFCDLK"                              
-       [83] "TLLTHFCDLKAANAR"                                 
-       [84] "AANARHEEQPRPFVLHACLR"                            
-       [85] "HEEQPRPFVLHACLRNSDDEVR"                          
-       [86] "NSDDEVRFLQTCSR"                                  
-       [87] "FLQTCSRVLVFCLLPSK"                               
-       [88] "VLVFCLLPSKDVQSLSLR"                              
-       [89] "DVQSLSLRIMLAEILTTK"                              
-       [90] "IMLAEILTTKVLKPVVELLSNPDYINQMLLAQLAYR"            
-       [91] "VLKPVVELLSNPDYINQMLLAQLAYREQMNEHHK"              
-       [92] "EQMNEHHKR"                                       
-       [93] "RAYTYAPSYEDFIK"                                  
-       [94] "AYTYAPSYEDFIKLINSNSDVEFLK"                       
-       [95] "LINSNSDVEFLKQLR"                                 
-       [96] "QLRYQIVVEIIQATTISSFPQLK"                         
-       [97] "YQIVVEIIQATTISSFPQLKR"                           
-       [98] "GKETAAMK"                                        
-       [99] "ETAAMKADLLR"                                     
-      [100] "ADLLRAR"                                         
-      [101] "RYINQLTVAK"                                      
-      [102] "YINQLTVAKK"                                      
-      [103] "IRILGGPAYDQQEDGALDEGEGPQSQK"                     
-      [104] "ILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYR"         
-      [105] "ILQFEDILANTFYREHFGMYMER"                         
-      [106] "EHFGMYMERMDK"                                    
-      [107] "RALISFWESVEHLK"                                  
-      [108] "ALISFWESVEHLKNANK"                               
-      [109] "NANKNEIPQLVGEIYQNFFVESK"                         
-      [110] "NEIPQLVGEIYQNFFVESKEISVEK"                       
-      [111] "EISVEKSLYK"                                      
-      [112] "SLYKEIQQCLVGNK"                                  
-      [113] "EIQQCLVGNKGIEVFYK"                               
-      [114] "GIEVFYKIQEDVYETLK"                               
-      [115] "IQEDVYETLKDR"                                    
-      [116] "DRYYPSFIVSDLYEK"                                 
-      [117] "YYPSFIVSDLYEKLLIK"                               
-      [118] "LLIKEEEK"                                        
-      [119] "EEEKHASQMISNK"                                   
-      [120] "HASQMISNKDEMGPR"                                 
-      [121] "DEMGPRDEAGEEAVDDGTNQINEQASFAVNK"                 
-      [122] "DEAGEEAVDDGTNQINEQASFAVNKLR"                     
-      [123] "LRELNEK"                                         
-      [124] "ELNEKLEYK"                                       
-      [125] "RQALNSIQNAPKPDK"                                 
-      [126] "QALNSIQNAPKPDKK"                                 
-      [127] "IVSKLK"                                          
-      [128] "LKDEIILIEK"                                      
-      [129] "DEIILIEKER"                                      
-      [130] "ERTDLQLHMAR"                                     
-      [131] "TDLQLHMARTDWWCENLGMWK"                           
-      [132] "TDWWCENLGMWKASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK"  
-      [133] "ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETKNWTVPR"        
-      [134] "NWTVPRR"                                         
-      [135] "RLSEFQNLHR"                                      
-      [136] "LSEFQNLHRK"                                      
-      [137] "KLSECVPSLK"                                      
-      [138] "LSECVPSLKK"                                      
-      [139] "KVQLPSLSK"                                       
-      [140] "VQLPSLSKLPFK"                                    
-      [141] "LPFKSIDQK"                                       
-      [142] "SIDQKFMEK"                                       
-      [143] "FMEKSK"                                          
-      [144] "SKNQLNK"                                         
-      [145] "NQLNKFLQNLLSDER"                                 
-      [146] "FLQNLLSDERLCQSEALYAFLSPSPDYLK"                   
-      [147] "LCQSEALYAFLSPSPDYLKVIDVQGK"                      
-      [148] "VIDVQGKK"                                        
-      [149] "KNSFSLSSFLER"                                    
-      [150] "NSFSLSSFLERLPR"                                  
-      [151] "LPRDFFSHQEEETEEDSDLSDYGDDVDGR"                   
-      [152] "DFFSHQEEETEEDSDLSDYGDDVDGRK"                     
-      [153] "KDALAEPCFMLIGEIFELR"                             
-      [154] "DALAEPCFMLIGEIFELRGMFK"                          
-      [155] "GMFKWVR"                                         
-      [156] "RTLIALVQVTFGR"                                   
-      [157] "TLIALVQVTFGRTINK"                                
-      [158] "TINKQIR"                                         
-      [159] "QIRDTVSWIFSEQMLVYYINIFR"                         
-      [160] "DTVSWIFSEQMLVYYINIFRDAFWPNGK"                    
-      [161] "DAFWPNGKLAPPTTIR"                                
-      [162] "LAPPTTIRSK"                                      
-      [163] "SKEQSQETK"                                       
-      [164] "EQSQETKQR"                                       
-      [165] "QRAQQK"                                          
-      [166] "AQQKLLENIPDMLQSLVGQQNAR"                         
-      [167] "LLENIPDMLQSLVGQQNARHGIIK"                        
-      [168] "HGIIKIFNALQETR"                                  
-      [169] "IFNALQETRANK"                                    
-      [170] "ANKHLLYALMELLLIELCPELR"                          
-      [171] "HLLYALMELLLIELCPELRVHLDQLK"                      
-      [172] "VHLDQLKAGQV"                                     
-      [173] "MHPDATDSGGAGPSPARAAGAGGRPVSGFRGER"               
-      [174] "AAGAGGRPVSGFRGERRPESPGDAEAAAAAAPGAPGGR"          
-      [175] "LSLYLSCAAAAFLLGILFALVCRSPRAQPPDFAAAWSR"          
-      [176] "SPRAQPPDFAAAWSRLAATSAAR"                         
-      [177] "AQPPDFAAAWSRLAATSAARRPPGSPVYGNSHESAQSR"          
-      [178] "LAATSAARRPPGSPVYGNSHESAQSRR"                     
-      [179] "RPPGSPVYGNSHESAQSRRVVISHNMDK"                    
-      [180] "RVVISHNMDKALK"                                   
-      [181] "VVISHNMDKALKEVFDYSYR"                            
-      [182] "ALKEVFDYSYRDYILSWYGNLSR"                         
-      [183] "EVFDYSYRDYILSWYGNLSRDEGQLYHLLLEDFWEIAR"          
-      [184] "DYILSWYGNLSRDEGQLYHLLLEDFWEIARQLHHR"             
-      [185] "DEGQLYHLLLEDFWEIARQLHHRLSHVDVVK"                 
-      [186] "QLHHRLSHVDVVKVVCNDVVR"                           
-      [187] "LSHVDVVKVVCNDVVRTLLTHFCDLK"                      
-      [188] "VVCNDVVRTLLTHFCDLKAANAR"                         
-      [189] "TLLTHFCDLKAANARHEEQPRPFVLHACLR"                  
-      [190] "AANARHEEQPRPFVLHACLRNSDDEVR"                     
-      [191] "HEEQPRPFVLHACLRNSDDEVRFLQTCSR"                   
-      [192] "NSDDEVRFLQTCSRVLVFCLLPSK"                        
-      [193] "FLQTCSRVLVFCLLPSKDVQSLSLR"                       
-      [194] "VLVFCLLPSKDVQSLSLRIMLAEILTTK"                    
-      [195] "DVQSLSLRIMLAEILTTKVLKPVVELLSNPDYINQMLLAQLAYR"    
-      [196] "IMLAEILTTKVLKPVVELLSNPDYINQMLLAQLAYREQMNEHHK"    
-      [197] "VLKPVVELLSNPDYINQMLLAQLAYREQMNEHHKR"             
-      [198] "EQMNEHHKRAYTYAPSYEDFIK"                          
-      [199] "RAYTYAPSYEDFIKLINSNSDVEFLK"                      
-      [200] "AYTYAPSYEDFIKLINSNSDVEFLKQLR"                    
-      [201] "LINSNSDVEFLKQLRYQIVVEIIQATTISSFPQLK"             
-      [202] "QLRYQIVVEIIQATTISSFPQLKR"                        
-      [203] "YQIVVEIIQATTISSFPQLKRHK"                         
-      [204] "HKGKETAAMK"                                      
-      [205] "GKETAAMKADLLR"                                   
-      [206] "ETAAMKADLLRAR"                                   
-      [207] "ADLLRARNMK"                                      
-      [208] "ARNMKR"                                          
-      [209] "NMKRYINQLTVAK"                                   
-      [210] "RYINQLTVAKK"                                     
-      [211] "YINQLTVAKKQCEK"                                  
-      [212] "KQCEKR"                                          
-      [213] "QCEKRIR"                                         
-      [214] "RIRILGGPAYDQQEDGALDEGEGPQSQK"                    
-      [215] "IRILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYR"       
-      [216] "ILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYREHFGMYMER"
-      [217] "ILQFEDILANTFYREHFGMYMERMDK"                      
-      [218] "EHFGMYMERMDKR"                                   
-      [219] "MDKRALISFWESVEHLK"                               
-      [220] "RALISFWESVEHLKNANK"                              
-      [221] "ALISFWESVEHLKNANKNEIPQLVGEIYQNFFVESK"            
-      [222] "NANKNEIPQLVGEIYQNFFVESKEISVEK"                   
-      [223] "NEIPQLVGEIYQNFFVESKEISVEKSLYK"                   
-      [224] "EISVEKSLYKEIQQCLVGNK"                            
-      [225] "SLYKEIQQCLVGNKGIEVFYK"                           
-      [226] "EIQQCLVGNKGIEVFYKIQEDVYETLK"                     
-      [227] "GIEVFYKIQEDVYETLKDR"                             
-      [228] "IQEDVYETLKDRYYPSFIVSDLYEK"                       
-      [229] "DRYYPSFIVSDLYEKLLIK"                             
-      [230] "YYPSFIVSDLYEKLLIKEEEK"                           
-      [231] "LLIKEEEKHASQMISNK"                               
-      [232] "EEEKHASQMISNKDEMGPR"                             
-      [233] "HASQMISNKDEMGPRDEAGEEAVDDGTNQINEQASFAVNK"        
-      [234] "DEMGPRDEAGEEAVDDGTNQINEQASFAVNKLR"               
-      [235] "DEAGEEAVDDGTNQINEQASFAVNKLRELNEK"                
-      [236] "LRELNEKLEYK"                                     
-      [237] "ELNEKLEYKR"                                      
-      [238] "LEYKRQALNSIQNAPKPDK"                             
-      [239] "RQALNSIQNAPKPDKK"                                
-      [240] "QALNSIQNAPKPDKKIVSK"                             
-      [241] "KIVSKLK"                                         
-      [242] "IVSKLKDEIILIEK"                                  
-      [243] "LKDEIILIEKER"                                    
-      [244] "DEIILIEKERTDLQLHMAR"                             
-      [245] "ERTDLQLHMARTDWWCENLGMWK"                         
-      [246] "ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETKNWTVPRR"       
-      [247] "NWTVPRRLSEFQNLHR"                                
-      [248] "RLSEFQNLHRK"                                     
-      [249] "LSEFQNLHRKLSECVPSLK"                             
-      [250] "KLSECVPSLKK"                                     
-      [251] "LSECVPSLKKVQLPSLSK"                              
-      [252] "KVQLPSLSKLPFK"                                   
-      [253] "VQLPSLSKLPFKSIDQK"                               
-      [254] "LPFKSIDQKFMEK"                                   
-      [255] "SIDQKFMEKSK"                                     
-      [256] "FMEKSKNQLNK"                                     
-      [257] "SKNQLNKFLQNLLSDER"                               
-      [258] "NQLNKFLQNLLSDERLCQSEALYAFLSPSPDYLK"              
-      [259] "FLQNLLSDERLCQSEALYAFLSPSPDYLKVIDVQGK"            
-      [260] "LCQSEALYAFLSPSPDYLKVIDVQGKK"                     
-      [261] "VIDVQGKKNSFSLSSFLER"                             
-      [262] "KNSFSLSSFLERLPR"                                 
-      [263] "NSFSLSSFLERLPRDFFSHQEEETEEDSDLSDYGDDVDGR"        
-      [264] "LPRDFFSHQEEETEEDSDLSDYGDDVDGRK"                  
-      [265] "DFFSHQEEETEEDSDLSDYGDDVDGRKDALAEPCFMLIGEIFELR"   
-      [266] "KDALAEPCFMLIGEIFELRGMFK"                         
-      [267] "DALAEPCFMLIGEIFELRGMFKWVR"                       
-      [268] "GMFKWVRR"                                        
-      [269] "WVRRTLIALVQVTFGR"                                
-      [270] "RTLIALVQVTFGRTINK"                               
-      [271] "TLIALVQVTFGRTINKQIR"                             
-      [272] "TINKQIRDTVSWIFSEQMLVYYINIFR"                     
-      [273] "QIRDTVSWIFSEQMLVYYINIFRDAFWPNGK"                 
-      [274] "DTVSWIFSEQMLVYYINIFRDAFWPNGKLAPPTTIR"            
-      [275] "DAFWPNGKLAPPTTIRSK"                              
-      [276] "LAPPTTIRSKEQSQETK"                               
-      [277] "SKEQSQETKQR"                                     
-      [278] "EQSQETKQRAQQK"                                   
-      [279] "QRAQQKLLENIPDMLQSLVGQQNAR"                       
-      [280] "AQQKLLENIPDMLQSLVGQQNARHGIIK"                    
-      [281] "LLENIPDMLQSLVGQQNARHGIIKIFNALQETR"               
-      [282] "HGIIKIFNALQETRANK"                               
-      [283] "IFNALQETRANKHLLYALMELLLIELCPELR"                 
-      [284] "ANKHLLYALMELLLIELCPELRVHLDQLK"                   
-      [285] "HLLYALMELLLIELCPELRVHLDQLKAGQV"                  
-      [286] "HPDATDSGGAGPSPAR"                                
-      [287] "HPDATDSGGAGPSPARAAGAGGRPVSGFR"                   
-      [288] "HPDATDSGGAGPSPARAAGAGGRPVSGFRGER"                
-      
-      $H0Y9R5
-       [1] "NEIPQLVGEIYQNFFVESK"                     
-       [2] "EISVEK"                                  
-       [3] "EIQQCLVGNK"                              
-       [4] "GIEVFYK"                                 
-       [5] "IQEDVYETLK"                              
-       [6] "YYPSFIVSDLYEK"                           
-       [7] "HASQMISNK"                               
-       [8] "DEMGPR"                                  
-       [9] "DEAGEEAVDDGTNQINEQASFAVNK"               
-      [10] "XLKNANK"                                 
-      [11] "NANKNEIPQLVGEIYQNFFVESK"                 
-      [12] "NEIPQLVGEIYQNFFVESKEISVEK"               
-      [13] "EISVEKSLYK"                              
-      [14] "SLYKEIQQCLVGNK"                          
-      [15] "EIQQCLVGNKGIEVFYK"                       
-      [16] "GIEVFYKIQEDVYETLK"                       
-      [17] "IQEDVYETLKDR"                            
-      [18] "DRYYPSFIVSDLYEK"                         
-      [19] "YYPSFIVSDLYEKLLIK"                       
-      [20] "LLIKEEEK"                                
-      [21] "EEEKHASQMISNK"                           
-      [22] "HASQMISNKDEMGPR"                         
-      [23] "DEMGPRDEAGEEAVDDGTNQINEQASFAVNK"         
-      [24] "DEAGEEAVDDGTNQINEQASFAVNKLR"             
-      [25] "LRELNEK"                                 
-      [26] "ELNEKLEYK"                               
-      [27] "XLKNANKNEIPQLVGEIYQNFFVESK"              
-      [28] "NANKNEIPQLVGEIYQNFFVESKEISVEK"           
-      [29] "NEIPQLVGEIYQNFFVESKEISVEKSLYK"           
-      [30] "EISVEKSLYKEIQQCLVGNK"                    
-      [31] "SLYKEIQQCLVGNKGIEVFYK"                   
-      [32] "EIQQCLVGNKGIEVFYKIQEDVYETLK"             
-      [33] "GIEVFYKIQEDVYETLKDR"                     
-      [34] "IQEDVYETLKDRYYPSFIVSDLYEK"               
-      [35] "DRYYPSFIVSDLYEKLLIK"                     
-      [36] "YYPSFIVSDLYEKLLIKEEEK"                   
-      [37] "LLIKEEEKHASQMISNK"                       
-      [38] "EEEKHASQMISNKDEMGPR"                     
-      [39] "HASQMISNKDEMGPRDEAGEEAVDDGTNQINEQASFAVNK"
-      [40] "DEMGPRDEAGEEAVDDGTNQINEQASFAVNKLR"       
-      [41] "DEAGEEAVDDGTNQINEQASFAVNKLRELNEK"        
-      [42] "LRELNEKLEYK"                             
-      [43] "ELNEKLEYKR"                              
-      [44] "LEYKRLFPS"                               
-      
-      $P31271
-       [1] "MTASVLLHPR"                               
-       [2] "WIEPTVMFLYDNGGGLVADELNK"                  
-       [3] "QCSPCSAAAQSSSGPAALPYGYFGSGYYPCAR"         
-       [4] "MGPHPNAIK"                                
-       [5] "SCAQPASAAAAAAFADK"                        
-       [6] "YMDTAGPAAEEFSSR"                          
-       [7] "EFAFYHQGYAAGPYHHHQPMPGYLDMPVVPGLGGPGESR"  
-       [8] "HEPLGLPMESYQPWALPNGWNGQMYCPK"             
-       [9] "EQAQPPHLWK"                               
-      [10] "STLPDVVSHPSDASSYR"                        
-      [11] "EYATNK"                                   
-      [12] "ISATTNLSER"                               
-      [13] "QVTIWFQNR"                                
-      [14] "MTASVLLHPRWIEPTVMFLYDNGGGLVADELNK"        
-      [15] "QCSPCSAAAQSSSGPAALPYGYFGSGYYPCARMGPHPNAIK"
-      [16] "MGPHPNAIKSCAQPASAAAAAAFADK"               
-      [17] "SCAQPASAAAAAAFADKYMDTAGPAAEEFSSR"         
-      [18] "YMDTAGPAAEEFSSRAK"                        
-      [19] "AKEFAFYHQGYAAGPYHHHQPMPGYLDMPVVPGLGGPGESR"
-      [20] "HEPLGLPMESYQPWALPNGWNGQMYCPKEQAQPPHLWK"   
-      [21] "EQAQPPHLWKSTLPDVVSHPSDASSYR"              
-      [22] "STLPDVVSHPSDASSYRR"                       
-      [23] "RVPYTK"                                   
-      [24] "VPYTKVQLK"                                
-      [25] "VQLKELER"                                 
-      [26] "ELEREYATNK"                               
-      [27] "EYATNKFITK"                               
-      [28] "FITKDK"                                   
-      [29] "RISATTNLSER"                              
-      [30] "ISATTNLSERQVTIWFQNR"                      
-      [31] "QVTIWFQNRR"                               
-      [32] "VINKLK"                                   
-      [33] "MGPHPNAIKSCAQPASAAAAAAFADKYMDTAGPAAEEFSSR"
-      [34] "SCAQPASAAAAAAFADKYMDTAGPAAEEFSSRAK"       
-      [35] "EQAQPPHLWKSTLPDVVSHPSDASSYRR"             
-      [36] "STLPDVVSHPSDASSYRRGR"                     
-      [37] "KRVPYTK"                                  
-      [38] "RVPYTKVQLK"                               
-      [39] "VPYTKVQLKELER"                            
-      [40] "VQLKELEREYATNK"                           
-      [41] "ELEREYATNKFITK"                           
-      [42] "EYATNKFITKDK"                             
-      [43] "FITKDKR"                                  
-      [44] "RRISATTNLSER"                             
-      [45] "RISATTNLSERQVTIWFQNR"                     
-      [46] "ISATTNLSERQVTIWFQNRR"                     
-      [47] "QVTIWFQNRRVK"                             
-      [48] "EKKVINK"                                  
-      [49] "KVINKLK"                                  
-      [50] "VINKLKTTS"                                
-      [51] "TASVLLHPR"                                
-      [52] "TASVLLHPRWIEPTVMFLYDNGGGLVADELNK"         
-      
-      $P31276
-       [1] "MTTSLLLHPR"                                        
-       [2] "WPESLMYVYEDSAAESGIGGGGGGGGGGTGGAGGGCSGASPGK"       
-       [3] "APSMDGLGSSCPASHCR"                                 
-       [4] "DLLPHPVLGRPPAPLGAPQGAVYTDIPAPEAAR"                 
-       [5] "QCAPPPAPPTSSSATLGYGYPFGGSYYGCR"                    
-       [6] "LSHNVNLQQKPCAYHPGDK"                               
-       [7] "YPEPSGALPGDDLSSR"                                  
-       [8] "EFAFYPSFASSYQAMPGYLDVSVVPGISGHPEPR"                
-       [9] "HDALIPVEGYQHWALSNGWDSQVYCSK"                       
-      [10] "EQSQSAHLWK"                                        
-      [11] "SPFPDVVPLQPEVSSYR"                                 
-      [12] "EYAASK"                                            
-      [13] "ISATTNLSER"                                        
-      [14] "QVTIWFQNR"                                         
-      [15] "APHLHST"                                           
-      [16] "APSMDGLGSSCPASHCRDLLPHPVLGRPPAPLGAPQGAVYTDIPAPEAAR"
-      [17] "QCAPPPAPPTSSSATLGYGYPFGGSYYGCRLSHNVNLQQKPCAYHPGDK" 
-      [18] "LSHNVNLQQKPCAYHPGDKYPEPSGALPGDDLSSR"               
-      [19] "YPEPSGALPGDDLSSRAK"                                
-      [20] "AKEFAFYPSFASSYQAMPGYLDVSVVPGISGHPEPR"              
-      [21] "HDALIPVEGYQHWALSNGWDSQVYCSKEQSQSAHLWK"             
-      [22] "EQSQSAHLWKSPFPDVVPLQPEVSSYR"                       
-      [23] "SPFPDVVPLQPEVSSYRR"                                
-      [24] "RVPYTK"                                            
-      [25] "VPYTKVQLK"                                         
-      [26] "VQLKELEK"                                          
-      [27] "ELEKEYAASK"                                        
-      [28] "EYAASKFITK"                                        
-      [29] "FITKEK"                                            
-      [30] "RISATTNLSER"                                       
-      [31] "ISATTNLSERQVTIWFQNR"                               
-      [32] "QVTIWFQNRR"                                        
-      [33] "VVSKSK"                                            
-      [34] "SKAPHLHST"                                         
-      [35] "LSHNVNLQQKPCAYHPGDKYPEPSGALPGDDLSSRAK"             
-      [36] "EQSQSAHLWKSPFPDVVPLQPEVSSYRR"                      
-      [37] "SPFPDVVPLQPEVSSYRRGR"                              
-      [38] "KRVPYTK"                                           
-      [39] "RVPYTKVQLK"                                        
-      [40] "VPYTKVQLKELEK"                                     
-      [41] "VQLKELEKEYAASK"                                    
-      [42] "ELEKEYAASKFITK"                                    
-      [43] "EYAASKFITKEK"                                      
-      [44] "FITKEKR"                                           
-      [45] "RRISATTNLSER"                                      
-      [46] "RISATTNLSERQVTIWFQNR"                              
-      [47] "ISATTNLSERQVTIWFQNRR"                              
-      [48] "QVTIWFQNRRVK"                                      
-      [49] "EKKVVSK"                                           
-      [50] "KVVSKSK"                                           
-      [51] "VVSKSKAPHLHST"                                     
-      [52] "TTSLLLHPR"                                         
-      
-      $P35453
-       [1] "AGSWDMDGLR"                                       
-       [2] "ADGGGAGGAPASSSSSSVAAAAASGQCR"                     
-       [3] "GFLSAPVFAGTHSGR"                                  
-       [4] "AAAAAAAAAAAAAAASGFAYPGTSER"                       
-       [5] "TGSSSSSSSSAVVAARPEAPPAK"                          
-       [6] "ECPAPTPAAAAAAPPSAPALGYGYHFGNGYYSCR"               
-       [7] "MSHGVGLQQNALK"                                    
-       [8] "SSPHASLGGFPVEK"                                   
-       [9] "YMDVSGLASSSVPANEVPAR"                             
-      [10] "EVSFYQGYTSPYQHVPGYIDMVSTFGSGEPR"                  
-      [11] "HEAYISMEGYQSWTLANGWNSQVYCTK"                      
-      [12] "DQPQGSHFWK"                                       
-      [13] "SSFPGDVALNQPDMCVYR"                               
-      [14] "ELENEYAINK"                                       
-      [15] "ISAATNLSER"                                       
-      [16] "QVTIWFQNR"                                        
-      [17] "MSRAGSWDMDGLR"                                    
-      [18] "AGSWDMDGLRADGGGAGGAPASSSSSSVAAAAASGQCR"           
-      [19] "ADGGGAGGAPASSSSSSVAAAAASGQCRGFLSAPVFAGTHSGR"      
-      [20] "GFLSAPVFAGTHSGRAAAAAAAAAAAAAAASGFAYPGTSER"        
-      [21] "AAAAAAAAAAAAAAASGFAYPGTSERTGSSSSSSSSAVVAARPEAPPAK"
-      [22] "ECPAPTPAAAAAAPPSAPALGYGYHFGNGYYSCRMSHGVGLQQNALK"  
-      [23] "MSHGVGLQQNALKSSPHASLGGFPVEK"                      
-      [24] "SSPHASLGGFPVEKYMDVSGLASSSVPANEVPAR"               
-      [25] "YMDVSGLASSSVPANEVPARAK"                           
-      [26] "AKEVSFYQGYTSPYQHVPGYIDMVSTFGSGEPR"                
-      [27] "HEAYISMEGYQSWTLANGWNSQVYCTKDQPQGSHFWK"            
-      [28] "DQPQGSHFWKSSFPGDVALNQPDMCVYR"                     
-      [29] "SSFPGDVALNQPDMCVYRR"                              
-      [30] "RVPYTK"                                           
-      [31] "VPYTKLQLK"                                        
-      [32] "LQLKELENEYAINK"                                   
-      [33] "ELENEYAINKFINK"                                   
-      [34] "FINKDK"                                           
-      [35] "RISAATNLSER"                                      
-      [36] "ISAATNLSERQVTIWFQNR"                              
-      [37] "QVTIWFQNRR"                                       
-      [38] "IVSKLK"                                           
-      [39] "LKDTVS"                                           
-      [40] "MSRAGSWDMDGLRADGGGAGGAPASSSSSSVAAAAASGQCR"        
-      [41] "MSHGVGLQQNALKSSPHASLGGFPVEKYMDVSGLASSSVPANEVPAR"  
-      [42] "SSPHASLGGFPVEKYMDVSGLASSSVPANEVPARAK"             
-      [43] "DQPQGSHFWKSSFPGDVALNQPDMCVYRR"                    
-      [44] "SSFPGDVALNQPDMCVYRRGR"                            
-      [45] "KRVPYTK"                                          
-      [46] "RVPYTKLQLK"                                       
-      [47] "VPYTKLQLKELENEYAINK"                              
-      [48] "LQLKELENEYAINKFINK"                               
-      [49] "ELENEYAINKFINKDK"                                 
-      [50] "FINKDKR"                                          
-      [51] "RRISAATNLSER"                                     
-      [52] "RISAATNLSERQVTIWFQNR"                             
-      [53] "ISAATNLSERQVTIWFQNRR"                             
-      [54] "QVTIWFQNRRVK"                                     
-      [55] "DKKIVSK"                                          
-      [56] "KIVSKLK"                                          
-      [57] "IVSKLKDTVS"                                       
-      [58] "SRAGSWDMDGLR"                                     
-      [59] "SRAGSWDMDGLRADGGGAGGAPASSSSSSVAAAAASGQCR"         
-      
-      $Q1XH10
-        [1] "SGFEEVDGVR"                                        
-        [2] "LGYLIIK"                                           
-        [3] "QMFALSQVFTDLLK"                                    
-        [4] "HHCDLEELR"                                         
-        [5] "AINSIAFHAAK"                                       
-        [6] "CTLISR"                                            
-        [7] "EDVEALYTSCK"                                       
-        [8] "APPPER"                                            
-        [9] "AAAASPRPGFWK"                                      
-       [10] "GLSGAARPLPISAQSQRPGAAAARPAAHLPQIFSK"               
-       [11] "YPGSHYPEIVR"                                       
-       [12] "SPCKPPLNYETAPLQGNYVAFPSDPAYFR"                     
-       [13] "SLLCSK"                                            
-       [14] "HPAAAAAAAAAAAAAAAAAAAAAYYQVSAAGPQPK"               
-       [15] "AAAGAGGPGSLSYR"                                    
-       [16] "DCLLAPHAGAR"                                       
-       [17] "LLLLPR"                                            
-       [18] "AAAAAAAAAAAAAAAAGATCLER"                           
-       [19] "FHLVNGFCPPPHHHHHHHHHHHHHHHR"                       
-       [20] "TSFCKPPSVQAQANFLYHLASAAAATKPAAFEDAGR"              
-       [21] "AESPAEWNLQSWAPK"                                   
-       [22] "ASPVYCPASLGSCFAEIR"                                
-       [23] "VSEITFPHSEISNAVK"                                  
-       [24] "TDLTINCLAEGASSPSPK"                                
-       [25] "TNNAFPQQR"                                         
-       [26] "CLQTTPTTHCADNNTIAAR"                               
-       [27] "FLNNDSSGAEANSEK"                                   
-       [28] "ILHCPEFATDLPSSQTDPEVNAAGAAATK"                     
-       [29] "AENPCTDTGDK"                                       
-       [30] "TLPFLHNIK"                                         
-       [31] "VEDSSANEEYEPHLFTNK"                                
-       [32] "CECNDTK"                                           
-       [33] "GEFYSVTESK"                                        
-       [34] "EEDALLTTAK"                                        
-       [35] "EGFACPEK"                                          
-       [36] "ETPSLNPLAQSQGLSCTLGSPKPEDGEYK"                     
-       [37] "TLVLGK"                                            
-       [38] "RPVLQTPPVKPNLK"                                    
-       [39] "SPRPTGK"                                           
-       [40] "TETNEGTLDDFTVINR"                                  
-       [41] "VASNVASAVK"                                        
-       [42] "RPFHFMANFPCPPSLIIGR"                               
-       [43] "DGDLWPAYSLNTTK"                                    
-       [44] "DSQTPHK"                                           
-       [45] "AHPIWK"                                            
-       [46] "WQLGGSAIPLPPSHK"                                   
-       [47] "MGDLKSGFEEVDGVR"                                   
-       [48] "SGFEEVDGVRLGYLIIK"                                 
-       [49] "LGYLIIKGK"                                         
-       [50] "GKQMFALSQVFTDLLK"                                  
-       [51] "QMFALSQVFTDLLKNIPR"                                
-       [52] "NIPRTTVHK"                                         
-       [53] "TTVHKR"                                            
-       [54] "RMDHLK"                                            
-       [55] "MDHLKVK"                                           
-       [56] "KHHCDLEELR"                                        
-       [57] "HHCDLEELRK"                                        
-       [58] "LKAINSIAFHAAK"                                     
-       [59] "AINSIAFHAAKCTLISR"                                 
-       [60] "CTLISREDVEALYTSCK"                                 
-       [61] "EDVEALYTSCKTER"                                    
-       [62] "TERVLK"                                            
-       [63] "VGRALATK"                                          
-       [64] "ALATKAPPPER"                                       
-       [65] "APPPERAAAASPRPGFWK"                                
-       [66] "AAAASPRPGFWKDK"                                    
-       [67] "DKHQLWR"                                           
-       [68] "HQLWRGLSGAARPLPISAQSQRPGAAAARPAAHLPQIFSK"          
-       [69] "GLSGAARPLPISAQSQRPGAAAARPAAHLPQIFSKYPGSHYPEIVR"    
-       [70] "YPGSHYPEIVRSPCKPPLNYETAPLQGNYVAFPSDPAYFR"          
-       [71] "SPCKPPLNYETAPLQGNYVAFPSDPAYFRSLLCSK"               
-       [72] "SLLCSKHPAAAAAAAAAAAAAAAAAAAAAYYQVSAAGPQPK"         
-       [73] "HPAAAAAAAAAAAAAAAAAAAAAYYQVSAAGPQPKAAAGAGGPGSLSYR" 
-       [74] "AAAGAGGPGSLSYRCK"                                  
-       [75] "GGAKDCLLAPHAGAR"                                   
-       [76] "DCLLAPHAGARR"                                      
-       [77] "RLLLLPR"                                           
-       [78] "LLLLPRSYK"                                         
-       [79] "AKAAAAAAAAAAAAAAAAGATCLER"                         
-       [80] "AAAAAAAAAAAAAAAAGATCLERFHLVNGFCPPPHHHHHHHHHHHHHHHR"
-       [81] "RTSFCKPPSVQAQANFLYHLASAAAATKPAAFEDAGR"             
-       [82] "TSFCKPPSVQAQANFLYHLASAAAATKPAAFEDAGRLPDLK"         
-       [83] "LPDLKSSVK"                                         
-       [84] "SSVKAESPAEWNLQSWAPK"                               
-       [85] "AESPAEWNLQSWAPKASPVYCPASLGSCFAEIR"                 
-       [86] "ASPVYCPASLGSCFAEIRNDR"                             
-       [87] "NDRVSEITFPHSEISNAVK"                               
-       [88] "VSEITFPHSEISNAVKR"                                 
-       [89] "RTDLTINCLAEGASSPSPK"                               
-       [90] "TDLTINCLAEGASSPSPKTNNAFPQQR"                       
-       [91] "TNNAFPQQRILR"                                      
-       [92] "ILREAR"                                            
-       [93] "KCLQTTPTTHCADNNTIAAR"                              
-       [94] "CLQTTPTTHCADNNTIAARFLNNDSSGAEANSEK"                
-       [95] "FLNNDSSGAEANSEKYSK"                                
-       [96] "YSKILHCPEFATDLPSSQTDPEVNAAGAAATK"                  
-       [97] "ILHCPEFATDLPSSQTDPEVNAAGAAATKAENPCTDTGDK"          
-       [98] "AENPCTDTGDKTLPFLHNIK"                              
-       [99] "TLPFLHNIKIK"                                       
-      [100] "IKVEDSSANEEYEPHLFTNK"                              
-      [101] "VEDSSANEEYEPHLFTNKLK"                              
-      [102] "LKCECNDTK"                                         
-      [103] "CECNDTKGEFYSVTESK"                                 
-      [104] "GEFYSVTESKEEDALLTTAK"                              
-      [105] "EEDALLTTAKEGFACPEK"                                
-      [106] "EGFACPEKETPSLNPLAQSQGLSCTLGSPKPEDGEYK"             
-      [107] "ETPSLNPLAQSQGLSCTLGSPKPEDGEYKFGAR"                 
-      [108] "FGARVR"                                            
-      [109] "NYRTLVLGK"                                         
-      [110] "TLVLGKRPVLQTPPVKPNLK"                              
-      [111] "RPVLQTPPVKPNLKSAR"                                 
-      [112] "SARSPRPTGK"                                        
-      [113] "SPRPTGKTETNEGTLDDFTVINR"                           
-      [114] "TETNEGTLDDFTVINRR"                                 
-      [115] "KVASNVASAVK"                                       
-      [116] "VASNVASAVKRPFHFMANFPCPPSLIIGR"                     
-      [117] "RPFHFMANFPCPPSLIIGRDGDLWPAYSLNTTK"                 
-      [118] "DGDLWPAYSLNTTKDSQTPHK"                             
-      [119] "DSQTPHKAHPIWK"                                     
-      [120] "AHPIWKWQLGGSAIPLPPSHK"                             
-      [121] "WQLGGSAIPLPPSHKFR"                                 
-      [122] "MGDLKSGFEEVDGVRLGYLIIK"                            
-      [123] "SGFEEVDGVRLGYLIIKGK"                               
-      [124] "LGYLIIKGKQMFALSQVFTDLLK"                           
-      [125] "GKQMFALSQVFTDLLKNIPR"                              
-      [126] "QMFALSQVFTDLLKNIPRTTVHK"                           
-      [127] "NIPRTTVHKR"                                        
-      [128] "TTVHKRMDHLK"                                       
-      [129] "RMDHLKVK"                                          
-      [130] "MDHLKVKK"                                          
-      [131] "VKKHHCDLEELR"                                      
-      [132] "KHHCDLEELRK"                                       
-      [133] "HHCDLEELRKLK"                                      
-      [134] "KLKAINSIAFHAAK"                                    
-      [135] "LKAINSIAFHAAKCTLISR"                               
-      [136] "AINSIAFHAAKCTLISREDVEALYTSCK"                      
-      [137] "CTLISREDVEALYTSCKTER"                              
-      [138] "EDVEALYTSCKTERVLK"                                 
-      [139] "TERVLKTK"                                          
-      [140] "VLKTKR"                                            
-      [141] "RVGRALATK"                                         
-      [142] "VGRALATKAPPPER"                                    
-      [143] "ALATKAPPPERAAAASPRPGFWK"                           
-      [144] "APPPERAAAASPRPGFWKDK"                              
-      [145] "AAAASPRPGFWKDKHQLWR"                               
-      [146] "DKHQLWRGLSGAARPLPISAQSQRPGAAAARPAAHLPQIFSK"        
-      [147] "YPGSHYPEIVRSPCKPPLNYETAPLQGNYVAFPSDPAYFRSLLCSK"    
-      [148] "AAAGAGGPGSLSYRCKR"                                 
-      [149] "KRGGAK"                                            
-      [150] "RGGAKDCLLAPHAGAR"                                  
-      [151] "GGAKDCLLAPHAGARR"                                  
-      [152] "DCLLAPHAGARRLLLLPR"                                
-      [153] "RLLLLPRSYK"                                        
-      [154] "LLLLPRSYKAK"                                       
-      [155] "SYKAKAAAAAAAAAAAAAAAAGATCLER"                      
-      [156] "FRRTSFCKPPSVQAQANFLYHLASAAAATKPAAFEDAGR"           
-      [157] "RTSFCKPPSVQAQANFLYHLASAAAATKPAAFEDAGRLPDLK"        
-      [158] "TSFCKPPSVQAQANFLYHLASAAAATKPAAFEDAGRLPDLKSSVK"     
-      [159] "LPDLKSSVKAESPAEWNLQSWAPK"                          
-      [160] "SSVKAESPAEWNLQSWAPKASPVYCPASLGSCFAEIR"             
-      [161] "AESPAEWNLQSWAPKASPVYCPASLGSCFAEIRNDR"              
-      [162] "ASPVYCPASLGSCFAEIRNDRVSEITFPHSEISNAVK"             
-      [163] "NDRVSEITFPHSEISNAVKR"                              
-      [164] "VSEITFPHSEISNAVKRTDLTINCLAEGASSPSPK"               
-      [165] "RTDLTINCLAEGASSPSPKTNNAFPQQR"                      
-      [166] "TDLTINCLAEGASSPSPKTNNAFPQQRILR"                    
-      [167] "TNNAFPQQRILREAR"                                   
-      [168] "ILREARK"                                           
-      [169] "EARKCLQTTPTTHCADNNTIAAR"                           
-      [170] "KCLQTTPTTHCADNNTIAARFLNNDSSGAEANSEK"               
-      [171] "CLQTTPTTHCADNNTIAARFLNNDSSGAEANSEKYSK"             
-      [172] "FLNNDSSGAEANSEKYSKILHCPEFATDLPSSQTDPEVNAAGAAATK"   
-      [173] "YSKILHCPEFATDLPSSQTDPEVNAAGAAATKAENPCTDTGDK"       
-      [174] "ILHCPEFATDLPSSQTDPEVNAAGAAATKAENPCTDTGDKTLPFLHNIK" 
-      [175] "AENPCTDTGDKTLPFLHNIKIK"                            
-      [176] "TLPFLHNIKIKVEDSSANEEYEPHLFTNK"                     
-      [177] "IKVEDSSANEEYEPHLFTNKLK"                            
-      [178] "VEDSSANEEYEPHLFTNKLKCECNDTK"                       
-      [179] "LKCECNDTKGEFYSVTESK"                               
-      [180] "CECNDTKGEFYSVTESKEEDALLTTAK"                       
-      [181] "GEFYSVTESKEEDALLTTAKEGFACPEK"                      
-      [182] "EEDALLTTAKEGFACPEKETPSLNPLAQSQGLSCTLGSPKPEDGEYK"   
-      [183] "EGFACPEKETPSLNPLAQSQGLSCTLGSPKPEDGEYKFGAR"         
-      [184] "ETPSLNPLAQSQGLSCTLGSPKPEDGEYKFGARVR"               
-      [185] "FGARVRK"                                           
-      [186] "VRKNYR"                                            
-      [187] "KNYRTLVLGK"                                        
-      [188] "NYRTLVLGKRPVLQTPPVKPNLK"                           
-      [189] "TLVLGKRPVLQTPPVKPNLKSAR"                           
-      [190] "RPVLQTPPVKPNLKSARSPRPTGK"                          
-      [191] "SARSPRPTGKTETNEGTLDDFTVINR"                        
-      [192] "SPRPTGKTETNEGTLDDFTVINRR"                          
-      [193] "TETNEGTLDDFTVINRRK"                                
-      [194] "KKVASNVASAVK"                                      
-      [195] "KVASNVASAVKRPFHFMANFPCPPSLIIGR"                    
-      [196] "VASNVASAVKRPFHFMANFPCPPSLIIGRDGDLWPAYSLNTTK"       
-      [197] "RPFHFMANFPCPPSLIIGRDGDLWPAYSLNTTKDSQTPHK"          
-      [198] "DGDLWPAYSLNTTKDSQTPHKAHPIWK"                       
-      [199] "DSQTPHKAHPIWKWQLGGSAIPLPPSHK"                      
-      [200] "AHPIWKWQLGGSAIPLPPSHKFR"                           
-      [201] "WQLGGSAIPLPPSHKFRK"                                
-      [202] "FRKFNS"                                            
-      [203] "GDLKSGFEEVDGVR"                                    
-      [204] "GDLKSGFEEVDGVRLGYLIIK"                             
-      
-      $Q92826
-       [1] "MEPGNYATLDGAK"                                   
-       [2] "DIEGLLGAGGGR"                                    
-       [3] "NLVAHSPLTSHPAAPTLMPAVNYAPLDLPGSAEPPK"            
-       [4] "QCHPCPGVPQGTSPAPVPYGYFGGGYYSCR"                  
-       [5] "HDSLLPVDSYQSWALAGGWNSQMCCQGEQNPPGPFWK"           
-       [6] "AAFADSSGQHPPDACAFR"                              
-       [7] "EYAANK"                                          
-       [8] "ISAATSLSER"                                      
-       [9] "QITIWFQNR"                                       
-      [10] "MEPGNYATLDGAKDIEGLLGAGGGR"                       
-      [11] "DIEGLLGAGGGRNLVAHSPLTSHPAAPTLMPAVNYAPLDLPGSAEPPK"
-      [12] "QCHPCPGVPQGTSPAPVPYGYFGGGYYSCRVSR"               
-      [13] "AAFADSSGQHPPDACAFRR"                             
-      [14] "RIPYSK"                                          
-      [15] "IPYSKGQLR"                                       
-      [16] "GQLRELER"                                        
-      [17] "ELEREYAANK"                                      
-      [18] "EYAANKFITK"                                      
-      [19] "FITKDK"                                          
-      [20] "KISAATSLSER"                                     
-      [21] "ISAATSLSERQITIWFQNR"                             
-      [22] "QITIWFQNRR"                                      
-      [23] "VLAKVK"                                          
-      [24] "VKNSATP"                                         
-      [25] "AAFADSSGQHPPDACAFRRGR"                           
-      [26] "KRIPYSK"                                         
-      [27] "RIPYSKGQLR"                                      
-      [28] "IPYSKGQLRELER"                                   
-      [29] "GQLRELEREYAANK"                                  
-      [30] "ELEREYAANKFITK"                                  
-      [31] "EYAANKFITKDK"                                    
-      [32] "FITKDKR"                                         
-      [33] "RKISAATSLSER"                                    
-      [34] "KISAATSLSERQITIWFQNR"                            
-      [35] "ISAATSLSERQITIWFQNRR"                            
-      [36] "QITIWFQNRRVK"                                    
-      [37] "EKKVLAK"                                         
-      [38] "KVLAKVK"                                         
-      [39] "VLAKVKNSATP"                                     
-      [40] "EPGNYATLDGAK"                                    
-      [41] "EPGNYATLDGAKDIEGLLGAGGGR"                        
-      
-      $Q9H3E2
-        [1] "EVFDYSYR"                                        
-        [2] "DYILSWYGNLSR"                                    
-        [3] "DEGQLYHLLLEDFWEIAR"                              
-        [4] "LSHVDVVK"                                        
-        [5] "VVCNDVVR"                                        
-        [6] "TLLTHFCDLK"                                      
-        [7] "HEEQPRPFVLHACLR"                                 
-        [8] "NSDDEVR"                                         
-        [9] "FLQTCSR"                                         
-       [10] "VLVFCLLPSK"                                      
-       [11] "DVQSLSLR"                                        
-       [12] "IMLAEILTTK"                                      
-       [13] "VLKPVVELLSNPDYINQMLLAQLAYR"                      
-       [14] "EQMNEHHK"                                        
-       [15] "AYTYAPSYEDFIK"                                   
-       [16] "LINSNSDVEFLK"                                    
-       [17] "YQIVVEIIQATTISSFPQLK"                            
-       [18] "ETAAMK"                                          
-       [19] "YINQLTVAK"                                       
-       [20] "ILGGPAYDQQEDGALDEGEGPQSQK"                       
-       [21] "ILQFEDILANTFYR"                                  
-       [22] "EHFGMYMER"                                       
-       [23] "ALISFWESVEHLK"                                   
-       [24] "NEIPQLVGEIYQNFFVESK"                             
-       [25] "EISVEK"                                          
-       [26] "EIQQCLVGNK"                                      
-       [27] "GIEVFYK"                                         
-       [28] "IQEDVYETLK"                                      
-       [29] "YYPSFIVSDLYEK"                                   
-       [30] "HASQMISNK"                                       
-       [31] "DEMGPR"                                          
-       [32] "DEAGEEAVDDGTNQINEQASFAVNK"                       
-       [33] "QALNSIQNAPKPDK"                                  
-       [34] "DEIILIEK"                                        
-       [35] "TDLQLHMAR"                                       
-       [36] "TDWWCENLGMWK"                                    
-       [37] "ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK"              
-       [38] "NWTVPR"                                          
-       [39] "LSEFQNLHR"                                       
-       [40] "LSECVPSLK"                                       
-       [41] "VQLPSLSK"                                        
-       [42] "FLQNLLSDER"                                      
-       [43] "LCQSEALYAFLSPSPDYLK"                             
-       [44] "VIDVQGK"                                         
-       [45] "NSFSLSSFLER"                                     
-       [46] "DFFSHQEEETEEDSDLSDYGDDVDGR"                      
-       [47] "DALAEPCFMLIGEIFELR"                              
-       [48] "TLIALVQVTFGR"                                    
-       [49] "DTVSWIFSEQMLVYYINIFR"                            
-       [50] "DAFWPNGK"                                        
-       [51] "LAPPTTIR"                                        
-       [52] "EQSQETK"                                         
-       [53] "LLENIPDMLQSLVGQQNAR"                             
-       [54] "IFNALQETR"                                       
-       [55] "HLLYALMELLLIELCPELR"                             
-       [56] "VHLDQLK"                                         
-       [57] "MDKALK"                                          
-       [58] "ALKEVFDYSYR"                                     
-       [59] "EVFDYSYRDYILSWYGNLSR"                            
-       [60] "DYILSWYGNLSRDEGQLYHLLLEDFWEIAR"                  
-       [61] "DEGQLYHLLLEDFWEIARQLHHR"                         
-       [62] "QLHHRLSHVDVVK"                                   
-       [63] "LSHVDVVKVVCNDVVR"                                
-       [64] "VVCNDVVRTLLTHFCDLK"                              
-       [65] "TLLTHFCDLKAANAR"                                 
-       [66] "AANARHEEQPRPFVLHACLR"                            
-       [67] "HEEQPRPFVLHACLRNSDDEVR"                          
-       [68] "NSDDEVRFLQTCSR"                                  
-       [69] "FLQTCSRVLVFCLLPSK"                               
-       [70] "VLVFCLLPSKDVQSLSLR"                              
-       [71] "DVQSLSLRIMLAEILTTK"                              
-       [72] "IMLAEILTTKVLKPVVELLSNPDYINQMLLAQLAYR"            
-       [73] "VLKPVVELLSNPDYINQMLLAQLAYREQMNEHHK"              
-       [74] "EQMNEHHKR"                                       
-       [75] "RAYTYAPSYEDFIK"                                  
-       [76] "AYTYAPSYEDFIKLINSNSDVEFLK"                       
-       [77] "LINSNSDVEFLKQLR"                                 
-       [78] "QLRYQIVVEIIQATTISSFPQLK"                         
-       [79] "YQIVVEIIQATTISSFPQLKR"                           
-       [80] "GKETAAMK"                                        
-       [81] "ETAAMKADLLR"                                     
-       [82] "ADLLRAR"                                         
-       [83] "RYINQLTVAK"                                      
-       [84] "YINQLTVAKK"                                      
-       [85] "IRILGGPAYDQQEDGALDEGEGPQSQK"                     
-       [86] "ILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYR"         
-       [87] "ILQFEDILANTFYREHFGMYMER"                         
-       [88] "EHFGMYMERMDK"                                    
-       [89] "RALISFWESVEHLK"                                  
-       [90] "ALISFWESVEHLKNANK"                               
-       [91] "NANKNEIPQLVGEIYQNFFVESK"                         
-       [92] "NEIPQLVGEIYQNFFVESKEISVEK"                       
-       [93] "EISVEKSLYK"                                      
-       [94] "SLYKEIQQCLVGNK"                                  
-       [95] "EIQQCLVGNKGIEVFYK"                               
-       [96] "GIEVFYKIQEDVYETLK"                               
-       [97] "IQEDVYETLKDR"                                    
-       [98] "DRYYPSFIVSDLYEK"                                 
-       [99] "YYPSFIVSDLYEKLLIK"                               
-      [100] "LLIKEEEK"                                        
-      [101] "EEEKHASQMISNK"                                   
-      [102] "HASQMISNKDEMGPR"                                 
-      [103] "DEMGPRDEAGEEAVDDGTNQINEQASFAVNK"                 
-      [104] "DEAGEEAVDDGTNQINEQASFAVNKLR"                     
-      [105] "LRELNEK"                                         
-      [106] "ELNEKLEYK"                                       
-      [107] "RQALNSIQNAPKPDK"                                 
-      [108] "QALNSIQNAPKPDKK"                                 
-      [109] "IVSKLK"                                          
-      [110] "LKDEIILIEK"                                      
-      [111] "DEIILIEKER"                                      
-      [112] "ERTDLQLHMAR"                                     
-      [113] "TDLQLHMARTDWWCENLGMWK"                           
-      [114] "TDWWCENLGMWKASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK"  
-      [115] "ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETKNWTVPR"        
-      [116] "NWTVPRR"                                         
-      [117] "RLSEFQNLHR"                                      
-      [118] "LSEFQNLHRK"                                      
-      [119] "KLSECVPSLK"                                      
-      [120] "LSECVPSLKK"                                      
-      [121] "KVQLPSLSK"                                       
-      [122] "VQLPSLSKLPFK"                                    
-      [123] "LPFKSIDQK"                                       
-      [124] "SIDQKFMEK"                                       
-      [125] "FMEKSK"                                          
-      [126] "SKNQLNK"                                         
-      [127] "NQLNKFLQNLLSDER"                                 
-      [128] "FLQNLLSDERLCQSEALYAFLSPSPDYLK"                   
-      [129] "LCQSEALYAFLSPSPDYLKVIDVQGK"                      
-      [130] "VIDVQGKK"                                        
-      [131] "KNSFSLSSFLER"                                    
-      [132] "NSFSLSSFLERLPR"                                  
-      [133] "LPRDFFSHQEEETEEDSDLSDYGDDVDGR"                   
-      [134] "DFFSHQEEETEEDSDLSDYGDDVDGRK"                     
-      [135] "KDALAEPCFMLIGEIFELR"                             
-      [136] "DALAEPCFMLIGEIFELRGMFK"                          
-      [137] "GMFKWVR"                                         
-      [138] "RTLIALVQVTFGR"                                   
-      [139] "TLIALVQVTFGRTINK"                                
-      [140] "TINKQIR"                                         
-      [141] "QIRDTVSWIFSEQMLVYYINIFR"                         
-      [142] "DTVSWIFSEQMLVYYINIFRDAFWPNGK"                    
-      [143] "DAFWPNGKLAPPTTIR"                                
-      [144] "LAPPTTIRSK"                                      
-      [145] "SKEQSQETK"                                       
-      [146] "EQSQETKQR"                                       
-      [147] "QRAQQK"                                          
-      [148] "AQQKLLENIPDMLQSLVGQQNAR"                         
-      [149] "LLENIPDMLQSLVGQQNARHGIIK"                        
-      [150] "HGIIKIFNALQETR"                                  
-      [151] "IFNALQETRANK"                                    
-      [152] "ANKHLLYALMELLLIELCPELR"                          
-      [153] "HLLYALMELLLIELCPELRVHLDQLK"                      
-      [154] "VHLDQLKAGQV"                                     
-      [155] "MDKALKEVFDYSYR"                                  
-      [156] "ALKEVFDYSYRDYILSWYGNLSR"                         
-      [157] "EVFDYSYRDYILSWYGNLSRDEGQLYHLLLEDFWEIAR"          
-      [158] "DYILSWYGNLSRDEGQLYHLLLEDFWEIARQLHHR"             
-      [159] "DEGQLYHLLLEDFWEIARQLHHRLSHVDVVK"                 
-      [160] "QLHHRLSHVDVVKVVCNDVVR"                           
-      [161] "LSHVDVVKVVCNDVVRTLLTHFCDLK"                      
-      [162] "VVCNDVVRTLLTHFCDLKAANAR"                         
-      [163] "TLLTHFCDLKAANARHEEQPRPFVLHACLR"                  
-      [164] "AANARHEEQPRPFVLHACLRNSDDEVR"                     
-      [165] "HEEQPRPFVLHACLRNSDDEVRFLQTCSR"                   
-      [166] "NSDDEVRFLQTCSRVLVFCLLPSK"                        
-      [167] "FLQTCSRVLVFCLLPSKDVQSLSLR"                       
-      [168] "VLVFCLLPSKDVQSLSLRIMLAEILTTK"                    
-      [169] "DVQSLSLRIMLAEILTTKVLKPVVELLSNPDYINQMLLAQLAYR"    
-      [170] "IMLAEILTTKVLKPVVELLSNPDYINQMLLAQLAYREQMNEHHK"    
-      [171] "VLKPVVELLSNPDYINQMLLAQLAYREQMNEHHKR"             
-      [172] "EQMNEHHKRAYTYAPSYEDFIK"                          
-      [173] "RAYTYAPSYEDFIKLINSNSDVEFLK"                      
-      [174] "AYTYAPSYEDFIKLINSNSDVEFLKQLR"                    
-      [175] "LINSNSDVEFLKQLRYQIVVEIIQATTISSFPQLK"             
-      [176] "QLRYQIVVEIIQATTISSFPQLKR"                        
-      [177] "YQIVVEIIQATTISSFPQLKRHK"                         
-      [178] "HKGKETAAMK"                                      
-      [179] "GKETAAMKADLLR"                                   
-      [180] "ETAAMKADLLRAR"                                   
-      [181] "ADLLRARNMK"                                      
-      [182] "ARNMKR"                                          
-      [183] "NMKRYINQLTVAK"                                   
-      [184] "RYINQLTVAKK"                                     
-      [185] "YINQLTVAKKQCEK"                                  
-      [186] "KQCEKR"                                          
-      [187] "QCEKRIR"                                         
-      [188] "RIRILGGPAYDQQEDGALDEGEGPQSQK"                    
-      [189] "IRILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYR"       
-      [190] "ILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYREHFGMYMER"
-      [191] "ILQFEDILANTFYREHFGMYMERMDK"                      
-      [192] "EHFGMYMERMDKR"                                   
-      [193] "MDKRALISFWESVEHLK"                               
-      [194] "RALISFWESVEHLKNANK"                              
-      [195] "ALISFWESVEHLKNANKNEIPQLVGEIYQNFFVESK"            
-      [196] "NANKNEIPQLVGEIYQNFFVESKEISVEK"                   
-      [197] "NEIPQLVGEIYQNFFVESKEISVEKSLYK"                   
-      [198] "EISVEKSLYKEIQQCLVGNK"                            
-      [199] "SLYKEIQQCLVGNKGIEVFYK"                           
-      [200] "EIQQCLVGNKGIEVFYKIQEDVYETLK"                     
-      [201] "GIEVFYKIQEDVYETLKDR"                             
-      [202] "IQEDVYETLKDRYYPSFIVSDLYEK"                       
-      [203] "DRYYPSFIVSDLYEKLLIK"                             
-      [204] "YYPSFIVSDLYEKLLIKEEEK"                           
-      [205] "LLIKEEEKHASQMISNK"                               
-      [206] "EEEKHASQMISNKDEMGPR"                             
-      [207] "HASQMISNKDEMGPRDEAGEEAVDDGTNQINEQASFAVNK"        
-      [208] "DEMGPRDEAGEEAVDDGTNQINEQASFAVNKLR"               
-      [209] "DEAGEEAVDDGTNQINEQASFAVNKLRELNEK"                
-      [210] "LRELNEKLEYK"                                     
-      [211] "ELNEKLEYKR"                                      
-      [212] "LEYKRQALNSIQNAPKPDK"                             
-      [213] "RQALNSIQNAPKPDKK"                                
-      [214] "QALNSIQNAPKPDKKIVSK"                             
-      [215] "KIVSKLK"                                         
-      [216] "IVSKLKDEIILIEK"                                  
-      [217] "LKDEIILIEKER"                                    
-      [218] "DEIILIEKERTDLQLHMAR"                             
-      [219] "ERTDLQLHMARTDWWCENLGMWK"                         
-      [220] "ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETKNWTVPRR"       
-      [221] "NWTVPRRLSEFQNLHR"                                
-      [222] "RLSEFQNLHRK"                                     
-      [223] "LSEFQNLHRKLSECVPSLK"                             
-      [224] "KLSECVPSLKK"                                     
-      [225] "LSECVPSLKKVQLPSLSK"                              
-      [226] "KVQLPSLSKLPFK"                                   
-      [227] "VQLPSLSKLPFKSIDQK"                               
-      [228] "LPFKSIDQKFMEK"                                   
-      [229] "SIDQKFMEKSK"                                     
-      [230] "FMEKSKNQLNK"                                     
-      [231] "SKNQLNKFLQNLLSDER"                               
-      [232] "NQLNKFLQNLLSDERLCQSEALYAFLSPSPDYLK"              
-      [233] "FLQNLLSDERLCQSEALYAFLSPSPDYLKVIDVQGK"            
-      [234] "LCQSEALYAFLSPSPDYLKVIDVQGKK"                     
-      [235] "VIDVQGKKNSFSLSSFLER"                             
-      [236] "KNSFSLSSFLERLPR"                                 
-      [237] "NSFSLSSFLERLPRDFFSHQEEETEEDSDLSDYGDDVDGR"        
-      [238] "LPRDFFSHQEEETEEDSDLSDYGDDVDGRK"                  
-      [239] "DFFSHQEEETEEDSDLSDYGDDVDGRKDALAEPCFMLIGEIFELR"   
-      [240] "KDALAEPCFMLIGEIFELRGMFK"                         
-      [241] "DALAEPCFMLIGEIFELRGMFKWVR"                       
-      [242] "GMFKWVRR"                                        
-      [243] "WVRRTLIALVQVTFGR"                                
-      [244] "RTLIALVQVTFGRTINK"                               
-      [245] "TLIALVQVTFGRTINKQIR"                             
-      [246] "TINKQIRDTVSWIFSEQMLVYYINIFR"                     
-      [247] "QIRDTVSWIFSEQMLVYYINIFRDAFWPNGK"                 
-      [248] "DTVSWIFSEQMLVYYINIFRDAFWPNGKLAPPTTIR"            
-      [249] "DAFWPNGKLAPPTTIRSK"                              
-      [250] "LAPPTTIRSKEQSQETK"                               
-      [251] "SKEQSQETKQR"                                     
-      [252] "EQSQETKQRAQQK"                                   
-      [253] "QRAQQKLLENIPDMLQSLVGQQNAR"                       
-      [254] "AQQKLLENIPDMLQSLVGQQNARHGIIK"                    
-      [255] "LLENIPDMLQSLVGQQNARHGIIKIFNALQETR"               
-      [256] "HGIIKIFNALQETRANK"                               
-      [257] "IFNALQETRANKHLLYALMELLLIELCPELR"                 
-      [258] "ANKHLLYALMELLLIELCPELRVHLDQLK"                   
-      [259] "HLLYALMELLLIELCPELRVHLDQLKAGQV"                  
-      [260] "DKALKEVFDYSYR"                                   
-      
-      $O43402
-       [1] "LTTQAYCK"                                         
-       [2] "MVLHGAK"                                          
-       [3] "YPHCAVNGLLVAEK"                                   
-       [4] "EHLPLGGPGAHHTLFVDCIPLFHGTLALAPMLEVALTLIDSWCK"     
-       [5] "DHSYVIAGYYQANER"                                  
-       [6] "DASPNQVAEK"                                       
-       [7] "IAEGFSDTALIMVDNTK"                                
-       [8] "FTMDCVAPTIHVYEHHENR"                              
-       [9] "DPHHDYCEDWPEAQR"                                  
-      [10] "ISASLLDSR"                                        
-      [11] "SYETLVDFDNHLDDIR"                                 
-      [12] "NDWTNPEINK"                                       
-      [13] "AVLHLC"                                           
-      [14] "MPGVKLTTQAYCK"                                    
-      [15] "LTTQAYCKMVLHGAK"                                  
-      [16] "MVLHGAKYPHCAVNGLLVAEK"                            
-      [17] "YPHCAVNGLLVAEKQKPR"                               
-      [18] "KEHLPLGGPGAHHTLFVDCIPLFHGTLALAPMLEVALTLIDSWCK"    
-      [19] "DHSYVIAGYYQANERVK"                                
-      [20] "VKDASPNQVAEK"                                     
-      [21] "DASPNQVAEKVASR"                                   
-      [22] "VASRIAEGFSDTALIMVDNTK"                            
-      [23] "IAEGFSDTALIMVDNTKFTMDCVAPTIHVYEHHENR"             
-      [24] "FTMDCVAPTIHVYEHHENRWR"                            
-      [25] "CRDPHHDYCEDWPEAQR"                                
-      [26] "DPHHDYCEDWPEAQRISASLLDSR"                         
-      [27] "ISASLLDSRSYETLVDFDNHLDDIR"                        
-      [28] "SYETLVDFDNHLDDIRNDWTNPEINK"                       
-      [29] "NDWTNPEINKAVLHLC"                                 
-      [30] "MPGVKLTTQAYCKMVLHGAK"                             
-      [31] "LTTQAYCKMVLHGAKYPHCAVNGLLVAEK"                    
-      [32] "MVLHGAKYPHCAVNGLLVAEKQKPR"                        
-      [33] "YPHCAVNGLLVAEKQKPRK"                              
-      [34] "QKPRKEHLPLGGPGAHHTLFVDCIPLFHGTLALAPMLEVALTLIDSWCK"
-      [35] "DHSYVIAGYYQANERVKDASPNQVAEK"                      
-      [36] "VKDASPNQVAEKVASR"                                 
-      [37] "DASPNQVAEKVASRIAEGFSDTALIMVDNTK"                  
-      [38] "VASRIAEGFSDTALIMVDNTKFTMDCVAPTIHVYEHHENR"         
-      [39] "IAEGFSDTALIMVDNTKFTMDCVAPTIHVYEHHENRWR"           
-      [40] "FTMDCVAPTIHVYEHHENRWRCR"                          
-      [41] "WRCRDPHHDYCEDWPEAQR"                              
-      [42] "CRDPHHDYCEDWPEAQRISASLLDSR"                       
-      [43] "DPHHDYCEDWPEAQRISASLLDSRSYETLVDFDNHLDDIR"         
-      [44] "ISASLLDSRSYETLVDFDNHLDDIRNDWTNPEINK"              
-      [45] "SYETLVDFDNHLDDIRNDWTNPEINKAVLHLC"                 
-      [46] "PGVKLTTQAYCK"                                     
-      [47] "PGVKLTTQAYCKMVLHGAK"                              
-      
-      $M0R1B0
-       [1] "IAEGFSDTALIMVDNTK"                       
-       [2] "FTMDCVAPTIHVYEHHENR"                     
-       [3] "DPHHDYCEDWPEAQR"                         
-       [4] "ISASLLDSR"                               
-       [5] "SYETLVDFDNHLDDIR"                        
-       [6] "NDWTNPEINK"                              
-       [7] "AVLHLC"                                  
-       [8] "VASRIAEGFSDTALIMVDNTK"                   
-       [9] "IAEGFSDTALIMVDNTKFTMDCVAPTIHVYEHHENR"    
-      [10] "FTMDCVAPTIHVYEHHENRWR"                   
-      [11] "CRDPHHDYCEDWPEAQR"                       
-      [12] "DPHHDYCEDWPEAQRISASLLDSR"                
-      [13] "ISASLLDSRSYETLVDFDNHLDDIR"               
-      [14] "SYETLVDFDNHLDDIRNDWTNPEINK"              
-      [15] "NDWTNPEINKAVLHLC"                        
-      [16] "VASRIAEGFSDTALIMVDNTKFTMDCVAPTIHVYEHHENR"
-      [17] "IAEGFSDTALIMVDNTKFTMDCVAPTIHVYEHHENRWR"  
-      [18] "FTMDCVAPTIHVYEHHENRWRCR"                 
-      [19] "WRCRDPHHDYCEDWPEAQR"                     
-      [20] "CRDPHHDYCEDWPEAQRISASLLDSR"              
-      [21] "DPHHDYCEDWPEAQRISASLLDSRSYETLVDFDNHLDDIR"
-      [22] "ISASLLDSRSYETLVDFDNHLDDIRNDWTNPEINK"     
-      [23] "SYETLVDFDNHLDDIRNDWTNPEINKAVLHLC"        
-      
+           protein                                            peptide
+      1     Q03483                           MESQQLHQNPHSQHGSAYASVTSK
+      2     Q03483                              EVPSNQDPLAVSASNLPEFDR
+      3     Q03483     VNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK
+      4     Q03483                               NNVLPPHTLTSEENFSTWVK
+      5     Q03483                                   NSNLGDIIPNDQGEIK
+      6     Q03483                       QMTYEEHAYIYNTFQAFAPFHLLPTWVK
+      7     Q03483                                   QILEINYSDILTVLCK
+      8     Q03483                                          MQTNNQELK
+      9     Q03483                      DWIALANLEYNGSTSADTFEITVSTIIQR
+      10    Q03483                                          ENNINVSDR
+      11    Q03483                                           LACQLILK
+      12    Q03483                                            GLSGDFK
+      13    Q03483                                   LSQLFAEIQLIYDENK
+      14    Q03483                                        IMNLNKPSQYK
+      15    Q03483                                             QHSEYK
+      16    Q03483                                          TSPNTTNTK
+      17    Q03483                                            TNSSKPR
+      18    Q03483                                          AHNIATSSK
+      19    Q03483                     VNSDHINESTVSSQYLSDDNELSLRPATER
+      20    Q03483      MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDR
+      21    Q03483                          EVPSNQDPLAVSASNLPEFDRDSTK
+      22    Q03483 DSTKVNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK
+      23    Q03483                             VRNNVLPPHTLTSEENFSTWVK
+      24    Q03483                           NNVLPPHTLTSEENFSTWVKFYIR
+      25    Q03483                                            FYIRFLK
+      26    Q03483                                FLKNSNLGDIIPNDQGEIK
+      27    Q03483                                  NSNLGDIIPNDQGEIKR
+      28    Q03483                      RQMTYEEHAYIYNTFQAFAPFHLLPTWVK
+      29    Q03483       QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK
+      30    Q03483                               QILEINYSDILTVLCKSVSK
+      31    Q03483                                      SVSKMQTNNQELK
+      32    Q03483             MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR
+      33    Q03483                    DWIALANLEYNGSTSADTFEITVSTIIQRLK
+      34    Q03483                                        LKENNINVSDR
+      35    Q03483                                  ENNINVSDRLACQLILK
+      36    Q03483                                    LACQLILKGLSGDFK
+      37    Q03483                                         GLSGDFKYLR
+      38    Q03483                                            YLRNQYR
+      39    Q03483                                             NQYRTK
+      40    Q03483                                             TKTNMK
+      41    Q03483                               TNMKLSQLFAEIQLIYDENK
+      42    Q03483                        LSQLFAEIQLIYDENKIMNLNKPSQYK
+      43    Q03483                                  IMNLNKPSQYKQHSEYK
+      44    Q03483                                         QHSEYKNVSR
+      45    Q03483                                      NVSRTSPNTTNTK
+      46    Q03483                                      TSPNTTNTKVTTR
+      47    Q03483                                           VTTRNYHR
+      48    Q03483                                        NYHRTNSSKPR
+      49    Q03483                                         TNSSKPRAAK
+      50    Q03483                                       AAKAHNIATSSK
+      51    Q03483                                       AHNIATSSKFSR
+      52    Q03483                  FSRVNSDHINESTVSSQYLSDDNELSLRPATER
+      53    Q03483                    VNSDHINESTVSSQYLSDDNELSLRPATERI
+      54    Q03483  MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDRDSTK
+      55    Q03483                           TKVRNNVLPPHTLTSEENFSTWVK
+      56    Q03483                         VRNNVLPPHTLTSEENFSTWVKFYIR
+      57    Q03483                        NNVLPPHTLTSEENFSTWVKFYIRFLK
+      58    Q03483                            FYIRFLKNSNLGDIIPNDQGEIK
+      59    Q03483                               FLKNSNLGDIIPNDQGEIKR
+      60    Q03483      NSNLGDIIPNDQGEIKRQMTYEEHAYIYNTFQAFAPFHLLPTWVK
+      61    Q03483      RQMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK
+      62    Q03483   QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCKSVSK
+      63    Q03483                      QILEINYSDILTVLCKSVSKMQTNNQELK
+      64    Q03483         SVSKMQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR
+      65    Q03483           MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQRLK
+      66    Q03483           DWIALANLEYNGSTSADTFEITVSTIIQRLKENNINVSDR
+      67    Q03483                                LKENNINVSDRLACQLILK
+      68    Q03483                           ENNINVSDRLACQLILKGLSGDFK
+      69    Q03483                                 LACQLILKGLSGDFKYLR
+      70    Q03483                                     GLSGDFKYLRNQYR
+      71    Q03483                                          YLRNQYRTK
+      72    Q03483                                         NQYRTKTNMK
+      73    Q03483                             TKTNMKLSQLFAEIQLIYDENK
+      74    Q03483                    TNMKLSQLFAEIQLIYDENKIMNLNKPSQYK
+      75    Q03483                  LSQLFAEIQLIYDENKIMNLNKPSQYKQHSEYK
+      76    Q03483                              IMNLNKPSQYKQHSEYKNVSR
+      77    Q03483                                QHSEYKNVSRTSPNTTNTK
+      78    Q03483                                  NVSRTSPNTTNTKVTTR
+      79    Q03483                                  TSPNTTNTKVTTRNYHR
+      80    Q03483                                    VTTRNYHRTNSSKPR
+      81    Q03483                                     NYHRTNSSKPRAAK
+      82    Q03483                                TNSSKPRAAKAHNIATSSK
+      83    Q03483                                    AAKAHNIATSSKFSR
+      84    Q03483         AHNIATSSKFSRVNSDHINESTVSSQYLSDDNELSLRPATER
+      85    Q03483                 FSRVNSDHINESTVSSQYLSDDNELSLRPATERI
+      86    Q03483                            ESQQLHQNPHSQHGSAYASVTSK
+      87    Q03483       ESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDR
+      88    Q03483   ESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDRDSTK
+      89    Q06204                                          MTIESTLAR
+      90    Q06204                         ELESLILPADSIVNVVDQFQEELLSR
+      91    Q06204                                  LQTNTISMLPQCLVPDK
+      92    Q06204                                             WNPEDK
+      93    Q06204                                         ILTIDFGGTR
+      94    Q06204            FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTR
+      95    Q06204                                           LAANGYIK
+      96    Q06204                                           NESSEASK
+      97    Q06204                             FFVSVTFSFPLNPEGEVVAMGK
+      98    Q06204                                     GFVMTDTLQGSTVK
+      99    Q06204                                          QLIQSSFHR
+      100   Q06204                     IISENIEEFFCTMNVCHVINDAIAVSLTSK
+      101   Q06204                    FICENDSISLIIGTGTNACFEVPYGYLPPFK
+      102   Q06204                                          ETLPSSYNK
+      103   Q06204                                             ETLNFK
+      104   Q06204                                      HVLINSEIGFIGK
+      105   Q06204                        NVIALQPFDIHGAISYEMPLECVTSGK
+      106   Q06204                                            WLPLSLK
+      107   Q06204                                        NILLQYNIIPK
+      108   Q06204               NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIAR
+      109   Q06204                                AAFYVAAIVQAIDIITGCK
+      110   Q06204                              NYNFIHIGYVGSFLHNSNFYR
+      111   Q06204                                           YYSSIHIK
+      112   Q06204                               LQFLNHSNLLGAAIATYLNK
+      113   Q06204                                             SDNQVQ
+      114   Q06204                MTIESTLARELESLILPADSIVNVVDQFQEELLSR
+      115   Q06204        ELESLILPADSIVNVVDQFQEELLSRLQTNTISMLPQCLVPDK
+      116   Q06204                                 LQTNTISMLPQCLVPDKR
+      117   Q06204                                           SRWNPEDK
+      118   Q06204                                   WNPEDKILTIDFGGTR
+      119   Q06204                                       ILTIDFGGTRLK
+      120   Q06204          LKFAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTR
+      121   Q06204    FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIK
+      122   Q06204                                          LAANGYIKK
+      123   Q06204                                          KNESSEASK
+      124   Q06204                     NESSEASKFFVSVTFSFPLNPEGEVVAMGK
+      125   Q06204               FFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVK
+      126   Q06204                            GFVMTDTLQGSTVKQLIQSSFHR
+      127   Q06204            QLIQSSFHRIISENIEEFFCTMNVCHVINDAIAVSLTSK
+      128   Q06204                   FICENDSISLIIGTGTNACFEVPYGYLPPFKR
+      129   Q06204                                      DALRETLPSSYNK
+      130   Q06204                                    ETLPSSYNKETLNFK
+      131   Q06204                                ETLNFKHVLINSEIGFIGK
+      132   Q06204           HVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGK
+      133   Q06204                 NVIALQPFDIHGAISYEMPLECVTSGKWLPLSLK
+      134   Q06204                                 WLPLSLKNILLQYNIIPK
+      135   Q06204    NILLQYNIIPKNFPVEFNGELVCQLAEDCTNAWFENEHYALICQIAR
+      136   Q06204           NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIARLLIK
+      137   Q06204                               RAAFYVAAIVQAIDIITGCK
+      138   Q06204           AAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYR
+      139   Q06204                          NYNFIHIGYVGSFLHNSNFYREQIK
+      140   Q06204                                       EQIKYYSSIHIK
+      141   Q06204                       YYSSIHIKLQFLNHSNLLGAAIATYLNK
+      142   Q06204                         LQFLNHSNLLGAAIATYLNKSDNQVQ
+      143   Q06204       ELESLILPADSIVNVVDQFQEELLSRLQTNTISMLPQCLVPDKR
+      144   Q06204                               LQTNTISMLPQCLVPDKRSR
+      145   Q06204                                          RSRWNPEDK
+      146   Q06204                                 SRWNPEDKILTIDFGGTR
+      147   Q06204                                 WNPEDKILTIDFGGTRLK
+      148   Q06204  LKFAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIK
+      149   Q06204   FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIKK
+      150   Q06204                                         LAANGYIKKK
+      151   Q06204                                         KKNESSEASK
+      152   Q06204                    KNESSEASKFFVSVTFSFPLNPEGEVVAMGK
+      153   Q06204       NESSEASKFFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVK
+      154   Q06204      FFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVKQLIQSSFHR
+      155   Q06204               FICENDSISLIIGTGTNACFEVPYGYLPPFKRDALR
+      156   Q06204                                     RDALRETLPSSYNK
+      157   Q06204                                DALRETLPSSYNKETLNFK
+      158   Q06204                       ETLPSSYNKETLNFKHVLINSEIGFIGK
+      159   Q06204     ETLNFKHVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGK
+      160   Q06204    HVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGKWLPLSLK
+      161   Q06204      NVIALQPFDIHGAISYEMPLECVTSGKWLPLSLKNILLQYNIIPK
+      162   Q06204          NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIARLLIKR
+      163   Q06204                           LLIKRAAFYVAAIVQAIDIITGCK
+      164   Q06204          RAAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYR
+      165   Q06204       AAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYREQIK
+      166   Q06204                  NYNFIHIGYVGSFLHNSNFYREQIKYYSSIHIK
+      167   Q06204                   EQIKYYSSIHIKLQFLNHSNLLGAAIATYLNK
+      168   Q06204                 YYSSIHIKLQFLNHSNLLGAAIATYLNKSDNQVQ
+      169   Q06204                                           TIESTLAR
+      170   Q06204                 TIESTLARELESLILPADSIVNVVDQFQEELLSR
+      171   P48238                                        EVGTYECEGER
+      172   P48238        DTYSFFTSLSDIQDSSSNEEQCGVGSILSEDSFTFEGSNVSIR
+      173   P48238                                  LFSLDLNALNENENGSK
+      174   P48238                                             FTIPPK
+      175   P48238                                          VAVLPENSR
+      176   P48238                                       NYLVESSMDSSR
+      177   P48238                                         EYSQPFFDWR
+      178   P48238                                 HEMVEHGEESVKPCGCHK
+      179   P48238                                          ELEMENIEK
+      180   P48238                                            DIIEWCR
+      181   P48238                                             DYEVNK
+      182   P48238                              EVCVPSIHEFYLHGNGSDNLF
+      183   P48238                                           MGKACLNK
+      184   P48238                                   ACLNKEVGTYECEGER
+      185   P48238                              LFSLDLNALNENENGSKNPVK
+      186   P48238                                         NPVKFTIPPK
+      187   P48238                                         FTIPPKIEQR
+      188   P48238                                         RVAVLPENSR
+      189   P48238                              VAVLPENSRNYLVESSMDSSR
+      190   P48238                             NYLVESSMDSSREYSQPFFDWR
+      191   P48238                       EYSQPFFDWRHEMVEHGEESVKPCGCHK
+      192   P48238                               HEMVEHGEESVKPCGCHKSR
+      193   P48238                                       CFKELEMENIEK
+      194   P48238                                      ELEMENIEKGDIK
+      195   P48238                                             KSLFYR
+      196   P48238                                       SLFYRDIIEWCR
+      197   P48238                                      DIIEWCRDYEVNK
+      198   P48238                                           DYEVNKTR
+      199   P48238                            TREVCVPSIHEFYLHGNGSDNLF
+      200   P48238                                MGKACLNKEVGTYECEGER
+      201   P48238                        LFSLDLNALNENENGSKNPVKFTIPPK
+      202   P48238                                     NPVKFTIPPKIEQR
+      203   P48238                                        FTIPPKIEQRK
+      204   P48238                                           IEQRKEAR
+      205   P48238                                             KEARQR
+      206   P48238                                            EARQREK
+      207   P48238                                       LRRVAVLPENSR
+      208   P48238                             RVAVLPENSRNYLVESSMDSSR
+      209   P48238                    VAVLPENSRNYLVESSMDSSREYSQPFFDWR
+      210   P48238           NYLVESSMDSSREYSQPFFDWRHEMVEHGEESVKPCGCHK
+      211   P48238                     EYSQPFFDWRHEMVEHGEESVKPCGCHKSR
+      212   P48238                              HEMVEHGEESVKPCGCHKSRK
+      213   P48238                                             KAKCFK
+      214   P48238                                     AKCFKELEMENIEK
+      215   P48238                                   CFKELEMENIEKGDIK
+      216   P48238                                     ELEMENIEKGDIKK
+      217   P48238                                         GDIKKSLFYR
+      218   P48238                                      KSLFYRDIIEWCR
+      219   P48238                                 SLFYRDIIEWCRDYEVNK
+      220   P48238                                    DIIEWCRDYEVNKTR
+      221   P48238                      DYEVNKTREVCVPSIHEFYLHGNGSDNLF
+      222   P48238                                            GKACLNK
+      223   P48238                                 GKACLNKEVGTYECEGER
+      224   P0CX57                           MESQQLSQHSPISHGSACASVTSK
+      225   P0CX57                                    EVHTNQDPLDVSASK
+      226   P0CX57                                             TEECEK
+      227   P0CX57                                YVRPPPMLTSPNDFPNWVK
+      228   P0CX57                               FLQNSNLGGIIPTVNGKPVR
+      229   P0CX57                       QITDDELTFLYNTFQIFAPSQFLPTWVK
+      230   P0CX57                                       DILSVDYTDIMK
+      231   P0CX57                    MQSDTQEANDIVTLANLQYNGSTPADAFETK
+      232   P0CX57                                            VTNIIDR
+      233   P0CX57                                        LNNNGIHINNK
+      234   P0CX57                                           VACQLIMR
+      235   P0CX57                                            GLSGEYK
+      236   P0CX57                           HLNMTVAELFLDIHAIYEEQQGSR
+      237   P0CX57                                            NSKPNYR
+      238   P0CX57                                             NPSDEK
+      239   P0CX57                                          SYTNTTKPK
+      240   P0CX57                               AHNVSTSNNSPSTDNDSISK
+      241   P0CX57                                        STTEPIQLNNK
+      242   P0CX57                                         HDLHLRPETY
+      243   P0CX57            MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK
+      244   P0CX57                              EVHTNQDPLDVSASKTEECEK
+      245   P0CX57                                         TEECEKASTK
+      246   P0CX57                               KYVRPPPMLTSPNDFPNWVK
+      247   P0CX57                            YVRPPPMLTSPNDFPNWVKTYIK
+      248   P0CX57                           TYIKFLQNSNLGGIIPTVNGKPVR
+      249   P0CX57   FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK
+      250   P0CX57           QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK
+      251   P0CX57                                   DILSVDYTDIMKILSK
+      252   P0CX57                                           ILSKSIEK
+      253   P0CX57                SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
+      254   P0CX57             MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
+      255   P0CX57                                 VTNIIDRLNNNGIHINNK
+      256   P0CX57                                LNNNGIHINNKVACQLIMR
+      257   P0CX57                                    VACQLIMRGLSGEYK
+      258   P0CX57                                         GLSGEYKFLR
+      259   P0CX57                                             FLRYTR
+      260   P0CX57                         HRHLNMTVAELFLDIHAIYEEQQGSR
+      261   P0CX57                    HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
+      262   P0CX57                                           NSKPNYRR
+      263   P0CX57                                            RNPSDEK
+      264   P0CX57                                         NPSDEKNDSR
+      265   P0CX57                                      NDSRSYTNTTKPK
+      266   P0CX57                                      SYTNTTKPKVIAR
+      267   P0CX57                                           VIARNPQK
+      268   P0CX57                                          NPQKTNNSK
+      269   P0CX57                                            TNNSKSK
+      270   P0CX57                            TARAHNVSTSNNSPSTDNDSISK
+      271   P0CX57                    AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
+      272   P0CX57                              STTEPIQLNNKHDLHLRPETY
+      273   P0CX57      MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK
+      274   P0CX57                          EVHTNQDPLDVSASKTEECEKASTK
+      275   P0CX57                           KYVRPPPMLTSPNDFPNWVKTYIK
+      276   P0CX57        YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR
+      277   P0CX57       QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK
+      278   P0CX57                               DILSVDYTDIMKILSKSIEK
+      279   P0CX57            ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
+      280   P0CX57         SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
+      281   P0CX57  MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK
+      282   P0CX57                         VTNIIDRLNNNGIHINNKVACQLIMR
+      283   P0CX57                         LNNNGIHINNKVACQLIMRGLSGEYK
+      284   P0CX57                                 VACQLIMRGLSGEYKFLR
+      285   P0CX57                                      GLSGEYKFLRYTR
+      286   P0CX57                                           FLRYTRHR
+      287   P0CX57                      YTRHRHLNMTVAELFLDIHAIYEEQQGSR
+      288   P0CX57                  HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
+      289   P0CX57                   HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR
+      290   P0CX57                                     NSKPNYRRNPSDEK
+      291   P0CX57                                        RNPSDEKNDSR
+      292   P0CX57                                NPSDEKNDSRSYTNTTKPK
+      293   P0CX57                                  NDSRSYTNTTKPKVIAR
+      294   P0CX57                                  SYTNTTKPKVIARNPQK
+      295   P0CX57                                      VIARNPQKTNNSK
+      296   P0CX57                                        NPQKTNNSKSK
+      297   P0CX57                                         TNNSKSKTAR
+      298   P0CX57                          SKTARAHNVSTSNNSPSTDNDSISK
+      299   P0CX57                 TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
+      300   P0CX57          AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLRPETY
+      301   P0CX57                            ESQQLSQHSPISHGSACASVTSK
+      302   P0CX57             ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK
+      303   P0CX57       ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK
+      304   Q07791                           MESQQLHQNPHSLHGSAAASVTSK
+      305   Q07791                              EVPSNQDPLAVSASNLPEFDR
+      306   Q07791     VNSQQETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK
+      307   Q07791                               NNVLPPHTLTSEENFSTWVK
+      308   Q07791                                   NSNLGDIIPNDQGEIK
+      309   Q07791                       QMTYEEHAYIYNTFQAFAPFHLLPTWVK
+      310   Q07791                                   QILEINYADILTVLCK
+      311   Q07791                                          MQTNNQELK
+      312   Q07791                      DWIALANLEYDGSTSADTFEITVSTIIQR
+      313   Q07791                                          ENNINVSDR
+      314   Q07791                                           LACQLILK
+      315   Q07791                                            GLSGDFK
+      316   Q07791                                   LSQLFAEIQLIYDENK
+      317   Q07791                                        IMNLNKPSQYK
+      318   Q07791                                             QHSEYK
+      319   Q07791                                          TSPNTTNTK
+      320   Q07791                                            TNSSKPR
+      321   Q07791                                          AHNIATSSK
+      322   Q07791                      VNNDHINESTVSSQYLSDDNELSLGQQQK
+      323   Q07791                                             ESKPTR
+      324   Q07791                           TIDSNDELPDHLLIDSGASQTLVR
+      325   Q07791                              SAHYLHHATPNSEINIVDAQK
+      326   Q07791                               QDIPINAIGNLHFNFQNGTK
+      327   Q07791                       ALHTPNIAYDLLSLSELANQNITACFTR
+      328   Q07791                                        SDGTVLAPIVK
+      329   Q07791                                          HGDFYWLSK
+      330   Q07791                                          YLIPSHISK
+      331   Q07791                                           LTINNVNK
+      332   Q07791                                           YPYPLIHR
+      333   Q07791                                           MLGHANFR
+      334   Q07791                                            NAVTYLK
+      335   Q07791                              ESDIEWSNASTYQCPDCLIGK
+      336   Q07791                           YQESYEPFQYLHTDIFGPVHHLPK
+      337   Q07791                                      SAPSYFISFTDEK
+      338   Q07791                                         FQWVYPLHDR
+      339   Q07791                                   EESILNVFTSILAFIK
+      340   Q07791                                             NQFNAR
+      341   Q07791                                           VLVIQMDR
+      342   Q07791                                            GSEYTNK
+      343   Q07791                                      GITACYTTTADSR
+      344   Q07791                                            AHGVAER
+      345   Q07791                                            TLLNDCR
+      346   Q07791                           TLLHCSGLPNHLWFSAVEFSTIIR
+      347   Q07791                                            NSLVSPK
+      348   Q07791                     QHAGLAGLDITTILPFGQPVIVNNHNPDSK
+      349   Q07791                                        GIPGYALHPSR
+      350   Q07791                                      NSYGYIIYLPSLK
+      351   Q07791                                   TVDTTNYVILQDNQSK
+      352   Q07791                                  LDQFNYDTLTFDDDLNR
+      353   Q07791                                  EVDADISEYNILPSTIR
+      354   Q07791                                            TPHIINK
+      355   Q07791                                  ESTEMGGTIESDTTSPR
+      356   Q07791                                           HSSTFTAR
+      357   Q07791                                   RPGSPNDMIDLTSQDR
+      358   Q07791                                          VNYGLENIK
+      359   Q07791                                        LGGTEEPYIQR
+      360   Q07791                                            NSDTNIK
+      361   Q07791                                        TTNSTPSIDDR
+      362   Q07791                                   SSNSESTTPIISIETK
+      363   Q07791                                  AVCDNTPSIDTDPPEYR
+      364   Q07791                                      SSDHATPNIMPDK
+      365   Q07791                                NVTADSILDDLPLPDLTNK
+      366   Q07791                                         SPTDTSDVSK
+      367   Q07791                                           DIPHIHSR
+      368   Q07791                                QTNSSLGGMDDSNVLTTTK
+      369   Q07791                                      SLEDNETEIEVSR
+      370   Q07791                                             DTWNNK
+      371   Q07791                                             SLEPPR
+      372   Q07791                                           INLIAAIK
+      373   Q07791                                             SIKPVR
+      374   Q07791                                          YDEAITYNK
+      375   Q07791                                            YVEAYHK
+      376   Q07791                                            EISQLLK
+      377   Q07791                                           MNTWDTNK
+      378   Q07791                                             NDIDPK
+      379   Q07791                                         VINSMFIFNK
+      380   Q07791                                   EELYIRPPPHLGLNDK
+      381   Q07791                                             SLYGLK
+      382   Q07791                                        QSGANWYETIK
+      383   Q07791                                      SYLINCCDMQEVR
+      384   Q07791                                            GWSCVFK
+      385   Q07791                                 NSQVTICLFVDDMILFSK
+      386   Q07791                                             DLNANK
+      387   Q07791                                             IITTLK
+      388   Q07791                              IINLGEGDNEIQYDILGLEIK
+      389   Q07791                                           LNVPLNPK
+      390   Q07791                             APGQPGHYIDQDELEIDEDEYK
+      391   Q07791                                             VHEMQK
+      392   Q07791                                        LIGLASYVGYK
+      393   Q07791                                FDLLYYINTLAQHILFPSR
+      394   Q07791                                  QVLDMTYELIQFIWNTR
+      395   Q07791                                             QLIWHK
+      396   Q07791                                          SKPVKPTNK
+      397   Q07791                                   LVVISDASYGNQPYYK
+      398   Q07791                                       SQIGNIYLLNGK
+      399   Q07791                ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK
+      400   Q07791                                            GLLTDSR
+      401   Q07791                                            STISIIK
+      402   Q07791                                             STNEEK
+      403   Q07791                                   DEVSGNNLYVYYIETK
+      404   Q07791                                     MNIADVMTKPLPIK
+      405   Q07791      MESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDR
+      406   Q07791                          EVPSNQDPLAVSASNLPEFDRDSTK
+      407   Q07791 DSTKVNSQQETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK
+      408   Q07791                             VRNNVLPPHTLTSEENFSTWVK
+      409   Q07791                           NNVLPPHTLTSEENFSTWVKFYIR
+      410   Q07791                                            FYIRFLK
+      411   Q07791                                FLKNSNLGDIIPNDQGEIK
+      412   Q07791                                  NSNLGDIIPNDQGEIKR
+      413   Q07791                      RQMTYEEHAYIYNTFQAFAPFHLLPTWVK
+      414   Q07791       QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCK
+      415   Q07791                               QILEINYADILTVLCKSVSK
+      416   Q07791                                      SVSKMQTNNQELK
+      417   Q07791             MQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQR
+      418   Q07791                    DWIALANLEYDGSTSADTFEITVSTIIQRLK
+      419   Q07791                                        LKENNINVSDR
+      420   Q07791                                  ENNINVSDRLACQLILK
+      421   Q07791                                    LACQLILKGLSGDFK
+      422   Q07791                                         GLSGDFKYLR
+      423   Q07791                                            YLRNQYR
+      424   Q07791                                             NQYRTK
+      425   Q07791                                             TKTNMK
+      426   Q07791                               TNMKLSQLFAEIQLIYDENK
+      427   Q07791                        LSQLFAEIQLIYDENKIMNLNKPSQYK
+      428   Q07791                                  IMNLNKPSQYKQHSEYK
+      429   Q07791                                         QHSEYKNVSR
+      430   Q07791                                      NVSRTSPNTTNTK
+      431   Q07791                                      TSPNTTNTKVTSR
+      432   Q07791                                           VTSRNYHR
+      433   Q07791                                        NYHRTNSSKPR
+      434   Q07791                                         TNSSKPRAAK
+      435   Q07791                                       AAKAHNIATSSK
+      436   Q07791                                       AHNIATSSKFSR
+      437   Q07791                   FSRVNNDHINESTVSSQYLSDDNELSLGQQQK
+      438   Q07791                VNNDHINESTVSSQYLSDDNELSLGQQQKESKPTR
+      439   Q07791                     ESKPTRTIDSNDELPDHLLIDSGASQTLVR
+      440   Q07791      TIDSNDELPDHLLIDSGASQTLVRSAHYLHHATPNSEINIVDAQK
+      441   Q07791          SAHYLHHATPNSEINIVDAQKQDIPINAIGNLHFNFQNGTK
+      442   Q07791                           QDIPINAIGNLHFNFQNGTKTSIK
+      443   Q07791                   TSIKALHTPNIAYDLLSLSELANQNITACFTR
+      444   Q07791                  ALHTPNIAYDLLSLSELANQNITACFTRNTLER
+      445   Q07791                                   NTLERSDGTVLAPIVK
+      446   Q07791                               SDGTVLAPIVKHGDFYWLSK
+      447   Q07791                                         HGDFYWLSKK
+      448   Q07791                                         KYLIPSHISK
+      449   Q07791                                  YLIPSHISKLTINNVNK
+      450   Q07791                                         LTINNVNKSK
+      451   Q07791                                             SKSVNK
+      452   Q07791                                       SVNKYPYPLIHR
+      453   Q07791                                   YPYPLIHRMLGHANFR
+      454   Q07791                                       MLGHANFRSIQK
+      455   Q07791                                            SIQKSLK
+      456   Q07791                                           KNAVTYLK
+      457   Q07791                       NAVTYLKESDIEWSNASTYQCPDCLIGK
+      458   Q07791                           ESDIEWSNASTYQCPDCLIGKSTK
+      459   Q07791                                             HIKGSR
+      460   Q07791                         LKYQESYEPFQYLHTDIFGPVHHLPK
+      461   Q07791              YQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEK
+      462   Q07791                                    SAPSYFISFTDEKTR
+      463   Q07791                                       TRFQWVYPLHDR
+      464   Q07791                                        FQWVYPLHDRR
+      465   Q07791                                  REESILNVFTSILAFIK
+      466   Q07791                             EESILNVFTSILAFIKNQFNAR
+      467   Q07791                                     NQFNARVLVIQMDR
+      468   Q07791                                    VLVIQMDRGSEYTNK
+      469   Q07791                                        GSEYTNKTLHK
+      470   Q07791                                          TLHKFFTNR
+      471   Q07791                                 FFTNRGITACYTTTADSR
+      472   Q07791                               GITACYTTTADSRAHGVAER
+      473   Q07791                                         AHGVAERLNR
+      474   Q07791                                         LNRTLLNDCR
+      475   Q07791                    TLLNDCRTLLHCSGLPNHLWFSAVEFSTIIR
+      476   Q07791                    TLLHCSGLPNHLWFSAVEFSTIIRNSLVSPK
+      477   Q07791                                         NSLVSPKNDK
+      478   Q07791                                             NDKSAR
+      479   Q07791                  SARQHAGLAGLDITTILPFGQPVIVNNHNPDSK
+      480   Q07791                 QHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPR
+      481   Q07791                                    IHPRGIPGYALHPSR
+      482   Q07791                           GIPGYALHPSRNSYGYIIYLPSLK
+      483   Q07791                                     NSYGYIIYLPSLKK
+      484   Q07791                                  KTVDTTNYVILQDNQSK
+      485   Q07791                  TVDTTNYVILQDNQSKLDQFNYDTLTFDDDLNR
+      486   Q07791                                            EPVQKVR
+      487   Q07791                               APKEVDADISEYNILPSTIR
+      488   Q07791                                EVDADISEYNILPSTIRSR
+      489   Q07791                                          SRTPHIINK
+      490   Q07791                           TPHIINKESTEMGGTIESDTTSPR
+      491   Q07791                          ESTEMGGTIESDTTSPRHSSTFTAR
+      492   Q07791                                        HSSTFTARNQK
+      493   Q07791                                NQKRPGSPNDMIDLTSQDR
+      494   Q07791                          RPGSPNDMIDLTSQDRVNYGLENIK
+      495   Q07791                                       VNYGLENIKTTR
+      496   Q07791                                     TTRLGGTEEPYIQR
+      497   Q07791                                 LGGTEEPYIQRNSDTNIK
+      498   Q07791                                          NSDTNIKYR
+      499   Q07791                                      YRTTNSTPSIDDR
+      500   Q07791                        TTNSTPSIDDRSSNSESTTPIISIETK
+      501   Q07791                  SSNSESTTPIISIETKAVCDNTPSIDTDPPEYR
+      502   Q07791                     AVCDNTPSIDTDPPEYRSSDHATPNIMPDK
+      503   Q07791                                   SSDHATPNIMPDKSSK
+      504   Q07791                             SSKNVTADSILDDLPLPDLTNK
+      505   Q07791                      NVTADSILDDLPLPDLTNKSPTDTSDVSK
+      506   Q07791                                 SPTDTSDVSKDIPHIHSR
+      507   Q07791                        DIPHIHSRQTNSSLGGMDDSNVLTTTK
+      508   Q07791                              QTNSSLGGMDDSNVLTTTKSK
+      509   Q07791                                     RSLEDNETEIEVSR
+      510   Q07791                                SLEDNETEIEVSRDTWNNK
+      511   Q07791                                          DTWNNKNMR
+      512   Q07791                                          NMRSLEPPR
+      513   Q07791                                           SLEPPRSK
+      514   Q07791                                          RINLIAAIK
+      515   Q07791                                        INLIAAIKGVK
+      516   Q07791                                          GVKSIKPVR
+      517   Q07791                                         SIKPVRTTLR
+      518   Q07791                                      TTLRYDEAITYNK
+      519   Q07791                                       YDEAITYNKDNK
+      520   Q07791                                          DRYVEAYHK
+      521   Q07791                                     YVEAYHKEISQLLK
+      522   Q07791                                    EISQLLKMNTWDTNK
+      523   Q07791                                       MNTWDTNKYYDR
+      524   Q07791                                         YYDRNDIDPK
+      525   Q07791                                            NDIDPKK
+      526   Q07791                                        KVINSMFIFNK
+      527   Q07791                                        VINSMFIFNKK
+      528   Q07791                                             RDGTHK
+      529   Q07791                                            DGTHKAR
+      530   Q07791                                             ARFVAR
+      531   Q07791                                EELYIRPPPHLGLNDKLLR
+      532   Q07791                                            KSLYGLK
+      533   Q07791                                  SLYGLKQSGANWYETIK
+      534   Q07791                           QSGANWYETIKSYLINCCDMQEVR
+      535   Q07791                               SYLINCCDMQEVRGWSCVFK
+      536   Q07791                          GWSCVFKNSQVTICLFVDDMILFSK
+      537   Q07791                           NSQVTICLFVDDMILFSKDLNANK
+      538   Q07791                                            DLNANKK
+      539   Q07791                                            KIITTLK
+      540   Q07791                                            IITTLKK
+      541   Q07791                                             KQYDTK
+      542   Q07791                         QYDTKIINLGEGDNEIQYDILGLEIK
+      543   Q07791                           IINLGEGDNEIQYDILGLEIKYQR
+      544   Q07791                                           YMKLGMEK
+      545   Q07791                                         LGMEKSLTEK
+      546   Q07791                                           SLTEKLPK
+      547   Q07791                                        LPKLNVPLNPK
+      548   Q07791                                         LNVPLNPKGK
+      549   Q07791                           LRAPGQPGHYIDQDELEIDEDEYK
+      550   Q07791                           APGQPGHYIDQDELEIDEDEYKEK
+      551   Q07791                                           EKVHEMQK
+      552   Q07791                                  VHEMQKLIGLASYVGYK
+      553   Q07791                                      LIGLASYVGYKFR
+      554   Q07791                              FRFDLLYYINTLAQHILFPSR
+      555   Q07791               FDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTR
+      556   Q07791                                QVLDMTYELIQFIWNTRDK
+      557   Q07791                                           DKQLIWHK
+      558   Q07791                                    QLIWHKSKPVKPTNK
+      559   Q07791                          SKPVKPTNKLVVISDASYGNQPYYK
+      560   Q07791                       LVVISDASYGNQPYYKSQIGNIYLLNGK
+      561   Q07791                                  SQIGNIYLLNGKVIGGK
+      562   Q07791                                           VIGGKSTK
+      563   Q07791             STKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK
+      564   Q07791           ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIK
+      565   Q07791                                       KPIIKGLLTDSR
+      566   Q07791                                     GLLTDSRSTISIIK
+      567   Q07791                                      STISIIKSTNEEK
+      568   Q07791                                           STNEEKFR
+      569   Q07791                                            NRFFGTK
+      570   Q07791                                           FFGTKAMR
+      571   Q07791                                 LRDEVSGNNLYVYYIETK
+      572   Q07791                     DEVSGNNLYVYYIETKMNIADVMTKPLPIK
+      573   Q07791                                  MNIADVMTKPLPIKTFK
+      574   Q07791                                           TFKLLTNK
+      575   Q07791                                           LLTNKWIH
+      576   Q07791  MESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDRDSTK
+      577   Q07791                           TKVRNNVLPPHTLTSEENFSTWVK
+      578   Q07791                         VRNNVLPPHTLTSEENFSTWVKFYIR
+      579   Q07791                        NNVLPPHTLTSEENFSTWVKFYIRFLK
+      580   Q07791                            FYIRFLKNSNLGDIIPNDQGEIK
+      581   Q07791                               FLKNSNLGDIIPNDQGEIKR
+      582   Q07791      NSNLGDIIPNDQGEIKRQMTYEEHAYIYNTFQAFAPFHLLPTWVK
+      583   Q07791      RQMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCK
+      584   Q07791   QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCKSVSK
+      585   Q07791                      QILEINYADILTVLCKSVSKMQTNNQELK
+      586   Q07791         SVSKMQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQR
+      587   Q07791           MQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQRLK
+      588   Q07791           DWIALANLEYDGSTSADTFEITVSTIIQRLKENNINVSDR
+      589   Q07791                                LKENNINVSDRLACQLILK
+      590   Q07791                           ENNINVSDRLACQLILKGLSGDFK
+      591   Q07791                                 LACQLILKGLSGDFKYLR
+      592   Q07791                                     GLSGDFKYLRNQYR
+      593   Q07791                                          YLRNQYRTK
+      594   Q07791                                         NQYRTKTNMK
+      595   Q07791                             TKTNMKLSQLFAEIQLIYDENK
+      596   Q07791                    TNMKLSQLFAEIQLIYDENKIMNLNKPSQYK
+      597   Q07791                  LSQLFAEIQLIYDENKIMNLNKPSQYKQHSEYK
+      598   Q07791                              IMNLNKPSQYKQHSEYKNVSR
+      599   Q07791                                QHSEYKNVSRTSPNTTNTK
+      600   Q07791                                  NVSRTSPNTTNTKVTSR
+      601   Q07791                                  TSPNTTNTKVTSRNYHR
+      602   Q07791                                    VTSRNYHRTNSSKPR
+      603   Q07791                                     NYHRTNSSKPRAAK
+      604   Q07791                                TNSSKPRAAKAHNIATSSK
+      605   Q07791                                    AAKAHNIATSSKFSR
+      606   Q07791          AHNIATSSKFSRVNNDHINESTVSSQYLSDDNELSLGQQQK
+      607   Q07791             FSRVNNDHINESTVSSQYLSDDNELSLGQQQKESKPTR
+      608   Q07791      SAHYLHHATPNSEINIVDAQKQDIPINAIGNLHFNFQNGTKTSIK
+      609   Q07791              TSIKALHTPNIAYDLLSLSELANQNITACFTRNTLER
+      610   Q07791       ALHTPNIAYDLLSLSELANQNITACFTRNTLERSDGTVLAPIVK
+      611   Q07791                          NTLERSDGTVLAPIVKHGDFYWLSK
+      612   Q07791                              SDGTVLAPIVKHGDFYWLSKK
+      613   Q07791                                HGDFYWLSKKYLIPSHISK
+      614   Q07791                                 KYLIPSHISKLTINNVNK
+      615   Q07791                                YLIPSHISKLTINNVNKSK
+      616   Q07791                                     LTINNVNKSKSVNK
+      617   Q07791                                     SKSVNKYPYPLIHR
+      618   Q07791                               SVNKYPYPLIHRMLGHANFR
+      619   Q07791                               YPYPLIHRMLGHANFRSIQK
+      620   Q07791                                    MLGHANFRSIQKSLK
+      621   Q07791                                           SIQKSLKK
+      622   Q07791                                        SLKKNAVTYLK
+      623   Q07791                      KNAVTYLKESDIEWSNASTYQCPDCLIGK
+      624   Q07791                    NAVTYLKESDIEWSNASTYQCPDCLIGKSTK
+      625   Q07791                         ESDIEWSNASTYQCPDCLIGKSTKHR
+      626   Q07791                                           STKHRHIK
+      627   Q07791                                           HRHIKGSR
+      628   Q07791                                           HIKGSRLK
+      629   Q07791                      GSRLKYQESYEPFQYLHTDIFGPVHHLPK
+      630   Q07791            LKYQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEK
+      631   Q07791            YQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEKTR
+      632   Q07791                          SAPSYFISFTDEKTRFQWVYPLHDR
+      633   Q07791                                      TRFQWVYPLHDRR
+      634   Q07791                        FQWVYPLHDRREESILNVFTSILAFIK
+      635   Q07791                            REESILNVFTSILAFIKNQFNAR
+      636   Q07791                     EESILNVFTSILAFIKNQFNARVLVIQMDR
+      637   Q07791                              NQFNARVLVIQMDRGSEYTNK
+      638   Q07791                                VLVIQMDRGSEYTNKTLHK
+      639   Q07791                                   GSEYTNKTLHKFFTNR
+      640   Q07791                             TLHKFFTNRGITACYTTTADSR
+      641   Q07791                          FFTNRGITACYTTTADSRAHGVAER
+      642   Q07791                            GITACYTTTADSRAHGVAERLNR
+      643   Q07791                                  AHGVAERLNRTLLNDCR
+      644   Q07791                 LNRTLLNDCRTLLHCSGLPNHLWFSAVEFSTIIR
+      645   Q07791             TLLNDCRTLLHCSGLPNHLWFSAVEFSTIIRNSLVSPK
+      646   Q07791                 TLLHCSGLPNHLWFSAVEFSTIIRNSLVSPKNDK
+      647   Q07791                                      NSLVSPKNDKSAR
+      648   Q07791               NDKSARQHAGLAGLDITTILPFGQPVIVNNHNPDSK
+      649   Q07791              SARQHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPR
+      650   Q07791      QHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPRGIPGYALHPSR
+      651   Q07791                       IHPRGIPGYALHPSRNSYGYIIYLPSLK
+      652   Q07791                          GIPGYALHPSRNSYGYIIYLPSLKK
+      653   Q07791                     NSYGYIIYLPSLKKTVDTTNYVILQDNQSK
+      654   Q07791                 KTVDTTNYVILQDNQSKLDQFNYDTLTFDDDLNR
+      655   Q07791                                         EPVQKVRAPK
+      656   Q07791                             VRAPKEVDADISEYNILPSTIR
+      657   Q07791                             APKEVDADISEYNILPSTIRSR
+      658   Q07791                         EVDADISEYNILPSTIRSRTPHIINK
+      659   Q07791                         SRTPHIINKESTEMGGTIESDTTSPR
+      660   Q07791                   TPHIINKESTEMGGTIESDTTSPRHSSTFTAR
+      661   Q07791                       ESTEMGGTIESDTTSPRHSSTFTARNQK
+      662   Q07791                        HSSTFTARNQKRPGSPNDMIDLTSQDR
+      663   Q07791                       NQKRPGSPNDMIDLTSQDRVNYGLENIK
+      664   Q07791                       RPGSPNDMIDLTSQDRVNYGLENIKTTR
+      665   Q07791                            VNYGLENIKTTRLGGTEEPYIQR
+      666   Q07791                              TTRLGGTEEPYIQRNSDTNIK
+      667   Q07791                               LGGTEEPYIQRNSDTNIKYR
+      668   Q07791                               NSDTNIKYRTTNSTPSIDDR
+      669   Q07791                      YRTTNSTPSIDDRSSNSESTTPIISIETK
+      670   Q07791       TTNSTPSIDDRSSNSESTTPIISIETKAVCDNTPSIDTDPPEYR
+      671   Q07791     SSNSESTTPIISIETKAVCDNTPSIDTDPPEYRSSDHATPNIMPDK
+      672   Q07791                  AVCDNTPSIDTDPPEYRSSDHATPNIMPDKSSK
+      673   Q07791                SSDHATPNIMPDKSSKNVTADSILDDLPLPDLTNK
+      674   Q07791                   SSKNVTADSILDDLPLPDLTNKSPTDTSDVSK
+      675   Q07791              NVTADSILDDLPLPDLTNKSPTDTSDVSKDIPHIHSR
+      676   Q07791              SPTDTSDVSKDIPHIHSRQTNSSLGGMDDSNVLTTTK
+      677   Q07791                      DIPHIHSRQTNSSLGGMDDSNVLTTTKSK
+      678   Q07791                             QTNSSLGGMDDSNVLTTTKSKK
+      679   Q07791                                    KRSLEDNETEIEVSR
+      680   Q07791                               RSLEDNETEIEVSRDTWNNK
+      681   Q07791                             SLEDNETEIEVSRDTWNNKNMR
+      682   Q07791                                    DTWNNKNMRSLEPPR
+      683   Q07791                                        NMRSLEPPRSK
+      684   Q07791                                          SLEPPRSKK
+      685   Q07791                                         KRINLIAAIK
+      686   Q07791                                       RINLIAAIKGVK
+      687   Q07791                                  INLIAAIKGVKSIKPVR
+      688   Q07791                                      GVKSIKPVRTTLR
+      689   Q07791                                SIKPVRTTLRYDEAITYNK
+      690   Q07791                                   TTLRYDEAITYNKDNK
+      691   Q07791                                     YDEAITYNKDNKEK
+      692   Q07791                                            DNKEKDR
+      693   Q07791                                        EKDRYVEAYHK
+      694   Q07791                                   DRYVEAYHKEISQLLK
+      695   Q07791                             YVEAYHKEISQLLKMNTWDTNK
+      696   Q07791                                EISQLLKMNTWDTNKYYDR
+      697   Q07791                                 MNTWDTNKYYDRNDIDPK
+      698   Q07791                                        YYDRNDIDPKK
+      699   Q07791                                  NDIDPKKVINSMFIFNK
+      700   Q07791                                       KVINSMFIFNKK
+      701   Q07791                                       VINSMFIFNKKR
+      702   Q07791                                            KRDGTHK
+      703   Q07791                                           RDGTHKAR
+      704   Q07791                                        DGTHKARFVAR
+      705   Q07791                              EELYIRPPPHLGLNDKLLRLR
+      706   Q07791                                             LLRLRK
+      707   Q07791                                          LRKSLYGLK
+      708   Q07791                                 KSLYGLKQSGANWYETIK
+      709   Q07791                     SLYGLKQSGANWYETIKSYLINCCDMQEVR
+      710   Q07791                    QSGANWYETIKSYLINCCDMQEVRGWSCVFK
+      711   Q07791             SYLINCCDMQEVRGWSCVFKNSQVTICLFVDDMILFSK
+      712   Q07791                    GWSCVFKNSQVTICLFVDDMILFSKDLNANK
+      713   Q07791                          NSQVTICLFVDDMILFSKDLNANKK
+      714   Q07791                                      DLNANKKIITTLK
+      715   Q07791                                           KIITTLKK
+      716   Q07791                                       IITTLKKQYDTK
+      717   Q07791                        KQYDTKIINLGEGDNEIQYDILGLEIK
+      718   Q07791                      QYDTKIINLGEGDNEIQYDILGLEIKYQR
+      719   Q07791                         IINLGEGDNEIQYDILGLEIKYQRSK
+      720   Q07791                                           YQRSKYMK
+      721   Q07791                                         SKYMKLGMEK
+      722   Q07791                                      YMKLGMEKSLTEK
+      723   Q07791                                      LGMEKSLTEKLPK
+      724   Q07791                                   SLTEKLPKLNVPLNPK
+      725   Q07791                                      LPKLNVPLNPKGK
+      726   Q07791                                        LNVPLNPKGKK
+      727   Q07791                          KLRAPGQPGHYIDQDELEIDEDEYK
+      728   Q07791                         LRAPGQPGHYIDQDELEIDEDEYKEK
+      729   Q07791                     APGQPGHYIDQDELEIDEDEYKEKVHEMQK
+      730   Q07791                                EKVHEMQKLIGLASYVGYK
+      731   Q07791                                VHEMQKLIGLASYVGYKFR
+      732   Q07791                   LIGLASYVGYKFRFDLLYYINTLAQHILFPSR
+      733   Q07791             FRFDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTR
+      734   Q07791             FDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTRDK
+      735   Q07791                          QVLDMTYELIQFIWNTRDKQLIWHK
+      736   Q07791                                  DKQLIWHKSKPVKPTNK
+      737   Q07791                    QLIWHKSKPVKPTNKLVVISDASYGNQPYYK
+      738   Q07791              SKPVKPTNKLVVISDASYGNQPYYKSQIGNIYLLNGK
+      739   Q07791                  LVVISDASYGNQPYYKSQIGNIYLLNGKVIGGK
+      740   Q07791                               SQIGNIYLLNGKVIGGKSTK
+      741   Q07791        VIGGKSTKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK
+      742   Q07791        STKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIK
+      743   Q07791    ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIKGLLTDSR
+      744   Q07791                                KPIIKGLLTDSRSTISIIK
+      745   Q07791                               GLLTDSRSTISIIKSTNEEK
+      746   Q07791                                    STISIIKSTNEEKFR
+      747   Q07791                                         STNEEKFRNR
+      748   Q07791                                          FRNRFFGTK
+      749   Q07791                                         NRFFGTKAMR
+      750   Q07791                                         FFGTKAMRLR
+      751   Q07791                              AMRLRDEVSGNNLYVYYIETK
+      752   Q07791                   LRDEVSGNNLYVYYIETKMNIADVMTKPLPIK
+      753   Q07791                  DEVSGNNLYVYYIETKMNIADVMTKPLPIKTFK
+      754   Q07791                             MNIADVMTKPLPIKTFKLLTNK
+      755   Q07791                                        TFKLLTNKWIH
+      756   Q07791                            ESQQLHQNPHSLHGSAAASVTSK
+      757   Q07791       ESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDR
+      758   Q07791   ESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDRDSTK
+      759   Q03856                           MESQQLSNYPHISHGSACASVTSK
+      760   Q03856                                    EVHTNQDPLDVSASK
+      761   Q03856                                             IQEYDK
+      762   Q03856                                YVRPPPMLTSPNDFPNWVK
+      763   Q03856                               FLQNSNLGGIIPTVNGKPVR
+      764   Q03856                       QITDDELTFLYNTFQIFAPSQFLPTWVK
+      765   Q03856                                       DILSVDYTDIMK
+      766   Q03856                    MQSDTQEANDIVTLANLQYNGSTPADAFETK
+      767   Q03856                                            VTNIIDR
+      768   Q03856                                        LNNNGIHINNK
+      769   Q03856                                           VACQLIMR
+      770   Q03856                                            GLSGEYK
+      771   Q03856                           HLNMTVAELFLDIHAIYEEQQGSR
+      772   Q03856                                            NSKPNYR
+      773   Q03856                                             NPSDEK
+      774   Q03856                                          SYTNTTKPK
+      775   Q03856                               AHNVSTSNNSPSTDNDSISK
+      776   Q03856                                        STTEPIQLNNK
+      777   Q03856                                         HDLHLRPGTY
+      778   Q03856            MESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASK
+      779   Q03856                              EVHTNQDPLDVSASKIQEYDK
+      780   Q03856                                         IQEYDKASTK
+      781   Q03856                               KYVRPPPMLTSPNDFPNWVK
+      782   Q03856                            YVRPPPMLTSPNDFPNWVKTYIK
+      783   Q03856                           TYIKFLQNSNLGGIIPTVNGKPVR
+      784   Q03856   FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK
+      785   Q03856           QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK
+      786   Q03856                                   DILSVDYTDIMKILSK
+      787   Q03856                                           ILSKSIEK
+      788   Q03856                SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
+      789   Q03856             MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
+      790   Q03856                                 VTNIIDRLNNNGIHINNK
+      791   Q03856                                LNNNGIHINNKVACQLIMR
+      792   Q03856                                    VACQLIMRGLSGEYK
+      793   Q03856                                         GLSGEYKFLR
+      794   Q03856                                             FLRYTR
+      795   Q03856                         HRHLNMTVAELFLDIHAIYEEQQGSR
+      796   Q03856                    HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
+      797   Q03856                                           NSKPNYRR
+      798   Q03856                                            RNPSDEK
+      799   Q03856                                         NPSDEKNDSR
+      800   Q03856                                      NDSRSYTNTTKPK
+      801   Q03856                                      SYTNTTKPKVIAR
+      802   Q03856                                           VIARNPQK
+      803   Q03856                                          NPQKTNNSK
+      804   Q03856                                            TNNSKSK
+      805   Q03856                            TARAHNVSTSNNSPSTDNDSISK
+      806   Q03856                    AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
+      807   Q03856                              STTEPIQLNNKHDLHLRPGTY
+      808   Q03856      MESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASKIQEYDK
+      809   Q03856                          EVHTNQDPLDVSASKIQEYDKASTK
+      810   Q03856                           KYVRPPPMLTSPNDFPNWVKTYIK
+      811   Q03856        YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR
+      812   Q03856       QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK
+      813   Q03856                               DILSVDYTDIMKILSKSIEK
+      814   Q03856            ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
+      815   Q03856         SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
+      816   Q03856  MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK
+      817   Q03856                         VTNIIDRLNNNGIHINNKVACQLIMR
+      818   Q03856                         LNNNGIHINNKVACQLIMRGLSGEYK
+      819   Q03856                                 VACQLIMRGLSGEYKFLR
+      820   Q03856                                      GLSGEYKFLRYTR
+      821   Q03856                                           FLRYTRHR
+      822   Q03856                      YTRHRHLNMTVAELFLDIHAIYEEQQGSR
+      823   Q03856                  HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
+      824   Q03856                   HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR
+      825   Q03856                                     NSKPNYRRNPSDEK
+      826   Q03856                                        RNPSDEKNDSR
+      827   Q03856                                NPSDEKNDSRSYTNTTKPK
+      828   Q03856                                  NDSRSYTNTTKPKVIAR
+      829   Q03856                                  SYTNTTKPKVIARNPQK
+      830   Q03856                                      VIARNPQKTNNSK
+      831   Q03856                                        NPQKTNNSKSK
+      832   Q03856                                         TNNSKSKTAR
+      833   Q03856                          SKTARAHNVSTSNNSPSTDNDSISK
+      834   Q03856                 TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
+      835   Q03856          AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLRPGTY
+      836   Q03856                            ESQQLSNYPHISHGSACASVTSK
+      837   Q03856             ESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASK
+      838   Q03856       ESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASKIQEYDK
+      839   Q07793                           MESQQLSQHSPISHGSACASVTSK
+      840   Q07793                                    EVHTNQDPLDVSASK
+      841   Q07793                                             TEECEK
+      842   Q07793                                YVRPPPMLTSPNDFPNWVK
+      843   Q07793                               FLQNSNLGGIIPTVNGKPVR
+      844   Q07793                       QITDDELTFLYNTFQIFAPSQFLPTWVK
+      845   Q07793                                       DILSVDYTDIMK
+      846   Q07793                    MQSDTQEANDIVTLANLQYNGSTPADAFETK
+      847   Q07793                                            VTNIIDR
+      848   Q07793                                        LNNNGIHINNK
+      849   Q07793                                           VACQLIMR
+      850   Q07793                                            GLSGEYK
+      851   Q07793                           HLNMTVAELFLDIHAIYEEQQGSR
+      852   Q07793                                            NSKPNYR
+      853   Q07793                                             NPSDEK
+      854   Q07793                                          SYTNTTKPK
+      855   Q07793                               AHNVSTSNNSPSTDNDSISK
+      856   Q07793                                        STTEPIQLNNK
+      857   Q07793                                           HDLHLGQK
+      858   Q07793                       LTESTVNHTNHSDDELPGHLLLDSGASR
+      859   Q07793                              SAHHIHSASSNPDINVVDAQK
+      860   Q07793                                NIPINAIGDLQFHFQDNTK
+      861   Q07793                       VLHTPNIAYDLLSLNELAAVDITACFTK
+      862   Q07793                                        SDGTVLAPIVK
+      863   Q07793                                          YGDFYWVSK
+      864   Q07793                             YLLPSNISVPTINNVHTSESTR
+      865   Q07793                                           YPYPFIHR
+      866   Q07793                                        MLAHANAQTIR
+      867   Q07793                      NNTITYFNESDVDWSSAIDYQCPDCLIGK
+      868   Q07793            YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK
+      869   Q07793                                           WVYPLHDR
+      870   Q07793                                   EDSILDVFTTILAFIK
+      871   Q07793                                     NQFQASVLVIQMDR
+      872   Q07793                                            GSEYTNR
+      873   Q07793                                     NGITPCYTTTADSR
+      874   Q07793                                            AHGVAER
+      875   Q07793                                            TLLDDCR
+      876   Q07793                           TQLQCSGLPNHLWFSAIEFSTIVR
+      877   Q07793                                            NSLASPK
+      878   Q07793                     QHAGLAGLDISTLLPFGQPVIVNDHNPNSK
+      879   Q07793                                        GIPGYALHPSR
+      880   Q07793                                      NSYGYIIYLPSLK
+      881   Q07793                                      TVDTTNYVILQGK
+      882   Q07793                                  LDQFNYDALTFDEDLNR
+      883   Q07793           LTASYHSFIASNEIQESNDLNIESDHDFQSDIELHPEQPR
+      884   Q07793                                 AVSPTDSTPPSTHTEDSK
+      885   Q07793                                    EVDPNISESNILPSK
+      886   Q07793                                SSTPQISNIESTGSGGMHK
+      887   Q07793                             LNVPLLAPMSQSNTHESSHASK
+      888   Q07793                         HSDSYSENETNHTNVPISSTGGTNNK
+      889   Q07793                                       TVPQISDQETEK
+      890   Q07793                              SPSIDASPPENNSSHNIVPIK
+      891   Q07793               TPTTVSEQNTEESIIADLPLPDLPPESPTEFPDPFK
+      892   Q07793                                           ELPPINSR
+      893   Q07793                              QTNSSLGGIGDSNAYTTINSK
+      894   Q07793                                         SLEDNETEIK
+      895   Q07793                                             DTWNTK
+      896   Q07793                                             SLEPPR
+      897   Q07793                                           IHLIAAVK
+      898   Q07793                                             SIKPIR
+      899   Q07793                                          YDEAITYNK
+      900   Q07793                                            YIEAYHK
+      901   Q07793                                            EVNQLLK
+      902   Q07793                                         TWDTDEYYDR
+      903   Q07793                                         VINSMFIFNK
+      904   Q07793                                   EELYIRPPPHLGMNDK
+      905   Q07793                                             SLYGLK
+      906   Q07793                                        QSGANWYETIK
+      907   Q07793                                      SYLIQQCGMEEVR
+      908   Q07793                                            GWSCVFK
+      909   Q07793                                 NSQVTICLFVDDMVLFSK
+      910   Q07793                                             NLNSNK
+      911   Q07793                                             MQYDTK
+      912   Q07793                              IINLGESDEEIQYDILGLEIK
+      913   Q07793                                         LGMENSLTEK
+      914   Q07793                                           LNVPLNPK
+      915   Q07793                           LSAPGQPGLYIDQDELEIDEDEYK
+      916   Q07793                                             VHEMQK
+      917   Q07793                                        LIGLASYVGYK
+      918   Q07793                                FDLLYYINTLAQHILFPSR
+      919   Q07793                                  QVLDMTYELIQFMWDTR
+      920   Q07793                                             QLIWHK
+      921   Q07793            MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK
+      922   Q07793                              EVHTNQDPLDVSASKTEECEK
+      923   Q07793                                         TEECEKASTK
+      924   Q07793                               KYVRPPPMLTSPNDFPNWVK
+      925   Q07793                            YVRPPPMLTSPNDFPNWVKTYIK
+      926   Q07793                           TYIKFLQNSNLGGIIPTVNGKPVR
+      927   Q07793   FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK
+      928   Q07793           QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK
+      929   Q07793                                   DILSVDYTDIMKILSK
+      930   Q07793                                           ILSKSIEK
+      931   Q07793                SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
+      932   Q07793             MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
+      933   Q07793                                 VTNIIDRLNNNGIHINNK
+      934   Q07793                                LNNNGIHINNKVACQLIMR
+      935   Q07793                                    VACQLIMRGLSGEYK
+      936   Q07793                                         GLSGEYKFLR
+      937   Q07793                                             FLRYTR
+      938   Q07793                         HRHLNMTVAELFLDIHAIYEEQQGSR
+      939   Q07793                    HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
+      940   Q07793                                           NSKPNYRR
+      941   Q07793                                            RNPSDEK
+      942   Q07793                                         NPSDEKNDSR
+      943   Q07793                                      NDSRSYTNTTKPK
+      944   Q07793                                      SYTNTTKPKVIAR
+      945   Q07793                                           VIARNPQK
+      946   Q07793                                          NPQKTNNSK
+      947   Q07793                                            TNNSKSK
+      948   Q07793                            TARAHNVSTSNNSPSTDNDSISK
+      949   Q07793                    AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
+      950   Q07793                                STTEPIQLNNKHDLHLGQK
+      951   Q07793               HDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASR
+      952   Q07793                   LTESTVNHTNHSDDELPGHLLLDSGASRTLIR
+      953   Q07793                          TLIRSAHHIHSASSNPDINVVDAQK
+      954   Q07793                             SAHHIHSASSNPDINVVDAQKR
+      955   Q07793                               RNIPINAIGDLQFHFQDNTK
+      956   Q07793                            NIPINAIGDLQFHFQDNTKTSIK
+      957   Q07793                   TSIKVLHTPNIAYDLLSLNELAAVDITACFTK
+      958   Q07793                  VLHTPNIAYDLLSLNELAAVDITACFTKNVLER
+      959   Q07793                                   NVLERSDGTVLAPIVK
+      960   Q07793                               SDGTVLAPIVKYGDFYWVSK
+      961   Q07793                                         YGDFYWVSKK
+      962   Q07793                            KYLLPSNISVPTINNVHTSESTR
+      963   Q07793                            YLLPSNISVPTINNVHTSESTRK
+      964   Q07793                                          KYPYPFIHR
+      965   Q07793                                YPYPFIHRMLAHANAQTIR
+      966   Q07793                                    MLAHANAQTIRYSLK
+      967   Q07793                  YSLKNNTITYFNESDVDWSSAIDYQCPDCLIGK
+      968   Q07793                   NNTITYFNESDVDWSSAIDYQCPDCLIGKSTK
+      969   Q07793                                             HIKGSR
+      970   Q07793          LKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK
+      971   Q07793          YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFR
+      972   Q07793                                         FRWVYPLHDR
+      973   Q07793                                          WVYPLHDRR
+      974   Q07793                                  REDSILDVFTTILAFIK
+      975   Q07793                     EDSILDVFTTILAFIKNQFQASVLVIQMDR
+      976   Q07793                              NQFQASVLVIQMDRGSEYTNR
+      977   Q07793                                        GSEYTNRTLHK
+      978   Q07793                                           TLHKFLEK
+      979   Q07793                                 FLEKNGITPCYTTTADSR
+      980   Q07793                              NGITPCYTTTADSRAHGVAER
+      981   Q07793                                         AHGVAERLNR
+      982   Q07793                                         LNRTLLDDCR
+      983   Q07793                    TLLDDCRTQLQCSGLPNHLWFSAIEFSTIVR
+      984   Q07793                    TQLQCSGLPNHLWFSAIEFSTIVRNSLASPK
+      985   Q07793                                          NSLASPKSK
+      986   Q07793                  SARQHAGLAGLDISTLLPFGQPVIVNDHNPNSK
+      987   Q07793                 QHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPR
+      988   Q07793                                    IHPRGIPGYALHPSR
+      989   Q07793                           GIPGYALHPSRNSYGYIIYLPSLK
+      990   Q07793                                     NSYGYIIYLPSLKK
+      991   Q07793                                     KTVDTTNYVILQGK
+      992   Q07793                                   TVDTTNYVILQGKESR
+      993   Q07793                               ESRLDQFNYDALTFDEDLNR
+      994   Q07793      LTASYHSFIASNEIQESNDLNIESDHDFQSDIELHPEQPRNVLSK
+      995   Q07793                            NVLSKAVSPTDSTPPSTHTEDSK
+      996   Q07793                                AVSPTDSTPPSTHTEDSKR
+      997   Q07793                                            VSKTNIR
+      998   Q07793                                            TNIRAPR
+      999   Q07793                                 APREVDPNISESNILPSK
+      1000  Q07793                                   EVDPNISESNILPSKK
+      1001  Q07793                               RSSTPQISNIESTGSGGMHK
+      1002  Q07793          SSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASK
+      1003  Q07793                           LNVPLLAPMSQSNTHESSHASKSK
+      1004  Q07793                      DFRHSDSYSENETNHTNVPISSTGGTNNK
+      1005  Q07793             HSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEK
+      1006  Q07793                                      TVPQISDQETEKR
+      1007  Q07793                          IIHRSPSIDASPPENNSSHNIVPIK
+      1008  Q07793       TPTTVSEQNTEESIIADLPLPDLPPESPTEFPDPFKELPPINSR
+      1009  Q07793                      ELPPINSRQTNSSLGGIGDSNAYTTINSK
+      1010  Q07793                             QTNSSLGGIGDSNAYTTINSKK
+      1011  Q07793                                        RSLEDNETEIK
+      1012  Q07793                                      SLEDNETEIKVSR
+      1013  Q07793                                          VSRDTWNTK
+      1014  Q07793                                          DTWNTKNMR
+      1015  Q07793                                          NMRSLEPPR
+      1016  Q07793                                           SLEPPRSK
+      1017  Q07793                                          RIHLIAAVK
+      1018  Q07793                                        IHLIAAVKAVK
+      1019  Q07793                                          AVKSIKPIR
+      1020  Q07793                                         SIKPIRTTLR
+      1021  Q07793                                      TTLRYDEAITYNK
+      1022  Q07793                                       YDEAITYNKDIK
+      1023  Q07793                                          EKYIEAYHK
+      1024  Q07793                                     YIEAYHKEVNQLLK
+      1025  Q07793                                          EVNQLLKMK
+      1026  Q07793                                       MKTWDTDEYYDR
+      1027  Q07793                                        TWDTDEYYDRK
+      1028  Q07793                                             KEIDPK
+      1029  Q07793                                             EIDPKR
+      1030  Q07793                                        RVINSMFIFNK
+      1031  Q07793                                        VINSMFIFNKK
+      1032  Q07793                                             RDGTHK
+      1033  Q07793                                            DGTHKAR
+      1034  Q07793                                             ARFVAR
+      1035  Q07793                                EELYIRPPPHLGMNDKLIR
+      1036  Q07793                                            KSLYGLK
+      1037  Q07793                                  SLYGLKQSGANWYETIK
+      1038  Q07793                           QSGANWYETIKSYLIQQCGMEEVR
+      1039  Q07793                               SYLIQQCGMEEVRGWSCVFK
+      1040  Q07793                          GWSCVFKNSQVTICLFVDDMVLFSK
+      1041  Q07793                           NSQVTICLFVDDMVLFSKNLNSNK
+      1042  Q07793                                            NLNSNKR
+      1043  Q07793                                             IIEKLK
+      1044  Q07793                                           LKMQYDTK
+      1045  Q07793                        MQYDTKIINLGESDEEIQYDILGLEIK
+      1046  Q07793                           IINLGESDEEIQYDILGLEIKYQR
+      1047  Q07793                                      YMKLGMENSLTEK
+      1048  Q07793                                      LGMENSLTEKIPK
+      1049  Q07793                                        IPKLNVPLNPK
+      1050  Q07793                                         LNVPLNPKGR
+      1051  Q07793                          KLSAPGQPGLYIDQDELEIDEDEYK
+      1052  Q07793                         LSAPGQPGLYIDQDELEIDEDEYKEK
+      1053  Q07793                                           EKVHEMQK
+      1054  Q07793                                  VHEMQKLIGLASYVGYK
+      1055  Q07793                                      LIGLASYVGYKFR
+      1056  Q07793                              FRFDLLYYINTLAQHILFPSR
+      1057  Q07793               FDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTR
+      1058  Q07793                                QVLDMTYELIQFMWDTRDK
+      1059  Q07793                                           DKQLIWHK
+      1060  Q07793                                           QLIWHKHK
+      1061  Q07793                                            HKTSSDK
+      1062  Q07793                                            TSSDKNI
+      1063  Q07793      MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK
+      1064  Q07793                          EVHTNQDPLDVSASKTEECEKASTK
+      1065  Q07793                           KYVRPPPMLTSPNDFPNWVKTYIK
+      1066  Q07793        YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR
+      1067  Q07793       QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK
+      1068  Q07793                               DILSVDYTDIMKILSKSIEK
+      1069  Q07793            ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
+      1070  Q07793         SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
+      1071  Q07793  MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK
+      1072  Q07793                         VTNIIDRLNNNGIHINNKVACQLIMR
+      1073  Q07793                         LNNNGIHINNKVACQLIMRGLSGEYK
+      1074  Q07793                                 VACQLIMRGLSGEYKFLR
+      1075  Q07793                                      GLSGEYKFLRYTR
+      1076  Q07793                                           FLRYTRHR
+      1077  Q07793                      YTRHRHLNMTVAELFLDIHAIYEEQQGSR
+      1078  Q07793                  HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
+      1079  Q07793                   HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR
+      1080  Q07793                                     NSKPNYRRNPSDEK
+      1081  Q07793                                        RNPSDEKNDSR
+      1082  Q07793                                NPSDEKNDSRSYTNTTKPK
+      1083  Q07793                                  NDSRSYTNTTKPKVIAR
+      1084  Q07793                                  SYTNTTKPKVIARNPQK
+      1085  Q07793                                      VIARNPQKTNNSK
+      1086  Q07793                                        NPQKTNNSKSK
+      1087  Q07793                                         TNNSKSKTAR
+      1088  Q07793                          SKTARAHNVSTSNNSPSTDNDSISK
+      1089  Q07793                 TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
+      1090  Q07793            AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLGQK
+      1091  Q07793    STTEPIQLNNKHDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASR
+      1092  Q07793           HDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASRTLIR
+      1093  Q07793                         TLIRSAHHIHSASSNPDINVVDAQKR
+      1094  Q07793          SAHHIHSASSNPDINVVDAQKRNIPINAIGDLQFHFQDNTK
+      1095  Q07793                           RNIPINAIGDLQFHFQDNTKTSIK
+      1096  Q07793              TSIKVLHTPNIAYDLLSLNELAAVDITACFTKNVLER
+      1097  Q07793       VLHTPNIAYDLLSLNELAAVDITACFTKNVLERSDGTVLAPIVK
+      1098  Q07793                          NVLERSDGTVLAPIVKYGDFYWVSK
+      1099  Q07793                              SDGTVLAPIVKYGDFYWVSKK
+      1100  Q07793                   YGDFYWVSKKYLLPSNISVPTINNVHTSESTR
+      1101  Q07793                           KYLLPSNISVPTINNVHTSESTRK
+      1102  Q07793                    YLLPSNISVPTINNVHTSESTRKYPYPFIHR
+      1103  Q07793                               KYPYPFIHRMLAHANAQTIR
+      1104  Q07793                            YPYPFIHRMLAHANAQTIRYSLK
+      1105  Q07793       MLAHANAQTIRYSLKNNTITYFNESDVDWSSAIDYQCPDCLIGK
+      1106  Q07793               YSLKNNTITYFNESDVDWSSAIDYQCPDCLIGKSTK
+      1107  Q07793                 NNTITYFNESDVDWSSAIDYQCPDCLIGKSTKHR
+      1108  Q07793                                           STKHRHIK
+      1109  Q07793                                           HRHIKGSR
+      1110  Q07793                                           HIKGSRLK
+      1111  Q07793       GSRLKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK
+      1112  Q07793        LKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFR
+      1113  Q07793  YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFRWVYPLHDR
+      1114  Q07793                                        FRWVYPLHDRR
+      1115  Q07793                          WVYPLHDRREDSILDVFTTILAFIK
+      1116  Q07793                    REDSILDVFTTILAFIKNQFQASVLVIQMDR
+      1117  Q07793              EDSILDVFTTILAFIKNQFQASVLVIQMDRGSEYTNR
+      1118  Q07793                          NQFQASVLVIQMDRGSEYTNRTLHK
+      1119  Q07793                                    GSEYTNRTLHKFLEK
+      1120  Q07793                             TLHKFLEKNGITPCYTTTADSR
+      1121  Q07793                          FLEKNGITPCYTTTADSRAHGVAER
+      1122  Q07793                           NGITPCYTTTADSRAHGVAERLNR
+      1123  Q07793                                  AHGVAERLNRTLLDDCR
+      1124  Q07793                 LNRTLLDDCRTQLQCSGLPNHLWFSAIEFSTIVR
+      1125  Q07793             TLLDDCRTQLQCSGLPNHLWFSAIEFSTIVRNSLASPK
+      1126  Q07793                  TQLQCSGLPNHLWFSAIEFSTIVRNSLASPKSK
+      1127  Q07793                                         NSLASPKSKK
+      1128  Q07793                                             SKKSAR
+      1129  Q07793                 KSARQHAGLAGLDISTLLPFGQPVIVNDHNPNSK
+      1130  Q07793              SARQHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPR
+      1131  Q07793      QHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPRGIPGYALHPSR
+      1132  Q07793                       IHPRGIPGYALHPSRNSYGYIIYLPSLK
+      1133  Q07793                          GIPGYALHPSRNSYGYIIYLPSLKK
+      1134  Q07793                        NSYGYIIYLPSLKKTVDTTNYVILQGK
+      1135  Q07793                                  KTVDTTNYVILQGKESR
+      1136  Q07793                  TVDTTNYVILQGKESRLDQFNYDALTFDEDLNR
+      1137  Q07793                           NVLSKAVSPTDSTPPSTHTEDSKR
+      1138  Q07793                             AVSPTDSTPPSTHTEDSKRVSK
+      1139  Q07793                                           RVSKTNIR
+      1140  Q07793                                         VSKTNIRAPR
+      1141  Q07793                             TNIRAPREVDPNISESNILPSK
+      1142  Q07793                                APREVDPNISESNILPSKK
+      1143  Q07793                                  EVDPNISESNILPSKKR
+      1144  Q07793                              KRSSTPQISNIESTGSGGMHK
+      1145  Q07793         RSSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASK
+      1146  Q07793        SSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASKSK
+      1147  Q07793                        LNVPLLAPMSQSNTHESSHASKSKDFR
+      1148  Q07793                    SKDFRHSDSYSENETNHTNVPISSTGGTNNK
+      1149  Q07793          DFRHSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEK
+      1150  Q07793            HSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEKR
+      1151  Q07793                                  TVPQISDQETEKRIIHR
+      1152  Q07793                         RIIHRSPSIDASPPENNSSHNIVPIK
+      1153  Q07793                     ELPPINSRQTNSSLGGIGDSNAYTTINSKK
+      1154  Q07793                            QTNSSLGGIGDSNAYTTINSKKR
+      1155  Q07793                                       KRSLEDNETEIK
+      1156  Q07793                                     RSLEDNETEIKVSR
+      1157  Q07793                                SLEDNETEIKVSRDTWNTK
+      1158  Q07793                                       VSRDTWNTKNMR
+      1159  Q07793                                    DTWNTKNMRSLEPPR
+      1160  Q07793                                        NMRSLEPPRSK
+      1161  Q07793                                          SLEPPRSKK
+      1162  Q07793                                         KRIHLIAAVK
+      1163  Q07793                                       RIHLIAAVKAVK
+      1164  Q07793                                  IHLIAAVKAVKSIKPIR
+      1165  Q07793                                      AVKSIKPIRTTLR
+      1166  Q07793                                SIKPIRTTLRYDEAITYNK
+      1167  Q07793                                   TTLRYDEAITYNKDIK
+      1168  Q07793                                     YDEAITYNKDIKEK
+      1169  Q07793                                            DIKEKEK
+      1170  Q07793                                        EKEKYIEAYHK
+      1171  Q07793                                   EKYIEAYHKEVNQLLK
+      1172  Q07793                                   YIEAYHKEVNQLLKMK
+      1173  Q07793                                EVNQLLKMKTWDTDEYYDR
+      1174  Q07793                                      MKTWDTDEYYDRK
+      1175  Q07793                                   TWDTDEYYDRKEIDPK
+      1176  Q07793                                            KEIDPKR
+      1177  Q07793                                   EIDPKRVINSMFIFNK
+      1178  Q07793                                       RVINSMFIFNKK
+      1179  Q07793                                       VINSMFIFNKKR
+      1180  Q07793                                            KRDGTHK
+      1181  Q07793                                           RDGTHKAR
+      1182  Q07793                                        DGTHKARFVAR
+      1183  Q07793                              EELYIRPPPHLGMNDKLIRLK
+      1184  Q07793                                             LIRLKK
+      1185  Q07793                                          LKKSLYGLK
+      1186  Q07793                                 KSLYGLKQSGANWYETIK
+      1187  Q07793                     SLYGLKQSGANWYETIKSYLIQQCGMEEVR
+      1188  Q07793                    QSGANWYETIKSYLIQQCGMEEVRGWSCVFK
+      1189  Q07793             SYLIQQCGMEEVRGWSCVFKNSQVTICLFVDDMVLFSK
+      1190  Q07793                    GWSCVFKNSQVTICLFVDDMVLFSKNLNSNK
+      1191  Q07793                          NSQVTICLFVDDMVLFSKNLNSNKR
+      1192  Q07793                                        NLNSNKRIIEK
+      1193  Q07793                                            RIIEKLK
+      1194  Q07793                                       IIEKLKMQYDTK
+      1195  Q07793                      LKMQYDTKIINLGESDEEIQYDILGLEIK
+      1196  Q07793                     MQYDTKIINLGESDEEIQYDILGLEIKYQR
+      1197  Q07793                         IINLGESDEEIQYDILGLEIKYQRGK
+      1198  Q07793                                           YQRGKYMK
+      1199  Q07793                                    GKYMKLGMENSLTEK
+      1200  Q07793                                   YMKLGMENSLTEKIPK
+      1201  Q07793                              LGMENSLTEKIPKLNVPLNPK
+      1202  Q07793                                      IPKLNVPLNPKGR
+      1203  Q07793                                        LNVPLNPKGRK
+      1204  Q07793                        GRKLSAPGQPGLYIDQDELEIDEDEYK
+      1205  Q07793                        KLSAPGQPGLYIDQDELEIDEDEYKEK
+      1206  Q07793                   LSAPGQPGLYIDQDELEIDEDEYKEKVHEMQK
+      1207  Q07793                                EKVHEMQKLIGLASYVGYK
+      1208  Q07793                                VHEMQKLIGLASYVGYKFR
+      1209  Q07793                   LIGLASYVGYKFRFDLLYYINTLAQHILFPSR
+      1210  Q07793             FRFDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTR
+      1211  Q07793             FDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTRDK
+      1212  Q07793                          QVLDMTYELIQFMWDTRDKQLIWHK
+      1213  Q07793                                         DKQLIWHKHK
+      1214  Q07793                                      QLIWHKHKTSSDK
+      1215  Q07793                                          HKTSSDKNI
+      1216  Q07793                            ESQQLSQHSPISHGSACASVTSK
+      1217  Q07793             ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK
+      1218  Q07793       ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK
 
 ---
 
     Code
       res2
     Output
-      $A0A494C0S0
-        [1] "MHPDATDSGGAGPSPAR"                               
-        [2] "AAGAGGR"                                         
-        [3] "PVSGFR"                                          
-        [4] "PESPGDAEAAAAAAPGAPGGR"                           
-        [5] "PVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFR"              
-        [6] "LSLYLSCAAAAFLLGILFALVCR"                         
-        [7] "AQPPDFAAAWSR"                                    
-        [8] "LAATSAAR"                                        
-        [9] "PPGSPVYGNSHESAQSR"                               
-       [10] "VVISHNMDK"                                       
-       [11] "EVFDYSYR"                                        
-       [12] "DYILSWYGNLSR"                                    
-       [13] "DEGQLYHLLLEDFWEIAR"                              
-       [14] "LSHVDVVK"                                        
-       [15] "VVCNDVVR"                                        
-       [16] "TLLTHFCDLK"                                      
-       [17] "HEEQPR"                                          
-       [18] "PFVLHACLR"                                       
-       [19] "NSDDEVR"                                         
-       [20] "FLQTCSR"                                         
-       [21] "VLVFCLLPSK"                                      
-       [22] "DVQSLSLR"                                        
-       [23] "IMLAEILTTK"                                      
-       [24] "PVVELLSNPDYINQMLLAQLAYR"                         
-       [25] "EQMNEHHK"                                        
-       [26] "AYTYAPSYEDFIK"                                   
-       [27] "LINSNSDVEFLK"                                    
-       [28] "YQIVVEIIQATTISSFPQLK"                            
-       [29] "ETAAMK"                                          
-       [30] "YINQLTVAK"                                       
-       [31] "ILGGPAYDQQEDGALDEGEGPQSQK"                       
-       [32] "ILQFEDILANTFYR"                                  
-       [33] "EHFGMYMER"                                       
-       [34] "ALISFWESVEHLK"                                   
-       [35] "NEIPQLVGEIYQNFFVESK"                             
-       [36] "EISVEK"                                          
-       [37] "EIQQCLVGNK"                                      
-       [38] "GIEVFYK"                                         
-       [39] "IQEDVYETLK"                                      
-       [40] "YYPSFIVSDLYEK"                                   
-       [41] "HASQMISNK"                                       
-       [42] "DEMGPR"                                          
-       [43] "DEAGEEAVDDGTNQINEQASFAVNK"                       
-       [44] "QALNSIQNAPK"                                     
-       [45] "DEIILIEK"                                        
-       [46] "TDLQLHMAR"                                       
-       [47] "TDWWCENLGMWK"                                    
-       [48] "ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK"              
-       [49] "NWTVPR"                                          
-       [50] "LSEFQNLHR"                                       
-       [51] "LSECVPSLK"                                       
-       [52] "VQLPSLSK"                                        
-       [53] "FLQNLLSDER"                                      
-       [54] "LCQSEALYAFLSPSPDYLK"                             
-       [55] "VIDVQGK"                                         
-       [56] "NSFSLSSFLER"                                     
-       [57] "DFFSHQEEETEEDSDLSDYGDDVDGR"                      
-       [58] "DALAEPCFMLIGEIFELR"                              
-       [59] "TLIALVQVTFGR"                                    
-       [60] "DTVSWIFSEQMLVYYINIFR"                            
-       [61] "DAFWPNGK"                                        
-       [62] "LAPPTTIR"                                        
-       [63] "EQSQETK"                                         
-       [64] "LLENIPDMLQSLVGQQNAR"                             
-       [65] "IFNALQETR"                                       
-       [66] "HLLYALMELLLIELCPELR"                             
-       [67] "VHLDQLK"                                         
-       [68] "MHPDATDSGGAGPSPARAAGAGGR"                        
-       [69] "AAGAGGRPVSGFR"                                   
-       [70] "PVSGFRGER"                                       
-       [71] "RPESPGDAEAAAAAAPGAPGGR"                          
-       [72] "PESPGDAEAAAAAAPGAPGGRSWWK"                       
-       [73] "SWWKPVAVAALAAVALSFLGPGSGEAAGAAGLSSVLFR"          
-       [74] "LSLYLSCAAAAFLLGILFALVCRSPR"                      
-       [75] "SPRAQPPDFAAAWSR"                                 
-       [76] "AQPPDFAAAWSRLAATSAAR"                            
-       [77] "LAATSAARR"                                       
-       [78] "RPPGSPVYGNSHESAQSR"                              
-       [79] "PPGSPVYGNSHESAQSRR"                              
-       [80] "RVVISHNMDK"                                      
-       [81] "VVISHNMDKALK"                                    
-       [82] "ALKEVFDYSYR"                                     
-       [83] "EVFDYSYRDYILSWYGNLSR"                            
-       [84] "DYILSWYGNLSRDEGQLYHLLLEDFWEIAR"                  
-       [85] "DEGQLYHLLLEDFWEIARQLHHR"                         
-       [86] "QLHHRLSHVDVVK"                                   
-       [87] "LSHVDVVKVVCNDVVR"                                
-       [88] "VVCNDVVRTLLTHFCDLK"                              
-       [89] "TLLTHFCDLKAANAR"                                 
-       [90] "AANARHEEQPR"                                     
-       [91] "HEEQPRPFVLHACLR"                                 
-       [92] "PFVLHACLRNSDDEVR"                                
-       [93] "NSDDEVRFLQTCSR"                                  
-       [94] "FLQTCSRVLVFCLLPSK"                               
-       [95] "VLVFCLLPSKDVQSLSLR"                              
-       [96] "DVQSLSLRIMLAEILTTK"                              
-       [97] "IMLAEILTTKVLK"                                   
-       [98] "VLKPVVELLSNPDYINQMLLAQLAYR"                      
-       [99] "PVVELLSNPDYINQMLLAQLAYREQMNEHHK"                 
-      [100] "EQMNEHHKR"                                       
-      [101] "RAYTYAPSYEDFIK"                                  
-      [102] "AYTYAPSYEDFIKLINSNSDVEFLK"                       
-      [103] "LINSNSDVEFLKQLR"                                 
-      [104] "QLRYQIVVEIIQATTISSFPQLK"                         
-      [105] "YQIVVEIIQATTISSFPQLKR"                           
-      [106] "GKETAAMK"                                        
-      [107] "ETAAMKADLLR"                                     
-      [108] "ADLLRAR"                                         
-      [109] "RYINQLTVAK"                                      
-      [110] "YINQLTVAKK"                                      
-      [111] "IRILGGPAYDQQEDGALDEGEGPQSQK"                     
-      [112] "ILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYR"         
-      [113] "ILQFEDILANTFYREHFGMYMER"                         
-      [114] "EHFGMYMERMDK"                                    
-      [115] "RALISFWESVEHLK"                                  
-      [116] "ALISFWESVEHLKNANK"                               
-      [117] "NANKNEIPQLVGEIYQNFFVESK"                         
-      [118] "NEIPQLVGEIYQNFFVESKEISVEK"                       
-      [119] "EISVEKSLYK"                                      
-      [120] "SLYKEIQQCLVGNK"                                  
-      [121] "EIQQCLVGNKGIEVFYK"                               
-      [122] "GIEVFYKIQEDVYETLK"                               
-      [123] "IQEDVYETLKDR"                                    
-      [124] "DRYYPSFIVSDLYEK"                                 
-      [125] "YYPSFIVSDLYEKLLIK"                               
-      [126] "LLIKEEEK"                                        
-      [127] "EEEKHASQMISNK"                                   
-      [128] "HASQMISNKDEMGPR"                                 
-      [129] "DEMGPRDEAGEEAVDDGTNQINEQASFAVNK"                 
-      [130] "DEAGEEAVDDGTNQINEQASFAVNKLR"                     
-      [131] "LRELNEK"                                         
-      [132] "ELNEKLEYK"                                       
-      [133] "RQALNSIQNAPK"                                    
-      [134] "QALNSIQNAPKPDK"                                  
-      [135] "IVSKLK"                                          
-      [136] "LKDEIILIEK"                                      
-      [137] "DEIILIEKER"                                      
-      [138] "ERTDLQLHMAR"                                     
-      [139] "TDLQLHMARTDWWCENLGMWK"                           
-      [140] "TDWWCENLGMWKASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK"  
-      [141] "ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETKNWTVPR"        
-      [142] "NWTVPRR"                                         
-      [143] "RLSEFQNLHR"                                      
-      [144] "LSEFQNLHRK"                                      
-      [145] "KLSECVPSLK"                                      
-      [146] "LSECVPSLKK"                                      
-      [147] "KVQLPSLSK"                                       
-      [148] "VQLPSLSKLPFK"                                    
-      [149] "LPFKSIDQK"                                       
-      [150] "SIDQKFMEK"                                       
-      [151] "FMEKSK"                                          
-      [152] "SKNQLNK"                                         
-      [153] "NQLNKFLQNLLSDER"                                 
-      [154] "FLQNLLSDERLCQSEALYAFLSPSPDYLK"                   
-      [155] "LCQSEALYAFLSPSPDYLKVIDVQGK"                      
-      [156] "VIDVQGKK"                                        
-      [157] "KNSFSLSSFLER"                                    
-      [158] "NSFSLSSFLERLPR"                                  
-      [159] "LPRDFFSHQEEETEEDSDLSDYGDDVDGR"                   
-      [160] "DFFSHQEEETEEDSDLSDYGDDVDGRK"                     
-      [161] "KDALAEPCFMLIGEIFELR"                             
-      [162] "DALAEPCFMLIGEIFELRGMFK"                          
-      [163] "GMFKWVR"                                         
-      [164] "RTLIALVQVTFGR"                                   
-      [165] "TLIALVQVTFGRTINK"                                
-      [166] "TINKQIR"                                         
-      [167] "QIRDTVSWIFSEQMLVYYINIFR"                         
-      [168] "DTVSWIFSEQMLVYYINIFRDAFWPNGK"                    
-      [169] "DAFWPNGKLAPPTTIR"                                
-      [170] "LAPPTTIRSK"                                      
-      [171] "SKEQSQETK"                                       
-      [172] "EQSQETKQR"                                       
-      [173] "QRAQQK"                                          
-      [174] "AQQKLLENIPDMLQSLVGQQNAR"                         
-      [175] "LLENIPDMLQSLVGQQNARHGIIK"                        
-      [176] "HGIIKIFNALQETR"                                  
-      [177] "IFNALQETRANK"                                    
-      [178] "ANKHLLYALMELLLIELCPELR"                          
-      [179] "HLLYALMELLLIELCPELRVHLDQLK"                      
-      [180] "VHLDQLKAGQV"                                     
-      [181] "MHPDATDSGGAGPSPARAAGAGGRPVSGFR"                  
-      [182] "AAGAGGRPVSGFRGER"                                
-      [183] "PVSGFRGERR"                                      
-      [184] "GERRPESPGDAEAAAAAAPGAPGGR"                       
-      [185] "RPESPGDAEAAAAAAPGAPGGRSWWK"                      
-      [186] "LSLYLSCAAAAFLLGILFALVCRSPRAQPPDFAAAWSR"          
-      [187] "SPRAQPPDFAAAWSRLAATSAAR"                         
-      [188] "AQPPDFAAAWSRLAATSAARR"                           
-      [189] "LAATSAARRPPGSPVYGNSHESAQSR"                      
-      [190] "RPPGSPVYGNSHESAQSRR"                             
-      [191] "PPGSPVYGNSHESAQSRRVVISHNMDK"                     
-      [192] "RVVISHNMDKALK"                                   
-      [193] "VVISHNMDKALKEVFDYSYR"                            
-      [194] "ALKEVFDYSYRDYILSWYGNLSR"                         
-      [195] "EVFDYSYRDYILSWYGNLSRDEGQLYHLLLEDFWEIAR"          
-      [196] "DYILSWYGNLSRDEGQLYHLLLEDFWEIARQLHHR"             
-      [197] "DEGQLYHLLLEDFWEIARQLHHRLSHVDVVK"                 
-      [198] "QLHHRLSHVDVVKVVCNDVVR"                           
-      [199] "LSHVDVVKVVCNDVVRTLLTHFCDLK"                      
-      [200] "VVCNDVVRTLLTHFCDLKAANAR"                         
-      [201] "TLLTHFCDLKAANARHEEQPR"                           
-      [202] "AANARHEEQPRPFVLHACLR"                            
-      [203] "HEEQPRPFVLHACLRNSDDEVR"                          
-      [204] "PFVLHACLRNSDDEVRFLQTCSR"                         
-      [205] "NSDDEVRFLQTCSRVLVFCLLPSK"                        
-      [206] "FLQTCSRVLVFCLLPSKDVQSLSLR"                       
-      [207] "VLVFCLLPSKDVQSLSLRIMLAEILTTK"                    
-      [208] "DVQSLSLRIMLAEILTTKVLK"                           
-      [209] "IMLAEILTTKVLKPVVELLSNPDYINQMLLAQLAYR"            
-      [210] "VLKPVVELLSNPDYINQMLLAQLAYREQMNEHHK"              
-      [211] "PVVELLSNPDYINQMLLAQLAYREQMNEHHKR"                
-      [212] "EQMNEHHKRAYTYAPSYEDFIK"                          
-      [213] "RAYTYAPSYEDFIKLINSNSDVEFLK"                      
-      [214] "AYTYAPSYEDFIKLINSNSDVEFLKQLR"                    
-      [215] "LINSNSDVEFLKQLRYQIVVEIIQATTISSFPQLK"             
-      [216] "QLRYQIVVEIIQATTISSFPQLKR"                        
-      [217] "YQIVVEIIQATTISSFPQLKRHK"                         
-      [218] "HKGKETAAMK"                                      
-      [219] "GKETAAMKADLLR"                                   
-      [220] "ETAAMKADLLRAR"                                   
-      [221] "ADLLRARNMK"                                      
-      [222] "ARNMKR"                                          
-      [223] "NMKRYINQLTVAK"                                   
-      [224] "RYINQLTVAKK"                                     
-      [225] "YINQLTVAKKQCEK"                                  
-      [226] "KQCEKR"                                          
-      [227] "QCEKRIR"                                         
-      [228] "RIRILGGPAYDQQEDGALDEGEGPQSQK"                    
-      [229] "IRILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYR"       
-      [230] "ILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYREHFGMYMER"
-      [231] "ILQFEDILANTFYREHFGMYMERMDK"                      
-      [232] "EHFGMYMERMDKR"                                   
-      [233] "MDKRALISFWESVEHLK"                               
-      [234] "RALISFWESVEHLKNANK"                              
-      [235] "ALISFWESVEHLKNANKNEIPQLVGEIYQNFFVESK"            
-      [236] "NANKNEIPQLVGEIYQNFFVESKEISVEK"                   
-      [237] "NEIPQLVGEIYQNFFVESKEISVEKSLYK"                   
-      [238] "EISVEKSLYKEIQQCLVGNK"                            
-      [239] "SLYKEIQQCLVGNKGIEVFYK"                           
-      [240] "EIQQCLVGNKGIEVFYKIQEDVYETLK"                     
-      [241] "GIEVFYKIQEDVYETLKDR"                             
-      [242] "IQEDVYETLKDRYYPSFIVSDLYEK"                       
-      [243] "DRYYPSFIVSDLYEKLLIK"                             
-      [244] "YYPSFIVSDLYEKLLIKEEEK"                           
-      [245] "LLIKEEEKHASQMISNK"                               
-      [246] "EEEKHASQMISNKDEMGPR"                             
-      [247] "HASQMISNKDEMGPRDEAGEEAVDDGTNQINEQASFAVNK"        
-      [248] "DEMGPRDEAGEEAVDDGTNQINEQASFAVNKLR"               
-      [249] "DEAGEEAVDDGTNQINEQASFAVNKLRELNEK"                
-      [250] "LRELNEKLEYK"                                     
-      [251] "ELNEKLEYKR"                                      
-      [252] "LEYKRQALNSIQNAPK"                                
-      [253] "RQALNSIQNAPKPDK"                                 
-      [254] "QALNSIQNAPKPDKK"                                 
-      [255] "PDKKIVSK"                                        
-      [256] "KIVSKLK"                                         
-      [257] "IVSKLKDEIILIEK"                                  
-      [258] "LKDEIILIEKER"                                    
-      [259] "DEIILIEKERTDLQLHMAR"                             
-      [260] "ERTDLQLHMARTDWWCENLGMWK"                         
-      [261] "ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETKNWTVPRR"       
-      [262] "NWTVPRRLSEFQNLHR"                                
-      [263] "RLSEFQNLHRK"                                     
-      [264] "LSEFQNLHRKLSECVPSLK"                             
-      [265] "KLSECVPSLKK"                                     
-      [266] "LSECVPSLKKVQLPSLSK"                              
-      [267] "KVQLPSLSKLPFK"                                   
-      [268] "VQLPSLSKLPFKSIDQK"                               
-      [269] "LPFKSIDQKFMEK"                                   
-      [270] "SIDQKFMEKSK"                                     
-      [271] "FMEKSKNQLNK"                                     
-      [272] "SKNQLNKFLQNLLSDER"                               
-      [273] "NQLNKFLQNLLSDERLCQSEALYAFLSPSPDYLK"              
-      [274] "FLQNLLSDERLCQSEALYAFLSPSPDYLKVIDVQGK"            
-      [275] "LCQSEALYAFLSPSPDYLKVIDVQGKK"                     
-      [276] "VIDVQGKKNSFSLSSFLER"                             
-      [277] "KNSFSLSSFLERLPR"                                 
-      [278] "NSFSLSSFLERLPRDFFSHQEEETEEDSDLSDYGDDVDGR"        
-      [279] "LPRDFFSHQEEETEEDSDLSDYGDDVDGRK"                  
-      [280] "DFFSHQEEETEEDSDLSDYGDDVDGRKDALAEPCFMLIGEIFELR"   
-      [281] "KDALAEPCFMLIGEIFELRGMFK"                         
-      [282] "DALAEPCFMLIGEIFELRGMFKWVR"                       
-      [283] "GMFKWVRR"                                        
-      [284] "WVRRTLIALVQVTFGR"                                
-      [285] "RTLIALVQVTFGRTINK"                               
-      [286] "TLIALVQVTFGRTINKQIR"                             
-      [287] "TINKQIRDTVSWIFSEQMLVYYINIFR"                     
-      [288] "QIRDTVSWIFSEQMLVYYINIFRDAFWPNGK"                 
-      [289] "DTVSWIFSEQMLVYYINIFRDAFWPNGKLAPPTTIR"            
-      [290] "DAFWPNGKLAPPTTIRSK"                              
-      [291] "LAPPTTIRSKEQSQETK"                               
-      [292] "SKEQSQETKQR"                                     
-      [293] "EQSQETKQRAQQK"                                   
-      [294] "QRAQQKLLENIPDMLQSLVGQQNAR"                       
-      [295] "AQQKLLENIPDMLQSLVGQQNARHGIIK"                    
-      [296] "LLENIPDMLQSLVGQQNARHGIIKIFNALQETR"               
-      [297] "HGIIKIFNALQETRANK"                               
-      [298] "IFNALQETRANKHLLYALMELLLIELCPELR"                 
-      [299] "ANKHLLYALMELLLIELCPELRVHLDQLK"                   
-      [300] "HLLYALMELLLIELCPELRVHLDQLKAGQV"                  
-      [301] "HPDATDSGGAGPSPAR"                                
-      [302] "HPDATDSGGAGPSPARAAGAGGR"                         
-      [303] "HPDATDSGGAGPSPARAAGAGGRPVSGFR"                   
-      
-      $H0Y9R5
-       [1] "NEIPQLVGEIYQNFFVESK"                     
-       [2] "EISVEK"                                  
-       [3] "EIQQCLVGNK"                              
-       [4] "GIEVFYK"                                 
-       [5] "IQEDVYETLK"                              
-       [6] "YYPSFIVSDLYEK"                           
-       [7] "HASQMISNK"                               
-       [8] "DEMGPR"                                  
-       [9] "DEAGEEAVDDGTNQINEQASFAVNK"               
-      [10] "XLKNANK"                                 
-      [11] "NANKNEIPQLVGEIYQNFFVESK"                 
-      [12] "NEIPQLVGEIYQNFFVESKEISVEK"               
-      [13] "EISVEKSLYK"                              
-      [14] "SLYKEIQQCLVGNK"                          
-      [15] "EIQQCLVGNKGIEVFYK"                       
-      [16] "GIEVFYKIQEDVYETLK"                       
-      [17] "IQEDVYETLKDR"                            
-      [18] "DRYYPSFIVSDLYEK"                         
-      [19] "YYPSFIVSDLYEKLLIK"                       
-      [20] "LLIKEEEK"                                
-      [21] "EEEKHASQMISNK"                           
-      [22] "HASQMISNKDEMGPR"                         
-      [23] "DEMGPRDEAGEEAVDDGTNQINEQASFAVNK"         
-      [24] "DEAGEEAVDDGTNQINEQASFAVNKLR"             
-      [25] "LRELNEK"                                 
-      [26] "ELNEKLEYK"                               
-      [27] "XLKNANKNEIPQLVGEIYQNFFVESK"              
-      [28] "NANKNEIPQLVGEIYQNFFVESKEISVEK"           
-      [29] "NEIPQLVGEIYQNFFVESKEISVEKSLYK"           
-      [30] "EISVEKSLYKEIQQCLVGNK"                    
-      [31] "SLYKEIQQCLVGNKGIEVFYK"                   
-      [32] "EIQQCLVGNKGIEVFYKIQEDVYETLK"             
-      [33] "GIEVFYKIQEDVYETLKDR"                     
-      [34] "IQEDVYETLKDRYYPSFIVSDLYEK"               
-      [35] "DRYYPSFIVSDLYEKLLIK"                     
-      [36] "YYPSFIVSDLYEKLLIKEEEK"                   
-      [37] "LLIKEEEKHASQMISNK"                       
-      [38] "EEEKHASQMISNKDEMGPR"                     
-      [39] "HASQMISNKDEMGPRDEAGEEAVDDGTNQINEQASFAVNK"
-      [40] "DEMGPRDEAGEEAVDDGTNQINEQASFAVNKLR"       
-      [41] "DEAGEEAVDDGTNQINEQASFAVNKLRELNEK"        
-      [42] "LRELNEKLEYK"                             
-      [43] "ELNEKLEYKR"                              
-      [44] "LEYKRLFPS"                               
-      
-      $P31271
-       [1] "MTASVLLHPR"                               
-       [2] "WIEPTVMFLYDNGGGLVADELNK"                  
-       [3] "QCSPCSAAAQSSSGPAALPYGYFGSGYYPCAR"         
-       [4] "MGPHPNAIK"                                
-       [5] "SCAQPASAAAAAAFADK"                        
-       [6] "YMDTAGPAAEEFSSR"                          
-       [7] "EFAFYHQGYAAGPYHHHQPMPGYLDMPVVPGLGGPGESR"  
-       [8] "HEPLGLPMESYQPWALPNGWNGQMYCPK"             
-       [9] "EQAQPPHLWK"                               
-      [10] "STLPDVVSHPSDASSYR"                        
-      [11] "EYATNK"                                   
-      [12] "ISATTNLSER"                               
-      [13] "QVTIWFQNR"                                
-      [14] "MTASVLLHPRWIEPTVMFLYDNGGGLVADELNK"        
-      [15] "QCSPCSAAAQSSSGPAALPYGYFGSGYYPCARMGPHPNAIK"
-      [16] "MGPHPNAIKSCAQPASAAAAAAFADK"               
-      [17] "SCAQPASAAAAAAFADKYMDTAGPAAEEFSSR"         
-      [18] "YMDTAGPAAEEFSSRAK"                        
-      [19] "AKEFAFYHQGYAAGPYHHHQPMPGYLDMPVVPGLGGPGESR"
-      [20] "HEPLGLPMESYQPWALPNGWNGQMYCPKEQAQPPHLWK"   
-      [21] "EQAQPPHLWKSTLPDVVSHPSDASSYR"              
-      [22] "STLPDVVSHPSDASSYRR"                       
-      [23] "RVPYTK"                                   
-      [24] "VPYTKVQLK"                                
-      [25] "VQLKELER"                                 
-      [26] "ELEREYATNK"                               
-      [27] "EYATNKFITK"                               
-      [28] "FITKDK"                                   
-      [29] "RISATTNLSER"                              
-      [30] "ISATTNLSERQVTIWFQNR"                      
-      [31] "QVTIWFQNRR"                               
-      [32] "VINKLK"                                   
-      [33] "MGPHPNAIKSCAQPASAAAAAAFADKYMDTAGPAAEEFSSR"
-      [34] "SCAQPASAAAAAAFADKYMDTAGPAAEEFSSRAK"       
-      [35] "EQAQPPHLWKSTLPDVVSHPSDASSYRR"             
-      [36] "STLPDVVSHPSDASSYRRGR"                     
-      [37] "KRVPYTK"                                  
-      [38] "RVPYTKVQLK"                               
-      [39] "VPYTKVQLKELER"                            
-      [40] "VQLKELEREYATNK"                           
-      [41] "ELEREYATNKFITK"                           
-      [42] "EYATNKFITKDK"                             
-      [43] "FITKDKR"                                  
-      [44] "RRISATTNLSER"                             
-      [45] "RISATTNLSERQVTIWFQNR"                     
-      [46] "ISATTNLSERQVTIWFQNRR"                     
-      [47] "QVTIWFQNRRVK"                             
-      [48] "EKKVINK"                                  
-      [49] "KVINKLK"                                  
-      [50] "VINKLKTTS"                                
-      [51] "TASVLLHPR"                                
-      [52] "TASVLLHPRWIEPTVMFLYDNGGGLVADELNK"         
-      
-      $P31276
-       [1] "MTTSLLLHPR"                                        
-       [2] "WPESLMYVYEDSAAESGIGGGGGGGGGGTGGAGGGCSGASPGK"       
-       [3] "APSMDGLGSSCPASHCR"                                 
-       [4] "DLLPHPVLGR"                                        
-       [5] "PPAPLGAPQGAVYTDIPAPEAAR"                           
-       [6] "QCAPPPAPPTSSSATLGYGYPFGGSYYGCR"                    
-       [7] "LSHNVNLQQK"                                        
-       [8] "PCAYHPGDK"                                         
-       [9] "YPEPSGALPGDDLSSR"                                  
-      [10] "EFAFYPSFASSYQAMPGYLDVSVVPGISGHPEPR"                
-      [11] "HDALIPVEGYQHWALSNGWDSQVYCSK"                       
-      [12] "EQSQSAHLWK"                                        
-      [13] "SPFPDVVPLQPEVSSYR"                                 
-      [14] "EYAASK"                                            
-      [15] "ISATTNLSER"                                        
-      [16] "QVTIWFQNR"                                         
-      [17] "APHLHST"                                           
-      [18] "APSMDGLGSSCPASHCRDLLPHPVLGR"                       
-      [19] "DLLPHPVLGRPPAPLGAPQGAVYTDIPAPEAAR"                 
-      [20] "QCAPPPAPPTSSSATLGYGYPFGGSYYGCRLSHNVNLQQK"          
-      [21] "LSHNVNLQQKPCAYHPGDK"                               
-      [22] "PCAYHPGDKYPEPSGALPGDDLSSR"                         
-      [23] "YPEPSGALPGDDLSSRAK"                                
-      [24] "AKEFAFYPSFASSYQAMPGYLDVSVVPGISGHPEPR"              
-      [25] "HDALIPVEGYQHWALSNGWDSQVYCSKEQSQSAHLWK"             
-      [26] "EQSQSAHLWKSPFPDVVPLQPEVSSYR"                       
-      [27] "SPFPDVVPLQPEVSSYRR"                                
-      [28] "RVPYTK"                                            
-      [29] "VPYTKVQLK"                                         
-      [30] "VQLKELEK"                                          
-      [31] "ELEKEYAASK"                                        
-      [32] "EYAASKFITK"                                        
-      [33] "FITKEK"                                            
-      [34] "RISATTNLSER"                                       
-      [35] "ISATTNLSERQVTIWFQNR"                               
-      [36] "QVTIWFQNRR"                                        
-      [37] "VVSKSK"                                            
-      [38] "SKAPHLHST"                                         
-      [39] "APSMDGLGSSCPASHCRDLLPHPVLGRPPAPLGAPQGAVYTDIPAPEAAR"
-      [40] "QCAPPPAPPTSSSATLGYGYPFGGSYYGCRLSHNVNLQQKPCAYHPGDK" 
-      [41] "LSHNVNLQQKPCAYHPGDKYPEPSGALPGDDLSSR"               
-      [42] "PCAYHPGDKYPEPSGALPGDDLSSRAK"                       
-      [43] "EQSQSAHLWKSPFPDVVPLQPEVSSYRR"                      
-      [44] "SPFPDVVPLQPEVSSYRRGR"                              
-      [45] "KRVPYTK"                                           
-      [46] "RVPYTKVQLK"                                        
-      [47] "VPYTKVQLKELEK"                                     
-      [48] "VQLKELEKEYAASK"                                    
-      [49] "ELEKEYAASKFITK"                                    
-      [50] "EYAASKFITKEK"                                      
-      [51] "FITKEKR"                                           
-      [52] "RRISATTNLSER"                                      
-      [53] "RISATTNLSERQVTIWFQNR"                              
-      [54] "ISATTNLSERQVTIWFQNRR"                              
-      [55] "QVTIWFQNRRVK"                                      
-      [56] "EKKVVSK"                                           
-      [57] "KVVSKSK"                                           
-      [58] "VVSKSKAPHLHST"                                     
-      [59] "TTSLLLHPR"                                         
-      
-      $P35453
-       [1] "AGSWDMDGLR"                                       
-       [2] "ADGGGAGGAPASSSSSSVAAAAASGQCR"                     
-       [3] "GFLSAPVFAGTHSGR"                                  
-       [4] "AAAAAAAAAAAAAAASGFAYPGTSER"                       
-       [5] "TGSSSSSSSSAVVAAR"                                 
-       [6] "PEAPPAK"                                          
-       [7] "ECPAPTPAAAAAAPPSAPALGYGYHFGNGYYSCR"               
-       [8] "MSHGVGLQQNALK"                                    
-       [9] "SSPHASLGGFPVEK"                                   
-      [10] "YMDVSGLASSSVPANEVPAR"                             
-      [11] "EVSFYQGYTSPYQHVPGYIDMVSTFGSGEPR"                  
-      [12] "HEAYISMEGYQSWTLANGWNSQVYCTK"                      
-      [13] "DQPQGSHFWK"                                       
-      [14] "SSFPGDVALNQPDMCVYR"                               
-      [15] "ELENEYAINK"                                       
-      [16] "ISAATNLSER"                                       
-      [17] "QVTIWFQNR"                                        
-      [18] "MSRAGSWDMDGLR"                                    
-      [19] "AGSWDMDGLRADGGGAGGAPASSSSSSVAAAAASGQCR"           
-      [20] "ADGGGAGGAPASSSSSSVAAAAASGQCRGFLSAPVFAGTHSGR"      
-      [21] "GFLSAPVFAGTHSGRAAAAAAAAAAAAAAASGFAYPGTSER"        
-      [22] "AAAAAAAAAAAAAAASGFAYPGTSERTGSSSSSSSSAVVAAR"       
-      [23] "TGSSSSSSSSAVVAARPEAPPAK"                          
-      [24] "PEAPPAKECPAPTPAAAAAAPPSAPALGYGYHFGNGYYSCR"        
-      [25] "ECPAPTPAAAAAAPPSAPALGYGYHFGNGYYSCRMSHGVGLQQNALK"  
-      [26] "MSHGVGLQQNALKSSPHASLGGFPVEK"                      
-      [27] "SSPHASLGGFPVEKYMDVSGLASSSVPANEVPAR"               
-      [28] "YMDVSGLASSSVPANEVPARAK"                           
-      [29] "AKEVSFYQGYTSPYQHVPGYIDMVSTFGSGEPR"                
-      [30] "HEAYISMEGYQSWTLANGWNSQVYCTKDQPQGSHFWK"            
-      [31] "DQPQGSHFWKSSFPGDVALNQPDMCVYR"                     
-      [32] "SSFPGDVALNQPDMCVYRR"                              
-      [33] "RVPYTK"                                           
-      [34] "VPYTKLQLK"                                        
-      [35] "LQLKELENEYAINK"                                   
-      [36] "ELENEYAINKFINK"                                   
-      [37] "FINKDK"                                           
-      [38] "RISAATNLSER"                                      
-      [39] "ISAATNLSERQVTIWFQNR"                              
-      [40] "QVTIWFQNRR"                                       
-      [41] "IVSKLK"                                           
-      [42] "LKDTVS"                                           
-      [43] "MSRAGSWDMDGLRADGGGAGGAPASSSSSSVAAAAASGQCR"        
-      [44] "AAAAAAAAAAAAAAASGFAYPGTSERTGSSSSSSSSAVVAARPEAPPAK"
-      [45] "MSHGVGLQQNALKSSPHASLGGFPVEKYMDVSGLASSSVPANEVPAR"  
-      [46] "SSPHASLGGFPVEKYMDVSGLASSSVPANEVPARAK"             
-      [47] "DQPQGSHFWKSSFPGDVALNQPDMCVYRR"                    
-      [48] "SSFPGDVALNQPDMCVYRRGR"                            
-      [49] "KRVPYTK"                                          
-      [50] "RVPYTKLQLK"                                       
-      [51] "VPYTKLQLKELENEYAINK"                              
-      [52] "LQLKELENEYAINKFINK"                               
-      [53] "ELENEYAINKFINKDK"                                 
-      [54] "FINKDKR"                                          
-      [55] "RRISAATNLSER"                                     
-      [56] "RISAATNLSERQVTIWFQNR"                             
-      [57] "ISAATNLSERQVTIWFQNRR"                             
-      [58] "QVTIWFQNRRVK"                                     
-      [59] "DKKIVSK"                                          
-      [60] "KIVSKLK"                                          
-      [61] "IVSKLKDTVS"                                       
-      [62] "SRAGSWDMDGLR"                                     
-      [63] "SRAGSWDMDGLRADGGGAGGAPASSSSSSVAAAAASGQCR"         
-      
-      $Q1XH10
-        [1] "SGFEEVDGVR"                                        
-        [2] "LGYLIIK"                                           
-        [3] "QMFALSQVFTDLLK"                                    
-        [4] "HHCDLEELR"                                         
-        [5] "AINSIAFHAAK"                                       
-        [6] "CTLISR"                                            
-        [7] "EDVEALYTSCK"                                       
-        [8] "APPPER"                                            
-        [9] "AAAASPR"                                           
-       [10] "GLSGAAR"                                           
-       [11] "PLPISAQSQR"                                        
-       [12] "PGAAAAR"                                           
-       [13] "PAAHLPQIFSK"                                       
-       [14] "YPGSHYPEIVR"                                       
-       [15] "PPLNYETAPLQGNYVAFPSDPAYFR"                         
-       [16] "SLLCSK"                                            
-       [17] "HPAAAAAAAAAAAAAAAAAAAAAYYQVSAAGPQPK"               
-       [18] "AAAGAGGPGSLSYR"                                    
-       [19] "DCLLAPHAGAR"                                       
-       [20] "LLLLPR"                                            
-       [21] "AAAAAAAAAAAAAAAAGATCLER"                           
-       [22] "FHLVNGFCPPPHHHHHHHHHHHHHHHR"                       
-       [23] "AQPPQQSHHPPHHHR"                                   
-       [24] "PPSVQAQANFLYHLASAAAATK"                            
-       [25] "PAAFEDAGR"                                         
-       [26] "AESPAEWNLQSWAPK"                                   
-       [27] "ASPVYCPASLGSCFAEIR"                                
-       [28] "VSEITFPHSEISNAVK"                                  
-       [29] "TDLTINCLAEGASSPSPK"                                
-       [30] "TNNAFPQQR"                                         
-       [31] "CLQTTPTTHCADNNTIAAR"                               
-       [32] "FLNNDSSGAEANSEK"                                   
-       [33] "ILHCPEFATDLPSSQTDPEVNAAGAAATK"                     
-       [34] "AENPCTDTGDK"                                       
-       [35] "TLPFLHNIK"                                         
-       [36] "VEDSSANEEYEPHLFTNK"                                
-       [37] "CECNDTK"                                           
-       [38] "GEFYSVTESK"                                        
-       [39] "EEDALLTTAK"                                        
-       [40] "EGFACPEK"                                          
-       [41] "ETPSLNPLAQSQGLSCTLGSPK"                            
-       [42] "PEDGEYK"                                           
-       [43] "TLVLGK"                                            
-       [44] "PVLQTPPVK"                                         
-       [45] "TETNEGTLDDFTVINR"                                  
-       [46] "VASNVASAVK"                                        
-       [47] "PFHFMANFPCPPSLIIGR"                                
-       [48] "DGDLWPAYSLNTTK"                                    
-       [49] "DSQTPHK"                                           
-       [50] "AHPIWK"                                            
-       [51] "WQLGGSAIPLPPSHK"                                   
-       [52] "MGDLKSGFEEVDGVR"                                   
-       [53] "SGFEEVDGVRLGYLIIK"                                 
-       [54] "LGYLIIKGK"                                         
-       [55] "GKQMFALSQVFTDLLK"                                  
-       [56] "QMFALSQVFTDLLKNIPR"                                
-       [57] "NIPRTTVHK"                                         
-       [58] "TTVHKR"                                            
-       [59] "RMDHLK"                                            
-       [60] "MDHLKVK"                                           
-       [61] "KHHCDLEELR"                                        
-       [62] "HHCDLEELRK"                                        
-       [63] "LKAINSIAFHAAK"                                     
-       [64] "AINSIAFHAAKCTLISR"                                 
-       [65] "CTLISREDVEALYTSCK"                                 
-       [66] "EDVEALYTSCKTER"                                    
-       [67] "TERVLK"                                            
-       [68] "VGRALATK"                                          
-       [69] "ALATKAPPPER"                                       
-       [70] "APPPERAAAASPR"                                     
-       [71] "AAAASPRPGFWK"                                      
-       [72] "PGFWKDK"                                           
-       [73] "DKHQLWR"                                           
-       [74] "HQLWRGLSGAAR"                                      
-       [75] "GLSGAARPLPISAQSQR"                                 
-       [76] "PLPISAQSQRPGAAAAR"                                 
-       [77] "PGAAAARPAAHLPQIFSK"                                
-       [78] "PAAHLPQIFSKYPGSHYPEIVR"                            
-       [79] "YPGSHYPEIVRSPCK"                                   
-       [80] "SPCKPPLNYETAPLQGNYVAFPSDPAYFR"                     
-       [81] "PPLNYETAPLQGNYVAFPSDPAYFRSLLCSK"                   
-       [82] "SLLCSKHPAAAAAAAAAAAAAAAAAAAAAYYQVSAAGPQPK"         
-       [83] "HPAAAAAAAAAAAAAAAAAAAAAYYQVSAAGPQPKAAAGAGGPGSLSYR" 
-       [84] "AAAGAGGPGSLSYRCK"                                  
-       [85] "GGAKDCLLAPHAGAR"                                   
-       [86] "DCLLAPHAGARR"                                      
-       [87] "RLLLLPR"                                           
-       [88] "LLLLPRSYK"                                         
-       [89] "AKAAAAAAAAAAAAAAAAGATCLER"                         
-       [90] "AAAAAAAAAAAAAAAAGATCLERFHLVNGFCPPPHHHHHHHHHHHHHHHR"
-       [91] "FHLVNGFCPPPHHHHHHHHHHHHHHHRAQPPQQSHHPPHHHR"        
-       [92] "RTSFCK"                                            
-       [93] "TSFCKPPSVQAQANFLYHLASAAAATK"                       
-       [94] "PPSVQAQANFLYHLASAAAATKPAAFEDAGR"                   
-       [95] "PAAFEDAGRLPDLK"                                    
-       [96] "LPDLKSSVK"                                         
-       [97] "SSVKAESPAEWNLQSWAPK"                               
-       [98] "AESPAEWNLQSWAPKASPVYCPASLGSCFAEIR"                 
-       [99] "ASPVYCPASLGSCFAEIRNDR"                             
-      [100] "NDRVSEITFPHSEISNAVK"                               
-      [101] "VSEITFPHSEISNAVKR"                                 
-      [102] "RTDLTINCLAEGASSPSPK"                               
-      [103] "TDLTINCLAEGASSPSPKTNNAFPQQR"                       
-      [104] "TNNAFPQQRILR"                                      
-      [105] "ILREAR"                                            
-      [106] "KCLQTTPTTHCADNNTIAAR"                              
-      [107] "CLQTTPTTHCADNNTIAARFLNNDSSGAEANSEK"                
-      [108] "FLNNDSSGAEANSEKYSK"                                
-      [109] "YSKILHCPEFATDLPSSQTDPEVNAAGAAATK"                  
-      [110] "ILHCPEFATDLPSSQTDPEVNAAGAAATKAENPCTDTGDK"          
-      [111] "AENPCTDTGDKTLPFLHNIK"                              
-      [112] "TLPFLHNIKIK"                                       
-      [113] "IKVEDSSANEEYEPHLFTNK"                              
-      [114] "VEDSSANEEYEPHLFTNKLK"                              
-      [115] "LKCECNDTK"                                         
-      [116] "CECNDTKGEFYSVTESK"                                 
-      [117] "GEFYSVTESKEEDALLTTAK"                              
-      [118] "EEDALLTTAKEGFACPEK"                                
-      [119] "EGFACPEKETPSLNPLAQSQGLSCTLGSPK"                    
-      [120] "ETPSLNPLAQSQGLSCTLGSPKPEDGEYK"                     
-      [121] "PEDGEYKFGAR"                                       
-      [122] "FGARVR"                                            
-      [123] "NYRTLVLGK"                                         
-      [124] "TLVLGKR"                                           
-      [125] "RPVLQTPPVK"                                        
-      [126] "PVLQTPPVKPNLK"                                     
-      [127] "PNLKSAR"                                           
-      [128] "SARSPR"                                            
-      [129] "SPRPTGK"                                           
-      [130] "PTGKTETNEGTLDDFTVINR"                              
-      [131] "TETNEGTLDDFTVINRR"                                 
-      [132] "KVASNVASAVK"                                       
-      [133] "VASNVASAVKR"                                       
-      [134] "RPFHFMANFPCPPSLIIGR"                               
-      [135] "PFHFMANFPCPPSLIIGRDGDLWPAYSLNTTK"                  
-      [136] "DGDLWPAYSLNTTKDSQTPHK"                             
-      [137] "DSQTPHKAHPIWK"                                     
-      [138] "AHPIWKWQLGGSAIPLPPSHK"                             
-      [139] "WQLGGSAIPLPPSHKFR"                                 
-      [140] "MGDLKSGFEEVDGVRLGYLIIK"                            
-      [141] "SGFEEVDGVRLGYLIIKGK"                               
-      [142] "LGYLIIKGKQMFALSQVFTDLLK"                           
-      [143] "GKQMFALSQVFTDLLKNIPR"                              
-      [144] "QMFALSQVFTDLLKNIPRTTVHK"                           
-      [145] "NIPRTTVHKR"                                        
-      [146] "TTVHKRMDHLK"                                       
-      [147] "RMDHLKVK"                                          
-      [148] "MDHLKVKK"                                          
-      [149] "VKKHHCDLEELR"                                      
-      [150] "KHHCDLEELRK"                                       
-      [151] "HHCDLEELRKLK"                                      
-      [152] "KLKAINSIAFHAAK"                                    
-      [153] "LKAINSIAFHAAKCTLISR"                               
-      [154] "AINSIAFHAAKCTLISREDVEALYTSCK"                      
-      [155] "CTLISREDVEALYTSCKTER"                              
-      [156] "EDVEALYTSCKTERVLK"                                 
-      [157] "TERVLKTK"                                          
-      [158] "VLKTKR"                                            
-      [159] "RVGRALATK"                                         
-      [160] "VGRALATKAPPPER"                                    
-      [161] "ALATKAPPPERAAAASPR"                                
-      [162] "APPPERAAAASPRPGFWK"                                
-      [163] "AAAASPRPGFWKDK"                                    
-      [164] "PGFWKDKHQLWR"                                      
-      [165] "DKHQLWRGLSGAAR"                                    
-      [166] "HQLWRGLSGAARPLPISAQSQR"                            
-      [167] "GLSGAARPLPISAQSQRPGAAAAR"                          
-      [168] "PLPISAQSQRPGAAAARPAAHLPQIFSK"                      
-      [169] "PGAAAARPAAHLPQIFSKYPGSHYPEIVR"                     
-      [170] "PAAHLPQIFSKYPGSHYPEIVRSPCK"                        
-      [171] "YPGSHYPEIVRSPCKPPLNYETAPLQGNYVAFPSDPAYFR"          
-      [172] "SPCKPPLNYETAPLQGNYVAFPSDPAYFRSLLCSK"               
-      [173] "AAAGAGGPGSLSYRCKR"                                 
-      [174] "KRGGAK"                                            
-      [175] "RGGAKDCLLAPHAGAR"                                  
-      [176] "GGAKDCLLAPHAGARR"                                  
-      [177] "DCLLAPHAGARRLLLLPR"                                
-      [178] "RLLLLPRSYK"                                        
-      [179] "LLLLPRSYKAK"                                       
-      [180] "SYKAKAAAAAAAAAAAAAAAAGATCLER"                      
-      [181] "FRRTSFCK"                                          
-      [182] "RTSFCKPPSVQAQANFLYHLASAAAATK"                      
-      [183] "TSFCKPPSVQAQANFLYHLASAAAATKPAAFEDAGR"              
-      [184] "PPSVQAQANFLYHLASAAAATKPAAFEDAGRLPDLK"              
-      [185] "PAAFEDAGRLPDLKSSVK"                                
-      [186] "LPDLKSSVKAESPAEWNLQSWAPK"                          
-      [187] "SSVKAESPAEWNLQSWAPKASPVYCPASLGSCFAEIR"             
-      [188] "AESPAEWNLQSWAPKASPVYCPASLGSCFAEIRNDR"              
-      [189] "ASPVYCPASLGSCFAEIRNDRVSEITFPHSEISNAVK"             
-      [190] "NDRVSEITFPHSEISNAVKR"                              
-      [191] "VSEITFPHSEISNAVKRTDLTINCLAEGASSPSPK"               
-      [192] "RTDLTINCLAEGASSPSPKTNNAFPQQR"                      
-      [193] "TDLTINCLAEGASSPSPKTNNAFPQQRILR"                    
-      [194] "TNNAFPQQRILREAR"                                   
-      [195] "ILREARK"                                           
-      [196] "EARKCLQTTPTTHCADNNTIAAR"                           
-      [197] "KCLQTTPTTHCADNNTIAARFLNNDSSGAEANSEK"               
-      [198] "CLQTTPTTHCADNNTIAARFLNNDSSGAEANSEKYSK"             
-      [199] "FLNNDSSGAEANSEKYSKILHCPEFATDLPSSQTDPEVNAAGAAATK"   
-      [200] "YSKILHCPEFATDLPSSQTDPEVNAAGAAATKAENPCTDTGDK"       
-      [201] "ILHCPEFATDLPSSQTDPEVNAAGAAATKAENPCTDTGDKTLPFLHNIK" 
-      [202] "AENPCTDTGDKTLPFLHNIKIK"                            
-      [203] "TLPFLHNIKIKVEDSSANEEYEPHLFTNK"                     
-      [204] "IKVEDSSANEEYEPHLFTNKLK"                            
-      [205] "VEDSSANEEYEPHLFTNKLKCECNDTK"                       
-      [206] "LKCECNDTKGEFYSVTESK"                               
-      [207] "CECNDTKGEFYSVTESKEEDALLTTAK"                       
-      [208] "GEFYSVTESKEEDALLTTAKEGFACPEK"                      
-      [209] "EEDALLTTAKEGFACPEKETPSLNPLAQSQGLSCTLGSPK"          
-      [210] "EGFACPEKETPSLNPLAQSQGLSCTLGSPKPEDGEYK"             
-      [211] "ETPSLNPLAQSQGLSCTLGSPKPEDGEYKFGAR"                 
-      [212] "PEDGEYKFGARVR"                                     
-      [213] "FGARVRK"                                           
-      [214] "VRKNYR"                                            
-      [215] "KNYRTLVLGK"                                        
-      [216] "NYRTLVLGKR"                                        
-      [217] "TLVLGKRPVLQTPPVK"                                  
-      [218] "RPVLQTPPVKPNLK"                                    
-      [219] "PVLQTPPVKPNLKSAR"                                  
-      [220] "PNLKSARSPR"                                        
-      [221] "SARSPRPTGK"                                        
-      [222] "SPRPTGKTETNEGTLDDFTVINR"                           
-      [223] "PTGKTETNEGTLDDFTVINRR"                             
-      [224] "TETNEGTLDDFTVINRRK"                                
-      [225] "KKVASNVASAVK"                                      
-      [226] "KVASNVASAVKR"                                      
-      [227] "VASNVASAVKRPFHFMANFPCPPSLIIGR"                     
-      [228] "RPFHFMANFPCPPSLIIGRDGDLWPAYSLNTTK"                 
-      [229] "PFHFMANFPCPPSLIIGRDGDLWPAYSLNTTKDSQTPHK"           
-      [230] "DGDLWPAYSLNTTKDSQTPHKAHPIWK"                       
-      [231] "DSQTPHKAHPIWKWQLGGSAIPLPPSHK"                      
-      [232] "AHPIWKWQLGGSAIPLPPSHKFR"                           
-      [233] "WQLGGSAIPLPPSHKFRK"                                
-      [234] "FRKFNS"                                            
-      [235] "GDLKSGFEEVDGVR"                                    
-      [236] "GDLKSGFEEVDGVRLGYLIIK"                             
-      
-      $Q92826
-       [1] "MEPGNYATLDGAK"                                   
-       [2] "DIEGLLGAGGGR"                                    
-       [3] "NLVAHSPLTSHPAAPTLMPAVNYAPLDLPGSAEPPK"            
-       [4] "QCHPCPGVPQGTSPAPVPYGYFGGGYYSCR"                  
-       [5] "PCAQAATLAAYPAETPTAGEEYPSR"                       
-       [6] "PTEFAFYPGYPGTYQPMASYLDVSVVQTLGAPGEPR"            
-       [7] "HDSLLPVDSYQSWALAGGWNSQMCCQGEQNPPGPFWK"           
-       [8] "AAFADSSGQHPPDACAFR"                              
-       [9] "EYAANK"                                          
-      [10] "ISAATSLSER"                                      
-      [11] "QITIWFQNR"                                       
-      [12] "MEPGNYATLDGAKDIEGLLGAGGGR"                       
-      [13] "DIEGLLGAGGGRNLVAHSPLTSHPAAPTLMPAVNYAPLDLPGSAEPPK"
-      [14] "QCHPCPGVPQGTSPAPVPYGYFGGGYYSCRVSR"               
-      [15] "VSRSSLK"                                         
-      [16] "SSLKPCAQAATLAAYPAETPTAGEEYPSR"                   
-      [17] "AAFADSSGQHPPDACAFRR"                             
-      [18] "RIPYSK"                                          
-      [19] "IPYSKGQLR"                                       
-      [20] "GQLRELER"                                        
-      [21] "ELEREYAANK"                                      
-      [22] "EYAANKFITK"                                      
-      [23] "FITKDK"                                          
-      [24] "KISAATSLSER"                                     
-      [25] "ISAATSLSERQITIWFQNR"                             
-      [26] "QITIWFQNRR"                                      
-      [27] "VLAKVK"                                          
-      [28] "VKNSATP"                                         
-      [29] "QCHPCPGVPQGTSPAPVPYGYFGGGYYSCRVSRSSLK"           
-      [30] "VSRSSLKPCAQAATLAAYPAETPTAGEEYPSR"                
-      [31] "AAFADSSGQHPPDACAFRRGR"                           
-      [32] "KRIPYSK"                                         
-      [33] "RIPYSKGQLR"                                      
-      [34] "IPYSKGQLRELER"                                   
-      [35] "GQLRELEREYAANK"                                  
-      [36] "ELEREYAANKFITK"                                  
-      [37] "EYAANKFITKDK"                                    
-      [38] "FITKDKR"                                         
-      [39] "RKISAATSLSER"                                    
-      [40] "KISAATSLSERQITIWFQNR"                            
-      [41] "ISAATSLSERQITIWFQNRR"                            
-      [42] "QITIWFQNRRVK"                                    
-      [43] "EKKVLAK"                                         
-      [44] "KVLAKVK"                                         
-      [45] "VLAKVKNSATP"                                     
-      [46] "EPGNYATLDGAK"                                    
-      [47] "EPGNYATLDGAKDIEGLLGAGGGR"                        
-      
-      $Q9H3E2
-        [1] "EVFDYSYR"                                        
-        [2] "DYILSWYGNLSR"                                    
-        [3] "DEGQLYHLLLEDFWEIAR"                              
-        [4] "LSHVDVVK"                                        
-        [5] "VVCNDVVR"                                        
-        [6] "TLLTHFCDLK"                                      
-        [7] "HEEQPR"                                          
-        [8] "PFVLHACLR"                                       
-        [9] "NSDDEVR"                                         
-       [10] "FLQTCSR"                                         
-       [11] "VLVFCLLPSK"                                      
-       [12] "DVQSLSLR"                                        
-       [13] "IMLAEILTTK"                                      
-       [14] "PVVELLSNPDYINQMLLAQLAYR"                         
-       [15] "EQMNEHHK"                                        
-       [16] "AYTYAPSYEDFIK"                                   
-       [17] "LINSNSDVEFLK"                                    
-       [18] "YQIVVEIIQATTISSFPQLK"                            
-       [19] "ETAAMK"                                          
-       [20] "YINQLTVAK"                                       
-       [21] "ILGGPAYDQQEDGALDEGEGPQSQK"                       
-       [22] "ILQFEDILANTFYR"                                  
-       [23] "EHFGMYMER"                                       
-       [24] "ALISFWESVEHLK"                                   
-       [25] "NEIPQLVGEIYQNFFVESK"                             
-       [26] "EISVEK"                                          
-       [27] "EIQQCLVGNK"                                      
-       [28] "GIEVFYK"                                         
-       [29] "IQEDVYETLK"                                      
-       [30] "YYPSFIVSDLYEK"                                   
-       [31] "HASQMISNK"                                       
-       [32] "DEMGPR"                                          
-       [33] "DEAGEEAVDDGTNQINEQASFAVNK"                       
-       [34] "QALNSIQNAPK"                                     
-       [35] "DEIILIEK"                                        
-       [36] "TDLQLHMAR"                                       
-       [37] "TDWWCENLGMWK"                                    
-       [38] "ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK"              
-       [39] "NWTVPR"                                          
-       [40] "LSEFQNLHR"                                       
-       [41] "LSECVPSLK"                                       
-       [42] "VQLPSLSK"                                        
-       [43] "FLQNLLSDER"                                      
-       [44] "LCQSEALYAFLSPSPDYLK"                             
-       [45] "VIDVQGK"                                         
-       [46] "NSFSLSSFLER"                                     
-       [47] "DFFSHQEEETEEDSDLSDYGDDVDGR"                      
-       [48] "DALAEPCFMLIGEIFELR"                              
-       [49] "TLIALVQVTFGR"                                    
-       [50] "DTVSWIFSEQMLVYYINIFR"                            
-       [51] "DAFWPNGK"                                        
-       [52] "LAPPTTIR"                                        
-       [53] "EQSQETK"                                         
-       [54] "LLENIPDMLQSLVGQQNAR"                             
-       [55] "IFNALQETR"                                       
-       [56] "HLLYALMELLLIELCPELR"                             
-       [57] "VHLDQLK"                                         
-       [58] "MDKALK"                                          
-       [59] "ALKEVFDYSYR"                                     
-       [60] "EVFDYSYRDYILSWYGNLSR"                            
-       [61] "DYILSWYGNLSRDEGQLYHLLLEDFWEIAR"                  
-       [62] "DEGQLYHLLLEDFWEIARQLHHR"                         
-       [63] "QLHHRLSHVDVVK"                                   
-       [64] "LSHVDVVKVVCNDVVR"                                
-       [65] "VVCNDVVRTLLTHFCDLK"                              
-       [66] "TLLTHFCDLKAANAR"                                 
-       [67] "AANARHEEQPR"                                     
-       [68] "HEEQPRPFVLHACLR"                                 
-       [69] "PFVLHACLRNSDDEVR"                                
-       [70] "NSDDEVRFLQTCSR"                                  
-       [71] "FLQTCSRVLVFCLLPSK"                               
-       [72] "VLVFCLLPSKDVQSLSLR"                              
-       [73] "DVQSLSLRIMLAEILTTK"                              
-       [74] "IMLAEILTTKVLK"                                   
-       [75] "VLKPVVELLSNPDYINQMLLAQLAYR"                      
-       [76] "PVVELLSNPDYINQMLLAQLAYREQMNEHHK"                 
-       [77] "EQMNEHHKR"                                       
-       [78] "RAYTYAPSYEDFIK"                                  
-       [79] "AYTYAPSYEDFIKLINSNSDVEFLK"                       
-       [80] "LINSNSDVEFLKQLR"                                 
-       [81] "QLRYQIVVEIIQATTISSFPQLK"                         
-       [82] "YQIVVEIIQATTISSFPQLKR"                           
-       [83] "GKETAAMK"                                        
-       [84] "ETAAMKADLLR"                                     
-       [85] "ADLLRAR"                                         
-       [86] "RYINQLTVAK"                                      
-       [87] "YINQLTVAKK"                                      
-       [88] "IRILGGPAYDQQEDGALDEGEGPQSQK"                     
-       [89] "ILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYR"         
-       [90] "ILQFEDILANTFYREHFGMYMER"                         
-       [91] "EHFGMYMERMDK"                                    
-       [92] "RALISFWESVEHLK"                                  
-       [93] "ALISFWESVEHLKNANK"                               
-       [94] "NANKNEIPQLVGEIYQNFFVESK"                         
-       [95] "NEIPQLVGEIYQNFFVESKEISVEK"                       
-       [96] "EISVEKSLYK"                                      
-       [97] "SLYKEIQQCLVGNK"                                  
-       [98] "EIQQCLVGNKGIEVFYK"                               
-       [99] "GIEVFYKIQEDVYETLK"                               
-      [100] "IQEDVYETLKDR"                                    
-      [101] "DRYYPSFIVSDLYEK"                                 
-      [102] "YYPSFIVSDLYEKLLIK"                               
-      [103] "LLIKEEEK"                                        
-      [104] "EEEKHASQMISNK"                                   
-      [105] "HASQMISNKDEMGPR"                                 
-      [106] "DEMGPRDEAGEEAVDDGTNQINEQASFAVNK"                 
-      [107] "DEAGEEAVDDGTNQINEQASFAVNKLR"                     
-      [108] "LRELNEK"                                         
-      [109] "ELNEKLEYK"                                       
-      [110] "RQALNSIQNAPK"                                    
-      [111] "QALNSIQNAPKPDK"                                  
-      [112] "IVSKLK"                                          
-      [113] "LKDEIILIEK"                                      
-      [114] "DEIILIEKER"                                      
-      [115] "ERTDLQLHMAR"                                     
-      [116] "TDLQLHMARTDWWCENLGMWK"                           
-      [117] "TDWWCENLGMWKASITSGEVTEENGEQLPCYFVMVSLQEVGGVETK"  
-      [118] "ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETKNWTVPR"        
-      [119] "NWTVPRR"                                         
-      [120] "RLSEFQNLHR"                                      
-      [121] "LSEFQNLHRK"                                      
-      [122] "KLSECVPSLK"                                      
-      [123] "LSECVPSLKK"                                      
-      [124] "KVQLPSLSK"                                       
-      [125] "VQLPSLSKLPFK"                                    
-      [126] "LPFKSIDQK"                                       
-      [127] "SIDQKFMEK"                                       
-      [128] "FMEKSK"                                          
-      [129] "SKNQLNK"                                         
-      [130] "NQLNKFLQNLLSDER"                                 
-      [131] "FLQNLLSDERLCQSEALYAFLSPSPDYLK"                   
-      [132] "LCQSEALYAFLSPSPDYLKVIDVQGK"                      
-      [133] "VIDVQGKK"                                        
-      [134] "KNSFSLSSFLER"                                    
-      [135] "NSFSLSSFLERLPR"                                  
-      [136] "LPRDFFSHQEEETEEDSDLSDYGDDVDGR"                   
-      [137] "DFFSHQEEETEEDSDLSDYGDDVDGRK"                     
-      [138] "KDALAEPCFMLIGEIFELR"                             
-      [139] "DALAEPCFMLIGEIFELRGMFK"                          
-      [140] "GMFKWVR"                                         
-      [141] "RTLIALVQVTFGR"                                   
-      [142] "TLIALVQVTFGRTINK"                                
-      [143] "TINKQIR"                                         
-      [144] "QIRDTVSWIFSEQMLVYYINIFR"                         
-      [145] "DTVSWIFSEQMLVYYINIFRDAFWPNGK"                    
-      [146] "DAFWPNGKLAPPTTIR"                                
-      [147] "LAPPTTIRSK"                                      
-      [148] "SKEQSQETK"                                       
-      [149] "EQSQETKQR"                                       
-      [150] "QRAQQK"                                          
-      [151] "AQQKLLENIPDMLQSLVGQQNAR"                         
-      [152] "LLENIPDMLQSLVGQQNARHGIIK"                        
-      [153] "HGIIKIFNALQETR"                                  
-      [154] "IFNALQETRANK"                                    
-      [155] "ANKHLLYALMELLLIELCPELR"                          
-      [156] "HLLYALMELLLIELCPELRVHLDQLK"                      
-      [157] "VHLDQLKAGQV"                                     
-      [158] "MDKALKEVFDYSYR"                                  
-      [159] "ALKEVFDYSYRDYILSWYGNLSR"                         
-      [160] "EVFDYSYRDYILSWYGNLSRDEGQLYHLLLEDFWEIAR"          
-      [161] "DYILSWYGNLSRDEGQLYHLLLEDFWEIARQLHHR"             
-      [162] "DEGQLYHLLLEDFWEIARQLHHRLSHVDVVK"                 
-      [163] "QLHHRLSHVDVVKVVCNDVVR"                           
-      [164] "LSHVDVVKVVCNDVVRTLLTHFCDLK"                      
-      [165] "VVCNDVVRTLLTHFCDLKAANAR"                         
-      [166] "TLLTHFCDLKAANARHEEQPR"                           
-      [167] "AANARHEEQPRPFVLHACLR"                            
-      [168] "HEEQPRPFVLHACLRNSDDEVR"                          
-      [169] "PFVLHACLRNSDDEVRFLQTCSR"                         
-      [170] "NSDDEVRFLQTCSRVLVFCLLPSK"                        
-      [171] "FLQTCSRVLVFCLLPSKDVQSLSLR"                       
-      [172] "VLVFCLLPSKDVQSLSLRIMLAEILTTK"                    
-      [173] "DVQSLSLRIMLAEILTTKVLK"                           
-      [174] "IMLAEILTTKVLKPVVELLSNPDYINQMLLAQLAYR"            
-      [175] "VLKPVVELLSNPDYINQMLLAQLAYREQMNEHHK"              
-      [176] "PVVELLSNPDYINQMLLAQLAYREQMNEHHKR"                
-      [177] "EQMNEHHKRAYTYAPSYEDFIK"                          
-      [178] "RAYTYAPSYEDFIKLINSNSDVEFLK"                      
-      [179] "AYTYAPSYEDFIKLINSNSDVEFLKQLR"                    
-      [180] "LINSNSDVEFLKQLRYQIVVEIIQATTISSFPQLK"             
-      [181] "QLRYQIVVEIIQATTISSFPQLKR"                        
-      [182] "YQIVVEIIQATTISSFPQLKRHK"                         
-      [183] "HKGKETAAMK"                                      
-      [184] "GKETAAMKADLLR"                                   
-      [185] "ETAAMKADLLRAR"                                   
-      [186] "ADLLRARNMK"                                      
-      [187] "ARNMKR"                                          
-      [188] "NMKRYINQLTVAK"                                   
-      [189] "RYINQLTVAKK"                                     
-      [190] "YINQLTVAKKQCEK"                                  
-      [191] "KQCEKR"                                          
-      [192] "QCEKRIR"                                         
-      [193] "RIRILGGPAYDQQEDGALDEGEGPQSQK"                    
-      [194] "IRILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYR"       
-      [195] "ILGGPAYDQQEDGALDEGEGPQSQKILQFEDILANTFYREHFGMYMER"
-      [196] "ILQFEDILANTFYREHFGMYMERMDK"                      
-      [197] "EHFGMYMERMDKR"                                   
-      [198] "MDKRALISFWESVEHLK"                               
-      [199] "RALISFWESVEHLKNANK"                              
-      [200] "ALISFWESVEHLKNANKNEIPQLVGEIYQNFFVESK"            
-      [201] "NANKNEIPQLVGEIYQNFFVESKEISVEK"                   
-      [202] "NEIPQLVGEIYQNFFVESKEISVEKSLYK"                   
-      [203] "EISVEKSLYKEIQQCLVGNK"                            
-      [204] "SLYKEIQQCLVGNKGIEVFYK"                           
-      [205] "EIQQCLVGNKGIEVFYKIQEDVYETLK"                     
-      [206] "GIEVFYKIQEDVYETLKDR"                             
-      [207] "IQEDVYETLKDRYYPSFIVSDLYEK"                       
-      [208] "DRYYPSFIVSDLYEKLLIK"                             
-      [209] "YYPSFIVSDLYEKLLIKEEEK"                           
-      [210] "LLIKEEEKHASQMISNK"                               
-      [211] "EEEKHASQMISNKDEMGPR"                             
-      [212] "HASQMISNKDEMGPRDEAGEEAVDDGTNQINEQASFAVNK"        
-      [213] "DEMGPRDEAGEEAVDDGTNQINEQASFAVNKLR"               
-      [214] "DEAGEEAVDDGTNQINEQASFAVNKLRELNEK"                
-      [215] "LRELNEKLEYK"                                     
-      [216] "ELNEKLEYKR"                                      
-      [217] "LEYKRQALNSIQNAPK"                                
-      [218] "RQALNSIQNAPKPDK"                                 
-      [219] "QALNSIQNAPKPDKK"                                 
-      [220] "PDKKIVSK"                                        
-      [221] "KIVSKLK"                                         
-      [222] "IVSKLKDEIILIEK"                                  
-      [223] "LKDEIILIEKER"                                    
-      [224] "DEIILIEKERTDLQLHMAR"                             
-      [225] "ERTDLQLHMARTDWWCENLGMWK"                         
-      [226] "ASITSGEVTEENGEQLPCYFVMVSLQEVGGVETKNWTVPRR"       
-      [227] "NWTVPRRLSEFQNLHR"                                
-      [228] "RLSEFQNLHRK"                                     
-      [229] "LSEFQNLHRKLSECVPSLK"                             
-      [230] "KLSECVPSLKK"                                     
-      [231] "LSECVPSLKKVQLPSLSK"                              
-      [232] "KVQLPSLSKLPFK"                                   
-      [233] "VQLPSLSKLPFKSIDQK"                               
-      [234] "LPFKSIDQKFMEK"                                   
-      [235] "SIDQKFMEKSK"                                     
-      [236] "FMEKSKNQLNK"                                     
-      [237] "SKNQLNKFLQNLLSDER"                               
-      [238] "NQLNKFLQNLLSDERLCQSEALYAFLSPSPDYLK"              
-      [239] "FLQNLLSDERLCQSEALYAFLSPSPDYLKVIDVQGK"            
-      [240] "LCQSEALYAFLSPSPDYLKVIDVQGKK"                     
-      [241] "VIDVQGKKNSFSLSSFLER"                             
-      [242] "KNSFSLSSFLERLPR"                                 
-      [243] "NSFSLSSFLERLPRDFFSHQEEETEEDSDLSDYGDDVDGR"        
-      [244] "LPRDFFSHQEEETEEDSDLSDYGDDVDGRK"                  
-      [245] "DFFSHQEEETEEDSDLSDYGDDVDGRKDALAEPCFMLIGEIFELR"   
-      [246] "KDALAEPCFMLIGEIFELRGMFK"                         
-      [247] "DALAEPCFMLIGEIFELRGMFKWVR"                       
-      [248] "GMFKWVRR"                                        
-      [249] "WVRRTLIALVQVTFGR"                                
-      [250] "RTLIALVQVTFGRTINK"                               
-      [251] "TLIALVQVTFGRTINKQIR"                             
-      [252] "TINKQIRDTVSWIFSEQMLVYYINIFR"                     
-      [253] "QIRDTVSWIFSEQMLVYYINIFRDAFWPNGK"                 
-      [254] "DTVSWIFSEQMLVYYINIFRDAFWPNGKLAPPTTIR"            
-      [255] "DAFWPNGKLAPPTTIRSK"                              
-      [256] "LAPPTTIRSKEQSQETK"                               
-      [257] "SKEQSQETKQR"                                     
-      [258] "EQSQETKQRAQQK"                                   
-      [259] "QRAQQKLLENIPDMLQSLVGQQNAR"                       
-      [260] "AQQKLLENIPDMLQSLVGQQNARHGIIK"                    
-      [261] "LLENIPDMLQSLVGQQNARHGIIKIFNALQETR"               
-      [262] "HGIIKIFNALQETRANK"                               
-      [263] "IFNALQETRANKHLLYALMELLLIELCPELR"                 
-      [264] "ANKHLLYALMELLLIELCPELRVHLDQLK"                   
-      [265] "HLLYALMELLLIELCPELRVHLDQLKAGQV"                  
-      [266] "DKALKEVFDYSYR"                                   
-      
-      $O43402
-       [1] "LTTQAYCK"                                       
-       [2] "MVLHGAK"                                        
-       [3] "YPHCAVNGLLVAEK"                                 
-       [4] "EHLPLGGPGAHHTLFVDCIPLFHGTLALAPMLEVALTLIDSWCK"   
-       [5] "DHSYVIAGYYQANER"                                
-       [6] "DASPNQVAEK"                                     
-       [7] "IAEGFSDTALIMVDNTK"                              
-       [8] "FTMDCVAPTIHVYEHHENR"                            
-       [9] "DPHHDYCEDWPEAQR"                                
-      [10] "ISASLLDSR"                                      
-      [11] "SYETLVDFDNHLDDIR"                               
-      [12] "NDWTNPEINK"                                     
-      [13] "AVLHLC"                                         
-      [14] "MPGVKLTTQAYCK"                                  
-      [15] "LTTQAYCKMVLHGAK"                                
-      [16] "MVLHGAKYPHCAVNGLLVAEK"                          
-      [17] "YPHCAVNGLLVAEKQK"                               
-      [18] "KEHLPLGGPGAHHTLFVDCIPLFHGTLALAPMLEVALTLIDSWCK"  
-      [19] "DHSYVIAGYYQANERVK"                              
-      [20] "VKDASPNQVAEK"                                   
-      [21] "DASPNQVAEKVASR"                                 
-      [22] "VASRIAEGFSDTALIMVDNTK"                          
-      [23] "IAEGFSDTALIMVDNTKFTMDCVAPTIHVYEHHENR"           
-      [24] "FTMDCVAPTIHVYEHHENRWR"                          
-      [25] "CRDPHHDYCEDWPEAQR"                              
-      [26] "DPHHDYCEDWPEAQRISASLLDSR"                       
-      [27] "ISASLLDSRSYETLVDFDNHLDDIR"                      
-      [28] "SYETLVDFDNHLDDIRNDWTNPEINK"                     
-      [29] "NDWTNPEINKAVLHLC"                               
-      [30] "MPGVKLTTQAYCKMVLHGAK"                           
-      [31] "LTTQAYCKMVLHGAKYPHCAVNGLLVAEK"                  
-      [32] "MVLHGAKYPHCAVNGLLVAEKQK"                        
-      [33] "YPHCAVNGLLVAEKQKPR"                             
-      [34] "PRKEHLPLGGPGAHHTLFVDCIPLFHGTLALAPMLEVALTLIDSWCK"
-      [35] "DHSYVIAGYYQANERVKDASPNQVAEK"                    
-      [36] "VKDASPNQVAEKVASR"                               
-      [37] "DASPNQVAEKVASRIAEGFSDTALIMVDNTK"                
-      [38] "VASRIAEGFSDTALIMVDNTKFTMDCVAPTIHVYEHHENR"       
-      [39] "IAEGFSDTALIMVDNTKFTMDCVAPTIHVYEHHENRWR"         
-      [40] "FTMDCVAPTIHVYEHHENRWRCR"                        
-      [41] "WRCRDPHHDYCEDWPEAQR"                            
-      [42] "CRDPHHDYCEDWPEAQRISASLLDSR"                     
-      [43] "DPHHDYCEDWPEAQRISASLLDSRSYETLVDFDNHLDDIR"       
-      [44] "ISASLLDSRSYETLVDFDNHLDDIRNDWTNPEINK"            
-      [45] "SYETLVDFDNHLDDIRNDWTNPEINKAVLHLC"               
-      [46] "PGVKLTTQAYCK"                                   
-      [47] "PGVKLTTQAYCKMVLHGAK"                            
-      
-      $M0R1B0
-       [1] "IAEGFSDTALIMVDNTK"                       
-       [2] "FTMDCVAPTIHVYEHHENR"                     
-       [3] "DPHHDYCEDWPEAQR"                         
-       [4] "ISASLLDSR"                               
-       [5] "SYETLVDFDNHLDDIR"                        
-       [6] "NDWTNPEINK"                              
-       [7] "AVLHLC"                                  
-       [8] "VASRIAEGFSDTALIMVDNTK"                   
-       [9] "IAEGFSDTALIMVDNTKFTMDCVAPTIHVYEHHENR"    
-      [10] "FTMDCVAPTIHVYEHHENRWR"                   
-      [11] "CRDPHHDYCEDWPEAQR"                       
-      [12] "DPHHDYCEDWPEAQRISASLLDSR"                
-      [13] "ISASLLDSRSYETLVDFDNHLDDIR"               
-      [14] "SYETLVDFDNHLDDIRNDWTNPEINK"              
-      [15] "NDWTNPEINKAVLHLC"                        
-      [16] "VASRIAEGFSDTALIMVDNTKFTMDCVAPTIHVYEHHENR"
-      [17] "IAEGFSDTALIMVDNTKFTMDCVAPTIHVYEHHENRWR"  
-      [18] "FTMDCVAPTIHVYEHHENRWRCR"                 
-      [19] "WRCRDPHHDYCEDWPEAQR"                     
-      [20] "CRDPHHDYCEDWPEAQRISASLLDSR"              
-      [21] "DPHHDYCEDWPEAQRISASLLDSRSYETLVDFDNHLDDIR"
-      [22] "ISASLLDSRSYETLVDFDNHLDDIRNDWTNPEINK"     
-      [23] "SYETLVDFDNHLDDIRNDWTNPEINKAVLHLC"        
-      
+           protein                                            peptide protOrigin
+      1     Q03483                           MESQQLHQNPHSQHGSAYASVTSK      yeast
+      2     Q03483                              EVPSNQDPLAVSASNLPEFDR      yeast
+      3     Q03483     VNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK      yeast
+      4     Q03483                               NNVLPPHTLTSEENFSTWVK      yeast
+      5     Q03483                                   NSNLGDIIPNDQGEIK      yeast
+      6     Q03483                       QMTYEEHAYIYNTFQAFAPFHLLPTWVK      yeast
+      7     Q03483                                   QILEINYSDILTVLCK      yeast
+      8     Q03483                                          MQTNNQELK      yeast
+      9     Q03483                      DWIALANLEYNGSTSADTFEITVSTIIQR      yeast
+      10    Q03483                                          ENNINVSDR      yeast
+      11    Q03483                                           LACQLILK      yeast
+      12    Q03483                                            GLSGDFK      yeast
+      13    Q03483                                   LSQLFAEIQLIYDENK      yeast
+      14    Q03483                                        IMNLNKPSQYK      yeast
+      15    Q03483                                             QHSEYK      yeast
+      16    Q03483                                          TSPNTTNTK      yeast
+      17    Q03483                                            TNSSKPR      yeast
+      18    Q03483                                          AHNIATSSK      yeast
+      19    Q03483                     VNSDHINESTVSSQYLSDDNELSLRPATER      yeast
+      20    Q03483      MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDR      yeast
+      21    Q03483                          EVPSNQDPLAVSASNLPEFDRDSTK      yeast
+      22    Q03483 DSTKVNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK      yeast
+      23    Q03483                             VRNNVLPPHTLTSEENFSTWVK      yeast
+      24    Q03483                           NNVLPPHTLTSEENFSTWVKFYIR      yeast
+      25    Q03483                                            FYIRFLK      yeast
+      26    Q03483                                FLKNSNLGDIIPNDQGEIK      yeast
+      27    Q03483                                  NSNLGDIIPNDQGEIKR      yeast
+      28    Q03483                      RQMTYEEHAYIYNTFQAFAPFHLLPTWVK      yeast
+      29    Q03483       QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK      yeast
+      30    Q03483                               QILEINYSDILTVLCKSVSK      yeast
+      31    Q03483                                      SVSKMQTNNQELK      yeast
+      32    Q03483             MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR      yeast
+      33    Q03483                    DWIALANLEYNGSTSADTFEITVSTIIQRLK      yeast
+      34    Q03483                                        LKENNINVSDR      yeast
+      35    Q03483                                  ENNINVSDRLACQLILK      yeast
+      36    Q03483                                    LACQLILKGLSGDFK      yeast
+      37    Q03483                                         GLSGDFKYLR      yeast
+      38    Q03483                                            YLRNQYR      yeast
+      39    Q03483                                             NQYRTK      yeast
+      40    Q03483                                             TKTNMK      yeast
+      41    Q03483                               TNMKLSQLFAEIQLIYDENK      yeast
+      42    Q03483                        LSQLFAEIQLIYDENKIMNLNKPSQYK      yeast
+      43    Q03483                                  IMNLNKPSQYKQHSEYK      yeast
+      44    Q03483                                         QHSEYKNVSR      yeast
+      45    Q03483                                      NVSRTSPNTTNTK      yeast
+      46    Q03483                                      TSPNTTNTKVTTR      yeast
+      47    Q03483                                           VTTRNYHR      yeast
+      48    Q03483                                        NYHRTNSSKPR      yeast
+      49    Q03483                                         TNSSKPRAAK      yeast
+      50    Q03483                                       AAKAHNIATSSK      yeast
+      51    Q03483                                       AHNIATSSKFSR      yeast
+      52    Q03483                  FSRVNSDHINESTVSSQYLSDDNELSLRPATER      yeast
+      53    Q03483                    VNSDHINESTVSSQYLSDDNELSLRPATERI      yeast
+      54    Q03483  MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDRDSTK      yeast
+      55    Q03483                           TKVRNNVLPPHTLTSEENFSTWVK      yeast
+      56    Q03483                         VRNNVLPPHTLTSEENFSTWVKFYIR      yeast
+      57    Q03483                        NNVLPPHTLTSEENFSTWVKFYIRFLK      yeast
+      58    Q03483                            FYIRFLKNSNLGDIIPNDQGEIK      yeast
+      59    Q03483                               FLKNSNLGDIIPNDQGEIKR      yeast
+      60    Q03483      NSNLGDIIPNDQGEIKRQMTYEEHAYIYNTFQAFAPFHLLPTWVK      yeast
+      61    Q03483      RQMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK      yeast
+      62    Q03483   QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCKSVSK      yeast
+      63    Q03483                      QILEINYSDILTVLCKSVSKMQTNNQELK      yeast
+      64    Q03483         SVSKMQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR      yeast
+      65    Q03483           MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQRLK      yeast
+      66    Q03483           DWIALANLEYNGSTSADTFEITVSTIIQRLKENNINVSDR      yeast
+      67    Q03483                                LKENNINVSDRLACQLILK      yeast
+      68    Q03483                           ENNINVSDRLACQLILKGLSGDFK      yeast
+      69    Q03483                                 LACQLILKGLSGDFKYLR      yeast
+      70    Q03483                                     GLSGDFKYLRNQYR      yeast
+      71    Q03483                                          YLRNQYRTK      yeast
+      72    Q03483                                         NQYRTKTNMK      yeast
+      73    Q03483                             TKTNMKLSQLFAEIQLIYDENK      yeast
+      74    Q03483                    TNMKLSQLFAEIQLIYDENKIMNLNKPSQYK      yeast
+      75    Q03483                  LSQLFAEIQLIYDENKIMNLNKPSQYKQHSEYK      yeast
+      76    Q03483                              IMNLNKPSQYKQHSEYKNVSR      yeast
+      77    Q03483                                QHSEYKNVSRTSPNTTNTK      yeast
+      78    Q03483                                  NVSRTSPNTTNTKVTTR      yeast
+      79    Q03483                                  TSPNTTNTKVTTRNYHR      yeast
+      80    Q03483                                    VTTRNYHRTNSSKPR      yeast
+      81    Q03483                                     NYHRTNSSKPRAAK      yeast
+      82    Q03483                                TNSSKPRAAKAHNIATSSK      yeast
+      83    Q03483                                    AAKAHNIATSSKFSR      yeast
+      84    Q03483         AHNIATSSKFSRVNSDHINESTVSSQYLSDDNELSLRPATER      yeast
+      85    Q03483                 FSRVNSDHINESTVSSQYLSDDNELSLRPATERI      yeast
+      86    Q03483                            ESQQLHQNPHSQHGSAYASVTSK      yeast
+      87    Q03483       ESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDR      yeast
+      88    Q03483   ESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDRDSTK      yeast
+      89    Q06204                                          MTIESTLAR      yeast
+      90    Q06204                         ELESLILPADSIVNVVDQFQEELLSR      yeast
+      91    Q06204                                  LQTNTISMLPQCLVPDK      yeast
+      92    Q06204                                             WNPEDK      yeast
+      93    Q06204                                         ILTIDFGGTR      yeast
+      94    Q06204            FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTR      yeast
+      95    Q06204                                           LAANGYIK      yeast
+      96    Q06204                                           NESSEASK      yeast
+      97    Q06204                             FFVSVTFSFPLNPEGEVVAMGK      yeast
+      98    Q06204                                     GFVMTDTLQGSTVK      yeast
+      99    Q06204                                          QLIQSSFHR      yeast
+      100   Q06204                     IISENIEEFFCTMNVCHVINDAIAVSLTSK      yeast
+      101   Q06204                    FICENDSISLIIGTGTNACFEVPYGYLPPFK      yeast
+      102   Q06204                                          ETLPSSYNK      yeast
+      103   Q06204                                             ETLNFK      yeast
+      104   Q06204                                      HVLINSEIGFIGK      yeast
+      105   Q06204                        NVIALQPFDIHGAISYEMPLECVTSGK      yeast
+      106   Q06204                                            WLPLSLK      yeast
+      107   Q06204                                        NILLQYNIIPK      yeast
+      108   Q06204               NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIAR      yeast
+      109   Q06204                                AAFYVAAIVQAIDIITGCK      yeast
+      110   Q06204                              NYNFIHIGYVGSFLHNSNFYR      yeast
+      111   Q06204                                           YYSSIHIK      yeast
+      112   Q06204                               LQFLNHSNLLGAAIATYLNK      yeast
+      113   Q06204                                             SDNQVQ      yeast
+      114   Q06204                MTIESTLARELESLILPADSIVNVVDQFQEELLSR      yeast
+      115   Q06204        ELESLILPADSIVNVVDQFQEELLSRLQTNTISMLPQCLVPDK      yeast
+      116   Q06204                                 LQTNTISMLPQCLVPDKR      yeast
+      117   Q06204                                           SRWNPEDK      yeast
+      118   Q06204                                   WNPEDKILTIDFGGTR      yeast
+      119   Q06204                                       ILTIDFGGTRLK      yeast
+      120   Q06204          LKFAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTR      yeast
+      121   Q06204    FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIK      yeast
+      122   Q06204                                          LAANGYIKK      yeast
+      123   Q06204                                          KNESSEASK      yeast
+      124   Q06204                     NESSEASKFFVSVTFSFPLNPEGEVVAMGK      yeast
+      125   Q06204               FFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVK      yeast
+      126   Q06204                            GFVMTDTLQGSTVKQLIQSSFHR      yeast
+      127   Q06204            QLIQSSFHRIISENIEEFFCTMNVCHVINDAIAVSLTSK      yeast
+      128   Q06204                   FICENDSISLIIGTGTNACFEVPYGYLPPFKR      yeast
+      129   Q06204                                      DALRETLPSSYNK      yeast
+      130   Q06204                                    ETLPSSYNKETLNFK      yeast
+      131   Q06204                                ETLNFKHVLINSEIGFIGK      yeast
+      132   Q06204           HVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGK      yeast
+      133   Q06204                 NVIALQPFDIHGAISYEMPLECVTSGKWLPLSLK      yeast
+      134   Q06204                                 WLPLSLKNILLQYNIIPK      yeast
+      135   Q06204    NILLQYNIIPKNFPVEFNGELVCQLAEDCTNAWFENEHYALICQIAR      yeast
+      136   Q06204           NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIARLLIK      yeast
+      137   Q06204                               RAAFYVAAIVQAIDIITGCK      yeast
+      138   Q06204           AAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYR      yeast
+      139   Q06204                          NYNFIHIGYVGSFLHNSNFYREQIK      yeast
+      140   Q06204                                       EQIKYYSSIHIK      yeast
+      141   Q06204                       YYSSIHIKLQFLNHSNLLGAAIATYLNK      yeast
+      142   Q06204                         LQFLNHSNLLGAAIATYLNKSDNQVQ      yeast
+      143   Q06204       ELESLILPADSIVNVVDQFQEELLSRLQTNTISMLPQCLVPDKR      yeast
+      144   Q06204                               LQTNTISMLPQCLVPDKRSR      yeast
+      145   Q06204                                          RSRWNPEDK      yeast
+      146   Q06204                                 SRWNPEDKILTIDFGGTR      yeast
+      147   Q06204                                 WNPEDKILTIDFGGTRLK      yeast
+      148   Q06204  LKFAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIK      yeast
+      149   Q06204   FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIKK      yeast
+      150   Q06204                                         LAANGYIKKK      yeast
+      151   Q06204                                         KKNESSEASK      yeast
+      152   Q06204                    KNESSEASKFFVSVTFSFPLNPEGEVVAMGK      yeast
+      153   Q06204       NESSEASKFFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVK      yeast
+      154   Q06204      FFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVKQLIQSSFHR      yeast
+      155   Q06204               FICENDSISLIIGTGTNACFEVPYGYLPPFKRDALR      yeast
+      156   Q06204                                     RDALRETLPSSYNK      yeast
+      157   Q06204                                DALRETLPSSYNKETLNFK      yeast
+      158   Q06204                       ETLPSSYNKETLNFKHVLINSEIGFIGK      yeast
+      159   Q06204     ETLNFKHVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGK      yeast
+      160   Q06204    HVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGKWLPLSLK      yeast
+      161   Q06204      NVIALQPFDIHGAISYEMPLECVTSGKWLPLSLKNILLQYNIIPK      yeast
+      162   Q06204          NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIARLLIKR      yeast
+      163   Q06204                           LLIKRAAFYVAAIVQAIDIITGCK      yeast
+      164   Q06204          RAAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYR      yeast
+      165   Q06204       AAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYREQIK      yeast
+      166   Q06204                  NYNFIHIGYVGSFLHNSNFYREQIKYYSSIHIK      yeast
+      167   Q06204                   EQIKYYSSIHIKLQFLNHSNLLGAAIATYLNK      yeast
+      168   Q06204                 YYSSIHIKLQFLNHSNLLGAAIATYLNKSDNQVQ      yeast
+      169   Q06204                                           TIESTLAR      yeast
+      170   Q06204                 TIESTLARELESLILPADSIVNVVDQFQEELLSR      yeast
+      171   P48238                                        EVGTYECEGER      yeast
+      172   P48238        DTYSFFTSLSDIQDSSSNEEQCGVGSILSEDSFTFEGSNVSIR      yeast
+      173   P48238                                  LFSLDLNALNENENGSK      yeast
+      174   P48238                                             FTIPPK      yeast
+      175   P48238                                          VAVLPENSR      yeast
+      176   P48238                                       NYLVESSMDSSR      yeast
+      177   P48238                                         EYSQPFFDWR      yeast
+      178   P48238                                 HEMVEHGEESVKPCGCHK      yeast
+      179   P48238                                          ELEMENIEK      yeast
+      180   P48238                                            DIIEWCR      yeast
+      181   P48238                                             DYEVNK      yeast
+      182   P48238                              EVCVPSIHEFYLHGNGSDNLF      yeast
+      183   P48238                                           MGKACLNK      yeast
+      184   P48238                                   ACLNKEVGTYECEGER      yeast
+      185   P48238                              LFSLDLNALNENENGSKNPVK      yeast
+      186   P48238                                         NPVKFTIPPK      yeast
+      187   P48238                                         FTIPPKIEQR      yeast
+      188   P48238                                         RVAVLPENSR      yeast
+      189   P48238                              VAVLPENSRNYLVESSMDSSR      yeast
+      190   P48238                             NYLVESSMDSSREYSQPFFDWR      yeast
+      191   P48238                       EYSQPFFDWRHEMVEHGEESVKPCGCHK      yeast
+      192   P48238                               HEMVEHGEESVKPCGCHKSR      yeast
+      193   P48238                                       CFKELEMENIEK      yeast
+      194   P48238                                      ELEMENIEKGDIK      yeast
+      195   P48238                                             KSLFYR      yeast
+      196   P48238                                       SLFYRDIIEWCR      yeast
+      197   P48238                                      DIIEWCRDYEVNK      yeast
+      198   P48238                                           DYEVNKTR      yeast
+      199   P48238                            TREVCVPSIHEFYLHGNGSDNLF      yeast
+      200   P48238                                MGKACLNKEVGTYECEGER      yeast
+      201   P48238                        LFSLDLNALNENENGSKNPVKFTIPPK      yeast
+      202   P48238                                     NPVKFTIPPKIEQR      yeast
+      203   P48238                                        FTIPPKIEQRK      yeast
+      204   P48238                                           IEQRKEAR      yeast
+      205   P48238                                             KEARQR      yeast
+      206   P48238                                            EARQREK      yeast
+      207   P48238                                       LRRVAVLPENSR      yeast
+      208   P48238                             RVAVLPENSRNYLVESSMDSSR      yeast
+      209   P48238                    VAVLPENSRNYLVESSMDSSREYSQPFFDWR      yeast
+      210   P48238           NYLVESSMDSSREYSQPFFDWRHEMVEHGEESVKPCGCHK      yeast
+      211   P48238                     EYSQPFFDWRHEMVEHGEESVKPCGCHKSR      yeast
+      212   P48238                              HEMVEHGEESVKPCGCHKSRK      yeast
+      213   P48238                                             KAKCFK      yeast
+      214   P48238                                     AKCFKELEMENIEK      yeast
+      215   P48238                                   CFKELEMENIEKGDIK      yeast
+      216   P48238                                     ELEMENIEKGDIKK      yeast
+      217   P48238                                         GDIKKSLFYR      yeast
+      218   P48238                                      KSLFYRDIIEWCR      yeast
+      219   P48238                                 SLFYRDIIEWCRDYEVNK      yeast
+      220   P48238                                    DIIEWCRDYEVNKTR      yeast
+      221   P48238                      DYEVNKTREVCVPSIHEFYLHGNGSDNLF      yeast
+      222   P48238                                            GKACLNK      yeast
+      223   P48238                                 GKACLNKEVGTYECEGER      yeast
+      224   P0CX57                           MESQQLSQHSPISHGSACASVTSK      yeast
+      225   P0CX57                                    EVHTNQDPLDVSASK      yeast
+      226   P0CX57                                             TEECEK      yeast
+      227   P0CX57                                YVRPPPMLTSPNDFPNWVK      yeast
+      228   P0CX57                               FLQNSNLGGIIPTVNGKPVR      yeast
+      229   P0CX57                       QITDDELTFLYNTFQIFAPSQFLPTWVK      yeast
+      230   P0CX57                                       DILSVDYTDIMK      yeast
+      231   P0CX57                    MQSDTQEANDIVTLANLQYNGSTPADAFETK      yeast
+      232   P0CX57                                            VTNIIDR      yeast
+      233   P0CX57                                        LNNNGIHINNK      yeast
+      234   P0CX57                                           VACQLIMR      yeast
+      235   P0CX57                                            GLSGEYK      yeast
+      236   P0CX57                           HLNMTVAELFLDIHAIYEEQQGSR      yeast
+      237   P0CX57                                            NSKPNYR      yeast
+      238   P0CX57                                             NPSDEK      yeast
+      239   P0CX57                                          SYTNTTKPK      yeast
+      240   P0CX57                               AHNVSTSNNSPSTDNDSISK      yeast
+      241   P0CX57                                        STTEPIQLNNK      yeast
+      242   P0CX57                                         HDLHLRPETY      yeast
+      243   P0CX57            MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK      yeast
+      244   P0CX57                              EVHTNQDPLDVSASKTEECEK      yeast
+      245   P0CX57                                         TEECEKASTK      yeast
+      246   P0CX57                               KYVRPPPMLTSPNDFPNWVK      yeast
+      247   P0CX57                            YVRPPPMLTSPNDFPNWVKTYIK      yeast
+      248   P0CX57                           TYIKFLQNSNLGGIIPTVNGKPVR      yeast
+      249   P0CX57   FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK      yeast
+      250   P0CX57           QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK      yeast
+      251   P0CX57                                   DILSVDYTDIMKILSK      yeast
+      252   P0CX57                                           ILSKSIEK      yeast
+      253   P0CX57                SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK      yeast
+      254   P0CX57             MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR      yeast
+      255   P0CX57                                 VTNIIDRLNNNGIHINNK      yeast
+      256   P0CX57                                LNNNGIHINNKVACQLIMR      yeast
+      257   P0CX57                                    VACQLIMRGLSGEYK      yeast
+      258   P0CX57                                         GLSGEYKFLR      yeast
+      259   P0CX57                                             FLRYTR      yeast
+      260   P0CX57                         HRHLNMTVAELFLDIHAIYEEQQGSR      yeast
+      261   P0CX57                    HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR      yeast
+      262   P0CX57                                           NSKPNYRR      yeast
+      263   P0CX57                                            RNPSDEK      yeast
+      264   P0CX57                                         NPSDEKNDSR      yeast
+      265   P0CX57                                      NDSRSYTNTTKPK      yeast
+      266   P0CX57                                      SYTNTTKPKVIAR      yeast
+      267   P0CX57                                           VIARNPQK      yeast
+      268   P0CX57                                          NPQKTNNSK      yeast
+      269   P0CX57                                            TNNSKSK      yeast
+      270   P0CX57                            TARAHNVSTSNNSPSTDNDSISK      yeast
+      271   P0CX57                    AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK      yeast
+      272   P0CX57                              STTEPIQLNNKHDLHLRPETY      yeast
+      273   P0CX57      MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK      yeast
+      274   P0CX57                          EVHTNQDPLDVSASKTEECEKASTK      yeast
+      275   P0CX57                           KYVRPPPMLTSPNDFPNWVKTYIK      yeast
+      276   P0CX57        YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR      yeast
+      277   P0CX57       QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK      yeast
+      278   P0CX57                               DILSVDYTDIMKILSKSIEK      yeast
+      279   P0CX57            ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK      yeast
+      280   P0CX57         SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR      yeast
+      281   P0CX57  MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK      yeast
+      282   P0CX57                         VTNIIDRLNNNGIHINNKVACQLIMR      yeast
+      283   P0CX57                         LNNNGIHINNKVACQLIMRGLSGEYK      yeast
+      284   P0CX57                                 VACQLIMRGLSGEYKFLR      yeast
+      285   P0CX57                                      GLSGEYKFLRYTR      yeast
+      286   P0CX57                                           FLRYTRHR      yeast
+      287   P0CX57                      YTRHRHLNMTVAELFLDIHAIYEEQQGSR      yeast
+      288   P0CX57                  HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR      yeast
+      289   P0CX57                   HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR      yeast
+      290   P0CX57                                     NSKPNYRRNPSDEK      yeast
+      291   P0CX57                                        RNPSDEKNDSR      yeast
+      292   P0CX57                                NPSDEKNDSRSYTNTTKPK      yeast
+      293   P0CX57                                  NDSRSYTNTTKPKVIAR      yeast
+      294   P0CX57                                  SYTNTTKPKVIARNPQK      yeast
+      295   P0CX57                                      VIARNPQKTNNSK      yeast
+      296   P0CX57                                        NPQKTNNSKSK      yeast
+      297   P0CX57                                         TNNSKSKTAR      yeast
+      298   P0CX57                          SKTARAHNVSTSNNSPSTDNDSISK      yeast
+      299   P0CX57                 TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK      yeast
+      300   P0CX57          AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLRPETY      yeast
+      301   P0CX57                            ESQQLSQHSPISHGSACASVTSK      yeast
+      302   P0CX57             ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK      yeast
+      303   P0CX57       ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK      yeast
+      304   Q07791                           MESQQLHQNPHSLHGSAAASVTSK   spike_in
+      305   Q07791                              EVPSNQDPLAVSASNLPEFDR   spike_in
+      306   Q07791     VNSQQETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK   spike_in
+      307   Q07791                               NNVLPPHTLTSEENFSTWVK   spike_in
+      308   Q07791                                   NSNLGDIIPNDQGEIK   spike_in
+      309   Q07791                       QMTYEEHAYIYNTFQAFAPFHLLPTWVK   spike_in
+      310   Q07791                                   QILEINYADILTVLCK   spike_in
+      311   Q07791                                          MQTNNQELK   spike_in
+      312   Q07791                      DWIALANLEYDGSTSADTFEITVSTIIQR   spike_in
+      313   Q07791                                          ENNINVSDR   spike_in
+      314   Q07791                                           LACQLILK   spike_in
+      315   Q07791                                            GLSGDFK   spike_in
+      316   Q07791                                   LSQLFAEIQLIYDENK   spike_in
+      317   Q07791                                        IMNLNKPSQYK   spike_in
+      318   Q07791                                             QHSEYK   spike_in
+      319   Q07791                                          TSPNTTNTK   spike_in
+      320   Q07791                                            TNSSKPR   spike_in
+      321   Q07791                                          AHNIATSSK   spike_in
+      322   Q07791                      VNNDHINESTVSSQYLSDDNELSLGQQQK   spike_in
+      323   Q07791                                             ESKPTR   spike_in
+      324   Q07791                           TIDSNDELPDHLLIDSGASQTLVR   spike_in
+      325   Q07791                              SAHYLHHATPNSEINIVDAQK   spike_in
+      326   Q07791                               QDIPINAIGNLHFNFQNGTK   spike_in
+      327   Q07791                       ALHTPNIAYDLLSLSELANQNITACFTR   spike_in
+      328   Q07791                                        SDGTVLAPIVK   spike_in
+      329   Q07791                                          HGDFYWLSK   spike_in
+      330   Q07791                                          YLIPSHISK   spike_in
+      331   Q07791                                           LTINNVNK   spike_in
+      332   Q07791                                           YPYPLIHR   spike_in
+      333   Q07791                                           MLGHANFR   spike_in
+      334   Q07791                                            NAVTYLK   spike_in
+      335   Q07791                              ESDIEWSNASTYQCPDCLIGK   spike_in
+      336   Q07791                           YQESYEPFQYLHTDIFGPVHHLPK   spike_in
+      337   Q07791                                      SAPSYFISFTDEK   spike_in
+      338   Q07791                                         FQWVYPLHDR   spike_in
+      339   Q07791                                   EESILNVFTSILAFIK   spike_in
+      340   Q07791                                             NQFNAR   spike_in
+      341   Q07791                                           VLVIQMDR   spike_in
+      342   Q07791                                            GSEYTNK   spike_in
+      343   Q07791                                      GITACYTTTADSR   spike_in
+      344   Q07791                                            AHGVAER   spike_in
+      345   Q07791                                            TLLNDCR   spike_in
+      346   Q07791                           TLLHCSGLPNHLWFSAVEFSTIIR   spike_in
+      347   Q07791                                            NSLVSPK   spike_in
+      348   Q07791                     QHAGLAGLDITTILPFGQPVIVNNHNPDSK   spike_in
+      349   Q07791                                        GIPGYALHPSR   spike_in
+      350   Q07791                                      NSYGYIIYLPSLK   spike_in
+      351   Q07791                                   TVDTTNYVILQDNQSK   spike_in
+      352   Q07791                                  LDQFNYDTLTFDDDLNR   spike_in
+      353   Q07791                                  EVDADISEYNILPSTIR   spike_in
+      354   Q07791                                            TPHIINK   spike_in
+      355   Q07791                                  ESTEMGGTIESDTTSPR   spike_in
+      356   Q07791                                           HSSTFTAR   spike_in
+      357   Q07791                                   RPGSPNDMIDLTSQDR   spike_in
+      358   Q07791                                          VNYGLENIK   spike_in
+      359   Q07791                                        LGGTEEPYIQR   spike_in
+      360   Q07791                                            NSDTNIK   spike_in
+      361   Q07791                                        TTNSTPSIDDR   spike_in
+      362   Q07791                                   SSNSESTTPIISIETK   spike_in
+      363   Q07791                                  AVCDNTPSIDTDPPEYR   spike_in
+      364   Q07791                                      SSDHATPNIMPDK   spike_in
+      365   Q07791                                NVTADSILDDLPLPDLTNK   spike_in
+      366   Q07791                                         SPTDTSDVSK   spike_in
+      367   Q07791                                           DIPHIHSR   spike_in
+      368   Q07791                                QTNSSLGGMDDSNVLTTTK   spike_in
+      369   Q07791                                      SLEDNETEIEVSR   spike_in
+      370   Q07791                                             DTWNNK   spike_in
+      371   Q07791                                             SLEPPR   spike_in
+      372   Q07791                                           INLIAAIK   spike_in
+      373   Q07791                                             SIKPVR   spike_in
+      374   Q07791                                          YDEAITYNK   spike_in
+      375   Q07791                                            YVEAYHK   spike_in
+      376   Q07791                                            EISQLLK   spike_in
+      377   Q07791                                           MNTWDTNK   spike_in
+      378   Q07791                                             NDIDPK   spike_in
+      379   Q07791                                         VINSMFIFNK   spike_in
+      380   Q07791                                   EELYIRPPPHLGLNDK   spike_in
+      381   Q07791                                             SLYGLK   spike_in
+      382   Q07791                                        QSGANWYETIK   spike_in
+      383   Q07791                                      SYLINCCDMQEVR   spike_in
+      384   Q07791                                            GWSCVFK   spike_in
+      385   Q07791                                 NSQVTICLFVDDMILFSK   spike_in
+      386   Q07791                                             DLNANK   spike_in
+      387   Q07791                                             IITTLK   spike_in
+      388   Q07791                              IINLGEGDNEIQYDILGLEIK   spike_in
+      389   Q07791                                           LNVPLNPK   spike_in
+      390   Q07791                             APGQPGHYIDQDELEIDEDEYK   spike_in
+      391   Q07791                                             VHEMQK   spike_in
+      392   Q07791                                        LIGLASYVGYK   spike_in
+      393   Q07791                                FDLLYYINTLAQHILFPSR   spike_in
+      394   Q07791                                  QVLDMTYELIQFIWNTR   spike_in
+      395   Q07791                                             QLIWHK   spike_in
+      396   Q07791                                          SKPVKPTNK   spike_in
+      397   Q07791                                   LVVISDASYGNQPYYK   spike_in
+      398   Q07791                                       SQIGNIYLLNGK   spike_in
+      399   Q07791                ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK   spike_in
+      400   Q07791                                            GLLTDSR   spike_in
+      401   Q07791                                            STISIIK   spike_in
+      402   Q07791                                             STNEEK   spike_in
+      403   Q07791                                   DEVSGNNLYVYYIETK   spike_in
+      404   Q07791                                     MNIADVMTKPLPIK   spike_in
+      405   Q07791      MESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDR   spike_in
+      406   Q07791                          EVPSNQDPLAVSASNLPEFDRDSTK   spike_in
+      407   Q07791 DSTKVNSQQETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK   spike_in
+      408   Q07791                             VRNNVLPPHTLTSEENFSTWVK   spike_in
+      409   Q07791                           NNVLPPHTLTSEENFSTWVKFYIR   spike_in
+      410   Q07791                                            FYIRFLK   spike_in
+      411   Q07791                                FLKNSNLGDIIPNDQGEIK   spike_in
+      412   Q07791                                  NSNLGDIIPNDQGEIKR   spike_in
+      413   Q07791                      RQMTYEEHAYIYNTFQAFAPFHLLPTWVK   spike_in
+      414   Q07791       QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCK   spike_in
+      415   Q07791                               QILEINYADILTVLCKSVSK   spike_in
+      416   Q07791                                      SVSKMQTNNQELK   spike_in
+      417   Q07791             MQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQR   spike_in
+      418   Q07791                    DWIALANLEYDGSTSADTFEITVSTIIQRLK   spike_in
+      419   Q07791                                        LKENNINVSDR   spike_in
+      420   Q07791                                  ENNINVSDRLACQLILK   spike_in
+      421   Q07791                                    LACQLILKGLSGDFK   spike_in
+      422   Q07791                                         GLSGDFKYLR   spike_in
+      423   Q07791                                            YLRNQYR   spike_in
+      424   Q07791                                             NQYRTK   spike_in
+      425   Q07791                                             TKTNMK   spike_in
+      426   Q07791                               TNMKLSQLFAEIQLIYDENK   spike_in
+      427   Q07791                        LSQLFAEIQLIYDENKIMNLNKPSQYK   spike_in
+      428   Q07791                                  IMNLNKPSQYKQHSEYK   spike_in
+      429   Q07791                                         QHSEYKNVSR   spike_in
+      430   Q07791                                      NVSRTSPNTTNTK   spike_in
+      431   Q07791                                      TSPNTTNTKVTSR   spike_in
+      432   Q07791                                           VTSRNYHR   spike_in
+      433   Q07791                                        NYHRTNSSKPR   spike_in
+      434   Q07791                                         TNSSKPRAAK   spike_in
+      435   Q07791                                       AAKAHNIATSSK   spike_in
+      436   Q07791                                       AHNIATSSKFSR   spike_in
+      437   Q07791                   FSRVNNDHINESTVSSQYLSDDNELSLGQQQK   spike_in
+      438   Q07791                VNNDHINESTVSSQYLSDDNELSLGQQQKESKPTR   spike_in
+      439   Q07791                     ESKPTRTIDSNDELPDHLLIDSGASQTLVR   spike_in
+      440   Q07791      TIDSNDELPDHLLIDSGASQTLVRSAHYLHHATPNSEINIVDAQK   spike_in
+      441   Q07791          SAHYLHHATPNSEINIVDAQKQDIPINAIGNLHFNFQNGTK   spike_in
+      442   Q07791                           QDIPINAIGNLHFNFQNGTKTSIK   spike_in
+      443   Q07791                   TSIKALHTPNIAYDLLSLSELANQNITACFTR   spike_in
+      444   Q07791                  ALHTPNIAYDLLSLSELANQNITACFTRNTLER   spike_in
+      445   Q07791                                   NTLERSDGTVLAPIVK   spike_in
+      446   Q07791                               SDGTVLAPIVKHGDFYWLSK   spike_in
+      447   Q07791                                         HGDFYWLSKK   spike_in
+      448   Q07791                                         KYLIPSHISK   spike_in
+      449   Q07791                                  YLIPSHISKLTINNVNK   spike_in
+      450   Q07791                                         LTINNVNKSK   spike_in
+      451   Q07791                                             SKSVNK   spike_in
+      452   Q07791                                       SVNKYPYPLIHR   spike_in
+      453   Q07791                                   YPYPLIHRMLGHANFR   spike_in
+      454   Q07791                                       MLGHANFRSIQK   spike_in
+      455   Q07791                                            SIQKSLK   spike_in
+      456   Q07791                                           KNAVTYLK   spike_in
+      457   Q07791                       NAVTYLKESDIEWSNASTYQCPDCLIGK   spike_in
+      458   Q07791                           ESDIEWSNASTYQCPDCLIGKSTK   spike_in
+      459   Q07791                                             HIKGSR   spike_in
+      460   Q07791                         LKYQESYEPFQYLHTDIFGPVHHLPK   spike_in
+      461   Q07791              YQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEK   spike_in
+      462   Q07791                                    SAPSYFISFTDEKTR   spike_in
+      463   Q07791                                       TRFQWVYPLHDR   spike_in
+      464   Q07791                                        FQWVYPLHDRR   spike_in
+      465   Q07791                                  REESILNVFTSILAFIK   spike_in
+      466   Q07791                             EESILNVFTSILAFIKNQFNAR   spike_in
+      467   Q07791                                     NQFNARVLVIQMDR   spike_in
+      468   Q07791                                    VLVIQMDRGSEYTNK   spike_in
+      469   Q07791                                        GSEYTNKTLHK   spike_in
+      470   Q07791                                          TLHKFFTNR   spike_in
+      471   Q07791                                 FFTNRGITACYTTTADSR   spike_in
+      472   Q07791                               GITACYTTTADSRAHGVAER   spike_in
+      473   Q07791                                         AHGVAERLNR   spike_in
+      474   Q07791                                         LNRTLLNDCR   spike_in
+      475   Q07791                    TLLNDCRTLLHCSGLPNHLWFSAVEFSTIIR   spike_in
+      476   Q07791                    TLLHCSGLPNHLWFSAVEFSTIIRNSLVSPK   spike_in
+      477   Q07791                                         NSLVSPKNDK   spike_in
+      478   Q07791                                             NDKSAR   spike_in
+      479   Q07791                  SARQHAGLAGLDITTILPFGQPVIVNNHNPDSK   spike_in
+      480   Q07791                 QHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPR   spike_in
+      481   Q07791                                    IHPRGIPGYALHPSR   spike_in
+      482   Q07791                           GIPGYALHPSRNSYGYIIYLPSLK   spike_in
+      483   Q07791                                     NSYGYIIYLPSLKK   spike_in
+      484   Q07791                                  KTVDTTNYVILQDNQSK   spike_in
+      485   Q07791                  TVDTTNYVILQDNQSKLDQFNYDTLTFDDDLNR   spike_in
+      486   Q07791                                            EPVQKVR   spike_in
+      487   Q07791                               APKEVDADISEYNILPSTIR   spike_in
+      488   Q07791                                EVDADISEYNILPSTIRSR   spike_in
+      489   Q07791                                          SRTPHIINK   spike_in
+      490   Q07791                           TPHIINKESTEMGGTIESDTTSPR   spike_in
+      491   Q07791                          ESTEMGGTIESDTTSPRHSSTFTAR   spike_in
+      492   Q07791                                        HSSTFTARNQK   spike_in
+      493   Q07791                                NQKRPGSPNDMIDLTSQDR   spike_in
+      494   Q07791                          RPGSPNDMIDLTSQDRVNYGLENIK   spike_in
+      495   Q07791                                       VNYGLENIKTTR   spike_in
+      496   Q07791                                     TTRLGGTEEPYIQR   spike_in
+      497   Q07791                                 LGGTEEPYIQRNSDTNIK   spike_in
+      498   Q07791                                          NSDTNIKYR   spike_in
+      499   Q07791                                      YRTTNSTPSIDDR   spike_in
+      500   Q07791                        TTNSTPSIDDRSSNSESTTPIISIETK   spike_in
+      501   Q07791                  SSNSESTTPIISIETKAVCDNTPSIDTDPPEYR   spike_in
+      502   Q07791                     AVCDNTPSIDTDPPEYRSSDHATPNIMPDK   spike_in
+      503   Q07791                                   SSDHATPNIMPDKSSK   spike_in
+      504   Q07791                             SSKNVTADSILDDLPLPDLTNK   spike_in
+      505   Q07791                      NVTADSILDDLPLPDLTNKSPTDTSDVSK   spike_in
+      506   Q07791                                 SPTDTSDVSKDIPHIHSR   spike_in
+      507   Q07791                        DIPHIHSRQTNSSLGGMDDSNVLTTTK   spike_in
+      508   Q07791                              QTNSSLGGMDDSNVLTTTKSK   spike_in
+      509   Q07791                                     RSLEDNETEIEVSR   spike_in
+      510   Q07791                                SLEDNETEIEVSRDTWNNK   spike_in
+      511   Q07791                                          DTWNNKNMR   spike_in
+      512   Q07791                                          NMRSLEPPR   spike_in
+      513   Q07791                                           SLEPPRSK   spike_in
+      514   Q07791                                          RINLIAAIK   spike_in
+      515   Q07791                                        INLIAAIKGVK   spike_in
+      516   Q07791                                          GVKSIKPVR   spike_in
+      517   Q07791                                         SIKPVRTTLR   spike_in
+      518   Q07791                                      TTLRYDEAITYNK   spike_in
+      519   Q07791                                       YDEAITYNKDNK   spike_in
+      520   Q07791                                          DRYVEAYHK   spike_in
+      521   Q07791                                     YVEAYHKEISQLLK   spike_in
+      522   Q07791                                    EISQLLKMNTWDTNK   spike_in
+      523   Q07791                                       MNTWDTNKYYDR   spike_in
+      524   Q07791                                         YYDRNDIDPK   spike_in
+      525   Q07791                                            NDIDPKK   spike_in
+      526   Q07791                                        KVINSMFIFNK   spike_in
+      527   Q07791                                        VINSMFIFNKK   spike_in
+      528   Q07791                                             RDGTHK   spike_in
+      529   Q07791                                            DGTHKAR   spike_in
+      530   Q07791                                             ARFVAR   spike_in
+      531   Q07791                                EELYIRPPPHLGLNDKLLR   spike_in
+      532   Q07791                                            KSLYGLK   spike_in
+      533   Q07791                                  SLYGLKQSGANWYETIK   spike_in
+      534   Q07791                           QSGANWYETIKSYLINCCDMQEVR   spike_in
+      535   Q07791                               SYLINCCDMQEVRGWSCVFK   spike_in
+      536   Q07791                          GWSCVFKNSQVTICLFVDDMILFSK   spike_in
+      537   Q07791                           NSQVTICLFVDDMILFSKDLNANK   spike_in
+      538   Q07791                                            DLNANKK   spike_in
+      539   Q07791                                            KIITTLK   spike_in
+      540   Q07791                                            IITTLKK   spike_in
+      541   Q07791                                             KQYDTK   spike_in
+      542   Q07791                         QYDTKIINLGEGDNEIQYDILGLEIK   spike_in
+      543   Q07791                           IINLGEGDNEIQYDILGLEIKYQR   spike_in
+      544   Q07791                                           YMKLGMEK   spike_in
+      545   Q07791                                         LGMEKSLTEK   spike_in
+      546   Q07791                                           SLTEKLPK   spike_in
+      547   Q07791                                        LPKLNVPLNPK   spike_in
+      548   Q07791                                         LNVPLNPKGK   spike_in
+      549   Q07791                           LRAPGQPGHYIDQDELEIDEDEYK   spike_in
+      550   Q07791                           APGQPGHYIDQDELEIDEDEYKEK   spike_in
+      551   Q07791                                           EKVHEMQK   spike_in
+      552   Q07791                                  VHEMQKLIGLASYVGYK   spike_in
+      553   Q07791                                      LIGLASYVGYKFR   spike_in
+      554   Q07791                              FRFDLLYYINTLAQHILFPSR   spike_in
+      555   Q07791               FDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTR   spike_in
+      556   Q07791                                QVLDMTYELIQFIWNTRDK   spike_in
+      557   Q07791                                           DKQLIWHK   spike_in
+      558   Q07791                                    QLIWHKSKPVKPTNK   spike_in
+      559   Q07791                          SKPVKPTNKLVVISDASYGNQPYYK   spike_in
+      560   Q07791                       LVVISDASYGNQPYYKSQIGNIYLLNGK   spike_in
+      561   Q07791                                  SQIGNIYLLNGKVIGGK   spike_in
+      562   Q07791                                           VIGGKSTK   spike_in
+      563   Q07791             STKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK   spike_in
+      564   Q07791           ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIK   spike_in
+      565   Q07791                                       KPIIKGLLTDSR   spike_in
+      566   Q07791                                     GLLTDSRSTISIIK   spike_in
+      567   Q07791                                      STISIIKSTNEEK   spike_in
+      568   Q07791                                           STNEEKFR   spike_in
+      569   Q07791                                            NRFFGTK   spike_in
+      570   Q07791                                           FFGTKAMR   spike_in
+      571   Q07791                                 LRDEVSGNNLYVYYIETK   spike_in
+      572   Q07791                     DEVSGNNLYVYYIETKMNIADVMTKPLPIK   spike_in
+      573   Q07791                                  MNIADVMTKPLPIKTFK   spike_in
+      574   Q07791                                           TFKLLTNK   spike_in
+      575   Q07791                                           LLTNKWIH   spike_in
+      576   Q07791  MESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDRDSTK   spike_in
+      577   Q07791                           TKVRNNVLPPHTLTSEENFSTWVK   spike_in
+      578   Q07791                         VRNNVLPPHTLTSEENFSTWVKFYIR   spike_in
+      579   Q07791                        NNVLPPHTLTSEENFSTWVKFYIRFLK   spike_in
+      580   Q07791                            FYIRFLKNSNLGDIIPNDQGEIK   spike_in
+      581   Q07791                               FLKNSNLGDIIPNDQGEIKR   spike_in
+      582   Q07791      NSNLGDIIPNDQGEIKRQMTYEEHAYIYNTFQAFAPFHLLPTWVK   spike_in
+      583   Q07791      RQMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCK   spike_in
+      584   Q07791   QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCKSVSK   spike_in
+      585   Q07791                      QILEINYADILTVLCKSVSKMQTNNQELK   spike_in
+      586   Q07791         SVSKMQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQR   spike_in
+      587   Q07791           MQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQRLK   spike_in
+      588   Q07791           DWIALANLEYDGSTSADTFEITVSTIIQRLKENNINVSDR   spike_in
+      589   Q07791                                LKENNINVSDRLACQLILK   spike_in
+      590   Q07791                           ENNINVSDRLACQLILKGLSGDFK   spike_in
+      591   Q07791                                 LACQLILKGLSGDFKYLR   spike_in
+      592   Q07791                                     GLSGDFKYLRNQYR   spike_in
+      593   Q07791                                          YLRNQYRTK   spike_in
+      594   Q07791                                         NQYRTKTNMK   spike_in
+      595   Q07791                             TKTNMKLSQLFAEIQLIYDENK   spike_in
+      596   Q07791                    TNMKLSQLFAEIQLIYDENKIMNLNKPSQYK   spike_in
+      597   Q07791                  LSQLFAEIQLIYDENKIMNLNKPSQYKQHSEYK   spike_in
+      598   Q07791                              IMNLNKPSQYKQHSEYKNVSR   spike_in
+      599   Q07791                                QHSEYKNVSRTSPNTTNTK   spike_in
+      600   Q07791                                  NVSRTSPNTTNTKVTSR   spike_in
+      601   Q07791                                  TSPNTTNTKVTSRNYHR   spike_in
+      602   Q07791                                    VTSRNYHRTNSSKPR   spike_in
+      603   Q07791                                     NYHRTNSSKPRAAK   spike_in
+      604   Q07791                                TNSSKPRAAKAHNIATSSK   spike_in
+      605   Q07791                                    AAKAHNIATSSKFSR   spike_in
+      606   Q07791          AHNIATSSKFSRVNNDHINESTVSSQYLSDDNELSLGQQQK   spike_in
+      607   Q07791             FSRVNNDHINESTVSSQYLSDDNELSLGQQQKESKPTR   spike_in
+      608   Q07791      SAHYLHHATPNSEINIVDAQKQDIPINAIGNLHFNFQNGTKTSIK   spike_in
+      609   Q07791              TSIKALHTPNIAYDLLSLSELANQNITACFTRNTLER   spike_in
+      610   Q07791       ALHTPNIAYDLLSLSELANQNITACFTRNTLERSDGTVLAPIVK   spike_in
+      611   Q07791                          NTLERSDGTVLAPIVKHGDFYWLSK   spike_in
+      612   Q07791                              SDGTVLAPIVKHGDFYWLSKK   spike_in
+      613   Q07791                                HGDFYWLSKKYLIPSHISK   spike_in
+      614   Q07791                                 KYLIPSHISKLTINNVNK   spike_in
+      615   Q07791                                YLIPSHISKLTINNVNKSK   spike_in
+      616   Q07791                                     LTINNVNKSKSVNK   spike_in
+      617   Q07791                                     SKSVNKYPYPLIHR   spike_in
+      618   Q07791                               SVNKYPYPLIHRMLGHANFR   spike_in
+      619   Q07791                               YPYPLIHRMLGHANFRSIQK   spike_in
+      620   Q07791                                    MLGHANFRSIQKSLK   spike_in
+      621   Q07791                                           SIQKSLKK   spike_in
+      622   Q07791                                        SLKKNAVTYLK   spike_in
+      623   Q07791                      KNAVTYLKESDIEWSNASTYQCPDCLIGK   spike_in
+      624   Q07791                    NAVTYLKESDIEWSNASTYQCPDCLIGKSTK   spike_in
+      625   Q07791                         ESDIEWSNASTYQCPDCLIGKSTKHR   spike_in
+      626   Q07791                                           STKHRHIK   spike_in
+      627   Q07791                                           HRHIKGSR   spike_in
+      628   Q07791                                           HIKGSRLK   spike_in
+      629   Q07791                      GSRLKYQESYEPFQYLHTDIFGPVHHLPK   spike_in
+      630   Q07791            LKYQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEK   spike_in
+      631   Q07791            YQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEKTR   spike_in
+      632   Q07791                          SAPSYFISFTDEKTRFQWVYPLHDR   spike_in
+      633   Q07791                                      TRFQWVYPLHDRR   spike_in
+      634   Q07791                        FQWVYPLHDRREESILNVFTSILAFIK   spike_in
+      635   Q07791                            REESILNVFTSILAFIKNQFNAR   spike_in
+      636   Q07791                     EESILNVFTSILAFIKNQFNARVLVIQMDR   spike_in
+      637   Q07791                              NQFNARVLVIQMDRGSEYTNK   spike_in
+      638   Q07791                                VLVIQMDRGSEYTNKTLHK   spike_in
+      639   Q07791                                   GSEYTNKTLHKFFTNR   spike_in
+      640   Q07791                             TLHKFFTNRGITACYTTTADSR   spike_in
+      641   Q07791                          FFTNRGITACYTTTADSRAHGVAER   spike_in
+      642   Q07791                            GITACYTTTADSRAHGVAERLNR   spike_in
+      643   Q07791                                  AHGVAERLNRTLLNDCR   spike_in
+      644   Q07791                 LNRTLLNDCRTLLHCSGLPNHLWFSAVEFSTIIR   spike_in
+      645   Q07791             TLLNDCRTLLHCSGLPNHLWFSAVEFSTIIRNSLVSPK   spike_in
+      646   Q07791                 TLLHCSGLPNHLWFSAVEFSTIIRNSLVSPKNDK   spike_in
+      647   Q07791                                      NSLVSPKNDKSAR   spike_in
+      648   Q07791               NDKSARQHAGLAGLDITTILPFGQPVIVNNHNPDSK   spike_in
+      649   Q07791              SARQHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPR   spike_in
+      650   Q07791      QHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPRGIPGYALHPSR   spike_in
+      651   Q07791                       IHPRGIPGYALHPSRNSYGYIIYLPSLK   spike_in
+      652   Q07791                          GIPGYALHPSRNSYGYIIYLPSLKK   spike_in
+      653   Q07791                     NSYGYIIYLPSLKKTVDTTNYVILQDNQSK   spike_in
+      654   Q07791                 KTVDTTNYVILQDNQSKLDQFNYDTLTFDDDLNR   spike_in
+      655   Q07791                                         EPVQKVRAPK   spike_in
+      656   Q07791                             VRAPKEVDADISEYNILPSTIR   spike_in
+      657   Q07791                             APKEVDADISEYNILPSTIRSR   spike_in
+      658   Q07791                         EVDADISEYNILPSTIRSRTPHIINK   spike_in
+      659   Q07791                         SRTPHIINKESTEMGGTIESDTTSPR   spike_in
+      660   Q07791                   TPHIINKESTEMGGTIESDTTSPRHSSTFTAR   spike_in
+      661   Q07791                       ESTEMGGTIESDTTSPRHSSTFTARNQK   spike_in
+      662   Q07791                        HSSTFTARNQKRPGSPNDMIDLTSQDR   spike_in
+      663   Q07791                       NQKRPGSPNDMIDLTSQDRVNYGLENIK   spike_in
+      664   Q07791                       RPGSPNDMIDLTSQDRVNYGLENIKTTR   spike_in
+      665   Q07791                            VNYGLENIKTTRLGGTEEPYIQR   spike_in
+      666   Q07791                              TTRLGGTEEPYIQRNSDTNIK   spike_in
+      667   Q07791                               LGGTEEPYIQRNSDTNIKYR   spike_in
+      668   Q07791                               NSDTNIKYRTTNSTPSIDDR   spike_in
+      669   Q07791                      YRTTNSTPSIDDRSSNSESTTPIISIETK   spike_in
+      670   Q07791       TTNSTPSIDDRSSNSESTTPIISIETKAVCDNTPSIDTDPPEYR   spike_in
+      671   Q07791     SSNSESTTPIISIETKAVCDNTPSIDTDPPEYRSSDHATPNIMPDK   spike_in
+      672   Q07791                  AVCDNTPSIDTDPPEYRSSDHATPNIMPDKSSK   spike_in
+      673   Q07791                SSDHATPNIMPDKSSKNVTADSILDDLPLPDLTNK   spike_in
+      674   Q07791                   SSKNVTADSILDDLPLPDLTNKSPTDTSDVSK   spike_in
+      675   Q07791              NVTADSILDDLPLPDLTNKSPTDTSDVSKDIPHIHSR   spike_in
+      676   Q07791              SPTDTSDVSKDIPHIHSRQTNSSLGGMDDSNVLTTTK   spike_in
+      677   Q07791                      DIPHIHSRQTNSSLGGMDDSNVLTTTKSK   spike_in
+      678   Q07791                             QTNSSLGGMDDSNVLTTTKSKK   spike_in
+      679   Q07791                                    KRSLEDNETEIEVSR   spike_in
+      680   Q07791                               RSLEDNETEIEVSRDTWNNK   spike_in
+      681   Q07791                             SLEDNETEIEVSRDTWNNKNMR   spike_in
+      682   Q07791                                    DTWNNKNMRSLEPPR   spike_in
+      683   Q07791                                        NMRSLEPPRSK   spike_in
+      684   Q07791                                          SLEPPRSKK   spike_in
+      685   Q07791                                         KRINLIAAIK   spike_in
+      686   Q07791                                       RINLIAAIKGVK   spike_in
+      687   Q07791                                  INLIAAIKGVKSIKPVR   spike_in
+      688   Q07791                                      GVKSIKPVRTTLR   spike_in
+      689   Q07791                                SIKPVRTTLRYDEAITYNK   spike_in
+      690   Q07791                                   TTLRYDEAITYNKDNK   spike_in
+      691   Q07791                                     YDEAITYNKDNKEK   spike_in
+      692   Q07791                                            DNKEKDR   spike_in
+      693   Q07791                                        EKDRYVEAYHK   spike_in
+      694   Q07791                                   DRYVEAYHKEISQLLK   spike_in
+      695   Q07791                             YVEAYHKEISQLLKMNTWDTNK   spike_in
+      696   Q07791                                EISQLLKMNTWDTNKYYDR   spike_in
+      697   Q07791                                 MNTWDTNKYYDRNDIDPK   spike_in
+      698   Q07791                                        YYDRNDIDPKK   spike_in
+      699   Q07791                                  NDIDPKKVINSMFIFNK   spike_in
+      700   Q07791                                       KVINSMFIFNKK   spike_in
+      701   Q07791                                       VINSMFIFNKKR   spike_in
+      702   Q07791                                            KRDGTHK   spike_in
+      703   Q07791                                           RDGTHKAR   spike_in
+      704   Q07791                                        DGTHKARFVAR   spike_in
+      705   Q07791                              EELYIRPPPHLGLNDKLLRLR   spike_in
+      706   Q07791                                             LLRLRK   spike_in
+      707   Q07791                                          LRKSLYGLK   spike_in
+      708   Q07791                                 KSLYGLKQSGANWYETIK   spike_in
+      709   Q07791                     SLYGLKQSGANWYETIKSYLINCCDMQEVR   spike_in
+      710   Q07791                    QSGANWYETIKSYLINCCDMQEVRGWSCVFK   spike_in
+      711   Q07791             SYLINCCDMQEVRGWSCVFKNSQVTICLFVDDMILFSK   spike_in
+      712   Q07791                    GWSCVFKNSQVTICLFVDDMILFSKDLNANK   spike_in
+      713   Q07791                          NSQVTICLFVDDMILFSKDLNANKK   spike_in
+      714   Q07791                                      DLNANKKIITTLK   spike_in
+      715   Q07791                                           KIITTLKK   spike_in
+      716   Q07791                                       IITTLKKQYDTK   spike_in
+      717   Q07791                        KQYDTKIINLGEGDNEIQYDILGLEIK   spike_in
+      718   Q07791                      QYDTKIINLGEGDNEIQYDILGLEIKYQR   spike_in
+      719   Q07791                         IINLGEGDNEIQYDILGLEIKYQRSK   spike_in
+      720   Q07791                                           YQRSKYMK   spike_in
+      721   Q07791                                         SKYMKLGMEK   spike_in
+      722   Q07791                                      YMKLGMEKSLTEK   spike_in
+      723   Q07791                                      LGMEKSLTEKLPK   spike_in
+      724   Q07791                                   SLTEKLPKLNVPLNPK   spike_in
+      725   Q07791                                      LPKLNVPLNPKGK   spike_in
+      726   Q07791                                        LNVPLNPKGKK   spike_in
+      727   Q07791                          KLRAPGQPGHYIDQDELEIDEDEYK   spike_in
+      728   Q07791                         LRAPGQPGHYIDQDELEIDEDEYKEK   spike_in
+      729   Q07791                     APGQPGHYIDQDELEIDEDEYKEKVHEMQK   spike_in
+      730   Q07791                                EKVHEMQKLIGLASYVGYK   spike_in
+      731   Q07791                                VHEMQKLIGLASYVGYKFR   spike_in
+      732   Q07791                   LIGLASYVGYKFRFDLLYYINTLAQHILFPSR   spike_in
+      733   Q07791             FRFDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTR   spike_in
+      734   Q07791             FDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTRDK   spike_in
+      735   Q07791                          QVLDMTYELIQFIWNTRDKQLIWHK   spike_in
+      736   Q07791                                  DKQLIWHKSKPVKPTNK   spike_in
+      737   Q07791                    QLIWHKSKPVKPTNKLVVISDASYGNQPYYK   spike_in
+      738   Q07791              SKPVKPTNKLVVISDASYGNQPYYKSQIGNIYLLNGK   spike_in
+      739   Q07791                  LVVISDASYGNQPYYKSQIGNIYLLNGKVIGGK   spike_in
+      740   Q07791                               SQIGNIYLLNGKVIGGKSTK   spike_in
+      741   Q07791        VIGGKSTKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK   spike_in
+      742   Q07791        STKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIK   spike_in
+      743   Q07791    ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIKGLLTDSR   spike_in
+      744   Q07791                                KPIIKGLLTDSRSTISIIK   spike_in
+      745   Q07791                               GLLTDSRSTISIIKSTNEEK   spike_in
+      746   Q07791                                    STISIIKSTNEEKFR   spike_in
+      747   Q07791                                         STNEEKFRNR   spike_in
+      748   Q07791                                          FRNRFFGTK   spike_in
+      749   Q07791                                         NRFFGTKAMR   spike_in
+      750   Q07791                                         FFGTKAMRLR   spike_in
+      751   Q07791                              AMRLRDEVSGNNLYVYYIETK   spike_in
+      752   Q07791                   LRDEVSGNNLYVYYIETKMNIADVMTKPLPIK   spike_in
+      753   Q07791                  DEVSGNNLYVYYIETKMNIADVMTKPLPIKTFK   spike_in
+      754   Q07791                             MNIADVMTKPLPIKTFKLLTNK   spike_in
+      755   Q07791                                        TFKLLTNKWIH   spike_in
+      756   Q07791                            ESQQLHQNPHSLHGSAAASVTSK   spike_in
+      757   Q07791       ESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDR   spike_in
+      758   Q07791   ESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDRDSTK   spike_in
+      759   Q03856                           MESQQLSNYPHISHGSACASVTSK   spike_in
+      760   Q03856                                    EVHTNQDPLDVSASK   spike_in
+      761   Q03856                                             IQEYDK   spike_in
+      762   Q03856                                YVRPPPMLTSPNDFPNWVK   spike_in
+      763   Q03856                               FLQNSNLGGIIPTVNGKPVR   spike_in
+      764   Q03856                       QITDDELTFLYNTFQIFAPSQFLPTWVK   spike_in
+      765   Q03856                                       DILSVDYTDIMK   spike_in
+      766   Q03856                    MQSDTQEANDIVTLANLQYNGSTPADAFETK   spike_in
+      767   Q03856                                            VTNIIDR   spike_in
+      768   Q03856                                        LNNNGIHINNK   spike_in
+      769   Q03856                                           VACQLIMR   spike_in
+      770   Q03856                                            GLSGEYK   spike_in
+      771   Q03856                           HLNMTVAELFLDIHAIYEEQQGSR   spike_in
+      772   Q03856                                            NSKPNYR   spike_in
+      773   Q03856                                             NPSDEK   spike_in
+      774   Q03856                                          SYTNTTKPK   spike_in
+      775   Q03856                               AHNVSTSNNSPSTDNDSISK   spike_in
+      776   Q03856                                        STTEPIQLNNK   spike_in
+      777   Q03856                                         HDLHLRPGTY   spike_in
+      778   Q03856            MESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASK   spike_in
+      779   Q03856                              EVHTNQDPLDVSASKIQEYDK   spike_in
+      780   Q03856                                         IQEYDKASTK   spike_in
+      781   Q03856                               KYVRPPPMLTSPNDFPNWVK   spike_in
+      782   Q03856                            YVRPPPMLTSPNDFPNWVKTYIK   spike_in
+      783   Q03856                           TYIKFLQNSNLGGIIPTVNGKPVR   spike_in
+      784   Q03856   FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK   spike_in
+      785   Q03856           QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK   spike_in
+      786   Q03856                                   DILSVDYTDIMKILSK   spike_in
+      787   Q03856                                           ILSKSIEK   spike_in
+      788   Q03856                SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK   spike_in
+      789   Q03856             MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR   spike_in
+      790   Q03856                                 VTNIIDRLNNNGIHINNK   spike_in
+      791   Q03856                                LNNNGIHINNKVACQLIMR   spike_in
+      792   Q03856                                    VACQLIMRGLSGEYK   spike_in
+      793   Q03856                                         GLSGEYKFLR   spike_in
+      794   Q03856                                             FLRYTR   spike_in
+      795   Q03856                         HRHLNMTVAELFLDIHAIYEEQQGSR   spike_in
+      796   Q03856                    HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR   spike_in
+      797   Q03856                                           NSKPNYRR   spike_in
+      798   Q03856                                            RNPSDEK   spike_in
+      799   Q03856                                         NPSDEKNDSR   spike_in
+      800   Q03856                                      NDSRSYTNTTKPK   spike_in
+      801   Q03856                                      SYTNTTKPKVIAR   spike_in
+      802   Q03856                                           VIARNPQK   spike_in
+      803   Q03856                                          NPQKTNNSK   spike_in
+      804   Q03856                                            TNNSKSK   spike_in
+      805   Q03856                            TARAHNVSTSNNSPSTDNDSISK   spike_in
+      806   Q03856                    AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK   spike_in
+      807   Q03856                              STTEPIQLNNKHDLHLRPGTY   spike_in
+      808   Q03856      MESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASKIQEYDK   spike_in
+      809   Q03856                          EVHTNQDPLDVSASKIQEYDKASTK   spike_in
+      810   Q03856                           KYVRPPPMLTSPNDFPNWVKTYIK   spike_in
+      811   Q03856        YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR   spike_in
+      812   Q03856       QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK   spike_in
+      813   Q03856                               DILSVDYTDIMKILSKSIEK   spike_in
+      814   Q03856            ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK   spike_in
+      815   Q03856         SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR   spike_in
+      816   Q03856  MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK   spike_in
+      817   Q03856                         VTNIIDRLNNNGIHINNKVACQLIMR   spike_in
+      818   Q03856                         LNNNGIHINNKVACQLIMRGLSGEYK   spike_in
+      819   Q03856                                 VACQLIMRGLSGEYKFLR   spike_in
+      820   Q03856                                      GLSGEYKFLRYTR   spike_in
+      821   Q03856                                           FLRYTRHR   spike_in
+      822   Q03856                      YTRHRHLNMTVAELFLDIHAIYEEQQGSR   spike_in
+      823   Q03856                  HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR   spike_in
+      824   Q03856                   HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR   spike_in
+      825   Q03856                                     NSKPNYRRNPSDEK   spike_in
+      826   Q03856                                        RNPSDEKNDSR   spike_in
+      827   Q03856                                NPSDEKNDSRSYTNTTKPK   spike_in
+      828   Q03856                                  NDSRSYTNTTKPKVIAR   spike_in
+      829   Q03856                                  SYTNTTKPKVIARNPQK   spike_in
+      830   Q03856                                      VIARNPQKTNNSK   spike_in
+      831   Q03856                                        NPQKTNNSKSK   spike_in
+      832   Q03856                                         TNNSKSKTAR   spike_in
+      833   Q03856                          SKTARAHNVSTSNNSPSTDNDSISK   spike_in
+      834   Q03856                 TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK   spike_in
+      835   Q03856          AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLRPGTY   spike_in
+      836   Q03856                            ESQQLSNYPHISHGSACASVTSK   spike_in
+      837   Q03856             ESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASK   spike_in
+      838   Q03856       ESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASKIQEYDK   spike_in
+      839   Q07793                           MESQQLSQHSPISHGSACASVTSK   spike_in
+      840   Q07793                                    EVHTNQDPLDVSASK   spike_in
+      841   Q07793                                             TEECEK   spike_in
+      842   Q07793                                YVRPPPMLTSPNDFPNWVK   spike_in
+      843   Q07793                               FLQNSNLGGIIPTVNGKPVR   spike_in
+      844   Q07793                       QITDDELTFLYNTFQIFAPSQFLPTWVK   spike_in
+      845   Q07793                                       DILSVDYTDIMK   spike_in
+      846   Q07793                    MQSDTQEANDIVTLANLQYNGSTPADAFETK   spike_in
+      847   Q07793                                            VTNIIDR   spike_in
+      848   Q07793                                        LNNNGIHINNK   spike_in
+      849   Q07793                                           VACQLIMR   spike_in
+      850   Q07793                                            GLSGEYK   spike_in
+      851   Q07793                           HLNMTVAELFLDIHAIYEEQQGSR   spike_in
+      852   Q07793                                            NSKPNYR   spike_in
+      853   Q07793                                             NPSDEK   spike_in
+      854   Q07793                                          SYTNTTKPK   spike_in
+      855   Q07793                               AHNVSTSNNSPSTDNDSISK   spike_in
+      856   Q07793                                        STTEPIQLNNK   spike_in
+      857   Q07793                                           HDLHLGQK   spike_in
+      858   Q07793                       LTESTVNHTNHSDDELPGHLLLDSGASR   spike_in
+      859   Q07793                              SAHHIHSASSNPDINVVDAQK   spike_in
+      860   Q07793                                NIPINAIGDLQFHFQDNTK   spike_in
+      861   Q07793                       VLHTPNIAYDLLSLNELAAVDITACFTK   spike_in
+      862   Q07793                                        SDGTVLAPIVK   spike_in
+      863   Q07793                                          YGDFYWVSK   spike_in
+      864   Q07793                             YLLPSNISVPTINNVHTSESTR   spike_in
+      865   Q07793                                           YPYPFIHR   spike_in
+      866   Q07793                                        MLAHANAQTIR   spike_in
+      867   Q07793                      NNTITYFNESDVDWSSAIDYQCPDCLIGK   spike_in
+      868   Q07793            YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK   spike_in
+      869   Q07793                                           WVYPLHDR   spike_in
+      870   Q07793                                   EDSILDVFTTILAFIK   spike_in
+      871   Q07793                                     NQFQASVLVIQMDR   spike_in
+      872   Q07793                                            GSEYTNR   spike_in
+      873   Q07793                                     NGITPCYTTTADSR   spike_in
+      874   Q07793                                            AHGVAER   spike_in
+      875   Q07793                                            TLLDDCR   spike_in
+      876   Q07793                           TQLQCSGLPNHLWFSAIEFSTIVR   spike_in
+      877   Q07793                                            NSLASPK   spike_in
+      878   Q07793                     QHAGLAGLDISTLLPFGQPVIVNDHNPNSK   spike_in
+      879   Q07793                                        GIPGYALHPSR   spike_in
+      880   Q07793                                      NSYGYIIYLPSLK   spike_in
+      881   Q07793                                      TVDTTNYVILQGK   spike_in
+      882   Q07793                                  LDQFNYDALTFDEDLNR   spike_in
+      883   Q07793           LTASYHSFIASNEIQESNDLNIESDHDFQSDIELHPEQPR   spike_in
+      884   Q07793                                 AVSPTDSTPPSTHTEDSK   spike_in
+      885   Q07793                                    EVDPNISESNILPSK   spike_in
+      886   Q07793                                SSTPQISNIESTGSGGMHK   spike_in
+      887   Q07793                             LNVPLLAPMSQSNTHESSHASK   spike_in
+      888   Q07793                         HSDSYSENETNHTNVPISSTGGTNNK   spike_in
+      889   Q07793                                       TVPQISDQETEK   spike_in
+      890   Q07793                              SPSIDASPPENNSSHNIVPIK   spike_in
+      891   Q07793               TPTTVSEQNTEESIIADLPLPDLPPESPTEFPDPFK   spike_in
+      892   Q07793                                           ELPPINSR   spike_in
+      893   Q07793                              QTNSSLGGIGDSNAYTTINSK   spike_in
+      894   Q07793                                         SLEDNETEIK   spike_in
+      895   Q07793                                             DTWNTK   spike_in
+      896   Q07793                                             SLEPPR   spike_in
+      897   Q07793                                           IHLIAAVK   spike_in
+      898   Q07793                                             SIKPIR   spike_in
+      899   Q07793                                          YDEAITYNK   spike_in
+      900   Q07793                                            YIEAYHK   spike_in
+      901   Q07793                                            EVNQLLK   spike_in
+      902   Q07793                                         TWDTDEYYDR   spike_in
+      903   Q07793                                         VINSMFIFNK   spike_in
+      904   Q07793                                   EELYIRPPPHLGMNDK   spike_in
+      905   Q07793                                             SLYGLK   spike_in
+      906   Q07793                                        QSGANWYETIK   spike_in
+      907   Q07793                                      SYLIQQCGMEEVR   spike_in
+      908   Q07793                                            GWSCVFK   spike_in
+      909   Q07793                                 NSQVTICLFVDDMVLFSK   spike_in
+      910   Q07793                                             NLNSNK   spike_in
+      911   Q07793                                             MQYDTK   spike_in
+      912   Q07793                              IINLGESDEEIQYDILGLEIK   spike_in
+      913   Q07793                                         LGMENSLTEK   spike_in
+      914   Q07793                                           LNVPLNPK   spike_in
+      915   Q07793                           LSAPGQPGLYIDQDELEIDEDEYK   spike_in
+      916   Q07793                                             VHEMQK   spike_in
+      917   Q07793                                        LIGLASYVGYK   spike_in
+      918   Q07793                                FDLLYYINTLAQHILFPSR   spike_in
+      919   Q07793                                  QVLDMTYELIQFMWDTR   spike_in
+      920   Q07793                                             QLIWHK   spike_in
+      921   Q07793            MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK   spike_in
+      922   Q07793                              EVHTNQDPLDVSASKTEECEK   spike_in
+      923   Q07793                                         TEECEKASTK   spike_in
+      924   Q07793                               KYVRPPPMLTSPNDFPNWVK   spike_in
+      925   Q07793                            YVRPPPMLTSPNDFPNWVKTYIK   spike_in
+      926   Q07793                           TYIKFLQNSNLGGIIPTVNGKPVR   spike_in
+      927   Q07793   FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK   spike_in
+      928   Q07793           QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK   spike_in
+      929   Q07793                                   DILSVDYTDIMKILSK   spike_in
+      930   Q07793                                           ILSKSIEK   spike_in
+      931   Q07793                SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK   spike_in
+      932   Q07793             MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR   spike_in
+      933   Q07793                                 VTNIIDRLNNNGIHINNK   spike_in
+      934   Q07793                                LNNNGIHINNKVACQLIMR   spike_in
+      935   Q07793                                    VACQLIMRGLSGEYK   spike_in
+      936   Q07793                                         GLSGEYKFLR   spike_in
+      937   Q07793                                             FLRYTR   spike_in
+      938   Q07793                         HRHLNMTVAELFLDIHAIYEEQQGSR   spike_in
+      939   Q07793                    HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR   spike_in
+      940   Q07793                                           NSKPNYRR   spike_in
+      941   Q07793                                            RNPSDEK   spike_in
+      942   Q07793                                         NPSDEKNDSR   spike_in
+      943   Q07793                                      NDSRSYTNTTKPK   spike_in
+      944   Q07793                                      SYTNTTKPKVIAR   spike_in
+      945   Q07793                                           VIARNPQK   spike_in
+      946   Q07793                                          NPQKTNNSK   spike_in
+      947   Q07793                                            TNNSKSK   spike_in
+      948   Q07793                            TARAHNVSTSNNSPSTDNDSISK   spike_in
+      949   Q07793                    AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK   spike_in
+      950   Q07793                                STTEPIQLNNKHDLHLGQK   spike_in
+      951   Q07793               HDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASR   spike_in
+      952   Q07793                   LTESTVNHTNHSDDELPGHLLLDSGASRTLIR   spike_in
+      953   Q07793                          TLIRSAHHIHSASSNPDINVVDAQK   spike_in
+      954   Q07793                             SAHHIHSASSNPDINVVDAQKR   spike_in
+      955   Q07793                               RNIPINAIGDLQFHFQDNTK   spike_in
+      956   Q07793                            NIPINAIGDLQFHFQDNTKTSIK   spike_in
+      957   Q07793                   TSIKVLHTPNIAYDLLSLNELAAVDITACFTK   spike_in
+      958   Q07793                  VLHTPNIAYDLLSLNELAAVDITACFTKNVLER   spike_in
+      959   Q07793                                   NVLERSDGTVLAPIVK   spike_in
+      960   Q07793                               SDGTVLAPIVKYGDFYWVSK   spike_in
+      961   Q07793                                         YGDFYWVSKK   spike_in
+      962   Q07793                            KYLLPSNISVPTINNVHTSESTR   spike_in
+      963   Q07793                            YLLPSNISVPTINNVHTSESTRK   spike_in
+      964   Q07793                                          KYPYPFIHR   spike_in
+      965   Q07793                                YPYPFIHRMLAHANAQTIR   spike_in
+      966   Q07793                                    MLAHANAQTIRYSLK   spike_in
+      967   Q07793                  YSLKNNTITYFNESDVDWSSAIDYQCPDCLIGK   spike_in
+      968   Q07793                   NNTITYFNESDVDWSSAIDYQCPDCLIGKSTK   spike_in
+      969   Q07793                                             HIKGSR   spike_in
+      970   Q07793          LKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK   spike_in
+      971   Q07793          YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFR   spike_in
+      972   Q07793                                         FRWVYPLHDR   spike_in
+      973   Q07793                                          WVYPLHDRR   spike_in
+      974   Q07793                                  REDSILDVFTTILAFIK   spike_in
+      975   Q07793                     EDSILDVFTTILAFIKNQFQASVLVIQMDR   spike_in
+      976   Q07793                              NQFQASVLVIQMDRGSEYTNR   spike_in
+      977   Q07793                                        GSEYTNRTLHK   spike_in
+      978   Q07793                                           TLHKFLEK   spike_in
+      979   Q07793                                 FLEKNGITPCYTTTADSR   spike_in
+      980   Q07793                              NGITPCYTTTADSRAHGVAER   spike_in
+      981   Q07793                                         AHGVAERLNR   spike_in
+      982   Q07793                                         LNRTLLDDCR   spike_in
+      983   Q07793                    TLLDDCRTQLQCSGLPNHLWFSAIEFSTIVR   spike_in
+      984   Q07793                    TQLQCSGLPNHLWFSAIEFSTIVRNSLASPK   spike_in
+      985   Q07793                                          NSLASPKSK   spike_in
+      986   Q07793                  SARQHAGLAGLDISTLLPFGQPVIVNDHNPNSK   spike_in
+      987   Q07793                 QHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPR   spike_in
+      988   Q07793                                    IHPRGIPGYALHPSR   spike_in
+      989   Q07793                           GIPGYALHPSRNSYGYIIYLPSLK   spike_in
+      990   Q07793                                     NSYGYIIYLPSLKK   spike_in
+      991   Q07793                                     KTVDTTNYVILQGK   spike_in
+      992   Q07793                                   TVDTTNYVILQGKESR   spike_in
+      993   Q07793                               ESRLDQFNYDALTFDEDLNR   spike_in
+      994   Q07793      LTASYHSFIASNEIQESNDLNIESDHDFQSDIELHPEQPRNVLSK   spike_in
+      995   Q07793                            NVLSKAVSPTDSTPPSTHTEDSK   spike_in
+      996   Q07793                                AVSPTDSTPPSTHTEDSKR   spike_in
+      997   Q07793                                            VSKTNIR   spike_in
+      998   Q07793                                            TNIRAPR   spike_in
+      999   Q07793                                 APREVDPNISESNILPSK   spike_in
+      1000  Q07793                                   EVDPNISESNILPSKK   spike_in
+      1001  Q07793                               RSSTPQISNIESTGSGGMHK   spike_in
+      1002  Q07793          SSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASK   spike_in
+      1003  Q07793                           LNVPLLAPMSQSNTHESSHASKSK   spike_in
+      1004  Q07793                      DFRHSDSYSENETNHTNVPISSTGGTNNK   spike_in
+      1005  Q07793             HSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEK   spike_in
+      1006  Q07793                                      TVPQISDQETEKR   spike_in
+      1007  Q07793                          IIHRSPSIDASPPENNSSHNIVPIK   spike_in
+      1008  Q07793       TPTTVSEQNTEESIIADLPLPDLPPESPTEFPDPFKELPPINSR   spike_in
+      1009  Q07793                      ELPPINSRQTNSSLGGIGDSNAYTTINSK   spike_in
+      1010  Q07793                             QTNSSLGGIGDSNAYTTINSKK   spike_in
+      1011  Q07793                                        RSLEDNETEIK   spike_in
+      1012  Q07793                                      SLEDNETEIKVSR   spike_in
+      1013  Q07793                                          VSRDTWNTK   spike_in
+      1014  Q07793                                          DTWNTKNMR   spike_in
+      1015  Q07793                                          NMRSLEPPR   spike_in
+      1016  Q07793                                           SLEPPRSK   spike_in
+      1017  Q07793                                          RIHLIAAVK   spike_in
+      1018  Q07793                                        IHLIAAVKAVK   spike_in
+      1019  Q07793                                          AVKSIKPIR   spike_in
+      1020  Q07793                                         SIKPIRTTLR   spike_in
+      1021  Q07793                                      TTLRYDEAITYNK   spike_in
+      1022  Q07793                                       YDEAITYNKDIK   spike_in
+      1023  Q07793                                          EKYIEAYHK   spike_in
+      1024  Q07793                                     YIEAYHKEVNQLLK   spike_in
+      1025  Q07793                                          EVNQLLKMK   spike_in
+      1026  Q07793                                       MKTWDTDEYYDR   spike_in
+      1027  Q07793                                        TWDTDEYYDRK   spike_in
+      1028  Q07793                                             KEIDPK   spike_in
+      1029  Q07793                                             EIDPKR   spike_in
+      1030  Q07793                                        RVINSMFIFNK   spike_in
+      1031  Q07793                                        VINSMFIFNKK   spike_in
+      1032  Q07793                                             RDGTHK   spike_in
+      1033  Q07793                                            DGTHKAR   spike_in
+      1034  Q07793                                             ARFVAR   spike_in
+      1035  Q07793                                EELYIRPPPHLGMNDKLIR   spike_in
+      1036  Q07793                                            KSLYGLK   spike_in
+      1037  Q07793                                  SLYGLKQSGANWYETIK   spike_in
+      1038  Q07793                           QSGANWYETIKSYLIQQCGMEEVR   spike_in
+      1039  Q07793                               SYLIQQCGMEEVRGWSCVFK   spike_in
+      1040  Q07793                          GWSCVFKNSQVTICLFVDDMVLFSK   spike_in
+      1041  Q07793                           NSQVTICLFVDDMVLFSKNLNSNK   spike_in
+      1042  Q07793                                            NLNSNKR   spike_in
+      1043  Q07793                                             IIEKLK   spike_in
+      1044  Q07793                                           LKMQYDTK   spike_in
+      1045  Q07793                        MQYDTKIINLGESDEEIQYDILGLEIK   spike_in
+      1046  Q07793                           IINLGESDEEIQYDILGLEIKYQR   spike_in
+      1047  Q07793                                      YMKLGMENSLTEK   spike_in
+      1048  Q07793                                      LGMENSLTEKIPK   spike_in
+      1049  Q07793                                        IPKLNVPLNPK   spike_in
+      1050  Q07793                                         LNVPLNPKGR   spike_in
+      1051  Q07793                          KLSAPGQPGLYIDQDELEIDEDEYK   spike_in
+      1052  Q07793                         LSAPGQPGLYIDQDELEIDEDEYKEK   spike_in
+      1053  Q07793                                           EKVHEMQK   spike_in
+      1054  Q07793                                  VHEMQKLIGLASYVGYK   spike_in
+      1055  Q07793                                      LIGLASYVGYKFR   spike_in
+      1056  Q07793                              FRFDLLYYINTLAQHILFPSR   spike_in
+      1057  Q07793               FDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTR   spike_in
+      1058  Q07793                                QVLDMTYELIQFMWDTRDK   spike_in
+      1059  Q07793                                           DKQLIWHK   spike_in
+      1060  Q07793                                           QLIWHKHK   spike_in
+      1061  Q07793                                            HKTSSDK   spike_in
+      1062  Q07793                                            TSSDKNI   spike_in
+      1063  Q07793      MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK   spike_in
+      1064  Q07793                          EVHTNQDPLDVSASKTEECEKASTK   spike_in
+      1065  Q07793                           KYVRPPPMLTSPNDFPNWVKTYIK   spike_in
+      1066  Q07793        YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR   spike_in
+      1067  Q07793       QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK   spike_in
+      1068  Q07793                               DILSVDYTDIMKILSKSIEK   spike_in
+      1069  Q07793            ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK   spike_in
+      1070  Q07793         SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR   spike_in
+      1071  Q07793  MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK   spike_in
+      1072  Q07793                         VTNIIDRLNNNGIHINNKVACQLIMR   spike_in
+      1073  Q07793                         LNNNGIHINNKVACQLIMRGLSGEYK   spike_in
+      1074  Q07793                                 VACQLIMRGLSGEYKFLR   spike_in
+      1075  Q07793                                      GLSGEYKFLRYTR   spike_in
+      1076  Q07793                                           FLRYTRHR   spike_in
+      1077  Q07793                      YTRHRHLNMTVAELFLDIHAIYEEQQGSR   spike_in
+      1078  Q07793                  HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR   spike_in
+      1079  Q07793                   HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR   spike_in
+      1080  Q07793                                     NSKPNYRRNPSDEK   spike_in
+      1081  Q07793                                        RNPSDEKNDSR   spike_in
+      1082  Q07793                                NPSDEKNDSRSYTNTTKPK   spike_in
+      1083  Q07793                                  NDSRSYTNTTKPKVIAR   spike_in
+      1084  Q07793                                  SYTNTTKPKVIARNPQK   spike_in
+      1085  Q07793                                      VIARNPQKTNNSK   spike_in
+      1086  Q07793                                        NPQKTNNSKSK   spike_in
+      1087  Q07793                                         TNNSKSKTAR   spike_in
+      1088  Q07793                          SKTARAHNVSTSNNSPSTDNDSISK   spike_in
+      1089  Q07793                 TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK   spike_in
+      1090  Q07793            AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLGQK   spike_in
+      1091  Q07793    STTEPIQLNNKHDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASR   spike_in
+      1092  Q07793           HDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASRTLIR   spike_in
+      1093  Q07793                         TLIRSAHHIHSASSNPDINVVDAQKR   spike_in
+      1094  Q07793          SAHHIHSASSNPDINVVDAQKRNIPINAIGDLQFHFQDNTK   spike_in
+      1095  Q07793                           RNIPINAIGDLQFHFQDNTKTSIK   spike_in
+      1096  Q07793              TSIKVLHTPNIAYDLLSLNELAAVDITACFTKNVLER   spike_in
+      1097  Q07793       VLHTPNIAYDLLSLNELAAVDITACFTKNVLERSDGTVLAPIVK   spike_in
+      1098  Q07793                          NVLERSDGTVLAPIVKYGDFYWVSK   spike_in
+      1099  Q07793                              SDGTVLAPIVKYGDFYWVSKK   spike_in
+      1100  Q07793                   YGDFYWVSKKYLLPSNISVPTINNVHTSESTR   spike_in
+      1101  Q07793                           KYLLPSNISVPTINNVHTSESTRK   spike_in
+      1102  Q07793                    YLLPSNISVPTINNVHTSESTRKYPYPFIHR   spike_in
+      1103  Q07793                               KYPYPFIHRMLAHANAQTIR   spike_in
+      1104  Q07793                            YPYPFIHRMLAHANAQTIRYSLK   spike_in
+      1105  Q07793       MLAHANAQTIRYSLKNNTITYFNESDVDWSSAIDYQCPDCLIGK   spike_in
+      1106  Q07793               YSLKNNTITYFNESDVDWSSAIDYQCPDCLIGKSTK   spike_in
+      1107  Q07793                 NNTITYFNESDVDWSSAIDYQCPDCLIGKSTKHR   spike_in
+      1108  Q07793                                           STKHRHIK   spike_in
+      1109  Q07793                                           HRHIKGSR   spike_in
+      1110  Q07793                                           HIKGSRLK   spike_in
+      1111  Q07793       GSRLKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK   spike_in
+      1112  Q07793        LKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFR   spike_in
+      1113  Q07793  YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFRWVYPLHDR   spike_in
+      1114  Q07793                                        FRWVYPLHDRR   spike_in
+      1115  Q07793                          WVYPLHDRREDSILDVFTTILAFIK   spike_in
+      1116  Q07793                    REDSILDVFTTILAFIKNQFQASVLVIQMDR   spike_in
+      1117  Q07793              EDSILDVFTTILAFIKNQFQASVLVIQMDRGSEYTNR   spike_in
+      1118  Q07793                          NQFQASVLVIQMDRGSEYTNRTLHK   spike_in
+      1119  Q07793                                    GSEYTNRTLHKFLEK   spike_in
+      1120  Q07793                             TLHKFLEKNGITPCYTTTADSR   spike_in
+      1121  Q07793                          FLEKNGITPCYTTTADSRAHGVAER   spike_in
+      1122  Q07793                           NGITPCYTTTADSRAHGVAERLNR   spike_in
+      1123  Q07793                                  AHGVAERLNRTLLDDCR   spike_in
+      1124  Q07793                 LNRTLLDDCRTQLQCSGLPNHLWFSAIEFSTIVR   spike_in
+      1125  Q07793             TLLDDCRTQLQCSGLPNHLWFSAIEFSTIVRNSLASPK   spike_in
+      1126  Q07793                  TQLQCSGLPNHLWFSAIEFSTIVRNSLASPKSK   spike_in
+      1127  Q07793                                         NSLASPKSKK   spike_in
+      1128  Q07793                                             SKKSAR   spike_in
+      1129  Q07793                 KSARQHAGLAGLDISTLLPFGQPVIVNDHNPNSK   spike_in
+      1130  Q07793              SARQHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPR   spike_in
+      1131  Q07793      QHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPRGIPGYALHPSR   spike_in
+      1132  Q07793                       IHPRGIPGYALHPSRNSYGYIIYLPSLK   spike_in
+      1133  Q07793                          GIPGYALHPSRNSYGYIIYLPSLKK   spike_in
+      1134  Q07793                        NSYGYIIYLPSLKKTVDTTNYVILQGK   spike_in
+      1135  Q07793                                  KTVDTTNYVILQGKESR   spike_in
+      1136  Q07793                  TVDTTNYVILQGKESRLDQFNYDALTFDEDLNR   spike_in
+      1137  Q07793                           NVLSKAVSPTDSTPPSTHTEDSKR   spike_in
+      1138  Q07793                             AVSPTDSTPPSTHTEDSKRVSK   spike_in
+      1139  Q07793                                           RVSKTNIR   spike_in
+      1140  Q07793                                         VSKTNIRAPR   spike_in
+      1141  Q07793                             TNIRAPREVDPNISESNILPSK   spike_in
+      1142  Q07793                                APREVDPNISESNILPSKK   spike_in
+      1143  Q07793                                  EVDPNISESNILPSKKR   spike_in
+      1144  Q07793                              KRSSTPQISNIESTGSGGMHK   spike_in
+      1145  Q07793         RSSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASK   spike_in
+      1146  Q07793        SSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASKSK   spike_in
+      1147  Q07793                        LNVPLLAPMSQSNTHESSHASKSKDFR   spike_in
+      1148  Q07793                    SKDFRHSDSYSENETNHTNVPISSTGGTNNK   spike_in
+      1149  Q07793          DFRHSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEK   spike_in
+      1150  Q07793            HSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEKR   spike_in
+      1151  Q07793                                  TVPQISDQETEKRIIHR   spike_in
+      1152  Q07793                         RIIHRSPSIDASPPENNSSHNIVPIK   spike_in
+      1153  Q07793                     ELPPINSRQTNSSLGGIGDSNAYTTINSKK   spike_in
+      1154  Q07793                            QTNSSLGGIGDSNAYTTINSKKR   spike_in
+      1155  Q07793                                       KRSLEDNETEIK   spike_in
+      1156  Q07793                                     RSLEDNETEIKVSR   spike_in
+      1157  Q07793                                SLEDNETEIKVSRDTWNTK   spike_in
+      1158  Q07793                                       VSRDTWNTKNMR   spike_in
+      1159  Q07793                                    DTWNTKNMRSLEPPR   spike_in
+      1160  Q07793                                        NMRSLEPPRSK   spike_in
+      1161  Q07793                                          SLEPPRSKK   spike_in
+      1162  Q07793                                         KRIHLIAAVK   spike_in
+      1163  Q07793                                       RIHLIAAVKAVK   spike_in
+      1164  Q07793                                  IHLIAAVKAVKSIKPIR   spike_in
+      1165  Q07793                                      AVKSIKPIRTTLR   spike_in
+      1166  Q07793                                SIKPIRTTLRYDEAITYNK   spike_in
+      1167  Q07793                                   TTLRYDEAITYNKDIK   spike_in
+      1168  Q07793                                     YDEAITYNKDIKEK   spike_in
+      1169  Q07793                                            DIKEKEK   spike_in
+      1170  Q07793                                        EKEKYIEAYHK   spike_in
+      1171  Q07793                                   EKYIEAYHKEVNQLLK   spike_in
+      1172  Q07793                                   YIEAYHKEVNQLLKMK   spike_in
+      1173  Q07793                                EVNQLLKMKTWDTDEYYDR   spike_in
+      1174  Q07793                                      MKTWDTDEYYDRK   spike_in
+      1175  Q07793                                   TWDTDEYYDRKEIDPK   spike_in
+      1176  Q07793                                            KEIDPKR   spike_in
+      1177  Q07793                                   EIDPKRVINSMFIFNK   spike_in
+      1178  Q07793                                       RVINSMFIFNKK   spike_in
+      1179  Q07793                                       VINSMFIFNKKR   spike_in
+      1180  Q07793                                            KRDGTHK   spike_in
+      1181  Q07793                                           RDGTHKAR   spike_in
+      1182  Q07793                                        DGTHKARFVAR   spike_in
+      1183  Q07793                              EELYIRPPPHLGMNDKLIRLK   spike_in
+      1184  Q07793                                             LIRLKK   spike_in
+      1185  Q07793                                          LKKSLYGLK   spike_in
+      1186  Q07793                                 KSLYGLKQSGANWYETIK   spike_in
+      1187  Q07793                     SLYGLKQSGANWYETIKSYLIQQCGMEEVR   spike_in
+      1188  Q07793                    QSGANWYETIKSYLIQQCGMEEVRGWSCVFK   spike_in
+      1189  Q07793             SYLIQQCGMEEVRGWSCVFKNSQVTICLFVDDMVLFSK   spike_in
+      1190  Q07793                    GWSCVFKNSQVTICLFVDDMVLFSKNLNSNK   spike_in
+      1191  Q07793                          NSQVTICLFVDDMVLFSKNLNSNKR   spike_in
+      1192  Q07793                                        NLNSNKRIIEK   spike_in
+      1193  Q07793                                            RIIEKLK   spike_in
+      1194  Q07793                                       IIEKLKMQYDTK   spike_in
+      1195  Q07793                      LKMQYDTKIINLGESDEEIQYDILGLEIK   spike_in
+      1196  Q07793                     MQYDTKIINLGESDEEIQYDILGLEIKYQR   spike_in
+      1197  Q07793                         IINLGESDEEIQYDILGLEIKYQRGK   spike_in
+      1198  Q07793                                           YQRGKYMK   spike_in
+      1199  Q07793                                    GKYMKLGMENSLTEK   spike_in
+      1200  Q07793                                   YMKLGMENSLTEKIPK   spike_in
+      1201  Q07793                              LGMENSLTEKIPKLNVPLNPK   spike_in
+      1202  Q07793                                      IPKLNVPLNPKGR   spike_in
+      1203  Q07793                                        LNVPLNPKGRK   spike_in
+      1204  Q07793                        GRKLSAPGQPGLYIDQDELEIDEDEYK   spike_in
+      1205  Q07793                        KLSAPGQPGLYIDQDELEIDEDEYKEK   spike_in
+      1206  Q07793                   LSAPGQPGLYIDQDELEIDEDEYKEKVHEMQK   spike_in
+      1207  Q07793                                EKVHEMQKLIGLASYVGYK   spike_in
+      1208  Q07793                                VHEMQKLIGLASYVGYKFR   spike_in
+      1209  Q07793                   LIGLASYVGYKFRFDLLYYINTLAQHILFPSR   spike_in
+      1210  Q07793             FRFDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTR   spike_in
+      1211  Q07793             FDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTRDK   spike_in
+      1212  Q07793                          QVLDMTYELIQFMWDTRDKQLIWHK   spike_in
+      1213  Q07793                                         DKQLIWHKHK   spike_in
+      1214  Q07793                                      QLIWHKHKTSSDK   spike_in
+      1215  Q07793                                          HKTSSDKNI   spike_in
+      1216  Q07793                            ESQQLSQHSPISHGSACASVTSK   spike_in
+      1217  Q07793             ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK   spike_in
+      1218  Q07793       ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK   spike_in
 

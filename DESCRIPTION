@@ -29,7 +29,8 @@ Imports:
     robustbase,
     Rsolnp,
     seqinr,
-    stringr
+    stringr,
+    SummarizedExperiment
 Suggests: 
     covr,
     rmarkdown,

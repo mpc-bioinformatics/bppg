@@ -11,11 +11,11 @@ generateGraphsFromQuantData(
   missed_cleavages = 2,
   min_aa = 6,
   max_aa = 50,
-  id_columns = 1,
   seq_column = "Sequence",
   collProtNodes = TRUE,
   collPeptNodes = FALSE,
   suffix = "",
+  protOrigin = NULL,
   ...
 )
 }
@@ -46,13 +46,8 @@ in a peptide.}
 The maximum number of amino acids
 in a peptide.}
 
-\item{id_columns}{\strong{integer vector} \cr
-The columns of D that contain ID information
-(the rest should contain only peptide
-intensities, properly normalized).}
-
 \item{seq_column}{\strong{character} \cr
-The column name of the column with the
+The column name of the column of D with the
 peptide sequences.}
 
 \item{collProtNodes}{\strong{logical} \cr
@@ -66,15 +61,29 @@ will be collapsed.}
 \item{suffix}{\strong{character} \cr
 The suffix for output files.}
 
-\item{...}{currently not in use}
+\item{protOrigin}{\strong{list or data.frame} \cr
+A list with the protein orgin corresponding to
+\link[seqinr:fasta]{seqinr::fasta}, proteins are used as rownames/index.}
+
+\item{...}{Additional arguments for \code{\link[=.digest2]{.digest2()}}.}
 }
 \value{
-A list of list of graphs
+A list of list of graphs.
 }
 \description{
 Generate graphs from quantitative peptide-level data
 }
+\examples{
+library(seqinr)
+file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+
+file <- system.file("extdata", "peptides.txt", package = "bppg")
+D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+
+graphs <- bppg::generateGraphsFromQuantData(D, fasta)
+}
 \seealso{
 \code{\link[=readMqPeptideTable]{readMqPeptideTable()}}, \code{\link[seqinr:read.fasta]{seqinr::read.fasta()}},
-\code{\link[=.generateQuantGraphs]{.generateQuantGraphs()}}, \code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}
+\code{\link[=generateQuantGraphs]{generateQuantGraphs()}}, \code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}
 }
