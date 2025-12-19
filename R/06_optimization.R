@@ -283,7 +283,8 @@
     M <- igraph::as_biadjacency_matrix(G)
     m <- ncol(M) ## number of proteins
     n <- nrow(M) ## number of peptides
-    rjLog <- na.omit(igraph::vertex_attr(G, "pep_logRatio")) # na.omit because protein nodes do not have a peptide ratio
+
+    rjLog <- stats::na.omit(igraph::vertex_attr(G, "pep_logRatio")) # na.omit because protein nodes do not have a peptide ratio
 
     if (is.null(rjLog)) stop("G does not contain peptide ratios.")
     checkmate::assertNumeric(rjLog)
@@ -365,9 +366,6 @@
 #'                                 numerical problems, values close to those may
 #'                                 be valuable to get a better estimate of the
 #'                                 protein ratios.
-#' @param log_level                \strong{logical} \cr
-#'                                 The \code{log_level} argument will passed to
-#'                                 the [.minimizeSquaredError()] function.
 #'
 #' @return
 #' A dataframe containing the optimal Ci and Ri values together with the reached

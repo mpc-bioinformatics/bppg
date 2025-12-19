@@ -48,10 +48,6 @@ While exact values of 0 and 1 may cause
 numerical problems, values close to those may
 be valuable to get a better estimate of the
 protein ratios.}
-
-\item{log_level}{\strong{logical} \cr
-The \code{log_level} argument will passed to
-the \code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}} function.}
 }
 \value{
 A dataframe containing the optimal Ci and Ri values together with the reached
