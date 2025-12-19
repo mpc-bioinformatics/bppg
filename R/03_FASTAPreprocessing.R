@@ -82,8 +82,9 @@
         start <- stop + 1
     }
 
-    if (enzyme != "trypsin") stop("undefined enzyme, 
-        only trypsin is currently supported")
+    if (enzyme != "trypsin") {
+        stop("undefined enzyme, only trypsin is currently supported")
+    }
     if (length(stop) == 0) {
         if (warn) warning("sequence does not contain cleavage sites")
         return(data.frame(sequence = sequence, start = 1,
@@ -98,7 +99,7 @@
     start <- c(1, start)
     stop <- c(stop, end_position)
     results <- .cleave(sequence, start, stop, 0)
-    if (missed > 0) { 
+    if (missed > 0) {
         for (i in 1:min(missed, length(stop_))) { # limited by missed
             start_tmp <- start[1:(length(start) - i)]
             stop_tmp <- stop[(1 + i):length(stop)]
@@ -168,14 +169,14 @@
 #'                           The maximal number of amino acids
 #'                           (set to Inf for no filtering).
 #' @param protOrigin         \strong{list or data.frame} \cr
-#'                           A list with the protein orgin corresponding to 
+#'                           A list with the protein orgin corresponding to
 #'                           [fasta], proteins are used as rownames/index.
 #' @param ...                Additional arguments for [.digest2()].
 #'
 #' @return data.frame with proteins and their peptide sequences, filtered
 #'         for minimal and maximal number of amino acids.
 #' @export
-#' 
+#'
 #'
 #' @seealso [.digest2()]
 #'
@@ -200,7 +201,7 @@ digestFASTA <- function(fasta,
     if (!is.null(protOrigin)) {
         names(protOrigin) <- names(fasta)
     }
-    digested_proteins <- do.call("rbind", 
+    digested_proteins <- do.call("rbind",
         pbapply::pblapply(names(fasta), FUN = function(x) {
             sequ <- fasta[[x]]
             class(sequ) <- NULL
@@ -209,7 +210,7 @@ digestFASTA <- function(fasta,
                 nchar(as.character(y)) <= max_aa
             if (sum(ind) > 0){
                 if (!is.null(protOrigin)) {
-                    data.frame(protein = x, peptide = as.character(y[ind]), 
+                    data.frame(protein = x, peptide = as.character(y[ind]),
                     protOrigin = protOrigin[[x]])
                 } else {
                     data.frame(protein = x, peptide = as.character(y[ind]))
