@@ -4,7 +4,12 @@
 \alias{.analyseResultSingleProt}
 \title{Analyse results for a single protein}
 \usage{
-.analyseResultSingleProt(resProt, error_tol = 1e-10, ratioLog_tol = 1e-06)
+.analyseResultSingleProt(
+  protNr,
+  resProt,
+  error_tol = 1e-10,
+  ratioLog_tol = 1e-06
+)
 }
 \arguments{
 \item{resProt}{\strong{data.frame} \cr

@@ -413,7 +413,7 @@ iterateOverCi <- function(G,
     checkmate::assertFlag(verbose)
     checkmate::assertList(control)
 
-    n <- sum(igraph::V(G)$type) #ncol(S$X) ## number of protein groups
+    n <- sum(igraph::V(G)$type) ## number of protein groups
     if (n == 1) { # special case for only a single protein group in the graph
         RES <-  .minimizeSquaredError(G,
                                       fixed.Ci = NULL,
@@ -512,14 +512,11 @@ automatedAnalysisIteratedCi <- function(G,
                                         error_tol = 1e-10,
                                         ratioLog_tol = 1e-6) {
 
-    ### TODO: do I need S in this form?
-    X <- igraph::as_biadjacency_matrix(G)
-    fc <- stats::na.omit(igraph::V(G)$pep_logRatio)
-    S <- list(X = X, fc = fc)  ### TODO: logFC nennen??
+    n <- sum(igraph::V(G)$type) ## number of protein groups
+    accessions <- igraph::V(G)$name[igraph::V(G)$type]
 
-    n <- ncol(S$X) ## number of protein groups
 
-    if(!is.null(job)) {
+    if (!is.null(job)) {
         graphID <- job$pars$prob.pars$k
         comparison <- job$prob.name
         job.id <- job$job.id
@@ -532,19 +529,18 @@ automatedAnalysisIteratedCi <- function(G,
 
     f <- function(x, res, error_tol, ratioLog_tol, use_results_from_other_proteins) {
 
-        cols <- c("error", paste0("RLog", x), paste0("C", x))
+        cols <- c("protein", "error", paste0("RLog", x), paste0("C", x))
 
         resProt <- res[res$protein == x, cols]
-        colnames(resProt) <- c("error", "RLog", "C")
+        colnames(resProt) <- c("protein", "error", "RLog", "C")
 
         if (use_results_from_other_proteins) {
             resProt2 <- res[res$protein != x, cols]
-            colnames(resProt2) <- c("error", "RLog", "C")
-            resProt2 <- resProt2[resProt2$C > 0.01 | resProt2$C < 0.99,]
+            colnames(resProt2) <- c("protein", "error", "RLog", "C")
+            resProt2 <- resProt2[resProt2$C > 0.01 | resProt2$C < 0.99,] # remove too extreme Ci
             resProt <- rbind(resProt, resProt2)
         }
-
-        return(.analyseResultSingleProt(resProt, error_tol = error_tol, ratioLog_tol = ratioLog_tol))
+        return(.analyseResultSingleProt(x, resProt, error_tol = error_tol, ratioLog_tol = ratioLog_tol))
     }
 
 
@@ -554,12 +550,10 @@ automatedAnalysisIteratedCi <- function(G,
                   res = res, error_tol = error_tol, ratioLog_tol = ratioLog_tol,
                   use_results_from_other_proteins = use_results_from_other_proteins)
 
-    RES_info <- data.frame(comparison = rep(comparison, n), graphID = rep(graphID, n), proteinNr = 1:n)
+    RES_info <- data.frame(accession = accessions, comparison = rep(comparison, n),
+                           graphID = rep(graphID, n), proteinNr = 1:n)
 
     RES <- cbind(RES_info, as.data.frame(t(RES)))
-
-
-    ### TODO: add accessions as first column (get from graph object)
 
     return(RES)
 }
@@ -580,8 +574,9 @@ automatedAnalysisIteratedCi <- function(G,
 #' @export
 #'
 #' @examples
-.analyseResultSingleProt <- function(resProt, error_tol = 1e-10,
-                                     ratioLog_tol = 1e-6) {
+.analyseResultSingleProt <- function(protNr, resProt,
+                                     error_tol = 1e-10, ratioLog_tol = 1e-6) {
+    proteins <- unique(resProt$protein)
     minError <- min(resProt$error)
     indMinError <- which(abs(minError - resProt$error) <= error_tol)
 
@@ -596,13 +591,11 @@ automatedAnalysisIteratedCi <- function(G,
     } else {
         if (abs(diff(range((RLog_tmp)))) <= ratioLog_tol) {
             # case 1 and 4: RLog is almost constant
-            #e_tmp_mean_rounded <- round(mean(e_tmp), digits = ceiling(-log10(error_tol)))
             RLog_tmp_mean_rounded <- round(mean(RLog_tmp), digits = ceiling(-log10(ratioLog_tol)))
             res_tmp <- c(mean(e_tmp), RLog_tmp_mean_rounded, NA, NA, NA, min(C_tmp), max(C_tmp), NA)
             res_tmp[8] <- ifelse(length(indMinError) == nrow(resProt), 1, 4) # all(R[ind_min_tol] == 0) |???
         } else {
             # case 2 and 5: range solution for Rlog
-            #e_tmp_mean_rounded <- round(mean(e_tmp), digits = ceiling(-log10(error_tol)))
             res_tmp <- c(mean(e_tmp), NA, min(RLog_tmp), max(RLog_tmp), NA, min(C_tmp), max(C_tmp), NA)
             res_tmp[8] <- ifelse(length(indMinError) == nrow(resProt), 2, 5)
         }
