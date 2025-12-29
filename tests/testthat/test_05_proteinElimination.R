@@ -8,15 +8,17 @@ test_that("test proteinElimination", {
 
     G <- igraph::graph_from_edgelist(edgelist, directed = FALSE)
     igraph::V(G)$type <- startsWith(igraph::V(G)$name, "prot_")
-    igraph::V(G)$pep_ratio[startsWith(igraph::V(G)$name, "prot_")] <- NA
-    igraph::V(G)$pep_ratio[startsWith(igraph::V(G)$name, "pep_")] <- c(1.1, 1.2, 1, 0.8, 0.9)
+    pep_logRatio <- rep(NA, igraph::vcount(G))
+    pep_logRatio[startsWith(igraph::V(G)$name, "prot_")] <- NA
+    pep_logRatio[startsWith(igraph::V(G)$name, "pep_")] <- log2(c(1.1, 1.2, 1, 0.8, 0.9))
 
+    G <- igraph::set_vertex_attr(G, "pep_logRatio", value = pep_logRatio)
 
     res <- proteinElimination(G = G)
 
     ## prepare result object for snapshot (cant deal with random igraph ids)
-    res$protein_nodes_list <- names(res$protein_nodes_list)
-    res$G_current <- igraph::as_edgelist(res[["G_current"]][[1]])
+    res$protnodes_list <- names(res$protnodes_list)
+    res$res_best$G <- lapply(res$res_best$G, igraph::as_edgelist)
 
     expect_snapshot(res)
 

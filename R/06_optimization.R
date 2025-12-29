@@ -129,14 +129,16 @@
 #'                    optimization step
 .initializeRi <- function(M, rjLog, m) {
     RiLog_start <- rep(NA, m)
-    for (j in 1:m) {
-        tmp <- M * rjLog
-        tmp[tmp == 0] <- NA    ## 0 -> peptide is not present in the protein
+    for (j in 1:m) { # for each protein
+        belongsToProt <- (M[, j] == 1) # peptides belonging to protein j
+
+        #tmp <- M * rjLog
+        #tmp[tmp == 0] <- NA    ## 0 -> peptide is not present in the protein
         uniquePep <- (rowSums(M) == 1) & (M[, j] == 1)
         if (any(uniquePep)) {
-            RiLog_start[j] <- mean(tmp[uniquePep, j], na.rm = TRUE) # .geomMean
+            RiLog_start[j] <- mean(rjLog[uniquePep & belongsToProt], na.rm = TRUE)
         } else {
-            RiLog_start[j] <- mean(tmp[, j], na.rm = TRUE) # .geomMean
+            RiLog_start[j] <- mean(rjLog[belongsToProt], na.rm = TRUE) # .geomMean
         }
     }
     #if (log_level) Ri_start <- log2(Ri_start)

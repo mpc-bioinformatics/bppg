@@ -10,15 +10,11 @@ term in the optimization step low}
 proteinElimination(
   G,
   threshold = 1.05,
-  iter = 0,
+  control = list(),
   min_error_ref = NULL,
-  min_error_current = NULL,
-  protein_nodes_list = igraph::V(G)[igraph::V(G)$type],
-  combination_list = NULL,
-  error_list = NULL,
-  comb_current = NULL,
-  G_current = NULL,
-  n_comb_current = NA
+  resDF = NULL,
+  protnodes_list = NULL,
+  res_best = NULL
 )
 }
 \arguments{
@@ -29,13 +25,13 @@ The graph to eliminate the proteins in.}
 The threshold for increase of error term.
 The default 1.05 refers to 5\% increase.}
 
-\item{iter}{\strong{numeric} \cr
-The iteration (this is a recursive function).}
-
 \item{min_error_ref}{\strong{numeric} \cr
 The minimal error term with all available
 protein nodes.
 \code{min_error_ref} is assigned automatically.}
+
+\item{iter}{\strong{numeric} \cr
+The iteration (this is a recursive function).}
 
 \item{min_error_current}{\strong{numeric} \cr
 The current minimal error term.
