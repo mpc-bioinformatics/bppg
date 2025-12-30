@@ -59,7 +59,7 @@
 #' proteinElimination(G)
 proteinElimination <- function(G,
     threshold = 1.05,
-    control = list(), #list(trace = 0, delta = 1e-9),  # TODO! list()
+    control = list(),
     min_error_ref = NULL, # error from iteration 1
     resDF = NULL,
     protnodes_list = NULL, # based on the very first original graph in iter 1
