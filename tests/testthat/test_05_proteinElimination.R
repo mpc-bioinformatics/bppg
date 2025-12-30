@@ -20,6 +20,9 @@ test_that("test proteinElimination", {
     res$protnodes_list <- names(res$protnodes_list)
     res$res_best$G <- lapply(res$res_best$G, igraph::as_edgelist)
 
-    expect_snapshot(res, variant = Sys.info()[["sysname"]])
+    ## TODO: rounding here because of small Windows/Linux differences
+    res$resDF$error <- round(res$resDF$error, digits = 5)
+
+    expect_snapshot(res)
 
 })
