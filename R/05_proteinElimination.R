@@ -26,7 +26,7 @@
 #' @param protnodes_list       \strong{igraph node list} \cr
 #'                             A current list of protein nodes.
 #' @param res_best             \strong{list} \cr
-#'                             A list containg the currently best solution including
+#'                             A list containing the currently best solution including
 #'                             the protein node combination, the error term and
 #'                             the corresponding graph object.
 #'
