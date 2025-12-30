@@ -18,6 +18,9 @@ Function to set up the error equations for the optimization problem}
 .errorEquation(RiLog, Ci, M, rjLog)
 }
 \arguments{
+\item{RiLog}{\strong{numeric vector} \cr
+Contains the (estimated) protein ratios (log2-scale).}
+
 \item{Ci}{\strong{numeric vector} \cr
 Contains the protein weights (estimated, sum up to 1)}
 
@@ -26,9 +29,6 @@ The biadjaceny matrix of the corresponding graphs.}
 
 \item{rjLog}{\strong{numeric vector} \cr
 Contains the measured peptide ratios (log2-scale).}
-
-\item{RiLog}{\strong{numeric vector} \cr
-Contains the (estimated) protein ratios (log2-scale).}
 }
 \value{
 list containing the following elements:

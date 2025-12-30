@@ -29,9 +29,9 @@ The control parameters for solnp
 }
 \value{
 list containing the following elements:
-\item{RiLOg}{estimated protein ratios (Log2-scale)}
+\item{RiLog}{estimated protein ratios (Log2-scale)}
 \item{Ci}{estimated protein weights}
-\item{RES}{final result of \code{\link{.errorEquation()}}, which also contains
+\item{RES}{final result of \code{\link[bppg]{.errorEquation}}, which also contains
 the final, minimal error term}
 \item{Tracking}{Tracking of Ri, Ci and error term for the
 different iterations}

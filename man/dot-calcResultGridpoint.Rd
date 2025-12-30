@@ -21,6 +21,9 @@ bipartite peptide-protein graph}
 
 \item{n}{\strong{integer(1)} \cr
 number of proteins in the graph}
+
+\item{...}{additional arguments for \code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}},
+e.g. verbose, control}
 }
 \value{
 Vector with the following elements:

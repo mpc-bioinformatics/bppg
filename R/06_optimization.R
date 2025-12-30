@@ -16,7 +16,7 @@
 
 #' Function to set up the error equations for the optimization problem
 #'
-#' @param Rilog       \strong{numeric vector} \cr
+#' @param RiLog       \strong{numeric vector} \cr
 #'                    Contains the (estimated) protein ratios (log2-scale).
 #' @param Ci          \strong{numeric vector} \cr
 #'                    Contains the protein weights (estimated, sum up to 1)
@@ -285,7 +285,7 @@
 #' @return list containing the following elements:
 #' \item{RiLog}{estimated protein ratios (Log2-scale)}
 #' \item{Ci}{estimated protein weights}
-#' \item{RES}{final result of \code{\link{.errorEquation()}}, which also contains
+#' \item{RES}{final result of \code{\link[bppg]{.errorEquation}}, which also contains
 #'  the final, minimal error term}
 #' \item{Tracking}{Tracking of Ri, Ci and error term for the
 #'  different iterations}

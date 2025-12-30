@@ -31,7 +31,7 @@ Calculate equality and inequality constraints for the optimization step
 x is a vector containing first the RiLog values and then the Ci values
 (length 2*m if no Ci are fixed).
 
-For the eqality contraint (eqfun with corresponding bound eqB), the difference
+For the equality constraint (eqfun with corresponding bound eqB), the difference
 of the sm of the Ci values and 1 is calculated. The bound is set to 0, i.e.
 forcing the sum of the Ci to be 1. In case of fixed Ci values, the sum of the
 fixed and the free Ci values is considered.
