@@ -14,13 +14,25 @@ If NULL, all Cis will be considered as variable.
 This argument is needed to fix Ci on a grid point in the
 iterated_Ci function.}
 
-\item{m}{\strong{integer} \cr
+\item{m}{\strong{integer(1)} \cr
 number of proteins in the respective graph}
 }
 \value{
-Ci_start: vector with inital start values for Ci for the
+Ci_start: vector with initial start values for Ci for the
 optimization step
 }
 \description{
 Calulate initial values for Ci (protein weights) for optimization
+}
+\details{
+If no Ci are fixed, all Ci are initialized with equal weights (1/m).
+If at least one Ci is fixed, the remaining weight (1 - sum of fixed Ci)
+is distributed equally among the non-fixed Ci.
+}
+\examples{
+# without fixed Ci -> equal starting weights
+bppg:::.initializeCi(fixed.Ci = NULL, m = 3)
+
+# with fixed Ci -> fixes these and equal weight for the others
+bppg:::.initializeCi(fixed.Ci = c(NA, 0.8, NA), m = 3)
 }

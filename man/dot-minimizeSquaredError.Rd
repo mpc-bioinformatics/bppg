@@ -5,13 +5,7 @@
 \title{Function to set up the optimization problem and minimize the sum of squared
 error terms}
 \usage{
-.minimizeSquaredError(
-  G,
-  fixed.Ci = NULL,
-  verbose = FALSE,
-  control = list(),
-  ...
-)
+.minimizeSquaredError(G, fixed.Ci = NULL, verbose = FALSE, control = list())
 }
 \arguments{
 \item{G}{\strong{igraph object} \cr
@@ -26,42 +20,34 @@ iterated_Ci function.}
 
 \item{verbose}{\strong{logical} \cr
 If \code{TRUE}, additional information on each iteration
-of the optimization is printed (see also rsolnp function
-in package Rsolnp).}
+of the optimization is printed
+(see \code{\link[Rsolnp]{solnp}}).}
 
 \item{control}{\strong{list} \cr
-The control parameters for solnp.}
-
-\item{reciprocal}{\strong{logical} \cr
-If \code{TRUE}, the reciprocal of the peptide ratios is
-used for the optimization.}
-
-\item{log_level}{\strong{logical} \cr
-If \code{TRUE}, the Ri are log2-transformed before
-optimization, allowing a symmetric consideration of
-Ri < 0 and > 0.}
+The control parameters for solnp
+(see \code{\link[Rsolnp]{solnp}}).}
 }
 \value{
 list containing the following elements:
-\item{Ri}{estimated protein ratios}
+\item{RiLOg}{estimated protein ratios (Log2-scale)}
 \item{Ci}{estimated protein weights}
-\item{RES}{final result of .errorEquation(), which also contains the final,
-minimal error term}
+\item{RES}{final result of \code{\link{.errorEquation()}}, which also contains
+the final, minimal error term}
 \item{Tracking}{Tracking of Ri, Ci and error term for the
 different iterations}
 \item{outer.iter}{Number of outer iterations needed for the optimization
-algorithm to converge or stop}
+algorithm to converge or stop (see also \code{\link[Rsolnp]{solnp}})}
 \item{convergence}{Indicates whether the solver has converged (0) or
-not (1 or 2).}
+not (1 or 2) (see also \code{\link[Rsolnp]{solnp}})}
 }
 \description{
 Function to set up the optimization problem and minimize the sum of squared
 error terms
 }
 \examples{
-M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
-rj <- c(0.6, 1.2)
-S <- list(X = M, fc = rj)
-bppg:::.minimizeSquaredError(S)
+file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+graphs <- readRDS(file)
+G <- graphs$sample1_sample2[[2]]
+bppg:::.minimizeSquaredError(G)
 
 }

@@ -1,23 +1,29 @@
 #' Functions in this file:
 #' .errorEquation
+#' .initializeCi
+#' .initializeRi
+#' .calcConstraints
+#' .calcObjectiveFunction
 #' .minimizeSquaredError
 #' iterateOverCi
+#' .calcResultGridpoint
 #' automatedAnalysisIteratedCi
+#' .analyseResultSingleProt
+
+
+
+
 
 #' Function to set up the error equations for the optimization problem
 #'
-#' @param Ri          \strong{numeric vector} \cr
-#'                    Contains the (estimated) protein ratios.
+#' @param Rilog       \strong{numeric vector} \cr
+#'                    Contains the (estimated) protein ratios (log2-scale).
 #' @param Ci          \strong{numeric vector} \cr
 #'                    Contains the protein weights (estimated, sum up to 1)
 #' @param M           \strong{matrix} \cr
 #'                    The biadjaceny matrix of the corresponding graphs.
-#' @param rj          \strong{numeric vector} \cr
-#'                    Contains the measured peptide ratios.
-#' @param log_level   \strong{logical} \cr
-#'                    If \code{TRUE}, the Ri are given on log2-level and need
-#' to be back-transformed here
-#' (this leads to a symmetric behavior during optimization)
+#' @param rjLog       \strong{numeric vector} \cr
+#'                    Contains the measured peptide ratios (log2-scale).
 #'
 #' @return list containing the following elements:
 #' \item{res_Mat}{matrix containing the estimated peptide
@@ -25,8 +31,6 @@
 #' \item{res_equ}{vector of error terms for each peptide}
 #' \item{res_squ_err}{sum of squared error terms}
 #' \item{W}{internal weight matrix}
-#'
-#'
 #'
 #' @examples
 #' Ri <- c(0.5, 1.3)
@@ -37,20 +41,10 @@
 .errorEquation <- function(RiLog,
     Ci,
     M,
-    rjLog) { #},
-    #log_level = FALSE) {
+    rjLog) {
     m <- length(RiLog) ## number of proteins
     n <- length(rjLog) ## number of peptides
-    checkmate::assertNumeric(RiLog)
-    checkmate::assertNumeric(Ci, len = length(RiLog))
-    checkmate::assertNumeric(rjLog)
-    checkmate::assertMatrix(M, ncols = length(RiLog), nrows = length(rjLog),
-                            mode = "integerish")
-    stopifnot(all(M %in% c(0,1)))
-    #checkmate::assertFlag(log_level)
-
-    ## backtransformation if necessary
-    # if (log_level)
+    ## backtransformation
     Ri <- 2^RiLog
     ## multiply the delta values (biadjacency matrix M) with their weights Ci
     W <- sweep(M, MARGIN = 2, Ci, "*")
@@ -60,13 +54,10 @@
     W <- as.matrix(sweep(W, 1, W_sum, "/"))
     ## multiply Ri with the corresponding weight
     res_Mat <- sweep(W, MARGIN = 2, Ri, '*')
-
     ## error term per peptide (on log-scale)
     res_equ <- rjLog - log2(rowSums(res_Mat))
-
     ## sum of squared error terms
     res_squ_err <- sum(res_equ^2)
-
     return(list(res_Mat = res_Mat, res_equ = res_equ,
             res_squ_err = res_squ_err, W = W))
 }
@@ -81,19 +72,29 @@
 #'                    If NULL, all Cis will be considered as variable.
 #'                    This argument is needed to fix Ci on a grid point in the
 #'                    iterated_Ci function.
-#' @param m \strong{integer} \cr
+#' @param m \strong{integer(1)} \cr
 #'                    number of proteins in the respective graph
+#' @details
+#' If no Ci are fixed, all Ci are initialized with equal weights (1/m).
+#' If at least one Ci is fixed, the remaining weight (1 - sum of fixed Ci)
+#' is distributed equally among the non-fixed Ci.
 #'
-#' @returns Ci_start: vector with inital start values for Ci for the
+#' @returns Ci_start: vector with initial start values for Ci for the
 #'                    optimization step
 #'
 #' @examples
+#' # without fixed Ci -> equal starting weights
+#' bppg:::.initializeCi(fixed.Ci = NULL, m = 3)
+#'
+#' # with fixed Ci -> fixes these and equal weight for the others
+#' bppg:::.initializeCi(fixed.Ci = c(NA, 0.8, NA), m = 3)
 .initializeCi <- function(fixed.Ci,
                           m) {
-    #m <- length(fixed.Ci) # number of proteins
     is.Ci.fixed <- !is.null(fixed.Ci)
     which.Ci.fixed <- which(!is.na(fixed.Ci))
-
+    if (sum(fixed.Ci, na.rm = TRUE) > 1) {
+        stop("Sum of fixed Ci exceeds 1.")
+    }
     ## Initialization of Ci:
     if (!is.Ci.fixed) {
         ## the algorithm starts with equal weights for each protein
@@ -118,30 +119,34 @@
 #'
 #' @param M \strong{matrix} \cr
 #'                     Biadjacency matrix of the graph.
-#' @param rj \strong{numeric vector} \cr
-#'                   Vector of measured peptide ratios.
-#' @param m \strong{integer(1)} \cr
-#'                   number of proteins in the respective graph
-#' @param log_level \strong{logical(1)} \cr
-#'                  if TRUE, the Ri values are returned on log2-scale
+#' @param rjLog \strong{numeric} \cr
+#'                   Vector of measured peptide ratios (log2-scale).
 #'
-#' @returns Ri_start: vector with inital start values for Ri for the
-#'                    optimization step
-.initializeRi <- function(M, rjLog, m) {
+#' @details
+#' For each protein, the mean of the peptide ratios (log2-scale) of the
+#' peptides belonging to this protein is calculated.
+#' If there are unique peptides for this protein, only those are used.
+#'
+#' @returns RiLog_start: vector with inital start values for Ri for the
+#'                    optimization step (log2-scale)
+#'
+#' @examples
+#' M <- matrix(c(1, 1, 1, 0, 1, 1), ncol = 2, byrow = FALSE)
+#' rjLog <- log2(c(0.6, 1.2, 1.5))
+#' bppg:::.initializeRi(M, rjLog)
+#'
+.initializeRi <- function(M, rjLog) {
+    m <- ncol(M)
     RiLog_start <- rep(NA, m)
     for (j in 1:m) { # for each protein
         belongsToProt <- (M[, j] == 1) # peptides belonging to protein j
-
-        #tmp <- M * rjLog
-        #tmp[tmp == 0] <- NA    ## 0 -> peptide is not present in the protein
         uniquePep <- (rowSums(M) == 1) & (M[, j] == 1)
         if (any(uniquePep)) {
             RiLog_start[j] <- mean(rjLog[uniquePep & belongsToProt], na.rm = TRUE)
         } else {
-            RiLog_start[j] <- mean(rjLog[belongsToProt], na.rm = TRUE) # .geomMean
+            RiLog_start[j] <- mean(rjLog[belongsToProt], na.rm = TRUE)
         }
     }
-    #if (log_level) Ri_start <- log2(Ri_start)
     return(RiLog_start)
 }
 
@@ -156,33 +161,47 @@
 #'                    If NULL, all Cis will be considered as variable.
 #'                    This argument is needed to fix Ci on a grid point in the
 #'                    iterated_Ci function.
-#' @param log_level \strong{logical(1)} \cr
-#'                  if TRUE, the Ri values are returned on log2-scale
 #' @param m \strong{integer(1)} \cr
 #'          number of proteins in the respective graph
 #'
 #' @returns list containing the following elements (see also
 #'                  \code{\link[Rsolnp]{solnp}}):
-#' \item{eqfun}{function for calculating inequality constraints}
-#' \item{LB}{lower bound for eqfun}
+#' \item{eqfun}{function for calculating equality constraints}
 #' \item{eqB}{vector of equality bounds for the variables}
+#' \item{LB}{lower bound for the variables}
+#'
+#' @details
+#' x is a vector containing first the RiLog values and then the Ci values
+#' (length 2*m if no Ci are fixed).
+#'
+#' For the eqality contraint (eqfun with corresponding bound eqB), the difference
+#' of the sm of the Ci values and 1 is calculated. The bound is set to 0, i.e.
+#' forcing the sum of the Ci to be 1. In case of fixed Ci values, the sum of the
+#' fixed and the free Ci values is considered.
+#'
+#' The lower bound (LB) for the RiLog values is set to -Inf (no constraint)
+#' and to 0 for the Ci.
+#'
+#' @examples
+#' # without fixed Ci
+#' bppg:::.calcConstraints(fixed.Ci = NULL, m = 3)
+#'
+#' # with fixed Ci
+#' bppg:::.calcConstraints(fixed.Ci = c(NA, 0.8, NA), m = 3)
+#'
 .calcConstraints <- function(fixed.Ci, m) {
     if (!is.null(fixed.Ci)) {
         m2 <- m - sum(!is.na(fixed.Ci)) # number of free weights (not fixed)
         fixed.Ci.sum <- sum(fixed.Ci, na.rm = TRUE)
         eqfun <- function(x) sum(x[(m + 1):(m + m2)]) + fixed.Ci.sum - 1
-        # LB <- rep(0, m + m2)
-        # if (log_level)
         LB <- c(rep(-Inf, m), rep(0, m2))
         eqB <- 0
     } else {
         eqfun <- function(x) sum(x[(m + 1):(2 * m)]) - 1
-        # LB <- rep(0, 2 * m)
-        # if (log_level)
         LB <- c(rep(-Inf, m), rep(0, m))
         eqB <- 0
     }
-    return(list(eqfun = eqfun, LB = LB, eqB = eqB))
+    return(list(eqfun = eqfun, eqB = eqB, LB = LB))
 }
 
 
@@ -195,20 +214,33 @@
 #'                    If NULL, all Cis will be considered as variable.
 #'                    This argument is needed to fix Ci on a grid point in the
 #'                    iterated_Ci function.
-#' @param log_level   \strong{logical(1)} \cr
-#'                    if TRUE, the Ri values are returned on log2-scale
-#' @param m           \strong{integer(1)} \cr
-#'                    number of proteins in the respective graph
 #' @param M           \strong{matrix} \cr
 #'                    Biadjacency matrix of the graph.
-#' @param rj          \strong{numeric vector} \cr
-#'                    Contains the measured peptide ratios.
+#' @param rjLog          \strong{numeric vector} \cr
+#'                    Contains the measured peptide ratios (log2-scale).
 #'
 #' @returns objective function that will be minimized
-.calcObjectiveFunction <- function(fixed.Ci, m, M, rjLog) {
-    ### TODO: kann ich m ausrechnen aus M oder fixed.Ci??
+#'
+#' @details
+#' The objective function is the sum of squared error terms calculated in
+#' \code{\link[bppg]{.errorEquation}}.
+#'
+#' x is a vector containing first the RiLog values and then the Ci values
+#' (length 2*m if no Ci are fixed). If there are fixed Ci and m2 non-fixed ones,
+#' x has the length m + m2.
+#'
+#' @examples
+#'
+#' M <- matrix(c(1, 1, 1, 0, 1, 1), ncol = 2, byrow = FALSE)
+#' rjLog <- log2(c(0.6, 1.2, 1.5))
+#'
+#' fun <- bppg:::.calcObjectiveFunction(fixed.Ci = NULL, M = M, rjLog = rjLog)
+#'
+#'
+.calcObjectiveFunction <- function(fixed.Ci, M, rjLog) {
+    m <- ncol(M)
     if (!is.null(fixed.Ci)) {
-        m2 <- m - sum(!is.na(fixed.Ci)) # number of free weights (not fixed)
+        m2 <- m - sum(!is.na(fixed.Ci)) # number of free Ci (not fixed)
         fun <- function(x) {
             RiLog_tmp <- x[1:m]
             Ci_tmp <- fixed.Ci
@@ -235,7 +267,7 @@
 #' error terms
 #'
 #' @param G           \strong{igraph object} \cr
-#'                      bipartite peptide-protein graph
+#'                    bipartite peptide-protein graph
 #' @param fixed.Ci    \strong{numeric vector} \cr
 #'                    The fixed protein weights, variable weights set as NA.
 #'                    Sum of fixed weights must not exceed 1.
@@ -244,50 +276,39 @@
 #'                    iterated_Ci function.
 #' @param verbose     \strong{logical} \cr
 #'                    If \code{TRUE}, additional information on each iteration
-#'                    of the optimization is printed (see also rsolnp function
-#'                    in package Rsolnp).
-#' @param reciprocal  \strong{logical} \cr
-#'                    If \code{TRUE}, the reciprocal of the peptide ratios is
-#'                    used for the optimization.
-#' @param log_level   \strong{logical} \cr
-#'                    If \code{TRUE}, the Ri are log2-transformed before
-#'                    optimization, allowing a symmetric consideration of
-#'                    Ri < 0 and > 0.
+#'                    of the optimization is printed
+#'                    (see \code{\link[Rsolnp]{solnp}}).
 #' @param control     \strong{list} \cr
-#'                    The control parameters for solnp.
+#'                    The control parameters for solnp
+#'                    (see \code{\link[Rsolnp]{solnp}}).
 #'
 #' @return list containing the following elements:
-#' \item{Ri}{estimated protein ratios}
+#' \item{RiLOg}{estimated protein ratios (Log2-scale)}
 #' \item{Ci}{estimated protein weights}
-#' \item{RES}{final result of .errorEquation(), which also contains the final,
-#'  minimal error term}
+#' \item{RES}{final result of \code{\link{.errorEquation()}}, which also contains
+#'  the final, minimal error term}
 #' \item{Tracking}{Tracking of Ri, Ci and error term for the
 #'  different iterations}
 #' \item{outer.iter}{Number of outer iterations needed for the optimization
-#'  algorithm to converge or stop}
+#'  algorithm to converge or stop (see also \code{\link[Rsolnp]{solnp}})}
 #' \item{convergence}{Indicates whether the solver has converged (0) or
-#' not (1 or 2).}
+#' not (1 or 2) (see also \code{\link[Rsolnp]{solnp}})}
 #'
 #' @examples
-#' M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
-#' rj <- c(0.6, 1.2)
-#' S <- list(X = M, fc = rj)
-#' bppg:::.minimizeSquaredError(S)
+#' file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+#' graphs <- readRDS(file)
+#' G <- graphs$sample1_sample2[[2]]
+#' bppg:::.minimizeSquaredError(G)
 #'
-## TODO SIMPLFY -> put options into differnt functions?
-## TODO: some parameter checks for this private function useful?
 .minimizeSquaredError <- function(G,
     fixed.Ci = NULL,
     verbose = FALSE,
-    #log_level = TRUE,
-    control = list(),
-    ...) {
+    control = list()
+    ) {
     M <- igraph::as_biadjacency_matrix(G)
     m <- ncol(M) ## number of proteins
     n <- nrow(M) ## number of peptides
-
-    rjLog <- stats::na.omit(igraph::vertex_attr(G, "pep_logRatio")) # na.omit because protein nodes do not have a peptide ratio
-
+    rjLog <- stats::na.omit(igraph::vertex_attr(G, "pep_logRatio"))
     if (is.null(rjLog)) stop("G does not contain peptide ratios.")
     checkmate::assertNumeric(rjLog)
     checkmate::assertNumeric(fixed.Ci, len = m, lower = 0, upper = 1,
@@ -296,9 +317,8 @@
     if (!verbose) control <- c(control, trace = 0)
     is.Ci.fixed <- !is.null(fixed.Ci)
     if (is.Ci.fixed) which.Ci.fixed <- which(!is.na(fixed.Ci))
-
     Ci_start <- .initializeCi(fixed.Ci, m)
-    RiLog_start <- .initializeRi(M, rjLog, m)
+    RiLog_start <- .initializeRi(M, rjLog)
     if (is.Ci.fixed) {
         pars <- c(RiLog_start, Ci_start[-which.Ci.fixed])
     } else {
@@ -307,15 +327,13 @@
     ## initial error term
     RES <- .errorEquation(RiLog = RiLog_start, Ci = Ci_start, M = M, rjLog = rjLog)
 
-    ### TODO: do we need tracking? -> yes, but maybe separate function?
     track_colnames <- c("iter", "squ_err", paste0("RLog", 1:m), paste0("C", 1:m))
     Tracking <- matrix(c(0, RES$res_squ_err, RiLog_start, Ci_start), nrow = 1)
     Tracking <- as.data.frame(Tracking)
     colnames(Tracking) <- track_colnames
 
-    fun <- .calcObjectiveFunction(fixed.Ci, m, M, rjLog)
+    fun <- .calcObjectiveFunction(fixed.Ci, M, rjLog)
     constr <- .calcConstraints(fixed.Ci, m)
-
     res <- Rsolnp::solnp(pars = pars, fun = fun, LB = constr$LB,
                          eqfun = constr$eqfun, eqB = constr$eqB,
                          control = control)
@@ -332,7 +350,6 @@
     ## update RES
     RES <- .errorEquation(RiLog = RiLog, Ci = Ci, M = M, rjLog = rjLog)
     Tracking <- rbind(Tracking, c(1, RES$res_squ_err, RiLog, Ci))
-    #if (log_level) Ri <- 2^Ri
     result <- list(RiLog = RiLog, Ci = Ci, RES = RES, Tracking = Tracking,
         outer.iter = res$outer.iter, convergence = res$convergence)
     return(result)
@@ -344,34 +361,34 @@
 #' Iterate over possible Ci values
 #'
 #' @param G                        \strong{igraph object} \cr
-#'                                 Bppg graph object
-#' @param grid.size                \strong{integer} \cr
-#'                                 The number of grid points for the Cis.
-#' @param omit_grid_borders        \strong{logical} \cr
-#'                                 If \code{TRUE}, omit exact value of 1 and 0
-#'                                 from the grid (recommended, as they may cause
-#'                                 numerical issues).
+#'                                 Bipartite peptide-protein graph
 #' @param grid.start               \strong{integer} \cr
 #'                                 The start of the grid (default is 0).
 #' @param grid.stop                \strong{integer} \cr
 #'                                 The end of the grid (default is 1).
-#' @param verbose                  \strong{logical} \cr
-#'                                 If \code{TRUE}, print additional information
-#'                                 (see solnp function).
-#' @param control                  \strong{list} \cr
-#'                                 The \code{control} object to be passed to the
-#'                                 [.minimizeSquaredError()] function.
+#' @param grid.size                \strong{integer} \cr
+#'                                 The number of grid points for the Cis.
 #' @param extend_grid_at_borders   \strong{logical} \cr
 #'                                 If \code{TRUE}, the grid will be extend close
 #'                                 to the borders (0 and 1).
 #'                                 While exact values of 0 and 1 may cause
 #'                                 numerical problems, values close to those may
 #'                                 be valuable to get a better estimate of the
-#'                                 protein ratios.
+#'                                 protein ratios. Default is \code{FALSE}.
+#' @param omit_grid_borders        \strong{logical} \cr
+#'                                 If \code{TRUE} (default), omit exact value of
+#'                                 1 and 0 from the grid (recommended, as they
+#'                                 may cause numerical issues).
+#' @param verbose                  \strong{logical} \cr
+#'                                 If \code{TRUE}, print additional information
+#'                                 (see \code{\link[Rsolnp]{solnp}} function).
+#' @param control                  \strong{list} \cr
+#'                                 The \code{control} object to be passed to the
+#'                                 [.minimizeSquaredError()] function.
 #'
 #' @return
 #' A dataframe containing the optimal Ci and Ri values together with the reached
-#' minimal error term.
+#' minimal error term for each grid point.
 #'
 #' @export
 #'
@@ -389,27 +406,27 @@
 #' .minimizeSquaredError().
 #' The resulting table can be used to assess a range of possible solutions for
 #' the protein ratios.
-#'
+#' The table can be further processed with [bppg::automatedAnalysisIteratedCi()].
 #'
 #' @examples
-#' M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
-#' rj <- c(0.6, 1.2)
-#' S <- list(X = M, fc = rj)
-#' bppg:::.minimizeSquaredError(S)
-#' ## example not complete? TODO
+#' file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+#' graphs <- readRDS(file)
+#' G <- graphs$sample1_sample2[[2]]
+#' # small example with a small grid size
+#' iterateOverCi(G, grid.size = 100)
 iterateOverCi <- function(G,
-    grid.size = 1000,
-    omit_grid_borders = TRUE,
     grid.start = 0,
     grid.stop = 1,
+    grid.size = 1000,
+    omit_grid_borders = TRUE,
+    extend_grid_at_borders = FALSE,
     verbose = FALSE,
-    control = list(),
-    extend_grid_at_borders = FALSE ) {# ,
+    control = list()) {
     checkmate::assertClass(G, classes = c("igraph"))
     checkmate::checkTRUE(igraph::is_bipartite(G))
-    ### check if pep_logRatio is present as attribute?
     checkmate::assertIntegerish(grid.size, lower = 1)
     checkmate::assertFlag(omit_grid_borders)
+    checkmate::assertFlag(extend_grid_at_borders)
     checkmate::assertNumeric(grid.start, lower = 0, upper = 1)
     checkmate::assertNumeric(grid.stop, lower = 0, upper = 1)
     checkmate::assertFlag(verbose)
@@ -417,64 +434,81 @@ iterateOverCi <- function(G,
 
     n <- sum(igraph::V(G)$type) ## number of protein groups
     if (n == 1) { # special case for only a single protein group in the graph
-        RES <-  .minimizeSquaredError(G,
-                                      fixed.Ci = NULL,
-                                      verbose = verbose,
+        RES <-  .minimizeSquaredError(G, fixed.Ci = NULL, verbose = verbose,
                                       control = control)
-        result <- data.frame(protein = 1, grid = 1, RLog1 = RES$RiLog, C1 = 1, error = RES$RES$res_squ_err)
-
+        result <- data.frame(protein = 1, grid = 1, RLog1 = RES$RiLog,
+                             C1 = 1, error = RES$RES$res_squ_err)
         return(result)
-
     } else { # n > 1
-
         grid <- seq(grid.start, grid.stop, length.out = grid.size + 1)
         if (extend_grid_at_borders) {
-            grid_min <- grid[2] ## 2. element, as first is 0
+            grid_min <- grid[2] ## 2nd element, as first is 0
             grid_max <- grid[length(grid) - 1] ## 2nd to last, as last element is 1
             grid_extend_min <- seq(grid.start, grid_min, length.out = 11)
             grid_extend_max <- seq(grid_max, grid.stop, length.out = 11)
             grid <- sort(unique(c(grid, grid_extend_min, grid_extend_max)))
         }
         if (omit_grid_borders) grid <- grid[-c(1, length(grid))]
-
         cnames <- c(paste0("RLog", 1:n), paste0("C", 1:n))
-
-        f <- function(j, gridpoint, cnames, G) {
-            Ci_tmp <- rep(NA, n)
-            Ci_tmp[j] <- gridpoint
-
-            RES <- try({
-                .minimizeSquaredError(G,
-                                      fixed.Ci = Ci_tmp,
-                                      verbose = verbose,
-                                      control = control)
-            })
-            if ("try-error" %in% class(RES)) {
-                res_Ri_Ci <- rep(NA, length(cnames))
-                error <- NA
-            } else {
-                res_Ri_Ci <- c(RES$RiLog, RES$Ci)
-            }
-            names(res_Ri_Ci) <- cnames
-            error <- RES$RES$res_squ_err
-            result <- c(protein = j, grid = gridpoint, res_Ri_Ci, error = error)
-            return(result)
-        }
-        result <- pbapply::pbmapply(FUN = f,
+        result <- pbapply::pbmapply(FUN = .calcResultGridpoint,
                                     j = rep(1:n, each = length(grid)), gridpoint = grid,
-                                    MoreArgs = list(cnames = cnames, G = G))
-        ## TODO: disable progress bar if "verbose = TRUE"
-        #     # if (!verbose)### pboptions(type = "none")
+                                    MoreArgs = list(cnames = cnames, G = G, n = n,
+                                                    verbose = verbose, control = control))
         return(as.data.frame(t(result)))
     }
-
-
 }
+
+
+
+
+#' Calculate optimal solution for a single gridpoint
+#'
+#' @param j             \strong{integer(1)} \cr
+#'                      index of protein
+#' @param gridpoint     \strong{numeric(1)} \cr
+#'                      Ci value to fix for this protein
+#' @param cnames        \strong{character} \cr
+#'                      column names for result dataframe
+#' @param G             \strong{igraph object} \cr
+#'                      bipartite peptide-protein graph
+#' @param n             \strong{integer(1)} \cr
+#'                      number of proteins in the graph
+#' @paran ...          additional arguments for [.minimizeSquaredError()],
+#'                     e.g. verbose, control
+#'
+#' @returns Vector with the following elements:
+#' \item{protein}{index of protein (j)}
+#' \item{grid}{gridpoint}
+#' \item{res_Ri_Ci}{multiple values: estimated RiLog and Ci values}
+#' \item{error}{error term}
+.calcResultGridpoint <- function(j, gridpoint, cnames, G, n, ...) {
+    Ci_tmp <- rep(NA, n)
+    Ci_tmp[j] <- gridpoint
+
+    RES <- try({
+        .minimizeSquaredError(G, fixed.Ci = Ci_tmp, ...)
+    })
+    if ("try-error" %in% class(RES)) {
+        res_Ri_Ci <- rep(NA, length(cnames))
+        error <- NA
+    } else {
+        res_Ri_Ci <- c(RES$RiLog, RES$Ci)
+    }
+    names(res_Ri_Ci) <- cnames
+    error <- RES$RES$res_squ_err
+    result <- c(protein = j, grid = gridpoint, res_Ri_Ci, error = error)
+    return(result)
+}
+
+
+
+
+
 
 
 #' Extract protein ratio solutions from the result of iterateOverCi()
 #'
-#' @param G                             \strong{igraph graph object} \cr
+#' @param G                             \strong{igraph object} \cr
 #'                                      An igraph graph of the bipartite
 #'                                      peptide-protein graph with peptide
 #'                                      ratios
@@ -493,30 +527,35 @@ iterateOverCi <- function(G,
 #' @param job                           \strong{BatchExperiment job object} \cr
 #'                                      Is used to print the job id and
 #'                                      parameters in the output
-#' @param S_is_graph                    \strong{logical} \cr
-#'                                      If \code{TRUE}, S is an igraph object
-#'                                      and if \code{FALSE} S is a list with the
-#'                                      biadjacency matrix and fold changes.
+#' @param error_tol                    \strong{numeric(1)} \cr
+#'                                      Tolerance for a constant error term.
+#'                                      Default is 1e-10.
+#' @param ratioLog_tol                 \strong{numeric(1)} \cr
+#'                                      Tolerance for a constant log2 protein
+#'                                      ratios. The default is 1e-6.
 #'
-#' @return A data frame
+#' @return A data frame with one row for each protein.
 #' @export
 #'
 #' @seealso [bppg::iterateOverCi()], [.minimizeSquaredError()]
 #'
-#' @examples ## TODO
-
+#' @examples
+#' file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+#' graphs <- readRDS(file)
+#' G <- graphs$sample1_sample2[[2]]
+#' # small example with a small grid size
+#' res <- iterateOverCi(G, grid.size = 100)
+#' automatedAnalysisIteratedCi(G, res)
 automatedAnalysisIteratedCi <- function(G,
                                         res,
                                         use_results_from_other_proteins = FALSE,
                                         verbose = FALSE,
                                         job = NULL,
-                                        S_is_graph = FALSE,
                                         error_tol = 1e-10,
                                         ratioLog_tol = 1e-6) {
 
     n <- sum(igraph::V(G)$type) ## number of protein groups
     accessions <- igraph::V(G)$name[igraph::V(G)$type]
-
 
     if (!is.null(job)) {
         graphID <- job$pars$prob.pars$k
@@ -527,7 +566,6 @@ automatedAnalysisIteratedCi <- function(G,
         comparison <- NA
         job.id <- NA
     }
-
 
     f <- function(x, res, error_tol, ratioLog_tol, use_results_from_other_proteins) {
 
@@ -544,7 +582,6 @@ automatedAnalysisIteratedCi <- function(G,
         }
         return(.analyseResultSingleProt(x, resProt, error_tol = error_tol, ratioLog_tol = ratioLog_tol))
     }
-
 
     RES <- vapply(1:n, FUN = f,
                   FUN.VALUE = c("error_min" = 0, "RiLog" = 0, "RiLog_min" = 0, "RiLog_max" = 0,
@@ -565,6 +602,8 @@ automatedAnalysisIteratedCi <- function(G,
 
 #' Analyse results for a single protein
 #'
+#' @param protNr \strong{integer(1)} \cr
+#'                                      Index of the protein to be analysed.
 #' @param resProt \strong{data.frame} \cr
 #'                                      The data.frame resulting from the
 #'                                      [bppg::iterateOverCi()] function,
@@ -572,10 +611,9 @@ automatedAnalysisIteratedCi <- function(G,
 #' @param error_tol \strong{numeric(1)} \cr tolerance for the error term.
 #' @param ratioLog_tol \strong{numeric(1)} \cr tolerance for the log protein ratios.
 #'
-#' @returns
-#' @export
+#' @returns Vector with minimal error, estimate for Ri (single value or min/max),
+#' estimate for Ci (single value or min/max).
 #'
-#' @examples
 .analyseResultSingleProt <- function(protNr, resProt,
                                      error_tol = 1e-10, ratioLog_tol = 1e-6) {
     proteins <- unique(resProt$protein)

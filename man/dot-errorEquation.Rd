@@ -4,9 +4,15 @@
 \alias{.errorEquation}
 \title{Functions in this file:
 .errorEquation
+.initializeCi
+.initializeRi
+.calcConstraints
+.calcObjectiveFunction
 .minimizeSquaredError
 iterateOverCi
+.calcResultGridpoint
 automatedAnalysisIteratedCi
+.analyseResultSingleProt
 Function to set up the error equations for the optimization problem}
 \usage{
 .errorEquation(RiLog, Ci, M, rjLog)
@@ -18,16 +24,11 @@ Contains the protein weights (estimated, sum up to 1)}
 \item{M}{\strong{matrix} \cr
 The biadjaceny matrix of the corresponding graphs.}
 
-\item{Ri}{\strong{numeric vector} \cr
-Contains the (estimated) protein ratios.}
+\item{rjLog}{\strong{numeric vector} \cr
+Contains the measured peptide ratios (log2-scale).}
 
-\item{rj}{\strong{numeric vector} \cr
-Contains the measured peptide ratios.}
-
-\item{log_level}{\strong{logical} \cr
-If \code{TRUE}, the Ri are given on log2-level and need
-to be back-transformed here
-(this leads to a symmetric behavior during optimization)}
+\item{Rilog}{\strong{numeric vector} \cr
+Contains the (estimated) protein ratios (log2-scale).}
 }
 \value{
 list containing the following elements:
@@ -40,9 +41,15 @@ ratios using the given Ri and Ci}
 \description{
 Functions in this file:
 .errorEquation
+.initializeCi
+.initializeRi
+.calcConstraints
+.calcObjectiveFunction
 .minimizeSquaredError
 iterateOverCi
+.calcResultGridpoint
 automatedAnalysisIteratedCi
+.analyseResultSingleProt
 Function to set up the error equations for the optimization problem
 }
 \examples{

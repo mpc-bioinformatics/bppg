@@ -4,25 +4,30 @@
 \alias{.initializeRi}
 \title{Calulate initial values for Ri (protein ratios) for optimization}
 \usage{
-.initializeRi(M, rjLog, m)
+.initializeRi(M, rjLog)
 }
 \arguments{
 \item{M}{\strong{matrix} \cr
 Biadjacency matrix of the graph.}
 
-\item{m}{\strong{integer(1)} \cr
-number of proteins in the respective graph}
-
-\item{rj}{\strong{numeric vector} \cr
-Vector of measured peptide ratios.}
-
-\item{log_level}{\strong{logical(1)} \cr
-if TRUE, the Ri values are returned on log2-scale}
+\item{rjLog}{\strong{numeric} \cr
+Vector of measured peptide ratios (log2-scale).}
 }
 \value{
-Ri_start: vector with inital start values for Ri for the
-optimization step
+RiLog_start: vector with inital start values for Ri for the
+optimization step (log2-scale)
 }
 \description{
 Calulate initial values for Ri (protein ratios) for optimization
+}
+\details{
+For each protein, the mean of the peptide ratios (log2-scale) of the
+peptides belonging to this protein is calculated.
+If there are unique peptides for this protein, only those are used.
+}
+\examples{
+M <- matrix(c(1, 1, 1, 0, 1, 1), ncol = 2, byrow = FALSE)
+rjLog <- log2(c(0.6, 1.2, 1.5))
+bppg:::.initializeRi(M, rjLog)
+
 }

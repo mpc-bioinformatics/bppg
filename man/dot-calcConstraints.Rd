@@ -16,17 +16,34 @@ iterated_Ci function.}
 
 \item{m}{\strong{integer(1)} \cr
 number of proteins in the respective graph}
-
-\item{log_level}{\strong{logical(1)} \cr
-if TRUE, the Ri values are returned on log2-scale}
 }
 \value{
 list containing the following elements (see also
 \code{\link[Rsolnp]{solnp}}):
-\item{eqfun}{function for calculating inequality constraints}
-\item{LB}{lower bound for eqfun}
+\item{eqfun}{function for calculating equality constraints}
 \item{eqB}{vector of equality bounds for the variables}
+\item{LB}{lower bound for the variables}
 }
 \description{
 Calculate equality and inequality constraints for the optimization step
+}
+\details{
+x is a vector containing first the RiLog values and then the Ci values
+(length 2*m if no Ci are fixed).
+
+For the eqality contraint (eqfun with corresponding bound eqB), the difference
+of the sm of the Ci values and 1 is calculated. The bound is set to 0, i.e.
+forcing the sum of the Ci to be 1. In case of fixed Ci values, the sum of the
+fixed and the free Ci values is considered.
+
+The lower bound (LB) for the RiLog values is set to -Inf (no constraint)
+and to 0 for the Ci.
+}
+\examples{
+# without fixed Ci
+bppg:::.calcConstraints(fixed.Ci = NULL, m = 3)
+
+# with fixed Ci
+bppg:::.calcConstraints(fixed.Ci = c(NA, 0.8, NA), m = 3)
+
 }

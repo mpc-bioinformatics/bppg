@@ -71,12 +71,12 @@
 #'          [generateGraphsFromEdgelist()]
 #'
 #' @examples
-# ' library(seqinr)
-# ' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
-# ' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-# ' edgelist <- digestFASTA(fasta)
-# ' vMapping <- bppg:::.getContractMapping(edgelist)
-#'  G <- igraph::graph_from_edgelist(as.matrix(edgelist), directed = FALSE)
+#' library(seqinr)
+#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+#' edgelist <- digestFASTA(fasta)
+#' vMapping <- bppg:::.getContractMapping(edgelist)
+#' G <- igraph::graph_from_edgelist(as.matrix(edgelist), directed = FALSE)
 #' igraph::V(G)[igraph::V(G)$name %in% edgelist[, 1]]$type <- TRUE
 #' igraph::V(G)[igraph::V(G)$name %in% edgelist[, 2]]$type <- FALSE
 #' res <- bppg:::.contractGraph(G, vMapping)

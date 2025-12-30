@@ -10,13 +10,12 @@ automatedAnalysisIteratedCi(
   use_results_from_other_proteins = FALSE,
   verbose = FALSE,
   job = NULL,
-  S_is_graph = FALSE,
   error_tol = 1e-10,
   ratioLog_tol = 1e-06
 )
 }
 \arguments{
-\item{G}{\strong{igraph graph object} \cr
+\item{G}{\strong{igraph object} \cr
 An igraph graph of the bipartite
 peptide-protein graph with peptide
 ratios}
@@ -40,19 +39,27 @@ will be printed.}
 Is used to print the job id and
 parameters in the output}
 
-\item{S_is_graph}{\strong{logical} \cr
-If \code{TRUE}, S is an igraph object
-and if \code{FALSE} S is a list with the
-biadjacency matrix and fold changes.}
+\item{error_tol}{\strong{numeric(1)} \cr
+Tolerance for a constant error term.
+Default is 1e-10.}
+
+\item{ratioLog_tol}{\strong{numeric(1)} \cr
+Tolerance for a constant log2 protein
+ratios. The default is 1e-6.}
 }
 \value{
-A data frame
+A data frame with one row for each protein.
 }
 \description{
 Extract protein ratio solutions from the result of iterateOverCi()
 }
 \examples{
-## TODO
+file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+graphs <- readRDS(file)
+G <- graphs$sample1_sample2[[2]]
+# small example with a small grid size
+res <- iterateOverCi(G, grid.size = 100)
+automatedAnalysisIteratedCi(G, res)
 }
 \seealso{
 \code{\link[=iterateOverCi]{iterateOverCi()}}, \code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}}

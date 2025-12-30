@@ -25,45 +25,35 @@ The graph to eliminate the proteins in.}
 The threshold for increase of error term.
 The default 1.05 refers to 5\% increase.}
 
+\item{control}{\strong{list} \cr
+A list of control parameters for the
+optimization step.
+See \code{\link[Rsolnp]{solnp}} for details.}
+
 \item{min_error_ref}{\strong{numeric} \cr
-The minimal error term with all available
-protein nodes.
-\code{min_error_ref} is assigned automatically.}
+The minimal error term on the whole graph using
+all available protein nodes.}
 
-\item{iter}{\strong{numeric} \cr
-The iteration (this is a recursive function).}
+\item{resDF}{\strong{data.frame} \cr
+Dataframe for collecting results from each iteration.
+It contains information on the tested combinations
+of protein nodes, the error terms and the currently
+best combination.}
 
-\item{min_error_current}{\strong{numeric} \cr
-The current minimal error term.
-\code{min_error_current} is assigned
-automatically.}
-
-\item{protein_nodes_list}{\strong{igraph node list} \cr
+\item{protnodes_list}{\strong{igraph node list} \cr
 A current list of protein nodes.}
 
-\item{combination_list}{\strong{character vector} \cr
-A list of node combinations.
-For \code{iter == 0}, \code{combination_list} is
-assigned automatically.}
-
-\item{error_list}{\strong{numeric vector} \cr
-A list of error terms.}
-
-\item{comb_current}{\strong{?} \cr
-The current combination of protein nodes.
-\code{comb_current} is assigned automatically.}
-
-\item{G_current}{\strong{igraph graph object} \cr
-The current graph (with removed protein nodes).
-\code{G_current} is assigned automatically.}
-
-\item{n_comb_current}{\strong{integer} \cr
-The current number of protein nodes.
-For \code{iter == 0}, \code{n_comb_current} is
-assigned automatically.}
+\item{res_best}{\strong{list} \cr
+A list containg the currently best solution including
+the protein node combination, the error term and
+the corresponding graph object.}
 }
 \value{
-list
+list containing the following elements:
+\item{min_error_ref}{reference error term of the whole graph}
+\item{protnodes_list}{list of all available protein nodes in the beginning}
+\item{resDF}{dataframe with results of all iterations}
+\item{res_best}{List of the overall best solution.}
 }
 \description{
 Functions in this file:
@@ -71,8 +61,22 @@ proteinElimination
 Tries to recursively remove protein nodes from graph while keeping the error
 term in the optimization step low
 }
+\details{
+This function works in a recursive way. In the first iteration, the error
+term on the whole graph is assessed. Then, one of the protein nodes is
+deleted and the function is recursively applied. The results of all
+iterations are collected in the resDF data.frame.
+
+For starting the first iteration, only G, threshold and if necessary control
+have to be defined, everything else will be calculated during the first
+iteration for all future iterations.
+}
 \examples{
 ## TODO
+file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+graphs <- readRDS(file)
+G <- graphs$sample1_sample2[[2]]
+proteinElimination(G)
 }
 \seealso{
 \code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}}

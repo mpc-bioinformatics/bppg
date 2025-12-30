@@ -4,7 +4,7 @@
 \alias{.calcObjectiveFunction}
 \title{Calculate objective function for the optimization step}
 \usage{
-.calcObjectiveFunction(fixed.Ci, m, M, rjLog)
+.calcObjectiveFunction(fixed.Ci, M, rjLog)
 }
 \arguments{
 \item{fixed.Ci}{\strong{numeric vector} \cr
@@ -14,21 +14,32 @@ If NULL, all Cis will be considered as variable.
 This argument is needed to fix Ci on a grid point in the
 iterated_Ci function.}
 
-\item{m}{\strong{integer(1)} \cr
-number of proteins in the respective graph}
-
 \item{M}{\strong{matrix} \cr
 Biadjacency matrix of the graph.}
 
-\item{log_level}{\strong{logical(1)} \cr
-if TRUE, the Ri values are returned on log2-scale}
-
-\item{rj}{\strong{numeric vector} \cr
-Contains the measured peptide ratios.}
+\item{rjLog}{\strong{numeric vector} \cr
+Contains the measured peptide ratios (log2-scale).}
 }
 \value{
 objective function that will be minimized
 }
 \description{
 Calculate objective function for the optimization step
+}
+\details{
+The objective function is the sum of squared error terms calculated in
+\code{\link[bppg]{.errorEquation}}.
+
+x is a vector containing first the RiLog values and then the Ci values
+(length 2*m if no Ci are fixed). If there are fixed Ci and m2 non-fixed ones,
+x has the length m + m2.
+}
+\examples{
+
+M <- matrix(c(1, 1, 1, 0, 1, 1), ncol = 2, byrow = FALSE)
+rjLog <- log2(c(0.6, 1.2, 1.5))
+
+fun <- bppg:::.calcObjectiveFunction(fixed.Ci = NULL, M = M, rjLog = rjLog)
+
+
 }
