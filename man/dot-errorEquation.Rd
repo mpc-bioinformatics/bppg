@@ -27,7 +27,7 @@ The biadjaceny matrix of the corresponding graphs.}
 \item{rjLog}{\strong{numeric vector} \cr
 Contains the measured peptide ratios (log2-scale).}
 
-\item{Rilog}{\strong{numeric vector} \cr
+\item{RiLog}{\strong{numeric vector} \cr
 Contains the (estimated) protein ratios (log2-scale).}
 }
 \value{
