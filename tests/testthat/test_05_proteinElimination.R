@@ -20,6 +20,6 @@ test_that("test proteinElimination", {
     res$protnodes_list <- names(res$protnodes_list)
     res$res_best$G <- lapply(res$res_best$G, igraph::as_edgelist)
 
-    expect_snapshot(res)
+    expect_snapshot(res, variant = Sys.info()[["sysname"]])
 
 })
