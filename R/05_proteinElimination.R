@@ -43,7 +43,7 @@
 #' deleted and the function is recursively applied. The results of all
 #' iterations are collected in the resDF data.frame.
 #'
-#'  For starting the first iteration, only G, threshold and if necessary control
+#' For starting the first iteration, only G, threshold and if necessary control
 #'  have to be defined, everything else will be calculated during the first
 #'  iteration for all future iterations.
 #'
