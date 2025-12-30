@@ -473,7 +473,7 @@ iterateOverCi <- function(G,
 #'                      bipartite peptide-protein graph
 #' @param n             \strong{integer(1)} \cr
 #'                      number of proteins in the graph
-#' @paran ...          additional arguments for [.minimizeSquaredError()],
+#' @param ...           additional arguments for [.minimizeSquaredError()],
 #'                     e.g. verbose, control
 #'
 #' @returns Vector with the following elements:
