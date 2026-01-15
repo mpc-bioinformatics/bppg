@@ -58,7 +58,7 @@ file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
 graphs <- readRDS(file)
 G <- graphs$sample1_sample2[[2]]
 # small example with a small grid size
-res <- iterateOverCi(G, grid.size = 100)
+res <- iterateOverCi(G, gridSize = 100)
 automatedAnalysisIteratedCi(G, res)
 }
 \seealso{

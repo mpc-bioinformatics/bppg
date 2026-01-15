@@ -74,11 +74,13 @@ proteinElimination <- function(G,
     checkmate::assertClass(protnodes_list, classes = "igraph.vs", null.ok = TRUE)
     checkmate::assertList(res_best, null.ok = TRUE)
 
+
+    G <- .addUniquenessAttributes(G)
+    nr_unique_peptides <- igraph::V(G)$nr_unique_peptides[igraph::V(G)$type]
+    protnodes <- igraph::V(G)[igraph::V(G)$type]
+
     if (is.null(resDF)) { # first iteration
-        G <- .addUniquenessAttributes(G)
-        protnodes <- igraph::V(G)[igraph::V(G)$type]
-        nr_unique_peptides <- igraph::V(G)$nr_unique_peptides[igraph::V(G)$type]
-        min_error_ref <- .minimizeSquaredError(G, fixed.Ci = NULL,
+        min_error_ref <- .minimizeSquaredError(G, fixedCi = NULL,
             verbose = FALSE, control = control)$RES$res_squ_err
         resDF <- data.frame(comb = paste(protnodes, collapse = ","),
             n_proteins = length(protnodes), error = min_error_ref,
@@ -88,11 +90,6 @@ proteinElimination <- function(G,
         protnodes_list <- protnodes
     }
 
-    G <- .addUniquenessAttributes(G)
-    nr_unique_peptides <- igraph::V(G)$nr_unique_peptides[igraph::V(G)$type]
-    protnodes <- igraph::V(G)[igraph::V(G)$type]
-
-    ## TODO: for loop into apply? -> too complicated for this recursive function???
     for (i in seq_along(protnodes)) {
         protnodes_tmp <- protnodes_list[-i]
         combination <- paste(protnodes_tmp, collapse = ",")
@@ -109,7 +106,7 @@ proteinElimination <- function(G,
         min_error_tmp <- 0
 
         errors <- vapply(G_CC, function(x) {
-            .minimizeSquaredError(x, fixed.Ci = NULL, verbose = FALSE,
+            .minimizeSquaredError(x, fixedCi = NULL, verbose = FALSE,
                 control = control)$RES$res_squ_err}, FUN.VALUE = numeric(1))
         min_error_tmp <- sum(errors)
         res_tmp$error <- min_error_tmp

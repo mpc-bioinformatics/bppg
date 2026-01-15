@@ -6,9 +6,9 @@
 \usage{
 iterateOverCi(
   G,
-  grid.start = 0,
-  grid.stop = 1,
-  grid.size = 1000,
+  gridStart = 0,
+  gridStop = 1,
+  gridSize = 1000,
   omit_grid_borders = TRUE,
   extend_grid_at_borders = FALSE,
   verbose = FALSE,
@@ -19,13 +19,13 @@ iterateOverCi(
 \item{G}{\strong{igraph object} \cr
 Bipartite peptide-protein graph}
 
-\item{grid.start}{\strong{integer} \cr
+\item{gridStart}{\strong{integer} \cr
 The start of the grid (default is 0).}
 
-\item{grid.stop}{\strong{integer} \cr
+\item{gridStop}{\strong{integer} \cr
 The end of the grid (default is 1).}
 
-\item{grid.size}{\strong{integer} \cr
+\item{gridSize}{\strong{integer} \cr
 The number of grid points for the Cis.}
 
 \item{omit_grid_borders}{\strong{logical} \cr
@@ -74,7 +74,7 @@ file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
 graphs <- readRDS(file)
 G <- graphs$sample1_sample2[[2]]
 # small example with a small grid size
-iterateOverCi(G, grid.size = 100)
+iterateOverCi(G, gridSize = 100)
 }
 \seealso{
 \code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}},

@@ -5,13 +5,13 @@
 \title{Function to set up the optimization problem and minimize the sum of squared
 error terms}
 \usage{
-.minimizeSquaredError(G, fixed.Ci = NULL, verbose = FALSE, control = list())
+.minimizeSquaredError(G, fixedCi = NULL, verbose = FALSE, control = list())
 }
 \arguments{
 \item{G}{\strong{igraph object} \cr
 bipartite peptide-protein graph}
 
-\item{fixed.Ci}{\strong{numeric vector} \cr
+\item{fixedCi}{\strong{numeric vector} \cr
 The fixed protein weights, variable weights set as NA.
 Sum of fixed weights must not exceed 1.
 If NULL, all Cis will be considered as variable.

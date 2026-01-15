@@ -4,10 +4,10 @@
 \alias{.calcConstraints}
 \title{Calculate equality and inequality constraints for the optimization step}
 \usage{
-.calcConstraints(fixed.Ci, m)
+.calcConstraints(fixedCi, m)
 }
 \arguments{
-\item{fixed.Ci}{\strong{numeric vector} \cr
+\item{fixedCi}{\strong{numeric vector} \cr
 The fixed protein weights, variable weights set as NA.
 Sum of fixed weights must not exceed 1.
 If NULL, all Cis will be considered as variable.
@@ -32,7 +32,7 @@ x is a vector containing first the RiLog values and then the Ci values
 (length 2*m if no Ci are fixed).
 
 For the equality constraint (eqfun with corresponding bound eqB), the difference
-of the sm of the Ci values and 1 is calculated. The bound is set to 0, i.e.
+of the sum of the Ci values and 1 is calculated. The bound is set to 0, i.e.
 forcing the sum of the Ci to be 1. In case of fixed Ci values, the sum of the
 fixed and the free Ci values is considered.
 
@@ -41,9 +41,9 @@ and to 0 for the Ci.
 }
 \examples{
 # without fixed Ci
-bppg:::.calcConstraints(fixed.Ci = NULL, m = 3)
+bppg:::.calcConstraints(fixedCi = NULL, m = 3)
 
 # with fixed Ci
-bppg:::.calcConstraints(fixed.Ci = c(NA, 0.8, NA), m = 3)
+bppg:::.calcConstraints(fixedCi = c(NA, 0.8, NA), m = 3)
 
 }

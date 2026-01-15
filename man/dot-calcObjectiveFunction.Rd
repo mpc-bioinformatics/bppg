@@ -4,10 +4,10 @@
 \alias{.calcObjectiveFunction}
 \title{Calculate objective function for the optimization step}
 \usage{
-.calcObjectiveFunction(fixed.Ci, M, rjLog)
+.calcObjectiveFunction(fixedCi, M, rjLog)
 }
 \arguments{
-\item{fixed.Ci}{\strong{numeric vector} \cr
+\item{fixedCi}{\strong{numeric vector} \cr
 The fixed protein weights, variable weights set as NA.
 Sum of fixed weights must not exceed 1.
 If NULL, all Cis will be considered as variable.
@@ -39,7 +39,7 @@ x has the length m + m2.
 M <- matrix(c(1, 1, 1, 0, 1, 1), ncol = 2, byrow = FALSE)
 rjLog <- log2(c(0.6, 1.2, 1.5))
 
-fun <- bppg:::.calcObjectiveFunction(fixed.Ci = NULL, M = M, rjLog = rjLog)
+fun <- bppg:::.calcObjectiveFunction(fixedCi = NULL, M = M, rjLog = rjLog)
 
 
 }

@@ -4,10 +4,10 @@
 \alias{.initializeCi}
 \title{Calulate initial values for Ci (protein weights) for optimization}
 \usage{
-.initializeCi(fixed.Ci, m)
+.initializeCi(fixedCi, m)
 }
 \arguments{
-\item{fixed.Ci}{\strong{numeric vector} \cr
+\item{fixedCi}{\strong{numeric vector} \cr
 The fixed protein weights, variable weights set as NA.
 Sum of fixed weights must not exceed 1.
 If NULL, all Cis will be considered as variable.
@@ -31,8 +31,8 @@ is distributed equally among the non-fixed Ci.
 }
 \examples{
 # without fixed Ci -> equal starting weights
-bppg:::.initializeCi(fixed.Ci = NULL, m = 3)
+bppg:::.initializeCi(fixedCi = NULL, m = 3)
 
 # with fixed Ci -> fixes these and equal weight for the others
-bppg:::.initializeCi(fixed.Ci = c(NA, 0.8, NA), m = 3)
+bppg:::.initializeCi(fixedCi = c(NA, 0.8, NA), m = 3)
 }

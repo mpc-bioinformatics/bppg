@@ -23,7 +23,7 @@ test_that("test .minimizeSquaredError", {
   res <- bppg:::.minimizeSquaredError(G_N, verbose = FALSE)
 
   # test fixed_Ci
-  res2 <- bppg:::.minimizeSquaredError(G_N, verbose = FALSE, fixed.Ci = c(0.3, NA))
+  res2 <- bppg:::.minimizeSquaredError(G_N, verbose = FALSE, fixedCi = c(0.3, NA))
 
   testfile_path <- file.path(testthat::test_path(), "testfiles")
   #saveRDS(res, file.path(testfile_path, "test_minimizeSquaredError_file1.rds"))
@@ -52,17 +52,17 @@ test_that("test iterateOverCi", {
   G_N <- graphs[[3]][[1]] # N
   G_M <- graphs[[3]][[2]] # M
 
-  res_I <- iterateOverCi(G_I, grid.size = 10)
+  res_I <- iterateOverCi(G_I, gridSize = 10)
   #saveRDS(res_I, file.path(testfile_path, "test_iterateOverCi_file_I1.rds"))
   res_I_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file_I1.rds"))
   expect_equal(res_I, res_I_snap, tolerance = 1e-05)
 
-  res_N <- iterateOverCi(G_N, grid.size = 10)
+  res_N <- iterateOverCi(G_N, gridSize = 10)
   #saveRDS(res_N, file.path(testfile_path, "test_iterateOverCi_file_N1.rds"))
   res_N_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file_N1.rds"))
   expect_equal(res_N, res_N_snap, tolerance = 1e-05)
 
-  res_M <- iterateOverCi(G_M, grid.size = 10)
+  res_M <- iterateOverCi(G_M, gridSize = 10)
   #saveRDS(res_M, file.path(testfile_path, "test_iterateOverCi_file_M1.rds"))
   res_M_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file_M1.rds"))
   expect_equal(res_M, res_M_snap, tolerance = 1e-05)
@@ -82,17 +82,17 @@ test_that("test iterateOverCi with extended grid", {
   G_N <- graphs[[3]][[1]] # N
   G_M <- graphs[[3]][[2]] # M
 
-  res_I <- iterateOverCi(G_I, grid.size = 10, extend_grid_at_borders = TRUE)
+  res_I <- iterateOverCi(G_I, gridSize = 10, extend_grid_at_borders = TRUE)
   #saveRDS(res_I, file.path(testfile_path, "test_iterateOverCi_file_I2.rds"))
   res_I_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file_I2.rds"))
   expect_equal(res_I, res_I_snap, tolerance = 1e-05)
 
-  res_N <- iterateOverCi(G_N, grid.size = 10, extend_grid_at_borders = TRUE)
+  res_N <- iterateOverCi(G_N, gridSize = 10, extend_grid_at_borders = TRUE)
   #saveRDS(res_N, file.path(testfile_path, "test_iterateOverCi_file_N2.rds"))
   res_N_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file_N2.rds"))
   expect_equal(res_N, res_N_snap, tolerance = 1e-05)
 
-  res_M <- iterateOverCi(G_M, grid.size = 10, extend_grid_at_borders = TRUE)
+  res_M <- iterateOverCi(G_M, gridSize = 10, extend_grid_at_borders = TRUE)
   #saveRDS(res_M, file.path(testfile_path, "test_iterateOverCi_file_M2.rds"))
   res_M_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file_M2.rds"))
   expect_equal(res_M, res_M_snap, tolerance = 1e-05)

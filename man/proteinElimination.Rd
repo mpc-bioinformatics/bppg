@@ -53,7 +53,8 @@ list containing the following elements:
 \item{min_error_ref}{reference error term of the whole graph}
 \item{protnodes_list}{list of all available protein nodes in the beginning}
 \item{resDF}{dataframe with results of all iterations}
-\item{res_best}{List of the overall best solution.}
+\item{res_best}{List of the overall best solution. The graph object(s) in this
+list can directly be used by \link{iterateOverCi}.}
 }
 \description{
 Functions in this file:
