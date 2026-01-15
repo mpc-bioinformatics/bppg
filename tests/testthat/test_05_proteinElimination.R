@@ -17,7 +17,7 @@ test_that("test proteinElimination", {
     res <- proteinElimination(G = G)
 
     ## prepare result object for snapshot (cant deal with random igraph ids)
-    res$protnodes_list <- names(res$protnodes_list)
+    res$protsOriginIDs <- names(res$protsOriginIDs)
     res$res_best$G <- lapply(res$res_best$G, igraph::as_edgelist)
 
     ## TODO: rounding here because of small Windows/Linux differences

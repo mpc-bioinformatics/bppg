@@ -13,7 +13,7 @@ proteinElimination(
   control = list(),
   min_error_ref = NULL,
   resDF = NULL,
-  protnodes_list = NULL,
+  protsOriginIDs = NULL,
   res_best = NULL
 )
 }
@@ -40,7 +40,7 @@ It contains information on the tested combinations
 of protein nodes, the error terms and the currently
 best combination.}
 
-\item{protnodes_list}{\strong{igraph node list} \cr
+\item{protsOriginIDs}{\strong{igraph node list} \cr
 A current list of protein nodes.}
 
 \item{res_best}{\strong{list} \cr
@@ -51,7 +51,7 @@ the corresponding graph object.}
 \value{
 list containing the following elements:
 \item{min_error_ref}{reference error term of the whole graph}
-\item{protnodes_list}{list of all available protein nodes in the beginning}
+\item{protsOriginIDs }{list of all available protein nodes in the beginning}
 \item{resDF}{dataframe with results of all iterations}
 \item{res_best}{List of the overall best solution. The graph object(s) in this
 list can directly be used by \link{iterateOverCi}.}

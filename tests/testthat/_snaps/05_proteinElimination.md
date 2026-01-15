@@ -6,7 +6,7 @@
       $min_error_ref
       [1] 0.02231625
       
-      $protnodes_list
+      $protsOriginIDs
       [1] "prot_1" "prot_2" "prot_3" "prot_4" "prot_5"
       
       $resDF
