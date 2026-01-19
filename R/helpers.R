@@ -40,7 +40,7 @@
 #' @param G \strong{igraph graph object} \cr
 #'          A peptide-protein graph.
 #'
-#' @return A graph with 2 additional vertex attributes, uniqueness and 
+#' @return A graph with 2 additional vertex attributes, uniqueness and
 #'         nr_unique_peptides
 #'
 #'
@@ -55,7 +55,7 @@
 
     uniqueness <- igraph::degree(G, igraph::V(G)) == 1
     ## attribute only for peptides
-    uniqueness[igraph::V(G)$type] <- NA 
+    uniqueness[igraph::V(G)$type] <- NA
 
     G <- igraph::set_vertex_attr(G, "uniqueness", value = uniqueness)
 
@@ -97,12 +97,12 @@
 #' data <- c(1,6,3.5)
 #' result <- bppg:::.geomMean(data, useprod = FALSE)
 
-.geomMean <- function(x, useprod = FALSE) {
+.geomMean <- function(x, useprod = FALSE, na.rm = FALSE) {
     n <- length(x)
 
     if (useprod) {
-        return(prod(x)^(1 / n))
+        return(prod(x, na.rm = na.rm)^(1 / n))
     } else {
-        return(exp(mean(log(x))))
+        return(exp(mean(log(x), na.rm = na.rm)))
     }
 }

@@ -14,13 +14,13 @@
 #'                                If \code{TRUE}, the peptide nodes will
 #'                                be collapsed.
 #' @param outpath                 \strong{character} \cr
-#'                                The path where intermetdiate results are 
+#'                                The path where intermediate results are
 #'                                saved. If \code{NULL}, results are not saved.
 #' @param suffix                  \strong{character} \cr
 #'                                The suffix for saving results.
 #'                                will also be saved.
 #' @param protOrigin             \strong{list or data.frame} \cr
-#'                                A list with the protein orgin corresponding to 
+#'                                A list with the protein orgin corresponding to
 #'                               [fasta], proteins are used as rownames/index.
 #' @param ...                     Additional arguments to bppg::digestFASTA()
 #'
@@ -98,7 +98,7 @@ generateGraphsFromFASTA <- function(fasta,
 #' @param suffix                   \strong{character} \cr
 #'                                 The suffix for output files.
 #' @param protOrigin               \strong{list or data.frame} \cr
-#'                                 A list with the protein orgin corresponding to 
+#'                                 A list with the protein orgin corresponding to
 #'                                 [fasta], proteins are used as rownames/index.
 #' @param ...                      Additional arguments for [.digest2()].
 #'
@@ -112,10 +112,10 @@ generateGraphsFromFASTA <- function(fasta,
 #' library(seqinr)
 #' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-#' 
+#'
 #' file <- system.file("extdata", "peptides.txt", package = "bppg")
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
-#' 
+#'
 #' graphs <- bppg::generateGraphsFromQuantData(D, fasta)
 
 generateGraphsFromQuantData <- function(D,
@@ -148,7 +148,7 @@ generateGraphsFromQuantData <- function(D,
         group = group, seq_col = seq_column)
 
     if (!is.null(outpath)) {
-        openxlsx::write.xlsx(SummarizedExperiment::assays(D_aggr)$intensities, 
+        openxlsx::write.xlsx(SummarizedExperiment::assays(D_aggr)$intensities,
             file = paste0(outpath, "aggr_peptides_", suffix, ".xlsx"),
             overwrite = TRUE, keepNA = TRUE)
     }
@@ -159,7 +159,7 @@ generateGraphsFromQuantData <- function(D,
         group_levels = groups)
     if (!is.null(outpath)) {
         openxlsx::write.xlsx(
-            SummarizedExperiment::assays(peptide_ratios)$logRatios, 
+            SummarizedExperiment::assays(peptide_ratios)$logRatios,
             file = paste0(outpath,"peptide_ratios_", suffix, ".xlsx"),
             overwrite = TRUE, keepNA = TRUE)
     }

@@ -31,7 +31,7 @@ If \code{TRUE}, the peptide nodes will
 be collapsed.}
 
 \item{outpath}{\strong{character} \cr
-The path where intermetdiate results are
+The path where intermediate results are
 saved. If \code{NULL}, results are not saved.}
 
 \item{suffix}{\strong{character} \cr
