@@ -41,7 +41,10 @@ of protein nodes, the error terms and the currently
 best combination.}
 
 \item{protsOriginIDs}{\strong{igraph node list} \cr
-A current list of protein nodes.}
+This will be initialized during the first
+iteration, please keep the default NULL value.
+It is the current list of protein nodes relative
+to the original graph.}
 
 \item{res_best}{\strong{list} \cr
 A list containing the currently best solution including

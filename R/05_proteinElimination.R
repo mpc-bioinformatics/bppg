@@ -24,7 +24,10 @@
 #'                             of protein nodes, the error terms and the currently
 #'                             best combination.
 #' @param protsOriginIDs        \strong{igraph node list} \cr
-#'                             A current list of protein nodes.
+#'                              This will be initialized during the first
+#'                             iteration, please keep the default NULL value.
+#'                             It is the current list of protein nodes relative
+#'                             to the original graph.
 #' @param res_best             \strong{list} \cr
 #'                             A list containing the currently best solution including
 #'                             the protein node combination, the error term and
@@ -61,9 +64,9 @@
 proteinElimination <- function(G,
     threshold = 1.05,
     control = list(),
-    min_error_ref = NULL, # error from iteration 1
+    min_error_ref = NULL,
     resDF = NULL,
-    protsOriginIDs  = NULL, # current list of protein nodes, based on the ID of the original graph in iter 1
+    protsOriginIDs  = NULL,
     res_best = NULL) {
     checkmate::assertClass(G, classes = c("igraph"))
     checkmate::checkTRUE(igraph::is_bipartite(G))
@@ -77,7 +80,8 @@ proteinElimination <- function(G,
 
     G <- .addUniquenessAttributes(G)
     nr_unique_peptides <- igraph::V(G)$nr_unique_peptides[igraph::V(G)$type]
-    protsCurrent <- igraph::V(G)[igraph::V(G)$type]  # in contrast to protsOriginIDs, its based on the ID of the current graph
+    # in contrast to protsOriginIDs, its based on the ID of the current graph
+    protsCurrent <- igraph::V(G)[igraph::V(G)$type]
 
     if (is.null(resDF)) { # first iteration
         min_error_ref <- .minimizeSquaredError(G, fixedCi = NULL,
@@ -91,7 +95,7 @@ proteinElimination <- function(G,
     }
 
     for (i in seq_along(protsCurrent)) {
-        protsCurrent_tmp <- protsOriginIDs [-i]
+        protsCurrent_tmp <- protsOriginIDs[-i]
         combination <- paste(protsCurrent_tmp, collapse = ",")
         if (combination %in% resDF$comb) next # skip already seen combinations
         res_tmp <- list(comb = combination,
