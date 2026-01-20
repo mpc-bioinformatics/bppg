@@ -18,7 +18,8 @@
 #' @param stop               \strong{integer vector} \cr
 #'                           Index of where peptides stop
 #' @param miss               \strong{integer} \cr
-#'                           which order miss cleavage 0 = no mis cleavage
+#'                           which order of missed cleavages, 
+#'                           e.g. 0 = no missed cleavage
 #'
 #' @return A dataframe with information (inkl. peptide sequence and start value)
 #'         of the peptides.
@@ -28,8 +29,8 @@
 .cleave <- function(sequence, start, stop, misses) {
     peptide <- substring(sequence, start, stop)
     mc <- rep(misses, times = length(peptide))
-    data.frame(sequence = peptide, start, stop, mc,
-        stringsAsFactors = FALSE)
+    return(data.frame(sequence = peptide, start, stop, mc,
+        stringsAsFactors = FALSE))
 }
 
 #' Digestion of a single protein sequence.
@@ -83,7 +84,7 @@
     }
 
     if (enzyme != "trypsin") {
-        stop("undefined enzyme, only trypsin is currently supported")
+        stop("undefined enzyme, only 'trypsin' is currently supported")
     }
     if (length(stop) == 0) {
         if (warn) warning("sequence does not contain cleavage sites")
@@ -91,8 +92,9 @@
                 stop = nchar(sequence), mc = 0))
     }
     if (missed > length(stop)) {
-        if (warn) warning("number of specified missed cleavages is greater than
-            the possible maximum")
+        if (warn){
+            warning("number of specified missed cleavages is greater than the possible maximum")
+        }
     }
 
     stop_ <- stop
@@ -159,7 +161,10 @@
 #'
 #' @param fasta              \strong{list of character sequence} \cr
 #'                           A fasta file, already read into R by
-#'                           [seqinr::read.fasta()].
+#'                           [seqinr::read.fasta()]. If several protein origins 
+#'                           are used they should be combined into one flatten  
+#'                           listand a list with the corresponding origins  
+#'                           should be provided for \strong{protOrigin}.
 #' @param missed_cleavages   \strong{integer} \cr
 #'                           The maximal number of missed cleavages.
 #' @param min_aa             \strong{integer} \cr
@@ -168,9 +173,9 @@
 #' @param max_aa             \strong{integer} \cr
 #'                           The maximal number of amino acids
 #'                           (set to Inf for no filtering).
-#' @param protOrigin         \strong{list or data.frame} \cr
-#'                           A list with the protein orgin corresponding to
-#'                           [fasta], proteins are used as rownames/index.
+#' @param protOrigin         \strong{list} \cr
+#'                           A list with the protein origin corresponding to
+#'                           [fasta], proteins are used as index.
 #' @param ...                Additional arguments for [.digest2()].
 #'
 #' @return data.frame with proteins and their peptide sequences, filtered

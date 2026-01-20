@@ -29,6 +29,22 @@ Functions in this file:
 Adds average peptide ratios as a attribute to the graphs, if a list of
 peptide ratios is already present.
 }
+\examples{
+
+library(seqinr)
+file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+edgelist <- bppg::digestFASTA(fasta)
+
+file <- system.file("extdata", "peptides.txt", package = "bppg")
+D <- bppg::readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+group <- factor(rep(1:9, each = 3))
+dAgg <- bppg::aggregateReplicates(D, group = group)
+exp_peptide_ratios <- bppg::calculatePeptideRatios(dAgg)
+graph <- bppg::generateQuantGraphs(exp_peptide_ratios, edgelist)
+
+res <- bppg:::.addAveragePepRatio(graph[[1]])
+}
 \seealso{
 \code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}, \code{\link[=generateQuantGraphs]{generateQuantGraphs()}},
 \code{\link[=.addUniquenessAttributes]{.addUniquenessAttributes()}}

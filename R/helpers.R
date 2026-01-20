@@ -18,6 +18,20 @@
 #'          [.addUniquenessAttributes()]
 #'
 #' @examples
+#' 
+#' library(seqinr)
+#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+#' edgelist <- bppg::digestFASTA(fasta)
+#'
+#' file <- system.file("extdata", "peptides.txt", package = "bppg")
+#' D <- bppg::readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' group <- factor(rep(1:9, each = 3))
+#' dAgg <- bppg::aggregateReplicates(D, group = group)
+#' exp_peptide_ratios <- bppg::calculatePeptideRatios(dAgg)
+#' graph <- bppg::generateQuantGraphs(exp_peptide_ratios, edgelist)
+#'
+#' res <- bppg:::.addAveragePepRatio(graph[[1]])
 
 .addAveragePepRatio <- function(G, type = "geom_mean") {
 
@@ -48,6 +62,14 @@
 #'          [.addAveragePepRatio()]
 #'
 #' @examples
+#' 
+#' library(seqinr)
+#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+#' edgelist <- digestFASTA(fasta)
+#' graph <- bppg::generateGraphsFromEdgelist(edgelist)
+#' 
+#' res <- bppg:::.addUniquenessAttributes(graph[[1]])
 
 .addUniquenessAttributes <- function(G) {
     ## FALSE = peptide, TRUE = protein

@@ -16,7 +16,10 @@ digestFASTA(
 \arguments{
 \item{fasta}{\strong{list of character sequence} \cr
 A fasta file, already read into R by
-\code{\link[seqinr:read.fasta]{seqinr::read.fasta()}}.}
+\code{\link[seqinr:read.fasta]{seqinr::read.fasta()}}. If several protein origins
+are used they should be combined and a list with
+the corresponding origins should be provided for
+\strong{protOrigin}.}
 
 \item{missed_cleavages}{\strong{integer} \cr
 The maximal number of missed cleavages.}
@@ -29,9 +32,9 @@ The minimal number of amino acids
 The maximal number of amino acids
 (set to Inf for no filtering).}
 
-\item{protOrigin}{\strong{list or data.frame} \cr
-A list with the protein orgin corresponding to
-\link[seqinr:fasta]{seqinr::fasta}, proteins are used as rownames/index.}
+\item{protOrigin}{\strong{list} \cr
+A list with the protein origin corresponding to
+\link[seqinr:fasta]{seqinr::fasta}, proteins are used as index.}
 
 \item{...}{Additional arguments for \code{\link[=.digest2]{.digest2()}}.}
 }

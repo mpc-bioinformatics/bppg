@@ -19,6 +19,16 @@ nr_unique_peptides
 Adds vertex attributes with uniqueness of peptides and number of unique
 peptides for proteins.
 }
+\examples{
+
+library(seqinr)
+file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+edgelist <- digestFASTA(fasta)
+graph <- bppg::generateGraphsFromEdgelist(edgelist)
+
+res <- bppg:::.addUniquenessAttributes(graph[[1]])
+}
 \seealso{
 \code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}, \code{\link[=generateQuantGraphs]{generateQuantGraphs()}},
 \code{\link[=.addAveragePepRatio]{.addAveragePepRatio()}}

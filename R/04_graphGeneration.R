@@ -48,7 +48,7 @@
         peptSignature <- edgelist
         peptSignature$protein <- paste0("pept_", peptSignature$peptide)
     }
-    list(peptides = peptSignature, proteins = protSignature)
+    return(list(peptides = peptSignature, proteins = protSignature))
 }
 
 #' Contracting of peptide and protein nodes.
@@ -124,7 +124,7 @@
             sapply(igraph::V(gCollapsed)$protOrigin[igraph::V(gCollapsed)$type], unique)
     }
 
-    igraph::delete_vertex_attr(gCollapsed, "collSignature")
+    return(igraph::delete_vertex_attr(gCollapsed, "collSignature"))
 }
 
 
@@ -185,7 +185,7 @@ generateGraphsFromEdgelist <- function(edgelist,
     if(collProtNodes || collPeptNodes) {
         G <- .contractGraph(G, vertexMapping, collProtNodes, collPeptNodes)
     }
-    igraph::decompose(G)
+    return(igraph::decompose(G))
 }
 
 
@@ -272,7 +272,7 @@ generateQuantGraphs <- function(exp_peptide_ratios,
 
             compEdgelist <- edgelist_filtered[edgelist_filtered$peptide
                 %in% rownames(compRatio), ]
-            compEdgelist$pep_logRatios <- compRatio[match(compEdgelist$peptide,
+            compEdgelist$pep_logRatio <- compRatio[match(compEdgelist$peptide, 
                 rownames(compRatio)), 1]
             generateGraphsFromEdgelist(compEdgelist, collProtNodes, collPeptNodes)
         })

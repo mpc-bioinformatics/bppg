@@ -4,7 +4,8 @@
 #' 
 
 
-#' Import of MaxQuant's peptide.txt-table.
+#' Helper function that extracts the itensitie columns and columns of interest 
+#' from a given dataframe.
 #'
 #' @param D                         \strong{data.frame} \cr                
 #'                                  Data frame of peptides.txt from MaxQuant
@@ -22,7 +23,7 @@
         colnames(intensities) <- stringr::str_replace(colnames(intensities),
             col_pattern, "")
     }
-    intensities
+    return(intensities)
 }
 
 #' Import of MaxQuant's peptide.txt-table.
@@ -113,7 +114,7 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
         colnames(further_columns) <- further_columns_to_keep
         rowDF <- data.frame(Sequence = D$Sequence, further_columns)
     }
-    SummarizedExperiment::SummarizedExperiment(
+    return(SummarizedExperiment::SummarizedExperiment(
         assays = list(intensities=intensities), 
-        colData = colDF, rowData = rowDF)
+        colData = colDF, rowData = rowDF))
 }

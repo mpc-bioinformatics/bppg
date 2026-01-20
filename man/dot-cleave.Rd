@@ -21,7 +21,8 @@ Index of where peptides start}
 Index of where peptides stop}
 
 \item{miss}{\strong{integer} \cr
-which order miss cleavage 0 = no mis cleavage}
+which order of missed cleavages,
+e.g. 0 = no missed cleavage}
 }
 \value{
 A dataframe with information (inkl. peptide sequence and start value)
