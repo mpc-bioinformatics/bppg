@@ -83,7 +83,7 @@
 
 .contractGraph <- function(G, vMapping,
                            collProtNodes,
-                           collPeptNodes){
+                           collPeptNodes) {
     G <- igraph::set_vertex_attr(graph = G,
         name = "collSignature",
         index = igraph::V(G)[igraph::V(G)$type],
@@ -98,30 +98,35 @@
             match(igraph::V(G)$name[!igraph::V(G)$type],
                 vMapping$peptides$peptide)])
 
-    gCollapsed <- igraph::contract(G, factor(stats::na.omit(igraph::V(G)$collSignature)),
+    gCollapsed <- igraph::contract(G, 
+        factor(stats::na.omit(igraph::V(G)$collSignature)),
         vertex.attr.comb = c)
 
     # remove duplicate edges
     gCollapsed  <- igraph::simplify(gCollapsed)
 
     # reset attributes
-    igraph::V(gCollapsed)$type <- sapply(igraph::V(gCollapsed)$type, "[", 1)
-    igraph::V(gCollapsed)$name <- sapply(igraph::V(gCollapsed)$name,
-        paste, collapse=";") # this is not ordered - > same ratio order
+    igraph::V(gCollapsed)$type <- vapply(igraph::V(gCollapsed)$type, "[", 1,
+        FUN.VALUE = logical(1))
+    igraph::V(gCollapsed)$name <- vapply(igraph::V(gCollapsed)$name,
+        paste, collapse=";", FUN.VALUE = character(1)) 
+    # this is not ordered - > same ratio order
 
 
-    if (!is.null(igraph::V(gCollapsed)$pep_logRatio)){
-        if(collPeptNodes) {
-        igraph::V(gCollapsed)$pep_ratio_mean[!igraph::V(gCollapsed)$type] <-
-            sapply(igraph::V(gCollapsed)$pep_logRatio[!igraph::V(gCollapsed)$type], mean)
+    if (!is.null(igraph::V(gCollapsed)$pep_logRatio)) {
+        if (collPeptNodes) {
+            igraph::V(gCollapsed)$pep_ratio_mean[!igraph::V(gCollapsed)$type] <-
+                vapply(igraph::V(gCollapsed)$pep_logRatio[!igraph::V(gCollapsed)$type],
+                    mean, FUN.VALUE = numeric(1))
         } else {
-                igraph::V(gCollapsed)$pep_logRatio <- sapply(
-                    igraph::V(gCollapsed)$pep_logRatio,  "[", 1)
-    }}
+            igraph::V(gCollapsed)$pep_logRatio <- vapply(
+                igraph::V(gCollapsed)$pep_logRatio,  "[", 1,
+                FUN.VALUE = numeric(1))
+        } }
 
     if (!is.null(igraph::V(gCollapsed)$protOrigin) && collProtNodes) {
         igraph::V(gCollapsed)$protOrigin[igraph::V(gCollapsed)$type] <-
-            sapply(igraph::V(gCollapsed)$protOrigin[igraph::V(gCollapsed)$type], unique)
+            vapply(igraph::V(gCollapsed)$protOrigin[igraph::V(gCollapsed)$type], unique, FUN.VALUE = character(1))
     }
 
     return(igraph::delete_vertex_attr(gCollapsed, "collSignature"))
@@ -160,9 +165,9 @@ generateGraphsFromEdgelist <- function(edgelist,
     checkmate::assertFlag(collProtNodes)
     checkmate::assertFlag(collPeptNodes)
 
-    if(collProtNodes || collPeptNodes) {
+    if (collProtNodes || collPeptNodes) {
         vertexMapping <- .getContractMapping(edgelist, collProtNodes,
-        collPeptNodes)
+            collPeptNodes)
     }
 
     #generate graph from edge matrix
@@ -173,7 +178,7 @@ generateGraphsFromEdgelist <- function(edgelist,
     igraph::V(G)[igraph::V(G)$name %in% edgelist[, 1]]$type <- TRUE
     igraph::V(G)[igraph::V(G)$name %in% edgelist[, 2]]$type <- FALSE
 
-    if (!is.null(edgelist$pep_logRatio)){
+    if (!is.null(edgelist$pep_logRatio)) {
         G <- igraph::set_vertex_attr(graph = G,
             name = "pep_logRatio",
             index = igraph::V(G)[!igraph::V(G)$type],
@@ -182,7 +187,7 @@ generateGraphsFromEdgelist <- function(edgelist,
                     edgelist$peptide)])
     }
 
-    if(collProtNodes || collPeptNodes) {
+    if (collProtNodes || collPeptNodes) {
         G <- .contractGraph(G, vertexMapping, collProtNodes, collPeptNodes)
     }
     return(igraph::decompose(G))
@@ -262,10 +267,10 @@ generateQuantGraphs <- function(exp_peptide_ratios,
     }
 
     colnames_split <- limma::strsplit2(colnames(exp_peptide_ratios), "_")
-    comparisons <- paste(colnames_split[,2], colnames_split[,3], sep = "_")
+    comparisons <- paste(colnames_split[, 2], colnames_split[, 3], sep = "_")
 
     subgraphs <- lapply(1:ncol(exp_peptide_ratios),
-        function(i){
+        function(i) {
             compRatio <- SummarizedExperiment::assays(
                 exp_peptide_ratios)$logRatios[, i, drop=FALSE]
             compRatio <- compRatio[!is.na(compRatio), 1, drop=FALSE]

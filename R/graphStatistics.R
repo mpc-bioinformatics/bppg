@@ -145,11 +145,13 @@
 
             protein_acc <- igraph::V(G_tmp)$name[igraph::V(G_tmp)$type]
             protein_acc <- strsplit(protein_acc, ";")
-            nr_protein_accessions <- sum(sapply(protein_acc, length))
+            nr_protein_accessions <- sum(vapply(protein_acc,
+                    length, FUN.VALUE = numeric(1)))
 
             peptide_seq <- igraph::V(G_tmp)$name[!igraph::V(G_tmp)$type]
             peptide_seq <- strsplit(peptide_seq, ";")
-            nr_peptide_sequences <- sum(sapply(peptide_seq, length))
+            nr_peptide_sequences <- sum(vapply(peptide_seq, length,
+                    FUN.VALUE = numeric(1)))
 
             unique_pept_nodes <- igraph::V(G_tmp)[
                 (igraph::degree(G_tmp) == 1 & !igraph::V(G_tmp)$type)]

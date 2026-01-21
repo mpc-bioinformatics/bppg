@@ -38,10 +38,10 @@
     pep_ratio <- igraph::V(G)$pep_ratio
     pep_ratio_split <- strsplit(pep_ratio, ";")
 
-    pep_ratio_aggr <- sapply(pep_ratio_split, function(x) {
-        .geomMean(as.numeric(x))})
+    pep_ratio_aggr <- vapply(pep_ratio_split, function(x) {
+        .geomMean(as.numeric(x))}, FUN.VALUE = numeric(1))
 
-    nr_sequences <- sapply(pep_ratio_split, length)
+    nr_sequences <- vapply(pep_ratio_split, length, FUN.VALUE = numeric(1))
 
     G <- igraph::set_vertex_attr(G, "pep_ratio_aggr", value = pep_ratio_aggr)
     G <- igraph::set_vertex_attr(G, "nr_sequences", value = nr_sequences)
@@ -89,16 +89,16 @@
     neighborhood <- igraph::ego(G, order = 1, mindist = 1, nodes = igraph::V(G))
 
     ## TODO VAPPLY
-    nr_unique_peptides <- sapply(neighborhood, function(x) {
+    nr_unique_peptides <- vapply(neighborhood, function(x) {
         sum(x %in% unique_peptide_nodes)
-    })
+    }, FUN.VALUE = numeric(1))
     nr_unique_peptides[!igraph::V(G)$type] <- NA ## attribute only for proteins
     G <- igraph::set_vertex_attr(G, "nr_unique_peptides",
         value = nr_unique_peptides)
 
-    nr_shared_peptides <- sapply(neighborhood, function(x) {
+    nr_shared_peptides <- vapply(neighborhood, function(x) {
         sum(x%in% shared_peptide_nodes)
-    })
+    }, FUN.VALUE = numeric(1))
     nr_shared_peptides[!igraph::V(G)$type] <- NA ## attribute only for proteins
     G <- igraph::set_vertex_attr(G, "nr_shared_peptides",
         value = nr_shared_peptides)

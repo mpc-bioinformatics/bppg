@@ -116,7 +116,7 @@
 
     ## sort list of prototypes according to number of edges
     if (sort_by_nr_edges) {
-        nr_edges <- sapply(G, igraph::gsize)
+        nr_edges <- vapply(G, igraph::gsize, FUN.VALUE = numeric(1))
         ord <- order(nr_edges)
 
         G <- G[ord]
