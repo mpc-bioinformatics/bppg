@@ -14,6 +14,7 @@ generateGraphsFromFASTA(
   outpath = NULL,
   suffix = NULL,
   protOrigin = NULL,
+  verbose = FALSE,
   ...
 )
 }
@@ -41,6 +42,10 @@ will also be saved.}
 \item{protOrigin}{\strong{list or data.frame} \cr
 A list with the protein orgin corresponding to
 \link[seqinr:fasta]{seqinr::fasta}, proteins are used as rownames/index.}
+
+\item{verbose}{\strong{logical} \cr
+If \code{TRUE}, additional information on each iteration
+of the optimization is printed}
 
 \item{...}{Additional arguments to bppg::digestFASTA()}
 }

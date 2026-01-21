@@ -176,6 +176,10 @@
 #' @param protOrigin         \strong{list} \cr
 #'                           A list with the protein origin corresponding to
 #'                           [fasta], proteins are used as index.
+#' @param verbose            \strong{logical} \cr
+#'                           If \code{TRUE}, additional information on
+#'                           each iteration of the optimization is 
+#'                           printed
 #' @param ...                Additional arguments for [.digest2()].
 #'
 #' @return data.frame with proteins and their peptide sequences, filtered
@@ -196,18 +200,25 @@ digestFASTA <- function(fasta,
     min_aa = 6,
     max_aa = 50,
     protOrigin = NULL,
+    verbose = FALSE,
     ...)  {
     checkmate::assertList(fasta)
     checkmate::assertInt(missed_cleavages, lower = 0)
     checkmate::assertInt(min_aa, lower = 0, upper = max_aa - 1)
     checkmate::assertInt(max_aa, lower = min_aa + 1)
     checkmate::assertList(protOrigin, len = length(fasta), null.ok = TRUE)
+    checkmate::assertFlag(verbose)
 
     if (!is.null(protOrigin)) {
         names(protOrigin) <- names(fasta)
     }
+    if (!verbose) {
+        pbo <- pbapply::pboptions(type = "none")
+        on.exit(pbapply::pboptions(pbo), add = TRUE)
+    }
     digested_proteins <- do.call("rbind",
         pbapply::pblapply(names(fasta), FUN = function(x) {
+
             sequ <- fasta[[x]]
             class(sequ) <- NULL
             y <- .digest2(sequ, missed = missed_cleavages, warn = FALSE, ...)

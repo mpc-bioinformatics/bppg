@@ -490,6 +490,10 @@ iterateOverCi <- function(G,
         }
         if (omit_grid_borders) grid <- grid[-c(1, length(grid))]
         cnames <- c(paste0("RLog", 1:n), paste0("C", 1:n))
+        if (!verbose) {
+            pbo <- pbapply::pboptions(type = "none")
+            on.exit(pbapply::pboptions(pbo), add = TRUE)
+        }
         result <- pbapply::pbmapply(FUN = .calcResultGridpoint,
                                     j = rep(1:n, each = length(grid)), gridpoint = grid,
                                     MoreArgs = list(cnames = cnames, G = G, n = n,

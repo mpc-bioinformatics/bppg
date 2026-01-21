@@ -16,6 +16,7 @@ generateGraphsFromQuantData(
   collPeptNodes = FALSE,
   suffix = "",
   protOrigin = NULL,
+  verbose = FALSE,
   ...
 )
 }
@@ -64,6 +65,10 @@ The suffix for output files.}
 \item{protOrigin}{\strong{list or data.frame} \cr
 A list with the protein orgin corresponding to
 \link[seqinr:fasta]{seqinr::fasta}, proteins are used as rownames/index.}
+
+\item{verbose}{\strong{logical} \cr
+If \code{TRUE}, additional information on each iteration
+of the optimization is printed}
 
 \item{...}{Additional arguments for \code{\link[=.digest2]{.digest2()}}.}
 }

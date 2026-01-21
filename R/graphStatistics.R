@@ -7,6 +7,9 @@
 #'
 #' @param G   \strong{list of list of igraph objects} \cr
 #'            The graphs with collapsed protein and peptide nodes.
+#' @param verbose     \strong{logical} \cr
+#'                    If \code{TRUE}, additional information on each iteration
+#'                    of the optimization is printed
 #'
 #' @return A data frame with information on number of unique/shared peptides.
 #'
@@ -15,7 +18,11 @@
 #'
 #' @examples ## TODO
 
-.calculateProteinNodeInfo <- function(G) {
+.calculateProteinNodeInfo <- function(G, verbose = FALSE) {
+    if (!verbose) {
+        pbo <- pbapply::pboptions(type = "none")
+        on.exit(pbapply::pboptions(pbo), add = TRUE)
+    }
     G2 <- lapply(G, function(x) {
         pbapply::pblapply(x, .addUniquenessAttributes)
     })
@@ -70,7 +77,9 @@
 #'                     prototype list
 #' @param file         \strong{character} \cr
 #'                     A file path where to save the table.
-#'
+#' @param verbose     \strong{logical} \cr
+#'                    If \code{TRUE}, additional information on each iteration
+#'                    of the optimization is printed
 #'
 #' @return A table with the characteristics.
 #'
@@ -82,7 +91,12 @@
     fastalevel = TRUE,
     prototype = FALSE,
     #comparison = NULL,
-    file = NULL) {
+    file = NULL, 
+    verbose = FALSE) {
+    if (!verbose) {
+        pbo <- pbapply::pboptions(type = "none")
+        on.exit(pbapply::pboptions(pbo), add = TRUE)
+    }
 
     if (prototype) {
         counter <- S$counter
@@ -110,7 +124,7 @@
             ## S3_tmp <- S3[[j]]
         }
 
-        print(comparisons[j])
+        if (verbose) print(comparisons[j])
 
         ## add progress bar to loop
         pb <- pbapply::startpb(0, length(S_tmp))
