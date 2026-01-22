@@ -1,52 +1,7 @@
 #' Functions in this file:
-#' .addAveragePepRatio
 #' .addUniquenessAttributes
 #' .geomMean
 
-#' Adds average peptide ratios as a attribute to the graphs, if a list of
-#' peptide ratios is already present.
-#'
-#' @param G      \strong{igraph graph object} \cr
-#'               A peptide-protein graph.
-#' @param type   \strong{character} \cr
-#'               !NOT USED AT THE MOMENT!
-#'
-#' @return A graph with added peptide ratio attributes.
-#'
-#'
-#' @seealso [generateGraphsFromFASTA()], [generateQuantGraphs()],
-#'          [.addUniquenessAttributes()]
-#'
-#' @examples
-#' 
-#' library(seqinr)
-#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
-#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-#' edgelist <- bppg::digestFASTA(fasta)
-#'
-#' file <- system.file("extdata", "peptides.txt", package = "bppg")
-#' D <- bppg::readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
-#' group <- factor(rep(1:9, each = 3))
-#' dAgg <- bppg::aggregateReplicates(D, group = group)
-#' exp_peptide_ratios <- bppg::calculatePeptideRatios(dAgg)
-#' graph <- bppg::generateQuantGraphs(exp_peptide_ratios, edgelist)
-#'
-#' res <- bppg:::.addAveragePepRatio(graph[[1]])
-
-.addAveragePepRatio <- function(G, type = "geom_mean") {
-
-    pep_ratio <- igraph::V(G)$pep_ratio
-    pep_ratio_split <- strsplit(pep_ratio, ";")
-
-    pep_ratio_aggr <- vapply(pep_ratio_split, function(x) {
-        .geomMean(as.numeric(x))}, FUN.VALUE = numeric(1))
-
-    nr_sequences <- vapply(pep_ratio_split, length, FUN.VALUE = numeric(1))
-
-    G <- igraph::set_vertex_attr(G, "pep_ratio_aggr", value = pep_ratio_aggr)
-    G <- igraph::set_vertex_attr(G, "nr_sequences", value = nr_sequences)
-    return(G)
-}
 
 #' Adds vertex attributes with uniqueness of peptides and number of unique
 #' peptides for proteins.
@@ -58,8 +13,7 @@
 #'         nr_unique_peptides
 #'
 #'
-#' @seealso [generateGraphsFromFASTA()], [generateQuantGraphs()],
-#'          [.addAveragePepRatio()]
+#' @seealso [generateGraphsFromFASTA()], [generateQuantGraphs()]
 #'
 #' @examples
 #' 
@@ -111,6 +65,9 @@
 #' @param useprod   \strong{logical} \cr
 #'                  If \code{TRUE}, prod(x)^(1/n) will be calculated, otherwise
 #'                  exp(mean(log(x))).
+#' @param na.rm     \strong{logical} \cr
+#'                  If \code{TRUE}, missing values are removed before the 
+#'                  calculation. \code{FALSE} is default.
 #'
 #' @return The geometric mean of the provided data points.
 #'

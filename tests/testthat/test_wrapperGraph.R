@@ -8,7 +8,6 @@ test_that("generate graphs from fasta",{
   fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 
   res <- bppg::generateGraphsFromFASTA(fasta = fasta,
-                                       save_intermediate = TRUE,
                                        outpath = temp_dir)
 
   expect_snapshot(igraph::as_edgelist(res[[1]]))

@@ -2,7 +2,10 @@
 % Please edit documentation in R/helpers.R
 \name{.addUniquenessAttributes}
 \alias{.addUniquenessAttributes}
-\title{Adds vertex attributes with uniqueness of peptides and number of unique
+\title{Functions in this file:
+.addUniquenessAttributes
+.geomMean
+Adds vertex attributes with uniqueness of peptides and number of unique
 peptides for proteins.}
 \usage{
 .addUniquenessAttributes(G)
@@ -16,6 +19,9 @@ A graph with 2 additional vertex attributes, uniqueness and
 nr_unique_peptides
 }
 \description{
+Functions in this file:
+.addUniquenessAttributes
+.geomMean
 Adds vertex attributes with uniqueness of peptides and number of unique
 peptides for proteins.
 }
@@ -30,6 +36,5 @@ graph <- bppg::generateGraphsFromEdgelist(edgelist)
 res <- bppg:::.addUniquenessAttributes(graph[[1]])
 }
 \seealso{
-\code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}, \code{\link[=generateQuantGraphs]{generateQuantGraphs()}},
-\code{\link[=.addAveragePepRatio]{.addAveragePepRatio()}}
+\code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}, \code{\link[=generateQuantGraphs]{generateQuantGraphs()}}
 }

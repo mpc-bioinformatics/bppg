@@ -40,7 +40,7 @@ A list with the protein origin corresponding to
 \item{verbose}{\strong{logical} \cr
 If \code{TRUE}, additional information on
 each iteration of the optimization is
-printed}
+printed.}
 
 \item{...}{Additional arguments for \code{\link[=.digest2]{.digest2()}}.}
 }

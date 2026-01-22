@@ -111,7 +111,9 @@ generateGraphsFromFASTA <- function(fasta,
 #'                    of the optimization is printed
 #' @param ...                      Additional arguments for [.digest2()].
 #'
-#' @return A list of list of graphs.
+#' @return A list of list of graphs. The outer list is for the different
+#'         possible comparisons, the inner layer is for the independet graphs in
+#'         that comparison.
 #' @export
 #'
 #' @seealso [bppg::readMqPeptideTable()], [seqinr::read.fasta()],

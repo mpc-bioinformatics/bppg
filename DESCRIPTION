@@ -17,24 +17,20 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 biocViews:
 Imports: 
-    BBmisc,
     checkmate,
     graphics,
-    grDevices,
     limma,
-    Matrix,
-    methods,
     openxlsx,
     pbapply,
     robustbase,
     Rsolnp,
-    seqinr,
     stringr,
     SummarizedExperiment
 Suggests: 
     covr,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    seqinr
 Config/testthat/edition: 3
 Depends: 
     igraph (>= 2.0.0)

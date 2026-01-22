@@ -14,7 +14,10 @@
 #' @param organisms      \strong{named list of character vectors} \cr
 #'                       Each organism with the corresponding protein
 #'                       accessions.
-#'
+#' @param verbose            \strong{logical} \cr
+#'                           If \code{TRUE}, additional information on
+#'                           each iteration of the optimization is 
+#'                           printed.
 #' @return A character vector with protein origin for each protein accession
 #' @export
 #'

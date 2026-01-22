@@ -8,7 +8,7 @@
 digestFASTA()
 Cleavage of a single protein sequence.}
 \usage{
-.cleave(sequence, start, stop, misses)
+.cleave(sequence, start, stop, miss)
 }
 \arguments{
 \item{sequence}{\strong{character} \cr

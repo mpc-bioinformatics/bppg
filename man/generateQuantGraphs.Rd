@@ -42,9 +42,6 @@ be collapsed.}
 
 \item{suffix}{\strong{character} \cr
 The suffix for saving results.}
-
-\item{id_cols}{\strong{integer vector} \cr
-The columns with ids, e.g. peptide sequences.}
 }
 \value{
 A list of list of subgraphs

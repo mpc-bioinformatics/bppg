@@ -202,8 +202,6 @@ generateGraphsFromEdgelist <- function(edgelist,
 #'                                 A SummarizedExperiment from
 #'                                 [bppg::calculatePeptideRatios] with peptide
 #'                                 ratios.
-#' @param id_cols                  \strong{integer vector} \cr
-#'                                 The columns with ids, e.g. peptide sequences.
 #' @param fasta_edgelist           \strong{data.frame} \cr
 #'                                 An edgelist created from the corresponding
 #'                                 FASTA file, eg. created with

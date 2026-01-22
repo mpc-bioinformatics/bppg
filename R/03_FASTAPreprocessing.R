@@ -26,9 +26,9 @@
 #'
 #' @seealso [.digest2()], [digestFASTA()]
 #'
-.cleave <- function(sequence, start, stop, misses) {
+.cleave <- function(sequence, start, stop, miss) {
     peptide <- substring(sequence, start, stop)
-    mc <- rep(misses, times = length(peptide))
+    mc <- rep(miss, times = length(peptide))
     return(data.frame(sequence = peptide, start, stop, mc,
         stringsAsFactors = FALSE))
 }
@@ -64,7 +64,7 @@
     enzyme = "trypsin",
     missed = 0,
     warn = TRUE,
-    remove_initial_M = TRUE, ...) {
+    remove_initial_M = TRUE) {
     seq_vector <- strsplit(sequence, split = "")[[1]]
     end_position <- length(seq_vector)
 
@@ -179,7 +179,7 @@
 #' @param verbose            \strong{logical} \cr
 #'                           If \code{TRUE}, additional information on
 #'                           each iteration of the optimization is 
-#'                           printed
+#'                           printed.
 #' @param ...                Additional arguments for [.digest2()].
 #'
 #' @return data.frame with proteins and their peptide sequences, filtered

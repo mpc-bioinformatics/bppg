@@ -139,7 +139,7 @@ calculatePeptideRatios <- function(D, group_levels = NULL) {
     }
 
     # create pairwise groups for ratio calculation
-    groupCombinations <- combn(group_levels, 2)
+    groupCombinations <- utils::combn(group_levels, 2)
     peptide_log_ratios <- vapply(seq_len(ncol(groupCombinations)), function(i) {
         log2(.foldChange(D = aggr_intensities, X = groupCombinations[1, i],
             Y = groupCombinations[2, i]))

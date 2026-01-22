@@ -73,7 +73,9 @@ of the optimization is printed}
 \item{...}{Additional arguments for \code{\link[=.digest2]{.digest2()}}.}
 }
 \value{
-A list of list of graphs.
+A list of list of graphs. The outer list is for the different
+possible comparisons, the inner layer is for the independet graphs in
+that comparison.
 }
 \description{
 Generate graphs from quantitative peptide-level data
