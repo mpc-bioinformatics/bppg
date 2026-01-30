@@ -10,4 +10,3 @@ linters: linters_with_defaults(
     redundant_equals_linter(),
     indentation_linter(indent = 4L, hanging_indent_style = "never")
     )
-

@@ -18,6 +18,7 @@ RoxygenNote: 7.3.3
 biocViews:
 Imports: 
     BBmisc,
+    checkmate,
     graphics,
     grDevices,
     limma,
@@ -28,7 +29,8 @@ Imports:
     robustbase,
     Rsolnp,
     seqinr,
-    stringr
+    stringr,
+    SummarizedExperiment
 Suggests: 
     covr,
     rmarkdown,

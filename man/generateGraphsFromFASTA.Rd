@@ -11,10 +11,9 @@ generateGraphsFromFASTA(
   fasta,
   collProtNodes = TRUE,
   collPeptNodes = TRUE,
-  result_path = NULL,
+  outpath = NULL,
   suffix = NULL,
-  save_intermediate = FALSE,
-  prot_origin = NULL,
+  protOrigin = NULL,
   ...
 )
 }
@@ -31,24 +30,22 @@ be collapsed.}
 If \code{TRUE}, the peptide nodes will
 be collapsed.}
 
-\item{result_path}{\strong{character} \cr
-The path where results are saved. If
-\code{NULL}, results are not saved.}
+\item{outpath}{\strong{character} \cr
+The path where intermediate results are
+saved. If \code{NULL}, results are not saved.}
 
 \item{suffix}{\strong{character} \cr
-The suffix for saving results.}
-
-\item{save_intermediate}{\strong{logical} \cr
-If \code{TRUE}, the intermediate results
+The suffix for saving results.
 will also be saved.}
 
-\item{prot_origin}{\strong{character vector} \cr
-The origin of protein, e.g. organism etc.}
+\item{protOrigin}{\strong{list or data.frame} \cr
+A list with the protein orgin corresponding to
+\link[seqinr:fasta]{seqinr::fasta}, proteins are used as rownames/index.}
 
 \item{...}{Additional arguments to bppg::digestFASTA()}
 }
 \value{
-subgraphs (i.e. connected components) from the graph generated from
+Subgraphs (i.e. connected components) from the graph generated from
 the FASTA file.
 }
 \description{

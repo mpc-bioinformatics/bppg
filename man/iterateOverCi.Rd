@@ -5,49 +5,33 @@
 \title{Iterate over possible Ci values}
 \usage{
 iterateOverCi(
-  S,
-  grid.size = 1000,
+  G,
+  gridStart = 0,
+  gridStop = 1,
+  gridSize = 1000,
   omit_grid_borders = TRUE,
-  grid.start = 0,
-  grid.stop = 1,
-  verbose = FALSE,
-  verbose_opt = FALSE,
-  control = list(),
   extend_grid_at_borders = FALSE,
-  log_level = TRUE
+  verbose = FALSE,
+  control = list()
 )
 }
 \arguments{
-\item{S}{\strong{list} \cr
-A list of biadjacency matrix of the bipartite
-peptide-protein graph (named "X")
-and measured peptide ratios (named "fc").}
+\item{G}{\strong{igraph object} \cr
+Bipartite peptide-protein graph}
 
-\item{grid.size}{\strong{integer} \cr
+\item{gridStart}{\strong{integer} \cr
+The start of the grid (default is 0).}
+
+\item{gridStop}{\strong{integer} \cr
+The end of the grid (default is 1).}
+
+\item{gridSize}{\strong{integer} \cr
 The number of grid points for the Cis.}
 
 \item{omit_grid_borders}{\strong{logical} \cr
-If \code{TRUE}, omit exact value of 1 and 0
-from the grid (recommended, as they may cause
-numerical issues).}
-
-\item{grid.start}{\strong{integer} \cr
-The start of the grid (default is 0).}
-
-\item{grid.stop}{\strong{integer} \cr
-The end of the grid (default is 1).}
-
-\item{verbose}{\strong{logical} \cr
-If \code{TRUE}, print additional information
-(see solnp function).}
-
-\item{verbose_opt}{\strong{logical} \cr
-The \code{verbose} argument of the
-\code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}} function.}
-
-\item{control}{\strong{list} \cr
-The \code{control} object to be passed to the
-\code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}} function.}
+If \code{TRUE} (default), omit exact value of
+1 and 0 from the grid (recommended, as they
+may cause numerical issues).}
 
 \item{extend_grid_at_borders}{\strong{logical} \cr
 If \code{TRUE}, the grid will be extend close
@@ -55,15 +39,19 @@ to the borders (0 and 1).
 While exact values of 0 and 1 may cause
 numerical problems, values close to those may
 be valuable to get a better estimate of the
-protein ratios.}
+protein ratios. Default is \code{FALSE}.}
 
-\item{log_level}{\strong{logical} \cr
-The \code{log_level} argument will passed to
-the \code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}} function.}
+\item{verbose}{\strong{logical} \cr
+If \code{TRUE}, print additional information
+(see \code{\link[Rsolnp]{solnp}} function).}
+
+\item{control}{\strong{list} \cr
+The \code{control} object to be passed to the
+\code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}} function.}
 }
 \value{
 A dataframe containing the optimal Ci and Ri values together with the reached
-minimal error term.
+minimal error term for each grid point.
 }
 \description{
 Iterate over possible Ci values
@@ -79,13 +67,14 @@ the other Ci values and all Ri values are optimized using
 .minimizeSquaredError().
 The resulting table can be used to assess a range of possible solutions for
 the protein ratios.
+The table can be further processed with \code{\link[=automatedAnalysisIteratedCi]{automatedAnalysisIteratedCi()}}.
 }
 \examples{
-M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
-rj <- c(0.6, 1.2)
-S <- list(X = M, fc = rj)
-bppg:::.minimizeSquaredError(S)
-## example not complete? TODO
+file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+graphs <- readRDS(file)
+G <- graphs$sample1_sample2[[2]]
+# small example with a small grid size
+iterateOverCi(G, gridSize = 100)
 }
 \seealso{
 \code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}},

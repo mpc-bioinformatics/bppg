@@ -11,179 +11,131 @@
 #' @param threshold            \strong{numeric} \cr
 #'                             The threshold for increase of error term.
 #'                             The default 1.05 refers to 5% increase.
-#' @param iter                 \strong{numeric} \cr
-#'                             The iteration (this is a recursive function).
+#' @param control              \strong{list} \cr
+#'                              A list of control parameters for the
+#'                              optimization step.
+#'                              See \code{\link[Rsolnp]{solnp}} for details.
 #' @param min_error_ref        \strong{numeric} \cr
-#'                             The minimal error term with all available
-#'                             protein nodes.
-#'                             \code{min_error_ref} is assigned automatically.
-#' @param min_error_current    \strong{numeric} \cr
-#'                             The current minimal error term.
-#'                             \code{min_error_current} is assigned
-#'                             automatically.
-#' @param protein_nodes_list   \strong{igraph node list} \cr
-#'                             A current list of protein nodes.
-#' @param combination_list     \strong{character vector} \cr
-#'                             A list of node combinations.
-#'                             For \code{iter == 0}, \code{combination_list} is
-#'                             assigned automatically.
-#' @param error_list           \strong{numeric vector} \cr
-#'                             A list of error terms.
-#' @param comb_current         \strong{?} \cr
-#'                             The current combination of protein nodes.
-#'                             \code{comb_current} is assigned automatically.
-#' @param G_current            \strong{igraph graph object} \cr
-#'                             The current graph (with removed protein nodes).
-#'                             \code{G_current} is assigned automatically.
-#' @param n_comb_current       \strong{integer} \cr
-#'                             The current number of protein nodes.
-#'                             For \code{iter == 0}, \code{n_comb_current} is
-#'                             assigned automatically.
+#'                             The minimal error term on the whole graph using
+#'                             all available protein nodes.
+#' @param resDF                \strong{data.frame} \cr
+#'                             Dataframe for collecting results from each iteration.
+#'                             It contains information on the tested combinations
+#'                             of protein nodes, the error terms and the currently
+#'                             best combination.
+#' @param protsOriginIDs        \strong{igraph node list} \cr
+#'                              This will be initialized during the first
+#'                             iteration, please keep the default NULL value.
+#'                             It is the current list of protein nodes relative
+#'                             to the original graph.
+#' @param res_best             \strong{list} \cr
+#'                             A list containing the currently best solution including
+#'                             the protein node combination, the error term and
+#'                             the corresponding graph object.
 #'
-#' @return list
+#' @return list containing the following elements:
+#' \item{min_error_ref}{reference error term of the whole graph}
+#' \item{protsOriginIDs }{list of all available protein nodes in the beginning}
+#' \item{resDF}{dataframe with results of all iterations}
+#' \item{res_best}{List of the overall best solution. The graph object(s) in this
+#'                  list can directly be used by [bppg::iterateOverCi].}
+#'
+#'
+#' @details
+#' This function works in a recursive way. In the first iteration, the error
+#' term on the whole graph is assessed. Then, one of the protein nodes is
+#' deleted and the function is recursively applied. The results of all
+#' iterations are collected in the resDF data.frame.
+#'
+#' For starting the first iteration, only G, threshold and if necessary control
+#'  have to be defined, everything else will be calculated during the first
+#'  iteration for all future iterations.
+#'
+#'
 #' @export
 #'
 #' @seealso [bppg::.minimizeSquaredError()]
 #'
 #' @examples ## TODO
-## TODO too long
+#' file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+#' graphs <- readRDS(file)
+#' G <- graphs$sample1_sample2[[2]]
+#' proteinElimination(G)
 proteinElimination <- function(G,
     threshold = 1.05,
-    iter = 0,
+    control = list(),
     min_error_ref = NULL,
-    min_error_current = NULL,
-    protein_nodes_list = igraph::V(G)[igraph::V(G)$type],
-    combination_list = NULL,
-    error_list = NULL,
-    comb_current = NULL,
-    G_current = NULL,
-    n_comb_current = NA) {
-
-    ## 0: calculate reference error
-    if (iter == 0) {
-        G <- bppg:::.addUniquenessAttributes(G)
-        proteinnodes <- igraph::V(G)[igraph::V(G)$type]
-        nr_unique_peptides <- igraph::V(G)$nr_unique_peptides[igraph::V(G)$type]
-
-        X <- igraph::as_biadjacency_matrix(G)
-        fc <- stats::na.omit(igraph::V(G)$pep_ratio)
-        S <- list(X = X, fc = fc)
-        n <- ncol(S$X) ## number of protein nodes
-
-        opti <- .minimizeSquaredError(S, #error.type = "multiplicative",
-            fixed.Ci = NULL,
-            verbose = FALSE, #error.trans = "square",
-            reciprocal = FALSE, log_level = TRUE,
-            control = list(trace = 0, delta = 1e-9))
-        min_error_ref <- opti$RES$res_squ_err
-
-        ## initialization
-        combination_list <- paste(proteinnodes, collapse = ",")
-        comb_current <- paste(proteinnodes, collapse = ",")
-        G_current <- G
-        error_list <- min_error_ref
-        n_comb_current <- length(proteinnodes)
-    }
+    resDF = NULL,
+    protsOriginIDs  = NULL,
+    res_best = NULL) {
+    checkmate::assertClass(G, classes = c("igraph"))
+    checkmate::checkTRUE(igraph::is_bipartite(G))
+    checkmate::assertNumeric(threshold)
+    checkmate::assertList(control)
+    checkmate::assertNumeric(min_error_ref, null.ok = TRUE)
+    checkmate::assertDataFrame(resDF, null.ok = TRUE)
+    checkmate::assertClass(protsOriginIDs , classes = "igraph.vs", null.ok = TRUE)
+    checkmate::assertList(res_best, null.ok = TRUE)
 
 
-    ## try to remove every protein node, if the error is sill small enough,
-    ## try to remove the next protein
-    proteinnodes <- igraph::V(G)[igraph::V(G)$type]
+    G <- .addUniquenessAttributes(G)
     nr_unique_peptides <- igraph::V(G)$nr_unique_peptides[igraph::V(G)$type]
+    # in contrast to protsOriginIDs, its based on the ID of the current graph
+    protsCurrent <- igraph::V(G)[igraph::V(G)$type]
 
-    for (i in 1:length(proteinnodes)) {
-
-        proteinnodes_tmp <- protein_nodes_list[-i]
-        combination <- paste(proteinnodes_tmp, collapse = ",")
-
-        ## this combination has already been tested
-        if (combination %in% combination_list) {
-        next
-        }
-
-        combination_list <- c(combination_list, combination)
-        error_list <- c(error_list, NA)
-
-        ## skip if protein has unique peptides
-        if (nr_unique_peptides[i] > 0) {
-        next
-        }
-
-        ## skip if it has more proteins than the current combination
-        if (length(proteinnodes_tmp) > n_comb_current) {
-        next
-        }
-
-        ## this will delete a protein node and all associated edges
-        G_tmp <- igraph::delete_vertices(G, proteinnodes[i])
-        ## different results are possible
-        ## 1) the graph is still connected and all peptide nodes are still
-        #covered
-        ## 2) at least one peptide node is not connected anymore
-        ## (this has to be skipped then!)
-        ## 3) all peptide nodes are covered but the graph is not connected
-        ## anymore (this has to be skipped then!)
-
-        ## check if all peptide nodes are still connected to at least
-        ## one protein node
-        if (any(igraph::ego_size(G_tmp, order = 1,
-                    nodes = igraph::V(G_tmp)[!igraph::V(G_tmp)$type],
-                    mindist = 1) == 0)) {
-            next
-        }
-
-        ## decompose into connected components if possible
-        G_CC <- igraph::decompose(G_tmp)
-
-        min_error_tmp <- 0
-        for (i in 1:length(G_CC)) {
-            X <- igraph::as_biadjacency_matrix(G_CC[[i]])
-            fc <- stats::na.omit(igraph::V(G_CC[[i]])$pep_ratio)
-            S <- list(X = X, fc = fc)
-            n <- ncol(S$X) ## number of protein groups
-
-            opti <- .minimizeSquaredError(S, #error.type = "multiplicative",
-                fixed.Ci = NULL,
-                verbose = FALSE, #error.trans = "square",
-                reciprocal = FALSE, log_level = TRUE,
-                control = list(trace = 0, delta = 1e-9))
-            min_error_tmp <- min_error_tmp + opti$RES$res_squ_err
-        }
-        error_list[length(error_list)] <- min_error_tmp
-
-        ## falls min_error_tmp NA sein sollte, skippen (seltene Fälle wenn ein Ci 0 ist)
-        if (is.na(min_error_tmp)) {
-            next
-        }
-
-        ## check if error is small enough compared to reference error
-        if (min_error_tmp > min_error_ref * threshold) {
-            next
-        }
-
-        min_error_current <- min_error_tmp
-        comb_current <- combination
-        G_current <- G_CC
-        n_comb_current <- length(proteinnodes_tmp)
-
-        RES <- proteinElimination(G = G_tmp, threshold = threshold, iter = 1,
-            min_error_ref = min_error_ref,
-            min_error_current = min_error_current,
-            protein_nodes_list = proteinnodes_tmp, error_list = error_list,
-            combination_list = combination_list, comb_current = comb_current,
-            G_current = G_current, n_comb_current = n_comb_current)
-        min_error_current <- RES$min_error_current
-        combination_list <- RES$combination_list
-        error_list <- RES$error_list
-        comb_current <- RES$comb_current
-        G_current <- RES$G_current
-        n_comb_current <- RES$n_comb_current
+    if (is.null(resDF)) { # first iteration
+        min_error_ref <- .minimizeSquaredError(G, fixedCi = NULL,
+            verbose = FALSE, control = control)$RES$res_squ_err
+        resDF <- data.frame(comb = paste(protsCurrent, collapse = ","),
+            n_proteins = length(protsCurrent), error = min_error_ref,
+            current_best = TRUE)
+        res_best <- list(G = list(G), comb = paste(protsCurrent, collapse = ","),
+                         n_comb = length(protsCurrent), error = min_error_ref)
+        protsOriginIDs  <- protsCurrent
     }
 
-    return(list(min_error_ref = min_error_ref,
-        min_error_current = min_error_current,
-        protein_nodes_list = protein_nodes_list,
-        combination_list = combination_list, error_list = error_list,
-        comb_current = comb_current, G_current = G_current,
-        n_comb_current = n_comb_current))
+    for (i in seq_along(protsCurrent)) {
+        protsCurrent_tmp <- protsOriginIDs[-i]
+        combination <- paste(protsCurrent_tmp, collapse = ",")
+        if (combination %in% resDF$comb) next # skip already seen combinations
+        res_tmp <- list(comb = combination,
+                        n_proteins = length(protsCurrent_tmp),
+                        error = NA, current_best = FALSE)
+        if (nr_unique_peptides[i] > 0) { ## skip if deleted protein has unique peptides
+            resDF <- rbind(resDF, res_tmp)
+            next
+        }
+        G_tmp <- igraph::delete_vertices(G, protsCurrent[i])
+        G_CC <- igraph::decompose(G_tmp)  #
+        min_error_tmp <- 0
+
+        errors <- vapply(G_CC, function(x) {
+            .minimizeSquaredError(x, fixedCi = NULL, verbose = FALSE,
+                control = control)$RES$res_squ_err}, FUN.VALUE = numeric(1))
+        min_error_tmp <- sum(errors)
+        res_tmp$error <- min_error_tmp
+        resDF <- rbind(resDF, res_tmp)
+
+        ## skip if error is NA or larger than the reference * threshold
+        if (is.na(min_error_tmp) | min_error_tmp > min_error_ref * threshold) {
+            next
+        }
+        if (res_tmp$n_proteins <= res_best$n_comb) {
+            resDF$current_best[nrow(resDF)] <- TRUE
+            res_best <- list(G = G_CC, comb = combination,
+                             n_comb = res_tmp$n_proteins, error = res_tmp$error)
+        }
+
+        RES <- proteinElimination(G = G_tmp, threshold = threshold, control = control,
+                                  min_error_ref = min_error_ref, resDF = resDF,
+                                  protsOriginIDs  = protsCurrent_tmp,
+                                  res_best = res_best)
+        resDF <- RES$resDF
+        res_best <- RES$res_best
+    }
+    return(list(min_error_ref = min_error_ref, protsOriginIDs  = protsCurrent,
+        resDF = resDF, res_best = res_best))
 }
+
+
+
