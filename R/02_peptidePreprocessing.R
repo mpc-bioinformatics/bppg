@@ -72,7 +72,7 @@ aggregateReplicates <- function(D,
     checkmate::assertClass(D, "SummarizedExperiment")
     checkmate::assertDataFrame(SummarizedExperiment::assays(D)$intensities, 
         all.missing=FALSE)
-    checkmate::assertFactor(group)
+    checkmate::assertFactor(group, null.ok = TRUE)
     checkmate::assertNumber(missing.limit, lower = 0, upper = 1)
     checkmate::assertCharacter(method, pattern = "mean|sum|median")
     checkmate::assertCharacter(seq_col)
