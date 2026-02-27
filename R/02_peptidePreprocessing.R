@@ -84,7 +84,7 @@ aggregateReplicates <- function(D, group = NULL, missing.limit = 0,
     if (is.null(group)) {
         group <- factor(SummarizedExperiment::colData(D)$group)
     }
-    min_row <- apply(intensities, 1, min, na.rm = TRUE) # only needed for min2impute
+    min_row <- apply(intensities, 1, min, na.rm = TRUE) # only needed for min2impute, there is rowMeans also TODO
     mask_impute <- NULL  # track imputed vales, missleading name
 
     FUN <- switch(method,
@@ -145,9 +145,6 @@ aggregateReplicates <- function(D, group = NULL, missing.limit = 0,
             rowData = SummarizedExperiment::rowData(D),
             metadata = list(imputed = FALSE))
     }
-
-
-
     return(res)
 }
 
@@ -172,11 +169,11 @@ calculatePeptideRatios <- function(D, group_levels = NULL) {
     checkmate::assertClass(D, "SummarizedExperiment")
     checkmate::assertDataFrame(SummarizedExperiment::assays(
         D)$intensities, all.missing=FALSE)
-    checkmate::assert_logical(metadata(D)$imputed)
+    checkmate::assert_logical(S4Vectors::metadata(D)$imputed)
     checkmate::assertVector(group_levels, unique = TRUE, null.ok = TRUE)
 
     aggr_intensities <- SummarizedExperiment::assays(D)$intensities
-     # aber nur falls das nicht null ist 
+    # aber nur falls das nicht null ist 
 
     if (is.null(group_levels)) {
         group_levels <- SummarizedExperiment::colData(D)$group
@@ -186,30 +183,39 @@ calculatePeptideRatios <- function(D, group_levels = NULL) {
     groupCombinations <- combn(group_levels, 2)
     peptide_log_ratios <- vapply(seq_len(ncol(groupCombinations)), function(i) {
         log2(.foldChange(D = aggr_intensities, X = groupCombinations[1, i],
-            Y = groupCombinations[2, i]))
+             Y = groupCombinations[2, i]))
     }, numeric(nrow(aggr_intensities)))
 
-    if (SummarizedExperiment::metadata(D)$imputed) {
-        mask_impute <- SummarizedExperiment::assay(D)$maskImputation 
-    }
-
     peptide_log_ratios <- data.frame(peptide_log_ratios)
-    colnames(peptide_log_ratios) <- paste0("logRatio_", groupCombinations[1, ], "_", 
-        groupCombinations[2, ])
+    colnames(peptide_log_ratios) <- paste0("logRatio_", 
+        groupCombinations[1, ], "_", groupCombinations[2, ])
     rownames(peptide_log_ratios) <- rownames(aggr_intensities)
 
-    #TODO thsi is not working anymore
-    # kann ich das ähnlich aufbauen, wie bei aggregate?
-    dub_fc_mask <- apply(mask_impute[, c(col1, col2)], 1,
-                         function(x) x[1] & x[2])
-    peptide_log_ratios[dub_fc_mask] <- NA   #remove ratio of two imputed values
-    imp_fc_mask <- apply(mask_impute[, c(col1, col2)], 1,
-                         function(x) x[1] | x[2])
+    if (S4Vectors::metadata(D)$imputed) {
+        mask_impute <- SummarizedExperiment::assays(D)$maskImputation
 
+        fakeFCMask <- vapply(seq_len(ncol(groupCombinations)), function(i) {
+            mask_impute[, groupCombinations[1, i]] & 
+                mask_impute[, groupCombinations[2, i]] 
+        }, logical(nrow(aggr_intensities)))
+        peptide_log_ratios[fakeFCMask] <- NA # remove ratio of imputed values
+        imputedFCs <- vapply(seq_len(ncol(groupCombinations)), function(i) {
+            mask_impute[, groupCombinations[1, i]] | 
+                mask_impute[, groupCombinations[2, i]] 
+        }, logical(nrow(aggr_intensities)))
 
-    res <- SummarizedExperiment::SummarizedExperiment(
-        assays = list(logRatios = peptide_log_ratios, maskImputation = imp_fc_mask), 
-        colData = data.frame(comparison = colnames(peptide_log_ratios)),
-        rowData = SummarizedExperiment::rowData(D))
+        res <- SummarizedExperiment::SummarizedExperiment(
+            assays = list(logRatios = peptide_log_ratios,
+                maskImputation = imputedFCs), 
+            colData = data.frame(comparison = colnames(peptide_log_ratios)),
+            rowData = SummarizedExperiment::rowData(D),
+            metadata = list(imputed = TRUE))
+    } else {
+        res <- SummarizedExperiment::SummarizedExperiment(
+            assays = list(logRatios = peptide_log_ratios), 
+            colData = data.frame(comparison = colnames(peptide_log_ratios)),
+            rowData = SummarizedExperiment::rowData(D),
+            metadata = FALSE)
+    }
     return(res)
 }
