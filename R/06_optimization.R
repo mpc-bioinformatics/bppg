@@ -1,14 +1,14 @@
-#' Functions in this file:
-#' .errorEquation
-#' .initializeCi
-#' .initializeRi
-#' .calcConstraints
-#' .calcObjectiveFunction
-#' .minimizeSquaredError
-#' iterateOverCi
-#' .calcResultGridpoint
-#' automatedAnalysisIteratedCi
-#' .analyseResultSingleProt
+# Functions in this file:
+# .errorEquation
+# .initializeCi
+# .initializeRi
+# .calcConstraints
+# .calcObjectiveFunction
+# .minimizeSquaredError
+# iterateOverCi
+# .calcResultGridpoint
+# automatedAnalysisIteratedCi
+# .analyseResultSingleProt
 
 
 

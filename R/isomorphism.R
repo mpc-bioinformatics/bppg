@@ -1,8 +1,8 @@
-#' Functions in this file:
-#' .directBipartiteGraph
-#' .isomorphicBipartite
-#' .generatePrototypeList
-#' 
+# Functions in this file:
+# .directBipartiteGraph
+# .isomorphicBipartite
+# .generatePrototypeList
+#
 
 #' Transform a bipartite graph into a directed graph.
 #'
@@ -36,7 +36,7 @@
 }
 
 #' Enchanced version of the igraph::isomorphic function that also considers the
-#' node type in bipartite graphs, e.g. that W- and M-shaped graphs are NOT 
+#' node type in bipartite graphs, e.g. that W- and M-shaped graphs are NOT
 #' isomorphic
 #'
 #' @param graph1   \strong{graph (igraph)} \cr
@@ -83,7 +83,7 @@
     pb <- pbapply::startpb(min = 0, max = 1)
     i <- 1
     ## TODO why not for loop???
-    ## go trough list of graphs, 
+    ## go trough list of graphs,
     while (i <= length(G)) {
 
         ## if end of list is reached:

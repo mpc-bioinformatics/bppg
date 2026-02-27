@@ -1,7 +1,7 @@
-#' Functions in this file:
-#' .cleave()
-#' .digest2()
-#' digestFASTA()
+# Functions in this file:
+# .cleave()
+# .digest2()
+# digestFASTA()
 
 ### modified version of OrgMassSpecR::Digest (.cleave() and .digest2())
 ### - deleted functionality to calculate peptide masses &

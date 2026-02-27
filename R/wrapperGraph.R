@@ -1,6 +1,6 @@
-#' Functions in this file:
-#' generateGraphsFromFASTA
-#' generateGraphsFromQuantData
+# Functions in this file:
+# generateGraphsFromFASTA
+# generateGraphsFromQuantData
 
 #' Generate graphs from a FASTA file
 #'

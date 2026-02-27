@@ -2,11 +2,7 @@
 % Please edit documentation in R/helpers.R
 \name{.addAveragePepRatio}
 \alias{.addAveragePepRatio}
-\title{Functions in this file:
-.addAveragePepRatio
-.addUniquenessAttributes
-.geomMean
-Adds average peptide ratios as a attribute to the graphs, if a list of
+\title{Adds average peptide ratios as a attribute to the graphs, if a list of
 peptide ratios is already present.}
 \usage{
 .addAveragePepRatio(G, type = "geom_mean")
@@ -22,10 +18,6 @@ A peptide-protein graph.}
 A graph with added peptide ratio attributes.
 }
 \description{
-Functions in this file:
-.addAveragePepRatio
-.addUniquenessAttributes
-.geomMean
 Adds average peptide ratios as a attribute to the graphs, if a list of
 peptide ratios is already present.
 }
