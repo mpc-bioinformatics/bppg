@@ -582,7 +582,7 @@ iterateOverCi <- function(G,
 #'                                      Tolerance for a constant log2 protein
 #'                                      ratios. The default is 1e-6.
 #'
-#' @return A data frame with one row for each protein.
+#' @return A SummarizedExperiment object with one row for each protein in the assay.
 #' @export
 #'
 #' @seealso [bppg::iterateOverCi()], [.minimizeSquaredError()]
@@ -637,12 +637,17 @@ automatedAnalysisIteratedCi <- function(G,
                   res = res, error_tol = error_tol, ratioLog_tol = ratioLog_tol,
                   use_results_from_other_proteins = use_results_from_other_proteins)
 
-    RES_info <- data.frame(accession = accessions, comparison = rep(comparison, n),
+    RES_info <- data.frame(accession = accessions, # comparison = rep(comparison, n),
                            graphID = rep(graphID, n), proteinNr = 1:n)
 
     RES <- cbind(RES_info, as.data.frame(t(RES)))
+    rownames(RES) <- RES$accession
+    RES <- RES[, -1] # remove accession, as it is now in rownames
 
-    return(RES)
+    RES_SE <- SummarizedExperiment::SummarizedExperiment(
+        assays = list(RES))
+
+    return(RES_SE)
 }
 
 
