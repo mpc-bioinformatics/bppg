@@ -2,19 +2,23 @@
 % Please edit documentation in R/04_graphGeneration.R
 \name{.imputationFilter}
 \alias{.imputationFilter}
-\title{Filter peptide ratios to exclude in peptide nodes contradicting imputed values.}
+\title{Filter peptide ratios to exclude in peptide nodes contradicting
+imputed values.}
 \usage{
 .imputationFilter(edgelist, fc, id, seq_column = "Sequence")
 }
 \arguments{
 \item{edgelist}{\strong{data.frame} \cr
-An edgelist created from the corresponding FASTA file, eg. created with \code{\link[=generate_edgelist]{generate_edgelist()}}.}
+An edgelist created from the corresponding FASTA
+file, eg. created with \code{\link[=generate_edgelist]{generate_edgelist()}}.}
 
 \item{fc}{\strong{data.frame} \cr
-peptide ratio and imputed bool, corresponding with id.}
+peptide ratio and imputed bool, corresponding with
+id.}
 
 \item{id}{\strong{data.frame} \cr
-ID columns to peptide ratio table, corresponding with fc.}
+ID columns to peptide ratio table, corresponding
+with fc.}
 
 \item{seq_column}{\strong{character} \cr
 The column name of the peptide sequence in id.}
@@ -24,5 +28,6 @@ The column name of the peptide sequence in id.}
 }\if{html}{\out{</div>}}
 }
 \description{
-Filter peptide ratios to exclude in peptide nodes contradicting imputed values.
+Filter peptide ratios to exclude in peptide nodes contradicting
+imputed values.
 }

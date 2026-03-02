@@ -110,7 +110,7 @@ aggregateReplicates <- function(D, group = NULL, missing.limit = 0,
         # apply imputation on missing values
         if (!is.null(imp_method)) {
             FUN_imp <- switch(imp_method,
-                          min_2_impute = min_2_impute)
+                min_2_impute = min_2_impute)
             vals_imp <- FUN_imp(X_tmp, intensities) 
             # only replace missing values
             res_tmp[mask_impute[, i]] <- vals_imp[mask_impute[, i]]

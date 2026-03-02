@@ -10,13 +10,15 @@
 min_2_impute <- function(D, intensities) {
     lod <- function(x) {
         # row wise min value halfed, group specific
-        imp_val <- min(x, na.rm = TRUE) / 2
-        if(is.na(imp_val)){
-            imp_val <- min_row / 2   # row wise min value halfed, dataset specific
+        # this is currently not the case
+        imp_val <- min(x[-1], na.rm = TRUE) / 2
+        if (is.na(imp_val)) {
+            imp_val <- min_row / 2
+            # row wise min value halfed, dataset specific
         }
         return(imp_val)
     }
     min_row <- matrixStats::rowMins(as.matrix(intensities), na.rm = TRUE) 
-    D_imp <- t(apply(cbind(D, min_row), 1, lod)) # TODO vapply
+    D_imp <- t(apply(cbind(min_row, D), 1, lod)) # TODO vapply
     return(D_imp)
 }

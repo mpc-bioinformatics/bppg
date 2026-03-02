@@ -24,17 +24,16 @@
 #' @return                  A dataframe which filtered out contradicting ratios of peptides. 
 
 .imputationFilter <- function(edgelist, fc, id, seq_column = "Sequence") {
-<<<<<<< Updated upstream
+
   ## generate bipartite graph to identify peptide groups
     edgelist_coll_pep <- bppg::collapse_edgelist(edgelist,
                                                 collapse_protein_nodes = TRUE,
                                                 collapse_peptide_nodes = TRUE)
-=======
+
     ## generate bipartite graph to identify peptide groups
     edgelist_coll_pep <- bppg::collapse_edgelist(edgelist,
         collapse_protein_nodes = TRUE,
         collapse_peptide_nodes = TRUE)
->>>>>>> Stashed changes
 
     # create dataframe for each edge after double collapsing (peptides decollapsed)
     pep_node_list <- list()
@@ -51,7 +50,7 @@
 
         #TODO find better way to determine outlier
         pep_mean <- mean(log(pep_ratio))
-=======
+
         # this is arbitarty 
         pep_df$outlier <- abs(log(pep_ratio) - pep_mean) > 0.3 
 
@@ -298,12 +297,12 @@ generateGraphsFromEdgelist <- function(edgelist,
 #' res <- generateQuantGraphs(exp_peptide_ratios, edgelist)
 
 generateQuantGraphs <- function(exp_peptide_ratios,
-                                  fasta_edgelist,
-                                  seq_column = "Sequence", ## How to assert? could be int
-                                  outpath = NULL,
-                                  collProtNodes = TRUE,
-                                  collPeptNodes = FALSE,
-                                  suffix = "") {
+    fasta_edgelist,
+    seq_column = "Sequence", ## How to assert? could be int
+    outpath = NULL,
+    collProtNodes = TRUE,
+    collPeptNodes = FALSE,
+    suffix = "") {
     checkmate::assertClass(exp_peptide_ratios, "SummarizedExperiment")
     checkmate::assertDataFrame(SummarizedExperiment::assays(
         exp_peptide_ratios)$logRatios, all.missing=FALSE)
