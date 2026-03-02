@@ -5,6 +5,7 @@
 \title{Functions in this file:
 .calculateProteinNodeInfo
 .calculateSubgraphCharcateristics
+graphComplexity
 Table with information on each protein node}
 \usage{
 .calculateProteinNodeInfo(G)
@@ -20,6 +21,7 @@ A data frame with information on number of unique/shared peptides.
 Functions in this file:
 .calculateProteinNodeInfo
 .calculateSubgraphCharcateristics
+graphComplexity
 Table with information on each protein node
 }
 \examples{

@@ -1,9 +1,9 @@
-#' Functions in this file:
-#' .getContractMapping
-#' .contractGraph
-#' generateGraphsFromEdgelist()
-#' generateQuantGraphs()
-#' .imputationFilter()
+# Functions in this file:
+# .imputationFilter()
+# .getContractMapping
+# .contractGraph
+# generateGraphsFromEdgelist()
+# generateQuantGraphs()
 
 #' Filter peptide ratios to exclude in peptide nodes contradicting imputed values.
 #'
@@ -21,34 +21,34 @@
 
 .imputationFilter <- function(edgelist, fc, id, seq_column = "Sequence") {
   ## generate bipartite graph to identify peptide groups
-  edgelist_coll_pep <- bppg::collapse_edgelist(edgelist,
-                                               collapse_protein_nodes = TRUE,
-                                               collapse_peptide_nodes = TRUE)
+    edgelist_coll_pep <- bppg::collapse_edgelist(edgelist,
+                                                collapse_protein_nodes = TRUE,
+                                                collapse_peptide_nodes = TRUE)
 
-  # create dataframe for each edge after double collapsing (peptides decollapsed)
-  pep_node_list <- list()
-  coll_peptides <- edgelist_coll_pep[, -1]
-  coll_peptides <- coll_peptides[!duplicated(coll_peptides)]
-  for (i in seq_along(coll_peptides)){
-    peptide <- t(limma::strsplit2(coll_peptides[i], ";"))
-    # pep_ratios are sorted indepently of sequence, match ratio
-    # log directly here? so equal distance?
-    pep_ratio <- fc[match(peptide, id[, seq_column]), 1]
-    imputed <- fc[match(peptide, id[, seq_column]), 2]
-    pep_df <- data.frame(peptide, pep_ratio, imputed)
-    colnames(pep_df) <- c("peptide", "pep_ratio", "imputed")
+    # create dataframe for each edge after double collapsing (peptides decollapsed)
+    pep_node_list <- list()
+    coll_peptides <- edgelist_coll_pep[, -1]
+    coll_peptides <- coll_peptides[!duplicated(coll_peptides)]
+    for (i in seq_along(coll_peptides)){
+        peptide <- t(limma::strsplit2(coll_peptides[i], ";"))
+        # pep_ratios are sorted indepently of sequence, match ratio
+        # log directly here? so equal distance?
+        pep_ratio <- fc[match(peptide, id[, seq_column]), 1]
+        imputed <- fc[match(peptide, id[, seq_column]), 2]
+        pep_df <- data.frame(peptide, pep_ratio, imputed)
+        colnames(pep_df) <- c("peptide", "pep_ratio", "imputed")
 
-    #TODO find better way to determine outlier
-    pep_mean <- mean(log(pep_ratio))
-    pep_df$outlier <- abs(log(pep_ratio) - pep_mean) > 0.3
+        #TODO find better way to determine outlier
+        pep_mean <- mean(log(pep_ratio))
+        pep_df$outlier <- abs(log(pep_ratio) - pep_mean) > 0.3
 
-    pep_df <- pep_df[!(pep_df$imputed & pep_df$outlier), ]
+        pep_df <- pep_df[!(pep_df$imputed & pep_df$outlier), ]
 
-    pep_node_list[[i]] <- pep_df
-    names(pep_node_list)[[i]] <- peptide[1]
-  }
+        pep_node_list[[i]] <- pep_df
+        names(pep_node_list)[[i]] <- peptide[1]
+    }
 
-  return(data.table::rbindlist(pep_node_list))
+    return(data.table::rbindlist(pep_node_list))
 }
 
 

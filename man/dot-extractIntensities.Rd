@@ -4,7 +4,8 @@
 \alias{.extractIntensities}
 \title{Functions in this file:
 .extractIntensities
-readMqPeptideTable}
+readMqPeptideTable
+readSpecPeptideTable}
 \usage{
 .extractIntensities(D, col_pattern, rename_columns)
 }

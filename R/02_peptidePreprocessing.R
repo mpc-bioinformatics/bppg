@@ -84,8 +84,6 @@ aggregateReplicates <- function(D, group = NULL, missing.limit = 0,
     if (is.null(group)) {
         group <- factor(SummarizedExperiment::colData(D)$group)
     }
-    min_row <- apply(intensities, 1, min, na.rm = TRUE) # only needed for min2impute, there is rowMeans also TODO
-    mask_impute <- NULL  # track imputed vales, missleading name
 
     FUN <- switch(method,
         mean  = rowMeans,
@@ -102,8 +100,6 @@ aggregateReplicates <- function(D, group = NULL, missing.limit = 0,
         return(mask_tmp)
     }, FUN.VALUE = logical(length(id)))
 
-    # doofe kombi mit impute hier drin,, vielelicht lieber raus bewegen?
-    # also das ganze vapply?
     res <- vapply(1:length(levels(group)), function(i, mask_impute) {
         X_tmp <- intensities[, group == levels(group)[i]]
         X_tmp <- as.matrix(X_tmp)
@@ -113,9 +109,9 @@ aggregateReplicates <- function(D, group = NULL, missing.limit = 0,
 
         # apply imputation on missing values
         if (!is.null(imp_method)) {
-            FUN <- switch(imp_method,
-                          min_2_imp = min_2_impute)
-            vals_imp <- FUN(X_tmp, min_row)
+            FUN_imp <- switch(imp_method,
+                          min_2_impute = min_2_impute)
+            vals_imp <- FUN_imp(X_tmp, intensities) 
             # only replace missing values
             res_tmp[mask_impute[, i]] <- vals_imp[mask_impute[, i]]
         }

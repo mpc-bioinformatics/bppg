@@ -7,16 +7,16 @@
 #' @return            vector with imputation values for each row (peptide)
 #' @export
 
-min_2_impute <- function(D, min_row) {
-  lod <- function(x) {
-    # row wise min value halfed, group specific
-    imp_val <- min(x, na.rm = TRUE) / 2
-    if(is.na(imp_val)){
-      imp_val <- min_row / 2   # row wise min value halfed, dataset specific
+min_2_impute <- function(D, intensities) {
+    lod <- function(x) {
+        # row wise min value halfed, group specific
+        imp_val <- min(x, na.rm = TRUE) / 2
+        if(is.na(imp_val)){
+            imp_val <- min_row / 2   # row wise min value halfed, dataset specific
+        }
+        return(imp_val)
     }
-    return(imp_val)
-  }
-
-  D_imp <- t(apply(cbind(D, min_row), 1, lod))
-  return(D_imp)
+    min_row <- matrixStats::rowMins(as.matrix(intensities), na.rm = TRUE) 
+    D_imp <- t(apply(cbind(D, min_row), 1, lod)) # TODO vapply
+    return(D_imp)
 }

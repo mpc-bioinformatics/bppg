@@ -9,7 +9,8 @@ aggregateReplicates(
   group = NULL,
   missing.limit = 0,
   method = "mean",
-  seq_col = "Sequence"
+  seq_col = "Sequence",
+  imp_method = NULL
 )
 }
 \arguments{
@@ -32,6 +33,10 @@ The method of aggregation. Options are
 The column name containaining the peptide sequences
 in the rowData of the SummarizedExperiment.
 Default is "Sequence"}
+
+\item{imp_method}{\strong{character} \cr
+Chosen imputation optional approach, current method:
+"min_2_impute"}
 }
 \value{
 A SummarizedExperiment with aggregated intensities ($intensities).
