@@ -5,14 +5,18 @@
 # generateGraphsFromEdgelist()
 # generateQuantGraphs()
 
-#' Filter peptide ratios to exclude in peptide nodes contradicting imputed values.
+#' Filter peptide ratios to exclude in peptide nodes contradicting
+#' imputed values.
 #'
 #' @param edgelist          \strong{data.frame} \cr
-#'                          An edgelist created from the corresponding FASTA file, eg. created with [bppg::generate_edgelist()].
+#'                          An edgelist created from the corresponding FASTA
+#'                          file, eg. created with [bppg::generate_edgelist()].
 #' @param fc                \strong{data.frame} \cr
-#'                          peptide ratio and imputed bool, corresponding with id.
+#'                          peptide ratio and imputed bool, corresponding with
+#'                          id.
 #' @param id                \strong{data.frame} \cr
-#'                          ID columns to peptide ratio table, corresponding with fc.
+#'                          ID columns to peptide ratio table, corresponding
+#'                          with fc.
 #' @param seq_column        \strong{character} \cr
 #'                          The column name of the peptide sequence in id.
 #'
@@ -20,10 +24,17 @@
 #' @return                  A dataframe which filtered out contradicting ratios of peptides. 
 
 .imputationFilter <- function(edgelist, fc, id, seq_column = "Sequence") {
+<<<<<<< Updated upstream
   ## generate bipartite graph to identify peptide groups
     edgelist_coll_pep <- bppg::collapse_edgelist(edgelist,
                                                 collapse_protein_nodes = TRUE,
                                                 collapse_peptide_nodes = TRUE)
+=======
+    ## generate bipartite graph to identify peptide groups
+    edgelist_coll_pep <- bppg::collapse_edgelist(edgelist,
+        collapse_protein_nodes = TRUE,
+        collapse_peptide_nodes = TRUE)
+>>>>>>> Stashed changes
 
     # create dataframe for each edge after double collapsing (peptides decollapsed)
     pep_node_list <- list()
@@ -40,7 +51,9 @@
 
         #TODO find better way to determine outlier
         pep_mean <- mean(log(pep_ratio))
-        pep_df$outlier <- abs(log(pep_ratio) - pep_mean) > 0.3
+=======
+        # this is arbitarty 
+        pep_df$outlier <- abs(log(pep_ratio) - pep_mean) > 0.3 
 
         pep_df <- pep_df[!(pep_df$imputed & pep_df$outlier), ]
 
@@ -77,11 +90,12 @@
 #' edgelist <- digestFASTA(fasta)
 #' res <- bppg:::.getContractMapping(edgelist)
 .getContractMapping <- function(edgelist,
-                                  collProtNodes = TRUE,
-                                  collPeptNodes = FALSE) {
+    collProtNodes = TRUE,
+    collPeptNodes = FALSE) {
     if (collProtNodes) {
-        protSignature <- stats::aggregate(data = edgelist, x = peptide ~ protein,
-        function(x) paste(sort(unique(x)), collapse = ";"))
+        protSignature <- stats::aggregate(data = edgelist,
+            x = peptide ~ protein,
+            function(x) paste(sort(unique(x)), collapse = ";"))
     } else {
         # map back to themselves, not to peptide set
         # this then mixes with  peptide groups
@@ -89,8 +103,9 @@
         protSignature$peptide <- paste0("prot_", protSignature$protein)
     }
     if (collPeptNodes) {
-        peptSignature <- stats::aggregate(data = edgelist, x = protein ~ peptide,
-        function(x) paste(sort(unique(x)), collapse = ";"))
+        peptSignature <- stats::aggregate(data = edgelist,
+            x = protein ~ peptide,
+            function(x) paste(sort(unique(x)), collapse = ";"))
     } else {
         peptSignature <- edgelist
         peptSignature$protein <- paste0("pept_", peptSignature$peptide)
@@ -207,9 +222,9 @@ generateGraphsFromEdgelist <- function(edgelist,
     checkmate::assertFlag(collProtNodes)
     checkmate::assertFlag(collPeptNodes)
 
-    if(collProtNodes || collPeptNodes) {
+    if (collProtNodes || collPeptNodes) {
         vertexMapping <- .getContractMapping(edgelist, collProtNodes,
-        collPeptNodes)
+            collPeptNodes)
     }
 
     #generate graph from edge matrix
@@ -229,7 +244,7 @@ generateGraphsFromEdgelist <- function(edgelist,
                     edgelist$peptide)])
     }
 
-    if(collProtNodes || collPeptNodes) {
+    if (collProtNodes || collPeptNodes) {
         G <- .contractGraph(G, vertexMapping, collProtNodes, collPeptNodes)
     }
     igraph::decompose(G)
@@ -307,39 +322,47 @@ generateQuantGraphs <- function(exp_peptide_ratios,
             file = file.path(outpath, paste0("edgelist_filtered_", suffix, ".xlsx")),
             overwrite = TRUE, keepNA = TRUE)
     }
-
     colnames_split <- limma::strsplit2(colnames(exp_peptide_ratios), "_")
     comparisons <- paste(colnames_split[,2], colnames_split[,3], sep = "_")
+
+
+# die datenstruktur hat sich stark geändert
+# ich glaube, ich muss den imputation filter anpassen (vielleicht mit katharinas ansatz?)
+# TODO erstmal ohne filter einbauen
+
         ## add peptide ratios ##TODO add imputation flag
-    if (sum(fc[, 2] > 0)) {  # check if there are imputed values
-        filtered_pep <- .imputationFilter(edgelist_filtered, fc, id, seq_column)
+    # if (sum(fc[, 2] > 0)) {  # check if there are imputed values
+    #     filtered_pep <- .imputationFilter(edgelist_filtered, fc, id, seq_column)
 
-        edgelist_filtered$pep_ratio <- filtered_pep$pep_ratio[
-            match(edgelist_filtered$peptide, filtered_pep$peptide)]
-        edgelist_filtered$imputed <- filtered_pep$imputed[
-            match(edgelist_filtered$peptide, filtered_pep$peptide)]
-        tmp_nrow <- (nrow(edgelist_filtered))
-        # remove entries without checked peptide ratio
-        edgelist_filtered <- na.omit(edgelist_filtered)
-        message(paste(tmp_nrow - nrow(edgelist_filtered), 
-            "edges were omitted due to conflicting imputations"))
-    } else {
-        edgelist_filtered$pep_ratio <- fc[
-            match(edgelist_filtered$peptide, id[, seq_column]), 1]
-        edgelist_filtered$imputed <- fc[
-            match(edgelist_filtered$peptide, id[, seq_column]), 2]
+    #     edgelist_filtered$pep_ratio <- filtered_pep$pep_ratio[
+    #         match(edgelist_filtered$peptide, filtered_pep$peptide)]
+    #     edgelist_filtered$imputed <- filtered_pep$imputed[
+    #         match(edgelist_filtered$peptide, filtered_pep$peptide)]
+    #     tmp_nrow <- (nrow(edgelist_filtered))
+    #     # remove entries without checked peptide ratio
+    #     edgelist_filtered <- na.omit(edgelist_filtered)
+    #     message(paste(tmp_nrow - nrow(edgelist_filtered), 
+    #         "edges were omitted due to conflicting imputations"))
+    # } else {
+    #     edgelist_filtered$pep_ratio <- fc[
+    #         match(edgelist_filtered$peptide, id[, seq_column]), 1]
+    #     edgelist_filtered$imputed <- fc[
+    #         match(edgelist_filtered$peptide, id[, seq_column]), 2]
 
-    }
-    subgraphs <- lapply(1:ncol(exp_peptide_ratios),
-        function(i){
-            compRatio <- SummarizedExperiment::assays(
-                exp_peptide_ratios)$logRatios[, i, drop=FALSE]
-            compRatio <- compRatio[!is.na(compRatio), 1, drop=FALSE]
+    # }
+    # hier werden die graphen erstellt im neuen system 
+    # -> was von mehreren Vergleichen ausgeht
+    subgraphs <- lapply(seq_len(ncol(exp_peptide_ratios)),
+        function(i) {
+            compSE <- exp_peptide_ratios[, i, drop = FALSE]
+            compSE <- compSE[!is.na(SummarizedExperiment::assays(compSE)$logRatios), drop = FALSE]
+            compRatio <- SummarizedExperiment::assays(compSE)$logRatios
 
             compEdgelist <- edgelist_filtered[edgelist_filtered$peptide
                 %in% rownames(compRatio), ]
             compEdgelist$pep_logRatios <- compRatio[match(compEdgelist$peptide,
                 rownames(compRatio)), 1]
+            # TODO does generate Graph has to be adapted too?#
             generateGraphsFromEdgelist(compEdgelist, collProtNodes, collPeptNodes)
         })
 
