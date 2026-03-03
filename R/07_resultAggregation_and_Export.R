@@ -40,7 +40,7 @@ combineComparisons <- function(compResultList) {
     }
 
     df_list_harmonized <- lapply(compResultList, harmonizeRowNames)
-    names(df_list_harmonized) <<- names(compResultList)
+    names(df_list_harmonized) <- names(compResultList)
 
     SE <- SummarizedExperiment::SummarizedExperiment(
         assays = df_list_harmonized)
@@ -74,7 +74,8 @@ exportSE <- function(SE, file) {
     for (assay_name in SummarizedExperiment::assayNames(SE)) {
         openxlsx::addWorksheet(wb, assay_name)
         mat <- as.data.frame(SummarizedExperiment::assay(SE, assay_name))
-        openxlsx::writeData(wb, sheet = assay_name, x = mat, rowNames = TRUE)
+        openxlsx::writeData(wb, sheet = assay_name, x = mat, rowNames = TRUE,
+                            keepNA = TRUE)
     }
     ## TODO: cbind rowData if available?
 
