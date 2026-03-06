@@ -1,29 +1,30 @@
-#' Functions in this file:
-#' .extractIntensities
-#' readMqPeptideTable
-#' readSpecPeptideTable
-#' 
+# Functions in this file:
+# .extractIntensities
+# readMqPeptideTable
+# readSpecPeptideTable
+#
 
 
-#' Import of MaxQuant's peptide.txt-table.
+#' Helper function that extracts the itensitie columns and columns of interest 
+#' from a given dataframe.
 #'
-#' @param D                         \strong{data.frame} \cr                
+#' @param D                         \strong{data.frame} \cr
 #'                                  Data frame of peptides.txt from MaxQuant
 #' @param col_pattern               \strong{character} \cr
-#'                                  Pattern to recognize intensity columns by. 
+#'                                  Pattern to recognize intensity columns by.
 #'                                  Should be "Intensity." or "LFQ.intensity."
 #' @param rename_columns            \strong{logical} \cr
-#'                                  If \code{TRUE}, "Intensity." or 
+#'                                  If \code{TRUE}, "Intensity." or
 #'                                  "LFQ.intensity." are removed
-#' @return returns intensity dataframe 
-#' 
+#' @return returns intensity dataframe
+#'
 .extractIntensities <- function(D, col_pattern, rename_columns){
     intensities <- D[, grep(col_pattern, colnames(D))]
     if (rename_columns) {
         colnames(intensities) <- stringr::str_replace(colnames(intensities),
             col_pattern, "")
     }
-    intensities
+    return(intensities)
 }
 
 #' Import of MaxQuant's peptide.txt-table.
@@ -40,17 +41,20 @@
 #'                                  If \code{TRUE}, peptide sequences from
 #'                                  potential contaminants are removed
 #' @param rename_columns            \strong{logical} \cr
-#'                                  If \code{TRUE}, "Intensity." or 
+#'                                  If \code{TRUE}, "Intensity." or
 #'                                  "LFQ.intensity." are removed
 #' @param zeroToNA                  \strong{logical} \cr
 #'                                  If \code{TRUE}, zeros are converted to NAs.
 #' @param remove_empty_rows         \strong{logical} \cr
-#'                                  If \code{TRUE}, rows with only NAs are 
+#'                                  If \code{TRUE}, rows with only NAs are
 #'                                  removed.
 #' @param further_columns_to_keep   \strong{integer vector} \cr
-#'                                  Indices of additional columns to keep, 
+#'                                  Indices of additional columns to keep,
 #'                                  except peptide sequence and intensities
-#'
+#' @param verbose                   \strong{logical} \cr
+#'                                  If \code{TRUE}, additional information on
+#'                                  each iteration of the optimization is 
+#'                                  printed
 #' @return A SummarizedExperiment with intensities, sequences, and optional data
 #'         for the rowData dataframe.
 #' @export
@@ -59,11 +63,12 @@
 #' file <- system.file("extdata", "peptides.txt", package = "bppg")
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 
-readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE, 
+readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
     remove_contaminants = FALSE,
     rename_columns = TRUE, zeroToNA = TRUE,
     remove_empty_rows = TRUE,
-    further_columns_to_keep = NULL) {
+    further_columns_to_keep = NULL,
+    verbose = FALSE) {
     checkmate::assertFileExists(path, access = "", extension = NULL)
     checkmate::assertFlag(LFQ)
     checkmate::assertFlag(remove_contaminants)
@@ -71,6 +76,7 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
     checkmate::assertFlag(zeroToNA)
     checkmate::assertFlag(remove_empty_rows)
     checkmate::assertVector(further_columns_to_keep, null.ok = TRUE)
+    checkmate::assertFlag(verbose)
 
     D <- utils::read.table(path, sep = "\t", header = TRUE)
     rownames(D) <- D$Sequence
@@ -78,14 +84,15 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
     ## remove decoy entries:
     ind_decoy <- D$Reverse == "+"
     D <- D[!ind_decoy, ]
-    print(paste0("Removed ", sum(ind_decoy), " decoy sequences."))
+    if (verbose) print(paste0("Removed ", sum(ind_decoy), " decoy sequences."))
 
     ind_cont <- D$Potential.contaminant == "+"
     if (remove_contaminants) {
         D <- D[!ind_cont, ]
-        print(paste0("Removed ", sum(ind_cont), " contaminant sequences."))
+        if (verbose) print(paste0("Removed ", sum(ind_cont),
+                " contaminant sequences."))
     }
-    
+
     if (LFQ) {
         intensities <- .extractIntensities(D, "LFQ.intensity.", rename_columns)
     } else {
@@ -105,7 +112,7 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
         colDF <- data.frame(sample = colnames(intensities))
     } else {
         colDF <- data.frame(sample = colnames(intensities), group = group)
-    }  
+    }
 
     if (is.null(further_columns_to_keep)) {
         rowDF <- data.frame(Sequence = D$Sequence)
@@ -114,9 +121,9 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
         colnames(further_columns) <- further_columns_to_keep
         rowDF <- data.frame(Sequence = D$Sequence, further_columns)
     }
-    SummarizedExperiment::SummarizedExperiment(
+    return(SummarizedExperiment::SummarizedExperiment(
         assays = list(intensities=intensities), 
-        colData = colDF, rowData = rowDF)
+        colData = colDF, rowData = rowDF))
 }
 
 

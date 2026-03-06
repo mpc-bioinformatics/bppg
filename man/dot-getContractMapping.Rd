@@ -2,12 +2,7 @@
 % Please edit documentation in R/04_graphGeneration.R
 \name{.getContractMapping}
 \alias{.getContractMapping}
-\title{Functions in this file:
-.getContractMapping
-.contractGraph
-generateGraphsFromEdgelist()
-generateQuantGraphs()
-Create Mapping signature for igraph::contract function.}
+\title{Create Mapping signature for igraph::contract function.}
 \usage{
 .getContractMapping(edgelist, collProtNodes = TRUE, collPeptNodes = FALSE)
 }
@@ -29,11 +24,6 @@ A list with two dataframes, one for peptide and one for protein
 signatures.
 }
 \description{
-Functions in this file:
-.getContractMapping
-.contractGraph
-generateGraphsFromEdgelist()
-generateQuantGraphs()
 Create Mapping signature for igraph::contract function.
 }
 \examples{

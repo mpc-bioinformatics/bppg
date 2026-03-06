@@ -1,6 +1,6 @@
-#' Functions in this file:
-#' generateGraphsFromFASTA
-#' generateGraphsFromQuantData
+# Functions in this file:
+# generateGraphsFromFASTA
+# generateGraphsFromQuantData
 
 #' Generate graphs from a FASTA file
 #'
@@ -22,6 +22,9 @@
 #' @param protOrigin             \strong{list or data.frame} \cr
 #'                                A list with the protein orgin corresponding to
 #'                               [fasta], proteins are used as rownames/index.
+#' @param verbose     \strong{logical} \cr
+#'                    If \code{TRUE}, additional information on each iteration
+#'                    of the optimization is printed
 #' @param ...                     Additional arguments to bppg::digestFASTA()
 #'
 #' @return Subgraphs (i.e. connected components) from the graph generated from
@@ -40,11 +43,13 @@ generateGraphsFromFASTA <- function(fasta,
     outpath = NULL,
     suffix = NULL,
     protOrigin = NULL,
+    verbose = FALSE,
     ...) {
-    message("Digesting FASTA file ...")
-    edgelist <- bppg::digestFASTA(fasta, protOrigin = protOrigin, ...)
+    if (verbose) message("Digesting FASTA file ...")
+    edgelist <- bppg::digestFASTA(fasta, protOrigin = protOrigin,
+        verbose = verbose, ...)
     if (!is.null(outpath)) {
-        message("Saving edgelist ...")
+        if (verbose) message("Saving edgelist ...")
         checkmate::assertPathForOutput(outpath, overwrite = TRUE)
         utils::write.table(edgelist, sep = "\t", row.names = FALSE,
             file = file.path(outpath, paste0("edgelist_", suffix, ".txt")))
@@ -58,7 +63,8 @@ generateGraphsFromFASTA <- function(fasta,
     if (!collProtNodes && !collPeptNodes) suffix2 <- NULL
 
     if (!is.null(outpath)) {
-        saveRDS(graphs, file = file.path(outpath, paste0("subgraphs_", suffix2, suffix, ".rds")))
+        saveRDS(graphs, file = file.path(outpath, paste0("subgraphs_", 
+                    suffix2, suffix, ".rds")))
     }
     return(graphs)
 }
@@ -100,9 +106,14 @@ generateGraphsFromFASTA <- function(fasta,
 #' @param protOrigin               \strong{list or data.frame} \cr
 #'                                 A list with the protein orgin corresponding to
 #'                                 [fasta], proteins are used as rownames/index.
+#' @param verbose     \strong{logical} \cr
+#'                    If \code{TRUE}, additional information on each iteration
+#'                    of the optimization is printed
 #' @param ...                      Additional arguments for [.digest2()].
 #'
-#' @return A list of list of graphs.
+#' @return A list of list of graphs. The outer list is for the different
+#'         possible comparisons, the inner layer is for the independet graphs in
+#'         that comparison.
 #' @export
 #'
 #' @seealso [bppg::readMqPeptideTable()], [seqinr::read.fasta()],
@@ -129,11 +140,13 @@ generateGraphsFromQuantData <- function(D,
     collPeptNodes = FALSE,
     suffix = "",
     protOrigin = NULL,
+    verbose = FALSE,
     ...) {
 
-    message("Digesting FASTA file...")
+    if (verbose) message("Digesting FASTA file...")
     edgelist <- bppg::digestFASTA(fasta, missed_cleavages = missed_cleavages,
-        min_aa = min_aa, max_aa = max_aa, protOrigin = protOrigin)
+        min_aa = min_aa, max_aa = max_aa, protOrigin = protOrigin, 
+        verbose = verbose)
 
     if (!is.null(outpath)) {
         checkmate::assertPathForOutput(outpath, overwrite = TRUE)

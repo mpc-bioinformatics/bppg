@@ -2,10 +2,7 @@
 % Please edit documentation in R/wrapperGraph.R
 \name{generateGraphsFromFASTA}
 \alias{generateGraphsFromFASTA}
-\title{Functions in this file:
-generateGraphsFromFASTA
-generateGraphsFromQuantData
-Generate graphs from a FASTA file}
+\title{Generate graphs from a FASTA file}
 \usage{
 generateGraphsFromFASTA(
   fasta,
@@ -14,6 +11,7 @@ generateGraphsFromFASTA(
   outpath = NULL,
   suffix = NULL,
   protOrigin = NULL,
+  verbose = FALSE,
   ...
 )
 }
@@ -42,6 +40,10 @@ will also be saved.}
 A list with the protein orgin corresponding to
 \link[seqinr:fasta]{seqinr::fasta}, proteins are used as rownames/index.}
 
+\item{verbose}{\strong{logical} \cr
+If \code{TRUE}, additional information on each iteration
+of the optimization is printed}
+
 \item{...}{Additional arguments to bppg::digestFASTA()}
 }
 \value{
@@ -49,9 +51,6 @@ Subgraphs (i.e. connected components) from the graph generated from
 the FASTA file.
 }
 \description{
-Functions in this file:
-generateGraphsFromFASTA
-generateGraphsFromQuantData
 Generate graphs from a FASTA file
 }
 \examples{

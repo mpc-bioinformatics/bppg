@@ -13,6 +13,10 @@ Input data.}
 \item{useprod}{\strong{logical} \cr
 If \code{TRUE}, prod(x)^(1/n) will be calculated, otherwise
 exp(mean(log(x))).}
+
+\item{na.rm}{\strong{logical} \cr
+If \code{TRUE}, missing values are removed before the
+calculation. \code{FALSE} is default.}
 }
 \value{
 The geometric mean of the provided data points.

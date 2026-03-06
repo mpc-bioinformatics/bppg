@@ -14,7 +14,10 @@
 #' @param organisms      \strong{named list of character vectors} \cr
 #'                       Each organism with the corresponding protein
 #'                       accessions.
-#'
+#' @param verbose            \strong{logical} \cr
+#'                           If \code{TRUE}, additional information on
+#'                           each iteration of the optimization is 
+#'                           printed.
 #' @return A character vector with protein origin for each protein accession
 #' @export
 #'
@@ -23,7 +26,8 @@
 .getProteinOrigin <- function(accessions,
     contaminants = NULL,
     spike_ins = NULL,
-    organisms = NULL) {
+    organisms = NULL,
+    verbose = FALSE) {
 
     ## x = string with accessions, separated by ";"
     get_origin <- function(x, contaminants, spike_ins, organisms) {
@@ -59,9 +63,12 @@
 
         return(origin)
     }
-
-    origin <- pbapply::pbsapply(accessions, get_origin,
+    if (!verbose) {
+        pbo <- pbapply::pboptions(type = "none")
+        on.exit(pbapply::pboptions(pbo), add = TRUE)
+    }
+    origin <- pbapply::pbvapply(accessions, get_origin,
         contaminants = contaminants,
-        spike_ins = spike_ins, organisms = organisms)
+        spike_ins = spike_ins, organisms = organisms, FUN.VALUE = character(1))
     return(origin)
 }

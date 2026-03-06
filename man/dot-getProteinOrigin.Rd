@@ -10,7 +10,8 @@ or a specific species).}
   accessions,
   contaminants = NULL,
   spike_ins = NULL,
-  organisms = NULL
+  organisms = NULL,
+  verbose = FALSE
 )
 }
 \arguments{
@@ -27,6 +28,11 @@ The spike-in protein accessions.}
 \item{organisms}{\strong{named list of character vectors} \cr
 Each organism with the corresponding protein
 accessions.}
+
+\item{verbose}{\strong{logical} \cr
+If \code{TRUE}, additional information on
+each iteration of the optimization is
+printed.}
 }
 \value{
 A character vector with protein origin for each protein accession

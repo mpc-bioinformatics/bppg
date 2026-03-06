@@ -88938,3 +88938,17 @@
       colnames(27): 12500amol_R1 12500amol_R2 ... 50amol_R2 50amol_R3
       colData names(1): sample
 
+# normalize peptide data
+
+    Code
+      SummarizedExperiment::assays(D_norm_loess)$intensities
+    Output
+      NULL
+
+---
+
+    Code
+      SummarizedExperiment::assays(D_norm_lts)$intensities
+    Output
+      NULL
+
