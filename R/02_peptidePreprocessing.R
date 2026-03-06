@@ -1,7 +1,8 @@
-#' Functions in this file:
-#' .foldChange
-#' aggregateReplicates
-#' calculatePeptideRatios
+# Functions in this file:
+# .foldChange
+# aggregateReplicates
+# calculatePeptideRatios
+# normalizePeptideIntensities
 
 
 #' Calculate peptide ratios for pairwise comparisons of groups (Y/X).
@@ -19,7 +20,7 @@
 #' @return The fold changes (Y/X).
 #'
 #'
-#' @examples 
+#' @examples
 #' D <- data.frame(s1 = c(1,4), s2 = c(2,5), s3 = c(3,6))
 #' X <- "s1"
 #' Y <- "s2"
@@ -42,17 +43,17 @@
 #' @param D              \strong{SummarizedExperiment} \cr
 #'                       The data experiment containing the peptide intensities.
 #' @param group          \strong{character factor} \cr
-#'                       The groups for aggregation, if not already in 
-#'                       SummarizedExperiment::colData(D)$group. 
+#'                       The groups for aggregation, if not already in
+#'                       SummarizedExperiment::colData(D)$group.
 #' @param missing.limit  \strong{numeric} \cr
-#'                       The proportion of missing values that is allowed 
+#'                       The proportion of missing values that is allowed
 #'                       (e.g. 0 means no missings allowed).
 #' @param method         \strong{character} \cr
-#'                       The method of aggregation. Options are 
+#'                       The method of aggregation. Options are
 #'                       "mean", "sum" or "median"
 #' @param seq_col         \strong{character} \cr
-#'                       The column name containaining the peptide sequences 
-#'                       in the rowData of the SummarizedExperiment. 
+#'                       The column name containaining the peptide sequences
+#'                       in the rowData of the SummarizedExperiment.
 #'                       Default is "Sequence"
 #'
 #' @return A SummarizedExperiment with aggregated intensities ($intensities).
@@ -67,7 +68,7 @@
 aggregateReplicates <- function(D, group = NULL, missing.limit = 0, method = "mean",
     seq_col = "Sequence") {
     checkmate::assertClass(D, "SummarizedExperiment")
-    checkmate::assertDataFrame(SummarizedExperiment::assays(D)$intensities, 
+    checkmate::assertDataFrame(SummarizedExperiment::assays(D)$intensities,
         all.missing=FALSE)
     checkmate::assertFactor(group)
     checkmate::assertNumber(missing.limit, lower = 0, upper = 1)
@@ -92,15 +93,15 @@ aggregateReplicates <- function(D, group = NULL, missing.limit = 0, method = "me
 
         res_tmp <- FUN(X_tmp, na.rm = TRUE)
         missingx <- rowMeans(is.na(X_tmp))
-        res_tmp[missingx > missing.limit | missingx == 1] <- NA 
-        res_tmp    
+        res_tmp[missingx > missing.limit | missingx == 1] <- NA
+        res_tmp
     }, numeric(length(id)))
 
     res <- as.data.frame(res)
     colnames(res) <- levels(group)
     rownames(res) <- id
     res <- SummarizedExperiment::SummarizedExperiment(
-        assays = list(intensities = res), 
+        assays = list(intensities = res),
         colData = data.frame(group = colnames(res)),
         rowData = SummarizedExperiment::rowData(D))
     return(res)
@@ -116,7 +117,7 @@ aggregateReplicates <- function(D, group = NULL, missing.limit = 0, method = "me
 #' @return A SummarizedExperiment with log2 peptide ratios (logRatios).
 #' @export
 #'
-#' @examples 
+#' @examples
 #' file <- system.file("extdata", "peptides.txt", package = "bppg")
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 #' group <- factor(rep(1:9, each = 3))
@@ -143,13 +144,81 @@ calculatePeptideRatios <- function(D, group_levels = NULL) {
     }, numeric(nrow(aggr_intensities)))
 
     peptide_log_ratios <- data.frame(peptide_log_ratios)
-    colnames(peptide_log_ratios) <- paste0("logRatio_", groupCombinations[1, ], "_", 
+    colnames(peptide_log_ratios) <- paste0("logRatio_", groupCombinations[1, ], "_",
         groupCombinations[2, ])
     rownames(peptide_log_ratios) <- rownames(aggr_intensities)
 
     res <- SummarizedExperiment::SummarizedExperiment(
-        assays = list(logRatios = peptide_log_ratios), 
+        assays = list(logRatios = peptide_log_ratios),
         colData = data.frame(comparison = colnames(peptide_log_ratios)),
         rowData = SummarizedExperiment::rowData(D))
     return(res)
 }
+
+
+
+
+
+
+
+#' Normalization of peptide intensities
+#'
+#' @param D \strong{SummarizedExperiment} \cr
+#'          Dataset containing peptide intensities, e.g. the result of
+#'          [readMqPeptideTable].
+#' @param method \strong{character} \cr
+#'          The method of normalization. Options are "nonorm"
+#'          (no normalization), "median", "loess",  "quantile" or "lts"
+#'          normalization. Default is "loess"
+#' @param lts.quantile \strong{numeric} \cr
+#'          The quantile for the lts normalization. Default is 0.8.
+#' @param log_base \strong{numeric} \cr
+#'          The base for log-transformation. Default is 2.
+#' @returns \strong{SummarizedExperiment} \cr
+#'          Dataset containing normalized peptide intensities.
+#' @export
+#'
+#' @examples
+#' file <- system.file("extdata", "peptides.txt", package = "bppg")
+#' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' D_norm <- normalizePeptideIntensities(D, method = "loess")
+normalizePeptideIntensities <- function(D, method = "loess", lts.quantile = 0.8,
+                                        log_base = 2) {
+
+    DATA <- SummarizedExperiment::assays(D)$intensities
+
+
+    if (method %in% c("loess", "quantile", "median")) {
+
+        log_DATA <- log(DATA, base = log_base)
+        #### choose normalization function
+        fun <- limma::normalizeBetweenArrays
+        args <- switch(method,
+                       "loess" = list(object = log_DATA, method = "cyclicloess"),
+                       "quantile" = list(object = log_DATA, method = "quantile"),
+                       "median" = list(object = log_DATA, method = "scale"))
+
+        DATA_norm <- do.call(fun, args)
+        DATA_norm <- as.data.frame(DATA_norm)
+        DATA_norm <- log_base^DATA_norm # re-transform
+    }
+
+    if (method == "lts") {
+        # Does not need log-transformation, as it does a glog trans
+        # (similar to log2)
+        DATA_norm <- vsn::vsn2(as.matrix(DATA), lts.quantile = lts.quantile)
+        DATA_norm <- DATA_norm@hx
+        DATA_norm <- as.data.frame(DATA_norm)
+        DATA_norm <- log_base^DATA_norm # re-transform
+    }
+
+    if (method == "nonorm") {
+        DATA_norm <- DATA
+    }
+    res <- SummarizedExperiment::SummarizedExperiment(
+        assays = DATA_norm,
+        colData = SummarizedExperiment::colData(D),
+        rowData = SummarizedExperiment::rowData(D))
+    return(res)
+}
+

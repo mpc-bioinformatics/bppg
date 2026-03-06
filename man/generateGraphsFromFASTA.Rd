@@ -2,10 +2,7 @@
 % Please edit documentation in R/wrapperGraph.R
 \name{generateGraphsFromFASTA}
 \alias{generateGraphsFromFASTA}
-\title{Functions in this file:
-generateGraphsFromFASTA
-generateGraphsFromQuantData
-Generate graphs from a FASTA file}
+\title{Generate graphs from a FASTA file}
 \usage{
 generateGraphsFromFASTA(
   fasta,
@@ -49,9 +46,6 @@ Subgraphs (i.e. connected components) from the graph generated from
 the FASTA file.
 }
 \description{
-Functions in this file:
-generateGraphsFromFASTA
-generateGraphsFromQuantData
 Generate graphs from a FASTA file
 }
 \examples{

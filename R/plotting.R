@@ -1,7 +1,7 @@
-#' Functions in this file:
-#' myDiamond
-#' setNodeLabels
-#' plotBipartiteGraph
+# Functions in this file:
+# myDiamond
+# setNodeLabels
+# plotBipartiteGraph
 
 
 #' Function do define diamond shape for unique peptides in bipartite graph.

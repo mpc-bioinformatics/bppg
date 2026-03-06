@@ -1,7 +1,7 @@
-#' Functions in this file:
-#' .addAveragePepRatio
-#' .addUniquenessAttributes
-#' .geomMean
+# Functions in this file:
+# .addAveragePepRatio
+# .addUniquenessAttributes
+# .geomMean
 
 #' Adds average peptide ratios as a attribute to the graphs, if a list of
 #' peptide ratios is already present.

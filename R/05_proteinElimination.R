@@ -1,5 +1,5 @@
-#' Functions in this file:
-#' proteinElimination
+# Functions in this file:
+# proteinElimination
 
 
 
