@@ -216,7 +216,7 @@ normalizePeptideIntensities <- function(D, method = "loess", lts.quantile = 0.8,
         DATA_norm <- DATA
     }
     res <- SummarizedExperiment::SummarizedExperiment(
-        assays = DATA_norm,
+        assays = list(intensities_norm = DATA_norm),
         colData = SummarizedExperiment::colData(D),
         rowData = SummarizedExperiment::rowData(D))
     return(res)
