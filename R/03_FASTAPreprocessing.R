@@ -163,7 +163,7 @@
 #'                           A fasta file, already read into R by
 #'                           [seqinr::read.fasta()]. If several protein origins 
 #'                           are used they should be combined into one flatten  
-#'                           listand a list with the corresponding origins  
+#'                           list and a list with the corresponding origins  
 #'                           should be provided for \strong{protOrigin}.
 #' @param missed_cleavages   \strong{integer} \cr
 #'                           The maximal number of missed cleavages.
