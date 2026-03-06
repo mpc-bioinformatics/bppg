@@ -2,7 +2,8 @@
 % Please edit documentation in R/01_peptideInput.R
 \name{.extractIntensities}
 \alias{.extractIntensities}
-\title{Import of MaxQuant's peptide.txt-table.}
+\title{Helper function that extracts the itensitie columns and columns of interest
+from a given dataframe.}
 \usage{
 .extractIntensities(D, col_pattern, rename_columns)
 }
