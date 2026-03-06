@@ -2,11 +2,7 @@
 % Please edit documentation in R/03_FASTAPreprocessing.R
 \name{.cleave}
 \alias{.cleave}
-\title{Functions in this file:
-.cleave()
-.digest2()
-digestFASTA()
-Cleavage of a single protein sequence.}
+\title{Cleavage of a single protein sequence.}
 \usage{
 .cleave(sequence, start, stop, miss)
 }
@@ -29,10 +25,6 @@ A dataframe with information (inkl. peptide sequence and start value)
 of the peptides.
 }
 \description{
-Functions in this file:
-.cleave()
-.digest2()
-digestFASTA()
 Cleavage of a single protein sequence.
 }
 \seealso{

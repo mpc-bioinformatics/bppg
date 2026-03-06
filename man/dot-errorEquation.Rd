@@ -2,18 +2,7 @@
 % Please edit documentation in R/06_optimization.R
 \name{.errorEquation}
 \alias{.errorEquation}
-\title{Functions in this file:
-.errorEquation
-.initializeCi
-.initializeRi
-.calcConstraints
-.calcObjectiveFunction
-.minimizeSquaredError
-iterateOverCi
-.calcResultGridpoint
-automatedAnalysisIteratedCi
-.analyseResultSingleProt
-Function to set up the error equations for the optimization problem}
+\title{Function to set up the error equations for the optimization problem}
 \usage{
 .errorEquation(RiLog, Ci, M, rjLog)
 }
@@ -39,17 +28,6 @@ ratios using the given Ri and Ci}
 \item{W}{internal weight matrix}
 }
 \description{
-Functions in this file:
-.errorEquation
-.initializeCi
-.initializeRi
-.calcConstraints
-.calcObjectiveFunction
-.minimizeSquaredError
-iterateOverCi
-.calcResultGridpoint
-automatedAnalysisIteratedCi
-.analyseResultSingleProt
 Function to set up the error equations for the optimization problem
 }
 \examples{

@@ -2,9 +2,7 @@
 % Please edit documentation in R/05_proteinElimination.R
 \name{proteinElimination}
 \alias{proteinElimination}
-\title{Functions in this file:
-proteinElimination
-Tries to recursively remove protein nodes from graph while keeping the error
+\title{Tries to recursively remove protein nodes from graph while keeping the error
 term in the optimization step low}
 \usage{
 proteinElimination(
@@ -60,8 +58,6 @@ list containing the following elements:
 list can directly be used by \link{iterateOverCi}.}
 }
 \description{
-Functions in this file:
-proteinElimination
 Tries to recursively remove protein nodes from graph while keeping the error
 term in the optimization step low
 }

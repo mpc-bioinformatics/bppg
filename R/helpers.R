@@ -1,6 +1,7 @@
-#' Functions in this file:
-#' .addUniquenessAttributes
-#' .geomMean
+# Functions in this file:
+# .addAveragePepRatio
+# .addUniquenessAttributes
+# .geomMean
 
 
 #' Adds vertex attributes with uniqueness of peptides and number of unique

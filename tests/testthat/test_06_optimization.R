@@ -112,18 +112,18 @@ test_that("test automated analysis", {
 
   res_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file_I1.rds"))
   res <- automatedAnalysisIteratedCi(G_I, res_snap) # case 3
-  expect_snapshot(res)
+  expect_snapshot(SummarizedExperiment::assay(res))
 
   res_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file_N1.rds"))
   res2 <- automatedAnalysisIteratedCi(G_N, res_snap) # case 1 and 2
-  expect_snapshot(res2)
+  expect_snapshot(SummarizedExperiment::assay(res2))
 
   res_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file_M1.rds"))
   res3 <- automatedAnalysisIteratedCi(G_M, res_snap) # case 3
-  expect_snapshot(res3)
+  expect_snapshot(SummarizedExperiment::assay(res3))
 
   res4 <- automatedAnalysisIteratedCi(G_M, res_snap, use_results_from_other_proteins = TRUE) # case 4
-  expect_snapshot(res4)
+  expect_snapshot(SummarizedExperiment::assay(res4))
   # comparison graphID proteinNr  error_min    RiLog RiLog_min RiLog_max Ci Ci_min Ci_max case
   # 1         NA      NA         1 0.00663525 1.026032        NA        NA NA    0.1    0.1    4
   # 2         NA      NA         2 0.00663525 0.983554        NA        NA NA    0.9    0.9    4

@@ -1,8 +1,8 @@
-#' Functions in this file:
-#' .getContractMapping
-#' .contractGraph
-#' generateGraphsFromEdgelist()
-#' generateQuantGraphs()
+# Functions in this file:
+# .getContractMapping
+# .contractGraph
+# generateGraphsFromEdgelist()
+# generateQuantGraphs()
 
 
 #' Create Mapping signature for igraph::contract function.

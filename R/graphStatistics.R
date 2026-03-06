@@ -1,6 +1,6 @@
-#' Functions in this file:
-#' .calculateProteinNodeInfo
-#' .calculateSubgraphCharcateristics
+# Functions in this file:
+# .calculateProteinNodeInfo
+# .calculateSubgraphCharcateristics
 
 
 #' Table with information on each protein node

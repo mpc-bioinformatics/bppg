@@ -2,9 +2,7 @@
 % Please edit documentation in R/01_peptideInput.R
 \name{.extractIntensities}
 \alias{.extractIntensities}
-\title{Functions in this file:
-.extractIntensities
-readMqPeptideTable}
+\title{Import of MaxQuant's peptide.txt-table.}
 \usage{
 .extractIntensities(D, col_pattern, rename_columns)
 }

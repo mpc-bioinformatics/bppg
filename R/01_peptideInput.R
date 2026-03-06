@@ -1,22 +1,22 @@
-#' Functions in this file:
-#' .extractIntensities
-#' readMqPeptideTable
-#' 
+# Functions in this file:
+# .extractIntensities
+# readMqPeptideTable
+#
 
 
 #' Helper function that extracts the itensitie columns and columns of interest 
 #' from a given dataframe.
 #'
-#' @param D                         \strong{data.frame} \cr                
+#' @param D                         \strong{data.frame} \cr
 #'                                  Data frame of peptides.txt from MaxQuant
 #' @param col_pattern               \strong{character} \cr
-#'                                  Pattern to recognize intensity columns by. 
+#'                                  Pattern to recognize intensity columns by.
 #'                                  Should be "Intensity." or "LFQ.intensity."
 #' @param rename_columns            \strong{logical} \cr
-#'                                  If \code{TRUE}, "Intensity." or 
+#'                                  If \code{TRUE}, "Intensity." or
 #'                                  "LFQ.intensity." are removed
-#' @return returns intensity dataframe 
-#' 
+#' @return returns intensity dataframe
+#'
 .extractIntensities <- function(D, col_pattern, rename_columns){
     intensities <- D[, grep(col_pattern, colnames(D))]
     if (rename_columns) {
@@ -40,15 +40,15 @@
 #'                                  If \code{TRUE}, peptide sequences from
 #'                                  potential contaminants are removed
 #' @param rename_columns            \strong{logical} \cr
-#'                                  If \code{TRUE}, "Intensity." or 
+#'                                  If \code{TRUE}, "Intensity." or
 #'                                  "LFQ.intensity." are removed
 #' @param zeroToNA                  \strong{logical} \cr
 #'                                  If \code{TRUE}, zeros are converted to NAs.
 #' @param remove_empty_rows         \strong{logical} \cr
-#'                                  If \code{TRUE}, rows with only NAs are 
+#'                                  If \code{TRUE}, rows with only NAs are
 #'                                  removed.
 #' @param further_columns_to_keep   \strong{integer vector} \cr
-#'                                  Indices of additional columns to keep, 
+#'                                  Indices of additional columns to keep,
 #'                                  except peptide sequence and intensities
 #' @param verbose                   \strong{logical} \cr
 #'                                  If \code{TRUE}, additional information on
@@ -62,7 +62,7 @@
 #' file <- system.file("extdata", "peptides.txt", package = "bppg")
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 
-readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE, 
+readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
     remove_contaminants = FALSE,
     rename_columns = TRUE, zeroToNA = TRUE,
     remove_empty_rows = TRUE,
@@ -91,7 +91,7 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
         if (verbose) print(paste0("Removed ", sum(ind_cont),
                 " contaminant sequences."))
     }
-    
+
     if (LFQ) {
         intensities <- .extractIntensities(D, "LFQ.intensity.", rename_columns)
     } else {
@@ -111,7 +111,7 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
         colDF <- data.frame(sample = colnames(intensities))
     } else {
         colDF <- data.frame(sample = colnames(intensities), group = group)
-    }  
+    }
 
     if (is.null(further_columns_to_keep)) {
         rowDF <- data.frame(Sequence = D$Sequence)

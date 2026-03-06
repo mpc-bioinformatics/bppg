@@ -2,10 +2,7 @@
 % Please edit documentation in R/graphStatistics.R
 \name{.calculateProteinNodeInfo}
 \alias{.calculateProteinNodeInfo}
-\title{Functions in this file:
-.calculateProteinNodeInfo
-.calculateSubgraphCharcateristics
-Table with information on each protein node}
+\title{Table with information on each protein node}
 \usage{
 .calculateProteinNodeInfo(G, verbose = FALSE)
 }
@@ -21,9 +18,6 @@ of the optimization is printed}
 A data frame with information on number of unique/shared peptides.
 }
 \description{
-Functions in this file:
-.calculateProteinNodeInfo
-.calculateSubgraphCharcateristics
 Table with information on each protein node
 }
 \examples{

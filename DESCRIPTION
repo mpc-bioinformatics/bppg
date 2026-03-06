@@ -30,6 +30,8 @@ Suggests:
     covr,
     rmarkdown,
     testthat (>= 3.0.0),
+    vsn, 
+    tidySummarizedExperiment,
     seqinr
 Config/testthat/edition: 3
 Depends: 
