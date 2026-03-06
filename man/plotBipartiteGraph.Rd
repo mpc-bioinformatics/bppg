@@ -15,6 +15,7 @@ plotBipartiteGraph(
   vertex.size2 = 15,
   useCanonicalPermutation = FALSE,
   three_shapes = FALSE,
+  imputed_encoding = FALSE,
   node_labels_proteins = "letters",
   node_labels_peptides = "numbers",
   round_digits = 2,
@@ -58,6 +59,10 @@ plotting.}
 \item{three_shapes}{\strong{logical} \cr
 If \code{TRUE}, a separate shape will be
 used for the unique peptides.}
+
+\item{imputed_encoding}{\strong{logical} \cr
+If \code{TRUE} shape will indicate
+imputation}
 
 \item{node_labels_proteins}{\strong{character} \cr
 The type of labels for the proteins. Options
