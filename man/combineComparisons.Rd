@@ -10,7 +10,7 @@ combineComparisons(compResultList)
 \arguments{
 \item{compResultList}{\strong{list} \cr
 List of results to be concatenated. Each list element is the result of
-\code{\link{concatResults}} for one pairwise comparison, i.e. a
+the optimization step for one pairwise comparison, i.e. a
 SummarizedExperiment object. Ideally, the element names should correspond
 to the comparison names.}
 }

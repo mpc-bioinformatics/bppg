@@ -5,7 +5,7 @@
 #'
 #' @param compResultList \strong{list} \cr
 #'      List of results to be concatenated. Each list element is the result of
-#'      \code{\link{concatResults}} for one pairwise comparison, i.e. a
+#'      the optimization step for one pairwise comparison, i.e. a
 #'      SummarizedExperiment object. Ideally, the element names should correspond
 #'      to the comparison names.
 #'
@@ -26,7 +26,7 @@ combineComparisons <- function(compResultList) {
 
     # helper function to harmonize row names (and introduce NA rows for missing proteins)
     harmonizeRowNames <- function(se) {
-        df <- SummarizedExperiment::assay(se)
+        df <- SummarizedExperiment::assay(se, "results")
 
         # introduce NA rows for all protein groups not present in this
         # comparison
@@ -43,7 +43,9 @@ combineComparisons <- function(compResultList) {
     names(df_list_harmonized) <- names(compResultList)
 
     SE <- SummarizedExperiment::SummarizedExperiment(
-        assays = df_list_harmonized)
+        assays = df_list_harmonized,
+        rowData = data.frame(accession = rownames(df_list_harmonized[[1]])),
+        colData = data.frame(colnames = colnames(df_list_harmonized[[1]])))
 
     return(SE)
 }

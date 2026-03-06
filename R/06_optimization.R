@@ -645,7 +645,8 @@ automatedAnalysisIteratedCi <- function(G,
     RES <- RES[, -1] # remove accession, as it is now in rownames
 
     RES_SE <- SummarizedExperiment::SummarizedExperiment(
-        assays = list(RES))
+        assays = list(results = RES), rowData = data.frame(accession = accessions),
+        colData = data.frame(colnames = colnames(RES)))
 
     return(RES_SE)
 }
