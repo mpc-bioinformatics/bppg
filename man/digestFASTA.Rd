@@ -19,7 +19,7 @@ digestFASTA(
 A fasta file, already read into R by
 \code{\link[seqinr:read.fasta]{seqinr::read.fasta()}}. If several protein origins
 are used they should be combined into one flatten
-listand a list with the corresponding origins
+list and a list with the corresponding origins
 should be provided for \strong{protOrigin}.}
 
 \item{missed_cleavages}{\strong{integer} \cr

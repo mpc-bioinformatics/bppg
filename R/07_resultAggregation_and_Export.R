@@ -26,7 +26,7 @@ combineComparisons <- function(compResultList) {
 
     # helper function to harmonize row names (and introduce NA rows for missing proteins)
     harmonizeRowNames <- function(se) {
-        df <- SummarizedExperiment::assay(se, "results")
+        df <- SummarizedExperiment::assays(se)$results
 
         # introduce NA rows for all protein groups not present in this
         # comparison
