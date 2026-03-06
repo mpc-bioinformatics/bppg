@@ -2,11 +2,7 @@
 % Please edit documentation in R/plotting.R
 \name{.myDiamond}
 \alias{.myDiamond}
-\title{Functions in this file:
-myDiamond
-setNodeLabels
-plotBipartiteGraph
-Function do define diamond shape for unique peptides in bipartite graph.
+\title{Function do define diamond shape for unique peptides in bipartite graph.
 this works for igraph.}
 \usage{
 .myDiamond(coords, v = NULL, params)
@@ -25,10 +21,6 @@ parameters for color and size.}
 symbole that can be used by igraph for plotting
 }
 \description{
-Functions in this file:
-myDiamond
-setNodeLabels
-plotBipartiteGraph
 Function do define diamond shape for unique peptides in bipartite graph.
 this works for igraph.
 }

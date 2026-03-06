@@ -8,7 +8,8 @@
   S,
   fastalevel = TRUE,
   prototype = FALSE,
-  file = NULL
+  file = NULL,
+  verbose = FALSE
 )
 }
 \arguments{
@@ -25,6 +26,10 @@ prototype list}
 
 \item{file}{\strong{character} \cr
 A file path where to save the table.}
+
+\item{verbose}{\strong{logical} \cr
+If \code{TRUE}, additional information on each iteration
+of the optimization is printed}
 }
 \value{
 A table with the characteristics.

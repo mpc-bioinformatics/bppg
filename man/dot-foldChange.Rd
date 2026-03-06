@@ -2,11 +2,7 @@
 % Please edit documentation in R/02_peptidePreprocessing.R
 \name{.foldChange}
 \alias{.foldChange}
-\title{Functions in this file:
-.foldChange
-aggregateReplicates
-calculatePeptideRatios
-Calculate peptide ratios for pairwise comparisons of groups (Y/X).}
+\title{Calculate peptide ratios for pairwise comparisons of groups (Y/X).}
 \usage{
 .foldChange(D, X, Y, useNA = FALSE)
 }
@@ -28,10 +24,6 @@ ratio is NA, if value for X or Y is NA}
 The fold changes (Y/X).
 }
 \description{
-Functions in this file:
-.foldChange
-aggregateReplicates
-calculatePeptideRatios
 Calculate peptide ratios for pairwise comparisons of groups (Y/X).
 }
 \examples{

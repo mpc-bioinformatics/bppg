@@ -9,8 +9,7 @@
   enzyme = "trypsin",
   missed = 0,
   warn = TRUE,
-  remove_initial_M = TRUE,
-  ...
+  remove_initial_M = TRUE
 )
 }
 \arguments{

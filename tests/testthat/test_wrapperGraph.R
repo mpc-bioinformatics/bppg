@@ -8,9 +8,8 @@ test_that("generate graphs from fasta",{
     file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
     fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 
-    res <- bppg::generateGraphsFromFASTA(fasta = fasta,
-        save_intermediate = TRUE,
-        outpath = temp_dir)
+  res <- bppg::generateGraphsFromFASTA(fasta = fasta,
+                                       outpath = temp_dir)
 
     expect_snapshot(igraph::as_edgelist(res[[1]]))
     expect_snapshot(igraph::as_edgelist(res[[2]]))
@@ -70,10 +69,10 @@ test_that("test generateGraphsFromQuantData", {
     expect_true(file.exists(file.path(temp_dir, "edgelist_filtered_.xlsx")))
 
     for (i in 1:3) {
-    for (j in seq_along(graphs[[i]])) {
-        expect_snapshot(igraph::as_edgelist(graphs[[i]][[j]]))
-        expect_snapshot(igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio"))
-    }
+        for (j in seq_along(graphs[[i]])) {
+            expect_snapshot(igraph::as_edgelist(graphs[[i]][[j]]))
+            expect_snapshot(igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio"))
+        }
     }
 
 

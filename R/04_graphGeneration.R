@@ -109,7 +109,7 @@
         peptSignature <- edgelist
         peptSignature$protein <- paste0("pept_", peptSignature$peptide)
     }
-    list(peptides = peptSignature, proteins = protSignature)
+    return(list(peptides = peptSignature, proteins = protSignature))
 }
 
 #' Contracting of peptide and protein nodes.
@@ -144,7 +144,7 @@
 
 .contractGraph <- function(G, vMapping,
                            collProtNodes,
-                           collPeptNodes){
+                           collPeptNodes) {
     G <- igraph::set_vertex_attr(graph = G,
         name = "collSignature",
         index = igraph::V(G)[igraph::V(G)$type],
@@ -159,33 +159,38 @@
             match(igraph::V(G)$name[!igraph::V(G)$type],
                 vMapping$peptides$peptide)])
 
-    gCollapsed <- igraph::contract(G, factor(stats::na.omit(igraph::V(G)$collSignature)),
+    gCollapsed <- igraph::contract(G, 
+        factor(stats::na.omit(igraph::V(G)$collSignature)),
         vertex.attr.comb = c)
 
     # remove duplicate edges
     gCollapsed  <- igraph::simplify(gCollapsed)
 
     # reset attributes
-    igraph::V(gCollapsed)$type <- sapply(igraph::V(gCollapsed)$type, "[", 1)
-    igraph::V(gCollapsed)$name <- sapply(igraph::V(gCollapsed)$name,
-        paste, collapse=";") # this is not ordered - > same ratio order
+    igraph::V(gCollapsed)$type <- vapply(igraph::V(gCollapsed)$type, "[", 1,
+        FUN.VALUE = logical(1))
+    igraph::V(gCollapsed)$name <- vapply(igraph::V(gCollapsed)$name,
+        paste, collapse=";", FUN.VALUE = character(1)) 
+    # this is not ordered - > same ratio order
 
 
-    if (!is.null(igraph::V(gCollapsed)$pep_logRatio)){
-        if(collPeptNodes) {
-        igraph::V(gCollapsed)$pep_ratio_mean[!igraph::V(gCollapsed)$type] <-
-            sapply(igraph::V(gCollapsed)$pep_logRatio[!igraph::V(gCollapsed)$type], mean)
+    if (!is.null(igraph::V(gCollapsed)$pep_logRatio)) {
+        if (collPeptNodes) {
+            igraph::V(gCollapsed)$pep_ratio_mean[!igraph::V(gCollapsed)$type] <-
+                vapply(igraph::V(gCollapsed)$pep_logRatio[!igraph::V(gCollapsed)$type],
+                    mean, FUN.VALUE = numeric(1))
         } else {
-                igraph::V(gCollapsed)$pep_logRatio <- sapply(
-                    igraph::V(gCollapsed)$pep_logRatio,  "[", 1)
-    }}
+            igraph::V(gCollapsed)$pep_logRatio <- vapply(
+                igraph::V(gCollapsed)$pep_logRatio,  "[", 1,
+                FUN.VALUE = numeric(1))
+        } }
 
     if (!is.null(igraph::V(gCollapsed)$protOrigin) && collProtNodes) {
         igraph::V(gCollapsed)$protOrigin[igraph::V(gCollapsed)$type] <-
-            sapply(igraph::V(gCollapsed)$protOrigin[igraph::V(gCollapsed)$type], unique)
+            vapply(igraph::V(gCollapsed)$protOrigin[igraph::V(gCollapsed)$type], unique, FUN.VALUE = character(1))
     }
 
-    igraph::delete_vertex_attr(gCollapsed, "collSignature")
+    return(igraph::delete_vertex_attr(gCollapsed, "collSignature"))
 }
 
 
@@ -234,7 +239,7 @@ generateGraphsFromEdgelist <- function(edgelist,
     igraph::V(G)[igraph::V(G)$name %in% edgelist[, 1]]$type <- TRUE
     igraph::V(G)[igraph::V(G)$name %in% edgelist[, 2]]$type <- FALSE
 
-    if (!is.null(edgelist$pep_logRatio)){
+    if (!is.null(edgelist$pep_logRatio)) {
         G <- igraph::set_vertex_attr(graph = G,
             name = "pep_logRatio",
             index = igraph::V(G)[!igraph::V(G)$type],
@@ -246,7 +251,7 @@ generateGraphsFromEdgelist <- function(edgelist,
     if (collProtNodes || collPeptNodes) {
         G <- .contractGraph(G, vertexMapping, collProtNodes, collPeptNodes)
     }
-    igraph::decompose(G)
+    return(igraph::decompose(G))
 }
 
 
@@ -258,8 +263,6 @@ generateGraphsFromEdgelist <- function(edgelist,
 #'                                 A SummarizedExperiment from
 #'                                 [bppg::calculatePeptideRatios] with peptide
 #'                                 ratios.
-#' @param id_cols                  \strong{integer vector} \cr
-#'                                 The columns with ids, e.g. peptide sequences.
 #' @param fasta_edgelist           \strong{data.frame} \cr
 #'                                 An edgelist created from the corresponding
 #'                                 FASTA file, eg. created with
@@ -322,13 +325,7 @@ generateQuantGraphs <- function(exp_peptide_ratios,
             overwrite = TRUE, keepNA = TRUE)
     }
     colnames_split <- limma::strsplit2(colnames(exp_peptide_ratios), "_")
-    comparisons <- paste(colnames_split[,2], colnames_split[,3], sep = "_")
-
-
-# die datenstruktur hat sich stark geändert
-# ich glaube, ich muss den imputation filter anpassen (vielleicht mit katharinas ansatz?)
-# TODO erstmal ohne filter einbauen
-
+    comparisons <- paste(colnames_split[, 2], colnames_split[, 3], sep = "_")
         ## add peptide ratios ##TODO add imputation flag
     # if (sum(fc[, 2] > 0)) {  # check if there are imputed values
     #     filtered_pep <- .imputationFilter(edgelist_filtered, fc, id, seq_column)
@@ -359,7 +356,7 @@ generateQuantGraphs <- function(exp_peptide_ratios,
 
             compEdgelist <- edgelist_filtered[edgelist_filtered$peptide
                 %in% rownames(compRatio), ]
-            compEdgelist$pep_logRatios <- compRatio[match(compEdgelist$peptide,
+            compEdgelist$pep_logRatio <- compRatio[match(compEdgelist$peptide, 
                 rownames(compRatio)), 1]
             # TODO does generate Graph has to be adapted too?#
             generateGraphsFromEdgelist(compEdgelist, collProtNodes, collPeptNodes)
