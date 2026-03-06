@@ -4,11 +4,15 @@
 \alias{.calculateProteinNodeInfo}
 \title{Table with information on each protein node}
 \usage{
-.calculateProteinNodeInfo(G)
+.calculateProteinNodeInfo(G, verbose = FALSE)
 }
 \arguments{
 \item{G}{\strong{list of list of igraph objects} \cr
 The graphs with collapsed protein and peptide nodes.}
+
+\item{verbose}{\strong{logical} \cr
+If \code{TRUE}, additional information on each iteration
+of the optimization is printed}
 }
 \value{
 A data frame with information on number of unique/shared peptides.

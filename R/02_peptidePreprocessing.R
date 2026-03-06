@@ -65,12 +65,15 @@
 #' group <- factor(rep(1:9, each = 3))
 #' aggregateReplicates(D, group = group)
 
-aggregateReplicates <- function(D, group = NULL, missing.limit = 0, method = "mean",
+aggregateReplicates <- function(D,
+    group = NULL, 
+    missing.limit = 0, 
+    method = "mean",
     seq_col = "Sequence") {
     checkmate::assertClass(D, "SummarizedExperiment")
     checkmate::assertDataFrame(SummarizedExperiment::assays(D)$intensities,
         all.missing=FALSE)
-    checkmate::assertFactor(group)
+    checkmate::assertFactor(group, null.ok = TRUE)
     checkmate::assertNumber(missing.limit, lower = 0, upper = 1)
     checkmate::assertCharacter(method, pattern = "mean|sum|median")
     checkmate::assertCharacter(seq_col)
@@ -78,7 +81,7 @@ aggregateReplicates <- function(D, group = NULL, missing.limit = 0, method = "me
     id <- SummarizedExperiment::rowData(D)[, seq_col]
     intensities <- SummarizedExperiment::assays(D)$intensities
 
-    if(is.null(group)){
+    if (is.null(group)) {
         group <- factor(SummarizedExperiment::colData(D)$group)
     }
 
@@ -87,7 +90,7 @@ aggregateReplicates <- function(D, group = NULL, missing.limit = 0, method = "me
         sum = rowSums,
         median = robustbase::rowMedians)
 
-    res <- vapply(1:length(levels(group)), function(i){
+    res <- vapply(1:length(levels(group)), function(i) {
         X_tmp <- intensities[, group == levels(group)[i]]
         X_tmp <- as.matrix(X_tmp)
 
@@ -137,7 +140,7 @@ calculatePeptideRatios <- function(D, group_levels = NULL) {
     }
 
     # create pairwise groups for ratio calculation
-    groupCombinations <- combn(group_levels, 2)
+    groupCombinations <- utils::combn(group_levels, 2)
     peptide_log_ratios <- vapply(seq_len(ncol(groupCombinations)), function(i) {
         log2(.foldChange(D = aggr_intensities, X = groupCombinations[1, i],
             Y = groupCombinations[2, i]))

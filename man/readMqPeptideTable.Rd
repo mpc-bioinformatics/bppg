@@ -12,7 +12,8 @@ readMqPeptideTable(
   rename_columns = TRUE,
   zeroToNA = TRUE,
   remove_empty_rows = TRUE,
-  further_columns_to_keep = NULL
+  further_columns_to_keep = NULL,
+  verbose = FALSE
 )
 }
 \arguments{
@@ -45,6 +46,11 @@ removed.}
 \item{further_columns_to_keep}{\strong{integer vector} \cr
 Indices of additional columns to keep,
 except peptide sequence and intensities}
+
+\item{verbose}{\strong{logical} \cr
+If \code{TRUE}, additional information on
+each iteration of the optimization is
+printed}
 }
 \value{
 A SummarizedExperiment with intensities, sequences, and optional data
