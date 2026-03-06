@@ -22,5 +22,6 @@ If \code{TRUE}, "Intensity." or
 returns intensity dataframe
 }
 \description{
-Import of MaxQuant's peptide.txt-table.
+Helper function that extracts the itensitie columns and columns of interest
+from a given dataframe.
 }

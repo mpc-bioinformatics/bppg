@@ -33,11 +33,11 @@ test_that("test .minimizeSquaredError", {
 
   expect_equal(res$Ri, res_snap$Ri, tolerance = 1e-05)
   expect_equal(res$Ci, res_snap$Ci, tolerance = 1e-05)
-  expect_equal(str(res$Ci), str(res_snap$Ci))
+  # expect_equal(str(res$Ci), str(res_snap$Ci))
 
   expect_equal(res2$Ri, res2_snap$Ri, tolerance = 1e-05)
   expect_equal(res2$Ci, res2_snap$Ci, tolerance = 1e-05)
-  expect_equal(str(res2$Ci), str(res2_snap$Ci))
+  # expect_equal(str(res2$Ci), str(res2_snap$Ci))
 
 })
 
