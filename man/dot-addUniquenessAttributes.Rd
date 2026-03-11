@@ -2,10 +2,7 @@
 % Please edit documentation in R/helpers.R
 \name{.addUniquenessAttributes}
 \alias{.addUniquenessAttributes}
-\title{Functions in this file:
-.addUniquenessAttributes
-.geomMean
-Adds vertex attributes with uniqueness of peptides and number of unique
+\title{Adds vertex attributes with uniqueness of peptides and number of unique
 peptides for proteins.}
 \usage{
 .addUniquenessAttributes(G)
@@ -19,9 +16,6 @@ A graph with 2 additional vertex attributes, uniqueness and
 nr_unique_peptides
 }
 \description{
-Functions in this file:
-.addUniquenessAttributes
-.geomMean
 Adds vertex attributes with uniqueness of peptides and number of unique
 peptides for proteins.
 }
