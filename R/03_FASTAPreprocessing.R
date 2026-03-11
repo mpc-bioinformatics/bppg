@@ -11,8 +11,7 @@
 
 #' Cleavage of a single protein sequence.
 #'
-#' @param sequence           \strong{character} \cr
-#'                           The protein sequence.
+#' @inheritParams .digest2
 #' @param start              \strong{integer vector} \cr
 #'                           Index of where peptides start
 #' @param stop               \strong{integer vector} \cr
@@ -178,9 +177,10 @@
 #'                           [fasta], proteins are used as index.
 #' @param verbose            \strong{logical} \cr
 #'                           If \code{TRUE}, additional information on
-#'                           each iteration of the optimization is 
+#'                           each iteration of the digestion is 
 #'                           printed.
 #' @param ...                Additional arguments for [.digest2()].
+#' @inheritDotParams .digest2
 #'
 #' @return data.frame with proteins and their peptide sequences, filtered
 #'         for minimal and maximal number of amino acids.

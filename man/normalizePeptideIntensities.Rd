@@ -13,8 +13,9 @@ normalizePeptideIntensities(
 }
 \arguments{
 \item{D}{\strong{SummarizedExperiment} \cr
-Dataset containing peptide intensities, e.g. the result of
-\link{readMqPeptideTable}.}
+SummarizedExperiment Dataset containing peptide
+intensities, e.g. the result of \link{readMqPeptideTable} or
+\link{normalizePeptideIntensities}.}
 
 \item{method}{\strong{character} \cr
 The method of normalization. Options are "nonorm"

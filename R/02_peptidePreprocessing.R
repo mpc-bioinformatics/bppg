@@ -41,10 +41,12 @@
 #' Aggregate replicates of the same experimental group.
 #'
 #' @param D              \strong{SummarizedExperiment} \cr
-#'                       The data experiment containing the peptide intensities.
+#'                       SummarizedExperiment Dataset containing peptide 
+#'                       intensities, e.g. the result of [readMqPeptideTable] or
+#'                       [normalizePeptideIntensities].
 #' @param group          \strong{character factor} \cr
-#'                       The groups for aggregation, if not already in
-#'                       SummarizedExperiment::colData(D)$group.
+#'                       The groups per sample for aggregation, if not already 
+#'                       in SummarizedExperiment::colData(D)$group.
 #' @param missing.limit  \strong{numeric} \cr
 #'                       The proportion of missing values that is allowed
 #'                       (e.g. 0 means no missings allowed).
@@ -56,7 +58,8 @@
 #'                       in the rowData of the SummarizedExperiment.
 #'                       Default is "Sequence"
 #'
-#' @return A SummarizedExperiment with aggregated intensities ($intensities).
+#' @return \strong{SummarizedExperiment} \cr
+#'          A SummarizedExperiment with aggregated intensities ($intensities).
 #' @export
 #'
 #' @examples
@@ -115,7 +118,8 @@ aggregateReplicates <- function(D,
 #' @param D                  \strong{SummarizedExperiment} \cr
 #'                           The result from function [aggregateReplicates()].
 #' @param group_levels       \strong{character factor} \cr
-#'                           The levels of groups in the right order.
+#'                           The group information in the sample order. They are
+#'                           extracted from D by default
 #'
 #' @return A SummarizedExperiment with log2 peptide ratios (logRatios).
 #' @export
@@ -165,10 +169,9 @@ calculatePeptideRatios <- function(D, group_levels = NULL) {
 
 
 #' Normalization of peptide intensities
+#' 
+#' @inheritParams aggregateReplicates
 #'
-#' @param D \strong{SummarizedExperiment} \cr
-#'          Dataset containing peptide intensities, e.g. the result of
-#'          [readMqPeptideTable].
 #' @param method \strong{character} \cr
 #'          The method of normalization. Options are "nonorm"
 #'          (no normalization), "median", "loess",  "quantile" or "lts"

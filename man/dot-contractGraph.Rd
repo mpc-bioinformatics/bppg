@@ -15,12 +15,12 @@ A list with two dataframes from
 \code{\link[=.getContractMapping]{.getContractMapping()}}.}
 
 \item{collProtNodes}{\strong{logical} \cr
-If \code{TRUE}, the protein nodes
-will be collapsed.}
+If \code{TRUE}, the protein nodes will
+be collapsed.}
 
 \item{collPeptNodes}{\strong{logical} \cr
-If \code{TRUE}, the peptide nodes
-will be collapsed.}
+If \code{TRUE}, the peptide nodes will
+be collapsed.}
 }
 \value{
 An edgelist with collapsed protein and/or peptide nodes.

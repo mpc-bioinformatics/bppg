@@ -7,15 +7,10 @@
 
 #' Create Mapping signature for igraph::contract function.
 #'
+#' @inheritParams generateQuantGraphs
 #' @param edgelist                 \strong{data.frame} \cr
 #'                                 An edgelist eg. created with
 #'                                 [digestFASTA()].
-#' @param collProtNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the protein nodes
-#'                                 will be collapsed.
-#' @param collPeptNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the peptide nodes
-#'                                 will be collapsed.
 #'
 #' @return A list with two dataframes, one for peptide and one for protein
 #'         signatures.
@@ -53,17 +48,12 @@
 
 #' Contracting of peptide and protein nodes.
 #'
+#' @inheritParams generateQuantGraphs
 #' @param G                        \strong{igraph graph} \cr
 #'                                 Bipartrite peptide protein graph.
 #' @param vMapping                 \strong{list} \cr
 #'                                 A list with two dataframes from
 #'                                 [.getContractMapping()].
-#' @param collProtNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the protein nodes
-#'                                 will be collapsed.
-#' @param collPeptNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the peptide nodes
-#'                                 will be collapsed.
 #'
 #' @return An edgelist with collapsed protein and/or peptide nodes.
 #'
@@ -135,17 +125,11 @@
 
 #' Generate bipartite peptide-protein graphs from a list of digested proteins
 #' via an edgelist. Peptide and protein nodes can be contracted.
-#'
+#' @inheritParams generateQuantGraphs
 #' @param edgelist                 \strong{data.frame} \cr
 #'                                 An edgelist, output from [digestFASTA()].
 #'                                 Quant data needs to be in the column
 #'                                 \strong{$pep_logRatio}.
-#' @param collProtNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the protein nodes
-#'                                 will be contracted.
-#' @param collPeptNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the peptide nodes
-#'                                 will be contracted.
 #' @return A list of subgraphs as igraph objects.
 #' @export
 #'

@@ -11,7 +11,8 @@ calculatePeptideRatios(D, group_levels = NULL)
 The result from function \code{\link[=aggregateReplicates]{aggregateReplicates()}}.}
 
 \item{group_levels}{\strong{character factor} \cr
-The levels of groups in the right order.}
+The group information in the sample order. They are
+extracted from D by default}
 }
 \value{
 A SummarizedExperiment with log2 peptide ratios (logRatios).

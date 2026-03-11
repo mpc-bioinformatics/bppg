@@ -49,7 +49,7 @@ except peptide sequence and intensities}
 
 \item{verbose}{\strong{logical} \cr
 If \code{TRUE}, additional information on
-each iteration of the optimization is
+the data extraction is
 printed}
 }
 \value{

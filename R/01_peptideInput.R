@@ -52,7 +52,7 @@
 #'                                  except peptide sequence and intensities
 #' @param verbose                   \strong{logical} \cr
 #'                                  If \code{TRUE}, additional information on
-#'                                  each iteration of the optimization is 
+#'                                  the data extraction is 
 #'                                  printed
 #' @return A SummarizedExperiment with intensities, sequences, and optional data
 #'         for the rowData dataframe.
