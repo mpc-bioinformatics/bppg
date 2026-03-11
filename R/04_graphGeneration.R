@@ -314,9 +314,11 @@ generateQuantGraphs <- function(exp_peptide_ratios,
     checkmate::assertFlag(collPeptNodes)
     checkmate::assertCharacter(suffix)
 
-    ## broad filtering for edgelist for only quantifies peptides
+    ## broad filtering for FASTA edgelist for only quantified peptides
     edgelist_filtered <- fasta_edgelist[fasta_edgelist[, 2]
         %in% SummarizedExperiment::rowData(exp_peptide_ratios)[, seq_column], ]
+    # TODO kann ich die Proteine nicht einfach in die rowdata zu den Peptiden machen? 
+    # Nein weil peptide öfters auftauchen!
 
     if (!is.null(outpath)) {
         checkmate::assertPathForOutput(outpath, overwrite = TRUE)
@@ -326,39 +328,24 @@ generateQuantGraphs <- function(exp_peptide_ratios,
     }
     colnames_split <- limma::strsplit2(colnames(exp_peptide_ratios), "_")
     comparisons <- paste(colnames_split[, 2], colnames_split[, 3], sep = "_")
-        ## add peptide ratios ##TODO add imputation flag
-    # if (sum(fc[, 2] > 0)) {  # check if there are imputed values
-    #     filtered_pep <- .imputationFilter(edgelist_filtered, fc, id, seq_column)
-
-    #     edgelist_filtered$pep_ratio <- filtered_pep$pep_ratio[
-    #         match(edgelist_filtered$peptide, filtered_pep$peptide)]
-    #     edgelist_filtered$imputed <- filtered_pep$imputed[
-    #         match(edgelist_filtered$peptide, filtered_pep$peptide)]
-    #     tmp_nrow <- (nrow(edgelist_filtered))
-    #     # remove entries without checked peptide ratio
-    #     edgelist_filtered <- na.omit(edgelist_filtered)
-    #     message(paste(tmp_nrow - nrow(edgelist_filtered), 
-    #         "edges were omitted due to conflicting imputations"))
-    # } else {
-    #     edgelist_filtered$pep_ratio <- fc[
-    #         match(edgelist_filtered$peptide, id[, seq_column]), 1]
-    #     edgelist_filtered$imputed <- fc[
-    #         match(edgelist_filtered$peptide, id[, seq_column]), 2]
-
-    # }
-    # hier werden die graphen erstellt im neuen system 
-    # -> was von mehreren Vergleichen ausgeht
+    # first built graphs and try to identify missing type after
     subgraphs <- lapply(seq_len(ncol(exp_peptide_ratios)),
         function(i) {
+            # only the data from this comparison
             compSE <- exp_peptide_ratios[, i, drop = FALSE]
+            # remove peptides with missing values
             compSE <- compSE[!is.na(SummarizedExperiment::assays(compSE)$logRatios), drop = FALSE]
+            # get data
             compRatio <- SummarizedExperiment::assays(compSE)$logRatios
 
             compEdgelist <- edgelist_filtered[edgelist_filtered$peptide
                 %in% rownames(compRatio), ]
             compEdgelist$pep_logRatio <- compRatio[match(compEdgelist$peptide, 
                 rownames(compRatio)), 1]
-            # TODO does generate Graph has to be adapted too?#
+             if (imputed) {
+               compImputed <- SummarizedExperiment::assays(compSE)$maskImputed
+            } 
+            # TODO does generate Graph has to be adapted too?
             generateGraphsFromEdgelist(compEdgelist, collProtNodes, collPeptNodes)
         })
 

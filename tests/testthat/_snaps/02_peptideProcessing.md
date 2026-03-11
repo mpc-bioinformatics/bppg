@@ -126,7 +126,7 @@
     Output
       class: SummarizedExperiment 
       dim: 10 3 
-      metadata(1): ''
+      metadata(1): imputed
       assays(1): logRatios
       rownames(10): pep_1 pep_2 ... pep_9 pep_10
       rowData names(1): Sequence
