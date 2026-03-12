@@ -16,6 +16,8 @@
 #'                                  If \code{TRUE}, "Intensity." or
 #'                                  "LFQ.intensity." are removed
 #' @return returns intensity dataframe
+#' 
+#' @importFrom stringr str_replace
 #'
 .extractIntensities <- function(D, col_pattern, rename_columns){
     intensities <- D[, grep(col_pattern, colnames(D))]
@@ -61,6 +63,10 @@
 #' @examples
 #' file <- system.file("extdata", "peptides.txt", package = "bppg")
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' 
+#' @importFrom checkmate assertFileExists assertFlag assertVector
+#' @importFrom utils read.table
+#' @importClassesFrom SummarizedExperiment SummarizedExperiment
 
 readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
     remove_contaminants = FALSE,

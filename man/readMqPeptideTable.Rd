@@ -62,4 +62,5 @@ Import of MaxQuant's peptide.txt-table.
 \examples{
 file <- system.file("extdata", "peptides.txt", package = "bppg")
 D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+
 }
