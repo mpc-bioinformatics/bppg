@@ -8,8 +8,8 @@ peptides for proteins.}
 .addUniquenessAttributes(G)
 }
 \arguments{
-\item{G}{\strong{igraph graph object} \cr
-A peptide-protein graph.}
+\item{G}{\strong{igraph graph} \cr
+Bipartrite peptide protein graph.}
 }
 \value{
 A graph with 2 additional vertex attributes, uniqueness and

@@ -7,8 +7,7 @@
 #' Adds vertex attributes with uniqueness of peptides and number of unique
 #' peptides for proteins.
 #'
-#' @param G \strong{igraph graph object} \cr
-#'          A peptide-protein graph.
+#' @inheritParams .contractGraph
 #'
 #' @return A graph with 2 additional vertex attributes, uniqueness and
 #'         nr_unique_peptides
