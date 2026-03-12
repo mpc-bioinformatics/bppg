@@ -26,4 +26,5 @@ D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 group <- factor(rep(1:9, each = 3))
 dAgg <- aggregateReplicates(D, group = group)
 calculatePeptideRatios(dAgg)
+
 }

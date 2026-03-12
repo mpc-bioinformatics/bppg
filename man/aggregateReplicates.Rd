@@ -47,4 +47,5 @@ file <- system.file("extdata", "peptides.txt", package = "bppg")
 D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 group <- factor(rep(1:9, each = 3))
 aggregateReplicates(D, group = group)
+
 }

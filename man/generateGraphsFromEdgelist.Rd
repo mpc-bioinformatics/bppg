@@ -39,6 +39,8 @@ fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 edgelist <- digestFASTA(fasta)
 res <- bppg::generateGraphsFromEdgelist(edgelist)
 
+TODO importsFrom
+
 }
 \seealso{
 \code{\link[=digestFASTA]{digestFASTA()}}

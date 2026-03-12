@@ -39,4 +39,5 @@ Normalization of peptide intensities
 file <- system.file("extdata", "peptides.txt", package = "bppg")
 D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 D_norm <- normalizePeptideIntensities(D, method = "loess")
+
 }

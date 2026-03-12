@@ -195,6 +195,9 @@
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' res <- digestFASTA(fasta)
 #'
+#' @importFrom checkmate assertFlag assertInt assertList
+#' @importFrom pbapply pblapply pboptions
+#' 
 digestFASTA <- function(fasta,
     missed_cleavages = 2,
     min_aa = 6,

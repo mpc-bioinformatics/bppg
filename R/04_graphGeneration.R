@@ -24,6 +24,9 @@
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' edgelist <- digestFASTA(fasta)
 #' res <- bppg:::.getContractMapping(edgelist)
+#' 
+#' @importFrom stats aggregate
+
 .getContractMapping <- function(edgelist,
                                   collProtNodes = TRUE,
                                   collPeptNodes = FALSE) {
@@ -70,6 +73,9 @@
 #' igraph::V(G)[igraph::V(G)$name %in% edgelist[, 1]]$type <- TRUE
 #' igraph::V(G)[igraph::V(G)$name %in% edgelist[, 2]]$type <- FALSE
 #' res <- bppg:::.contractGraph(G, vMapping)
+#' 
+#' @importFrom igraph contract set_vertex_attr simplify V
+#' @importFrom stats na.omit
 
 .contractGraph <- function(G, vMapping,
                            collProtNodes,
@@ -106,7 +112,9 @@
     if (!is.null(igraph::V(gCollapsed)$pep_logRatio)) {
         if (collPeptNodes) {
             igraph::V(gCollapsed)$pep_ratio_mean[!igraph::V(gCollapsed)$type] <-
-                vapply(igraph::V(gCollapsed)$pep_logRatio[!igraph::V(gCollapsed)$type],
+                vapply(
+                    igraph::V(gCollapsed)$pep_logRatio[
+                        !igraph::V(gCollapsed)$type],
                     mean, FUN.VALUE = numeric(1))
         } else {
             igraph::V(gCollapsed)$pep_logRatio <- vapply(
@@ -116,7 +124,8 @@
 
     if (!is.null(igraph::V(gCollapsed)$protOrigin) && collProtNodes) {
         igraph::V(gCollapsed)$protOrigin[igraph::V(gCollapsed)$type] <-
-            vapply(igraph::V(gCollapsed)$protOrigin[igraph::V(gCollapsed)$type], unique, FUN.VALUE = character(1))
+            vapply(igraph::V(gCollapsed)$protOrigin[igraph::V(gCollapsed)$type],
+                unique, FUN.VALUE = character(1))
     }
 
     return(igraph::delete_vertex_attr(gCollapsed, "collSignature"))
@@ -141,6 +150,8 @@
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' edgelist <- digestFASTA(fasta)
 #' res <- bppg::generateGraphsFromEdgelist(edgelist)
+#' 
+#' TODO importsFrom
 #'
 generateGraphsFromEdgelist <- function(edgelist,
                                   collProtNodes = FALSE,

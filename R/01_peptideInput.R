@@ -66,7 +66,7 @@
 #' 
 #' @importFrom checkmate assertFileExists assertFlag assertVector
 #' @importFrom utils read.table
-#' @importClassesFrom SummarizedExperiment SummarizedExperiment
+#' @importFrom SummarizedExperiment SummarizedExperiment
 
 readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
     remove_contaminants = FALSE,
