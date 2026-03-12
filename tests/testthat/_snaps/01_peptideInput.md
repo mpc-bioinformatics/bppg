@@ -88983,6 +88983,7 @@
     Code
       SummarizedExperiment::rowData(D2)
     Output
+<<<<<<< HEAD
       DataFrame with 7944 rows and 3 columns
                                               Sequence             Proteins     Score
                                            <character>          <character> <numeric>
@@ -89017,4 +89018,15 @@
       50amol_R1       50amol_R1
       50amol_R2       50amol_R2
       50amol_R3       50amol_R3
+=======
+      class: SummarizedExperiment 
+      dim: 7944 27 
+      metadata(0):
+      assays(1): intensities
+      rownames(7944): AAAAQDEITGDGTTTVVCLVGELLR AAADALSDLEIK ...
+        YYVPPGIPTNDTSNLER YYWNLSK
+      rowData names(3): Sequence Proteins Score
+      colnames(27): 12500amol_R1 12500amol_R2 ... 50amol_R2 50amol_R3
+      colData names(1): sample
+>>>>>>> origin/devel
 
