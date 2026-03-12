@@ -58,10 +58,12 @@ test_that("test calculatePeptideRatios", {
     expect_snapshot(D1)
 })
 
+
 test_that("normalize peptide data", {
     D <- bppg::readMqPeptideTable(test_path("testfiles/peptides.txt"), LFQ = FALSE)
     D_norm_loess <- bppg::normalizePeptideIntensities(D, method = "loess")
     D_norm_lts <- bppg::normalizePeptideIntensities(D, method = "lts")
-    expect_snapshot(SummarizedExperiment::assays(D_norm_loess)$intensities)
-    expect_snapshot(SummarizedExperiment::assays(D_norm_lts)$intensities)
+    expect_snapshot(SummarizedExperiment::assays(D_norm_loess)$intensities, variant = Sys.info()[["sysname"]])
+    expect_snapshot(SummarizedExperiment::assays(D_norm_lts)$intensities, variant = Sys.info()[["sysname"]])
 })
+
