@@ -39,12 +39,12 @@
     nr_unique_peptides <- NULL
     nr_shared_peptides <- NULL
 
-    for (i in 1:length(G2)){
-        for (j in 1:length(G2[[i]])) {
+    for (i in seq_along(G2)){
+        for (j in seq_along(G2[[i]])) {
             G_tmp <- G2[[i]][[j]]
             ind_proteins <- which(igraph::V(G_tmp)$type)
 
-            for (k in 1:length(ind_proteins)) {
+            for (k in seq_along(ind_proteins)) {
                 ind <- ind_proteins[k]
                 accessions_tmp <- igraph::V(G_tmp)$name[ind]
                 accessions <- c(accessions, accessions_tmp)
@@ -120,7 +120,7 @@
         comparisons <- names(S)
     }
 
-    for (j in 1:length(comparisons)) {
+    for (j in seq_along(comparisons)) {
         if (fastalevel) {
             S_tmp <- S
             ## S2_tmp <- S2
@@ -137,7 +137,7 @@
         pb <- pbapply::startpb(0, length(S_tmp))
         on.exit(pbapply::closepb(pb))
 
-        for (i in 1:length(S_tmp)) {
+        for (i in seq_along(S_tmp)) {
             G_tmp <- S_tmp[[i]]
 
             nr_protein_nodes <- sum(igraph::V(G_tmp)$type)

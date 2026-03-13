@@ -69,11 +69,11 @@
     }
     ## nicht geordnete Zahlen
     if (node_labels_proteins == "numbers_noord") {
-        names_G[Layout[, 2] == 1] <- 1:length(pos_proteins)
+        names_G[Layout[, 2] == 1] <- seq_along(pos_proteins)
     }
 
     if (node_labels_peptides == "numbers") {
-        names_peptides <- 1:sum(Layout[, 2] == 0)
+        names_peptides <- seq_len(sum(Layout[, 2] == 0))
         names_G[Layout[, 2] == 0] <- names_peptides[rank(pos_peptides)]
     }
     if (node_labels_peptides == "pep_ratios") {

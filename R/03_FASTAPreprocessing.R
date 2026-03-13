@@ -102,9 +102,9 @@
     stop <- c(stop, end_position)
     results <- .cleave(sequence, start, stop, 0)
     if (missed > 0) {
-        for (i in 1:min(missed, length(stop_))) { # limited by missed
-            start_tmp <- start[1:(length(start) - i)]
-            stop_tmp <- stop[(1 + i):length(stop)]
+        for (i in seq_len(min(missed, length(stop_)))) { # limited by missed
+            start_tmp <- start[seq_len(length(start) - i)]
+            stop_tmp <- stop[seq(1 + i, length(stop))]
             peptide <- .cleave(sequence, start_tmp, stop_tmp, i)
             results <- rbind(results, peptide)
         }

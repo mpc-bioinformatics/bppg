@@ -35,7 +35,7 @@
     get_origin <- function(x, contaminants, spike_ins, organisms) {
         accessions <- unlist(strsplit(x, ";"))
         origin_tmp <- character(length(accessions))
-        for (i in 1:length(accessions))  {
+        for (i in seq_along(accessions))  {
             if (accessions[i] %in% contaminants) {
                 origin_tmp[i] <- "Contaminant"
                 next

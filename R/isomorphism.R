@@ -101,9 +101,9 @@
         G_tmp <- G[[i]]
 
         ## Which graphs are isomorphic to G_tmp?
-        x <- sapply(G[(i + 1):length(G)], function(x) {
+        x <- vapply(G[(i + 1):length(G)], function(x) {
             .isomorphicBipartite(x, G_tmp)
-        })
+        }, logical(1))
         ind <- which(x)
 
         ## delete Graphs isomorphic to G_tmp graphs (-> list becomes smaller)

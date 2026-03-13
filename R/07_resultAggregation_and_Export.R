@@ -33,7 +33,7 @@ combineComparisons <- function(compResultList) {
         # comparison
         missing <- setdiff(all_rows, rownames(df))
         na_rows <- matrix(NA, nrow = length(missing), ncol = ncol(df),
-                          dimnames = list(missing, colnames(df)))
+            dimnames = list(missing, colnames(df)))
         df_tmp <- rbind(df, na_rows)
 
         df_tmp <- df_tmp[order(rownames(df_tmp)), ] # sort by rowname

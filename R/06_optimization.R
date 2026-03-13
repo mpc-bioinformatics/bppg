@@ -137,7 +137,7 @@
 .initializeRi <- function(M, rjLog) {
     m <- ncol(M)
     RiLog_start <- rep(NA, m)
-    for (j in 1:m) { # for each protein
+    for (j in seq_len(m)) { # for each protein
         belongsToProt <- (M[, j] == 1) # peptides belonging to protein j
         uniquePep <- (rowSums(M) == 1) & (M[, j] == 1)
         if (any(uniquePep)) {
@@ -242,7 +242,7 @@
     if (!is.null(fixedCi)) {
         m2 <- m - sum(!is.na(fixedCi)) # number of free Ci (not fixed)
         fun <- function(x) {
-            RiLog_tmp <- x[1:m]
+            RiLog_tmp <- x[seq_len(m)]
             Ci_tmp <- fixedCi
             Ci_tmp[is.na(fixedCi)] <- x[(m + 1):(m + m2)]
             res <- .errorEquation(RiLog = RiLog_tmp, Ci = Ci_tmp, M = M,
@@ -251,7 +251,7 @@
         }
     } else {
         fun <- function(x) {
-            RiLog_tmp <- x[1:m]
+            RiLog_tmp <- x[seq_len(m)]
             Ci_tmp <- x[(m + 1):(2 * m)]
             res <- .errorEquation(RiLog = RiLog_tmp, Ci = Ci_tmp, M = M,
                 rjLog = rjLog)$res_squ_err
@@ -333,7 +333,7 @@
         rjLog = rjLog)
 
     track_colnames <- c("iter", "squ_err",
-        paste0("RLog", 1:m), paste0("C", 1:m))
+        paste0("RLog", seq_len(m)), paste0("C", seq_len(m)))
     Tracking <- matrix(c(0, RES$res_squ_err, RiLog_start, Ci_start), nrow = 1)
     Tracking <- as.data.frame(Tracking)
     colnames(Tracking) <- track_colnames
@@ -343,7 +343,7 @@
     res <- Rsolnp::solnp(pars = pars, fun = fun, LB = constr$LB,
         eqfun = constr$eqfun, eqB = constr$eqB, control = control)
     # extract optimal Ri and Ci values from optimization result
-    RiLog <- res$pars[1:m]
+    RiLog <- res$pars[seq_len(m)]
     if (isCiFixed) {
         m2 <- m - sum(!is.na(fixedCi)) # number of free weights (not fixed)
         Ci_tmp <- res$pars[(m + 1):(m + m2)]
@@ -451,7 +451,8 @@
 #' .minimizeSquaredError().
 #' The resulting table can be used to assess a range of possible solutions for
 #' the protein ratios.
-#' The table can be further processed with [bppg::automatedAnalysisIteratedCi()].
+#' The table can be further processed with
+#' [bppg::automatedAnalysisIteratedCi()].
 #'
 #' @examples
 #' file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
@@ -499,13 +500,13 @@ iterateOverCi <- function(G,
             grid <- sort(unique(c(grid, grid_extend_min, grid_extend_max)))
         }
         if (omit_grid_borders) grid <- grid[-c(1, length(grid))]
-        cnames <- c(paste0("RLog", 1:n), paste0("C", 1:n))
+        cnames <- c(paste0("RLog", seq_len(n)), paste0("C", seq_len(n)))
         if (!verbose) {
             pbo <- pbapply::pboptions(type = "none")
             on.exit(pbapply::pboptions(pbo), add = TRUE)
         }
         result <- pbapply::pbmapply(FUN = .calcResultGridpoint,
-            j = rep(1:n, each = length(grid)), gridpoint = grid,
+            j = rep(seq_len(n), each = length(grid)), gridpoint = grid,
                 MoreArgs = list(cnames = cnames, G = G, n = n,
                     verbose = verbose, control = control))
         return(as.data.frame(t(result)))
@@ -656,7 +657,7 @@ automatedAnalysisIteratedCi <- function(G,
             ratioLog_tol = ratioLog_tol))
     }
 
-    RES <- vapply(1:n, FUN = f,
+    RES <- vapply(seq_len(n), FUN = f,
         FUN.VALUE = c("error_min" = 0, "RiLog" = 0, "RiLog_min" = 0,
         "RiLog_max" = 0, "Ci" = 0, "Ci_min" = 0, "Ci_max" = 0, "case" = 0),
         res = res, error_tol = error_tol, ratioLog_tol = ratioLog_tol,
@@ -664,7 +665,7 @@ automatedAnalysisIteratedCi <- function(G,
 
     # comparison=rep(comparison, n),
     RES_info <- data.frame(accession = accessions, 
-        graphID = rep(graphID, n), proteinNr = 1:n)
+        graphID = rep(graphID, n), proteinNr = seq_len(n))
 
     RES <- cbind(RES_info, as.data.frame(t(RES)))
     rownames(RES) <- RES$accession

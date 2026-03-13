@@ -168,7 +168,7 @@ generateGraphsFromEdgelist <- function(edgelist,
     }
 
     #generate graph from edge matrix
-    G <- igraph::graph_from_edgelist(as.matrix(edgelist[, 1:2]),
+    G <- igraph::graph_from_edgelist(as.matrix(edgelist[, c(1,2)]),
         directed = FALSE)
 
     #assign vertex types to proteins and peptides for the graph to be bipartite
@@ -265,7 +265,7 @@ generateQuantGraphs <- function(exp_peptide_ratios,
     colnames_split <- limma::strsplit2(colnames(exp_peptide_ratios), "_")
     comparisons <- paste(colnames_split[, 2], colnames_split[, 3], sep = "_")
 
-    subgraphs <- lapply(1:ncol(exp_peptide_ratios),
+    subgraphs <- lapply(seq_len(ncol(exp_peptide_ratios)),
         function(i) {
             compRatio <- SummarizedExperiment::assays(
                 exp_peptide_ratios)$logRatios[, i, drop=FALSE]

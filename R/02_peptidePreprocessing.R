@@ -97,7 +97,7 @@ aggregateReplicates <- function(D,
         sum = rowSums,
         median = robustbase::rowMedians)
 
-    res <- vapply(1:length(levels(group)), function(i) {
+    res <- vapply(seq_along(levels(group)), function(i) {
         X_tmp <- intensities[, group == levels(group)[i]]
         X_tmp <- as.matrix(X_tmp)
 
