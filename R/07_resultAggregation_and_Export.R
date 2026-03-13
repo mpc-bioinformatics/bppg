@@ -69,6 +69,9 @@ combineComparisons <- function(compResultList) {
 #'
 #' @examples
 #' # TODO
+#' 
+#' @importFrom openxlsx addWorksheet createWorkbook saveWorkbook writeData
+#' @importFrom SummarizedExperiment assay assayNames
 exportSE <- function(SE, file) {
 
     wb <- openxlsx::createWorkbook()

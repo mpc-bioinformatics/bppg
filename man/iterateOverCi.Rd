@@ -75,6 +75,7 @@ graphs <- readRDS(file)
 G <- graphs$sample1_sample2[[2]]
 # small example with a small grid size
 iterateOverCi(G, gridSize = 100)
+
 }
 \seealso{
 \code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}},

@@ -28,6 +28,7 @@ edgelist <- digestFASTA(fasta)
 graph <- bppg::generateGraphsFromEdgelist(edgelist)
 
 res <- bppg:::.addUniquenessAttributes(graph[[1]])
+
 }
 \seealso{
 \code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}, \code{\link[=generateQuantGraphs]{generateQuantGraphs()}}

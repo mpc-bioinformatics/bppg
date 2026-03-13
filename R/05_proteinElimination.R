@@ -61,6 +61,12 @@
 #' graphs <- readRDS(file)
 #' G <- graphs$sample1_sample2[[2]]
 #' proteinElimination(G)
+#' 
+#'  @importFrom checkmate assertClass assertDataFrame assertList assertNumeric
+#'  checkTRUE
+#'  @importFrom igraph decompose delete_vertices is_bipartite V
+
+
 proteinElimination <- function(G,
     threshold = 1.05,
     control = list(),

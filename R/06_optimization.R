@@ -300,6 +300,10 @@
 #' G <- graphs$sample1_sample2[[2]]
 #' bppg:::.minimizeSquaredError(G)
 #'
+#' @importFrom igraph as_biadjacency_matrix vertex_attr
+#' @importFrom stats na.omit
+#' @importFrom checkmate assertNumeric
+#' @importFrom Rsolnp solnp
 .minimizeSquaredError <- function(G,
     fixedCi = NULL,
     verbose = FALSE,
@@ -454,6 +458,11 @@
 #' G <- graphs$sample1_sample2[[2]]
 #' # small example with a small grid size
 #' iterateOverCi(G, gridSize = 100)
+#' 
+#' @importFrom checkmate assertClass assertFlag assertIntegerish assertList 
+#'  assertNumeric checkTRUE
+#' @importFrom igraph is_bipartite V
+#' @importFrom  pbapply pbmapply pboptions
 iterateOverCi <- function(G,
     gridStart = 0,
     gridStop = 1,

@@ -17,7 +17,7 @@
 #'
 #' @examples ## TODO
 #'
-#' @importFrom igraph %->%
+#' @importFrom igraph %->% as_directed E reverse_edges V
 #'
 
 .directBipartiteGraph <- function(bip_graph, from_type = FALSE) {
@@ -52,6 +52,7 @@
 #'
 #' @examples
 #'
+#'  @importFrom igraph is_directed isomorphic
 
 .isomorphicBipartite <- function(graph1, graph2, ...) {
 
@@ -76,6 +77,8 @@
 #'
 #' @examples ## TODO
 #'
+#' @importFrom pbapply setpb startpb closepb
+#' @importFrom igraph gsize
 
 .generatePrototypeList <- function(G, sort_by_nr_edges = FALSE) {
 

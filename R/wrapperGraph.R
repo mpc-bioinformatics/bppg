@@ -25,7 +25,7 @@
 #' @param verbose     \strong{logical} \cr
 #'                    If \code{TRUE}, additional information on each iteration
 #'                    of the optimization is printed
-#' @param ...                     Additional arguments to bppg::digestFASTA()
+#' @param ...         Additional arguments to bppg::digestFASTA()
 #'
 #' @return Subgraphs (i.e. connected components) from the graph generated from
 #'         the FASTA file.
@@ -37,6 +37,8 @@
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' graphs <- bppg::generateGraphsFromFASTA(fasta)
 #'
+#' @importFrom checkmate assertPathForOutput
+#' @importFrom utils write.table
 generateGraphsFromFASTA <- function(fasta,
     collProtNodes = TRUE,
     collPeptNodes = TRUE,
@@ -46,7 +48,7 @@ generateGraphsFromFASTA <- function(fasta,
     verbose = FALSE,
     ...) {
     if (verbose) message("Digesting FASTA file ...")
-    edgelist <- bppg::digestFASTA(fasta, protOrigin = protOrigin,
+    edgelist <- digestFASTA(fasta, protOrigin = protOrigin,
         verbose = verbose, ...)
     if (!is.null(outpath)) {
         if (verbose) message("Saving edgelist ...")
@@ -128,6 +130,10 @@ generateGraphsFromFASTA <- function(fasta,
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 #'
 #' graphs <- bppg::generateGraphsFromQuantData(D, fasta)
+#' 
+#' @importFrom checkmate assertPathForOutput
+#' @importFrom openxlsx write.xlsx
+#' @importFrom limma strsplit2
 
 generateGraphsFromQuantData <- function(D,
     fasta,
@@ -144,7 +150,7 @@ generateGraphsFromQuantData <- function(D,
     ...) {
 
     if (verbose) message("Digesting FASTA file...")
-    edgelist <- bppg::digestFASTA(fasta, missed_cleavages = missed_cleavages,
+    edgelist <- digestFASTA(fasta, missed_cleavages = missed_cleavages,
         min_aa = min_aa, max_aa = max_aa, protOrigin = protOrigin, 
         verbose = verbose)
 
@@ -157,7 +163,7 @@ generateGraphsFromQuantData <- function(D,
 
     ## aggregate replicates by calculating the mean
     group <- factor(limma::strsplit2(colnames(D), split = "_")[, 1])
-    D_aggr <- bppg::aggregateReplicates(D, method = "mean", missing.limit = 0.4,
+    D_aggr <- aggregateReplicates(D, method = "mean", missing.limit = 0.4,
         group = group, seq_col = seq_column)
 
     if (!is.null(outpath)) {
@@ -168,7 +174,7 @@ generateGraphsFromQuantData <- function(D,
 
     ## calculate the peptide ratio table
     groups  <- levels(group)
-    peptide_ratios <- bppg::calculatePeptideRatios(D = D_aggr,
+    peptide_ratios <- calculatePeptideRatios(D = D_aggr,
         group_levels = groups)
     if (!is.null(outpath)) {
         openxlsx::write.xlsx(

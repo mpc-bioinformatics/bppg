@@ -77,6 +77,10 @@ file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
 graphs <- readRDS(file)
 G <- graphs$sample1_sample2[[2]]
 proteinElimination(G)
+
+ @importFrom checkmate assertClass assertDataFrame assertList assertNumeric
+ checkTRUE
+ @importFrom igraph decompose delete_vertices is_bipartite V
 }
 \seealso{
 \code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}}

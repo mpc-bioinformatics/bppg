@@ -17,6 +17,9 @@
 #' @seealso For the generation of the list of lists of igraphs: [generateGraphsFromQuantData()]
 #'
 #' @examples ## TODO
+#' 
+#' @importFrom pbapply pblapply pboptions
+#' @importFrom igraph V
 
 .calculateProteinNodeInfo <- function(G, verbose = FALSE) {
     if (!verbose) {
@@ -86,6 +89,9 @@
 #'
 #' @examples
 #'
+#' @importFrom pbapply closepb pboptions startpb setpb
+#' @importFrom igraph gsize V
+#' @importFrom openxlsx write.xlsx
 ## TODO was ist mit dem alten S2? ZU LANG
 .calculateSubgraphCharacteristics <- function(S, #S2, S3,
     fastalevel = TRUE,

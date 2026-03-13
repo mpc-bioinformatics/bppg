@@ -151,7 +151,7 @@
 #' edgelist <- digestFASTA(fasta)
 #' res <- bppg::generateGraphsFromEdgelist(edgelist)
 #' 
-#' TODO importsFrom
+#' @importFrom igraph graph_from_edgelist set_vertex_attr V
 #'
 generateGraphsFromEdgelist <- function(edgelist,
                                   collProtNodes = FALSE,

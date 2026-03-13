@@ -1,4 +1,4 @@
-
+###TODO what to do with this?
 
 #' For each protein node, get information about protein origin (contaminant,
 #' spike-in
@@ -22,6 +22,8 @@
 #' @export
 #'
 #' @examples ## TODO
+#' 
+#' @importFrom pbapply pboptions pbvapply
 
 .getProteinOrigin <- function(accessions,
     contaminants = NULL,
