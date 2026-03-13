@@ -190,7 +190,7 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
 
     if (three_shapes) {
         igraph::add_shape("diamond", clip= igraph::shape_noclip,
-                          plot=.myDiamond)
+            plot=.myDiamond)
         vertex.shapes <- c("circle", "crectangle", "diamond")[type]
     } else {
         vertex.shapes <- c("circle", "crectangle")[igraph::V(G)$type + 1]

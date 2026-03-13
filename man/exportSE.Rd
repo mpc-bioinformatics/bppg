@@ -2,7 +2,8 @@
 % Please edit documentation in R/07_resultAggregation_and_Export.R
 \name{exportSE}
 \alias{exportSE}
-\title{Export SummarizedExperiment object to an Excel file, with one assay per sheet.}
+\title{Export SummarizedExperiment object to an Excel file,
+with one assay per sheet.}
 \usage{
 exportSE(SE, file)
 }
@@ -16,10 +17,12 @@ If the file already exists, it will be overwritten.}
 \value{
 nothing, but an Excel file is written containing the assay matrices.
 Each assay is written to a separate sheet, and the sheet name corresponds to
-the assay name. Row names of the assay matrices are included in the Excel file.
+the assay name. Row names of the assay matrices are included
+in the Excel file.
 }
 \description{
-Export SummarizedExperiment object to an Excel file, with one assay per sheet.
+Export SummarizedExperiment object to an Excel file,
+with one assay per sheet.
 }
 \examples{
 # TODO

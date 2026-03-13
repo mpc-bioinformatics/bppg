@@ -52,7 +52,7 @@
 #'
 #' @examples
 #'
-#'  @importFrom igraph is_directed isomorphic
+#' @importFrom igraph is_directed isomorphic
 
 .isomorphicBipartite <- function(graph1, graph2, ...) {
 
@@ -64,13 +64,15 @@
 }
 
 
-#' Generates a list of graph prototypes for the different isomorphism classes and their occurence.
+#' Generates a list of graph prototypes for the different isomorphism classes
+#' and their occurence.
 #'
 #'
 #' @param G                  \strong{igraph graph object} \cr
 #'                           A graph.
 #' @param sort_by_nr_edges   \strong{logical} \cr
-#'                           If \code{TRUE}, the list of prototypes is sorted by number of edges.
+#'                           If \code{TRUE}, the list of prototypes is sorted by
+#'                           number of edges.
 #'
 #' @return A list of prototype graphs plus their count.
 #'

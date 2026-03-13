@@ -28,10 +28,11 @@
 #' @importFrom stats aggregate
 
 .getContractMapping <- function(edgelist,
-                                  collProtNodes = TRUE,
-                                  collPeptNodes = FALSE) {
+    collProtNodes = TRUE,
+    collPeptNodes = FALSE) {
     if (collProtNodes) {
-        protSignature <- stats::aggregate(data = edgelist, x = peptide ~ protein,
+        protSignature <- stats::aggregate(data = edgelist,
+        x = peptide ~ protein,
         function(x) paste(sort(unique(x)), collapse = ";"))
     } else {
         # map back to themselves, not to peptide set
@@ -40,7 +41,8 @@
         protSignature$peptide <- paste0("prot_", protSignature$protein)
     }
     if (collPeptNodes) {
-        peptSignature <- stats::aggregate(data = edgelist, x = protein ~ peptide,
+        peptSignature <- stats::aggregate(data = edgelist,
+        x = protein ~ peptide,
         function(x) paste(sort(unique(x)), collapse = ";"))
     } else {
         peptSignature <- edgelist
@@ -78,8 +80,8 @@
 #' @importFrom stats na.omit
 
 .contractGraph <- function(G, vMapping,
-                           collProtNodes,
-                           collPeptNodes) {
+    collProtNodes,
+    collPeptNodes) {
     G <- igraph::set_vertex_attr(graph = G,
         name = "collSignature",
         index = igraph::V(G)[igraph::V(G)$type],
@@ -154,8 +156,8 @@
 #' @importFrom igraph graph_from_edgelist set_vertex_attr V
 #'
 generateGraphsFromEdgelist <- function(edgelist,
-                                  collProtNodes = FALSE,
-                                  collPeptNodes = FALSE) {
+    collProtNodes = FALSE,
+    collPeptNodes = FALSE) {
     checkmate::assertDataFrame(edgelist)
     checkmate::assertFlag(collProtNodes)
     checkmate::assertFlag(collPeptNodes)
@@ -234,12 +236,13 @@ generateGraphsFromEdgelist <- function(edgelist,
 #' res <- generateQuantGraphs(exp_peptide_ratios, edgelist)
 
 generateQuantGraphs <- function(exp_peptide_ratios,
-                                  fasta_edgelist,
-                                  seq_column = "Sequence", ## How to assert? could be int
-                                  outpath = NULL,
-                                  collProtNodes = TRUE,
-                                  collPeptNodes = FALSE,
-                                  suffix = "") {
+    fasta_edgelist,
+    seq_column = "Sequence", 
+    outpath = NULL,
+    collProtNodes = TRUE,
+    collPeptNodes = FALSE,
+    suffix = "") {
+    ## How to assert? could be int, maybe if 
     checkmate::assertClass(exp_peptide_ratios, "SummarizedExperiment")
     checkmate::assertDataFrame(SummarizedExperiment::assays(
         exp_peptide_ratios)$logRatios, all.missing=FALSE)
@@ -255,8 +258,8 @@ generateQuantGraphs <- function(exp_peptide_ratios,
     if (!is.null(outpath)) {
         checkmate::assertPathForOutput(outpath, overwrite = TRUE)
         openxlsx::write.xlsx(edgelist_filtered,
-            file = file.path(outpath, paste0("edgelist_filtered_", suffix, ".xlsx")),
-            overwrite = TRUE, keepNA = TRUE)
+            file = file.path(outpath, paste0("edgelist_filtered_", suffix,
+                ".xlsx")), overwrite = TRUE, keepNA = TRUE)
     }
 
     colnames_split <- limma::strsplit2(colnames(exp_peptide_ratios), "_")
@@ -272,7 +275,8 @@ generateQuantGraphs <- function(exp_peptide_ratios,
                 %in% rownames(compRatio), ]
             compEdgelist$pep_logRatio <- compRatio[match(compEdgelist$peptide, 
                 rownames(compRatio)), 1]
-            generateGraphsFromEdgelist(compEdgelist, collProtNodes, collPeptNodes)
+            generateGraphsFromEdgelist(compEdgelist, collProtNodes, 
+                collPeptNodes)
         })
 
     names(subgraphs) <- comparisons

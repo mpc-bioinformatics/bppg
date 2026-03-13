@@ -25,5 +25,6 @@ Table with information on each protein node
 
 }
 \seealso{
-For the generation of the list of lists of igraphs: \code{\link[=generateGraphsFromQuantData]{generateGraphsFromQuantData()}}
+For the generation of the list of lists of igraphs:
+\code{\link[=generateGraphsFromQuantData]{generateGraphsFromQuantData()}}
 }

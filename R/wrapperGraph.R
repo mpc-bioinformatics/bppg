@@ -74,40 +74,40 @@ generateGraphsFromFASTA <- function(fasta,
 
 #' Generate graphs from quantitative peptide-level data
 #'
-#' @param D                        \strong{data.frame} \cr
-#'                                 A data set with peptide sequence as first
-#'                                 column and peptide intensities in subsequent
-#'                                 columns, e.g. created with
-#'                                 [bppg::readMqPeptideTable()].
-#' @param fasta                    \strong{list of vector of characters} \cr
-#'                                 A fasta file used for identification of
-#'                                 peptides in already read into R by
-#'                                 [seqinr::read.fasta()].
-#' @param outpath                  \strong{character} \cr
-#'                                 The output path for the results.
-#' @param missed_cleavages         \strong{integer} \cr
-#'                                 The number of allowed missed cleavages
-#'                                 in a peptide.
-#' @param min_aa                   \strong{integer} \cr
-#'                                 The minimum number of amino acids
-#'                                 in a peptide.
-#' @param max_aa                   \strong{integer} \cr
-#'                                 The maximum number of amino acids
-#'                                 in a peptide.
-#' @param seq_column               \strong{character} \cr
-#'                                 The column name of the column of D with the
-#'                                 peptide sequences.
-#' @param collProtNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the protein nodes
-#'                                 will be collapsed.
-#' @param collPeptNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the peptide nodes
-#'                                 will be collapsed.
-#' @param suffix                   \strong{character} \cr
-#'                                 The suffix for output files.
-#' @param protOrigin               \strong{list or data.frame} \cr
-#'                                 A list with the protein orgin corresponding to
-#'                                 [fasta], proteins are used as rownames/index.
+#' @param D                   \strong{data.frame} \cr
+#'                            A data set with peptide sequence as first
+#'                            column and peptide intensities in subsequent
+#'                            columns, e.g. created with
+#'                            [bppg::readMqPeptideTable()].
+#' @param fasta               \strong{list of vector of characters} \cr
+#'                            A fasta file used for identification of
+#'                            peptides in already read into R by
+#'                            [seqinr::read.fasta()].
+#' @param outpath             \strong{character} \cr
+#'                            The output path for the results.
+#' @param missed_cleavages    \strong{integer} \cr
+#'                            The number of allowed missed cleavages
+#'                            in a peptide.
+#' @param min_aa              \strong{integer} \cr
+#'                            The minimum number of amino acids
+#'                            in a peptide.
+#' @param max_aa              \strong{integer} \cr
+#'                            The maximum number of amino acids
+#'                            in a peptide.
+#' @param seq_column          \strong{character} \cr
+#'                            The column name of the column of D with the
+#'                            peptide sequences.
+#' @param collProtNodes       \strong{logical} \cr
+#'                            If \code{TRUE}, the protein nodes
+#'                            will be collapsed.
+#' @param collPeptNodes       \strong{logical} \cr
+#'                            If \code{TRUE}, the peptide nodes
+#'                            will be collapsed.
+#' @param suffix              \strong{character} \cr
+#'                            The suffix for output files.
+#' @param protOrigin          \strong{list or data.frame} \cr
+#'                            A list with the protein orgin corresponding to
+#'                            [fasta], proteins are used as rownames/index.
 #' @param verbose     \strong{logical} \cr
 #'                    If \code{TRUE}, additional information on each iteration
 #'                    of the optimization is printed

@@ -6,8 +6,8 @@
 #' @param compResultList \strong{list} \cr
 #'      List of results to be concatenated. Each list element is the result of
 #'      the optimization step for one pairwise comparison, i.e. a
-#'      SummarizedExperiment object. Ideally, the element names should correspond
-#'      to the comparison names.
+#'      SummarizedExperiment object. Ideally, the element names should
+#'      correspond to the comparison names.
 #'
 #' @returns A SummarizedExperiment object with one assay per comparison. The row
 #' names of the assay matrices are the union of all row names across the input
@@ -24,7 +24,8 @@ combineComparisons <- function(compResultList) {
         return(rownames(SummarizedExperiment::assay(x)))
     }), init = NULL)
 
-    # helper function to harmonize row names (and introduce NA rows for missing proteins)
+    # helper function to harmonize row names 
+    # (introduce NA rows for missing proteins)
     harmonizeRowNames <- function(se) {
         df <- SummarizedExperiment::assays(se)$results
 
@@ -55,7 +56,8 @@ combineComparisons <- function(compResultList) {
 
 
 
-#' Export SummarizedExperiment object to an Excel file, with one assay per sheet.
+#' Export SummarizedExperiment object to an Excel file,
+#' with one assay per sheet.
 #'
 #' @param SE \strong{SummarizedExperiment object} \cr Object to be exported.
 #'      E.g. the result of \code{\link{combineComparisons}}.
@@ -64,7 +66,8 @@ combineComparisons <- function(compResultList) {
 #'
 #' @returns nothing, but an Excel file is written containing the assay matrices.
 #' Each assay is written to a separate sheet, and the sheet name corresponds to
-#' the assay name. Row names of the assay matrices are included in the Excel file.
+#' the assay name. Row names of the assay matrices are included
+#' in the Excel file.
 #' @export
 #'
 #' @examples
@@ -80,7 +83,7 @@ exportSE <- function(SE, file) {
         openxlsx::addWorksheet(wb, assay_name)
         mat <- as.data.frame(SummarizedExperiment::assay(SE, assay_name))
         openxlsx::writeData(wb, sheet = assay_name, x = mat, rowNames = TRUE,
-                            keepNA = TRUE)
+            keepNA = TRUE)
     }
     ## TODO: cbind rowData if available?
 

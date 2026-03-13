@@ -48,7 +48,8 @@ Tolerance for a constant log2 protein
 ratios. The default is 1e-6.}
 }
 \value{
-A SummarizedExperiment object with one row for each protein in the assay.
+A SummarizedExperiment object with one row for each protein in the
+assay.
 }
 \description{
 Extract protein ratio solutions from the result of iterateOverCi()

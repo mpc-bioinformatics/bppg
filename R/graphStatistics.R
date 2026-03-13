@@ -14,7 +14,8 @@
 #' @return A data frame with information on number of unique/shared peptides.
 #'
 #'
-#' @seealso For the generation of the list of lists of igraphs: [generateGraphsFromQuantData()]
+#' @seealso For the generation of the list of lists of igraphs:
+#'  [generateGraphsFromQuantData()]
 #'
 #' @examples ## TODO
 #' 
