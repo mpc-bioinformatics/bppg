@@ -15,24 +15,24 @@ License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
-biocViews:
+biocViews: Proteomics, GraphAndNetwork, MassSpectrometry, MultipleComparison, Visualization
 Imports: 
-    BBmisc,
+    checkmate,
     graphics,
-    grDevices,
     limma,
-    Matrix,
-    methods,
     openxlsx,
     pbapply,
     robustbase,
     Rsolnp,
-    seqinr,
-    stringr
+    stringr,
+    SummarizedExperiment
 Suggests: 
     covr,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    vsn, 
+    tidySummarizedExperiment,
+    seqinr
 Config/testthat/edition: 3
 Depends: 
     igraph (>= 2.0.0)

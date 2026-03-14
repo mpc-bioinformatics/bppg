@@ -2,18 +2,13 @@
 % Please edit documentation in R/06_optimization.R
 \name{.errorEquation}
 \alias{.errorEquation}
-\title{Functions in this file:
-.errorEquation
-.minimizeSquaredError
-iterateOverCi
-automatedAnalysisIteratedCi
-Function to set up the error equations for the optimization problem}
+\title{Function to set up the error equations for the optimization problem}
 \usage{
-.errorEquation(Ri, Ci, M, rj, log_level = FALSE)
+.errorEquation(RiLog, Ci, M, rjLog)
 }
 \arguments{
-\item{Ri}{\strong{numeric vector} \cr
-Contains the (estimated) protein ratios.}
+\item{RiLog}{\strong{numeric vector} \cr
+Contains the (estimated) protein ratios (log2-scale).}
 
 \item{Ci}{\strong{numeric vector} \cr
 Contains the protein weights (estimated, sum up to 1)}
@@ -21,28 +16,18 @@ Contains the protein weights (estimated, sum up to 1)}
 \item{M}{\strong{matrix} \cr
 The biadjaceny matrix of the corresponding graphs.}
 
-\item{rj}{\strong{numeric vector} \cr
-Contains the measured peptide ratios.}
-
-\item{log_level}{\strong{logical} \cr
-If \code{TRUE}, the Ri are given on log2-level and need
-to be back-transformed here
-(this may allow a symmetric behaviour during optimization)}
+\item{rjLog}{\strong{numeric vector} \cr
+Contains the measured peptide ratios (log2-scale).}
 }
 \value{
 list containing the following elements:
 \item{res_Mat}{matrix containing the estimated peptide
-ratios using Ri and Ci}
+ratios using the given Ri and Ci}
 \item{res_equ}{vector of error terms for each peptide}
 \item{res_squ_err}{sum of squared error terms}
 \item{W}{internal weight matrix}
 }
 \description{
-Functions in this file:
-.errorEquation
-.minimizeSquaredError
-iterateOverCi
-automatedAnalysisIteratedCi
 Function to set up the error equations for the optimization problem
 }
 \examples{

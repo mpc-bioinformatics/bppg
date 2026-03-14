@@ -2,18 +2,14 @@
 % Please edit documentation in R/03_FASTAPreprocessing.R
 \name{.digest2}
 \alias{.digest2}
-\title{Functions in this file:
-digest2()
-digestFASTA
-generateEdgelist
-Digestion of a single protein sequence.}
+\title{Digestion of a single protein sequence.}
 \usage{
 .digest2(
   sequence,
   enzyme = "trypsin",
   missed = 0,
   warn = TRUE,
-  remove_initial_M = FALSE
+  remove_initial_M = TRUE
 )
 }
 \arguments{
@@ -22,7 +18,7 @@ The protein sequence.}
 
 \item{enzyme}{\strong{character} \cr
 The enzyme used in digestion e.g. "trypsin" (does
-not cut before proline) or "trypsin.strict" ().}
+not cut before proline).}
 
 \item{missed}{\strong{character} \cr
 The maximal number of missed cleavages.}
@@ -39,20 +35,14 @@ removed from the peptides.}
 A vector of peptides.
 }
 \description{
-Functions in this file:
-digest2()
-digestFASTA
-generateEdgelist
 Digestion of a single protein sequence.
 }
 \examples{
 library(seqinr)
-file <- system.file("extdata", "2020_01_31_proteome_S_cerevisae.fasta",
-     package = "bppg")
+file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 
 digested_proteins <- bppg:::.digest2(fasta[[1]])
-
 }
 \seealso{
 \code{\link[=digestFASTA]{digestFASTA()}}

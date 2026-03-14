@@ -2,10 +2,7 @@
 % Please edit documentation in R/isomorphism.R
 \name{.directBipartiteGraph}
 \alias{.directBipartiteGraph}
-\title{Functions in this file:
-.directBipartiteGraph
-.isomorphicBipartite
-.generatePrototypeList}
+\title{Transform a bipartite graph into a directed graph.}
 \usage{
 .directBipartiteGraph(bip_graph, from_type = FALSE)
 }

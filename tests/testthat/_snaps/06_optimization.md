@@ -1,51 +1,68 @@
 # test .errorEquation
 
     Code
+      e
+    Output
+      $res_Mat
+           [,1] [,2]
+      [1,] 0.50 0.00
+      [2,] 0.15 0.91
+      
+      $res_equ
+      [1] 0.2630344 0.1789701
+      
+      $res_squ_err
+      [1] 0.1012174
+      
+      $W
+           [,1] [,2]
+      [1,]  1.0  0.0
+      [2,]  0.3  0.7
       
 
 # test automated analysis
 
     Code
-      res3
+      SummarizedExperiment::assay(res)
     Output
-        Accession comparison graphID proteinNr error_optimal Ri_optimal Ci_optimal
-      1        NA         NA      NA         1            NA         NA         NA
-      2        NA         NA      NA         2            NA         NA         NA
-           min_error error_constant  Ri       Ri_min    Ri_max Ci Ci_min Ci_max case
-      1 8.326814e-18      partially  NA 8.323744e-08 0.5333333 NA    0.5    0.9    5
-      2 8.326809e-18      partially 1.2           NA        NA NA    0.1    0.5    4
+                    graphID proteinNr   error_min    RiLog RiLog_min RiLog_max Ci
+      prot_4;prot_5      NA         1 0.001632667 1.056333        NA        NA  1
+                    Ci_min Ci_max case
+      prot_4;prot_5     NA     NA    3
 
-# test automated analysis with using results from other proteins
+---
 
     Code
-      res4
+      SummarizedExperiment::assay(res2)
     Output
-        Accession comparison graphID proteinNr error_optimal Ri_optimal Ci_optimal
-      1        NA         NA      NA         1            NA         NA         NA
-      2        NA         NA      NA         2            NA         NA         NA
-           min_error error_constant  Ri       Ri_min    Ri_max Ci Ci_min Ci_max case
-      1 8.326814e-18      partially  NA 8.323744e-08 0.5333333 NA    0.5    0.9    5
-      2 8.326809e-18      partially 1.2           NA        NA NA    0.1    0.5    4
+             graphID proteinNr error_min  RiLog RiLog_min RiLog_max Ci Ci_min Ci_max
+      prot_1      NA         1 0.0038845 0.9635        NA        NA NA    0.1    0.9
+      prot_2      NA         2 0.0038845     NA 0.9851504  1.147567 NA    0.1    0.9
+             case
+      prot_1    1
+      prot_2    2
 
-# test automated analysis with only one protein node
+---
 
     Code
-      res5
+      SummarizedExperiment::assay(res3)
     Output
-        Accession comparison graphID proteinNr error_optimal Ri_optimal Ci_optimal
-      1        NA         NA      NA         1     0.2425386  0.8653497          1
-        min_error error_constant        Ri Ri_min Ri_max Ci Ci_min Ci_max case
-      1        NA             NA 0.8653497     NA     NA  1     NA     NA    6
+                    graphID proteinNr  error_min     RiLog RiLog_min RiLog_max  Ci
+      prot_3             NA         1 0.00663525 1.0260321        NA        NA 0.1
+      prot_4;prot_5      NA         2 0.00663525 0.9835544        NA        NA 0.9
+                    Ci_min Ci_max case
+      prot_3            NA     NA    3
+      prot_4;prot_5     NA     NA    3
 
-# test automated analysis with constant error
+---
 
     Code
-      res6
+      SummarizedExperiment::assay(res4)
     Output
-        Accession comparison graphID proteinNr error_optimal Ri_optimal Ci_optimal
-      1        NA         NA      NA         1            NA         NA         NA
-      2        NA         NA      NA         2            NA         NA         NA
-        min_error error_constant  Ri    Ri_min    Ri_max Ci Ci_min Ci_max case
-      1     1e-05            yes 0.6        NA        NA NA    0.1    0.9    2
-      2     1e-10            yes  NA 0.3523854 0.9752421 NA    0.1    0.9    1
+                    graphID proteinNr  error_min    RiLog RiLog_min RiLog_max Ci
+      prot_3             NA         1 0.00663525 1.026032        NA        NA NA
+      prot_4;prot_5      NA         2 0.00663525 0.983554        NA        NA NA
+                    Ci_min Ci_max case
+      prot_3           0.1    0.1    4
+      prot_4;prot_5    0.9    0.9    4
 

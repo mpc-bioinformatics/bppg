@@ -2,22 +2,27 @@
 % Please edit documentation in R/01_peptideInput.R
 \name{readMqPeptideTable}
 \alias{readMqPeptideTable}
-\title{Functions in this file:
-readMqPeptideTable}
+\title{Import of MaxQuant's peptide.txt-table.}
 \usage{
 readMqPeptideTable(
   path,
+  group = NULL,
   LFQ = FALSE,
   remove_contaminants = FALSE,
   rename_columns = TRUE,
   zeroToNA = TRUE,
   remove_empty_rows = TRUE,
-  further_columns_to_keep = NULL
+  further_columns_to_keep = NULL,
+  verbose = FALSE
 )
 }
 \arguments{
 \item{path}{\strong{character} \cr
-The path to the peptides.txt table}
+The path to the peptides.txt table.}
+
+\item{group}{\strong{character} \cr
+List or vector of group names corresponding
+to the order of samples.}
 
 \item{LFQ}{\strong{logical} \cr
 If \code{TRUE}, LFQ intensities are used,
@@ -41,9 +46,15 @@ removed.}
 \item{further_columns_to_keep}{\strong{integer vector} \cr
 Indices of additional columns to keep,
 except peptide sequence and intensities}
+
+\item{verbose}{\strong{logical} \cr
+If \code{TRUE}, additional information on
+each iteration of the optimization is
+printed}
 }
 \value{
-A data frame with sequences and intensities.
+A SummarizedExperiment with intensities, sequences, and optional data
+for the rowData dataframe.
 }
 \description{
 Import of MaxQuant's peptide.txt-table.
