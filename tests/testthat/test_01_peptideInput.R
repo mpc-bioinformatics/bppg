@@ -11,4 +11,3 @@ test_that("read MaxQuant Output table", {
 })
 
 
-

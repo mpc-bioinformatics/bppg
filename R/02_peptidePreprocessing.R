@@ -271,7 +271,7 @@ normalizePeptideIntensities <- function(D, method = "loess", lts.quantile = 0.8,
     if (method == "lts") {
         # Does not need log-transformation, as it does a glog trans
         # (similar to log2)
-        DATA_norm <- vsn::vsn2(as.matrix(DATA), lts.quantile = lts.quantile)
+        DATA_norm <- vsn::vsn2(as.matrix(DATA), lts.quantile = lts.quantile, verbose = FALSE)
         DATA_norm <- DATA_norm@hx
         DATA_norm <- as.data.frame(DATA_norm)
         DATA_norm <- log_base^DATA_norm # re-transform
