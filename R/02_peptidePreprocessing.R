@@ -216,7 +216,7 @@ calculatePeptideRatios <- function(D, group_levels = NULL) {
             assays = list(logRatios = peptide_log_ratios), 
             colData = data.frame(comparison = colnames(peptide_log_ratios)),
             rowData = SummarizedExperiment::rowData(D),
-            metadata = FALSE)
+            metadata = list(imputed = FALSE))
     }
     return(res)
 }
