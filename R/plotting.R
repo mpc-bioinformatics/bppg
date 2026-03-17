@@ -245,7 +245,7 @@ plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
                 vertex.color[3]), pch = c(19, 0, 0, 20, 20, 19))
         } else {
         legend(x = legend.x, y = legend.y, legend = c("protein", "shared peptide", "unique peptide"),
-            col = c(vertex.color[1], "black", "black", vertex.color[2:3]), pch = c(19, 15, 15))
+            col = c(vertex.color[1], vertex.color[2:3]), pch = c(19, 15, 15))
         }
     }
 }
