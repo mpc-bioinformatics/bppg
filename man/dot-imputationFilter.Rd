@@ -5,27 +5,13 @@
 \title{Filter peptide ratios to exclude in peptide nodes contradicting
 imputed values.}
 \usage{
-.imputationFilter(edgelist, fc, id, seq_column = "Sequence")
+.imputationFilter(G)
 }
 \arguments{
-\item{edgelist}{\strong{data.frame} \cr
-An edgelist created from the corresponding FASTA
-file, eg. created with \code{\link[=generate_edgelist]{generate_edgelist()}}.}
-
-\item{fc}{\strong{data.frame} \cr
-peptide ratio and imputed bool, corresponding with
-id.}
-
-\item{id}{\strong{data.frame} \cr
-ID columns to peptide ratio table, corresponding
-with fc.}
-
-\item{seq_column}{\strong{character} \cr
-The column name of the peptide sequence in id.}
+\item{G}{graph on which the filtering to apply}
 }
 \value{
-\if{html}{\out{<div class="sourceCode">}}\preformatted{             A dataframe which filtered out contradicting ratios of peptides. 
-}\if{html}{\out{</div>}}
+Graph which has filtered some obviouse wrong imputations
 }
 \description{
 Filter peptide ratios to exclude in peptide nodes contradicting
