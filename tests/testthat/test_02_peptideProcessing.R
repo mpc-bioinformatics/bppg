@@ -34,7 +34,7 @@ test_that("test aggregateReplicates", {
     expect_snapshot(D2)
     expect_snapshot(SummarizedExperiment::assays(D2)$intensities)
     expect_snapshot(SummarizedExperiment::rowData(D2))
-    expect_snapshot(SummarizedExperiment::colData(D2))    
+    expect_snapshot(SummarizedExperiment::colData(D2))
 })
 
 

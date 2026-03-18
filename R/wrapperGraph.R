@@ -152,7 +152,7 @@ generateGraphsFromQuantData <- function(D,
     if (verbose) message("Digesting FASTA file...")
     edgelist <- digestFASTA(fasta, missed_cleavages = missed_cleavages,
         min_aa = min_aa, max_aa = max_aa, protOrigin = protOrigin, 
-        verbose = verbose)
+        verbose = verbose, ...)
 
     if (!is.null(outpath)) {
         checkmate::assertPathForOutput(outpath, overwrite = TRUE)
