@@ -32,33 +32,29 @@
 ---
 
     Code
-      SummarizedExperiment::rowData(D1)
+      as.data.frame(tail(SummarizedExperiment::rowData(D1), n = 1000))
     Output
-      DataFrame with 10 rows and 1 column
-                Sequence
-             <character>
-      pep_1        pep_1
-      pep_2        pep_2
-      pep_3        pep_3
-      pep_4        pep_4
-      pep_5        pep_5
-      pep_6        pep_6
-      pep_7        pep_7
-      pep_8        pep_8
-      pep_9        pep_9
-      pep_10      pep_10
+             Sequence
+      pep_1     pep_1
+      pep_2     pep_2
+      pep_3     pep_3
+      pep_4     pep_4
+      pep_5     pep_5
+      pep_6     pep_6
+      pep_7     pep_7
+      pep_8     pep_8
+      pep_9     pep_9
+      pep_10   pep_10
 
 ---
 
     Code
-      SummarizedExperiment::colData(D1)
+      as.data.frame(tail(SummarizedExperiment::colData(D1), n = 1000))
     Output
-      DataFrame with 3 rows and 1 column
-              group
-        <character>
-      1           1
-      2           2
-      3           3
+        group
+      1     1
+      2     2
+      3     3
 
 ---
 
@@ -94,33 +90,29 @@
 ---
 
     Code
-      SummarizedExperiment::rowData(D2)
+      as.data.frame(tail(SummarizedExperiment::rowData(D2), n = 1000))
     Output
-      DataFrame with 10 rows and 1 column
-                Sequence
-             <character>
-      pep_1        pep_1
-      pep_2        pep_2
-      pep_3        pep_3
-      pep_4        pep_4
-      pep_5        pep_5
-      pep_6        pep_6
-      pep_7        pep_7
-      pep_8        pep_8
-      pep_9        pep_9
-      pep_10      pep_10
+             Sequence
+      pep_1     pep_1
+      pep_2     pep_2
+      pep_3     pep_3
+      pep_4     pep_4
+      pep_5     pep_5
+      pep_6     pep_6
+      pep_7     pep_7
+      pep_8     pep_8
+      pep_9     pep_9
+      pep_10   pep_10
 
 ---
 
     Code
-      SummarizedExperiment::colData(D2)
+      as.data.frame(tail(SummarizedExperiment::colData(D2), n = 1000))
     Output
-      DataFrame with 3 rows and 1 column
-              group
-        <character>
-      1           1
-      2           2
-      3           3
+        group
+      1     1
+      2     2
+      3     3
 
 # test calculatePeptideRatios
 
