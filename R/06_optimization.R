@@ -194,14 +194,16 @@
         m2 <- m - sum(!is.na(fixedCi)) # number of free weights (not fixed)
         fixedCiSum <- sum(fixedCi, na.rm = TRUE)
         eqfun <- function(x) sum(x[(m + 1):(m + m2)]) + fixedCiSum - 1
-        LB <- c(rep(-Inf, m), rep(0, m2))
+        LB <- c(rep(-1e+07, m), rep(0, m2))
+        UB <- c(rep(1e+07, m), rep(1, m2))
         eqB <- 0
     } else {
         eqfun <- function(x) sum(x[(m + 1):(2 * m)]) - 1
-        LB <- c(rep(-Inf, m), rep(0, m))
+        LB <- c(rep(-1e+07, m), rep(0, m))
+        UB <- c(rep(1e+07, m), rep(1, m)) 
         eqB <- 0
     }
-    return(list(eqfun = eqfun, eqB = eqB, LB = LB))
+    return(list(eqfun = eqfun, eqB = eqB, LB = LB, UB = UB))
 }
 
 
@@ -340,8 +342,9 @@
 
     fun <- .calcObjectiveFunction(fixedCi, M, rjLog)
     constr <- .calcConstraints(fixedCi, m)
-    res <- Rsolnp::solnp(pars = pars, fun = fun, LB = constr$LB,
-        eqfun = constr$eqfun, eqB = constr$eqB, control = control)
+    res <- Rsolnp::csolnp(pars = pars, fn = fun, lower = constr$LB,
+        upper = constr$UB,
+        eq_fn = constr$eqfun, eq_b = constr$eqB, control = control)
     # extract optimal Ri and Ci values from optimization result
     RiLog <- res$pars[seq_len(m)]
     if (isCiFixed) {
@@ -485,10 +488,15 @@ iterateOverCi <- function(G,
 
     n <- sum(igraph::V(G)$type) ## number of protein groups
     if (n == 1) { # special case for only a single protein group in the graph
-        RES <-  .minimizeSquaredError(G, fixedCi = NULL, verbose = verbose,
-            control = control)
-        result <- data.frame(protein = 1, grid = 1, RLog1 = RES$RiLog,
-            C1 = 1, error = RES$RES$res_squ_err)
+        RiLog <- mean(igraph::V(G)$pep_logRatio, na.rm = TRUE)
+        RES <- .errorEquation(RiLog = c(RiLog),
+            Ci = c(1.0), 
+            M = igraph::as_biadjacency_matrix(G),
+            rjLog = stats::na.omit(igraph::V(G)$pep_logRatio))
+        # RES <-  .minimizeSquaredError(G, fixedCi = NULL, verbose = verbose,
+            # control = control)
+        result <- data.frame(protein = 1, grid = 1, RLog1 = RiLog,
+            C1 = 1, error = RES$res_squ_err)
         return(result)
     } else { # n > 1
         grid <- seq(gridStart, gridStop, length.out = gridSize + 1)

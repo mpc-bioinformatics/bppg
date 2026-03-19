@@ -1,43 +1,43 @@
 test_that("test .errorEquation", {
 
-  # constructed example
-  RiLog <- log2(c(0.5, 1.3))
-  Ci <- c(0.3, 0.7)
-  M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
-  rjLog <- log2(c(0.6, 1.2))
-  e <- bppg:::.errorEquation(RiLog = RiLog, Ci = Ci, M = M, rjLog = rjLog)
-  expect_snapshot(e)
+    # constructed example
+    RiLog <- log2(c(0.5, 1.3))
+    Ci <- c(0.3, 0.7)
+    M <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
+    rjLog <- log2(c(0.6, 1.2))
+    e <- bppg:::.errorEquation(RiLog = RiLog, Ci = Ci, M = M, rjLog = rjLog)
+    expect_snapshot(e)
 
-  # real example
-  testfile_path <- file.path(testthat::test_path(), "testfiles")
-  graphs <- readRDS(file.path(testfile_path, "quantGraphsForTesting.rds"))
+    # real example
+    testfile_path <- file.path(testthat::test_path(), "testfiles")
+    graphs <- readRDS(file.path(testfile_path, "quantGraphsForTesting.rds"))
 
 })
 
 test_that("test .minimizeSquaredError", {
 
-  testfile_path <- file.path(testthat::test_path(), "testfiles")
-  graphs <- readRDS(file.path(testfile_path, "quantGraphsForTesting.rds"))
-  G_N <- graphs[[3]][[1]] # N
+    testfile_path <- file.path(testthat::test_path(), "testfiles")
+    graphs <- readRDS(file.path(testfile_path, "quantGraphsForTesting.rds"))
+    G_N <- graphs[[3]][[1]] # N
 
-  res <- bppg:::.minimizeSquaredError(G_N, verbose = FALSE)
+    res <- bppg:::.minimizeSquaredError(G_N, verbose = FALSE)
 
-  # test fixed_Ci
-  res2 <- bppg:::.minimizeSquaredError(G_N, verbose = FALSE, fixedCi = c(0.3, NA))
+    # test fixed_Ci
+    res2 <- bppg:::.minimizeSquaredError(G_N, verbose = FALSE, fixedCi = c(0.3, NA))
 
-  testfile_path <- file.path(testthat::test_path(), "testfiles")
-  #saveRDS(res, file.path(testfile_path, "test_minimizeSquaredError_file1.rds"))
-  #saveRDS(res2, file.path(testfile_path, "test_minimizeSquaredError_file2.rds"))
-  res_snap <- readRDS(file.path(testfile_path, "test_minimizeSquaredError_file1.rds"))
-  res2_snap <- readRDS(file.path(testfile_path, "test_minimizeSquaredError_file2.rds"))
+    testfile_path <- file.path(testthat::test_path(), "testfiles")
+    #saveRDS(res, file.path(testfile_path, "test_minimizeSquaredError_file1.rds"))
+    #saveRDS(res2, file.path(testfile_path, "test_minimizeSquaredError_file2.rds"))
+    res_snap <- readRDS(file.path(testfile_path, "test_minimizeSquaredError_file1.rds"))
+    res2_snap <- readRDS(file.path(testfile_path, "test_minimizeSquaredError_file2.rds"))
 
-  expect_equal(res$Ri, res_snap$Ri, tolerance = 1e-05)
-  expect_equal(res$Ci, res_snap$Ci, tolerance = 1e-05)
-  # expect_equal(str(res$Ci), str(res_snap$Ci))
+    expect_equal(res$Ri, res_snap$Ri, tolerance = 1e-05)
+    expect_equal(res$Ci, res_snap$Ci, tolerance = 1e-05)
+    # expect_equal(str(res$Ci), str(res_snap$Ci))
 
-  expect_equal(res2$Ri, res2_snap$Ri, tolerance = 1e-05)
-  expect_equal(res2$Ci, res2_snap$Ci, tolerance = 1e-05)
-  # expect_equal(str(res2$Ci), str(res2_snap$Ci))
+    expect_equal(res2$Ri, res2_snap$Ri, tolerance = 1e-05)
+    expect_equal(res2$Ci, res2_snap$Ci, tolerance = 1e-05)
+    # expect_equal(str(res2$Ci), str(res2_snap$Ci))
 
 })
 
