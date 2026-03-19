@@ -103,9 +103,12 @@ generateGraphsFromFASTA <- function(fasta,
 #'                                 will be collapsed.
 #' @param suffix                   \strong{character} \cr
 #'                                 The suffix for output files.
-#' @param protOrigin               \strong{list or data.frame} \cr
-#'                                 A list with the protein orgin corresponding to
-#'                                 [fasta], proteins are used as rownames/index.
+#' @param protOrigin             \strong{list or data.frame} \cr
+#'                               A list with the protein orgin corresponding to
+#'                               [fasta], proteins are used as rownames/index.
+#' @param imp_method      \strong{character} \cr
+#'                        Chosen imputation optional approach, current method: 
+#'                        "min_2_impute"
 #' @param verbose     \strong{logical} \cr
 #'                    If \code{TRUE}, additional information on each iteration
 #'                    of the optimization is printed
@@ -139,7 +142,8 @@ generateGraphsFromQuantData <- function(D,
     collProtNodes = TRUE,
     collPeptNodes = FALSE,
     suffix = "",
-    protOrigin = NULL,
+    protOrigin = NULL, 
+    imp_method = NULL,
     verbose = FALSE,
     ...) {
 
@@ -158,7 +162,7 @@ generateGraphsFromQuantData <- function(D,
     ## aggregate replicates by calculating the mean
     group <- factor(limma::strsplit2(colnames(D), split = "_")[, 1])
     D_aggr <- bppg::aggregateReplicates(D, method = "mean", missing.limit = 0.4,
-        group = group, seq_col = seq_column)
+        group = group, seq_col = seq_column, imp_method = imp_method)
 
     if (!is.null(outpath)) {
         openxlsx::write.xlsx(SummarizedExperiment::assays(D_aggr)$intensities,
