@@ -132,13 +132,23 @@
                 vapply(igraph::V(gCollapsed)$pep_logRatio[pepMask],
                     mean, FUN.VALUE = numeric(1))
             if (!is.null(igraph::V(gCollapsed)$imputed)) {
-# how to combine this one?
+                igraph::V(gCollapsed)$anyImputed <- vapply(
+                    igraph::V(gCollapsed)$imputed, any, 
+                    FUN.VALUE = logical(1))
             }
         } else {
             igraph::V(gCollapsed)$pep_logRatio <- vapply(
                 igraph::V(gCollapsed)$pep_logRatio,  "[", 1,
                 FUN.VALUE = numeric(1))
         } 
+        if (collProtNodes) {
+            if (!is.null(igraph::V(gCollapsed)$imputed)) {
+                igraph::V(gCollapsed)$imputed[!pepMask] <- vapply(
+                    igraph::V(gCollapsed)$imputed[!pepMask], any, 
+                    FUN.VALUE = logical(1))
+            }
+            
+        }
     }
 
     if (!is.null(igraph::V(gCollapsed)$protOrigin) && collProtNodes) {

@@ -96,7 +96,7 @@ test_that("test generateQuantGraphs", {
         metadata = list(imputed = TRUE)
     )
     # Compute function
-    graphs <- bppg::generateQuantGraphs(exp_peptide_ratios = impExpData,
+    graphsImp <- bppg::generateQuantGraphs(exp_peptide_ratios = impExpData,
         fasta_edgelist = edgelist,
         outpath = temp_dir,
         seq_column = "peptides",
@@ -121,14 +121,25 @@ test_that("test generateQuantGraphs", {
 
     # Check result attributes
     expect_true(file.exists(file.path(temp_dir, "edgelist_filtered_.xlsx")))
-    expect_equal(unname(lapply(graphs, length)), list(3,2,2))
-    expect_equal(names(graphs), c("sample1_sample2", "sample1_sample3", "sample2_sample3"))
+    expect_equal(unname(lapply(graphs, length)), list(3, 2, 2))
+    expect_equal(names(graphs), c("sample1_sample2", "sample1_sample3",
+        "sample2_sample3"))
 
     for (i in 1:3) {
         for (j in seq_along(graphs[[i]])) {
-        expect_snapshot(igraph::as_edgelist(graphs[[i]][[j]]))
-        expect_snapshot(igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio"))
-        expect_snapshot(igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio"))
+            expect_snapshot(igraph::as_edgelist(graphs[[i]][[j]]))
+            expect_snapshot(igraph::vertex_attr(graphs[[i]][[j]],
+                    "pep_logRatio"))
+            expect_snapshot(igraph::vertex_attr(graphs2[[i]][[j]],
+                    "pep_logRatio"))
+            
+        }
+        for (j in seq_along(graphsImp[[i]])){
+            expect_snapshot(igraph::vertex_attr(graphsImp[[i]][[j]],
+                    "pep_ratio_mean"))
+            expect_snapshot(igraph::vertex_attr(graphsImp[[i]][[j]],
+                    "anyImputed"))
+            expect_snapshot(igraph::vertex_attr(graphsImp[[i]][[j]], "imputed"))
         }
     }
 
