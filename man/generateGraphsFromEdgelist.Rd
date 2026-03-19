@@ -18,12 +18,12 @@ Quant data needs to be in the column
 \strong{$pep_logRatio}.}
 
 \item{collProtNodes}{\strong{logical} \cr
-If \code{TRUE}, the protein nodes
-will be contracted.}
+If \code{TRUE}, the protein nodes will
+be collapsed.}
 
 \item{collPeptNodes}{\strong{logical} \cr
-If \code{TRUE}, the peptide nodes
-will be contracted.}
+If \code{TRUE}, the peptide nodes will
+be collapsed.}
 }
 \value{
 A list of subgraphs as igraph objects.

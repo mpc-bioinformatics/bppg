@@ -89,6 +89,7 @@ file <- system.file("extdata", "peptides.txt", package = "bppg")
 D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 
 graphs <- bppg::generateGraphsFromQuantData(D, fasta)
+
 }
 \seealso{
 \code{\link[=readMqPeptideTable]{readMqPeptideTable()}}, \code{\link[seqinr:read.fasta]{seqinr::read.fasta()}},

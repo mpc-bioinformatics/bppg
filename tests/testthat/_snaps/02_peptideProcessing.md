@@ -1,6 +1,20 @@
 # test aggregateReplicates
 
     Code
+      D1
+    Output
+      class: SummarizedExperiment 
+      dim: 10 3 
+      metadata(0):
+      assays(1): intensities
+      rownames(10): pep_1 pep_2 ... pep_9 pep_10
+      rowData names(1): Sequence
+      colnames(3): 1 2 3
+      colData names(1): group
+
+---
+
+    Code
       SummarizedExperiment::assays(D1)$intensities
     Output
                     1        2        3
@@ -14,6 +28,47 @@
       pep_8  18.51944 19.42229 17.56504
       pep_9  18.78308       NA 21.13843
       pep_10 20.31003 19.06793       NA
+
+---
+
+    Code
+      as.data.frame(tail(SummarizedExperiment::rowData(D1), n = 1000))
+    Output
+             Sequence
+      pep_1     pep_1
+      pep_2     pep_2
+      pep_3     pep_3
+      pep_4     pep_4
+      pep_5     pep_5
+      pep_6     pep_6
+      pep_7     pep_7
+      pep_8     pep_8
+      pep_9     pep_9
+      pep_10   pep_10
+
+---
+
+    Code
+      as.data.frame(tail(SummarizedExperiment::colData(D1), n = 1000))
+    Output
+        group
+      1     1
+      2     2
+      3     3
+
+---
+
+    Code
+      D2
+    Output
+      class: SummarizedExperiment 
+      dim: 10 3 
+      metadata(0):
+      assays(1): intensities
+      rownames(10): pep_1 pep_2 ... pep_9 pep_10
+      rowData names(1): Sequence
+      colnames(3): 1 2 3
+      colData names(1): group
 
 ---
 
@@ -35,32 +90,46 @@
 ---
 
     Code
+      as.data.frame(tail(SummarizedExperiment::rowData(D2), n = 1000))
+    Output
+             Sequence
+      pep_1     pep_1
+      pep_2     pep_2
+      pep_3     pep_3
+      pep_4     pep_4
+      pep_5     pep_5
+      pep_6     pep_6
+      pep_7     pep_7
+      pep_8     pep_8
+      pep_9     pep_9
+      pep_10   pep_10
+
+---
+
+    Code
+      as.data.frame(tail(SummarizedExperiment::colData(D2), n = 1000))
+    Output
+        group
+      1     1
+      2     2
+      3     3
+
+# test calculatePeptideRatios
+
+    Code
       D1
     Output
       class: SummarizedExperiment 
       dim: 10 3 
       metadata(0):
-      assays(1): intensities
+      assays(1): logRatios
       rownames(10): pep_1 pep_2 ... pep_9 pep_10
       rowData names(1): Sequence
-      colnames(3): 1 2 3
-      colData names(1): group
+      colnames(3): logRatio_sample1_sample2 logRatio_sample1_sample3
+        logRatio_sample2_sample3
+      colData names(1): comparison
 
 ---
-
-    Code
-      D2
-    Output
-      class: SummarizedExperiment 
-      dim: 10 3 
-      metadata(0):
-      assays(1): intensities
-      rownames(10): pep_1 pep_2 ... pep_9 pep_10
-      rowData names(1): Sequence
-      colnames(3): 1 2 3
-      colData names(1): group
-
-# test calculatePeptideRatios
 
     Code
       SummarizedExperiment::assays(D1)$logRatios
@@ -91,15 +160,141 @@
 ---
 
     Code
-      D1
+      SummarizedExperiment::rowData(D1)
+    Output
+      DataFrame with 10 rows and 1 column
+                Sequence
+             <character>
+      pep_1        pep_1
+      pep_2        pep_2
+      pep_3        pep_3
+      pep_4        pep_4
+      pep_5        pep_5
+      pep_6        pep_6
+      pep_7        pep_7
+      pep_8        pep_8
+      pep_9        pep_9
+      pep_10      pep_10
+
+---
+
+    Code
+      SummarizedExperiment::colData(D1)
+    Output
+      DataFrame with 3 rows and 1 column
+                                           comparison
+                                          <character>
+      logRatio_sample1_sample2 logRatio_sample1_sam..
+      logRatio_sample1_sample3 logRatio_sample1_sam..
+      logRatio_sample2_sample3 logRatio_sample2_sam..
+
+# normalize peptide data
+
+    Code
+      D_norm_loess
     Output
       class: SummarizedExperiment 
-      dim: 10 3 
+      dim: 7944 27 
       metadata(0):
-      assays(1): logRatios
-      rownames(10): pep_1 pep_2 ... pep_9 pep_10
+      assays(1): intensities_norm
+      rownames(7944): AAAAQDEITGDGTTTVVCLVGELLR AAADALSDLEIK ...
+        YYVPPGIPTNDTSNLER YYWNLSK
       rowData names(1): Sequence
-      colnames(3): logRatio_sample1_sample2 logRatio_sample1_sample3
-        logRatio_sample2_sample3
-      colData names(1): comparison
+      colnames(27): 12500amol_R1 12500amol_R2 ... 50amol_R2 50amol_R3
+      colData names(1): sample
+
+---
+
+    Code
+      SummarizedExperiment::rowData(D_norm_loess)
+    Output
+      DataFrame with 7944 rows and 1 column
+                                              Sequence
+                                           <character>
+      AAAAQDEITGDGTTTVVCLVGELLR AAAAQDEITGDGTTTVVCLV..
+      AAADALSDLEIK                        AAADALSDLEIK
+      AAADALSDLEIKDSK                  AAADALSDLEIKDSK
+      AAAEYEKGEYETAISTLNDAVEQGR AAAEYEKGEYETAISTLNDA..
+      AAAPAQTTTDYK                        AAAPAQTTTDYK
+      ...                                          ...
+      YYTFNGPNYNENETIR                YYTFNGPNYNENETIR
+      YYTITEVATR                            YYTITEVATR
+      YYTLEEIQK                              YYTLEEIQK
+      YYVPPGIPTNDTSNLER              YYVPPGIPTNDTSNLER
+      YYWNLSK                                  YYWNLSK
+
+---
+
+    Code
+      SummarizedExperiment::colData(D_norm_loess)
+    Output
+      DataFrame with 27 rows and 1 column
+                         sample
+                    <character>
+      12500amol_R1 12500amol_R1
+      12500amol_R2 12500amol_R2
+      12500amol_R3 12500amol_R3
+      125amol_R1     125amol_R1
+      125amol_R2     125amol_R2
+      ...                   ...
+      500amol_R2     500amol_R2
+      500amol_R3     500amol_R3
+      50amol_R1       50amol_R1
+      50amol_R2       50amol_R2
+      50amol_R3       50amol_R3
+
+---
+
+    Code
+      D_norm_lts
+    Output
+      class: SummarizedExperiment 
+      dim: 7944 27 
+      metadata(0):
+      assays(1): intensities_norm
+      rownames(7944): AAAAQDEITGDGTTTVVCLVGELLR AAADALSDLEIK ...
+        YYVPPGIPTNDTSNLER YYWNLSK
+      rowData names(1): Sequence
+      colnames(27): 12500amol_R1 12500amol_R2 ... 50amol_R2 50amol_R3
+      colData names(1): sample
+
+---
+
+    Code
+      SummarizedExperiment::rowData(D_norm_lts)
+    Output
+      DataFrame with 7944 rows and 1 column
+                                              Sequence
+                                           <character>
+      AAAAQDEITGDGTTTVVCLVGELLR AAAAQDEITGDGTTTVVCLV..
+      AAADALSDLEIK                        AAADALSDLEIK
+      AAADALSDLEIKDSK                  AAADALSDLEIKDSK
+      AAAEYEKGEYETAISTLNDAVEQGR AAAEYEKGEYETAISTLNDA..
+      AAAPAQTTTDYK                        AAAPAQTTTDYK
+      ...                                          ...
+      YYTFNGPNYNENETIR                YYTFNGPNYNENETIR
+      YYTITEVATR                            YYTITEVATR
+      YYTLEEIQK                              YYTLEEIQK
+      YYVPPGIPTNDTSNLER              YYVPPGIPTNDTSNLER
+      YYWNLSK                                  YYWNLSK
+
+---
+
+    Code
+      SummarizedExperiment::colData(D_norm_lts)
+    Output
+      DataFrame with 27 rows and 1 column
+                         sample
+                    <character>
+      12500amol_R1 12500amol_R1
+      12500amol_R2 12500amol_R2
+      12500amol_R3 12500amol_R3
+      125amol_R1     125amol_R1
+      125amol_R2     125amol_R2
+      ...                   ...
+      500amol_R2     500amol_R2
+      500amol_R3     500amol_R3
+      50amol_R1       50amol_R1
+      50amol_R2       50amol_R2
+      50amol_R3       50amol_R3
 

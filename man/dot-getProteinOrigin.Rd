@@ -31,7 +31,7 @@ accessions.}
 
 \item{verbose}{\strong{logical} \cr
 If \code{TRUE}, additional information on
-each iteration of the optimization is
+each iteration is
 printed.}
 }
 \value{
@@ -44,4 +44,5 @@ or a specific species).
 }
 \examples{
 ## TODO
+
 }

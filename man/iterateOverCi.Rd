@@ -67,7 +67,8 @@ the other Ci values and all Ri values are optimized using
 .minimizeSquaredError().
 The resulting table can be used to assess a range of possible solutions for
 the protein ratios.
-The table can be further processed with \code{\link[=automatedAnalysisIteratedCi]{automatedAnalysisIteratedCi()}}.
+The table can be further processed with
+\code{\link[=automatedAnalysisIteratedCi]{automatedAnalysisIteratedCi()}}.
 }
 \examples{
 file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
@@ -75,6 +76,7 @@ graphs <- readRDS(file)
 G <- graphs$sample1_sample2[[2]]
 # small example with a small grid size
 iterateOverCi(G, gridSize = 100)
+
 }
 \seealso{
 \code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}},

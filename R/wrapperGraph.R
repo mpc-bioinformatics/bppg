@@ -25,7 +25,7 @@
 #' @param verbose     \strong{logical} \cr
 #'                    If \code{TRUE}, additional information on each iteration
 #'                    of the optimization is printed
-#' @param ...                     Additional arguments to bppg::digestFASTA()
+#' @param ...         Additional arguments to bppg::digestFASTA()
 #'
 #' @return Subgraphs (i.e. connected components) from the graph generated from
 #'         the FASTA file.
@@ -37,6 +37,8 @@
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' graphs <- bppg::generateGraphsFromFASTA(fasta)
 #'
+#' @importFrom checkmate assertPathForOutput
+#' @importFrom utils write.table
 generateGraphsFromFASTA <- function(fasta,
     collProtNodes = TRUE,
     collPeptNodes = TRUE,
@@ -46,7 +48,7 @@ generateGraphsFromFASTA <- function(fasta,
     verbose = FALSE,
     ...) {
     if (verbose) message("Digesting FASTA file ...")
-    edgelist <- bppg::digestFASTA(fasta, protOrigin = protOrigin,
+    edgelist <- digestFASTA(fasta, protOrigin = protOrigin,
         verbose = verbose, ...)
     if (!is.null(outpath)) {
         if (verbose) message("Saving edgelist ...")
@@ -72,40 +74,40 @@ generateGraphsFromFASTA <- function(fasta,
 
 #' Generate graphs from quantitative peptide-level data
 #'
-#' @param D                        \strong{data.frame} \cr
-#'                                 A data set with peptide sequence as first
-#'                                 column and peptide intensities in subsequent
-#'                                 columns, e.g. created with
-#'                                 [bppg::readMqPeptideTable()].
-#' @param fasta                    \strong{list of vector of characters} \cr
-#'                                 A fasta file used for identification of
-#'                                 peptides in already read into R by
-#'                                 [seqinr::read.fasta()].
-#' @param outpath                  \strong{character} \cr
-#'                                 The output path for the results.
-#' @param missed_cleavages         \strong{integer} \cr
-#'                                 The number of allowed missed cleavages
-#'                                 in a peptide.
-#' @param min_aa                   \strong{integer} \cr
-#'                                 The minimum number of amino acids
-#'                                 in a peptide.
-#' @param max_aa                   \strong{integer} \cr
-#'                                 The maximum number of amino acids
-#'                                 in a peptide.
-#' @param seq_column               \strong{character} \cr
-#'                                 The column name of the column of D with the
-#'                                 peptide sequences.
-#' @param collProtNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the protein nodes
-#'                                 will be collapsed.
-#' @param collPeptNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the peptide nodes
-#'                                 will be collapsed.
-#' @param suffix                   \strong{character} \cr
-#'                                 The suffix for output files.
-#' @param protOrigin               \strong{list or data.frame} \cr
-#'                                 A list with the protein orgin corresponding to
-#'                                 [fasta], proteins are used as rownames/index.
+#' @param D                   \strong{data.frame} \cr
+#'                            A data set with peptide sequence as first
+#'                            column and peptide intensities in subsequent
+#'                            columns, e.g. created with
+#'                            [bppg::readMqPeptideTable()].
+#' @param fasta               \strong{list of vector of characters} \cr
+#'                            A fasta file used for identification of
+#'                            peptides in already read into R by
+#'                            [seqinr::read.fasta()].
+#' @param outpath             \strong{character} \cr
+#'                            The output path for the results.
+#' @param missed_cleavages    \strong{integer} \cr
+#'                            The number of allowed missed cleavages
+#'                            in a peptide.
+#' @param min_aa              \strong{integer} \cr
+#'                            The minimum number of amino acids
+#'                            in a peptide.
+#' @param max_aa              \strong{integer} \cr
+#'                            The maximum number of amino acids
+#'                            in a peptide.
+#' @param seq_column          \strong{character} \cr
+#'                            The column name of the column of D with the
+#'                            peptide sequences.
+#' @param collProtNodes       \strong{logical} \cr
+#'                            If \code{TRUE}, the protein nodes
+#'                            will be collapsed.
+#' @param collPeptNodes       \strong{logical} \cr
+#'                            If \code{TRUE}, the peptide nodes
+#'                            will be collapsed.
+#' @param suffix              \strong{character} \cr
+#'                            The suffix for output files.
+#' @param protOrigin          \strong{list or data.frame} \cr
+#'                            A list with the protein orgin corresponding to
+#'                            [fasta], proteins are used as rownames/index.
 #' @param verbose     \strong{logical} \cr
 #'                    If \code{TRUE}, additional information on each iteration
 #'                    of the optimization is printed
@@ -128,6 +130,10 @@ generateGraphsFromFASTA <- function(fasta,
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 #'
 #' graphs <- bppg::generateGraphsFromQuantData(D, fasta)
+#' 
+#' @importFrom checkmate assertPathForOutput
+#' @importFrom openxlsx write.xlsx
+#' @importFrom limma strsplit2
 
 generateGraphsFromQuantData <- function(D,
     fasta,
@@ -144,9 +150,9 @@ generateGraphsFromQuantData <- function(D,
     ...) {
 
     if (verbose) message("Digesting FASTA file...")
-    edgelist <- bppg::digestFASTA(fasta, missed_cleavages = missed_cleavages,
+    edgelist <- digestFASTA(fasta, missed_cleavages = missed_cleavages,
         min_aa = min_aa, max_aa = max_aa, protOrigin = protOrigin, 
-        verbose = verbose)
+        verbose = verbose, ...)
 
     if (!is.null(outpath)) {
         checkmate::assertPathForOutput(outpath, overwrite = TRUE)
@@ -157,7 +163,7 @@ generateGraphsFromQuantData <- function(D,
 
     ## aggregate replicates by calculating the mean
     group <- factor(limma::strsplit2(colnames(D), split = "_")[, 1])
-    D_aggr <- bppg::aggregateReplicates(D, method = "mean", missing.limit = 0.4,
+    D_aggr <- aggregateReplicates(D, method = "mean", missing.limit = 0.4,
         group = group, seq_col = seq_column)
 
     if (!is.null(outpath)) {
@@ -168,7 +174,7 @@ generateGraphsFromQuantData <- function(D,
 
     ## calculate the peptide ratio table
     groups  <- levels(group)
-    peptide_ratios <- bppg::calculatePeptideRatios(D = D_aggr,
+    peptide_ratios <- calculatePeptideRatios(D = D_aggr,
         group_levels = groups)
     if (!is.null(outpath)) {
         openxlsx::write.xlsx(
