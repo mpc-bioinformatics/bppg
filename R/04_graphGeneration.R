@@ -327,11 +327,10 @@ generateQuantGraphs <- function(exp_peptide_ratios,
 
             if (S4Vectors::metadata(compSE)$imputed) {
                 compEdgelist$imputed <- SummarizedExperiment::assays(
-                    compSE)$maskImputed[matchIndex, 1]
-            } 
-            # TODO does generate Graph has to be adapted too?
-            generateGraphsFromEdgelist(compEdgelist,
-                collProtNodes, collPeptNodes)
+                    compSE)$maskImputation[matchIndex, 1]
+            }            
+            return(generateGraphsFromEdgelist(compEdgelist,
+                collProtNodes, collPeptNodes))
         })
 
     names(subgraphs) <- comparisons

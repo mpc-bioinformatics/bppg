@@ -73,18 +73,19 @@ test_that("test generateGraphsFromQuantData", {
     expect_true(file.exists(file.path(temp_dir, "peptide_ratios_.xlsx")))
     expect_true(file.exists(file.path(temp_dir, "edgelist_filtered_.xlsx")))
 
+
     for (i in 1:3) {
         for (j in seq_along(graphs[[i]])) {
             expect_snapshot(igraph::as_edgelist(graphs[[i]][[j]]))
             expect_snapshot(igraph::vertex_attr(graphs[[i]][[j]],
                     "pep_logRatio"))
         }
-        for (j in seq_along(graphsImp[i])){
-            expect_snapshot(igraph::as_edgelist(graphsImp[[i]][[j]]))
+        for (j in seq_along(graphsImp[[i]])){
+            expect_snapshot(sum(!igraph::V(graphsImp[[i]][[j]])$type))
             expect_snapshot(igraph::vertex_attr(graphsImp[[i]][[j]],
                     "pep_logRatio"))
             expect_snapshot(igraph::vertex_attr(graphsImp[[i]][[j]],
-                    "anyImputed"))
+                    "imputed"))
         }
     }
 

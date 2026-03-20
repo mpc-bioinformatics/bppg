@@ -81,12 +81,13 @@ aggregateReplicates <- function(D,
     checkmate::assertNumber(missing.limit, lower = 0, upper = 1)
     checkmate::assertCharacter(method, pattern = "mean|sum|median")
     checkmate::assertCharacter(seq_col)
-    checkmate::assertCharacter(imp_method, pattern = "min_2_impute", null.ok = TRUE)
+    checkmate::assertCharacter(imp_method, pattern = "min_2_impute",
+        null.ok = TRUE)
 
     id <- SummarizedExperiment::rowData(D)[, seq_col]
     intensities <- SummarizedExperiment::assays(D)$intensities
 
-    if(is.null(group)){
+    if (is.null(group)) {
         group <- factor(SummarizedExperiment::colData(D)$group)
     }
 
@@ -96,7 +97,7 @@ aggregateReplicates <- function(D,
         median = robustbase::rowMedians)
 
     # Track missingness and later imputed values
-    mask_impute <- vapply(1:length(levels(group)), function(i) {
+    mask_impute <- vapply(seq_along(levels(group)), function(i) {
         X_tmp <- intensities[, group == levels(group)[i]]
         X_tmp <- as.matrix(X_tmp)
 
@@ -105,7 +106,7 @@ aggregateReplicates <- function(D,
         return(mask_tmp)
     }, FUN.VALUE = logical(length(id)))
 
-    res <- vapply(1:length(levels(group)), function(i, mask_impute) {
+    res <- vapply(seq_along(levels(group)), function(i, mask_impute) {
         X_tmp <- intensities[, group == levels(group)[i]]
         X_tmp <- as.matrix(X_tmp)
 

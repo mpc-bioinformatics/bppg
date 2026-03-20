@@ -17,7 +17,9 @@ test_that("test min 2 impute", {
 
     imputed <- list()
     for (i in 1:3) {
-        imputed[[i]] <- t(bppg::min_2_impute(df[, i * c(1:3)], df))
+        imputed[[i]] <- t(bppg::min_2_impute(D = df[seq(i * 3 - 2, i * 3)],
+                intensities = df))
+        names(imputed)[[i]] <- paste0("sample", i)
     }
 
     D_min <- as.data.frame(imputed)

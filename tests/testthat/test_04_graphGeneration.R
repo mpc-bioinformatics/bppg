@@ -90,7 +90,7 @@ test_that("test generateQuantGraphs", {
 
     impExpData <- SummarizedExperiment::SummarizedExperiment(
         assays = list(logRatios = ratio_table,
-            maskImputed = imputionMask),
+            maskImputation = imputionMask),
         rowData = data.frame(peptides = rownames(ratio_table)),
         colData = data.frame(comparison = colnames(ratio_table)),
         metadata = list(imputed = TRUE)
