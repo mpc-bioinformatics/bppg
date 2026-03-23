@@ -1,5 +1,5 @@
 test_that("plot a bipartite graph", {
-    testthat::skip("different font type")
+    # testthat::skip("different font type")
   # Skip this test on continuous integration systems like GitHub Actions
   # The function expect_snapshot_file is otherwise too strict
   # and there is no way to get a few pixel of tolerance

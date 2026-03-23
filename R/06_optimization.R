@@ -322,9 +322,10 @@
         RES <- .errorEquation(RiLog = c(RiLog),
             Ci = c(1.0), 
             M = igraph::as_biadjacency_matrix(G),
-            rjLog = stats::na.omit(igraph::V(G)$pep_logRatio))
-        result <- list(RiLog = c(RiLog), Ci = Ci, RES = RES, Tracking = NULL,
-        outer.iter = NULL, convergence = NULL)
+            rjLog = rjLog)
+        result <- list(RiLog = c(RiLog), Ci = Ci, RES = RES, 
+            Tracking = c(1, RES$res_squ_err, RiLog, Ci),
+            outer.iter = 0, convergence = 1)
         return(result)    
     }
 
