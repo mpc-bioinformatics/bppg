@@ -317,6 +317,17 @@
     rjLog <- stats::na.omit(igraph::vertex_attr(G, "pep_logRatio"))
     if (is.null(rjLog)) stop("G does not contain peptide ratios.")
     checkmate::assertNumeric(rjLog)
+    if (m == 1){
+        RiLog <- mean(igraph::V(G)$pep_logRatio, na.rm = TRUE)
+        RES <- .errorEquation(RiLog = c(RiLog),
+            Ci = c(1.0), 
+            M = igraph::as_biadjacency_matrix(G),
+            rjLog = stats::na.omit(igraph::V(G)$pep_logRatio))
+        result <- list(RiLog = c(RiLog), Ci = Ci, RES = RES, Tracking = NULL,
+        outer.iter = NULL, convergence = NULL)
+        return(result)    
+    }
+
     checkmate::assertNumeric(fixedCi, len = m, lower = 0, upper = 1,
         null.ok = TRUE)
     stopifnot(sum(fixedCi, na.rm = TRUE) <= 1)
@@ -488,15 +499,10 @@ iterateOverCi <- function(G,
 
     n <- sum(igraph::V(G)$type) ## number of protein groups
     if (n == 1) { # special case for only a single protein group in the graph
-        RiLog <- mean(igraph::V(G)$pep_logRatio, na.rm = TRUE)
-        RES <- .errorEquation(RiLog = c(RiLog),
-            Ci = c(1.0), 
-            M = igraph::as_biadjacency_matrix(G),
-            rjLog = stats::na.omit(igraph::V(G)$pep_logRatio))
-        # RES <-  .minimizeSquaredError(G, fixedCi = NULL, verbose = verbose,
-            # control = control)
-        result <- data.frame(protein = 1, grid = 1, RLog1 = RiLog,
-            C1 = 1, error = RES$res_squ_err)
+        RES <-  .minimizeSquaredError(G, fixedCi = NULL, verbose = verbose,
+            control = control)
+        result <- data.frame(protein = 1, grid = 1, RLog1 = RES$RiLog,
+            C1 = 1, error = RES$RES$res_squ_err)
         return(result)
     } else { # n > 1
         grid <- seq(gridStart, gridStop, length.out = gridSize + 1)
