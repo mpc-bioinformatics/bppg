@@ -318,15 +318,13 @@
     if (is.null(rjLog)) stop("G does not contain peptide ratios.")
     checkmate::assertNumeric(rjLog)
     if (m == 1){
-        RiLog <- mean(igraph::V(G)$pep_logRatio, na.rm = TRUE)
+        RiLog <- mean(rjLog, na.rm = TRUE)
         RES <- .errorEquation(RiLog = c(RiLog),
-            Ci = c(1.0), 
-            M = igraph::as_biadjacency_matrix(G),
-            rjLog = rjLog)
+            Ci = c(1.0), M = M, rjLog = rjLog)
         result <- list(RiLog = c(RiLog), Ci = Ci, RES = RES, 
             Tracking = c(1, RES$res_squ_err, RiLog, Ci),
             outer.iter = 0, convergence = 1)
-        return(result)    
+        return(result)
     }
 
     checkmate::assertNumeric(fixedCi, len = m, lower = 0, upper = 1,
