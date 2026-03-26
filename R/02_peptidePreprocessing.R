@@ -42,7 +42,7 @@
 #'
 #' @param D              \strong{SummarizedExperiment} \cr
 #'                       SummarizedExperiment Dataset containing peptide 
-#'                       intensities, e.g. the result of [readMqPeptideTable] or
+#'                       intensities, e.g. the result of 
 #'                       [normalizePeptideIntensities].
 #' @param group          \strong{character factor} \cr
 #'                       The groups per sample for aggregation, if not already 
@@ -78,7 +78,7 @@ aggregateReplicates <- function(D,
     method = "mean",
     seq_col = "Sequence") {
     checkmate::assertClass(D, "SummarizedExperiment")
-    checkmate::assertDataFrame(SummarizedExperiment::assays(D)$intensities,
+    checkmate::assertDataFrame(SummarizedExperiment::assays(D)$intensities_norm,
         all.missing=FALSE)
     checkmate::assertFactor(group, null.ok = TRUE)
     checkmate::assertNumber(missing.limit, lower = 0, upper = 1)
@@ -86,7 +86,7 @@ aggregateReplicates <- function(D,
     checkmate::assertCharacter(seq_col)
 
     id <- SummarizedExperiment::rowData(D)[, seq_col]
-    intensities <- SummarizedExperiment::assays(D)$intensities
+    intensities <- SummarizedExperiment::assays(D)$intensities_norm
 
     if (is.null(group)) {
         group <- factor(SummarizedExperiment::colData(D)$group)

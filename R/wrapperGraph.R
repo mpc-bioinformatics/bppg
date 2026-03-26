@@ -97,6 +97,10 @@ generateGraphsFromFASTA <- function(fasta,
 #' @param seq_column          \strong{character} \cr
 #'                            The column name of the column of D with the
 #'                            peptide sequences.
+#' @param norm_method         \strong{character} \cr
+#'            The method of normalization. Options are "nonorm"
+#'            (no normalization), "median", "loess",  "quantile" or "lts"
+#'             normalization. Default is "loess"
 #' @param collProtNodes       \strong{logical} \cr
 #'                            If \code{TRUE}, the protein nodes
 #'                            will be collapsed.
@@ -142,6 +146,7 @@ generateGraphsFromQuantData <- function(D,
     min_aa = 6,
     max_aa = 50,
     seq_column = "Sequence",
+    norm_method = "loess",
     collProtNodes = TRUE,
     collPeptNodes = FALSE,
     suffix = "",
@@ -161,9 +166,18 @@ generateGraphsFromQuantData <- function(D,
             overwrite = TRUE, keepNA = TRUE)
     }
 
+    ## add normalization
+    D_norm <- bppg::normalizePeptideIntensities(D, method = norm_method)
+
+    if (!is.null(outpath)) {
+        openxlsx::write.xlsx(SummarizedExperiment::assays(D_norm)$intensities,
+            file = paste0(outpath, "peptides_", norm_method, "_", suffix,
+                ".xlsx"), overwrite = TRUE, keepNA = TRUE)
+    }
+
     ## aggregate replicates by calculating the mean
-    group <- factor(limma::strsplit2(colnames(D), split = "_")[, 1])
-    D_aggr <- aggregateReplicates(D, method = "mean", missing.limit = 0.4,
+    group <- factor(limma::strsplit2(colnames(D_norm), split = "_")[, 1])
+    D_aggr <- aggregateReplicates(D_norm, method = "mean", missing.limit = 0.4,
         group = group, seq_col = seq_column)
 
     if (!is.null(outpath)) {
