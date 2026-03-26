@@ -25,5 +25,11 @@ test_that("result aggregation", {
     resultsList <- RES
 
     X <- combineComparisons(resultsList)
+     
     expect_snapshot(X)
+    expect_snapshot(SummarizedExperiment::assays(X)$sample1_sample2)
+    expect_snapshot(SummarizedExperiment::assays(X)$sample1_sample3)
+    expect_snapshot(SummarizedExperiment::assays(X)$sample2_sample3)
+    expect_snapshot(SummarizedExperiment::rowData(X))
+    expect_snapshot(SummarizedExperiment::colData(X))
 })
