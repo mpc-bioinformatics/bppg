@@ -194,16 +194,14 @@
         m2 <- m - sum(!is.na(fixedCi)) # number of free weights (not fixed)
         fixedCiSum <- sum(fixedCi, na.rm = TRUE)
         eqfun <- function(x) sum(x[(m + 1):(m + m2)]) + fixedCiSum - 1
-        LB <- c(rep(-1e+07, m), rep(0, m2))
-        UB <- c(rep(1e+07, m), rep(1, m2))
+        LB <- c(rep(-Inf, m), rep(0, m2))
         eqB <- 0
     } else {
         eqfun <- function(x) sum(x[(m + 1):(2 * m)]) - 1
-        LB <- c(rep(-1e+07, m), rep(0, m))
-        UB <- c(rep(1e+07, m), rep(1, m)) 
+        LB <- c(rep(-Inf, m), rep(0, m))
         eqB <- 0
     }
-    return(list(eqfun = eqfun, eqB = eqB, LB = LB, UB = UB))
+    return(list(eqfun = eqfun, eqB = eqB, LB = LB))
 }
 
 
@@ -352,9 +350,8 @@
 
     fun <- .calcObjectiveFunction(fixedCi, M, rjLog)
     constr <- .calcConstraints(fixedCi, m)
-    res <- Rsolnp::csolnp(pars = pars, fn = fun, lower = constr$LB,
-        upper = constr$UB,
-        eq_fn = constr$eqfun, eq_b = constr$eqB, control = control)
+    res <- Rsolnp::solnp(pars = pars, fun = fun, LB = constr$LB,
+        eqfun = constr$eqfun, eqB = constr$eqB, control = control)
     # extract optimal Ri and Ci values from optimization result
     RiLog <- res$pars[seq_len(m)]
     if (isCiFixed) {
