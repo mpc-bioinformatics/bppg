@@ -321,8 +321,8 @@
         RiLog <- mean(rjLog, na.rm = TRUE)
         RES <- .errorEquation(RiLog = c(RiLog),
             Ci = c(1.0), M = M, rjLog = rjLog)
-        result <- list(RiLog = c(RiLog), Ci = Ci, RES = RES, 
-            Tracking = c(1, RES$res_squ_err, RiLog, Ci),
+        result <- list(RiLog = c(RiLog), Ci = 1.0, RES = RES, 
+            Tracking = c(1, RES$res_squ_err, RiLog, 1.0),
             outer.iter = 0, convergence = 1)
         return(result)
     }
