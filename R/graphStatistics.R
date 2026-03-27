@@ -1,6 +1,7 @@
 # Functions in this file:
 # .calculateProteinNodeInfo
 # .calculateSubgraphCharcateristics
+>>>>>>>>> Temporary merge branch 2
 
 
 #' Table with information on each protein node

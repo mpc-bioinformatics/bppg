@@ -128,7 +128,7 @@ generateGraphsFromFASTA <- function(fasta,
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 #'
 #' graphs <- bppg::generateGraphsFromQuantData(D, fasta)
-
+# TODO include imputation options to work with other functions ins this branch!
 generateGraphsFromQuantData <- function(D,
     fasta,
     outpath = NULL,

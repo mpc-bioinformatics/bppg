@@ -22,13 +22,22 @@ test_that("test aggregateReplicates", {
     D1 <- bppg::aggregateReplicates(D = D, group = factor(rep(1:3, each = 3)))
 
     D2 <- bppg::aggregateReplicates(D = D,
-                                    group = factor(rep(1:3, each = 3)),
-                                    missing.limit = 0.35,
-                                    method = "median")
+        group = factor(rep(1:3, each = 3)),
+        missing.limit = 0.35,
+        method = "median")
+
+    # Test imputation
+    D3 <- bppg::aggregateReplicates(D = D, 
+        group = factor(rep(1:3, each = 3)),
+        imp_method = "min_2_impute")
+
+
     expect_snapshot(SummarizedExperiment::assays(D1)$intensities)
     expect_snapshot(SummarizedExperiment::assays(D2)$intensities)
     expect_snapshot(D1)
     expect_snapshot(D2)
+    expect_snapshot(SummarizedExperiment::assays(D3)$intensities)
+    expect_snapshot(D3)
 })
 
 
@@ -41,7 +50,7 @@ test_that("test calculatePeptideRatios", {
     for (i in 1:3) {
         set.seed(i)
         df[[paste0("sample", i)]] <- runif(10, min = 15, max = 25)
-        num_na <- sample(1:10, size = sample(0:2, 1))
+        num_na <- sample(1:10, size = sample(0:4, 1))
         df[[paste0("sample", i)]][num_na] <- NA
     }
     df <- as.data.frame(df)
@@ -50,12 +59,26 @@ test_that("test calculatePeptideRatios", {
     D <- SummarizedExperiment::SummarizedExperiment(
         assays = list(intensities = df),
         colData = data.frame(group = colnames(df)),
-        rowData = data.frame(Sequence = rownames(df)))
+        rowData = data.frame(Sequence = rownames(df)),
+        metadata = list(imputed = FALSE))
 
     D1 <- bppg::calculatePeptideRatios(D = D)
 
+    # Test imputed data
+    na_mask <- is.na(df)
+    df[is.na(df)] <- min(df, na.rm = TRUE) / 2
+    D <- SummarizedExperiment::SummarizedExperiment(
+        assays = list(intensities = df, maskImputation = na_mask),
+        colData = data.frame(group = colnames(df)),
+        rowData = data.frame(Sequence = rownames(df)),
+        metadata = list(imputed = TRUE))
+    
+    D2 <- bppg::calculatePeptideRatios(D = D)
+
     expect_snapshot(SummarizedExperiment::assays(D1)$logRatios)
     expect_snapshot(D1)
+    expect_snapshot(SummarizedExperiment::assays(D2)$logRatios)
+    expect_snapshot(D2)
 })
 
 

@@ -1,6 +1,7 @@
 # Functions in this file:
 # .extractIntensities
 # readMqPeptideTable
+# readSpecPeptideTable
 #
 
 

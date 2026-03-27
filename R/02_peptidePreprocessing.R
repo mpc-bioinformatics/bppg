@@ -55,6 +55,9 @@
 #'                       The column name containaining the peptide sequences
 #'                       in the rowData of the SummarizedExperiment.
 #'                       Default is "Sequence"
+#' @param imp_method      \strong{character} \cr
+#'                        Chosen imputation optional approach, current method: 
+#'                        "min_2_impute"
 #'
 #' @return A SummarizedExperiment with aggregated intensities ($intensities).
 #' @export
@@ -65,11 +68,12 @@
 #' group <- factor(rep(1:9, each = 3))
 #' aggregateReplicates(D, group = group)
 
-aggregateReplicates <- function(D,
+aggregateReplicates <- function(D, 
     group = NULL, 
     missing.limit = 0, 
     method = "mean",
-    seq_col = "Sequence") {
+    seq_col = "Sequence", 
+    imp_method = NULL) {
     checkmate::assertClass(D, "SummarizedExperiment")
     checkmate::assertDataFrame(SummarizedExperiment::assays(D)$intensities,
         all.missing=FALSE)
@@ -77,11 +81,12 @@ aggregateReplicates <- function(D,
     checkmate::assertNumber(missing.limit, lower = 0, upper = 1)
     checkmate::assertCharacter(method, pattern = "mean|sum|median")
     checkmate::assertCharacter(seq_col)
+    checkmate::assertCharacter(imp_method, pattern = "min_2_impute", null.ok = TRUE)
 
     id <- SummarizedExperiment::rowData(D)[, seq_col]
     intensities <- SummarizedExperiment::assays(D)$intensities
 
-    if (is.null(group)) {
+    if(is.null(group)){
         group <- factor(SummarizedExperiment::colData(D)$group)
     }
 
@@ -90,23 +95,57 @@ aggregateReplicates <- function(D,
         sum = rowSums,
         median = robustbase::rowMedians)
 
-    res <- vapply(1:length(levels(group)), function(i) {
+    # Track missingness and later imputed values
+    mask_impute <- vapply(1:length(levels(group)), function(i) {
+        X_tmp <- intensities[, group == levels(group)[i]]
+        X_tmp <- as.matrix(X_tmp)
+
+        missingx <- rowMeans(is.na(X_tmp))
+        mask_tmp <- c(missingx > missing.limit | missingx == 1)
+        return(mask_tmp)
+    }, FUN.VALUE = logical(length(id)))
+
+    res <- vapply(1:length(levels(group)), function(i, mask_impute) {
         X_tmp <- intensities[, group == levels(group)[i]]
         X_tmp <- as.matrix(X_tmp)
 
         res_tmp <- FUN(X_tmp, na.rm = TRUE)
-        missingx <- rowMeans(is.na(X_tmp))
-        res_tmp[missingx > missing.limit | missingx == 1] <- NA
-        res_tmp
-    }, numeric(length(id)))
+        res_tmp[mask_impute[, i]] <- NA
+
+        # apply imputation on missing values
+        if (!is.null(imp_method)) {
+            FUN_imp <- switch(imp_method,
+                min_2_impute = min_2_impute)
+            vals_imp <- FUN_imp(X_tmp, intensities) 
+            # only replace missing values
+            res_tmp[mask_impute[, i]] <- vals_imp[mask_impute[, i]]
+        }
+        return(res_tmp)
+    }, FUN.VALUE = numeric(length(id)), mask_impute)
 
     res <- as.data.frame(res)
     colnames(res) <- levels(group)
     rownames(res) <- id
-    res <- SummarizedExperiment::SummarizedExperiment(
-        assays = list(intensities = res),
-        colData = data.frame(group = colnames(res)),
-        rowData = SummarizedExperiment::rowData(D))
+
+    if (!is.null(imp_method)) {
+        mask_impute <- as.data.frame(mask_impute)
+        colnames(mask_impute) <- levels(group)
+        rownames(mask_impute) <- id
+        all_imputed <- apply(mask_impute, 1, all)
+        res <- SummarizedExperiment::SummarizedExperiment(
+            assays = list(intensities = res, maskImputation = mask_impute),
+            colData = data.frame(group = colnames(res)),
+            rowData = SummarizedExperiment::rowData(D),
+            metadata = list(imputed = TRUE))
+        res <- res[!all_imputed, ]
+
+    } else {
+        res <- SummarizedExperiment::SummarizedExperiment(
+            assays = list(intensities = res),
+            colData = data.frame(group = colnames(res)),
+            rowData = SummarizedExperiment::rowData(D),
+            metadata = list(imputed = FALSE))
+    }
     return(res)
 }
 
@@ -120,7 +159,7 @@ aggregateReplicates <- function(D,
 #' @return A SummarizedExperiment with log2 peptide ratios (logRatios).
 #' @export
 #'
-#' @examples
+#' @examples 
 #' file <- system.file("extdata", "peptides.txt", package = "bppg")
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 #' group <- factor(rep(1:9, each = 3))
@@ -131,9 +170,11 @@ calculatePeptideRatios <- function(D, group_levels = NULL) {
     checkmate::assertClass(D, "SummarizedExperiment")
     checkmate::assertDataFrame(SummarizedExperiment::assays(
         D)$intensities, all.missing=FALSE)
+    checkmate::assert_logical(S4Vectors::metadata(D)$imputed)
     checkmate::assertVector(group_levels, unique = TRUE, null.ok = TRUE)
 
     aggr_intensities <- SummarizedExperiment::assays(D)$intensities
+    # aber nur falls das nicht null ist 
 
     if (is.null(group_levels)) {
         group_levels <- SummarizedExperiment::colData(D)$group
@@ -143,7 +184,7 @@ calculatePeptideRatios <- function(D, group_levels = NULL) {
     groupCombinations <- utils::combn(group_levels, 2)
     peptide_log_ratios <- vapply(seq_len(ncol(groupCombinations)), function(i) {
         log2(.foldChange(D = aggr_intensities, X = groupCombinations[1, i],
-            Y = groupCombinations[2, i]))
+             Y = groupCombinations[2, i]))
     }, numeric(nrow(aggr_intensities)))
 
     peptide_log_ratios <- data.frame(peptide_log_ratios)
@@ -151,13 +192,34 @@ calculatePeptideRatios <- function(D, group_levels = NULL) {
         groupCombinations[2, ])
     rownames(peptide_log_ratios) <- rownames(aggr_intensities)
 
-    res <- SummarizedExperiment::SummarizedExperiment(
-        assays = list(logRatios = peptide_log_ratios),
-        colData = data.frame(comparison = colnames(peptide_log_ratios)),
-        rowData = SummarizedExperiment::rowData(D))
+    if (S4Vectors::metadata(D)$imputed) {
+        mask_impute <- SummarizedExperiment::assays(D)$maskImputation
+
+        fakeFCMask <- vapply(seq_len(ncol(groupCombinations)), function(i) {
+            mask_impute[, groupCombinations[1, i]] & 
+                mask_impute[, groupCombinations[2, i]] 
+        }, logical(nrow(aggr_intensities)))
+        peptide_log_ratios[fakeFCMask] <- NA # remove ratio of imputed values
+        imputedFCs <- vapply(seq_len(ncol(groupCombinations)), function(i) {
+            mask_impute[, groupCombinations[1, i]] | 
+                mask_impute[, groupCombinations[2, i]] 
+        }, logical(nrow(aggr_intensities)))
+
+        res <- SummarizedExperiment::SummarizedExperiment(
+            assays = list(logRatios = peptide_log_ratios,
+                maskImputation = imputedFCs), 
+            colData = data.frame(comparison = colnames(peptide_log_ratios)),
+            rowData = SummarizedExperiment::rowData(D),
+            metadata = list(imputed = TRUE))
+    } else {
+        res <- SummarizedExperiment::SummarizedExperiment(
+            assays = list(logRatios = peptide_log_ratios), 
+            colData = data.frame(comparison = colnames(peptide_log_ratios)),
+            rowData = SummarizedExperiment::rowData(D),
+            metadata = FALSE)
+    }
     return(res)
 }
-
 
 
 
