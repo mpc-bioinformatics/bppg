@@ -13,6 +13,8 @@
 #' @param params                \strong{data.frame} \cr
 #'                              parameters for color and size.
 #' @return symbole that can be used by igraph for plotting
+#' 
+#' @importFrom graphics symbols
 
 .myDiamond <- function(coords, v = NULL, params) {
     vertex.color <- params("vertex", "color")
@@ -47,6 +49,8 @@
 #'                                  ratios to.
 #' @return Graph with updated names
 #'
+#' @importFrom igraph layout_as_bipartite set_vertex_attr V
+#' @importFrom limma strsplit2
 .setNodeLabels <- function(G, node_labels_peptides, node_labels_proteins,
     round_digits) {
     Layout <- igraph::layout_as_bipartite(G)
@@ -65,11 +69,11 @@
     }
     ## nicht geordnete Zahlen
     if (node_labels_proteins == "numbers_noord") {
-        names_G[Layout[, 2] == 1] <- 1:length(pos_proteins)
+        names_G[Layout[, 2] == 1] <- seq_along(pos_proteins)
     }
 
     if (node_labels_peptides == "numbers") {
-        names_peptides <- 1:sum(Layout[, 2] == 0)
+        names_peptides <- seq_len(sum(Layout[, 2] == 0))
         names_G[Layout[, 2] == 0] <- names_peptides[rank(pos_peptides)]
     }
     if (node_labels_peptides == "pep_ratios") {
@@ -154,6 +158,9 @@
 #' G <- igraph::graph_from_biadjacency_matrix(biadjacency_matrix)
 #' plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
 #'
+#' @importFrom igraph add_shape canonical_permutation layout_as_bipartite 
+#'  permute V
+#' @importFrom graphics par plot
 # TODO way more than 50 lines
 # move costumination into sub functions?
 plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,

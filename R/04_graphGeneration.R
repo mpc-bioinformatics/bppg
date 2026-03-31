@@ -17,15 +17,10 @@
 
 #' Create Mapping signature for igraph::contract function.
 #'
+#' @inheritParams generateQuantGraphs
 #' @param edgelist                 \strong{data.frame} \cr
 #'                                 An edgelist eg. created with
 #'                                 [digestFASTA()].
-#' @param collProtNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the protein nodes
-#'                                 will be collapsed.
-#' @param collPeptNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the peptide nodes
-#'                                 will be collapsed.
 #'
 #' @return A list with two dataframes, one for peptide and one for protein
 #'         signatures.
@@ -39,6 +34,9 @@
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' edgelist <- digestFASTA(fasta)
 #' res <- bppg:::.getContractMapping(edgelist)
+#' 
+#' @importFrom stats aggregate
+
 .getContractMapping <- function(edgelist,
     collProtNodes = TRUE,
     collPeptNodes = FALSE) {
@@ -65,17 +63,12 @@
 
 #' Contracting of peptide and protein nodes.
 #'
+#' @inheritParams generateQuantGraphs
 #' @param G                        \strong{igraph graph} \cr
 #'                                 Bipartrite peptide protein graph.
 #' @param vMapping                 \strong{list} \cr
 #'                                 A list with two dataframes from
 #'                                 [.getContractMapping()].
-#' @param collProtNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the protein nodes
-#'                                 will be collapsed.
-#' @param collPeptNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the peptide nodes
-#'                                 will be collapsed.
 #'
 #' @return An edgelist with collapsed protein and/or peptide nodes.
 #'
@@ -92,6 +85,9 @@
 #' igraph::V(G)[igraph::V(G)$name %in% edgelist[, 1]]$type <- TRUE
 #' igraph::V(G)[igraph::V(G)$name %in% edgelist[, 2]]$type <- FALSE
 #' res <- bppg:::.contractGraph(G, vMapping)
+#' 
+#' @importFrom igraph contract set_vertex_attr simplify V
+#' @importFrom stats na.omit
 
 .contractGraph <- function(G, vMapping,
     collProtNodes,
@@ -163,17 +159,11 @@
 
 #' Generate bipartite peptide-protein graphs from a list of digested proteins
 #' via an edgelist. Peptide and protein nodes can be contracted.
-#'
+#' @inheritParams generateQuantGraphs
 #' @param edgelist                 \strong{data.frame} \cr
 #'                                 An edgelist, output from [digestFASTA()].
 #'                                 Quant data needs to be in the column
 #'                                 \strong{$pep_logRatio}.
-#' @param collProtNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the protein nodes
-#'                                 will be contracted.
-#' @param collPeptNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the peptide nodes
-#'                                 will be contracted.
 #' @return A list of subgraphs as igraph objects.
 #' @export
 #'
@@ -185,6 +175,8 @@
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' edgelist <- digestFASTA(fasta)
 #' res <- bppg::generateGraphsFromEdgelist(edgelist)
+#' 
+#' @importFrom igraph graph_from_edgelist set_vertex_attr V
 #'
 generateGraphsFromEdgelist <- function(edgelist,
     collProtNodes = FALSE,
@@ -199,7 +191,7 @@ generateGraphsFromEdgelist <- function(edgelist,
     }
 
     #generate graph from edge matrix
-    G <- igraph::graph_from_edgelist(as.matrix(edgelist[, 1:2]),
+    G <- igraph::graph_from_edgelist(as.matrix(edgelist[, c(1,2)]),
         directed = FALSE)
 
     #assign vertex types to proteins and peptides for the graph to be bipartite

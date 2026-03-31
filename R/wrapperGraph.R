@@ -25,7 +25,7 @@
 #' @param verbose     \strong{logical} \cr
 #'                    If \code{TRUE}, additional information on each iteration
 #'                    of the optimization is printed
-#' @param ...                     Additional arguments to bppg::digestFASTA()
+#' @param ...         Additional arguments to bppg::digestFASTA()
 #'
 #' @return Subgraphs (i.e. connected components) from the graph generated from
 #'         the FASTA file.
@@ -37,6 +37,8 @@
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' graphs <- bppg::generateGraphsFromFASTA(fasta)
 #'
+#' @importFrom checkmate assertPathForOutput
+#' @importFrom utils write.table
 generateGraphsFromFASTA <- function(fasta,
     collProtNodes = TRUE,
     collPeptNodes = TRUE,
@@ -131,6 +133,11 @@ generateGraphsFromFASTA <- function(fasta,
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 #'
 #' graphs <- bppg::generateGraphsFromQuantData(D, fasta)
+#' 
+#' @importFrom checkmate assertPathForOutput
+#' @importFrom openxlsx write.xlsx
+#' @importFrom limma strsplit2
+#' 
 # TODO include imputation options to work with other functions ins this branch!
 generateGraphsFromQuantData <- function(D,
     fasta,
@@ -150,7 +157,7 @@ generateGraphsFromQuantData <- function(D,
     if (verbose) message("Digesting FASTA file...")
     edgelist <- digestFASTA(fasta, missed_cleavages = missed_cleavages,
         min_aa = min_aa, max_aa = max_aa, protOrigin = protOrigin, 
-        verbose = verbose)
+        verbose = verbose, ...)
 
     if (!is.null(outpath)) {
         checkmate::assertPathForOutput(outpath, overwrite = TRUE)

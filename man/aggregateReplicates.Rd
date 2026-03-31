@@ -15,11 +15,13 @@ aggregateReplicates(
 }
 \arguments{
 \item{D}{\strong{SummarizedExperiment} \cr
-The data experiment containing the peptide intensities.}
+SummarizedExperiment Dataset containing peptide
+intensities, e.g. the result of \link{readMqPeptideTable} or
+\link{normalizePeptideIntensities}.}
 
 \item{group}{\strong{character factor} \cr
-The groups for aggregation, if not already in
-SummarizedExperiment::colData(D)$group.}
+The groups per sample for aggregation, if not already
+in SummarizedExperiment::colData(D)$group.}
 
 \item{missing.limit}{\strong{numeric} \cr
 The proportion of missing values that is allowed
@@ -39,6 +41,7 @@ Chosen imputation optional approach, current method:
 "min_2_impute"}
 }
 \value{
+\strong{SummarizedExperiment} \cr
 A SummarizedExperiment with aggregated intensities ($intensities).
 }
 \description{
@@ -49,4 +52,5 @@ file <- system.file("extdata", "peptides.txt", package = "bppg")
 D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 group <- factor(rep(1:9, each = 3))
 aggregateReplicates(D, group = group)
+
 }

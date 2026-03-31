@@ -17,6 +17,8 @@
 #'                                  If \code{TRUE}, "Intensity." or
 #'                                  "LFQ.intensity." are removed
 #' @return returns intensity dataframe
+#' 
+#' @importFrom stringr str_replace
 #'
 .extractIntensities <- function(D, col_pattern, rename_columns){
     intensities <- D[, grep(col_pattern, colnames(D))]
@@ -53,7 +55,7 @@
 #'                                  except peptide sequence and intensities
 #' @param verbose                   \strong{logical} \cr
 #'                                  If \code{TRUE}, additional information on
-#'                                  each iteration of the optimization is 
+#'                                  the data extraction is 
 #'                                  printed
 #' @return A SummarizedExperiment with intensities, sequences, and optional data
 #'         for the rowData dataframe.
@@ -62,6 +64,10 @@
 #' @examples
 #' file <- system.file("extdata", "peptides.txt", package = "bppg")
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' 
+#' @importFrom checkmate assertFileExists assertFlag assertVector
+#' @importFrom utils read.table
+#' @importFrom SummarizedExperiment SummarizedExperiment
 
 readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
     remove_contaminants = FALSE,

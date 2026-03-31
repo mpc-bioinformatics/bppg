@@ -8,8 +8,8 @@ peptides for proteins.}
 .addUniquenessAttributes(G)
 }
 \arguments{
-\item{G}{\strong{igraph graph object} \cr
-A peptide-protein graph.}
+\item{G}{\strong{igraph graph} \cr
+Bipartrite peptide protein graph.}
 }
 \value{
 A graph with 2 additional vertex attributes, uniqueness and
@@ -28,6 +28,7 @@ edgelist <- digestFASTA(fasta)
 graph <- bppg::generateGraphsFromEdgelist(edgelist)
 
 res <- bppg:::.addUniquenessAttributes(graph[[1]])
+
 }
 \seealso{
 \code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}, \code{\link[=generateQuantGraphs]{generateQuantGraphs()}}

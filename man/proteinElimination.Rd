@@ -45,17 +45,17 @@ It is the current list of protein nodes relative
 to the original graph.}
 
 \item{res_best}{\strong{list} \cr
-A list containing the currently best solution including
-the protein node combination, the error term and
-the corresponding graph object.}
+A list containing the currently best solution
+including the protein node combination, the error
+term and the corresponding graph object.}
 }
 \value{
 list containing the following elements:
 \item{min_error_ref}{reference error term of the whole graph}
 \item{protsOriginIDs }{list of all available protein nodes in the beginning}
 \item{resDF}{dataframe with results of all iterations}
-\item{res_best}{List of the overall best solution. The graph object(s) in this
-list can directly be used by \link{iterateOverCi}.}
+\item{res_best}{List of the overall best solution. The graph object(s) in
+this list can directly be used by \link{iterateOverCi}.}
 }
 \description{
 Tries to recursively remove protein nodes from graph while keeping the error
@@ -77,6 +77,7 @@ file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
 graphs <- readRDS(file)
 G <- graphs$sample1_sample2[[2]]
 proteinElimination(G)
+
 }
 \seealso{
 \code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}}
