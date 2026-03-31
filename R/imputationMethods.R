@@ -11,10 +11,11 @@ min_2_impute <- function(D, intensities) {
     lod <- function(x) {
         # row wise min value halfed, group specific
         # this is currently not the case
-        imp_val <- min(x[-1], na.rm = TRUE) / 2
-        if (is.na(imp_val)) {
-            imp_val <- min_row / 2
+        if (all(is.na(x[-1]))) {
+            imp_val <- x[1] / 2
             # row wise min value halfed, dataset specific
+        } else {
+            imp_val <- min(x[-1], na.rm = TRUE) / 2 # returns inf if all NA
         }
         return(imp_val)
     }

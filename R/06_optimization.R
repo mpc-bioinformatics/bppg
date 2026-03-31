@@ -39,27 +39,27 @@
 #' rj <- c(0.6, 1.2)
 #' bppg:::.errorEquation(Ri, Ci, M, rj)
 .errorEquation <- function(RiLog,
-    Ci,
-    M,
-    rjLog) {
-    m <- length(RiLog) ## number of proteins
-    n <- length(rjLog) ## number of peptides
-    ## backtransformation
-    Ri <- 2^RiLog
-    ## multiply the delta values (biadjacency matrix M) with their weights Ci
-    W <- sweep(M, MARGIN = 2, Ci, "*")
-    ## sum of the weights per peptide
-    W_sum <- rowSums(W)
-    ## divide the weights by the sum of the weights per peptide
-    W <- as.matrix(sweep(W, 1, W_sum, "/"))
-    ## multiply Ri with the corresponding weight
-    res_Mat <- sweep(W, MARGIN = 2, Ri, '*')
-    ## error term per peptide (on log-scale)
-    res_equ <- rjLog - log2(rowSums(res_Mat))
-    ## sum of squared error terms
-    res_squ_err <- sum(res_equ^2)
-    return(list(res_Mat = res_Mat, res_equ = res_equ,
-            res_squ_err = res_squ_err, W = W))
+	Ci,
+	M,
+	rjLog) {
+	m <- length(RiLog) ## number of proteins
+	n <- length(rjLog) ## number of peptides
+	## backtransformation
+	Ri <- 2^RiLog
+	## multiply the delta values (biadjacency matrix M) with their weights Ci
+	W <- sweep(M, MARGIN = 2, Ci, "*")
+	## sum of the weights per peptide
+	W_sum <- rowSums(W)
+	## divide the weights by the sum of the weights per peptide
+	W <- as.matrix(sweep(W, 1, W_sum, "/"))
+	## multiply Ri with the corresponding weight
+	res_Mat <- sweep(W, MARGIN = 2, Ri, '*')
+	## error term per peptide (on log-scale)
+	res_equ <- rjLog - log2(rowSums(res_Mat))
+	## sum of squared error terms
+	res_squ_err <- sum(res_equ^2)
+	return(list(res_Mat = res_Mat, res_equ = res_equ,
+			res_squ_err = res_squ_err, W = W))
 }
 
 
@@ -89,27 +89,27 @@
 #' # with fixed Ci -> fixes these and equal weight for the others
 #' bppg:::.initializeCi(fixedCi = c(NA, 0.8, NA), m = 3)
 .initializeCi <- function(fixedCi,
-                          m) {
-    isCiFixed <- !is.null(fixedCi)
-    whichCiFixed <- which(!is.na(fixedCi))
-    if (sum(fixedCi, na.rm = TRUE) > 1) {
-        stop("Sum of fixed Ci exceeds 1.")
-    }
-    ## Initialization of Ci:
-    if (!isCiFixed) {
-        ## the algorithm starts with equal weights for each protein
-        Ci_start <- rep(1 / m, m)
-    } else {
-        ## if at least one Ci is fixed, the algorithm distributes the remaining
-        ## weight equally among the non-fixed proteins
-        m2 <- m - length(whichCiFixed)
-        ## sum of fixed Ci (as all Ci have to sum up tp 1)
-        fixedCiSum <- sum(fixedCi, na.rm = TRUE)
-        Ci_start <- fixedCi
-        ## starting values for the remaining Ci values
-        Ci_start[is.na(Ci_start)] <- (1 - fixedCiSum) / m2
-    }
-    return(Ci_start)
+						  m) {
+	isCiFixed <- !is.null(fixedCi)
+	whichCiFixed <- which(!is.na(fixedCi))
+	if (sum(fixedCi, na.rm = TRUE) > 1) {
+		stop("Sum of fixed Ci exceeds 1.")
+	}
+	## Initialization of Ci:
+	if (!isCiFixed) {
+		## the algorithm starts with equal weights for each protein
+		Ci_start <- rep(1 / m, m)
+	} else {
+		## if at least one Ci is fixed, the algorithm distributes the remaining
+		## weight equally among the non-fixed proteins
+		m2 <- m - length(whichCiFixed)
+		## sum of fixed Ci (as all Ci have to sum up tp 1)
+		fixedCiSum <- sum(fixedCi, na.rm = TRUE)
+		Ci_start <- fixedCi
+		## starting values for the remaining Ci values
+		Ci_start[is.na(Ci_start)] <- (1 - fixedCiSum) / m2
+	}
+	return(Ci_start)
 }
 
 
@@ -136,18 +136,18 @@
 #' bppg:::.initializeRi(M, rjLog)
 #'
 .initializeRi <- function(M, rjLog) {
-    m <- ncol(M)
-    RiLog_start <- rep(NA, m)
-    for (j in 1:m) { # for each protein
-        belongsToProt <- (M[, j] == 1) # peptides belonging to protein j
-        uniquePep <- (rowSums(M) == 1) & (M[, j] == 1)
-        if (any(uniquePep)) {
-            RiLog_start[j] <- mean(rjLog[uniquePep & belongsToProt], na.rm = TRUE)
-        } else {
-            RiLog_start[j] <- mean(rjLog[belongsToProt], na.rm = TRUE)
-        }
-    }
-    return(RiLog_start)
+	m <- ncol(M)
+	RiLog_start <- rep(NA, m)
+	for (j in 1:m) { # for each protein
+		belongsToProt <- (M[, j] == 1) # peptides belonging to protein j
+		uniquePep <- (rowSums(M) == 1) & (M[, j] == 1)
+		if (any(uniquePep)) {
+			RiLog_start[j] <- mean(rjLog[uniquePep & belongsToProt], na.rm = TRUE)
+		} else {
+			RiLog_start[j] <- mean(rjLog[belongsToProt], na.rm = TRUE)
+		}
+	}
+	return(RiLog_start)
 }
 
 
@@ -190,18 +190,18 @@
 #' bppg:::.calcConstraints(fixedCi = c(NA, 0.8, NA), m = 3)
 #'
 .calcConstraints <- function(fixedCi, m) {
-    if (!is.null(fixedCi)) {
-        m2 <- m - sum(!is.na(fixedCi)) # number of free weights (not fixed)
-        fixedCiSum <- sum(fixedCi, na.rm = TRUE)
-        eqfun <- function(x) sum(x[(m + 1):(m + m2)]) + fixedCiSum - 1
-        LB <- c(rep(-Inf, m), rep(0, m2))
-        eqB <- 0
-    } else {
-        eqfun <- function(x) sum(x[(m + 1):(2 * m)]) - 1
-        LB <- c(rep(-Inf, m), rep(0, m))
-        eqB <- 0
-    }
-    return(list(eqfun = eqfun, eqB = eqB, LB = LB))
+	if (!is.null(fixedCi)) {
+		m2 <- m - sum(!is.na(fixedCi)) # number of free weights (not fixed)
+		fixedCiSum <- sum(fixedCi, na.rm = TRUE)
+		eqfun <- function(x) sum(x[(m + 1):(m + m2)]) + fixedCiSum - 1
+		LB <- c(rep(-Inf, m), rep(0, m2))
+		eqB <- 0
+	} else {
+		eqfun <- function(x) sum(x[(m + 1):(2 * m)]) - 1
+		LB <- c(rep(-Inf, m), rep(0, m))
+		eqB <- 0
+	}
+	return(list(eqfun = eqfun, eqB = eqB, LB = LB))
 }
 
 
@@ -238,27 +238,27 @@
 #'
 #'
 .calcObjectiveFunction <- function(fixedCi, M, rjLog) {
-    m <- ncol(M)
-    if (!is.null(fixedCi)) {
-        m2 <- m - sum(!is.na(fixedCi)) # number of free Ci (not fixed)
-        fun <- function(x) {
-            RiLog_tmp <- x[1:m]
-            Ci_tmp <- fixedCi
-            Ci_tmp[is.na(fixedCi)] <- x[(m + 1):(m + m2)]
-            res <- .errorEquation(RiLog = RiLog_tmp, Ci = Ci_tmp, M = M,
-                                  rjLog = rjLog)$res_squ_err
-            return(res)
-        }
-    } else {
-        fun <- function(x) {
-            RiLog_tmp <- x[1:m]
-            Ci_tmp <- x[(m + 1):(2 * m)]
-            res <- .errorEquation(RiLog = RiLog_tmp, Ci = Ci_tmp, M = M,
-                                  rjLog = rjLog)$res_squ_err
-            return(res)
-        }
-    }
-    return(fun)
+	m <- ncol(M)
+	if (!is.null(fixedCi)) {
+		m2 <- m - sum(!is.na(fixedCi)) # number of free Ci (not fixed)
+		fun <- function(x) {
+			RiLog_tmp <- x[1:m]
+			Ci_tmp <- fixedCi
+			Ci_tmp[is.na(fixedCi)] <- x[(m + 1):(m + m2)]
+			res <- .errorEquation(RiLog = RiLog_tmp, Ci = Ci_tmp, M = M,
+								  rjLog = rjLog)$res_squ_err
+			return(res)
+		}
+	} else {
+		fun <- function(x) {
+			RiLog_tmp <- x[1:m]
+			Ci_tmp <- x[(m + 1):(2 * m)]
+			res <- .errorEquation(RiLog = RiLog_tmp, Ci = Ci_tmp, M = M,
+								  rjLog = rjLog)$res_squ_err
+			return(res)
+		}
+	}
+	return(fun)
 }
 
 
@@ -301,58 +301,58 @@
 #' bppg:::.minimizeSquaredError(G)
 #'
 .minimizeSquaredError <- function(G,
-    fixedCi = NULL,
-    verbose = FALSE,
-    control = list()
-    ) {
-    M <- igraph::as_biadjacency_matrix(G)
-    m <- ncol(M) ## number of proteins
-    n <- nrow(M) ## number of peptides
-    rjLog <- stats::na.omit(igraph::vertex_attr(G, "pep_logRatio"))
-    if (is.null(rjLog)) stop("G does not contain peptide ratios.")
-    checkmate::assertNumeric(rjLog)
-    checkmate::assertNumeric(fixedCi, len = m, lower = 0, upper = 1,
-                             null.ok = TRUE)
-    stopifnot(sum(fixedCi, na.rm = TRUE) <= 1)
-    if (!verbose) control <- c(control, trace = 0)
-    isCiFixed <- !is.null(fixedCi)
-    Ci_start <- .initializeCi(fixedCi, m)
-    RiLog_start <- .initializeRi(M, rjLog)
-    if (isCiFixed) {
-        whichCiFixed <- which(!is.na(fixedCi))
-        pars <- c(RiLog_start, Ci_start[-whichCiFixed])
-    } else {
-        pars <- c(RiLog_start, Ci_start)
-    }
-    ## initial error term
-    RES <- .errorEquation(RiLog = RiLog_start, Ci = Ci_start, M = M, rjLog = rjLog)
+	fixedCi = NULL,
+	verbose = FALSE,
+	control = list()
+	) {
+	M <- igraph::as_biadjacency_matrix(G)
+	m <- ncol(M) ## number of proteins
+	n <- nrow(M) ## number of peptides
+	rjLog <- stats::na.omit(igraph::vertex_attr(G, "pep_logRatio"))
+	if (is.null(rjLog)) stop("G does not contain peptide ratios.")
+	checkmate::assertNumeric(rjLog)
+	checkmate::assertNumeric(fixedCi, len = m, lower = 0, upper = 1,
+							 null.ok = TRUE)
+	stopifnot(sum(fixedCi, na.rm = TRUE) <= 1)
+	if (!verbose) control <- c(control, trace = 0)
+	isCiFixed <- !is.null(fixedCi)
+	Ci_start <- .initializeCi(fixedCi, m)
+	RiLog_start <- .initializeRi(M, rjLog)
+	if (isCiFixed) {
+		whichCiFixed <- which(!is.na(fixedCi))
+		pars <- c(RiLog_start, Ci_start[-whichCiFixed])
+	} else {
+		pars <- c(RiLog_start, Ci_start)
+	}
+	## initial error term
+	RES <- .errorEquation(RiLog = RiLog_start, Ci = Ci_start, M = M, rjLog = rjLog)
 
-    track_colnames <- c("iter", "squ_err", paste0("RLog", 1:m), paste0("C", 1:m))
-    Tracking <- matrix(c(0, RES$res_squ_err, RiLog_start, Ci_start), nrow = 1)
-    Tracking <- as.data.frame(Tracking)
-    colnames(Tracking) <- track_colnames
+	track_colnames <- c("iter", "squ_err", paste0("RLog", 1:m), paste0("C", 1:m))
+	Tracking <- matrix(c(0, RES$res_squ_err, RiLog_start, Ci_start), nrow = 1)
+	Tracking <- as.data.frame(Tracking)
+	colnames(Tracking) <- track_colnames
 
-    fun <- .calcObjectiveFunction(fixedCi, M, rjLog)
-    constr <- .calcConstraints(fixedCi, m)
-    res <- Rsolnp::solnp(pars = pars, fun = fun, LB = constr$LB,
-                         eqfun = constr$eqfun, eqB = constr$eqB,
-                         control = control)
-    # extract optimal Ri and Ci values from optimization result
-    RiLog <- res$pars[1:m]
-    if (isCiFixed) {
-        m2 <- m - sum(!is.na(fixedCi)) # number of free weights (not fixed)
-        Ci_tmp <- res$pars[(m + 1):(m + m2)]
-        Ci <- fixedCi
-        Ci[is.na(Ci)] <- Ci_tmp
-    } else {
-        Ci <- res$pars[(m + 1):(2 * m)]
-    }
-    ## update RES
-    RES <- .errorEquation(RiLog = RiLog, Ci = Ci, M = M, rjLog = rjLog)
-    Tracking <- rbind(Tracking, c(1, RES$res_squ_err, RiLog, Ci))
-    result <- list(RiLog = RiLog, Ci = Ci, RES = RES, Tracking = Tracking,
-        outer.iter = res$outer.iter, convergence = res$convergence)
-    return(result)
+	fun <- .calcObjectiveFunction(fixedCi, M, rjLog)
+	constr <- .calcConstraints(fixedCi, m)
+	res <- Rsolnp::solnp(pars = pars, fun = fun, LB = constr$LB,
+						 eqfun = constr$eqfun, eqB = constr$eqB,
+						 control = control)
+	# extract optimal Ri and Ci values from optimization result
+	RiLog <- res$pars[1:m]
+	if (isCiFixed) {
+		m2 <- m - sum(!is.na(fixedCi)) # number of free weights (not fixed)
+		Ci_tmp <- res$pars[(m + 1):(m + m2)]
+		Ci <- fixedCi
+		Ci[is.na(Ci)] <- Ci_tmp
+	} else {
+		Ci <- res$pars[(m + 1):(2 * m)]
+	}
+	## update RES
+	RES <- .errorEquation(RiLog = RiLog, Ci = Ci, M = M, rjLog = rjLog)
+	Tracking <- rbind(Tracking, c(1, RES$res_squ_err, RiLog, Ci))
+	result <- list(RiLog = RiLog, Ci = Ci, RES = RES, Tracking = Tracking,
+		outer.iter = res$outer.iter, convergence = res$convergence)
+	return(result)
 }
 
 
@@ -378,22 +378,22 @@
 #' \item{res_Ri_Ci}{multiple values: estimated RiLog and Ci values}
 #' \item{error}{error term}
 .calcResultGridpoint <- function(j, gridpoint, cnames, G, n, ...) {
-    Ci_tmp <- rep(NA, n)
-    Ci_tmp[j] <- gridpoint
+	Ci_tmp <- rep(NA, n)
+	Ci_tmp[j] <- gridpoint
 
-    RES <- try({
-        .minimizeSquaredError(G, fixedCi = Ci_tmp, ...)
-    })
-    if ("try-error" %in% class(RES)) {
-        res_Ri_Ci <- rep(NA, length(cnames))
-        error <- NA
-    } else {
-        res_Ri_Ci <- c(RES$RiLog, RES$Ci)
-    }
-    names(res_Ri_Ci) <- cnames
-    error <- RES$RES$res_squ_err
-    result <- c(protein = j, grid = gridpoint, res_Ri_Ci, error = error)
-    return(result)
+	RES <- try({
+		.minimizeSquaredError(G, fixedCi = Ci_tmp, ...)
+	})
+	if ("try-error" %in% class(RES)) {
+		res_Ri_Ci <- rep(NA, length(cnames))
+		error <- NA
+	} else {
+		res_Ri_Ci <- c(RES$RiLog, RES$Ci)
+	}
+	names(res_Ri_Ci) <- cnames
+	error <- RES$RES$res_squ_err
+	result <- c(protein = j, grid = gridpoint, res_Ri_Ci, error = error)
+	return(result)
 }
 
 
@@ -455,51 +455,51 @@
 #' # small example with a small grid size
 #' iterateOverCi(G, gridSize = 100)
 iterateOverCi <- function(G,
-    gridStart = 0,
-    gridStop = 1,
-    gridSize = 1000,
-    omit_grid_borders = TRUE,
-    extend_grid_at_borders = FALSE,
-    verbose = FALSE,
-    control = list()) {
-    checkmate::assertClass(G, classes = c("igraph"))
-    checkmate::checkTRUE(igraph::is_bipartite(G))
-    checkmate::assertIntegerish(gridSize, lower = 1)
-    checkmate::assertFlag(omit_grid_borders)
-    checkmate::assertFlag(extend_grid_at_borders)
-    checkmate::assertNumeric(gridStart, lower = 0, upper = 1)
-    checkmate::assertNumeric(gridStop, lower = 0, upper = 1)
-    checkmate::assertFlag(verbose)
-    checkmate::assertList(control)
+	gridStart = 0,
+	gridStop = 1,
+	gridSize = 1000,
+	omit_grid_borders = TRUE,
+	extend_grid_at_borders = FALSE,
+	verbose = FALSE,
+	control = list()) {
+	checkmate::assertClass(G, classes = c("igraph"))
+	checkmate::checkTRUE(igraph::is_bipartite(G))
+	checkmate::assertIntegerish(gridSize, lower = 1)
+	checkmate::assertFlag(omit_grid_borders)
+	checkmate::assertFlag(extend_grid_at_borders)
+	checkmate::assertNumeric(gridStart, lower = 0, upper = 1)
+	checkmate::assertNumeric(gridStop, lower = 0, upper = 1)
+	checkmate::assertFlag(verbose)
+	checkmate::assertList(control)
 
-    n <- sum(igraph::V(G)$type) ## number of protein groups
-    if (n == 1) { # special case for only a single protein group in the graph
-        RES <-  .minimizeSquaredError(G, fixedCi = NULL, verbose = verbose,
-                                      control = control)
-        result <- data.frame(protein = 1, grid = 1, RLog1 = RES$RiLog,
-                             C1 = 1, error = RES$RES$res_squ_err)
-        return(result)
-    } else { # n > 1
-        grid <- seq(gridStart, gridStop, length.out = gridSize + 1)
-        if (extend_grid_at_borders) {
-            grid_min <- grid[2] ## 2nd element, as first is 0
-            grid_max <- grid[length(grid) - 1] ## 2nd to last, as last element is 1
-            grid_extend_min <- seq(gridStart, grid_min, length.out = 11)
-            grid_extend_max <- seq(grid_max, gridStop, length.out = 11)
-            grid <- sort(unique(c(grid, grid_extend_min, grid_extend_max)))
-        }
-        if (omit_grid_borders) grid <- grid[-c(1, length(grid))]
-        cnames <- c(paste0("RLog", 1:n), paste0("C", 1:n))
-        if (!verbose) {
-            pbo <- pbapply::pboptions(type = "none")
-            on.exit(pbapply::pboptions(pbo), add = TRUE)
-        }
-        result <- pbapply::pbmapply(FUN = .calcResultGridpoint,
-                                    j = rep(1:n, each = length(grid)), gridpoint = grid,
-                                    MoreArgs = list(cnames = cnames, G = G, n = n,
-                                                    verbose = verbose, control = control))
-        return(as.data.frame(t(result)))
-    }
+	n <- sum(igraph::V(G)$type) ## number of protein groups
+	if (n == 1) { # special case for only a single protein group in the graph
+		RES <-  .minimizeSquaredError(G, fixedCi = NULL, verbose = verbose,
+									  control = control)
+		result <- data.frame(protein = 1, grid = 1, RLog1 = RES$RiLog,
+							 C1 = 1, error = RES$RES$res_squ_err)
+		return(result)
+	} else { # n > 1
+		grid <- seq(gridStart, gridStop, length.out = gridSize + 1)
+		if (extend_grid_at_borders) {
+			grid_min <- grid[2] ## 2nd element, as first is 0
+			grid_max <- grid[length(grid) - 1] ## 2nd to last, as last element is 1
+			grid_extend_min <- seq(gridStart, grid_min, length.out = 11)
+			grid_extend_max <- seq(grid_max, gridStop, length.out = 11)
+			grid <- sort(unique(c(grid, grid_extend_min, grid_extend_max)))
+		}
+		if (omit_grid_borders) grid <- grid[-c(1, length(grid))]
+		cnames <- c(paste0("RLog", 1:n), paste0("C", 1:n))
+		if (!verbose) {
+			pbo <- pbapply::pboptions(type = "none")
+			on.exit(pbapply::pboptions(pbo), add = TRUE)
+		}
+		result <- pbapply::pbmapply(FUN = .calcResultGridpoint,
+			j = rep(1:n, each = length(grid)), gridpoint = grid,
+			MoreArgs = list(cnames = cnames, G = G, n = n,
+							verbose = verbose, control = control))
+		return(as.data.frame(t(result)))
+	}
 }
 
 
@@ -520,34 +520,34 @@ iterateOverCi <- function(G,
 #' estimate for Ci (single value or min/max).
 #'
 .analyseResultSingleProt <- function(protNr, resProt,
-                                     error_tol = 1e-10, ratioLog_tol = 1e-6) {
-    proteins <- unique(resProt$protein)
-    minError <- min(resProt$error)
-    indMinError <- which(abs(minError - resProt$error) <= error_tol)
+									 error_tol = 1e-10, ratioLog_tol = 1e-6) {
+	proteins <- unique(resProt$protein)
+	minError <- min(resProt$error)
+	indMinError <- which(abs(minError - resProt$error) <= error_tol)
 
-    RLog_tmp <- resProt$RLog[indMinError]
-    C_tmp <- resProt$C[indMinError]
-    e_tmp <- resProt$error[indMinError]
+	RLog_tmp <- resProt$RLog[indMinError]
+	C_tmp <- resProt$C[indMinError]
+	e_tmp <- resProt$error[indMinError]
 
-    if (length(indMinError) == 1) {
-        # case 3: single solution with one optimal data point
-        res_tmp <- c(minError, RLog_tmp, NA, NA, C_tmp, NA, NA, 3)
-    } else {
-        if (abs(diff(range((RLog_tmp)))) <= ratioLog_tol) {
-            # case 1 and 4: RLog is almost constant
-            RLog_tmp_mean_rounded <- round(mean(RLog_tmp), digits = ceiling(-log10(ratioLog_tol)))
-            res_tmp <- c(mean(e_tmp), RLog_tmp_mean_rounded, NA, NA, NA, min(C_tmp), max(C_tmp), NA)
-            res_tmp[8] <- ifelse(length(indMinError) == nrow(resProt), 1, 4) # all(R[ind_min_tol] == 0) |???
-        } else {
-            # case 2 and 5: range solution for Rlog
-            res_tmp <- c(mean(e_tmp), NA, min(RLog_tmp), max(RLog_tmp), NA, min(C_tmp), max(C_tmp), NA)
-            res_tmp[8] <- ifelse(length(indMinError) == nrow(resProt), 2, 5)
-        }
-    }
+	if (length(indMinError) == 1) {
+		# case 3: single solution with one optimal data point
+		res_tmp <- c(minError, RLog_tmp, NA, NA, C_tmp, NA, NA, 3)
+	} else {
+		if (abs(diff(range((RLog_tmp)))) <= ratioLog_tol) {
+			# case 1 and 4: RLog is almost constant
+			RLog_tmp_mean_rounded <- round(mean(RLog_tmp), digits = ceiling(-log10(ratioLog_tol)))
+			res_tmp <- c(mean(e_tmp), RLog_tmp_mean_rounded, NA, NA, NA, min(C_tmp), max(C_tmp), NA)
+			res_tmp[8] <- ifelse(length(indMinError) == nrow(resProt), 1, 4) # all(R[ind_min_tol] == 0) |???
+		} else {
+			# case 2 and 5: range solution for Rlog
+			res_tmp <- c(mean(e_tmp), NA, min(RLog_tmp), max(RLog_tmp), NA, min(C_tmp), max(C_tmp), NA)
+			res_tmp[8] <- ifelse(length(indMinError) == nrow(resProt), 2, 5)
+		}
+	}
 
-    res_names <- c("error_min", "RiLog", "RiLog_min", "RiLog_max", "Ci", "Ci_min", "Ci_max", "case")
-    names(res_tmp) <- res_names
-    return(res_tmp)
+	res_names <- c("error_min", "RiLog", "RiLog_min", "RiLog_max", "Ci", "Ci_min", "Ci_max", "case")
+	names(res_tmp) <- res_names
+	return(res_tmp)
 
 }
 
@@ -599,60 +599,65 @@ iterateOverCi <- function(G,
 #' res <- iterateOverCi(G, gridSize = 100)
 #' automatedAnalysisIteratedCi(G, res)
 automatedAnalysisIteratedCi <- function(G,
-                                        res,
-                                        use_results_from_other_proteins = FALSE,
-                                        verbose = FALSE,
-                                        job = NULL,
-                                        error_tol = 1e-10,
-                                        ratioLog_tol = 1e-6) {
+										res,
+										use_results_from_other_proteins = FALSE,
+										verbose = FALSE,
+										job = NULL,
+										error_tol = 1e-10,
+										ratioLog_tol = 1e-6) {
 
-    n <- sum(igraph::V(G)$type) ## number of protein groups
-    accessions <- igraph::V(G)$name[igraph::V(G)$type]
+	n <- sum(igraph::V(G)$type) ## number of protein groups
+	protData <- data.frame(accessions = igraph::V(G)$name[igraph::V(G)$type])
 
-    if (!is.null(job)) {
-        graphID <- job$pars$prob.pars$k
-        comparison <- job$prob.name
-        job.id <- job$job.id
-    } else {
-        graphID <- NA
-        comparison <- NA
-        job.id <- NA
-    }
+	if (!is.null(igraph::V(G)$imputed)) {
+		protData$imputed <- igraph::V(G)$imputed[igraph::V(G)$type]
+	} 
+	
 
-    f <- function(x, res, error_tol, ratioLog_tol, use_results_from_other_proteins) {
+	if (!is.null(job)) {
+		graphID <- job$pars$prob.pars$k
+		comparison <- job$prob.name
+		job.id <- job$job.id
+	} else {
+		graphID <- NA
+		comparison <- NA
+		job.id <- NA
+	}
 
-        cols <- c("protein", "error", paste0("RLog", x), paste0("C", x))
+	f <- function(x, res, error_tol, ratioLog_tol, use_results_from_other_proteins) {
 
-        resProt <- res[res$protein == x, cols]
-        colnames(resProt) <- c("protein", "error", "RLog", "C")
+		cols <- c("protein", "error", paste0("RLog", x), paste0("C", x))
 
-        if (use_results_from_other_proteins) {
-            resProt2 <- res[res$protein != x, cols]
-            colnames(resProt2) <- c("protein", "error", "RLog", "C")
-            resProt2 <- resProt2[resProt2$C > 0.01 | resProt2$C < 0.99,] # remove too extreme Ci
-            resProt <- rbind(resProt, resProt2)
-        }
-        return(.analyseResultSingleProt(x, resProt, error_tol = error_tol, ratioLog_tol = ratioLog_tol))
-    }
+		resProt <- res[res$protein == x, cols]
+		colnames(resProt) <- c("protein", "error", "RLog", "C")
 
-    RES <- vapply(1:n, FUN = f,
-                  FUN.VALUE = c("error_min" = 0, "RiLog" = 0, "RiLog_min" = 0, "RiLog_max" = 0,
-                                 "Ci" = 0, "Ci_min" = 0, "Ci_max" = 0, "case" = 0),
-                  res = res, error_tol = error_tol, ratioLog_tol = ratioLog_tol,
-                  use_results_from_other_proteins = use_results_from_other_proteins)
+		if (use_results_from_other_proteins) {
+			resProt2 <- res[res$protein != x, cols]
+			colnames(resProt2) <- c("protein", "error", "RLog", "C")
+			resProt2 <- resProt2[resProt2$C > 0.01 | resProt2$C < 0.99,] # remove too extreme Ci
+			resProt <- rbind(resProt, resProt2)
+		}
+		return(.analyseResultSingleProt(x, resProt, error_tol = error_tol, ratioLog_tol = ratioLog_tol))
+	}
 
-    RES_info <- data.frame(accession = accessions, # comparison = rep(comparison, n),
-                           graphID = rep(graphID, n), proteinNr = 1:n)
+	RES <- vapply(1:n, FUN = f,
+				  FUN.VALUE = c("error_min" = 0, "RiLog" = 0, "RiLog_min" = 0, "RiLog_max" = 0,
+								 "Ci" = 0, "Ci_min" = 0, "Ci_max" = 0, "case" = 0),
+				  res = res, error_tol = error_tol, ratioLog_tol = ratioLog_tol,
+				  use_results_from_other_proteins = use_results_from_other_proteins)
 
-    RES <- cbind(RES_info, as.data.frame(t(RES)))
-    rownames(RES) <- RES$accession
-    RES <- RES[, -1] # remove accession, as it is now in rownames
+	RES_info <- data.frame(accession = protData$accessions, # comparison = rep(comparison, n),
+						   graphID = rep(graphID, n), proteinNr = 1:n)
 
-    RES_SE <- SummarizedExperiment::SummarizedExperiment(
-        assays = list(results = RES), rowData = data.frame(accession = accessions),
-        colData = data.frame(colnames = colnames(RES)))
+	RES <- cbind(RES_info, as.data.frame(t(RES)))
+	rownames(RES) <- RES$accession
+	RES <- RES[, -1] # remove accession, as it is now in rownames
 
-    return(RES_SE)
+	RES_SE <- SummarizedExperiment::SummarizedExperiment(
+		assays = list(results = RES), rowData = protData,
+		colData = data.frame(colnames = colnames(RES)))
+
+	return(RES_SE)
 }
 
 

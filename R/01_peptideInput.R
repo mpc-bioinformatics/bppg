@@ -131,8 +131,12 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
 #'
 #' @param path                      \strong{character} \cr
 #'                                  The path to the peptides.txt table
+#' @param group                     \strong{character} \cr
+#'                                  List or vector of group names corresponding
+#'                                  to the order of samples.
 #' @param remove_contaminants       \strong{logical} \cr
-#'                                  If \code{TRUE}, peptide sequences from potential contaminants are removed
+#'                                  If \code{TRUE}, peptide sequences from 
+#'                                  potential contaminants are removed
 #' @param remove_decoys             \strong{logical} \cr
 #'                                  If \code{TRUE}, decoy peptides are removed
 #' @param rename_columns            \strong{logical} \cr
@@ -151,14 +155,23 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
 #'
 #' @examples
 #' file <- system.file("extdata", "spec_peptides.tsv", package = "bppg") # TODO
-#' D <- spec_peptide_table(path = file, remove_contaminants = FALSE)
+#' D <- readSpecPeptideTable(path = file, remove_contaminants = FALSE)
 
-readSpecPeptideTable <- function(path, remove_contaminants = FALSE,
-                                    remove_decoys = TRUE, rename_columns = TRUE,
-                                    cut_off = 1000, zero_to_NA = TRUE,
-                                    remove_empty_rows = TRUE, 
-                                    further_columns_to_keep = NULL) {
-
+readSpecPeptideTable <- function(path, group = NULL, remove_contaminants = FALSE,
+    remove_decoys = TRUE, rename_columns = TRUE,
+    cut_off = 1000, zeroToNA = TRUE,
+    remove_empty_rows = TRUE, 
+    further_columns_to_keep = NULL,
+    verbose = FALSE) {
+    checkmate::assertFileExists(path, access = "", extension = NULL)
+    checkmate::assertFlag(remove_contaminants)
+    checkmate::assertFlag(rename_columns)
+    checkmate::assertNumeric(cut_off, lower = 0)
+    checkmate::assertFlag(zeroToNA)
+    checkmate::assertFlag(remove_empty_rows)
+    checkmate::assertVector(further_columns_to_keep, null.ok = TRUE)
+    checkmate::assertFlag(verbose)
+    
     D <- utils::read.table(path, sep = "\t", header = TRUE)
 
     # all columns in Spectronaut are optional
@@ -168,13 +181,14 @@ readSpecPeptideTable <- function(path, remove_contaminants = FALSE,
     if (remove_decoys) {
         ind_decoy <- D$EG.IsDecoy == "True"
         D <- D[!ind_decoy, ]
-        print(paste("Removed", sum(ind_decoy), "decoy sequences."))
+        if (verbose) print(paste("Removed", sum(ind_decoy), "decoy sequences."))
     }
 
   # remove duplicates
     ind_dub <- duplicated(D)
     D <- D[!ind_dub, ]
     intensities <- D[, grep("raw.PEP.Quantity", colnames(D))]
+    rownames(intensities) <- D$PEP.GroupingKey
 
     # structure: [1] C1_R1.raw.PEP.Quantity zu X.1..C1_R1.raw.PEP.Quantity, leave sample name
     if (rename_columns) colnames(intensities) <- lapply(colnames(intensities), 
@@ -183,28 +197,38 @@ readSpecPeptideTable <- function(path, remove_contaminants = FALSE,
     # valid intensity cut off, values too low tend to be false positive identifications
     low_intensity <- intensities < cut_off
     intensities[low_intensity] <- 0
-    print(paste("Removed", sum(low_intensity, na.rm = TRUE), "intensities below:", cut_off))
+    if (verbose) print(paste("Removed", sum(low_intensity, na.rm = TRUE), 
+            "intensities below:", cut_off))
 
     # "filtered" also as an option?
-    if (zero_to_NA) {
+    if (zeroToNA) {
         intensities[intensities == 0] <- NA
-
         if (remove_empty_rows) {
-        validvalues <- rowSums(!is.na(intensities))
-        ind_full <- validvalues >= 1
-        D <- D[ind_full, ]
-        intensities <- intensities[ind_full, ]
-        print(paste("Removed", sum(!ind_full, na.rm = TRUE), "empty rows"))
+            validvalues <- rowSums(!is.na(intensities))
+            ind_full <- validvalues >= 1
+            D <- D[ind_full, ]
+            intensities <- intensities[ind_full, ]
+        if (verbose) print(paste("Removed", sum(!ind_full, na.rm = TRUE),
+            "empty rows"))
         }
     }
 
+    if(is.null(group)){
+        colDF <- data.frame(sample = colnames(intensities))
+    } else {
+        colDF <- data.frame(sample = colnames(intensities), group = group)
+    }
     if (is.null(further_columns_to_keep)) {
-        RES <- data.frame(Sequence = D$PEP.GroupingKey, intensities)
+        rowDF <- data.frame(Sequence = rownames(intensities))
     } else {
         further_columns <- D[, further_columns_to_keep, drop = FALSE]
         colnames(further_columns) <- further_columns_to_keep
-        RES <- data.frame(Sequence = D$PEP.GroupingKey, further_columns, intensities)
+        rowDF <- data.frame(Sequence = rownames(intensities), further_columns)
     }
 
+    RES <- SummarizedExperiment::SummarizedExperiment(
+        assays = list(intensities = intensities),
+        colData = colDF, rowData = rowDF)
+    
     return(RES)
 }
