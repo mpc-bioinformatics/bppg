@@ -670,7 +670,7 @@ automatedAnalysisIteratedCi <- function(G,
         use_results_from_other_proteins = use_results_from_other_proteins)
 
     # comparison=rep(comparison, n),
-    RES_info <- data.frame(accession = accessions, 
+    RES_info <- data.frame(protData, 
         graphID = rep(graphID, n), proteinNr = seq_len(n))
 
 	RES <- cbind(RES_info, as.data.frame(t(RES)))
@@ -679,7 +679,7 @@ automatedAnalysisIteratedCi <- function(G,
 
     RES_SE <- SummarizedExperiment::SummarizedExperiment(
         assays = list(results = RES), 
-        rowData = data.frame(accession = accessions),
+        rowData = data.frame(protData),
         colData = data.frame(colnames = colnames(RES)))
     return(RES_SE)
 }

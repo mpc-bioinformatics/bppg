@@ -5,7 +5,7 @@
     Output
       class: SummarizedExperiment 
       dim: 10 3 
-      metadata(0):
+      metadata(1): imputed
       assays(1): intensities
       rownames(10): pep_1 pep_2 ... pep_9 pep_10
       rowData names(1): Sequence
@@ -63,7 +63,7 @@
     Output
       class: SummarizedExperiment 
       dim: 10 3 
-      metadata(0):
+      metadata(1): imputed
       assays(1): intensities
       rownames(10): pep_1 pep_2 ... pep_9 pep_10
       rowData names(1): Sequence
@@ -107,34 +107,6 @@
 ---
 
     Code
-      D1
-    Output
-
-      class: SummarizedExperiment 
-      dim: 10 3 
-      metadata(1): imputed
-      assays(1): intensities
-      rownames(10): pep_1 pep_2 ... pep_9 pep_10
-      rowData names(1): Sequence
-      colnames(3): 1 2 3
-      colData names(1): group
----
-
-    Code
-      D2
-    Output
-      class: SummarizedExperiment 
-      dim: 10 3 
-      metadata(1): imputed
-      assays(1): intensities
-      rownames(10): pep_1 pep_2 ... pep_9 pep_10
-      rowData names(1): Sequence
-      colnames(3): 1 2 3
-      colData names(1): group
-
----
-
-    Code
       as.data.frame(tail(SummarizedExperiment::colData(D2), n = 1000))
     Output
         group
@@ -142,20 +114,19 @@
       2     2
       3     3
 
-# test calculatePeptideRatios
+---
 
     Code
-      D1
+      D3
     Output
       class: SummarizedExperiment 
       dim: 10 3 
-      metadata(0):
-      assays(1): logRatios
+      metadata(1): imputed
+      assays(2): intensities maskImputation
       rownames(10): pep_1 pep_2 ... pep_9 pep_10
       rowData names(1): Sequence
-      colnames(3): logRatio_sample1_sample2 logRatio_sample1_sample3
-        logRatio_sample2_sample3
-      colData names(1): comparison
+      colnames(3): 1 2 3
+      colData names(1): group
 
 ---
 
@@ -177,18 +148,36 @@
 ---
 
     Code
-      D3
+      SummarizedExperiment::assays(D3)$maskImputation
+    Output
+                 1     2     3
+      pep_1   TRUE FALSE  TRUE
+      pep_2   TRUE FALSE FALSE
+      pep_3  FALSE FALSE  TRUE
+      pep_4  FALSE  TRUE  TRUE
+      pep_5  FALSE FALSE FALSE
+      pep_6   TRUE FALSE  TRUE
+      pep_7  FALSE FALSE  TRUE
+      pep_8  FALSE FALSE FALSE
+      pep_9  FALSE  TRUE FALSE
+      pep_10 FALSE FALSE  TRUE
+
+# test calculatePeptideRatios
+
+    Code
+      D1
     Output
       class: SummarizedExperiment 
       dim: 10 3 
       metadata(1): imputed
-      assays(2): intensities maskImputation
+      assays(1): logRatios
       rownames(10): pep_1 pep_2 ... pep_9 pep_10
       rowData names(1): Sequence
-      colnames(3): 1 2 3
-      colData names(1): group
+      colnames(3): logRatio_sample1_sample2 logRatio_sample1_sample3
+        logRatio_sample2_sample3
+      colData names(1): comparison
 
-# test calculatePeptideRatios
+---
 
     Code
       SummarizedExperiment::assays(D1)$logRatios
@@ -246,6 +235,49 @@
       logRatio_sample1_sample2 logRatio_sample1_sam..
       logRatio_sample1_sample3 logRatio_sample1_sam..
       logRatio_sample2_sample3 logRatio_sample2_sam..
+
+---
+
+    Code
+      SummarizedExperiment::assays(D2)$logRatios
+    Output
+             logRatio_sample1_sample2 logRatio_sample1_sample3
+      pep_1                0.00000000               1.09495817
+      pep_2               -1.26147888               0.30166498
+      pep_3                0.00000000               1.27132337
+      pep_4               -0.52979568              -0.39790351
+      pep_5                0.52218804               0.30487036
+      pep_6                0.02686824              -0.18866120
+      pep_7               -0.58551545              -1.64644581
+      pep_8                0.11089975              -1.46836704
+      pep_9               -1.44705619              -0.03532842
+      pep_10               0.39241543              -1.00000000
+             logRatio_sample2_sample3
+      pep_1                 1.0949582
+      pep_2                 1.5631439
+      pep_3                 1.2713234
+      pep_4                 0.1318922
+      pep_5                -0.2173177
+      pep_6                -0.2155294
+      pep_7                -1.0609304
+      pep_8                -1.5792668
+      pep_9                 1.4117278
+      pep_10               -1.3924154
+
+---
+
+    Code
+      D2
+    Output
+      class: SummarizedExperiment 
+      dim: 10 3 
+      metadata(1): imputed
+      assays(2): logRatios maskImputation
+      rownames(10): pep_1 pep_2 ... pep_9 pep_10
+      rowData names(1): Sequence
+      colnames(3): logRatio_sample1_sample2 logRatio_sample1_sample3
+        logRatio_sample2_sample3
+      colData names(1): comparison
 
 # normalize peptide data
 
@@ -308,10 +340,11 @@
       D_norm_lts
     Output
       class: SummarizedExperiment 
-      dim: 10 3 
+      dim: 7944 27 
       metadata(0):
-      assays(1): logRatios
-      rownames(10): pep_1 pep_2 ... pep_9 pep_10
+      assays(1): intensities_norm
+      rownames(7944): AAAAQDEITGDGTTTVVCLVGELLR AAADALSDLEIK ...
+        YYVPPGIPTNDTSNLER YYWNLSK
       rowData names(1): Sequence
       colnames(27): 12500amol_R1 12500amol_R2 ... 50amol_R2 50amol_R3
       colData names(1): sample
@@ -355,47 +388,4 @@
       50amol_R1       50amol_R1
       50amol_R2       50amol_R2
       50amol_R3       50amol_R3
-
----
-
-    Code
-      SummarizedExperiment::assays(D2)$logRatios
-    Output
-             logRatio_sample1_sample2 logRatio_sample1_sample3
-      pep_1                        NA               1.09495817
-      pep_2               -1.26147888               0.30166498
-      pep_3                        NA               1.27132337
-      pep_4               -0.52979568              -0.39790351
-      pep_5                0.52218804               0.30487036
-      pep_6                0.02686824              -0.18866120
-      pep_7               -0.58551545              -1.64644581
-      pep_8                0.11089975              -1.46836704
-      pep_9               -1.44705619              -0.03532842
-      pep_10               0.39241543              -1.00000000
-             logRatio_sample2_sample3
-      pep_1                 1.0949582
-      pep_2                 1.5631439
-      pep_3                 1.2713234
-      pep_4                 0.1318922
-      pep_5                -0.2173177
-      pep_6                -0.2155294
-      pep_7                -1.0609304
-      pep_8                -1.5792668
-      pep_9                 1.4117278
-      pep_10               -1.3924154
-
----
-
-    Code
-      D2
-    Output
-      class: SummarizedExperiment 
-      dim: 10 3 
-      metadata(1): imputed
-      assays(2): logRatios maskImputation
-      rownames(10): pep_1 pep_2 ... pep_9 pep_10
-      rowData names(1): Sequence
-      colnames(3): logRatio_sample1_sample2 logRatio_sample1_sample3
-        logRatio_sample2_sample3
-      colData names(1): comparison
 

@@ -31,7 +31,7 @@ test_that("test aggregateReplicates", {
         group = factor(rep(1:3, each = 3)),
         imp_method = "min_2_impute")
 
-
+    expect_snapshot(D1)
     expect_snapshot(SummarizedExperiment::assays(D1)$intensities)
     expect_snapshot(as.data.frame(tail(
         SummarizedExperiment::rowData(D1), n = 1000)))
@@ -44,8 +44,11 @@ test_that("test aggregateReplicates", {
         SummarizedExperiment::rowData(D2), n = 1000)))
     expect_snapshot(as.data.frame(tail(
         SummarizedExperiment::colData(D2), n = 1000)))
+
+    expect_snapshot(D3)    
     expect_snapshot(SummarizedExperiment::assays(D3)$intensities)
-    expect_snapshot(D3)
+    expect_snapshot(SummarizedExperiment::assays(D3)$maskImputation)
+    
 })
 
 
