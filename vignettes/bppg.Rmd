@@ -1,0 +1,64 @@
+---
+title: "Introduction to BPPG"
+author: 
+  - name: Karin Schork
+    affiliation:
+    - Medizinisches Proteom-Center, Ruhr-Universität Bochum
+    email: karin.schork@rub.de
+  - name: Julika Wenzel
+    affiliation:
+    - Medizinisches Proteom-Center, Ruhr-Universität Bochum
+    email: julika.wenzel@rub.de
+output: 
+  BiocStyle::html_document:
+    self_contained: yes
+    toc: true
+    toc_float: true
+    toc_depth: 2
+    code_folding: show
+date: "`r doc_date()`"
+vignette: >
+  %\VignetteIndexEntry{Introduction to BPPG}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>",
+    crop = NULL 
+    ## Related to 
+    ## https://stat.ethz.ch/pipermail/bioc-devel/2020-April/016656.html
+)
+```
+
+
+# Introduction
+
+Bottom up mass spectrometry
+
+
+# Installation of  `bppg`
+
+# Asking for help
+
+# Citing `bppg`
+
+# Quick start to using `bppg`
+
+# Further information
+
+# Comparison with other related packages
+
+
+# R session information
+<!-- 
+```{r reproduce3, echo=FALSE}
+## Session info
+library("sessioninfo")
+options(width = 120)
+session_info()
+```
+ -->
+
