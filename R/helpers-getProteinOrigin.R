@@ -1,4 +1,4 @@
-
+###TODO what to do with this?
 
 #' For each protein node, get information about protein origin (contaminant,
 #' spike-in
@@ -16,12 +16,14 @@
 #'                       accessions.
 #' @param verbose            \strong{logical} \cr
 #'                           If \code{TRUE}, additional information on
-#'                           each iteration of the optimization is 
+#'                           each iteration is 
 #'                           printed.
 #' @return A character vector with protein origin for each protein accession
 #' @export
 #'
 #' @examples ## TODO
+#' 
+#' @importFrom pbapply pboptions pbvapply
 
 .getProteinOrigin <- function(accessions,
     contaminants = NULL,
@@ -33,7 +35,7 @@
     get_origin <- function(x, contaminants, spike_ins, organisms) {
         accessions <- unlist(strsplit(x, ";"))
         origin_tmp <- character(length(accessions))
-        for (i in 1:length(accessions))  {
+        for (i in seq_along(accessions))  {
             if (accessions[i] %in% contaminants) {
                 origin_tmp[i] <- "Contaminant"
                 next

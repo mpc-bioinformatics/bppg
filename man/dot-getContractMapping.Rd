@@ -12,12 +12,12 @@ An edgelist eg. created with
 \code{\link[=digestFASTA]{digestFASTA()}}.}
 
 \item{collProtNodes}{\strong{logical} \cr
-If \code{TRUE}, the protein nodes
-will be collapsed.}
+If \code{TRUE}, the protein nodes will
+be collapsed.}
 
 \item{collPeptNodes}{\strong{logical} \cr
-If \code{TRUE}, the peptide nodes
-will be collapsed.}
+If \code{TRUE}, the peptide nodes will
+be collapsed.}
 }
 \value{
 A list with two dataframes, one for peptide and one for protein
@@ -32,6 +32,7 @@ file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 edgelist <- digestFASTA(fasta)
 res <- bppg:::.getContractMapping(edgelist)
+
 }
 \seealso{
 For collapsing graphs: \cr

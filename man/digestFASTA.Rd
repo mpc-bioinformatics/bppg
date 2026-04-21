@@ -39,10 +39,26 @@ A list with the protein origin corresponding to
 
 \item{verbose}{\strong{logical} \cr
 If \code{TRUE}, additional information on
-each iteration of the optimization is
+each iteration of the digestion is
 printed.}
 
-\item{...}{Additional arguments for \code{\link[=.digest2]{.digest2()}}.}
+\item{...}{
+  Arguments passed on to \code{\link[=.digest2]{.digest2}}
+  \describe{
+    \item{\code{sequence}}{\strong{character} \cr
+The protein sequence.}
+    \item{\code{enzyme}}{\strong{character} \cr
+The enzyme used in digestion e.g. "trypsin" (does
+not cut before proline).}
+    \item{\code{missed}}{\strong{character} \cr
+The maximal number of missed cleavages.}
+    \item{\code{warn}}{\strong{logical} \cr
+If \code{TRUE}, warnings will be printed e.g. if a
+protein has no cleavage site.}
+    \item{\code{remove_initial_M}}{\strong{logical} \cr
+If \code{TRUE}, the initial methionine will be
+removed from the peptides.}
+  }}
 }
 \value{
 data.frame with proteins and their peptide sequences, filtered

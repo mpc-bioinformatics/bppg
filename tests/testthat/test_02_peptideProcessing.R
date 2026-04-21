@@ -31,13 +31,24 @@ test_that("test aggregateReplicates", {
         group = factor(rep(1:3, each = 3)),
         imp_method = "min_2_impute")
 
-
-    expect_snapshot(SummarizedExperiment::assays(D1)$intensities)
-    expect_snapshot(SummarizedExperiment::assays(D2)$intensities)
     expect_snapshot(D1)
+    expect_snapshot(SummarizedExperiment::assays(D1)$intensities)
+    expect_snapshot(as.data.frame(tail(
+        SummarizedExperiment::rowData(D1), n = 1000)))
+    expect_snapshot(as.data.frame(tail(
+        SummarizedExperiment::colData(D1), n = 1000)))
+
     expect_snapshot(D2)
+    expect_snapshot(SummarizedExperiment::assays(D2)$intensities)
+    expect_snapshot(as.data.frame(tail(
+        SummarizedExperiment::rowData(D2), n = 1000)))
+    expect_snapshot(as.data.frame(tail(
+        SummarizedExperiment::colData(D2), n = 1000)))
+
+    expect_snapshot(D3)    
     expect_snapshot(SummarizedExperiment::assays(D3)$intensities)
-    expect_snapshot(D3)
+    expect_snapshot(SummarizedExperiment::assays(D3)$maskImputation)
+    
 })
 
 
@@ -75,8 +86,21 @@ test_that("test calculatePeptideRatios", {
     
     D2 <- bppg::calculatePeptideRatios(D = D)
 
-    expect_snapshot(SummarizedExperiment::assays(D1)$logRatios)
+    # Test imputed data
+    na_mask <- is.na(df)
+    df[is.na(df)] <- min(df, na.rm = TRUE) / 2
+    D <- SummarizedExperiment::SummarizedExperiment(
+        assays = list(intensities = df, maskImputation = na_mask),
+        colData = data.frame(group = colnames(df)),
+        rowData = data.frame(Sequence = rownames(df)),
+        metadata = list(imputed = TRUE))
+    
+    D2 <- bppg::calculatePeptideRatios(D = D)
+
     expect_snapshot(D1)
+    expect_snapshot(SummarizedExperiment::assays(D1)$logRatios)
+    expect_snapshot(SummarizedExperiment::rowData(D1))
+    expect_snapshot(SummarizedExperiment::colData(D1))
     expect_snapshot(SummarizedExperiment::assays(D2)$logRatios)
     expect_snapshot(D2)
 })
@@ -86,7 +110,15 @@ test_that("normalize peptide data", {
     D <- bppg::readMqPeptideTable(test_path("testfiles/peptides.txt"), LFQ = FALSE)
     D_norm_loess <- bppg::normalizePeptideIntensities(D, method = "loess")
     D_norm_lts <- bppg::normalizePeptideIntensities(D, method = "lts")
+
+    expect_snapshot(D_norm_loess)
     expect_snapshot(SummarizedExperiment::assays(D_norm_loess)$intensities, variant = Sys.info()[["sysname"]])
+    expect_snapshot(SummarizedExperiment::rowData(D_norm_loess))
+    expect_snapshot(SummarizedExperiment::colData(D_norm_loess))
+
+    expect_snapshot(D_norm_lts)
     expect_snapshot(SummarizedExperiment::assays(D_norm_lts)$intensities, variant = Sys.info()[["sysname"]])
+    expect_snapshot(SummarizedExperiment::rowData(D_norm_lts))
+    expect_snapshot(SummarizedExperiment::colData(D_norm_lts))
 })
 

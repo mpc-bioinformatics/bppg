@@ -31,8 +31,8 @@ The control parameters for solnp
 list containing the following elements:
 \item{RiLog}{estimated protein ratios (Log2-scale)}
 \item{Ci}{estimated protein weights}
-\item{RES}{final result of \code{\link[bppg]{.errorEquation}}, which also contains
-the final, minimal error term}
+\item{RES}{final result of \code{\link[bppg]{.errorEquation}}, which also
+contains the final, minimal error term}
 \item{Tracking}{Tracking of Ri, Ci and error term for the
 different iterations}
 \item{outer.iter}{Number of outer iterations needed for the optimization

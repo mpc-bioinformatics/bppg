@@ -11,8 +11,8 @@ combineComparisons(compResultList)
 \item{compResultList}{\strong{list} \cr
 List of results to be concatenated. Each list element is the result of
 the optimization step for one pairwise comparison, i.e. a
-SummarizedExperiment object. Ideally, the element names should correspond
-to the comparison names.}
+SummarizedExperiment object. Ideally, the element names should
+correspond to the comparison names.}
 }
 \value{
 A SummarizedExperiment object with one assay per comparison. The row

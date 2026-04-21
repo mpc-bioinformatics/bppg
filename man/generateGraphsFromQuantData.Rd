@@ -16,6 +16,7 @@ generateGraphsFromQuantData(
   collPeptNodes = FALSE,
   suffix = "",
   protOrigin = NULL,
+  imp_method = NULL,
   verbose = FALSE,
   ...
 )
@@ -66,6 +67,10 @@ The suffix for output files.}
 A list with the protein orgin corresponding to
 \link[seqinr:fasta]{seqinr::fasta}, proteins are used as rownames/index.}
 
+\item{imp_method}{\strong{character} \cr
+Chosen imputation optional approach, current method:
+"min_2_impute"}
+
 \item{verbose}{\strong{logical} \cr
 If \code{TRUE}, additional information on each iteration
 of the optimization is printed}
@@ -89,6 +94,7 @@ file <- system.file("extdata", "peptides.txt", package = "bppg")
 D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 
 graphs <- bppg::generateGraphsFromQuantData(D, fasta)
+
 }
 \seealso{
 \code{\link[=readMqPeptideTable]{readMqPeptideTable()}}, \code{\link[seqinr:read.fasta]{seqinr::read.fasta()}},

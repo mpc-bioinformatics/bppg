@@ -20,13 +20,15 @@ The data.frame resulting from the
 \code{\link[=iterateOverCi]{iterateOverCi()}} function,
 filtered for a specific protein.}
 
-\item{error_tol}{\strong{numeric(1)} \cr tolerance for the error term.}
+\item{error_tol}{\strong{numeric(1)} \cr
+tolerance for the error term.}
 
-\item{ratioLog_tol}{\strong{numeric(1)} \cr tolerance for the log protein ratios.}
+\item{ratioLog_tol}{\strong{numeric(1)} \cr
+tolerance for the log protein ratios.}
 }
 \value{
-Vector with minimal error, estimate for Ri (single value or min/max),
-estimate for Ci (single value or min/max).
+Vector with minimal error, estimate for Ri (single value
+or min/max), estimate for Ci (single value or min/max).
 }
 \description{
 Analyse results for a single protein

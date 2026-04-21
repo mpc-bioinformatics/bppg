@@ -11,8 +11,7 @@
 
 #' Cleavage of a single protein sequence.
 #'
-#' @param sequence           \strong{character} \cr
-#'                           The protein sequence.
+#' @inheritParams .digest2
 #' @param start              \strong{integer vector} \cr
 #'                           Index of where peptides start
 #' @param stop               \strong{integer vector} \cr
@@ -93,7 +92,8 @@
     }
     if (missed > length(stop)) {
         if (warn){
-            warning("number of specified missed cleavages is greater than the possible maximum")
+            warning(paste("number of specified missed cleavages is greater",
+                "than the possible maximum"))
         }
     }
 
@@ -102,9 +102,9 @@
     stop <- c(stop, end_position)
     results <- .cleave(sequence, start, stop, 0)
     if (missed > 0) {
-        for (i in 1:min(missed, length(stop_))) { # limited by missed
-            start_tmp <- start[1:(length(start) - i)]
-            stop_tmp <- stop[(1 + i):length(stop)]
+        for (i in seq_len(min(missed, length(stop_)))) { # limited by missed
+            start_tmp <- start[seq_len(length(start) - i)]
+            stop_tmp <- stop[seq(1 + i, length(stop))]
             peptide <- .cleave(sequence, start_tmp, stop_tmp, i)
             results <- rbind(results, peptide)
         }
@@ -178,9 +178,10 @@
 #'                           [fasta], proteins are used as index.
 #' @param verbose            \strong{logical} \cr
 #'                           If \code{TRUE}, additional information on
-#'                           each iteration of the optimization is 
+#'                           each iteration of the digestion is 
 #'                           printed.
 #' @param ...                Additional arguments for [.digest2()].
+#' @inheritDotParams .digest2
 #'
 #' @return data.frame with proteins and their peptide sequences, filtered
 #'         for minimal and maximal number of amino acids.
@@ -195,6 +196,9 @@
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' res <- digestFASTA(fasta)
 #'
+#' @importFrom checkmate assertFlag assertInt assertList
+#' @importFrom pbapply pblapply pboptions
+#' 
 digestFASTA <- function(fasta,
     missed_cleavages = 2,
     min_aa = 6,

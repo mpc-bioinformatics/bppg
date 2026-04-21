@@ -25,7 +25,7 @@
 #' @param verbose     \strong{logical} \cr
 #'                    If \code{TRUE}, additional information on each iteration
 #'                    of the optimization is printed
-#' @param ...                     Additional arguments to bppg::digestFASTA()
+#' @param ...         Additional arguments to bppg::digestFASTA()
 #'
 #' @return Subgraphs (i.e. connected components) from the graph generated from
 #'         the FASTA file.
@@ -37,6 +37,8 @@
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' graphs <- bppg::generateGraphsFromFASTA(fasta)
 #'
+#' @importFrom checkmate assertPathForOutput
+#' @importFrom utils write.table
 generateGraphsFromFASTA <- function(fasta,
     collProtNodes = TRUE,
     collPeptNodes = TRUE,
@@ -46,7 +48,7 @@ generateGraphsFromFASTA <- function(fasta,
     verbose = FALSE,
     ...) {
     if (verbose) message("Digesting FASTA file ...")
-    edgelist <- bppg::digestFASTA(fasta, protOrigin = protOrigin,
+    edgelist <- digestFASTA(fasta, protOrigin = protOrigin,
         verbose = verbose, ...)
     if (!is.null(outpath)) {
         if (verbose) message("Saving edgelist ...")
@@ -103,9 +105,12 @@ generateGraphsFromFASTA <- function(fasta,
 #'                                 will be collapsed.
 #' @param suffix                   \strong{character} \cr
 #'                                 The suffix for output files.
-#' @param protOrigin               \strong{list or data.frame} \cr
-#'                                 A list with the protein orgin corresponding to
-#'                                 [fasta], proteins are used as rownames/index.
+#' @param protOrigin             \strong{list or data.frame} \cr
+#'                               A list with the protein orgin corresponding to
+#'                               [fasta], proteins are used as rownames/index.
+#' @param imp_method      \strong{character} \cr
+#'                        Chosen imputation optional approach, current method: 
+#'                        "min_2_impute"
 #' @param verbose     \strong{logical} \cr
 #'                    If \code{TRUE}, additional information on each iteration
 #'                    of the optimization is printed
@@ -128,6 +133,11 @@ generateGraphsFromFASTA <- function(fasta,
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 #'
 #' graphs <- bppg::generateGraphsFromQuantData(D, fasta)
+#' 
+#' @importFrom checkmate assertPathForOutput
+#' @importFrom openxlsx write.xlsx
+#' @importFrom limma strsplit2
+#' 
 # TODO include imputation options to work with other functions ins this branch!
 generateGraphsFromQuantData <- function(D,
     fasta,
@@ -139,14 +149,15 @@ generateGraphsFromQuantData <- function(D,
     collProtNodes = TRUE,
     collPeptNodes = FALSE,
     suffix = "",
-    protOrigin = NULL,
+    protOrigin = NULL, 
+    imp_method = NULL,
     verbose = FALSE,
     ...) {
 
     if (verbose) message("Digesting FASTA file...")
-    edgelist <- bppg::digestFASTA(fasta, missed_cleavages = missed_cleavages,
+    edgelist <- digestFASTA(fasta, missed_cleavages = missed_cleavages,
         min_aa = min_aa, max_aa = max_aa, protOrigin = protOrigin, 
-        verbose = verbose)
+        verbose = verbose, ...)
 
     if (!is.null(outpath)) {
         checkmate::assertPathForOutput(outpath, overwrite = TRUE)
@@ -157,8 +168,8 @@ generateGraphsFromQuantData <- function(D,
 
     ## aggregate replicates by calculating the mean
     group <- factor(limma::strsplit2(colnames(D), split = "_")[, 1])
-    D_aggr <- bppg::aggregateReplicates(D, method = "mean", missing.limit = 0.4,
-        group = group, seq_col = seq_column)
+    D_aggr <- aggregateReplicates(D, method = "mean", missing.limit = 0.4,
+        group = group, seq_col = seq_column, imp_method = imp_method)
 
     if (!is.null(outpath)) {
         openxlsx::write.xlsx(SummarizedExperiment::assays(D_aggr)$intensities,
@@ -168,16 +179,16 @@ generateGraphsFromQuantData <- function(D,
 
     ## calculate the peptide ratio table
     groups  <- levels(group)
-    peptide_ratios <- bppg::calculatePeptideRatios(D = D_aggr,
+    peptide_ratios <- calculatePeptideRatios(D = D_aggr,
         group_levels = groups)
     if (!is.null(outpath)) {
         openxlsx::write.xlsx(
             SummarizedExperiment::assays(peptide_ratios)$logRatios,
-            file = paste0(outpath,"peptide_ratios_", suffix, ".xlsx"),
+            file = paste0(outpath, "peptide_ratios_", suffix, ".xlsx"),
             overwrite = TRUE, keepNA = TRUE)
     }
-
-    ## Generierung der Graphen (man braucht peptide_ratios und fast_edgelist!)
+    ## wieso macht er hier was anderes als beim testen????
+    ## Generierung der Graphen (man braucht peptide_ratios und fasta_edgelist!)
     graphs <- generateQuantGraphs(exp_peptide_ratios = peptide_ratios,
         fasta_edgelist = edgelist,
         outpath = outpath, seq_column = seq_column,

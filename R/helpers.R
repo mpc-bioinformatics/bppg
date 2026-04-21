@@ -7,8 +7,7 @@
 #' Adds vertex attributes with uniqueness of peptides and number of unique
 #' peptides for proteins.
 #'
-#' @param G \strong{igraph graph object} \cr
-#'          A peptide-protein graph.
+#' @inheritParams .contractGraph
 #'
 #' @return A graph with 2 additional vertex attributes, uniqueness and
 #'         nr_unique_peptides
@@ -25,6 +24,8 @@
 #' graph <- bppg::generateGraphsFromEdgelist(edgelist)
 #' 
 #' res <- bppg:::.addUniquenessAttributes(graph[[1]])
+#' 
+#' @importFrom igraph degree ego set_vertex_attr V
 
 .addUniquenessAttributes <- function(G) {
     ## FALSE = peptide, TRUE = protein
