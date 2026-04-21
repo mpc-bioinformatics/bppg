@@ -15,11 +15,8 @@
 #' @return A bipartite graph that is know directed.
 #'
 #'
-#' @examples ## TODO
-#'
 #' @importFrom igraph %->% as_directed E reverse_edges V
 #'
-
 .directBipartiteGraph <- function(bip_graph, from_type = FALSE) {
 
     ## turn undirected into directed edges
@@ -51,6 +48,14 @@
 #' @seealso [generateGraphsFromEdgelist()]
 #'
 #' @examples
+#'
+#' M1 <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
+#' G1 <- igraph::graph_from_biadjacency_matrix(M1)
+#'
+#' M2 <- matrix(c(1, 1, 0, 1), nrow = 2, byrow = TRUE)
+#' G2 <- igraph::graph_from_biadjacency_matrix(M2)
+#'
+#' .isomorphicBipartite(G1, G2)
 #'
 #' @importFrom igraph is_directed isomorphic
 

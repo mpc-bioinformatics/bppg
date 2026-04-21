@@ -91,7 +91,6 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
         ind_decoy <- (D$Reverse == "+")
         D <- D[!ind_decoy, ]
     }
-    print(D$Reverse)
 
     if (verbose) print(paste0("Removed ", sum(ind_decoy), " decoy sequences."))
 

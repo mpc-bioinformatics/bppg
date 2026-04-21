@@ -43,9 +43,9 @@ A SummarizedExperiment with aggregated intensities ($intensities).
 Aggregate replicates of the same experimental group.
 }
 \examples{
-file <- system.file("extdata", "peptides.txt", package = "bppg")
-D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
 group <- factor(rep(1:9, each = 3))
-aggregateReplicates(D, group = group)
+D <- readMqPeptideTable(path = file, group = group, LFQ = TRUE, remove_contaminants = FALSE)
+aggregateReplicates(D)
 
 }

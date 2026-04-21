@@ -174,7 +174,7 @@
 #' x is a vector containing first the RiLog values and then the Ci values
 #' (length 2*m if no Ci are fixed).
 #'
-#' For the equality constraint (eqfun with corresponding bound eqB), the 
+#' For the equality constraint (eqfun with corresponding bound eqB), the
 #' difference of the sum of the Ci values and 1 is calculated. The bound is set
 #' to 0, i.e. forcing the sum of the Ci to be 1. In case of fixed Ci values, the
 #' sum of the fixed and the free Ci values is considered.
@@ -295,9 +295,9 @@
 #' not (1 or 2) (see also \code{\link[Rsolnp]{solnp}})}
 #'
 #' @examples
-#' file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+#' file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
 #' graphs <- readRDS(file)
-#' G <- graphs$sample1_sample2[[2]]
+#' G <- graphs$"1_2"[[2]]
 #' bppg:::.minimizeSquaredError(G)
 #'
 #' @importFrom igraph as_biadjacency_matrix vertex_attr
@@ -432,7 +432,7 @@
 #'                                 [.minimizeSquaredError()] function.
 #'
 #' @return
-#' A dataframe containing the optimal Ci and Ri values together with the reached
+#' A data.frame containing the optimal Ci and Ri values together with the reached
 #' minimal error term for each grid point.
 #'
 #' @export
@@ -455,13 +455,13 @@
 #' [bppg::automatedAnalysisIteratedCi()].
 #'
 #' @examples
-#' file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+#' file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
 #' graphs <- readRDS(file)
-#' G <- graphs$sample1_sample2[[2]]
+#' G <- graphs$"1_2"[[2]]
 #' # small example with a small grid size
 #' iterateOverCi(G, gridSize = 100)
-#' 
-#' @importFrom checkmate assertClass assertFlag assertIntegerish assertList 
+#'
+#' @importFrom checkmate assertClass assertFlag assertIntegerish assertList
 #'  assertNumeric checkTRUE
 #' @importFrom igraph is_bipartite V
 #' @importFrom  pbapply pbmapply pboptions
@@ -524,12 +524,12 @@ iterateOverCi <- function(G,
 #'                                      The data.frame resulting from the
 #'                                      [bppg::iterateOverCi()] function,
 #'                                      filtered for a specific protein.
-#' @param error_tol \strong{numeric(1)} \cr 
+#' @param error_tol \strong{numeric(1)} \cr
 #'                  tolerance for the error term.
-#' @param ratioLog_tol \strong{numeric(1)} \cr 
+#' @param ratioLog_tol \strong{numeric(1)} \cr
 #'                      tolerance for the log protein ratios.
 #'
-#' @returns Vector with minimal error, estimate for Ri (single value 
+#' @returns Vector with minimal error, estimate for Ri (single value
 #' or min/max), estimate for Ci (single value or min/max).
 #'
 .analyseResultSingleProt <- function(protNr, resProt,
@@ -553,7 +553,7 @@ iterateOverCi <- function(G,
             res_tmp <- c(mean(e_tmp), RLog_tmp_mean_rounded, NA, NA, NA,
                 min(C_tmp), max(C_tmp), NA)
             # all(R[ind_min_tol] == 0) |???
-            res_tmp[8] <- ifelse(length(indMinError) == nrow(resProt), 1, 4) 
+            res_tmp[8] <- ifelse(length(indMinError) == nrow(resProt), 1, 4)
         } else {
             # case 2 and 5: range solution for Rlog
             res_tmp <- c(mean(e_tmp), NA, min(RLog_tmp), max(RLog_tmp), NA,
@@ -604,16 +604,16 @@ iterateOverCi <- function(G,
 #'                                      Tolerance for a constant log2 protein
 #'                                      ratios. The default is 1e-6.
 #'
-#' @return A SummarizedExperiment object with one row for each protein in the 
+#' @return A SummarizedExperiment object with one row for each protein in the
 #'  assay.
 #' @export
 #'
 #' @seealso [bppg::iterateOverCi()], [.minimizeSquaredError()]
 #'
 #' @examples
-#' file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+#' file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
 #' graphs <- readRDS(file)
-#' G <- graphs$sample1_sample2[[2]]
+#' G <- graphs$"1_2"[[2]]
 #' # small example with a small grid size
 #' res <- iterateOverCi(G, gridSize = 100)
 #' automatedAnalysisIteratedCi(G, res)
@@ -638,7 +638,7 @@ automatedAnalysisIteratedCi <- function(G,
         job.id <- NA
     }
 
-    f <- function(x, res, error_tol, ratioLog_tol, 
+    f <- function(x, res, error_tol, ratioLog_tol,
         use_results_from_other_proteins) {
 
         cols <- c("protein", "error", paste0("RLog", x), paste0("C", x))
@@ -650,7 +650,7 @@ automatedAnalysisIteratedCi <- function(G,
             resProt2 <- res[res$protein != x, cols]
             colnames(resProt2) <- c("protein", "error", "RLog", "C")
             # remove too extreme Ci
-            resProt2 <- resProt2[resProt2$C > 0.01 | resProt2$C < 0.99,] 
+            resProt2 <- resProt2[resProt2$C > 0.01 | resProt2$C < 0.99,]
             resProt <- rbind(resProt, resProt2)
         }
         return(.analyseResultSingleProt(x, resProt, error_tol = error_tol,
@@ -664,7 +664,7 @@ automatedAnalysisIteratedCi <- function(G,
         use_results_from_other_proteins = use_results_from_other_proteins)
 
     # comparison=rep(comparison, n),
-    RES_info <- data.frame(accession = accessions, 
+    RES_info <- data.frame(accession = accessions,
         graphID = rep(graphID, n), proteinNr = seq_len(n))
 
     RES <- cbind(RES_info, as.data.frame(t(RES)))
@@ -672,7 +672,7 @@ automatedAnalysisIteratedCi <- function(G,
     RES <- RES[, -1] # remove accession, as it is now in rownames
 
     RES_SE <- SummarizedExperiment::SummarizedExperiment(
-        assays = list(results = RES), 
+        assays = list(results = RES),
         rowData = data.frame(accession = accessions),
         colData = data.frame(colnames = colnames(RES)))
     return(RES_SE)

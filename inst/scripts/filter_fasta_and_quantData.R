@@ -39,7 +39,69 @@ for(i in seq_along(proteins)) {
     ind <- c(ind, grep(proteins[[i]], D$Proteins))
 }
 
-D_filtered <- D[ind,]
+D_filtered <- D[unique(ind),]
 write.table(D_filtered, file = "inst/extdata/peptides_filtered.txt", sep = "\t", row.names = FALSE)
+
+
+
+################################################################################
+### generate quant graphs
+
+library(seqinr)
+file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
+fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+edgelist <- digestFASTA(fasta)
+
+file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
+group <- factor(rep(1:9, each = 3))
+D <- readMqPeptideTable(path = file, group = group, LFQ = FALSE, remove_contaminants = FALSE)
+
+dAgg <- aggregateReplicates(D, group = group)
+exp_peptide_ratios <- calculatePeptideRatios(dAgg)
+
+# graphs with collapsed protein nodes and NOT collapsed peptide nodes (should be used for optimization)
+res <- generateQuantGraphs(exp_peptide_ratios, edgelist)
+saveRDS(res, file = "inst/extdata/quantGraphs.rds")
+
+
+# graphs with collapsed protein nodes and collapsed peptide nodes (should be used for visualization)
+res <- generateQuantGraphs(exp_peptide_ratios, edgelist)
+saveRDS(res, file = "inst/extdata/quantGraphs_collpept.rds")
+
+
+
+
+#' file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
+#' graphs <- readRDS(file)
+#' G <- graphs$"1_2"[[2]]
+#'
+#' plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
+
+
+
+
+
+
+
+
+
+################################################################################
+
+
+file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
+graphs <- readRDS(file)
+G <- graphs[[1]][[2]]
+bppg:::.minimizeSquaredError(G)
+
+
+file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
+graphs <- readRDS(file)
+G <- graphs$"1_2"[[2]]
+# small example with a small grid size
+res <- iterateOverCi(G, gridSize = 100)
+automatedAnalysisIteratedCi(G, res)
+
+
+
 
 
