@@ -22,3 +22,12 @@ min_2_impute <- function(D, intensities) {
     D_imp <- t(apply(cbind(min_row, D), 1, lod)) # TODO vapply
     return(D_imp)
 }
+
+col_imputation <- .extractintensities <- function(D, col_pattern, rename_columns){
+    intensities <- D[, grep(col_pattern, colnames(D))]
+    if (rename_columns) {
+        colnames(intensities) <- stringr::str_replace(colnames(intensities),
+            col_pattern, "")
+    }
+    return(intensities)
+}
