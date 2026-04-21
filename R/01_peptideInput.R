@@ -4,7 +4,7 @@
 #
 
 
-#' Helper function that extracts the itensitie columns and columns of interest 
+#' Helper function that extracts the itensitie columns and columns of interest
 #' from a given dataframe.
 #'
 #' @param D                         \strong{data.frame} \cr
@@ -16,7 +16,7 @@
 #'                                  If \code{TRUE}, "Intensity." or
 #'                                  "LFQ.intensity." are removed
 #' @return returns intensity dataframe
-#' 
+#'
 #' @importFrom stringr str_replace
 #'
 .extractIntensities <- function(D, col_pattern, rename_columns){
@@ -54,16 +54,16 @@
 #'                                  except peptide sequence and intensities
 #' @param verbose                   \strong{logical} \cr
 #'                                  If \code{TRUE}, additional information on
-#'                                  the data extraction is 
+#'                                  the data extraction is
 #'                                  printed
 #' @return A SummarizedExperiment with intensities, sequences, and optional data
 #'         for the rowData dataframe.
 #' @export
 #'
 #' @examples
-#' file <- system.file("extdata", "peptides.txt", package = "bppg")
+#' file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
-#' 
+#'
 #' @importFrom checkmate assertFileExists assertFlag assertVector
 #' @importFrom utils read.table
 #' @importFrom SummarizedExperiment SummarizedExperiment
@@ -87,15 +87,21 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
     rownames(D) <- D$Sequence
 
     ## remove decoy entries:
-    ind_decoy <- D$Reverse == "+"
-    D <- D[!ind_decoy, ]
+    if (!all(is.na(D$Reverse))) {
+        ind_decoy <- (D$Reverse == "+")
+        D <- D[!ind_decoy, ]
+    }
+    print(D$Reverse)
+
     if (verbose) print(paste0("Removed ", sum(ind_decoy), " decoy sequences."))
 
-    ind_cont <- D$Potential.contaminant == "+"
     if (remove_contaminants) {
-        D <- D[!ind_cont, ]
-        if (verbose) print(paste0("Removed ", sum(ind_cont),
-                " contaminant sequences."))
+        if (!all(is.na(D$Potential.contaminant))) {
+            ind_cont <- D$Potential.contaminant == "+"
+            D <- D[!ind_cont, ]
+            if (verbose) print(paste0("Removed ", sum(ind_cont),
+                                      " contaminant sequences."))
+        }
     }
 
     if (LFQ) {
@@ -103,6 +109,8 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
     } else {
         intensities <- .extractIntensities(D, "Intensity.", rename_columns)
     }
+
+    #print(intensities)
 
     if (zeroToNA) {
         intensities[intensities == 0] <- NA
@@ -127,6 +135,6 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
         rowDF <- data.frame(Sequence = D$Sequence, further_columns)
     }
     return(SummarizedExperiment::SummarizedExperiment(
-        assays = list(intensities=intensities), 
+        assays = list(intensities=intensities),
         colData = colDF, rowData = rowDF))
 }
