@@ -65,8 +65,9 @@
 #' @examples
 #' file <- system.file("extdata", "peptides.txt", package = "bppg")
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' D_norm <- bppg::normalizePeptideIntensities(D)
 #' group <- factor(rep(1:9, each = 3))
-#' aggregateReplicates(D, group = group)
+#' aggregateReplicates(D_norm, group = group)
 #' 
 #' @importFrom checkmate assertCharacter assertClass assertDataFrame 
 #' assertFactor assertNumber 
@@ -175,8 +176,10 @@ calculatePeptideRatios <- function(D, group_levels = NULL) {
 
 #' Normalization of peptide intensities
 #' 
-#' @inheritParams aggregateReplicates
-#'
+#' @param D              \strong{SummarizedExperiment} \cr
+#'                       SummarizedExperiment dataset containing peptide 
+#'                       intensities, e.g. 
+#'                       [readMqPeptideTable].
 #' @param method \strong{character} \cr
 #'          The method of normalization. Options are "nonorm"
 #'          (no normalization), "median", "loess",  "quantile" or "lts"
