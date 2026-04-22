@@ -33,6 +33,27 @@ knitr::opts_chunk$set(
 )
 ```
 
+```{r vignetteSetup, echo=FALSE, message=FALSE, warning = FALSE}
+## Bib setup
+library("RefManageR")
+
+## Write bibliography information
+bib <- c(
+    R = citation(),
+    BiocStyle = citation("BiocStyle")[1],
+    knitr = citation("knitr")[1],
+    RefManageR = citation("RefManageR")[1],
+    rmarkdown = citation("rmarkdown")[1],
+    sessioninfo = citation("sessioninfo")[1],
+    testthat = citation("testthat")[1],
+    ggplot2 = citation("ggplot2")[1],
+    Rsolnp = citation("Rsolnp")[1],
+    seqinr = citation("seqinr")[1]
+)
+
+BibOptions(max.names = 2, bib.style = "authoryear", style = "citation")
+
+```
 
 # Introduction
 
@@ -41,24 +62,228 @@ Bottom up mass spectrometry
 
 # Installation of  `bppg`
 
+To install the latest version of `bppg` from Bioconductor use the 
+following code snippet:
+
+```{r install, eval = FALSE}
+pak::pak("mpc-bioinformatics/bppg")
+```
+
+
 # Asking for help
+
+If you need help with `bppg`, encountered a bug or have suggestions for 
+improvements leave a post in the 
+[Bioconductor support site](https://support.bioconductor.org/) with the 
+`bppg` tag or start an issue on our 
+[github page](https://github.com/mpc-bioinformatics/bppg).
+
 
 # Citing `bppg`
 
+We hope that `r Biocpkg("bppg")` will be useful for your research. 
+Please use the following information to cite the package and the overall 
+approach. Thank you!
+
+```{r "citation"}
+## Citation info
+citation("bppg")
+```
+
 # Quick start to using `bppg`
+
+The main task of bppg is protein inference and relative quantification for 
+bottum-up mass spectrometry. This methods is only suitable for relative
+analysis.
+Therefore, at least two sample groups are requiered to calculate the protein 
+quantities. Ideally, with several replicates per sample. 
+
+bppg works with peptide intensities and currently supports the data format from
+MaxQaunt and McFragger. Otherwise, the dataset can be formatted independtly into
+a SummarizedExperiment object with sample/replicate informations in the
+columns/colData andpeptide information in the rows/rowData.
+Additionally, bppg requiers the FASTA file which was used for the  peptide
+identification.
+
+The second application of bppg is the modeling of peptide and protein 
+relationships using bipartite graphs. This is part of the quantification
+workflow, but can be used independtly for an insilico graph.
+
+## Data
+
+### Example Data
+A test dataset and the matching FASTA file is provided with the package. 
+The data is from ????
+
+- yeast background, UPS spike in
+- 9 different spike in concentrations
+- 3 replicates each = 27 samples total
+
+### Import
+For this dataset the peptide quantificationwas performed with MaxQuant.
+Example of loading a `peptides.txt` file:
+
+```{r load_data, echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
+library("bppg")
+library("SummarizedExperiment")
+
+file <- system.file("extdata", "peptides.txt", package = "bppg")
+D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+
+```
+
+The SummarizedExperiment dataset should look as followed:
+
+```{r dataset,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
+D
+head(colData(D))
+assays(D)$intensities[1:5, 1:3]
+head(rowData(D))
+```
+
+## Data Preprocessing 
+
+### Normalization
+
+Normalization has to be performed to avoid batch effects. The default method is 
+loess, other methods include: median, quantile or lts. 
+If the data is already normalized, there is an option for nonorm (no 
+normalization). Nevertheless, the function has to be called to allow for 
+structural change in the SummarizedExperiment object.
+
+```{r normalize,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
+D_norm <- normalizePeptideIntensities(D, method = "loess")
+
+
+```
+
+
+### Aggregation
+bppg currently only compares the mean of two groups. To avoid calculating a 
+large amount of graphs. The replicates need to be assigned their group and then 
+there are aggregated, e.g. by mean.
+A `missing.limit` can be set to decide for one group and one peptide, if the 
+value is regarded as missing, since missing.limit replicates did not quantify 
+this peptide. 0.0 allows no missing in the group, while 1.0 allows all missing.
+
+```{r aggregation,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
+group <- factor(limma::strsplit2(colnames(D_norm), split = "_")[, 1])
+levels(group)
+D_aggr <- aggregateReplicates(D_norm, method = "mean", missing.limit = 0.4,
+    group = group, seq_col = "Sequence")
+
+```
+
+### Ratio
+
+In the next step the ratios for each group comparison are calculated:
+
+```{r ratio,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
+groups  <- levels(group)
+peptide_ratios <- calculatePeptideRatios(D = D_aggr, group_levels = groups)
+
+```
+
+
+## FASTA
+
+To built the bipartite graph peptides need to be insilico digested and matched 
+with their protein of origin. This is done by `digestFASTA`, which allows for 
+the control of min and max amino acid length of a peptide and how many miscleavages 
+to consider.
+```{r digest,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
+library(seqinr)
+file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+
+edgelist <- digestFASTA(fasta)
+
+```
+
+
+## Built Graph
+For the graph the quantification data and the FASTA edeglist are combined. 
+The `generateQuantGraphs` function creates a comparison specific edgelists, 
+including only peptides with valid ratio from that comparison and their 
+corresponding proteins.
+The option to collapse protein nodes (`collProtNodes`) or collapse peptide nodes
+(`collPeptNodes`) is given to reduce the complexity in the graph. Nodes are 
+collapsed together if they have the same set of edges. This means collapsing 
+protein nodes creates protein groups and therefore, is always recommended. 
+`collPeptNodes = TRUE` is  not recommended for quantification purpose, since each 
+peptide has its own quantification information. 
+
+```{r built_graph,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
+graphs <- generateQuantGraphs(exp_peptide_ratios = peptide_ratios,
+    fasta_edgelist = edgelist, seq_column = "Sequence",
+    collProtNodes = TRUE,
+    collPeptNodes = FALSE)
+
+```
+
+`graphs` is a list of lists, first on the level of comparisons and then the 
+multitude of independtly graphs for that comparison
+
+```{r graphs,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
+names(graphs)
+
+graphs[[1]][[1]]
+```
+
+
+
+## Optimize Realtive Quantification
+
+The optimization is divided into two steps and is performed per graph.
+
+### Optimization
+First, different `Ci` percentages are fixed. The `Ci` describes the percentage 
+distribution of peptides per graph in sample A.
+`iterateOverCi` considers a wide range of possible `Ci` combination by fixing 
+one value. The remaining `Ci` are part of the optimization as are the protein 
+ratios. The optimization aims to reduce the error between calculated peptide 
+ratios, based on the optimized values, and the measured peptide ratios.
+
+```{r optimierung,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
+res <- iterateOverCi(graphs[[1]][[1]])
+head(res)
+```
+
+### Extract Best Results
+
+From the previous results are filtered for the best combination of `Ci`s, with
+the lowest error.
+
+```{r results,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
+protQuant <- automatedAnalysisIteratedCi(graphs[[1]][[1]], res)
+head(assays(protQuant)$results)
+```
+
+
+### Parallization
+
+The optimization runs per graph. This enables easy parallization, for with
+example `batchtools`. an example for this can be seen in our nextflow workflow 
+for this package.
 
 # Further information
 
-# Comparison with other related packages
+- information fo insilico analysis and plotting can be found in further 
+vignettes
 
+## Nextflow
+We also provide a nextflow workflow here. which allows for usage of a wider 
+audiance
+
+# Comparison with other related packages
+what is this research?
 
 # R session information
-<!-- 
+
 ```{r reproduce3, echo=FALSE}
 ## Session info
 library("sessioninfo")
 options(width = 120)
 session_info()
 ```
- -->
 
