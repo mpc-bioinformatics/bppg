@@ -24,6 +24,22 @@ min_2_impute <- function(D, intensities) {
     return(D_imp)
 }
 
+
+#' Extract intensity columns from MaxQuant dataframe
+#'
+#' Helper function that extracts intensity columns and optionally
+#' renames them by removing a given pattern.
+#'
+#' @param D data.frame of peptides.txt from MaxQuant
+#' @param col_pattern character pattern used to identify intensity columns
+#' (e.g. "Intensity." or "LFQ.intensity.")
+#' @param rename_columns logical; if TRUE, col_pattern is removed from column names
+#'
+#' @return data.frame containing only intensity columns
+#'
+#' @importFrom stringr str_replace
+#' @export
+
 col_imputation <- .extractintensities <- function(D, col_pattern, rename_columns){
     intensities <- D[, grep(col_pattern, colnames(D))]
     if (rename_columns) {
