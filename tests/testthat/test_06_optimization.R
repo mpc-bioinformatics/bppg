@@ -129,6 +129,12 @@ test_that("test automated analysis", {
   # 2         NA      NA         2 0.00663525 0.983554        NA        NA NA    0.9    0.9    4
   # TODO: it switches to case 4 because for both proteins an almost identical result is achieved
 
+  ## test case when an error term is NaN (which may happen during the optimization,
+  ## if a Ci is estimated as 0)
+  res_snap$error[c(1,5)] <- NaN
+  res5 <- automatedAnalysisIteratedCi(G_M, res_snap)
+  expect_snapshot(SummarizedExperiment::assay(res5))
+
 })
 
 
