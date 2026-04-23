@@ -618,7 +618,7 @@ iterateOverCi <- function(G,
 #'                                          other proteins within the same graph
 #'                                          will be used to calculate the
 #'                                          optimal solution for each protein
-#'                                          node.
+#'                                          node. Default is TRUE
 #' @param verbose                       \strong{logical} \cr
 #'                                      If \code{TRUE}, additional information
 #'                                      will be printed.
@@ -647,7 +647,7 @@ iterateOverCi <- function(G,
 #' automatedAnalysisIteratedCi(G, res)
 automatedAnalysisIteratedCi <- function(G,
                                         res,
-                                        use_results_from_other_proteins = FALSE,
+                                        use_results_from_other_proteins = TRUE,
                                         verbose = FALSE,
                                         job = NULL,
                                         error_tol = 1e-10,
