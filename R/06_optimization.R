@@ -661,7 +661,7 @@ automatedAnalysisIteratedCi <- function(G,
             resProt2 <- res[res$protein != x, cols]
             colnames(resProt2) <- c("protein", "error", "RLog", "C")
             # remove too extreme Ci
-            resProt2 <- resProt2[resProt2$C > 0.01 | resProt2$C < 0.99,]
+            resProt2 <- resProt2[resProt2$C > 0.01 & resProt2$C < 0.99,]
             resProt <- rbind(resProt, resProt2)
         }
         return(.analyseResultSingleProt(x, resProt, error_tol = error_tol,
