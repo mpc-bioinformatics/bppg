@@ -311,7 +311,7 @@
 #' \item{RES}{final result of \code{\link[bppg]{.errorEquation}}, which also
 #' contains the final, minimal error term}
 #' \item{Tracking}{Tracking of Ri, Ci and error term for the
-#'  different iterations}
+#'  different iterations (-1: no optimization)}
 #' \item{outer.iter}{Number of outer iterations needed for the optimization
 #'  algorithm to converge or stop (see also \code{\link[Rsolnp]{solnp}})}
 #' \item{convergence}{Indicates whether the solver has converged (0) or
@@ -342,7 +342,7 @@
         RiLog <- mean(rjLog, na.rm = TRUE)
         RES <- .errorEquation(RiLog = c(RiLog),
             Ci = c(1.0), M = M, rjLog = rjLog)
-        Tracking <- .trackingDataFrame(1, RES, c(RiLog), c(1.0))
+        Tracking <- .trackingDataFrame(-1, RES, c(RiLog), c(1.0))
         result <- list(RiLog = c(RiLog), Ci = 1.0, RES = RES, 
             Tracking = Tracking, outer.iter = 0, convergence = 0)
         return(result)
