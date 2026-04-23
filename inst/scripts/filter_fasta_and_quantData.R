@@ -71,11 +71,13 @@ saveRDS(res, file = "inst/extdata/quantGraphs_collpept.rds")
 
 
 
-#' file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
-#' graphs <- readRDS(file)
-#' G <- graphs$"1_2"[[2]]
-#'
-#' plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
+file <- system.file("extdata", "quantGraphs_collpept.rds", package = "bppg")
+graphs <- readRDS(file)
+G <- graphs$"1_2"[[3]]
+
+plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE, legend.x = 0)
+
+
 
 
 
@@ -86,22 +88,25 @@ saveRDS(res, file = "inst/extdata/quantGraphs_collpept.rds")
 
 
 ################################################################################
+#### testing around
+
+M1 <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
+G1 <- igraph::graph_from_biadjacency_matrix(M1)
+plot(G1, layout = igraph::layout_as_bipartite)
+
+M2 <- matrix(c(1, 1, 0, 1), nrow = 2, byrow = TRUE)
+G2 <- igraph::graph_from_biadjacency_matrix(M2)
+plot(G2, layout = igraph::layout_as_bipartite)
 
 
-file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
-graphs <- readRDS(file)
-G <- graphs[[1]][[2]]
-bppg:::.minimizeSquaredError(G)
+bppg:::.isomorphicBipartite(G1, G2)
 
-
-file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
-graphs <- readRDS(file)
-G <- graphs$"1_2"[[2]]
-# small example with a small grid size
-res <- iterateOverCi(G, gridSize = 100)
-automatedAnalysisIteratedCi(G, res)
-
-
-
-
+#' M1 <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
+#' G1 <- igraph::graph_from_biadjacency_matrix(M1)
+#'
+#' M2 <- matrix(c(1, 1, 0, 1), nrow = 2, byrow = TRUE)
+#' G2 <- igraph::graph_from_biadjacency_matrix(M2)
+#'
+#' .isomorphicBipartite(G1, G2)
+#'
 
