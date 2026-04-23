@@ -101,6 +101,7 @@ file <- system.file("extdata", "quantGraphs_collpept.rds", package = "bppg")
 graphs <- readRDS(file)
 G <- graphs$"1_2"[[2]]
 
-plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
+plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE,
+    legend.x = 0)
 
 }
