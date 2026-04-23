@@ -646,8 +646,8 @@ automatedAnalysisIteratedCi <- function(G,
             message(paste0(length(ind_error_NA),
                            " grid points with NA or NaN error term were removed."))
         }
-        res <- res[-ind_error_NA,]
-     }
+        res <- res[-ind_error_NA, ]
+    }
 
     f <- function(x, res, error_tol, ratioLog_tol,
         use_results_from_other_proteins) {
