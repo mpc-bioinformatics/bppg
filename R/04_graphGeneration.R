@@ -13,13 +13,13 @@
 .imputationFilter <- function(G) {
     print("currently not used")
 }
-=========
+
 # Functions in this file:
 # .getContractMapping
 # .contractGraph
 # generateGraphsFromEdgelist()
 # generateQuantGraphs()
->>>>>>>>> Temporary merge branch 2
+
 
 
 #' Create Mapping signature for igraph::contract function.
@@ -285,11 +285,11 @@ generateQuantGraphs <- function(exp_peptide_ratios,
                                   collProtNodes = TRUE,
                                   collPeptNodes = FALSE,
                                   suffix = "") {
-<<<<<<<<< Temporary merge branch 1
+
     # filter out na, leave valid rows only
     peptide_ratios <- stats::na.omit(peptide_ratios)
     
-=========
+
     checkmate::assertClass(exp_peptide_ratios, "SummarizedExperiment")
     checkmate::assertDataFrame(SummarizedExperiment::assays(
         exp_peptide_ratios)$logRatios, all.missing=FALSE)
@@ -311,7 +311,7 @@ generateQuantGraphs <- function(exp_peptide_ratios,
             overwrite = TRUE, keepNA = TRUE)
     }
 
-<<<<<<<<< Temporary merge branch 1
+
     id <- peptide_ratios[, id_cols, drop = FALSE]
     fc <- peptide_ratios[, -(id_cols), drop = FALSE]
 
@@ -364,7 +364,7 @@ generateQuantGraphs <- function(exp_peptide_ratios,
     }
 
     return(G)
-=========
+
     colnames_split <- limma::strsplit2(colnames(exp_peptide_ratios), "_")
     comparisons <- paste(colnames_split[, 2], colnames_split[, 3], sep = "_")
     # first built graphs and try to identify missing type after

@@ -31,20 +31,18 @@ min_2_impute <- function(D, intensities) {
 #' renames them by removing a given pattern.
 #'
 #' @param D data.frame of peptides.txt from MaxQuant
-#' @param col_pattern character pattern used to identify intensity columns
+#' @param col_mean calculates mean of each column 
 #' (e.g. "Intensity." or "LFQ.intensity.")
-#' @param rename_columns logical; if TRUE, col_pattern is removed from column names
-#'
-#' @return data.frame containing only intensity columns
-#'
-#' @importFrom stringr str_replace
-#' @export
+#' @return data.frame with only intensity columns
 
-col_imputation <- .extractintensities <- function(D, col_pattern, rename_columns){
-    intensities <- D[, grep(col_pattern, colnames(D))]
-    if (rename_columns) {
-        colnames(intensities) <- stringr::str_replace(colnames(intensities),
-            col_pattern, "")
+col_imputation <- function(D, intensities){
+
+    for (j in seq_len(ncol(D))) {
+
+        col_mean <- mean(D[, j], na.rm = TRUE)
+
+        D[is.na(D[, j]), j] <- col_mean
     }
-    return(intensities)
+
+    return(D)
 }
