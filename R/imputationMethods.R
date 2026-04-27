@@ -46,3 +46,20 @@ col_imputation <- function(D, intensities){
 
     return(D)
 }
+
+
+# missForest 
+#' Helper function that extracts intensity columns and optionally
+#' renames them by removing a given pattern.
+#'
+#' @param D data.frame of peptides.txt from MaxQuant
+#' @param D_imp applies missForest imputation to the data.frame D, 
+#'which contains only intensity columns 
+#' (e.g. "Intensity." or "LFQ.intensity.")
+#' @return data.frame with only intensity columns
+
+missForest <- function(D, intensities) {
+    # missForest imputation
+    D_imp <- missForest::missForest(D, verbose = FALSE)$ximp
+    return(D_imp)
+}
