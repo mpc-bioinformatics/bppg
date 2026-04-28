@@ -20,8 +20,8 @@ test_that("test proteinElimination", {
     res$protsOriginIDs <- names(res$protsOriginIDs)
     res$res_best$G <- lapply(res$res_best$G, igraph::as_edgelist)
 
-    ## TODO: rounding here because of small Windows/Linux differences
-    res$resDF$error <- round(res$resDF$error, digits = 5)
+    ## florring here because of small Windows/Linux differences
+    res$resDF$error <- floor(res$resDF$error * 10^5) / 10^5
 
     expect_snapshot(res)
 
