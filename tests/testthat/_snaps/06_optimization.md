@@ -66,3 +66,15 @@
       prot_3           0.1    0.1    4
       prot_4;prot_5    0.9    0.9    4
 
+---
+
+    Code
+      SummarizedExperiment::assay(res5)
+    Output
+                    graphID proteinNr   error_min     RiLog RiLog_min RiLog_max  Ci
+      prot_3             NA         1 0.006932845 0.9779656        NA        NA 0.9
+      prot_4;prot_5      NA         2 0.006635250 0.9835544        NA        NA 0.9
+                    Ci_min Ci_max case
+      prot_3            NA     NA    3
+      prot_4;prot_5     NA     NA    3
+
