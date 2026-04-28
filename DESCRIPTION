@@ -26,13 +26,17 @@ Imports:
     Rsolnp,
     stringr,
     SummarizedExperiment
-Suggests: 
+Suggests:
     covr,
     rmarkdown,
     testthat (>= 3.0.0),
-    vsn, 
+    vsn,
     tidySummarizedExperiment,
-    seqinr
+    seqinr,
+    BiocStyle,
+    knitr,
+    pak
 Config/testthat/edition: 3
+VignetteBuilder: knitr
 Depends: 
     igraph (>= 2.0.0)

@@ -1,7 +1,7 @@
 # normalize peptide data
 
     Code
-      SummarizedExperiment::assays(D_norm_loess)$intensities
+      SummarizedExperiment::assays(D_norm_loess)$intensities_norm
     Output
                                                      12500amol_R1 12500amol_R2
       AAAAQDEITGDGTTTVVCLVGELLR                                NA           NA
@@ -51864,7 +51864,7 @@
 ---
 
     Code
-      SummarizedExperiment::assays(D_norm_lts)$intensities
+      SummarizedExperiment::assays(D_norm_lts)$intensities_norm
     Output
                                                      12500amol_R1 12500amol_R2
       AAAAQDEITGDGTTTVVCLVGELLR                                NA           NA

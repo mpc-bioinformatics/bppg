@@ -42,7 +42,7 @@
 #'
 #' @param D              \strong{SummarizedExperiment} \cr
 #'                       SummarizedExperiment Dataset containing peptide 
-#'                       intensities, e.g. the result of [readMqPeptideTable] or
+#'                       intensities, e.g. the result of 
 #'                       [normalizePeptideIntensities].
 #' @param group          \strong{character factor} \cr
 #'                       The groups per sample for aggregation, if not already 
@@ -65,8 +65,9 @@
 #' @examples
 #' file <- system.file("extdata", "peptides.txt", package = "bppg")
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' D_norm <- bppg::normalizePeptideIntensities(D)
 #' group <- factor(rep(1:9, each = 3))
-#' aggregateReplicates(D, group = group)
+#' aggregateReplicates(D_norm, group = group)
 #' 
 #' @importFrom checkmate assertCharacter assertClass assertDataFrame 
 #' assertFactor assertNumber 
@@ -78,7 +79,7 @@ aggregateReplicates <- function(D,
     method = "mean",
     seq_col = "Sequence") {
     checkmate::assertClass(D, "SummarizedExperiment")
-    checkmate::assertDataFrame(SummarizedExperiment::assays(D)$intensities,
+    checkmate::assertDataFrame(SummarizedExperiment::assays(D)$intensities_norm,
         all.missing=FALSE)
     checkmate::assertFactor(group, null.ok = TRUE)
     checkmate::assertNumber(missing.limit, lower = 0, upper = 1)
@@ -86,7 +87,7 @@ aggregateReplicates <- function(D,
     checkmate::assertCharacter(seq_col)
 
     id <- SummarizedExperiment::rowData(D)[, seq_col]
-    intensities <- SummarizedExperiment::assays(D)$intensities
+    intensities <- SummarizedExperiment::assays(D)$intensities_norm
 
     if (is.null(group)) {
         group <- factor(SummarizedExperiment::colData(D)$group)
@@ -175,8 +176,10 @@ calculatePeptideRatios <- function(D, group_levels = NULL) {
 
 #' Normalization of peptide intensities
 #' 
-#' @inheritParams aggregateReplicates
-#'
+#' @param D              \strong{SummarizedExperiment} \cr
+#'                       SummarizedExperiment dataset containing peptide 
+#'                       intensities, e.g. 
+#'                       [readMqPeptideTable].
 #' @param method \strong{character} \cr
 #'          The method of normalization. Options are "nonorm"
 #'          (no normalization), "median", "loess",  "quantile" or "lts"
@@ -210,7 +213,8 @@ normalizePeptideIntensities <- function(D, method = "loess", lts.quantile = 0.8,
         #### choose normalization function
         fun <- limma::normalizeBetweenArrays
         args <- switch(method,
-            "loess" = list(object = log_DATA, method = "cyclicloess"),
+            "loess" = list(object = log_DATA, method = "cyclicloess",
+                adaptive.span = FALSE),
             "quantile" = list(object = log_DATA, method = "quantile"),
             "median" = list(object = log_DATA, method = "scale"))
 

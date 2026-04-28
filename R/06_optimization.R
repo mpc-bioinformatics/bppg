@@ -1,5 +1,6 @@
 # Functions in this file:
 # .errorEquation
+# .trackingDataFrame
 # .initializeCi
 # .initializeRi
 # .calcConstraints
@@ -62,6 +63,28 @@
             res_squ_err = res_squ_err, W = W))
 }
 
+
+#' Funktion to format Tracking information into a dataframe with columnnames.
+#' 
+#' @param i     \strong{numeric} \cr
+#'              iterrator, for when this tracking was performed
+#' @param RES   \strong{list} \cr
+#'              The result from [.errorEquation]
+#' @param RiLog \strong{numeric vector} \cr
+#'              Contains the (estimated) protein ratios (log2-scale).
+#' @param Ci    \strong{numeric vector} \cr
+#'              Contains the protein weights (estimated, sum up to 1)
+#' @return      \strong{data.frame} \cr
+#'              combined information in one data.frame.
+.trackingDataFrame <- function(i, RES, RiLog, Ci){
+    track_colnames <- c("iter", "squ_err",
+        paste0("RLog", seq_along(RiLog)), paste0("C", seq_along(Ci)))
+    Tracking <- matrix(c(i, RES$res_squ_err, RiLog, Ci), nrow = 1)
+    Tracking <- as.data.frame(Tracking)
+    colnames(Tracking) <- track_colnames
+    return(Tracking)
+}
+    
 
 
 #' Calulate initial values for Ci (protein weights) for optimization
@@ -288,7 +311,7 @@
 #' \item{RES}{final result of \code{\link[bppg]{.errorEquation}}, which also
 #' contains the final, minimal error term}
 #' \item{Tracking}{Tracking of Ri, Ci and error term for the
-#'  different iterations}
+#'  different iterations (-1: no optimization)}
 #' \item{outer.iter}{Number of outer iterations needed for the optimization
 #'  algorithm to converge or stop (see also \code{\link[Rsolnp]{solnp}})}
 #' \item{convergence}{Indicates whether the solver has converged (0) or
@@ -315,6 +338,16 @@
     rjLog <- stats::na.omit(igraph::vertex_attr(G, "pep_logRatio"))
     if (is.null(rjLog)) stop("G does not contain peptide ratios.")
     checkmate::assertNumeric(rjLog)
+    if (m == 1){
+        RiLog <- mean(rjLog, na.rm = TRUE)
+        RES <- .errorEquation(RiLog = c(RiLog),
+            Ci = c(1.0), M = M, rjLog = rjLog)
+        Tracking <- .trackingDataFrame(-1, RES, c(RiLog), c(1.0))
+        result <- list(RiLog = c(RiLog), Ci = 1.0, RES = RES, 
+            Tracking = Tracking, outer.iter = 0, convergence = 0)
+        return(result)
+    }
+
     checkmate::assertNumeric(fixedCi, len = m, lower = 0, upper = 1,
         null.ok = TRUE)
     stopifnot(sum(fixedCi, na.rm = TRUE) <= 1)
@@ -331,12 +364,7 @@
     ## initial error term
     RES <- .errorEquation(RiLog = RiLog_start, Ci = Ci_start, M = M,
         rjLog = rjLog)
-
-    track_colnames <- c("iter", "squ_err",
-        paste0("RLog", seq_len(m)), paste0("C", seq_len(m)))
-    Tracking <- matrix(c(0, RES$res_squ_err, RiLog_start, Ci_start), nrow = 1)
-    Tracking <- as.data.frame(Tracking)
-    colnames(Tracking) <- track_colnames
+    Tracking <- .trackingDataFrame(0, RES, RiLog_start, Ci_start)
 
     fun <- .calcObjectiveFunction(fixedCi, M, rjLog)
     constr <- .calcConstraints(fixedCi, m)
@@ -590,7 +618,7 @@ iterateOverCi <- function(G,
 #'                                          other proteins within the same graph
 #'                                          will be used to calculate the
 #'                                          optimal solution for each protein
-#'                                          node.
+#'                                          node. Default is TRUE
 #' @param verbose                       \strong{logical} \cr
 #'                                      If \code{TRUE}, additional information
 #'                                      will be printed.
@@ -619,7 +647,7 @@ iterateOverCi <- function(G,
 #' automatedAnalysisIteratedCi(G, res)
 automatedAnalysisIteratedCi <- function(G,
                                         res,
-                                        use_results_from_other_proteins = FALSE,
+                                        use_results_from_other_proteins = TRUE,
                                         verbose = FALSE,
                                         job = NULL,
                                         error_tol = 1e-10,
