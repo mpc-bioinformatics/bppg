@@ -213,7 +213,8 @@ normalizePeptideIntensities <- function(D, method = "loess", lts.quantile = 0.8,
         #### choose normalization function
         fun <- limma::normalizeBetweenArrays
         args <- switch(method,
-            "loess" = list(object = log_DATA, method = "cyclicloess"),
+            "loess" = list(object = log_DATA, method = "cyclicloess",
+                adaptive.span = FALSE),
             "quantile" = list(object = log_DATA, method = "quantile"),
             "median" = list(object = log_DATA, method = "scale"))
 
