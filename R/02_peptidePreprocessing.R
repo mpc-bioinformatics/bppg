@@ -80,7 +80,7 @@ aggregateReplicates <- function(D,
     missing.limit = 0, 
     method = "mean",
     seq_col = "Sequence", 
-    imp_method = "NULL") {
+    imp_method = NULL) {
     checkmate::assertClass(D, "SummarizedExperiment")
     checkmate::assertDataFrame(SummarizedExperiment::assays(D)$intensities,
         all.missing=FALSE)
@@ -123,7 +123,9 @@ aggregateReplicates <- function(D,
         # apply imputation on missing values
         if (!is.null(imp_method)) {
             FUN_imp <- switch(imp_method,
-                min_2_impute = min_2_impute)
+                min_2_impute = min_2_impute,
+                col_imputations = col_imputation,
+                missForest = missForest)
             vals_imp <- FUN_imp(X_tmp, intensities) 
             # only replace missing values
             res_tmp[mask_impute[, i]] <- vals_imp[mask_impute[, i]]

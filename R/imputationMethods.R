@@ -49,9 +49,7 @@ col_imputation <- function(D, intensities){
 
 
 # missForest 
-#' Helper function that extracts intensity columns and optionally
-#' renames them by removing a given pattern.
-#'
+#' Imputation method using random forest to predict missing values based on observed data.
 #' @param D data.frame of peptides.txt from MaxQuant
 #' @param D_imp applies missForest imputation to the data.frame D, 
 #'which contains only intensity columns 
