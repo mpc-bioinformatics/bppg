@@ -31,8 +31,16 @@ Suggests:
     covr,
     rmarkdown,
     testthat (>= 3.0.0),
+Suggests:
+    covr,
+    rmarkdown,
+    testthat (>= 3.0.0),
     tidySummarizedExperiment,
-    seqinr
+    seqinr,
+    BiocStyle,
+    knitr,
+    pak
 Config/testthat/edition: 3
+VignetteBuilder: knitr
 Depends: 
     igraph (>= 2.0.0)
