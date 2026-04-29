@@ -15,7 +15,7 @@ test_that("test aggregateReplicates", {
     rownames(df) <- df$sequence
     df$sequence <- NULL
     D <- SummarizedExperiment::SummarizedExperiment(
-            assays = list(intensities = df),
+            assays = list(intensities_norm = df),
             colData = data.frame(sample = colnames(df)),
             rowData = data.frame(Sequence = rownames(df)))
 
@@ -77,12 +77,14 @@ test_that("normalize peptide data", {
     D_norm_lts <- bppg::normalizePeptideIntensities(D, method = "lts")
 
     expect_snapshot(D_norm_loess)
-    expect_snapshot(SummarizedExperiment::assays(D_norm_loess)$intensities, variant = Sys.info()[["sysname"]])
+    expect_snapshot(SummarizedExperiment::assays(D_norm_loess)$intensities_norm,
+        variant = Sys.info()[["sysname"]])
     expect_snapshot(SummarizedExperiment::rowData(D_norm_loess))
     expect_snapshot(SummarizedExperiment::colData(D_norm_loess))
 
     expect_snapshot(D_norm_lts)
-    expect_snapshot(SummarizedExperiment::assays(D_norm_lts)$intensities, variant = Sys.info()[["sysname"]])
+    expect_snapshot(SummarizedExperiment::assays(D_norm_lts)$intensities_norm,
+        variant = Sys.info()[["sysname"]])
     expect_snapshot(SummarizedExperiment::rowData(D_norm_lts))
     expect_snapshot(SummarizedExperiment::colData(D_norm_lts))
 })
