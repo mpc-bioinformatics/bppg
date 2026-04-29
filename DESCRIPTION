@@ -31,10 +31,6 @@ Suggests:
     covr,
     rmarkdown,
     testthat (>= 3.0.0),
-Suggests:
-    covr,
-    rmarkdown,
-    testthat (>= 3.0.0),
     tidySummarizedExperiment,
     seqinr,
     BiocStyle,
