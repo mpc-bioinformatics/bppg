@@ -65,48 +65,12 @@ saveRDS(res, file = "inst/extdata/quantGraphs.rds")
 
 
 # graphs with collapsed protein nodes and collapsed peptide nodes (should be used for visualization)
-res <- generateQuantGraphs(exp_peptide_ratios, edgelist)
+res <- generateQuantGraphs(exp_peptide_ratios, edgelist, collPeptNodes = TRUE)
 saveRDS(res, file = "inst/extdata/quantGraphs_collpept.rds")
 
-
-
-
-file <- system.file("extdata", "quantGraphs_collpept.rds", package = "bppg")
-graphs <- readRDS(file)
-G <- graphs$"1_2"[[3]]
-
-plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE, legend.x = 0)
+plotBipartiteGraph(res[[1]][[3]], legend = FALSE)
 
 
 
 
-
-
-
-
-
-
-
-################################################################################
-#### testing around
-
-M1 <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
-G1 <- igraph::graph_from_biadjacency_matrix(M1)
-plot(G1, layout = igraph::layout_as_bipartite)
-
-M2 <- matrix(c(1, 1, 0, 1), nrow = 2, byrow = TRUE)
-G2 <- igraph::graph_from_biadjacency_matrix(M2)
-plot(G2, layout = igraph::layout_as_bipartite)
-
-
-bppg:::.isomorphicBipartite(G1, G2)
-
-#' M1 <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
-#' G1 <- igraph::graph_from_biadjacency_matrix(M1)
-#'
-#' M2 <- matrix(c(1, 1, 0, 1), nrow = 2, byrow = TRUE)
-#' G2 <- igraph::graph_from_biadjacency_matrix(M2)
-#'
-#' .isomorphicBipartite(G1, G2)
-#'
 
