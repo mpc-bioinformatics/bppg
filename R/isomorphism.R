@@ -73,8 +73,8 @@
 #' and their occurence.
 #'
 #'
-#' @param G                  \strong{igraph graph object} \cr
-#'                           A graph.
+#' @param G                  \strong{list of igraph graph objects} \cr
+#'                           A list of graphs.
 #' @param sort_by_nr_edges   \strong{logical} \cr
 #'                           If \code{TRUE}, the list of prototypes is sorted by
 #'                           number of edges.
@@ -82,35 +82,37 @@
 #' @return A list of prototype graphs plus their count.
 #'
 #'
-#' @examples ## TODO
+#' @examples
+#' file <- system.file("extdata", "quantGraphs_collpept.rds", package = "bppg")
+#' graphs <- readRDS(file)
+#' graphs <- unlist(graphs, recursive = FALSE)
+#'
+#' PL <- bppg:::.generatePrototypeList(graphs, sort_by_nr_edges = FALSE)
+#' # prototype list contains 3 isomorphism classes (I, N and M shaped graphs)
 #'
 #' @importFrom pbapply setpb startpb closepb
 #' @importFrom igraph gsize
 
 .generatePrototypeList <- function(G, sort_by_nr_edges = FALSE) {
-
     counter <- integer(length(G))
     pb <- pbapply::startpb(min = 0, max = 1)
     i <- 1
-    ## TODO why not for loop???
-    ## go trough list of graphs,
+    # While-loop over G to find isomorphism classes. All graphs belonging to the
+    # class found in the current iteration are removed, so the length of G is
+    # decreasing.
     while (i <= length(G)) {
-
         ## if end of list is reached:
         if (i == length(G)) {
             counter[i] <- 1
             i <- i + 1
             next
         }
-
         G_tmp <- G[[i]]
-
         ## Which graphs are isomorphic to G_tmp?
         x <- vapply(G[(i + 1):length(G)], function(x) {
             .isomorphicBipartite(x, G_tmp)
         }, logical(1))
         ind <- which(x)
-
         ## delete Graphs isomorphic to G_tmp graphs (-> list becomes smaller)
         ## G_tmp itself is a new isomorphism class.
         if (length(ind) > 0) {
@@ -123,16 +125,13 @@
         pbapply::setpb(pb, i / length(G))
         i <- i + 1
     }
-
     ## sort list of prototypes according to number of edges
     if (sort_by_nr_edges) {
         nr_edges <- vapply(G, igraph::gsize, FUN.VALUE = numeric(1))
         ord <- order(nr_edges)
-
         G <- G[ord]
         counter <- counter[ord]
     }
-
     pbapply::closepb(pb)
     return(list(graphs = G, counter = counter))
 }
