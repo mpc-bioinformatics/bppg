@@ -37,3 +37,7 @@ A table with the characteristics.
 \description{
 Generates a table with characteristics for each subgraph in a list.
 }
+\examples{
+# TODO
+
+}

@@ -46,6 +46,7 @@ Aggregate replicates of the same experimental group.
 file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
 group <- factor(rep(1:9, each = 3))
 D <- readMqPeptideTable(path = file, group = group, LFQ = TRUE, remove_contaminants = FALSE)
-aggregateReplicates(D)
+D_norm <- bppg::normalizePeptideIntensities(D)
+aggregateReplicates(D_norm)
 
 }

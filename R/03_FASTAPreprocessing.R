@@ -93,7 +93,7 @@
     }
     if (missed > length(stop)) {
         if (warn){
-            warning(paste("number of specified missed cleavages is greater",
+            warning(paste0("number of specified missed cleavages is greater ",
                 "than the possible maximum"))
         }
     }

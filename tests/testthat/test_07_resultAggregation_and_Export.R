@@ -13,9 +13,11 @@ test_that("result aggregation", {
             G <- graphs_tmp[[i]]
             res <- iterateOverCi(G, gridSize = 100)
             if (is.null(RES_tmp)) {
-                RES_tmp <- automatedAnalysisIteratedCi(G, res)
+                RES_tmp <- automatedAnalysisIteratedCi(G, res, 
+                    use_results_from_other_proteins = FALSE)
             } else {
-                RES_tmp <- rbind(RES_tmp, automatedAnalysisIteratedCi(G, res))
+                RES_tmp <- rbind(RES_tmp, automatedAnalysisIteratedCi(G, res,
+                    use_results_from_other_proteins = FALSE))
             }
         }
         RES <- c(RES, RES_tmp)
@@ -25,5 +27,11 @@ test_that("result aggregation", {
     resultsList <- RES
 
     X <- combineComparisons(resultsList)
+     
     expect_snapshot(X)
+    expect_snapshot(SummarizedExperiment::assays(X)$sample1_sample2)
+    expect_snapshot(SummarizedExperiment::assays(X)$sample1_sample3)
+    expect_snapshot(SummarizedExperiment::assays(X)$sample2_sample3)
+    expect_snapshot(SummarizedExperiment::rowData(X))
+    expect_snapshot(SummarizedExperiment::colData(X))
 })

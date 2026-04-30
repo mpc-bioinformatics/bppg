@@ -1,4 +1,21 @@
 ## TODO add test for new contracting functions
+test_that("test mapping for graph contraction", {
+    file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+    fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+    names(fasta) <- limma::strsplit2(names(fasta), "\\|")[,2]
+    res <- digestFASTA(fasta)
+
+    mappingCollProtPept <- bppg:::.getContractMapping(res, 
+        collProtNodes = TRUE, collPeptNodes = TRUE)
+    mappingCollProt <- bppg:::.getContractMapping(res, 
+        collProtNodes = TRUE, collPeptNodes = FALSE)
+    mappingCollPept <- bppg:::.getContractMapping(res, 
+        collProtNodes = FALSE, collPeptNodes = TRUE)
+    
+    expect_snapshot(mappingCollProtPept)
+    expect_snapshot(mappingCollProt)
+    expect_snapshot(mappingCollPept)
+})
 
 test_that("generation of graphs from edgelist", {
     library(igraph)
@@ -77,6 +94,18 @@ test_that("test generateQuantGraphs", {
     testfile_path <- file.path(testthat::test_path(), "testfiles")
     # saveRDS(graphs2, file.path(testfile_path, "quantGraphsForTesting.rds"))
     ###################
+    # check protOrigin with quant
+    protOrigin <- rep(paste0("origin_", 1:2), times = c(13,4))
+    edgelist <- data.frame(protein = proteins, peptide = peptides, 
+        protOrigin = protOrigin)
+    graphs3 <- bppg::generateQuantGraphs(exp_peptide_ratios = expData,
+                                        fasta_edgelist = edgelist,
+                                        outpath = temp_dir,
+                                        seq_column = "peptides",
+                                        collProtNodes = TRUE,
+                                        collPeptNodes = FALSE,
+                                        suffix = "")
+
 
 
     # Check result attributes
@@ -89,7 +118,35 @@ test_that("test generateQuantGraphs", {
         expect_snapshot(igraph::as_edgelist(graphs[[i]][[j]]))
         expect_snapshot(igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio"))
         expect_snapshot(igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio"))
+        expect_snapshot(igraph::vertex_attr(graphs3[[i]][[j]], "protOrigin"))
         }
     }
 
+})
+
+
+test_that("test protOrigin", {
+    file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+    fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+    names(fasta) <- limma::strsplit2(names(fasta), "\\|")[,2]
+    protOrigin <- as.list(c(rep("yeast", 4), rep("spike_in", 3)))
+    edgelist <- digestFASTA(fasta, protOrigin = protOrigin)
+
+    graphs1 <- bppg::generateGraphsFromEdgelist(edgelist)
+    graphs2 <- bppg::generateGraphsFromEdgelist(edgelist, collPeptNodes = TRUE)
+    graphs3 <- bppg::generateGraphsFromEdgelist(edgelist, collPeptNodes = TRUE,
+        collProtNodes = TRUE)
+    
+    for (i in seq_along(graphs1)) {
+        expect_snapshot(igraph::V(graphs1[[i]])$name[
+            igraph::V(graphs1[[i]])$type])
+        expect_snapshot(igraph::V(graphs1[[i]])$protOrigin)
+        expect_snapshot(igraph::V(graphs2[[i]])$name[
+            igraph::V(graphs2[[i]])$type])
+        expect_snapshot(igraph::V(graphs2[[i]])$protOrigin)
+        expect_snapshot(igraph::V(graphs3[[i]])$name[
+            igraph::V(graphs3[[i]])$type])
+        expect_snapshot(igraph::V(graphs3[[i]])$protOrigin)
+    }
+    
 })

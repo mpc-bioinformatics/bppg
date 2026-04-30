@@ -25,6 +25,8 @@ Export SummarizedExperiment object to an Excel file,
 with one assay per sheet.
 }
 \examples{
-# TODO
+resultList <- readRDS("inst/extdata/resultsList.rds")
+SE <- combineComparisons(resultList)
+exportSE(SE, "results.xlsx")
 
 }

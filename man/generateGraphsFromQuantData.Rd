@@ -12,6 +12,7 @@ generateGraphsFromQuantData(
   min_aa = 6,
   max_aa = 50,
   seq_column = "Sequence",
+  norm_method = "loess",
   collProtNodes = TRUE,
   collPeptNodes = FALSE,
   suffix = "",
@@ -50,6 +51,11 @@ in a peptide.}
 \item{seq_column}{\strong{character} \cr
 The column name of the column of D with the
 peptide sequences.}
+
+\item{norm_method}{\strong{character} \cr
+The method of normalization. Options are "nonorm"
+(no normalization), "median", "loess",  "quantile" or "lts"
+normalization. Default is "loess"}
 
 \item{collProtNodes}{\strong{logical} \cr
 If \code{TRUE}, the protein nodes

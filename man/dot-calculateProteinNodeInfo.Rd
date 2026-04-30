@@ -21,7 +21,12 @@ A data frame with information on number of unique/shared peptides.
 Table with information on each protein node
 }
 \examples{
-## TODO
+
+file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
+graphs <- readRDS(file)
+
+ProtInfo <- bppg:::.calculateProteinNodeInfo(G = graphs, verbose = FALSE)
+
 
 }
 \seealso{

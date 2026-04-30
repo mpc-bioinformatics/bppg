@@ -33,7 +33,7 @@ G1 <- igraph::graph_from_biadjacency_matrix(M1)
 M2 <- matrix(c(1, 1, 0, 1), nrow = 2, byrow = TRUE)
 G2 <- igraph::graph_from_biadjacency_matrix(M2)
 
-.isomorphicBipartite(G1, G2)
+bppg:::.isomorphicBipartite(G1, G2)
 
 }
 \seealso{

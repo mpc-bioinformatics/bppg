@@ -12,12 +12,15 @@
 # Q12690
 
 library(seqinr)
-file <- system.file("extdata", "uniprotkb_proteome_Scerevisiae_UP000002311_20250820_v202503.fasta", package = "bppg")
+file <- "inst/original_data/uniprotkb_proteome_Scerevisiae_UP000002311_20250820_v202503.fasta"
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 
-proteins <- c("P09938", "P39708", "P07262", "P40212", "Q12690")
+proteins <- c("P09938",
+              "P39708", "P07262",
+              "P40212", "Q12690",
+              "P00330", "P00331", "P07246", "P38113")
 
-# get all fasta entries for the respective 5 proteins
+# get all fasta entries for the respective 9 proteins
 ind <- NULL
 for(i in seq_along(proteins)) {
     ind <- c(ind, grep(proteins[[i]], names(fasta)))
@@ -30,7 +33,7 @@ seqinr::write.fasta(sequences = fasta_filtered, names = names(fasta_filtered),
 # TODO: explain the origin of .raw files and quantification via MaxQuant
 
 
-file <- system.file("extdata", "peptides.txt", package = "bppg")
+file <- "inst/original_data/peptides.txt"
 D <- read.table(file, sep = "\t", header = TRUE)
 
 # find rows that belong to proteins associated with the 5 proteins
@@ -55,8 +58,8 @@ edgelist <- digestFASTA(fasta)
 file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
 group <- factor(rep(1:9, each = 3))
 D <- readMqPeptideTable(path = file, group = group, LFQ = FALSE, remove_contaminants = FALSE)
-
-dAgg <- aggregateReplicates(D, group = group)
+D_norm <- normalizePeptideIntensities(D)
+dAgg <- aggregateReplicates(D_norm, group = group)
 exp_peptide_ratios <- calculatePeptideRatios(dAgg)
 
 # graphs with collapsed protein nodes and NOT collapsed peptide nodes (should be used for optimization)
@@ -68,9 +71,37 @@ saveRDS(res, file = "inst/extdata/quantGraphs.rds")
 res <- generateQuantGraphs(exp_peptide_ratios, edgelist, collPeptNodes = TRUE)
 saveRDS(res, file = "inst/extdata/quantGraphs_collpept.rds")
 
-plotBipartiteGraph(res[[1]][[3]], legend = FALSE)
+
+################################################################################
+### generate result objects for testing
+
+file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
+graphs <- readRDS(file)
+
+RES <- list()
+for (comp in seq_along(graphs)) {
+    comparison <- names(graphs)[comp]
+    graphs_tmp <- graphs[[comp]]
+    RES_tmp <- NULL
+    for (i in 1:3) {  # only first  graphs per comparison to speed up testing
+        G <- graphs_tmp[[i]]
+        res <- iterateOverCi(G, gridSize = 100)
+        if (is.null(RES_tmp)) {
+            RES_tmp <- automatedAnalysisIteratedCi(G, res)
+        } else {
+            RES_tmp <- rbind(RES_tmp, automatedAnalysisIteratedCi(G, res))
+        }
+    }
+    RES <- c(RES, RES_tmp)
+}
+names(RES) <- names(graphs)
+
+resultsList <- RES
+
+saveRDS(resultsList, file = "inst/extdata/resultsList.rds")
 
 
+X <- combineComparisons(resultsList)
 
 
 

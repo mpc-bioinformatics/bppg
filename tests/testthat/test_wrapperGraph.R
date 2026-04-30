@@ -4,7 +4,7 @@ test_that("generate graphs from fasta",{
   on.exit(unlink(temp_dir, recursive = TRUE))
 
 
-  file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+  file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
   fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 
   res <- bppg::generateGraphsFromFASTA(fasta = fasta,
@@ -28,13 +28,13 @@ test_that("test generateGraphsFromQuantData", {
     on.exit(unlink(temp_dir, recursive = TRUE))
 
     # Load fasta
-    file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+    file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
     fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 
     # Create intensity table
     set.seed(4)
     res <- bppg::digestFASTA(fasta)
-    peptides <- res$peptide[sample(seq_along(res$peptide), 
+    peptides <- res$peptide[sample(seq_along(res$peptide),
         size = round(length(res$peptide) * 0.75))]
     peptides <- unique(peptides)
     n <- length(peptides)
