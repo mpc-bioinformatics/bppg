@@ -57,6 +57,9 @@ BibOptions(max.names = 2, bib.style = "authoryear", style = "citation")
 
 # Introduction
 
+<!-- This is kind of long and should be  moved into the matching section
+ALso, add bullet points for steps/what it does and what si good about it -->
+
 Bottom-up mass spectrometry (MS) is a highly effective tool for the analysis of high
  throughput proteomics. The method facilitates comprehensive investigation of 
  the proteome of cells, tissues and organisms. This enables the study of 
@@ -92,19 +95,20 @@ Bipartite graphs have two types of nodes (proteins and peptides) and all edges
  creates protein groups for missing **shared** peptides.
 
 The quantified graph is the basis for an equation system to calculate protein 
- level ratios. The known factors for this are the peptide ratios (`r_i`) and 
+ level ratios. The known factors for this are the peptide ratios ($r_i$) and 
  from which proteins they can originate. The unknwon factors are the protein 
- ratios (`R_i`) and how much each protein contributed to the quantity of their
- peptides compared to the other proteins (`C_i`). `C_i` is only needed for one 
- sample (A), since the other can be calculated with `R_i`. In general, the 
+ ratios ($R_i$) and how much each protein contributed to the quantity of their
+ peptides compared to the other proteins ($C_i$). $C_i$ is only needed for one 
+ sample (A), since the other can be calculated with $R_i$. In general, the 
  resulting equation is not solvable, since it has more unknown than knowns. 
  Instead an optimization algorithm (`solnp`) is applied to the system. First,
- different `C_i` are fixed and the remainig `C_i` and `R_i` are optimized for
+ different $C_i$ are fixed and the remainig $C_i$ and $R_i$ are optimized for
  the lowest error. The error is calculated on the difference between the 
- calculated `r_i` and the actual ratio.
+ calculated $r_i$ and the actual ratio.
 
-The optimization allows for inconsistencies between peptides of the same set of
- proteins.
+Additionally, the optimization allows for inconsistencies between peptides of 
+ the same set of proteins. Due to the nature of MS and biological samples, the 
+ peptide intensities are highly variable and can lead to contradictions. 
 
 # Installation of  `bppg`
 
@@ -138,35 +142,42 @@ citation("bppg")
 
 # Quick start to using `bppg`
 
-The main task of bppg is protein inference and relative quantification for 
-bottum-up mass spectrometry. This methods is only suitable for relative
+The main task of `bppg` is protein inference and relative protein quantification
+ for bottum-up mass spectrometry. This methods is only suitable for relative
 analysis.
-Therefore, at least two sample groups are requiered to calculate the protein 
+Therefore, at least two samples are requiered to calculate the protein 
 quantities. Ideally, with several replicates per sample. 
 
-bppg works with peptide intensities and currently supports the data format from
+`bppg` works with peptide intensities and currently supports the data format from
 MaxQuant and McFragger. Otherwise, the dataset can be formatted independtly into
 a SummarizedExperiment object with sample/replicate informations in the
 columns/colData and peptide information in the rows/rowData.
-Additionally, bppg requiers the FASTA file which was used for the peptide
+Additionally, `bppg` requiers the FASTA file which was used for the peptide
 identification.
 
-The second application of bppg is the modeling of peptide and protein 
+The second application of `bppg` is the modeling of peptide and protein 
 relationships using bipartite graphs. This is part of the quantification
-workflow, but can be used independtly for an insilico analysis.
+workflow, but can be used independtly for an insilico analysis. It will be
+ described in a second vignette.
 
 ## Data
 
 ### Example Data
-A test dataset and the matching FASTA file is provided with the package. 
-The data is from ????
+A test dataset and the matching FASTA file is provided with the package. It is
+ a subset of a gold standarad which was created to determine the correctness of
+ protein quantification software.
+The original dataset included: 
 
 - yeast background, UPS spike in
 - 9 different spike in concentrations
 - 3 replicates each = 27 samples total
 
+The example data for this workflow only includes peptides from a subset of 
+ yeast proteins.
+
 ### Import
-For this dataset the peptide quantificationwas performed with MaxQuant.
+For this dataset the peptide quantificationwas was performed with MaxQuant. The
+ corresponding function to extract the columns of interest is `readMqPeptideTable`.
 Example of loading a `peptides.txt` file:
 
 ```{r load_data, echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
@@ -191,26 +202,29 @@ head(rowData(D))
 
 ### Normalization
 
-Normalization has to be performed to avoid batch effects. The default method is 
-loess, other methods include: median, quantile or lts. 
-If the data is already normalized, there is an option for nonorm (no 
+Normalization (`normalizePeptideIntensities`) has to be performed to avoid batch
+effects. The default method is 
+loess, other methods include: median, quantile or lts normalization. 
+If the data is already normalized, there is an option for `nonorm` (no 
 normalization). Nevertheless, the function has to be called to allow for 
 structural change in the SummarizedExperiment object.
 
 ```{r normalize,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
 D_norm <- normalizePeptideIntensities(D, method = "loess")
 
-
 ```
 
 
 ### Aggregation
-bppg currently only compares the mean of two groups. To avoid calculating a 
+bppg currently compares the mean of two groups. To avoid building a 
 large amount of graphs. The replicates need to be assigned their group and then 
-there are aggregated, e.g. by mean.
-A `missing.limit` can be set to decide for one group and one peptide, if the 
-value is regarded as missing, since missing.limit replicates did not quantify 
-this peptide. 0.0 allows no missing in the group, while 1.0 allows all missing.
+there are aggregated, e.g. by mean. If the group is not a subset of the sample 
+name it is recommended to write a factor vector with the order corresponding to 
+ the samples.
+A `missing.limit` can be set to decide for group and peptide wise, if the 
+value is regarded as missing, if in not enough replicates for that peptide, it 
+ is set to missing. 0.0 allows no missing in the group, while 1.0 allows all 
+ missing.
 
 ```{r aggregation,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
 group <- factor(limma::strsplit2(colnames(D_norm), split = "_")[, 1])
@@ -222,34 +236,38 @@ D_aggr <- aggregateReplicates(D_norm, method = "mean", missing.limit = 0.4,
 
 ### Ratio
 
-In the next step the ratios for each group comparison are calculated:
+With the replicates aggregated, the groups can now be easily be compared with 
+ each other. For this a ratio for each comparison group combination 
+ is calculated.
+
 
 ```{r ratio,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
 groups  <- levels(group)
 peptide_ratios <- calculatePeptideRatios(D = D_aggr, group_levels = groups)
-
+colData(peptide_ratios)
 ```
 
 
 ## FASTA
 
-To built the bipartite graph peptides need to be insilico digested and matched 
-with their protein of origin. This is done by `digestFASTA`, which allows for 
-the control of min and max amino acid length of a peptide and how many
-miscleavages to consider.
+To built the bipartite graph, peptides need to be insilico digested and matched 
+with their protein of origin. This is done by the function `digestFASTA`, which 
+ allows for the control of min and max amino acid length of a peptide and how
+ many miscleavages to consider.
+
 ```{r digest,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
 library(seqinr)
 file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 
 edgelist <- digestFASTA(fasta)
-
+head(edgelist)
 ```
 
 
 ## Built Graph
 For the graph the quantification data and the FASTA edeglist are combined. 
-The `generateQuantGraphs` function creates a comparison specific edgelists, 
+The `generateQuantGraphs` function creates a comparison specific graphs, 
 including only peptides with valid ratio from that comparison and their 
 corresponding proteins.
 The option to collapse protein nodes (`collProtNodes`) or collapse peptide nodes
@@ -268,7 +286,9 @@ graphs <- generateQuantGraphs(exp_peptide_ratios = peptide_ratios,
 ```
 
 `graphs` is a list of lists, first on the level of comparisons and then the 
-multitude of independtly graphs for that comparison
+multitude of independt graphs for that comparison. The created graph for each
+comparison is not fully interconnected but many independet graphs which are
+considered independtly in the downstream analysis. 
 
 ```{r graphs,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
 names(graphs)
@@ -283,12 +303,16 @@ graphs[[1]][[1]]
 The optimization is divided into two steps and is performed per graph.
 
 ### Optimization
-First, different `Ci` percentages are fixed. The `Ci` describes the percentage 
+First, different $Ci$ percentages are fixed. The $Ci$ describes the percentage 
 distribution of peptides per graph in sample A.
-`iterateOverCi` considers a wide range of possible `Ci` combination by fixing 
-one value. The remaining `Ci` are part of the optimization as are the protein 
+`iterateOverCi` considers a wide range of possible $Ci$ combination by fixing 
+one value. The remaining $Ci$ are part of the optimization as are the protein 
 ratios. The optimization aims to reduce the error between calculated peptide 
-ratios, based on the optimized values, and the measured peptide ratios.
+ratios, based on the optimized values, and the measured peptide ratios. With 
+the following equation:
+\[\underset{R_i, C_i, i=1,\dots,m}{\mathrm{argmin}} \left( \sum_{j=1}1m \varepsilon_j^2  \right)\]
+
+\[ \varepsilon_j = \log(r_j) - \log \left( \sum_{i = 1}^m \left[ \frac{R_i \cdot C_i \cdot \delta_{ij}}{\sum_{k = 1}^m C_k \cdot \delta_{kj}} \right] \right)\]
 
 ```{r optimierung,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
 res <- iterateOverCi(graphs[[1]][[1]])
@@ -297,8 +321,8 @@ head(res)
 
 ### Extract Best Results
 
-From the previous results are filtered for the best combination of `Ci`s, with
-the lowest error.
+From the previous function the results are filtered for the combination of 
+`Ci`s, with the lowest error.
 
 ```{r results,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
 protQuant <- automatedAnalysisIteratedCi(graphs[[1]][[1]], res)
@@ -308,8 +332,8 @@ head(assays(protQuant)$results)
 
 ### Parallization
 
-The optimization runs per graph. This enables easy parallization, for with
-example `batchtools`. an example for this can be seen in our nextflow workflow 
+The optimization runs per graph. This enables easy parallization, with for
+example `batchtools`. An example for this can be seen in our nextflow workflow 
 for this package.
 
 # Further information
@@ -318,8 +342,8 @@ for this package.
 vignettes
 
 ## Nextflow
-We also provide a nextflow workflow here. which allows for usage of a wider 
-audiance
+We also provide a nextflow workflow here. which allows for the usage of a wider 
+audience
 
 # Comparison with other related packages
 what is this research?
