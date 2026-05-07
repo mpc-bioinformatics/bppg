@@ -60,55 +60,37 @@ BibOptions(max.names = 2, bib.style = "authoryear", style = "citation")
 <!-- This is kind of long and should be  moved into the matching section
 ALso, add bullet points for steps/what it does and what si good about it -->
 
-Bottom-up mass spectrometry (MS) is a highly effective tool for the analysis of high
- throughput proteomics. The method facilitates comprehensive investigation of 
- the proteome of cells, tissues and organisms. This enables the study of 
- diseases such as Parkinson's and the effects of stress on a proteomic level.
-However, in bottom-up MS the proteins are digested into smaller peptides which
- which are then meassured. Consequently, the resulting abundances are 
- corresponding to peptides. The meassurement of peptides is dependent on the 
- qunatity in the sample, but also physio-chemical characteristics like 
- ionization-efficiancy. The latter means, the measurements of different peptides
- should not be compared directly. Instead differential peptide analysis between
- two sample groups can be performed.
+Bottom-up mass spectrometry (MS) is an effective tool for analysing
+ high-throughput proteomics. This method enables the comprehensive investigation
+ of the proteome of cells, tissues, and organisms. This allows diseases such as 
+ Parkinson's and the effects of stress to be studied at a proteomic level. 
+ However, in bottom-up MS, proteins are digested into smaller peptides, which 
+ are then measured. Consequently, the resulting abundances correspond to 
+ peptides, rather than proteins. Differential peptide analysis can be performed 
+ between two sample groups.
 
-
-To be able to calculate protein quantities, their peptides have to be aggregated
- in a sensible way. `bppg` aims to do this with the least amount of assumptions
- and simplications. Nevertheless, in many cases it is impossible to distingush
- proteins by the meassured peptides, which are then grouped into a protein group.
- There are two categories of peptides. First, **unique** peptides, which 
- originate from one protein or protein group. Second, **shared** peptides, 
- which can derive from more than one protein/protein group. **Unique** peptides
- are strong evidence for the abundance of a protein and while information from
- **shared** peptides is more ambigious. Bipartite graphs can model the 
- relationship between proteins and peptides, to quantify proteins without 
- **unique** peptides.
-
-Bipartite graphs have two types of nodes (proteins and peptides) and all edges
- are between the two types. A protein node is connected to all their possible 
- peptide products. **Unique** peptides therefore have only one edge, while 
- **shared** peptides have several. This graph can be based on only *insilico* 
- information, creating a theoretical graph. Alternatively, meassurements can be 
- included, therefore removing all peptides without a valid ratio between the 
- two sample groups. This removes proteins without any quantified peptides and
- creates protein groups for missing **shared** peptides.
-
-The quantified graph is the basis for an equation system to calculate protein 
- level ratios. The known factors for this are the peptide ratios ($r_i$) and 
- from which proteins they can originate. The unknwon factors are the protein 
- ratios ($R_i$) and how much each protein contributed to the quantity of their
- peptides compared to the other proteins ($C_i$). $C_i$ is only needed for one 
- sample (A), since the other can be calculated with $R_i$. In general, the 
- resulting equation is not solvable, since it has more unknown than knowns. 
- Instead an optimization algorithm (`solnp`) is applied to the system. First,
- different $C_i$ are fixed and the remainig $C_i$ and $R_i$ are optimized for
- the lowest error. The error is calculated on the difference between the 
- calculated $r_i$ and the actual ratio.
-
-Additionally, the optimization allows for inconsistencies between peptides of 
+Our package **b**ipartite **p**eptide **p**rotein **g**raphs (`bppg`) aims to
+ preserve the peptide ratios and built on them for the protein quatification. 
+ This is done by using bipartite graphs to model the relationship between the 
+ quantified peptides and their proteins. Which builts the basis for an equation
+ system which is then optimized to best explain  the meassured ratios with 
+ protein ratios. The optimization allows for inconsistencies between peptides of 
  the same set of proteins. Due to the nature of MS and biological samples, the 
  peptide intensities are highly variable and can lead to contradictions. 
+
+ The functions and steps include:
+
+ - Reading in MaxQuant and Spectronaut data of peptide quantities
+ - Normalization of peptide quantities
+ - Aggregation of replicates per sample group
+ - Calculation of peptide ratios per comparison
+ - Built bipartite graph per comparison
+ - Optimize for protein ratio/fold change
+
+Additional functions are described in more vignettes
+
+ - Plot bipartite graphs
+ - Built insilico bipartite graph
 
 # Installation of  `bppg`
 
@@ -216,6 +198,12 @@ D_norm <- normalizePeptideIntensities(D, method = "loess")
 
 
 ### Aggregation
+To be able to calculate protein quantities, their peptides have to be aggregated
+ in a sensible way. `bppg` aims to do this with the least amount of assumptions
+ and simplications. Nevertheless, in many cases it is impossible to distingush
+ proteins by the meassured peptides, which are then grouped into a protein group.
+
+
 bppg currently compares the mean of two groups. To avoid building a 
 large amount of graphs. The replicates need to be assigned their group and then 
 there are aggregated, e.g. by mean. If the group is not a subset of the sample 
@@ -235,6 +223,11 @@ D_aggr <- aggregateReplicates(D_norm, method = "mean", missing.limit = 0.4,
 ```
 
 ### Ratio
+
+The meassurement of peptides is dependent on the 
+ quantity in the sample, but also physio-chemical characteristics like 
+ ionization-efficiancy. The latter means, the measurements of different peptides
+ should not be compared directly.
 
 With the replicates aggregated, the groups can now be easily be compared with 
  each other. For this a ratio for each comparison group combination 
@@ -266,6 +259,25 @@ head(edgelist)
 
 
 ## Built Graph
+
+There are two categories of peptides. First, **unique** peptides, which 
+ originate from one protein or protein group. Second, **shared** peptides, 
+ which can derive from more than one protein/protein group. **Unique** peptides
+ are strong evidence for the abundance of a protein and while information from
+ **shared** peptides is more ambigious. Bipartite graphs can model the 
+ relationship between proteins and peptides, to quantify proteins without 
+ **unique** peptides.
+
+Bipartite graphs have two types of nodes (proteins and peptides) and all edges
+ are between the two types. A protein node is connected to all their possible 
+ peptide products. **Unique** peptides therefore have only one edge, while 
+ **shared** peptides have several. This graph can be based on only *insilico* 
+ information, creating a theoretical graph. Alternatively, meassurements can be 
+ included, therefore removing all peptides without a valid ratio between the 
+ two sample groups. This removes proteins without any quantified peptides and
+ creates protein groups for missing **shared** peptides.
+
+
 For the graph the quantification data and the FASTA edeglist are combined. 
 The `generateQuantGraphs` function creates a comparison specific graphs, 
 including only peptides with valid ratio from that comparison and their 
@@ -299,6 +311,18 @@ graphs[[1]][[1]]
 
 
 ## Optimize Realtive Quantification
+
+The quantified graph is the basis for an equation system to calculate protein 
+ level ratios. The known factors for this are the peptide ratios ($r_i$) and 
+ from which proteins they can originate. The unknwon factors are the protein 
+ ratios ($R_i$) and how much each protein contributed to the quantity of their
+ peptides compared to the other proteins ($C_i$). $C_i$ is only needed for one 
+ sample (A), since the other can be calculated with $R_i$. In general, the 
+ resulting equation is not solvable, since it has more unknown than knowns. 
+ Instead an optimization algorithm (`solnp`) is applied to the system. First,
+ different $C_i$ are fixed and the remainig $C_i$ and $R_i$ are optimized for
+ the lowest error. The error is calculated on the difference between the 
+ calculated $r_i$ and the actual ratio.
 
 The optimization is divided into two steps and is performed per graph.
 
