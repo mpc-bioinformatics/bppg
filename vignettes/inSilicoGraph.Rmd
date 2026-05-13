@@ -1,0 +1,74 @@
+---
+title: "Analysing inSilico graphs"
+author: 
+  - name: Karin Schork
+    affiliation:
+    - Medizinisches Proteom-Center, Ruhr-Universität Bochum
+    email: karin.schork@rub.de
+  - name: Julika Wenzel
+    affiliation:
+    - Medizinisches Proteom-Center, Ruhr-Universität Bochum
+    email: julika.wenzel@rub.de
+output: 
+  BiocStyle::html_document:
+    self_contained: yes
+    toc: true
+    toc_float: true
+    toc_depth: 2
+    code_folding: show
+date: "`r doc_date()`"
+vignette: >
+  %\VignetteIndexEntry{2. Analysing inSilico graphs}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>",
+    crop = NULL 
+    ## Related to 
+    ## https://stat.ethz.ch/pipermail/bioc-devel/2020-April/016656.html
+)
+```
+
+```{r vignetteSetup, echo=FALSE, message=FALSE, warning = FALSE}
+## Bib setup
+library("RefManageR")
+
+## Write bibliography information
+bib <- c(
+    R = citation(),
+    BiocStyle = citation("BiocStyle")[1],
+    knitr = citation("knitr")[1],
+    RefManageR = citation("RefManageR")[1],
+    rmarkdown = citation("rmarkdown")[1],
+    sessioninfo = citation("sessioninfo")[1],
+    testthat = citation("testthat")[1],
+    ggplot2 = citation("ggplot2")[1],
+    Rsolnp = citation("Rsolnp")[1],
+    seqinr = citation("seqinr")[1]
+)
+
+BibOptions(max.names = 2, bib.style = "authoryear", style = "citation")
+
+```
+
+# Introduction
+
+# Process FASTA
+
+# Built graph
+
+# Analyse graph
+
+# R session information
+
+```{r reproduce3, echo=FALSE}
+## Session info
+library("sessioninfo")
+options(width = 120)
+session_info()
+```
+
