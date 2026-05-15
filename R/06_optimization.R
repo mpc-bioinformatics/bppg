@@ -362,6 +362,7 @@
         pars <- c(RiLog_start, Ci_start)
     }
     ## initial error term
+    # cat(c("\n\n", Ci_start, "\n"))
     RES <- .errorEquation(RiLog = RiLog_start, Ci = Ci_start, M = M,
         rjLog = rjLog)
     Tracking <- .trackingDataFrame(0, RES, RiLog_start, Ci_start)
@@ -420,11 +421,12 @@
     if ("try-error" %in% class(RES)) {
         res_Ri_Ci <- rep(NA, length(cnames))
         error <- NA
+        message(class(RES))
     } else {
         res_Ri_Ci <- c(RES$RiLog, RES$Ci)
+        error <- RES$RES$res_squ_err
     }
     names(res_Ri_Ci) <- cnames
-    error <- RES$RES$res_squ_err
     result <- c(protein = j, grid = gridpoint, res_Ri_Ci, error = error)
     return(result)
 }
