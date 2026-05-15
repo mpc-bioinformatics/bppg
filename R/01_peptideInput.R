@@ -192,7 +192,7 @@ readSpecPeptideTable <- function(path, group = NULL, remove_contaminants = FALSE
   # remove duplicates
     ind_dub <- duplicated(D)
     D <- D[!ind_dub, ]
-    intensities <- D[, grep("raw.PEP.Quantity", colnames(D))]
+    intensities <- D[, grep("PEP.Quantity", colnames(D))] # tof has no raw.
     rownames(intensities) <- D$PEP.GroupingKey
 
     # structure: [1] C1_R1.raw.PEP.Quantity zu X.1..C1_R1.raw.PEP.Quantity, leave sample name
