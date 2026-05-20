@@ -177,7 +177,8 @@ readSpecPeptideTable <- function(path, group = NULL, remove_contaminants = FALSE
     checkmate::assertVector(further_columns_to_keep, null.ok = TRUE)
     checkmate::assertFlag(verbose)
     
-    D <- utils::read.table(path, sep = "\t", header = TRUE)
+    # TODO, needs to be dec = "."
+    D <- utils::read.table(path, sep = "\t", header = TRUE, na.strings = c("NaN", "NA"))
 
     # all columns in Spectronaut are optional
     # need to check which ones are there/ communicate which ones have to be
