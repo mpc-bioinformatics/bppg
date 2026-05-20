@@ -107,6 +107,7 @@ test_that("test automated analysis", {
   testfile_path <- file.path(testthat::test_path(), "testfiles")
   graphs <- readRDS(file.path(testfile_path, "quantGraphsForTesting.rds"))
   G_I <- graphs[[1]][[1]] # I
+  igraph::V(G_I)$protOrigin[igraph::V(G_I)$type] <- c("test_origin")
   G_N <- graphs[[3]][[1]] # N
   G_M <- graphs[[3]][[2]] # M
 
@@ -114,6 +115,7 @@ test_that("test automated analysis", {
   res <- automatedAnalysisIteratedCi(G_I, res_snap, 
     use_results_from_other_proteins = FALSE) # case 3
   expect_snapshot(SummarizedExperiment::assay(res))
+    expect_snapshot(SummarizedExperiment::rowData(res))
 
   res_snap <- readRDS(file.path(testfile_path, "test_iterateOverCi_file_N1.rds"))
   res2 <- automatedAnalysisIteratedCi(G_N, res_snap, 

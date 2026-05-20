@@ -656,7 +656,14 @@ automatedAnalysisIteratedCi <- function(G,
                                         ratioLog_tol = 1e-6) {
 
     n <- sum(igraph::V(G)$type) ## number of protein groups
-    accessions <- igraph::V(G)$name[igraph::V(G)$type]
+    if (!is.null(igraph::V(G)$protOrigin)){
+        metaData <- data.frame(
+            accession = igraph::V(G)$name[igraph::V(G)$type],
+            protOrigin = igraph::V(G)$protOrigin[igraph::V(G)$type])
+    } else {
+        metaData <- data.frame(
+            accession =  igraph::V(G)$name[igraph::V(G)$type])
+    }
 
     if (!is.null(job)) {
         graphID <- job$pars$prob.pars$k
@@ -705,7 +712,7 @@ automatedAnalysisIteratedCi <- function(G,
         use_results_from_other_proteins = use_results_from_other_proteins)
 
     # comparison=rep(comparison, n),
-    RES_info <- data.frame(accession = accessions,
+    RES_info <- data.frame(accession = metaData$accession,
         graphID = rep(graphID, n), proteinNr = seq_len(n))
 
     RES <- cbind(RES_info, as.data.frame(t(RES)))
@@ -714,7 +721,7 @@ automatedAnalysisIteratedCi <- function(G,
 
     RES_SE <- SummarizedExperiment::SummarizedExperiment(
         assays = list(results = RES),
-        rowData = data.frame(accession = accessions),
+        rowData = metaData,
         colData = data.frame(colnames = colnames(RES)))
     return(RES_SE)
 }
