@@ -326,7 +326,7 @@ one value. The remaining $Ci$ are part of the optimization as are the protein
 ratios. The optimization aims to reduce the error between calculated peptide 
 ratios, based on the optimized values, and the measured peptide ratios. With 
 the following equation:
-\[\underset{R_i, C_i, i=1,\dots,m}{\mathrm{argmin}} \left( \sum_{j=1}1m \varepsilon_j^2  \right)\]
+\[\underset{R_i, C_i, i=1,\dots,m}{\mathrm{argmin}} \left( \sum_{j=1}^m \varepsilon_j^2  \right)\]
 
 \[ \varepsilon_j = \log(r_j) - \log \left( \sum_{i = 1}^m \left[ \frac{R_i \cdot C_i \cdot \delta_{ij}}{\sum_{k = 1}^m C_k \cdot \delta_{kj}} \right] \right)\]
 

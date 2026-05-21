@@ -33,6 +33,16 @@
 ---
 
     Code
+      SummarizedExperiment::rowData(res)
+    Output
+      DataFrame with 1 row and 2 columns
+                        accession  protOrigin
+                      <character> <character>
+      prot_4;prot_5 prot_4;prot_5 test_origin
+
+---
+
+    Code
       SummarizedExperiment::assay(res2)
     Output
              graphID proteinNr error_min  RiLog RiLog_min RiLog_max Ci Ci_min Ci_max
