@@ -61,3 +61,31 @@ missForest <- function(D, intensities) {
     D_imp <- missForest::missForest(D, verbose = FALSE)$ximp
     return(D_imp)
 }
+
+# QRILC_MAR_MNAR
+#' Imputation method using QRILC for MNAR values and KNN for MAR values
+#' @param D data.frame of peptides.txt from MaxQuant
+#' @return data.frame with only intensity columns
+#' QRILC_MAR_MNAR applies imputation using QRILC for MNAR values and KNN for MAR values.
+#' This method is designed to handle both types of missingness in proteomics data, where MAR values are imputed using KNN and MNAR values are imputed using QRILC.
+#' The function takes a data.frame D containing only intensity columns and returns a data.frame with imputed values for both MAR and MNAR missingness.
+#' The model.selector matrix is used to specify which imputation method to apply to each missing value, with 1 indicating that KNN should be used for MAR values and 0 indicating that QRILC should be used for MNAR values. The imputeLCMD::impute.MAR.MNAR function is then called to perform the imputation based on the specified methods.
+#' The resulting imputed data.frame is returned as the output of the function.
+
+QRILC_MAR_MNAR <- function(D, ...) {
+
+    model.selector <- matrix(
+        1,
+        nrow = nrow(D),
+        ncol = ncol(D)
+    )
+
+    D_imp <- imputeLCMD::impute.MAR.MNAR(
+        dataSet.mvs = as.matrix(D),
+        model.selector = model.selector,
+        method.MAR = "KNN",
+        method.MNAR = "QRILC"
+    )
+
+    return(D_imp)
+}
