@@ -34,4 +34,6 @@ test_that("result aggregation", {
     expect_snapshot(SummarizedExperiment::assays(X)$sample2_sample3)
     expect_snapshot(SummarizedExperiment::rowData(X))
     expect_snapshot(SummarizedExperiment::colData(X))
+
+    ## Add test for protOrigin im combined result
 })
