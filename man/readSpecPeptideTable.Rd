@@ -33,19 +33,24 @@ potential contaminants are removed}
 If \code{TRUE}, decoy peptides are removed}
 
 \item{rename_columns}{\strong{logical} \cr
-If \code{TRUE}, "raw.PEP.Quantity" are removed}
+If \code{TRUE}, "raw.PEP.Quantity" are
+removed}
 
 \item{cut_off}{\strong{integer} \cr
-Values below this threshold will be set to zero}
+Values below this threshold will be set to
+zero}
 
 \item{zeroToNA}{\strong{logical} \cr
-If \code{TRUE}, zeros are converted to NAs. Should be NA for downstream analysis}
+If \code{TRUE}, zeros are converted to NAs.
+Should be NA for downstream analysis}
 
 \item{remove_empty_rows}{\strong{logical} \cr
-If \code{TRUE}, rows with only NAs are removed.}
+If \code{TRUE}, rows with only NAs are
+removed.}
 
 \item{further_columns_to_keep}{\strong{integer vector} \cr
-Indices of additional columns to keep, except peptide sequence and intensities}
+Indices of additional columns to keep,
+except peptide sequence and intensities}
 }
 \value{
 A data frame with sequences and intensities.
