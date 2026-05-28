@@ -2,7 +2,10 @@
 % Please edit documentation in R/01_peptideInput.R
 \name{readSpecPeptideTable}
 \alias{readSpecPeptideTable}
-\title{Import of Spectronauts's peptide_quant-table, with raw.PEP.Quantity values.}
+\title{Import of Spectronauts's peptide_quant-table, where PEP.GroupingKey and
+EG.IsDeco are the peptide identifies followed by the peptide quantification
+values (PEP.Quantity). All other columns, besides
+\code{further_columns_to_keep} will be ignored and removed.}
 \usage{
 readSpecPeptideTable(
   path,
@@ -19,7 +22,7 @@ readSpecPeptideTable(
 }
 \arguments{
 \item{path}{\strong{character} \cr
-The path to the peptides.txt table}
+The path to the peptides quant table}
 
 \item{group}{\strong{character} \cr
 List or vector of group names corresponding
@@ -56,7 +59,10 @@ except peptide sequence and intensities}
 A data frame with sequences and intensities.
 }
 \description{
-Import of Spectronauts's peptide_quant-table, with raw.PEP.Quantity values.
+Import of Spectronauts's peptide_quant-table, where PEP.GroupingKey and
+EG.IsDeco are the peptide identifies followed by the peptide quantification
+values (PEP.Quantity). All other columns, besides
+\code{further_columns_to_keep} will be ignored and removed.
 }
 \examples{
 file <- system.file("extdata", "spec_peptides.tsv", package = "bppg") # TODO

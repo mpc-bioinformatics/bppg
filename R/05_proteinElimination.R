@@ -63,7 +63,7 @@
 #' proteinElimination(G)
 #' 
 #' @importFrom checkmate assertClass assertDataFrame assertList assertNumeric
-#'  checkTRUE
+#' @importFrom checkmate checkTRUE
 #' @importFrom igraph decompose delete_vertices is_bipartite V
 
 

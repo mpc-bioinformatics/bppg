@@ -156,7 +156,7 @@
 #' plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
 #'
 #' @importFrom igraph add_shape canonical_permutation layout_as_bipartite 
-#'  permute V
+#' @importFrom igraph permute V
 #' @importFrom graphics par plot
 # TODO way more than 50 lines
 # move costumination into sub functions?

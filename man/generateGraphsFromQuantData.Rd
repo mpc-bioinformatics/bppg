@@ -70,7 +70,7 @@ The suffix for output files.}
 
 \item{protOrigin}{\strong{list or data.frame} \cr
 A list with the protein orgin corresponding to
-\link[seqinr:fasta]{seqinr::fasta}, proteins are used as rownames/index.}
+\link[seqinr:fasta]{fasta}, proteins are used as rownames/index.}
 
 \item{verbose}{\strong{logical} \cr
 If \code{TRUE}, additional information on each iteration

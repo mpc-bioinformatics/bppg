@@ -70,7 +70,7 @@
 #' aggregateReplicates(D_norm, group = group)
 #' 
 #' @importFrom checkmate assertCharacter assertClass assertDataFrame 
-#' assertFactor assertNumber 
+#' @importFrom checkmate assertFactor assertNumber 
 #' @importFrom SummarizedExperiment assays colData rowData SummarizedExperiment
 
 aggregateReplicates <- function(D,
