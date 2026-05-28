@@ -132,10 +132,14 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
 }
 
 
-#' Import of Spectronauts's peptide_quant-table, with raw.PEP.Quantity values.
+#' Import of Spectronauts's peptide_quant-table, where PEP.GroupingKey and 
+#' EG.IsDeco are the peptide identifies followed by the peptide quantification
+#' values (PEP.Quantity). All other columns, besides 
+#' \code{further_columns_to_keep} will be ignored and removed.
+#' 
 #'
 #' @param path                      \strong{character} \cr
-#'                                  The path to the peptides.txt table
+#'                                  The path to the peptides quant table
 #' @param group                     \strong{character} \cr
 #'                                  List or vector of group names corresponding
 #'                                  to the order of samples.
