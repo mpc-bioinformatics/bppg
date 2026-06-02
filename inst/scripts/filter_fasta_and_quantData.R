@@ -1,15 +1,9 @@
 
-# Test-files for examples:
+# Test-files for examples and tests:
 
 # original FASTA file: Uniprot S. cerevisiae proteome, downloaded on 2025-08-20, version 2025-03
 
-# 5 Proteins are selected, which will lead to 3 graphs with different shapes
-# The 5 proteins are:
-# P09938
-# P39708
-# P07262
-# P40212
-# Q12690
+# 9 Proteins are selected, which will lead to 4 graphs with different shapes
 
 library(seqinr)
 file <- "inst/original_data/uniprotkb_proteome_Scerevisiae_UP000002311_20250820_v202503.fasta"
@@ -45,6 +39,20 @@ for(i in seq_along(proteins)) {
 D_filtered <- D[unique(ind),]
 write.table(D_filtered, file = "inst/extdata/peptides_filtered.txt", sep = "\t", row.names = FALSE)
 
+
+################################################################################
+### generate theoretical graphs
+
+file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
+fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+edgelist <- digestFASTA(fasta)
+graphs <- generateGraphsFromEdgelist(edgelist, collProtNodes = FALSE, collPeptNodes = FALSE)
+graphs_collPeptProt <- generateGraphsFromEdgelist(edgelist, collProtNodes = TRUE, collPeptNodes = TRUE)
+graphs_collProt <- generateGraphsFromEdgelist(edgelist, collProtNodes = TRUE, collPeptNodes = FALSE)
+
+saveRDS(graphs, file = "inst/extdata/theoGraphs.rds")
+saveRDS(graphs_collPeptProt, file = "inst/extdata/theoGraphs_collpeptprot.rds")
+saveRDS(graphs_collProt, file = "inst/extdata/theoGraphs_collprot.rds")
 
 
 ################################################################################

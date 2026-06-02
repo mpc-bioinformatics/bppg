@@ -1,8 +1,9 @@
 test_that("test .getProteinOrigin", {
 
-  file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+  file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
   fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 
+  # build some artificial proteiin groups
   accessions <- c(paste0(names(fasta)[1:3], collapse = ";"),
                   paste0(names(fasta)[4:5], collapse = ";"),
                   paste0(names(fasta)[6:7], collapse = ";"),
