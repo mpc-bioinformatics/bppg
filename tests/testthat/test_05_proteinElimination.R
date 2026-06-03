@@ -11,7 +11,7 @@ test_that("test proteinElimination", {
     res$res_best$G <- lapply(res$res_best$G, igraph::as_edgelist)
 
     ## flooring error term here because of small Windows/Linux differences
-    res$resDF$error <- floor(res$resDF$error * 10^5) / 10^5
+    res$resDF$error <- floor(res$resDF$error * 10^4) / 10^4
 
     expect_snapshot(res)
 

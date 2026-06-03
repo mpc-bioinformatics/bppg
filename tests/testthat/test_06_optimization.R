@@ -26,6 +26,9 @@ test_that("test .minimizeSquaredError", {
     # test fixed_Ci
     res2 <- bppg:::.minimizeSquaredError(G_N, verbose = FALSE, fixedCi = c(0.3, NA))
 
+    res$RES$res_equ<- round(res$RES$res_equ, 5)
+    res2$RES$res_equ<- round(res2$RES$res_equ, 5)
+
     expect_snapshot(res)
     expect_snapshot(res2)
 
@@ -56,11 +59,11 @@ test_that("test iterateOverCi and automated analysis", {
                                         use_results_from_other_proteins = FALSE)
 
 
-  expect_snapshot(res_I)
+  expect_snapshot(round(res_I, 5))
   expect_snapshot(res_I2)
-  expect_snapshot(res_N)
+  expect_snapshot(round(res_N, 5))
   expect_snapshot(res_N2)
-  expect_snapshot(res_M)
+  expect_snapshot(round(res_M, 5))
   expect_snapshot(res_M2)
 
   ## test case when an error term is NaN (which may happen during the optimization,
@@ -84,9 +87,9 @@ test_that("test iterateOverCi with extended grid", {
   res_N <- iterateOverCi(G_N, gridSize = 10, extend_grid_at_borders = TRUE)
   res_M <- iterateOverCi(G_M, gridSize = 10, extend_grid_at_borders = TRUE)
 
-  expect_snapshot(res_I)
-  expect_snapshot(res_N)
-  expect_snapshot(res_M)
+  expect_snapshot(round(res_I, 5))
+  expect_snapshot(round(res_N,5))
+  expect_snapshot(round(res_M, 5))
 })
 
 

@@ -11,15 +11,15 @@
       [4] "sp|P38113|ADH5_YEAST"
       
       $resDF
-           comb n_proteins   error current_best
-      1 1,2,3,4          4 1.00543         TRUE
-      2   2,3,4          3      NA        FALSE
-      3   1,3,4          3      NA        FALSE
-      4   1,2,4          3      NA        FALSE
-      5   1,2,3          3 1.00567         TRUE
-      6     2,3          2      NA        FALSE
-      7     1,3          2      NA        FALSE
-      8     1,2          2      NA        FALSE
+           comb n_proteins  error current_best
+      1 1,2,3,4          4 1.0054         TRUE
+      2   2,3,4          3     NA        FALSE
+      3   1,3,4          3     NA        FALSE
+      4   1,2,4          3     NA        FALSE
+      5   1,2,3          3 1.0056         TRUE
+      6     2,3          2     NA        FALSE
+      7     1,3          2     NA        FALSE
+      8     1,2          2     NA        FALSE
       
       $res_best
       $res_best$G
