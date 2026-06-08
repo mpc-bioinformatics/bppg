@@ -83,9 +83,29 @@ QRILC_MAR_MNAR <- function(D, ...) {
     D_imp <- imputeLCMD::impute.MAR.MNAR(
         dataSet.mvs = as.matrix(D),
         model.selector = model.selector,
-        method.MAR = "KNN",
+        method.MAR = "MLE",
         method.MNAR = "QRILC"
     )
 
+    return(D_imp)
+}
+
+# BPCA
+#' Imputation method using Bayesian Principal Component Analysis (BPCA) to predict missing values based on observed data.
+#' @param D data.frame of peptides.txt from MaxQuant
+#' @param D_imp applies BPCA imputation to the data.frame D, which contains only intensity columns 
+#' (e.g. "Intensity." or "LFQ.intensity.")
+#' @return data.frame with only intensity columns
+#' 
+
+BPCA <- function(D, intensities) {
+    D_imp <- pcaMethods::pca(
+        as.matrix(D), 
+        method = "bpca", 
+        nPcs = 2
+        )
+
+    D_imp <- pcaMethods::completeObs(D_imp)
+    
     return(D_imp)
 }
