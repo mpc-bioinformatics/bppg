@@ -42,7 +42,7 @@ test_that("test iterateOverCi and automated analysis", {
   file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
   graphs <- readRDS(file)
   G_I <- graphs[[1]][[1]] # I
-  G_N <- graphs[[1]][[2]] # N
+  G_N <- graphs[[2]][[2]] # N
   G_M <- graphs[[1]][[3]] # M
 
   res_I <- iterateOverCi(G_I, gridSize = 10)
@@ -80,7 +80,7 @@ test_that("test iterateOverCi with extended grid", {
   file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
   graphs <- readRDS(file)
   G_I <- graphs[[1]][[1]] # I
-  G_N <- graphs[[1]][[2]] # N
+  G_N <- graphs[[2]][[2]] # N
   G_M <- graphs[[1]][[3]] # M
 
   res_I <- iterateOverCi(G_I, gridSize = 10, extend_grid_at_borders = TRUE)

@@ -35,7 +35,7 @@ The maximal number of amino acids
 
 \item{protOrigin}{\strong{list} \cr
 A list with the protein origin corresponding to
-\link[seqinr:fasta]{seqinr::fasta}, proteins are used as index.}
+\link[seqinr:fasta]{fasta}, proteins are used as index.}
 
 \item{verbose}{\strong{logical} \cr
 If \code{TRUE}, additional information on
@@ -43,7 +43,7 @@ each iteration of the digestion is
 printed.}
 
 \item{...}{
-  Arguments passed on to \code{\link[=.digest2]{.digest2}}
+  Arguments passed on to \code{\link{.digest2}}
   \describe{
     \item{\code{sequence}}{\strong{character} \cr
 The protein sequence.}
