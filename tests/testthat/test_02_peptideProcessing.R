@@ -4,25 +4,6 @@ test_that("test aggregateReplicates", {
     D <- bppg::readMqPeptideTable(file)
     D_norm <- bppg::normalizePeptideIntensities(D, method = "nonorm")
 
-    # # Create test data (3 samples with 3 runs each)
-    # df <- list()
-    # df <- c(df, sequence = list(paste0("pep_", 1:10)))
-    # for (i in 1:3) {
-    #     for (j in 1:3) {
-    #         set.seed((i + 2)^(j + 2))
-    #         df[[paste0("sample", i, "_run", j)]] <- runif(10, min = 15, max = 25)
-    #         num_na <- sample(1:10, size = sample(1:3, 1))
-    #         df[[paste0("sample", i, "_run", j)]][num_na] <- NA
-    #     }
-    # }
-    # df <- as.data.frame(df)
-    # rownames(df) <- df$sequence
-    # df$sequence <- NULL
-    # D <- SummarizedExperiment::SummarizedExperiment(
-    #         assays = list(intensities_norm = df),
-    #         colData = data.frame(sample = colnames(df)),
-    #         rowData = data.frame(Sequence = rownames(df)))
-
     D1 <- bppg::aggregateReplicates(D = D_norm, group = factor(rep(1:9, each = 3)))
 
     D2 <- bppg::aggregateReplicates(D = D_norm,
@@ -49,23 +30,6 @@ test_that("test aggregateReplicates", {
 
 test_that("test calculatePeptideRatios", {
 
-    # # Create test data
-    # df <- list()
-    # df <- c(df, sequence = list(paste0("pep_", 1:10)))
-    # for (i in 1:3) {
-    #     set.seed(i)
-    #     df[[paste0("sample", i)]] <- runif(10, min = 15, max = 25)
-    #     num_na <- sample(1:10, size = sample(0:2, 1))
-    #     df[[paste0("sample", i)]][num_na] <- NA
-    # }
-    # df <- as.data.frame(df)
-    # rownames(df) <- df$sequence
-    # df$sequence <- NULL
-    # D <- SummarizedExperiment::SummarizedExperiment(
-    #     assays = list(intensities = df),
-    #     colData = data.frame(group = colnames(df)),
-    #     rowData = data.frame(Sequence = rownames(df)))
-
     file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
     D <- bppg::readMqPeptideTable(file)
     D_norm <- bppg::normalizePeptideIntensities(D, method = "nonorm")
@@ -86,14 +50,14 @@ test_that("normalize peptide data", {
     D_norm_lts <- bppg::normalizePeptideIntensities(D, method = "lts")
 
     expect_snapshot(D_norm_loess)
-    expect_snapshot(SummarizedExperiment::assays(D_norm_loess)$intensities_norm,
-        variant = Sys.info()[["sysname"]])
+    expect_snapshot(SummarizedExperiment::assays(D_norm_loess)$intensities_norm)
+    #    variant = Sys.info()[["sysname"]])
     expect_snapshot(SummarizedExperiment::rowData(D_norm_loess))
     expect_snapshot(SummarizedExperiment::colData(D_norm_loess))
 
     expect_snapshot(D_norm_lts)
-    expect_snapshot(SummarizedExperiment::assays(D_norm_lts)$intensities_norm,
-        variant = Sys.info()[["sysname"]])
+    expect_snapshot(SummarizedExperiment::assays(D_norm_lts)$intensities_norm)
+    #    variant = Sys.info()[["sysname"]])
     expect_snapshot(SummarizedExperiment::rowData(D_norm_lts))
     expect_snapshot(SummarizedExperiment::colData(D_norm_lts))
 })
