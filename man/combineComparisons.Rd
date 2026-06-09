@@ -27,7 +27,8 @@ into a single SummarizedExperiments object.
 \examples{
 # prepared result list. Check "inst/scripts/filter_fasta_and_quantData.R" for
 # details on how it was generated.
-resultList <- readRDS("inst/extdata/resultsList.rds")
+file <- system.file("extdata", "resultsList.rds", package = "bppg")
+resultList <- readRDS(file)
 SE <- combineComparisons(resultList)
 
 }

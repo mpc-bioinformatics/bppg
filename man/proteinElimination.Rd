@@ -73,7 +73,7 @@ iteration for all future iterations.
 }
 \examples{
 ## TODO
-file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
 graphs <- readRDS(file)
 G <- graphs[[1]][[4]]
 # This graph has 4 protein nodes.

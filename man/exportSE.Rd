@@ -25,8 +25,11 @@ Export SummarizedExperiment object to an Excel file,
 with one assay per sheet.
 }
 \examples{
-resultList <- readRDS("inst/extdata/resultsList.rds")
-SE <- combineComparisons(resultList)
-exportSE(SE, "results.xlsx")
+# prepared result list. Check "inst/scripts/filter_fasta_and_quantData.R" for
+# details on how it was generated.
+file <- system.file("extdata", "resultsList.rds", package = "bppg")
+SE <- combineComparisons(file)
+TMP <- tempdir()
+exportSE(SE, file.path(TMP,"results.xlsx"))
 
 }
