@@ -18,7 +18,8 @@
 #' @examples
 #' # prepared result list. Check "inst/scripts/filter_fasta_and_quantData.R" for
 #' # details on how it was generated.
-#' resultList <- readRDS("inst/extdata/resultsList.rds")
+#' file <- system.file("extdata", "resultsList.rds", package = "bppg")
+#' resultList <- readRDS(file)
 #' SE <- combineComparisons(resultList)
 #'
 combineComparisons <- function(compResultList) {
@@ -75,8 +76,10 @@ combineComparisons <- function(compResultList) {
 #' @export
 #'
 #' @examples
-#' resultList <- readRDS("inst/extdata/resultsList.rds")
-#' SE <- combineComparisons(resultList)
+#' # prepared result list. Check "inst/scripts/filter_fasta_and_quantData.R" for
+#' # details on how it was generated.
+#' file <- system.file("extdata", "resultsList.rds", package = "bppg")
+#' SE <- combineComparisons(file)
 #' exportSE(SE, "results.xlsx")
 #'
 #' @importFrom openxlsx addWorksheet createWorkbook saveWorkbook writeData

@@ -110,8 +110,6 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
         intensities <- .extractIntensities(D, "Intensity.", rename_columns)
     }
 
-    #print(intensities)
-
     if (zeroToNA) {
         intensities[intensities == 0] <- NA
         if (remove_empty_rows) {
