@@ -65,7 +65,7 @@
 
 
 #' Funktion to format Tracking information into a dataframe with columnnames.
-#' 
+#'
 #' @param i     \strong{numeric} \cr
 #'              iterrator, for when this tracking was performed
 #' @param RES   \strong{list} \cr
@@ -84,7 +84,7 @@
     colnames(Tracking) <- track_colnames
     return(Tracking)
 }
-    
+
 
 
 #' Calulate initial values for Ci (protein weights) for optimization
@@ -343,7 +343,7 @@
         RES <- .errorEquation(RiLog = c(RiLog),
             Ci = c(1.0), M = M, rjLog = rjLog)
         Tracking <- .trackingDataFrame(-1, RES, c(RiLog), c(1.0))
-        result <- list(RiLog = c(RiLog), Ci = 1.0, RES = RES, 
+        result <- list(RiLog = c(RiLog), Ci = 1.0, RES = RES,
             Tracking = Tracking, outer.iter = 0, convergence = 0)
         return(result)
     }
@@ -689,7 +689,7 @@ automatedAnalysisIteratedCi <- function(G,
             resProt2 <- res[res$protein != x, cols]
             colnames(resProt2) <- c("protein", "error", "RLog", "C")
             # remove too extreme Ci
-            resProt2 <- resProt2[resProt2$C > 0.01 | resProt2$C < 0.99,] 
+            resProt2 <- resProt2[resProt2$C > 0.01 & resProt2$C < 0.99,]
             resProt <- rbind(resProt, resProt2)
         }
         return(.analyseResultSingleProt(x, resProt, error_tol = error_tol,
