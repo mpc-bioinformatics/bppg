@@ -4,7 +4,7 @@
 #
 
 
-#' Helper function that extracts the itensity columns and columns of interest
+#' Helper function that extracts the intensity columns and columns of interest
 #' from a given dataframe.
 #'
 #' @param D                         \strong{data.frame} \cr
