@@ -80,7 +80,8 @@ combineComparisons <- function(compResultList) {
 #' # details on how it was generated.
 #' file <- system.file("extdata", "resultsList.rds", package = "bppg")
 #' SE <- combineComparisons(file)
-#' exportSE(SE, "results.xlsx")
+#' TMP <- tempdir()
+#' exportSE(SE, file.path(TMP,"results.xlsx"))
 #'
 #' @importFrom openxlsx addWorksheet createWorkbook saveWorkbook writeData
 #' @importFrom SummarizedExperiment assay assayNames
