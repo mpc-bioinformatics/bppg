@@ -24,13 +24,19 @@ fasta_filtered <- fasta[ind]
 seqinr::write.fasta(sequences = fasta_filtered, names = names(fasta_filtered),
                     file.out = "inst/extdata/uniprot_proteome_Scerevisiae_filtered.fasta")
 
-# TODO: explain the origin of .raw files and quantification via MaxQuant
+
+
+# The file "peptides.txt" is the peptide quantity table generated via
+# MaxQuant. The raw data were downloaded from the PRIDE repository (PXD000279)
+# and processed with MaxQuant version 2.7.3.0.
+# It was then filtered for rows belonging to peptides that are present in the
+# 9 selected proteins.
 
 
 file <- "inst/original_data/peptides.txt"
 D <- read.table(file, sep = "\t", header = TRUE)
 
-# find rows that belong to proteins associated with the 5 proteins
+# find rows that belong to proteins associated with the 9 proteins
 ind <- NULL
 for(i in seq_along(proteins)) {
     ind <- c(ind, grep(proteins[[i]], D$Proteins))
@@ -108,8 +114,6 @@ resultsList <- RES
 
 saveRDS(resultsList, file = "inst/extdata/resultsList.rds")
 
-
-X <- combineComparisons(resultsList)
 
 
 
