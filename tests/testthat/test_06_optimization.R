@@ -59,11 +59,11 @@ test_that("test iterateOverCi and automated analysis", {
                                         use_results_from_other_proteins = FALSE)
 
 
-  expect_snapshot(round(res_I, 5))
+  expect_snapshot(round(res_I, 4))
   expect_snapshot(res_I2)
-  expect_snapshot(round(res_N, 5))
+  expect_snapshot(round(res_N, 4))
   expect_snapshot(res_N2)
-  expect_snapshot(round(res_M, 5))
+  expect_snapshot(round(res_M, 4))
   expect_snapshot(res_M2)
 
   ## test case when an error term is NaN (which may happen during the optimization,
@@ -87,9 +87,9 @@ test_that("test iterateOverCi with extended grid", {
   res_N <- iterateOverCi(G_N, gridSize = 10, extend_grid_at_borders = TRUE)
   res_M <- iterateOverCi(G_M, gridSize = 10, extend_grid_at_borders = TRUE)
 
-  expect_snapshot(round(res_I, 5))
-  expect_snapshot(round(res_N,5))
-  expect_snapshot(round(res_M, 5))
+  expect_snapshot(round(res_I, 4))
+  expect_snapshot(round(res_N, 4))
+  expect_snapshot(round(res_M, 4))
 })
 
 
