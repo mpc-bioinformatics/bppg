@@ -28,7 +28,8 @@ with one assay per sheet.
 # prepared result list. Check "inst/scripts/filter_fasta_and_quantData.R" for
 # details on how it was generated.
 file <- system.file("extdata", "resultsList.rds", package = "bppg")
-SE <- combineComparisons(file)
+resultList <- readRDS(file)
+SE <- combineComparisons(resultList)
 TMP <- tempdir()
 exportSE(SE, file.path(TMP,"results.xlsx"))
 
