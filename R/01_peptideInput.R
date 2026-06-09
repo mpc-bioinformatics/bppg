@@ -87,6 +87,7 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
     rownames(D) <- D$Sequence
 
     ## remove decoy entries:
+    ind_decoy <- NULL
     if (!all(is.na(D$Reverse))) {
         ind_decoy <- (D$Reverse == "+")
         D <- D[!ind_decoy, ]
