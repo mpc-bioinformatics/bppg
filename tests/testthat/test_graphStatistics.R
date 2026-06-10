@@ -12,14 +12,14 @@ test_that("test .calculateProteinNodeInfo", {
 
 test_that("subgraph characteristics table", {
 
-  file <- system.file("extdata", "theoGraphs.rds", package = "bppg")
+  file <- system.file("extdata", "theoGraphs_collpeptprot.rds", package = "bppg")
   graphs <- readRDS(file)
 
   res <- bppg:::.calculateSubgraphCharacteristics(S = graphs,
                                                   fastalevel = TRUE)
 
 
-  file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
+  file <- system.file("extdata", "quantGraphs_collpept.rds", package = "bppg")
   graphs <- readRDS(file)
   res2 <- bppg:::.calculateSubgraphCharacteristics(S = graphs,
                                                    fastalevel = FALSE)
