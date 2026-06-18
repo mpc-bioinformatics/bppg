@@ -41,11 +41,11 @@
 #' Aggregate replicates of the same experimental group.
 #'
 #' @param D              \strong{SummarizedExperiment} \cr
-#'                       SummarizedExperiment Dataset containing peptide 
+#'                       SummarizedExperiment Dataset containing peptide
 #'                       intensities, e.g. the result of 
 #'                       [normalizePeptideIntensities].
 #' @param group          \strong{character factor} \cr
-#'                       The groups per sample for aggregation, if not already 
+#'                       The groups per sample for aggregation, if not already
 #'                       in SummarizedExperiment::colData(D)$group.
 #' @param missing.limit  \strong{numeric} \cr
 #'                       The proportion of missing values that is allowed
@@ -63,19 +63,19 @@
 #' @export
 #'
 #' @examples
-#' file <- system.file("extdata", "peptides.txt", package = "bppg")
-#' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
-#' D_norm <- bppg::normalizePeptideIntensities(D)
+#' file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
 #' group <- factor(rep(1:9, each = 3))
-#' aggregateReplicates(D_norm, group = group)
-#' 
-#' @importFrom checkmate assertCharacter assertClass assertDataFrame 
-#' assertFactor assertNumber 
+#' D <- readMqPeptideTable(path = file, group = group, LFQ = TRUE, remove_contaminants = FALSE)
+#' D_norm <- bppg::normalizePeptideIntensities(D)
+#' aggregateReplicates(D_norm)
+#'
+#' @importFrom checkmate assertCharacter assertClass assertDataFrame
+#' assertFactor assertNumber
 #' @importFrom SummarizedExperiment assays colData rowData SummarizedExperiment
 
 aggregateReplicates <- function(D,
-    group = NULL, 
-    missing.limit = 0, 
+    group = NULL,
+    missing.limit = 0,
     method = "mean",
     seq_col = "Sequence") {
     checkmate::assertClass(D, "SummarizedExperiment")
@@ -130,12 +130,13 @@ aggregateReplicates <- function(D,
 #' @export
 #'
 #' @examples
-#' file <- system.file("extdata", "peptides.txt", package = "bppg")
-#' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
 #' group <- factor(rep(1:9, each = 3))
-#' dAgg <- aggregateReplicates(D, group = group)
+#' D <- readMqPeptideTable(path = file, group = group, LFQ = TRUE, remove_contaminants = FALSE)
+#' D_norm <- bppg::normalizePeptideIntensities(D)
+#' dAgg <- aggregateReplicates(D_norm)
 #' calculatePeptideRatios(dAgg)
-#' 
+#'
 #' @importFrom checkmate assertClass assertDataFrame assertVector
 #' @importFrom SummarizedExperiment assays colData rowData SummarizedExperiment
 
@@ -175,10 +176,10 @@ calculatePeptideRatios <- function(D, group_levels = NULL) {
 
 
 #' Normalization of peptide intensities
-#' 
+#'
 #' @param D              \strong{SummarizedExperiment} \cr
-#'                       SummarizedExperiment dataset containing peptide 
-#'                       intensities, e.g. 
+#'                       SummarizedExperiment dataset containing peptide
+#'                       intensities, e.g.
 #'                       [readMqPeptideTable].
 #' @param method \strong{character} \cr
 #'          The method of normalization. Options are "nonorm"
@@ -193,10 +194,10 @@ calculatePeptideRatios <- function(D, group_levels = NULL) {
 #' @export
 #'
 #' @examples
-#' file <- system.file("extdata", "peptides.txt", package = "bppg")
+#' file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 #' D_norm <- normalizePeptideIntensities(D, method = "loess")
-#' 
+#'
 #' @importFrom SummarizedExperiment assays colData rowData SummarizedExperiment
 #' @importFrom limma normalizeBetweenArrays
 #' @importFrom vsn vsn2

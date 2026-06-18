@@ -5,991 +5,728 @@
     Output
       $peptides
                                                      peptide              protein
-      1                                  AAFYVAAIVQAIDIITGCK               Q06204
-      2             AAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYR               Q06204
-      3         AAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYREQIK               Q06204
-      4                                         AAKAHNIATSSK        Q03483;Q07791
-      5                                      AAKAHNIATSSKFSR        Q03483;Q07791
-      6                                     ACLNKEVGTYECEGER               P48238
-      7                                              AHGVAER        Q07791;Q07793
-      8                                           AHGVAERLNR        Q07791;Q07793
-      9                                    AHGVAERLNRTLLDDCR               Q07793
-      10                                   AHGVAERLNRTLLNDCR               Q07791
-      11                                           AHNIATSSK        Q03483;Q07791
-      12                                        AHNIATSSKFSR        Q03483;Q07791
-      13           AHNIATSSKFSRVNNDHINESTVSSQYLSDDNELSLGQQQK               Q07791
-      14          AHNIATSSKFSRVNSDHINESTVSSQYLSDDNELSLRPATER               Q03483
-      15                                AHNVSTSNNSPSTDNDSISK P0CX57;Q03856;Q07793
-      16                     AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK P0CX57;Q03856;Q07793
-      17             AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLGQK               Q07793
-      18           AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLRPETY               P0CX57
-      19           AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLRPGTY               Q03856
-      20                                      AKCFKELEMENIEK               P48238
-      21                        ALHTPNIAYDLLSLSELANQNITACFTR               Q07791
-      22                   ALHTPNIAYDLLSLSELANQNITACFTRNTLER               Q07791
-      23        ALHTPNIAYDLLSLSELANQNITACFTRNTLERSDGTVLAPIVK               Q07791
-      24                               AMRLRDEVSGNNLYVYYIETK               Q07791
-      25                              APGQPGHYIDQDELEIDEDEYK               Q07791
-      26                            APGQPGHYIDQDELEIDEDEYKEK               Q07791
-      27                      APGQPGHYIDQDELEIDEDEYKEKVHEMQK               Q07791
-      28                                APKEVDADISEYNILPSTIR               Q07791
-      29                              APKEVDADISEYNILPSTIRSR               Q07791
-      30                                  APREVDPNISESNILPSK               Q07793
-      31                                 APREVDPNISESNILPSKK               Q07793
-      32                                              ARFVAR        Q07791;Q07793
-      33                 ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK               Q07791
-      34            ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIK               Q07791
-      35     ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIKGLLTDSR               Q07791
-      36                                   AVCDNTPSIDTDPPEYR               Q07791
-      37                      AVCDNTPSIDTDPPEYRSSDHATPNIMPDK               Q07791
-      38                   AVCDNTPSIDTDPPEYRSSDHATPNIMPDKSSK               Q07791
-      39                                           AVKSIKPIR               Q07793
-      40                                       AVKSIKPIRTTLR               Q07793
-      41                                  AVSPTDSTPPSTHTEDSK               Q07793
-      42                                 AVSPTDSTPPSTHTEDSKR               Q07793
-      43                              AVSPTDSTPPSTHTEDSKRVSK               Q07793
-      44                                        CFKELEMENIEK               P48238
-      45                                    CFKELEMENIEKGDIK               P48238
-      46                                       DALRETLPSSYNK               Q06204
-      47                                 DALRETLPSSYNKETLNFK               Q06204
-      48                                    DEVSGNNLYVYYIETK               Q07791
-      49                      DEVSGNNLYVYYIETKMNIADVMTKPLPIK               Q07791
-      50                   DEVSGNNLYVYYIETKMNIADVMTKPLPIKTFK               Q07791
-      51                       DFRHSDSYSENETNHTNVPISSTGGTNNK               Q07793
-      52           DFRHSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEK               Q07793
-      53                                             DGTHKAR        Q07791;Q07793
-      54                                         DGTHKARFVAR        Q07791;Q07793
-      55                                             DIIEWCR               P48238
-      56                                       DIIEWCRDYEVNK               P48238
-      57                                     DIIEWCRDYEVNKTR               P48238
-      58                                             DIKEKEK               Q07793
-      59                                        DILSVDYTDIMK P0CX57;Q03856;Q07793
-      60                                    DILSVDYTDIMKILSK P0CX57;Q03856;Q07793
-      61                                DILSVDYTDIMKILSKSIEK P0CX57;Q03856;Q07793
-      62                                            DIPHIHSR               Q07791
-      63                         DIPHIHSRQTNSSLGGMDDSNVLTTTK               Q07791
-      64                       DIPHIHSRQTNSSLGGMDDSNVLTTTKSK               Q07791
-      65                                            DKQLIWHK        Q07791;Q07793
-      66                                          DKQLIWHKHK               Q07793
-      67                                   DKQLIWHKSKPVKPTNK               Q07791
-      68                                              DLNANK               Q07791
-      69                                             DLNANKK               Q07791
-      70                                       DLNANKKIITTLK               Q07791
-      71                                             DNKEKDR               Q07791
-      72                                           DRYVEAYHK               Q07791
-      73                                    DRYVEAYHKEISQLLK               Q07791
-      74  DSTKVNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK               Q03483
-      75  DSTKVNSQQETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK               Q07791
-      76                                              DTWNNK               Q07791
-      77                                           DTWNNKNMR               Q07791
-      78                                     DTWNNKNMRSLEPPR               Q07791
-      79                                              DTWNTK               Q07793
-      80                                           DTWNTKNMR               Q07793
-      81                                     DTWNTKNMRSLEPPR               Q07793
-      82         DTYSFFTSLSDIQDSSSNEEQCGVGSILSEDSFTFEGSNVSIR               P48238
-      83                       DWIALANLEYDGSTSADTFEITVSTIIQR               Q07791
-      84                     DWIALANLEYDGSTSADTFEITVSTIIQRLK               Q07791
-      85            DWIALANLEYDGSTSADTFEITVSTIIQRLKENNINVSDR               Q07791
-      86                       DWIALANLEYNGSTSADTFEITVSTIIQR               Q03483
-      87                     DWIALANLEYNGSTSADTFEITVSTIIQRLK               Q03483
-      88            DWIALANLEYNGSTSADTFEITVSTIIQRLKENNINVSDR               Q03483
-      89                                              DYEVNK               P48238
-      90                                            DYEVNKTR               P48238
-      91                       DYEVNKTREVCVPSIHEFYLHGNGSDNLF               P48238
-      92                                             EARQREK               P48238
-      93                                    EDSILDVFTTILAFIK               Q07793
-      94                      EDSILDVFTTILAFIKNQFQASVLVIQMDR               Q07793
-      95               EDSILDVFTTILAFIKNQFQASVLVIQMDRGSEYTNR               Q07793
-      96                                    EELYIRPPPHLGLNDK               Q07791
-      97                                 EELYIRPPPHLGLNDKLLR               Q07791
-      98                               EELYIRPPPHLGLNDKLLRLR               Q07791
-      99                                    EELYIRPPPHLGMNDK               Q07793
-      100                                EELYIRPPPHLGMNDKLIR               Q07793
-      101                              EELYIRPPPHLGMNDKLIRLK               Q07793
-      102                                   EESILNVFTSILAFIK               Q07791
-      103                             EESILNVFTSILAFIKNQFNAR               Q07791
-      104                     EESILNVFTSILAFIKNQFNARVLVIQMDR               Q07791
-      105                                             EIDPKR               Q07793
-      106                                   EIDPKRVINSMFIFNK               Q07793
-      107                                            EISQLLK               Q07791
-      108                                    EISQLLKMNTWDTNK               Q07791
-      109                                EISQLLKMNTWDTNKYYDR               Q07791
-      110                                        EKDRYVEAYHK               Q07791
-      111                                        EKEKYIEAYHK               Q07793
-      112                                           EKVHEMQK        Q07791;Q07793
-      113                                EKVHEMQKLIGLASYVGYK        Q07791;Q07793
-      114                                          EKYIEAYHK               Q07793
-      115                                   EKYIEAYHKEVNQLLK               Q07793
-      116                                          ELEMENIEK               P48238
-      117                                      ELEMENIEKGDIK               P48238
-      118                                     ELEMENIEKGDIKK               P48238
-      119                         ELESLILPADSIVNVVDQFQEELLSR               Q06204
-      120        ELESLILPADSIVNVVDQFQEELLSRLQTNTISMLPQCLVPDK               Q06204
-      121       ELESLILPADSIVNVVDQFQEELLSRLQTNTISMLPQCLVPDKR               Q06204
-      122                                           ELPPINSR               Q07793
-      123                      ELPPINSRQTNSSLGGIGDSNAYTTINSK               Q07793
-      124                     ELPPINSRQTNSSLGGIGDSNAYTTINSKK               Q07793
-      125                                          ENNINVSDR        Q03483;Q07791
-      126                                  ENNINVSDRLACQLILK        Q03483;Q07791
-      127                           ENNINVSDRLACQLILKGLSGDFK        Q03483;Q07791
-      128                                            EPVQKVR               Q07791
-      129                                         EPVQKVRAPK               Q07791
-      130                                       EQIKYYSSIHIK               Q06204
-      131                   EQIKYYSSIHIKLQFLNHSNLLGAAIATYLNK               Q06204
-      132                              ESDIEWSNASTYQCPDCLIGK               Q07791
-      133                           ESDIEWSNASTYQCPDCLIGKSTK               Q07791
-      134                         ESDIEWSNASTYQCPDCLIGKSTKHR               Q07791
-      135                                             ESKPTR               Q07791
-      136                     ESKPTRTIDSNDELPDHLLIDSGASQTLVR               Q07791
-      137                            ESQQLHQNPHSLHGSAAASVTSK               Q07791
-      138       ESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDR               Q07791
-      139   ESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDRDSTK               Q07791
-      140                            ESQQLHQNPHSQHGSAYASVTSK               Q03483
-      141       ESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDR               Q03483
-      142   ESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDRDSTK               Q03483
-      143                            ESQQLSNYPHISHGSACASVTSK               Q03856
-      144             ESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASK               Q03856
-      145       ESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASKIQEYDK               Q03856
-      146                            ESQQLSQHSPISHGSACASVTSK        P0CX57;Q07793
-      147             ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK        P0CX57;Q07793
-      148       ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK        P0CX57;Q07793
-      149                               ESRLDQFNYDALTFDEDLNR               Q07793
-      150                                  ESTEMGGTIESDTTSPR               Q07791
-      151                          ESTEMGGTIESDTTSPRHSSTFTAR               Q07791
-      152                       ESTEMGGTIESDTTSPRHSSTFTARNQK               Q07791
-      153                                             ETLNFK               Q06204
-      154                                ETLNFKHVLINSEIGFIGK               Q06204
-      155     ETLNFKHVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGK               Q06204
-      156                                          ETLPSSYNK               Q06204
-      157                                    ETLPSSYNKETLNFK               Q06204
-      158                       ETLPSSYNKETLNFKHVLINSEIGFIGK               Q06204
-      159                              EVCVPSIHEFYLHGNGSDNLF               P48238
-      160                                  EVDADISEYNILPSTIR               Q07791
-      161                                EVDADISEYNILPSTIRSR               Q07791
-      162                         EVDADISEYNILPSTIRSRTPHIINK               Q07791
-      163                                    EVDPNISESNILPSK               Q07793
-      164                                   EVDPNISESNILPSKK               Q07793
-      165                                  EVDPNISESNILPSKKR               Q07793
-      166                                        EVGTYECEGER               P48238
-      167                                    EVHTNQDPLDVSASK P0CX57;Q03856;Q07793
-      168                              EVHTNQDPLDVSASKIQEYDK               Q03856
-      169                          EVHTNQDPLDVSASKIQEYDKASTK               Q03856
-      170                              EVHTNQDPLDVSASKTEECEK        P0CX57;Q07793
-      171                          EVHTNQDPLDVSASKTEECEKASTK        P0CX57;Q07793
-      172                                            EVNQLLK               Q07793
-      173                                          EVNQLLKMK               Q07793
-      174                                EVNQLLKMKTWDTDEYYDR               Q07793
-      175                              EVPSNQDPLAVSASNLPEFDR        Q03483;Q07791
-      176                          EVPSNQDPLAVSASNLPEFDRDSTK        Q03483;Q07791
-      177                                         EYSQPFFDWR               P48238
-      178                       EYSQPFFDWRHEMVEHGEESVKPCGCHK               P48238
-      179                     EYSQPFFDWRHEMVEHGEESVKPCGCHKSR               P48238
-      180            FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTR               Q06204
-      181    FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIK               Q06204
-      182   FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIKK               Q06204
-      183                                FDLLYYINTLAQHILFPSR        Q07791;Q07793
-      184               FDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTR               Q07791
-      185             FDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTRDK               Q07791
-      186               FDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTR               Q07793
-      187             FDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTRDK               Q07793
-      188                                           FFGTKAMR               Q07791
-      189                                         FFGTKAMRLR               Q07791
-      190                                 FFTNRGITACYTTTADSR               Q07791
-      191                          FFTNRGITACYTTTADSRAHGVAER               Q07791
-      192                             FFVSVTFSFPLNPEGEVVAMGK               Q06204
-      193               FFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVK               Q06204
-      194      FFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVKQLIQSSFHR               Q06204
-      195                    FICENDSISLIIGTGTNACFEVPYGYLPPFK               Q06204
-      196                   FICENDSISLIIGTGTNACFEVPYGYLPPFKR               Q06204
-      197               FICENDSISLIIGTGTNACFEVPYGYLPPFKRDALR               Q06204
-      198                                 FLEKNGITPCYTTTADSR               Q07793
-      199                          FLEKNGITPCYTTTADSRAHGVAER               Q07793
-      200                                FLKNSNLGDIIPNDQGEIK        Q03483;Q07791
-      201                               FLKNSNLGDIIPNDQGEIKR        Q03483;Q07791
-      202                               FLQNSNLGGIIPTVNGKPVR P0CX57;Q03856;Q07793
-      203   FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK P0CX57;Q03856;Q07793
-      204                                             FLRYTR P0CX57;Q03856;Q07793
-      205                                           FLRYTRHR P0CX57;Q03856;Q07793
-      206                                         FQWVYPLHDR               Q07791
-      207                                        FQWVYPLHDRR               Q07791
-      208                        FQWVYPLHDRREESILNVFTSILAFIK               Q07791
-      209                              FRFDLLYYINTLAQHILFPSR        Q07791;Q07793
-      210             FRFDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTR               Q07791
-      211             FRFDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTR               Q07793
-      212                                          FRNRFFGTK               Q07791
-      213                                         FRWVYPLHDR               Q07793
-      214                                        FRWVYPLHDRR               Q07793
-      215                   FSRVNNDHINESTVSSQYLSDDNELSLGQQQK               Q07791
-      216             FSRVNNDHINESTVSSQYLSDDNELSLGQQQKESKPTR               Q07791
-      217                  FSRVNSDHINESTVSSQYLSDDNELSLRPATER               Q03483
-      218                 FSRVNSDHINESTVSSQYLSDDNELSLRPATERI               Q03483
-      219                                             FTIPPK               P48238
-      220                                         FTIPPKIEQR               P48238
-      221                                        FTIPPKIEQRK               P48238
-      222                                            FYIRFLK        Q03483;Q07791
-      223                            FYIRFLKNSNLGDIIPNDQGEIK        Q03483;Q07791
-      224                                         GDIKKSLFYR               P48238
-      225                                     GFVMTDTLQGSTVK               Q06204
-      226                            GFVMTDTLQGSTVKQLIQSSFHR               Q06204
-      227                                        GIPGYALHPSR        Q07791;Q07793
-      228                           GIPGYALHPSRNSYGYIIYLPSLK        Q07791;Q07793
-      229                          GIPGYALHPSRNSYGYIIYLPSLKK        Q07791;Q07793
-      230                                      GITACYTTTADSR               Q07791
-      231                               GITACYTTTADSRAHGVAER               Q07791
-      232                            GITACYTTTADSRAHGVAERLNR               Q07791
-      233                                            GKACLNK               P48238
-      234                                 GKACLNKEVGTYECEGER               P48238
-      235                                    GKYMKLGMENSLTEK               Q07793
-      236                                            GLLTDSR               Q07791
-      237                                     GLLTDSRSTISIIK               Q07791
-      238                               GLLTDSRSTISIIKSTNEEK               Q07791
-      239                                            GLSGDFK        Q03483;Q07791
-      240                                         GLSGDFKYLR        Q03483;Q07791
-      241                                     GLSGDFKYLRNQYR        Q03483;Q07791
-      242                                            GLSGEYK P0CX57;Q03856;Q07793
-      243                                         GLSGEYKFLR P0CX57;Q03856;Q07793
-      244                                      GLSGEYKFLRYTR P0CX57;Q03856;Q07793
-      245                        GRKLSAPGQPGLYIDQDELEIDEDEYK               Q07793
-      246                                            GSEYTNK               Q07791
-      247                                        GSEYTNKTLHK               Q07791
-      248                                   GSEYTNKTLHKFFTNR               Q07791
-      249                                            GSEYTNR               Q07793
-      250                                        GSEYTNRTLHK               Q07793
-      251                                    GSEYTNRTLHKFLEK               Q07793
-      252                      GSRLKYQESYEPFQYLHTDIFGPVHHLPK               Q07791
-      253       GSRLKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK               Q07793
-      254                                          GVKSIKPVR               Q07791
-      255                                      GVKSIKPVRTTLR               Q07791
-      256                                            GWSCVFK        Q07791;Q07793
-      257                          GWSCVFKNSQVTICLFVDDMILFSK               Q07791
-      258                    GWSCVFKNSQVTICLFVDDMILFSKDLNANK               Q07791
-      259                          GWSCVFKNSQVTICLFVDDMVLFSK               Q07793
-      260                    GWSCVFKNSQVTICLFVDDMVLFSKNLNSNK               Q07793
-      261                                           HDLHLGQK               Q07793
-      262               HDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASR               Q07793
-      263           HDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASRTLIR               Q07793
-      264                                         HDLHLRPETY               P0CX57
-      265                                         HDLHLRPGTY               Q03856
-      266                                 HEMVEHGEESVKPCGCHK               P48238
-      267                               HEMVEHGEESVKPCGCHKSR               P48238
-      268                              HEMVEHGEESVKPCGCHKSRK               P48238
-      269                                          HGDFYWLSK               Q07791
-      270                                         HGDFYWLSKK               Q07791
-      271                                HGDFYWLSKKYLIPSHISK               Q07791
-      272                                             HIKGSR        Q07791;Q07793
-      273                                           HIKGSRLK        Q07791;Q07793
-      274                                            HKTSSDK               Q07793
-      275                                          HKTSSDKNI               Q07793
-      276                           HLNMTVAELFLDIHAIYEEQQGSR P0CX57;Q03856;Q07793
-      277                    HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR P0CX57;Q03856;Q07793
-      278                   HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR P0CX57;Q03856;Q07793
-      279                                           HRHIKGSR        Q07791;Q07793
-      280                         HRHLNMTVAELFLDIHAIYEEQQGSR P0CX57;Q03856;Q07793
-      281                  HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR P0CX57;Q03856;Q07793
-      282                         HSDSYSENETNHTNVPISSTGGTNNK               Q07793
-      283             HSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEK               Q07793
-      284            HSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEKR               Q07793
-      285                                           HSSTFTAR               Q07791
-      286                                        HSSTFTARNQK               Q07791
-      287                        HSSTFTARNQKRPGSPNDMIDLTSQDR               Q07791
-      288                                      HVLINSEIGFIGK               Q06204
-      289           HVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGK               Q06204
-      290    HVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGKWLPLSLK               Q06204
-      291                                           IEQRKEAR               P48238
-      292                                           IHLIAAVK               Q07793
-      293                                        IHLIAAVKAVK               Q07793
-      294                                  IHLIAAVKAVKSIKPIR               Q07793
-      295                                    IHPRGIPGYALHPSR        Q07791;Q07793
-      296                       IHPRGIPGYALHPSRNSYGYIIYLPSLK        Q07791;Q07793
-      297                                             IIEKLK               Q07793
-      298                                       IIEKLKMQYDTK               Q07793
-      299                          IIHRSPSIDASPPENNSSHNIVPIK               Q07793
-      300                              IINLGEGDNEIQYDILGLEIK               Q07791
-      301                           IINLGEGDNEIQYDILGLEIKYQR               Q07791
-      302                         IINLGEGDNEIQYDILGLEIKYQRSK               Q07791
-      303                              IINLGESDEEIQYDILGLEIK               Q07793
-      304                           IINLGESDEEIQYDILGLEIKYQR               Q07793
-      305                         IINLGESDEEIQYDILGLEIKYQRGK               Q07793
-      306                     IISENIEEFFCTMNVCHVINDAIAVSLTSK               Q06204
-      307                                             IITTLK               Q07791
-      308                                            IITTLKK               Q07791
-      309                                       IITTLKKQYDTK               Q07791
-      310                                           ILSKSIEK P0CX57;Q03856;Q07793
-      311            ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK P0CX57;Q03856;Q07793
-      312                                         ILTIDFGGTR               Q06204
-      313                                       ILTIDFGGTRLK               Q06204
-      314                                        IMNLNKPSQYK        Q03483;Q07791
-      315                                  IMNLNKPSQYKQHSEYK        Q03483;Q07791
-      316                              IMNLNKPSQYKQHSEYKNVSR        Q03483;Q07791
-      317                                           INLIAAIK               Q07791
-      318                                        INLIAAIKGVK               Q07791
-      319                                  INLIAAIKGVKSIKPVR               Q07791
-      320                                        IPKLNVPLNPK               Q07793
-      321                                      IPKLNVPLNPKGR               Q07793
-      322                                             IQEYDK               Q03856
-      323                                         IQEYDKASTK               Q03856
-      324                                             KAKCFK               P48238
-      325                                             KEARQR               P48238
-      326                                             KEIDPK               Q07793
-      327                                            KEIDPKR               Q07793
-      328                                            KIITTLK               Q07791
-      329                                           KIITTLKK               Q07791
-      330                                         KKNESSEASK               Q06204
-      331                          KLRAPGQPGHYIDQDELEIDEDEYK               Q07791
-      332                          KLSAPGQPGLYIDQDELEIDEDEYK               Q07793
-      333                        KLSAPGQPGLYIDQDELEIDEDEYKEK               Q07793
-      334                                           KNAVTYLK               Q07791
-      335                      KNAVTYLKESDIEWSNASTYQCPDCLIGK               Q07791
-      336                                          KNESSEASK               Q06204
-      337                    KNESSEASKFFVSVTFSFPLNPEGEVVAMGK               Q06204
-      338                                       KPIIKGLLTDSR               Q07791
-      339                                KPIIKGLLTDSRSTISIIK               Q07791
-      340                                             KQYDTK               Q07791
-      341                        KQYDTKIINLGEGDNEIQYDILGLEIK               Q07791
-      342                                            KRDGTHK        Q07791;Q07793
-      343                                         KRIHLIAAVK               Q07793
-      344                                         KRINLIAAIK               Q07791
-      345                                    KRSLEDNETEIEVSR               Q07791
-      346                                       KRSLEDNETEIK               Q07793
-      347                              KRSSTPQISNIESTGSGGMHK               Q07793
-      348                 KSARQHAGLAGLDISTLLPFGQPVIVNDHNPNSK               Q07793
-      349                                             KSLFYR               P48238
-      350                                      KSLFYRDIIEWCR               P48238
-      351                                            KSLYGLK        Q07791;Q07793
-      352                                 KSLYGLKQSGANWYETIK        Q07791;Q07793
-      353                                  KTVDTTNYVILQDNQSK               Q07791
-      354                 KTVDTTNYVILQDNQSKLDQFNYDTLTFDDDLNR               Q07791
-      355                                     KTVDTTNYVILQGK               Q07793
-      356                                  KTVDTTNYVILQGKESR               Q07793
-      357                                        KVINSMFIFNK               Q07791
-      358                                       KVINSMFIFNKK               Q07791
-      359                                         KYLIPSHISK               Q07791
-      360                                 KYLIPSHISKLTINNVNK               Q07791
-      361                            KYLLPSNISVPTINNVHTSESTR               Q07793
-      362                           KYLLPSNISVPTINNVHTSESTRK               Q07793
-      363                                          KYPYPFIHR               Q07793
-      364                               KYPYPFIHRMLAHANAQTIR               Q07793
-      365                               KYVRPPPMLTSPNDFPNWVK P0CX57;Q03856;Q07793
-      366                           KYVRPPPMLTSPNDFPNWVKTYIK P0CX57;Q03856;Q07793
-      367                                           LAANGYIK               Q06204
-      368                                          LAANGYIKK               Q06204
-      369                                         LAANGYIKKK               Q06204
-      370                                           LACQLILK        Q03483;Q07791
-      371                                    LACQLILKGLSGDFK        Q03483;Q07791
-      372                                 LACQLILKGLSGDFKYLR        Q03483;Q07791
-      373                                  LDQFNYDALTFDEDLNR               Q07793
-      374                                  LDQFNYDTLTFDDDLNR               Q07791
-      375                                  LFSLDLNALNENENGSK               P48238
-      376                              LFSLDLNALNENENGSKNPVK               P48238
-      377                        LFSLDLNALNENENGSKNPVKFTIPPK               P48238
-      378                                        LGGTEEPYIQR               Q07791
-      379                                 LGGTEEPYIQRNSDTNIK               Q07791
-      380                               LGGTEEPYIQRNSDTNIKYR               Q07791
-      381                                         LGMEKSLTEK               Q07791
-      382                                      LGMEKSLTEKLPK               Q07791
-      383                                         LGMENSLTEK               Q07793
-      384                                      LGMENSLTEKIPK               Q07793
-      385                              LGMENSLTEKIPKLNVPLNPK               Q07793
-      386                                        LIGLASYVGYK        Q07791;Q07793
-      387                                      LIGLASYVGYKFR        Q07791;Q07793
-      388                   LIGLASYVGYKFRFDLLYYINTLAQHILFPSR        Q07791;Q07793
-      389                                             LIRLKK               Q07793
-      390                                        LKENNINVSDR        Q03483;Q07791
-      391                                LKENNINVSDRLACQLILK        Q03483;Q07791
-      392          LKFAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTR               Q06204
-      393  LKFAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIK               Q06204
-      394                                          LKKSLYGLK               Q07793
-      395                                           LKMQYDTK               Q07793
-      396                      LKMQYDTKIINLGESDEEIQYDILGLEIK               Q07793
-      397                         LKYQESYEPFQYLHTDIFGPVHHLPK               Q07791
-      398            LKYQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEK               Q07791
-      399          LKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK               Q07793
-      400        LKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFR               Q07793
-      401                           LLIKRAAFYVAAIVQAIDIITGCK               Q06204
-      402                                             LLRLRK               Q07791
-      403                                           LLTNKWIH               Q07791
-      404                                        LNNNGIHINNK P0CX57;Q03856;Q07793
-      405                                LNNNGIHINNKVACQLIMR P0CX57;Q03856;Q07793
-      406                         LNNNGIHINNKVACQLIMRGLSGEYK P0CX57;Q03856;Q07793
-      407                                         LNRTLLDDCR               Q07793
-      408                 LNRTLLDDCRTQLQCSGLPNHLWFSAIEFSTIVR               Q07793
-      409                                         LNRTLLNDCR               Q07791
-      410                 LNRTLLNDCRTLLHCSGLPNHLWFSAVEFSTIIR               Q07791
-      411                             LNVPLLAPMSQSNTHESSHASK               Q07793
-      412                           LNVPLLAPMSQSNTHESSHASKSK               Q07793
-      413                        LNVPLLAPMSQSNTHESSHASKSKDFR               Q07793
-      414                                           LNVPLNPK        Q07791;Q07793
-      415                                         LNVPLNPKGK               Q07791
-      416                                        LNVPLNPKGKK               Q07791
-      417                                         LNVPLNPKGR               Q07793
-      418                                        LNVPLNPKGRK               Q07793
-      419                                        LPKLNVPLNPK               Q07791
-      420                                      LPKLNVPLNPKGK               Q07791
-      421                               LQFLNHSNLLGAAIATYLNK               Q06204
-      422                         LQFLNHSNLLGAAIATYLNKSDNQVQ               Q06204
-      423                                  LQTNTISMLPQCLVPDK               Q06204
-      424                                 LQTNTISMLPQCLVPDKR               Q06204
-      425                               LQTNTISMLPQCLVPDKRSR               Q06204
-      426                           LRAPGQPGHYIDQDELEIDEDEYK               Q07791
-      427                         LRAPGQPGHYIDQDELEIDEDEYKEK               Q07791
-      428                                 LRDEVSGNNLYVYYIETK               Q07791
-      429                   LRDEVSGNNLYVYYIETKMNIADVMTKPLPIK               Q07791
-      430                                          LRKSLYGLK               Q07791
-      431                                       LRRVAVLPENSR               P48238
-      432                           LSAPGQPGLYIDQDELEIDEDEYK               Q07793
-      433                         LSAPGQPGLYIDQDELEIDEDEYKEK               Q07793
-      434                   LSAPGQPGLYIDQDELEIDEDEYKEKVHEMQK               Q07793
-      435                                   LSQLFAEIQLIYDENK        Q03483;Q07791
-      436                        LSQLFAEIQLIYDENKIMNLNKPSQYK        Q03483;Q07791
-      437                  LSQLFAEIQLIYDENKIMNLNKPSQYKQHSEYK        Q03483;Q07791
-      438           LTASYHSFIASNEIQESNDLNIESDHDFQSDIELHPEQPR               Q07793
-      439      LTASYHSFIASNEIQESNDLNIESDHDFQSDIELHPEQPRNVLSK               Q07793
-      440                       LTESTVNHTNHSDDELPGHLLLDSGASR               Q07793
-      441                   LTESTVNHTNHSDDELPGHLLLDSGASRTLIR               Q07793
-      442                                           LTINNVNK               Q07791
-      443                                         LTINNVNKSK               Q07791
-      444                                     LTINNVNKSKSVNK               Q07791
-      445                                   LVVISDASYGNQPYYK               Q07791
-      446                       LVVISDASYGNQPYYKSQIGNIYLLNGK               Q07791
-      447                  LVVISDASYGNQPYYKSQIGNIYLLNGKVIGGK               Q07791
-      448                           MESQQLHQNPHSLHGSAAASVTSK               Q07791
-      449      MESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDR               Q07791
-      450  MESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDRDSTK               Q07791
-      451                           MESQQLHQNPHSQHGSAYASVTSK               Q03483
-      452      MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDR               Q03483
-      453  MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDRDSTK               Q03483
-      454                           MESQQLSNYPHISHGSACASVTSK               Q03856
-      455            MESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASK               Q03856
-      456      MESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASKIQEYDK               Q03856
-      457                           MESQQLSQHSPISHGSACASVTSK        P0CX57;Q07793
-      458            MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK        P0CX57;Q07793
-      459      MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK        P0CX57;Q07793
-      460                                           MGKACLNK               P48238
-      461                                MGKACLNKEVGTYECEGER               P48238
-      462                                       MKTWDTDEYYDR               Q07793
-      463                                      MKTWDTDEYYDRK               Q07793
-      464                                        MLAHANAQTIR               Q07793
-      465                                    MLAHANAQTIRYSLK               Q07793
-      466       MLAHANAQTIRYSLKNNTITYFNESDVDWSSAIDYQCPDCLIGK               Q07793
-      467                                           MLGHANFR               Q07791
-      468                                       MLGHANFRSIQK               Q07791
-      469                                    MLGHANFRSIQKSLK               Q07791
-      470                                     MNIADVMTKPLPIK               Q07791
-      471                                  MNIADVMTKPLPIKTFK               Q07791
-      472                             MNIADVMTKPLPIKTFKLLTNK               Q07791
-      473                                           MNTWDTNK               Q07791
-      474                                       MNTWDTNKYYDR               Q07791
-      475                                 MNTWDTNKYYDRNDIDPK               Q07791
-      476                    MQSDTQEANDIVTLANLQYNGSTPADAFETK P0CX57;Q03856;Q07793
-      477             MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR P0CX57;Q03856;Q07793
-      478  MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK P0CX57;Q03856;Q07793
-      479                                          MQTNNQELK        Q03483;Q07791
-      480             MQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQR               Q07791
-      481           MQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQRLK               Q07791
-      482             MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR               Q03483
-      483           MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQRLK               Q03483
-      484                                             MQYDTK               Q07793
-      485                        MQYDTKIINLGESDEEIQYDILGLEIK               Q07793
-      486                     MQYDTKIINLGESDEEIQYDILGLEIKYQR               Q07793
-      487                                          MTIESTLAR               Q06204
-      488                MTIESTLARELESLILPADSIVNVVDQFQEELLSR               Q06204
-      489                                            NAVTYLK               Q07791
-      490                       NAVTYLKESDIEWSNASTYQCPDCLIGK               Q07791
-      491                    NAVTYLKESDIEWSNASTYQCPDCLIGKSTK               Q07791
-      492                                             NDIDPK               Q07791
-      493                                            NDIDPKK               Q07791
-      494                                  NDIDPKKVINSMFIFNK               Q07791
-      495                                             NDKSAR               Q07791
-      496               NDKSARQHAGLAGLDITTILPFGQPVIVNNHNPDSK               Q07791
-      497                                      NDSRSYTNTTKPK P0CX57;Q03856;Q07793
-      498                                  NDSRSYTNTTKPKVIAR P0CX57;Q03856;Q07793
-      499                                           NESSEASK               Q06204
-      500                     NESSEASKFFVSVTFSFPLNPEGEVVAMGK               Q06204
-      501       NESSEASKFFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVK               Q06204
-      502               NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIAR               Q06204
-      503           NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIARLLIK               Q06204
-      504          NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIARLLIKR               Q06204
-      505                                     NGITPCYTTTADSR               Q07793
-      506                              NGITPCYTTTADSRAHGVAER               Q07793
-      507                           NGITPCYTTTADSRAHGVAERLNR               Q07793
-      508                                        NILLQYNIIPK               Q06204
-      509    NILLQYNIIPKNFPVEFNGELVCQLAEDCTNAWFENEHYALICQIAR               Q06204
-      510                                NIPINAIGDLQFHFQDNTK               Q07793
-      511                            NIPINAIGDLQFHFQDNTKTSIK               Q07793
-      512                                             NLNSNK               Q07793
-      513                                            NLNSNKR               Q07793
-      514                                        NLNSNKRIIEK               Q07793
-      515                                          NMRSLEPPR        Q07791;Q07793
-      516                                        NMRSLEPPRSK        Q07791;Q07793
-      517                      NNTITYFNESDVDWSSAIDYQCPDCLIGK               Q07793
-      518                   NNTITYFNESDVDWSSAIDYQCPDCLIGKSTK               Q07793
-      519                 NNTITYFNESDVDWSSAIDYQCPDCLIGKSTKHR               Q07793
-      520                               NNVLPPHTLTSEENFSTWVK        Q03483;Q07791
-      521                           NNVLPPHTLTSEENFSTWVKFYIR        Q03483;Q07791
-      522                        NNVLPPHTLTSEENFSTWVKFYIRFLK        Q03483;Q07791
-      523                                          NPQKTNNSK P0CX57;Q03856;Q07793
-      524                                        NPQKTNNSKSK P0CX57;Q03856;Q07793
-      525                                             NPSDEK P0CX57;Q03856;Q07793
-      526                                         NPSDEKNDSR P0CX57;Q03856;Q07793
-      527                                NPSDEKNDSRSYTNTTKPK P0CX57;Q03856;Q07793
-      528                                         NPVKFTIPPK               P48238
-      529                                     NPVKFTIPPKIEQR               P48238
-      530                                             NQFNAR               Q07791
-      531                                     NQFNARVLVIQMDR               Q07791
-      532                              NQFNARVLVIQMDRGSEYTNK               Q07791
-      533                                     NQFQASVLVIQMDR               Q07793
-      534                              NQFQASVLVIQMDRGSEYTNR               Q07793
-      535                          NQFQASVLVIQMDRGSEYTNRTLHK               Q07793
-      536                                NQKRPGSPNDMIDLTSQDR               Q07791
-      537                       NQKRPGSPNDMIDLTSQDRVNYGLENIK               Q07791
-      538                                             NQYRTK        Q03483;Q07791
-      539                                         NQYRTKTNMK        Q03483;Q07791
-      540                                            NRFFGTK               Q07791
-      541                                         NRFFGTKAMR               Q07791
-      542                                            NSDTNIK               Q07791
-      543                                          NSDTNIKYR               Q07791
-      544                               NSDTNIKYRTTNSTPSIDDR               Q07791
-      545                                            NSKPNYR P0CX57;Q03856;Q07793
-      546                                           NSKPNYRR P0CX57;Q03856;Q07793
-      547                                     NSKPNYRRNPSDEK P0CX57;Q03856;Q07793
-      548                                            NSLASPK               Q07793
-      549                                          NSLASPKSK               Q07793
-      550                                         NSLASPKSKK               Q07793
-      551                                            NSLVSPK               Q07791
-      552                                         NSLVSPKNDK               Q07791
-      553                                      NSLVSPKNDKSAR               Q07791
-      554                                   NSNLGDIIPNDQGEIK        Q03483;Q07791
-      555                                  NSNLGDIIPNDQGEIKR        Q03483;Q07791
-      556      NSNLGDIIPNDQGEIKRQMTYEEHAYIYNTFQAFAPFHLLPTWVK        Q03483;Q07791
-      557                                 NSQVTICLFVDDMILFSK               Q07791
-      558                           NSQVTICLFVDDMILFSKDLNANK               Q07791
-      559                          NSQVTICLFVDDMILFSKDLNANKK               Q07791
-      560                                 NSQVTICLFVDDMVLFSK               Q07793
-      561                           NSQVTICLFVDDMVLFSKNLNSNK               Q07793
-      562                          NSQVTICLFVDDMVLFSKNLNSNKR               Q07793
-      563                                      NSYGYIIYLPSLK        Q07791;Q07793
-      564                                     NSYGYIIYLPSLKK        Q07791;Q07793
-      565                     NSYGYIIYLPSLKKTVDTTNYVILQDNQSK               Q07791
-      566                        NSYGYIIYLPSLKKTVDTTNYVILQGK               Q07793
-      567                                   NTLERSDGTVLAPIVK               Q07791
-      568                          NTLERSDGTVLAPIVKHGDFYWLSK               Q07791
-      569                        NVIALQPFDIHGAISYEMPLECVTSGK               Q06204
-      570                 NVIALQPFDIHGAISYEMPLECVTSGKWLPLSLK               Q06204
-      571      NVIALQPFDIHGAISYEMPLECVTSGKWLPLSLKNILLQYNIIPK               Q06204
-      572                                   NVLERSDGTVLAPIVK               Q07793
-      573                          NVLERSDGTVLAPIVKYGDFYWVSK               Q07793
-      574                            NVLSKAVSPTDSTPPSTHTEDSK               Q07793
-      575                           NVLSKAVSPTDSTPPSTHTEDSKR               Q07793
-      576                                      NVSRTSPNTTNTK        Q03483;Q07791
-      577                                  NVSRTSPNTTNTKVTSR               Q07791
-      578                                  NVSRTSPNTTNTKVTTR               Q03483
-      579                                NVTADSILDDLPLPDLTNK               Q07791
-      580                      NVTADSILDDLPLPDLTNKSPTDTSDVSK               Q07791
-      581              NVTADSILDDLPLPDLTNKSPTDTSDVSKDIPHIHSR               Q07791
-      582                                        NYHRTNSSKPR        Q03483;Q07791
-      583                                     NYHRTNSSKPRAAK        Q03483;Q07791
-      584                                       NYLVESSMDSSR               P48238
-      585                             NYLVESSMDSSREYSQPFFDWR               P48238
-      586           NYLVESSMDSSREYSQPFFDWRHEMVEHGEESVKPCGCHK               P48238
-      587                              NYNFIHIGYVGSFLHNSNFYR               Q06204
-      588                          NYNFIHIGYVGSFLHNSNFYREQIK               Q06204
-      589                  NYNFIHIGYVGSFLHNSNFYREQIKYYSSIHIK               Q06204
-      590                               QDIPINAIGNLHFNFQNGTK               Q07791
-      591                           QDIPINAIGNLHFNFQNGTKTSIK               Q07791
-      592                     QHAGLAGLDISTLLPFGQPVIVNDHNPNSK               Q07793
-      593                 QHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPR               Q07793
-      594      QHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPRGIPGYALHPSR               Q07793
-      595                     QHAGLAGLDITTILPFGQPVIVNNHNPDSK               Q07791
-      596                 QHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPR               Q07791
-      597      QHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPRGIPGYALHPSR               Q07791
-      598                                             QHSEYK        Q03483;Q07791
-      599                                         QHSEYKNVSR        Q03483;Q07791
-      600                                QHSEYKNVSRTSPNTTNTK        Q03483;Q07791
-      601                                   QILEINYADILTVLCK               Q07791
-      602                               QILEINYADILTVLCKSVSK               Q07791
-      603                      QILEINYADILTVLCKSVSKMQTNNQELK               Q07791
-      604                                   QILEINYSDILTVLCK               Q03483
-      605                               QILEINYSDILTVLCKSVSK               Q03483
-      606                      QILEINYSDILTVLCKSVSKMQTNNQELK               Q03483
-      607                       QITDDELTFLYNTFQIFAPSQFLPTWVK P0CX57;Q03856;Q07793
-      608           QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK P0CX57;Q03856;Q07793
-      609       QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK P0CX57;Q03856;Q07793
-      610                                          QLIQSSFHR               Q06204
-      611            QLIQSSFHRIISENIEEFFCTMNVCHVINDAIAVSLTSK               Q06204
-      612                                             QLIWHK        Q07791;Q07793
-      613                                           QLIWHKHK               Q07793
-      614                                      QLIWHKHKTSSDK               Q07793
-      615                                    QLIWHKSKPVKPTNK               Q07791
-      616                    QLIWHKSKPVKPTNKLVVISDASYGNQPYYK               Q07791
-      617                       QMTYEEHAYIYNTFQAFAPFHLLPTWVK        Q03483;Q07791
-      618       QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCK               Q07791
-      619   QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCKSVSK               Q07791
-      620       QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK               Q03483
-      621   QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCKSVSK               Q03483
-      622                                        QSGANWYETIK        Q07791;Q07793
-      623                           QSGANWYETIKSYLINCCDMQEVR               Q07791
-      624                    QSGANWYETIKSYLINCCDMQEVRGWSCVFK               Q07791
-      625                           QSGANWYETIKSYLIQQCGMEEVR               Q07793
-      626                    QSGANWYETIKSYLIQQCGMEEVRGWSCVFK               Q07793
-      627                              QTNSSLGGIGDSNAYTTINSK               Q07793
-      628                             QTNSSLGGIGDSNAYTTINSKK               Q07793
-      629                            QTNSSLGGIGDSNAYTTINSKKR               Q07793
-      630                                QTNSSLGGMDDSNVLTTTK               Q07791
-      631                              QTNSSLGGMDDSNVLTTTKSK               Q07791
-      632                             QTNSSLGGMDDSNVLTTTKSKK               Q07791
-      633                                  QVLDMTYELIQFIWNTR               Q07791
-      634                                QVLDMTYELIQFIWNTRDK               Q07791
-      635                          QVLDMTYELIQFIWNTRDKQLIWHK               Q07791
-      636                                  QVLDMTYELIQFMWDTR               Q07793
-      637                                QVLDMTYELIQFMWDTRDK               Q07793
-      638                          QVLDMTYELIQFMWDTRDKQLIWHK               Q07793
-      639                         QYDTKIINLGEGDNEIQYDILGLEIK               Q07791
-      640                      QYDTKIINLGEGDNEIQYDILGLEIKYQR               Q07791
-      641                               RAAFYVAAIVQAIDIITGCK               Q06204
-      642          RAAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYR               Q06204
-      643                                     RDALRETLPSSYNK               Q06204
-      644                                             RDGTHK        Q07791;Q07793
-      645                                           RDGTHKAR        Q07791;Q07793
-      646                                  REDSILDVFTTILAFIK               Q07793
-      647                    REDSILDVFTTILAFIKNQFQASVLVIQMDR               Q07793
-      648                                  REESILNVFTSILAFIK               Q07791
-      649                            REESILNVFTSILAFIKNQFNAR               Q07791
-      650                                          RIHLIAAVK               Q07793
-      651                                       RIHLIAAVKAVK               Q07793
-      652                                            RIIEKLK               Q07793
-      653                         RIIHRSPSIDASPPENNSSHNIVPIK               Q07793
-      654                                          RINLIAAIK               Q07791
-      655                                       RINLIAAIKGVK               Q07791
-      656                               RNIPINAIGDLQFHFQDNTK               Q07793
-      657                           RNIPINAIGDLQFHFQDNTKTSIK               Q07793
-      658                                            RNPSDEK P0CX57;Q03856;Q07793
-      659                                        RNPSDEKNDSR P0CX57;Q03856;Q07793
-      660                                   RPGSPNDMIDLTSQDR               Q07791
-      661                          RPGSPNDMIDLTSQDRVNYGLENIK               Q07791
-      662                       RPGSPNDMIDLTSQDRVNYGLENIKTTR               Q07791
-      663                      RQMTYEEHAYIYNTFQAFAPFHLLPTWVK        Q03483;Q07791
-      664      RQMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCK               Q07791
-      665      RQMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK               Q03483
-      666                                     RSLEDNETEIEVSR               Q07791
-      667                               RSLEDNETEIEVSRDTWNNK               Q07791
-      668                                        RSLEDNETEIK               Q07793
-      669                                     RSLEDNETEIKVSR               Q07793
-      670                                          RSRWNPEDK               Q06204
-      671                               RSSTPQISNIESTGSGGMHK               Q07793
-      672         RSSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASK               Q07793
-      673                                         RVAVLPENSR               P48238
-      674                             RVAVLPENSRNYLVESSMDSSR               P48238
-      675                                        RVINSMFIFNK               Q07793
-      676                                       RVINSMFIFNKK               Q07793
-      677                                           RVSKTNIR               Q07793
-      678                              SAHHIHSASSNPDINVVDAQK               Q07793
-      679                             SAHHIHSASSNPDINVVDAQKR               Q07793
-      680          SAHHIHSASSNPDINVVDAQKRNIPINAIGDLQFHFQDNTK               Q07793
-      681                              SAHYLHHATPNSEINIVDAQK               Q07791
-      682          SAHYLHHATPNSEINIVDAQKQDIPINAIGNLHFNFQNGTK               Q07791
-      683      SAHYLHHATPNSEINIVDAQKQDIPINAIGNLHFNFQNGTKTSIK               Q07791
-      684                                      SAPSYFISFTDEK               Q07791
-      685                                    SAPSYFISFTDEKTR               Q07791
-      686                          SAPSYFISFTDEKTRFQWVYPLHDR               Q07791
-      687                  SARQHAGLAGLDISTLLPFGQPVIVNDHNPNSK               Q07793
-      688              SARQHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPR               Q07793
-      689                  SARQHAGLAGLDITTILPFGQPVIVNNHNPDSK               Q07791
-      690              SARQHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPR               Q07791
-      691                                        SDGTVLAPIVK        Q07791;Q07793
-      692                               SDGTVLAPIVKHGDFYWLSK               Q07791
-      693                              SDGTVLAPIVKHGDFYWLSKK               Q07791
-      694                               SDGTVLAPIVKYGDFYWVSK               Q07793
-      695                              SDGTVLAPIVKYGDFYWVSKK               Q07793
-      696                                             SDNQVQ               Q06204
-      697                SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK P0CX57;Q03856;Q07793
-      698         SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR P0CX57;Q03856;Q07793
-      699                                             SIKPIR               Q07793
-      700                                         SIKPIRTTLR               Q07793
-      701                                SIKPIRTTLRYDEAITYNK               Q07793
-      702                                             SIKPVR               Q07791
-      703                                         SIKPVRTTLR               Q07791
-      704                                SIKPVRTTLRYDEAITYNK               Q07791
-      705                                            SIQKSLK               Q07791
-      706                                           SIQKSLKK               Q07791
-      707                    SKDFRHSDSYSENETNHTNVPISSTGGTNNK               Q07793
-      708                                             SKKSAR               Q07793
-      709                                          SKPVKPTNK               Q07791
-      710                          SKPVKPTNKLVVISDASYGNQPYYK               Q07791
-      711              SKPVKPTNKLVVISDASYGNQPYYKSQIGNIYLLNGK               Q07791
-      712                                             SKSVNK               Q07791
-      713                                     SKSVNKYPYPLIHR               Q07791
-      714                          SKTARAHNVSTSNNSPSTDNDSISK P0CX57;Q03856;Q07793
-      715                                         SKYMKLGMEK               Q07791
-      716                                      SLEDNETEIEVSR               Q07791
-      717                                SLEDNETEIEVSRDTWNNK               Q07791
-      718                             SLEDNETEIEVSRDTWNNKNMR               Q07791
-      719                                         SLEDNETEIK               Q07793
-      720                                      SLEDNETEIKVSR               Q07793
-      721                                SLEDNETEIKVSRDTWNTK               Q07793
-      722                                             SLEPPR        Q07791;Q07793
-      723                                           SLEPPRSK        Q07791;Q07793
-      724                                          SLEPPRSKK        Q07791;Q07793
-      725                                       SLFYRDIIEWCR               P48238
-      726                                 SLFYRDIIEWCRDYEVNK               P48238
-      727                                        SLKKNAVTYLK               Q07791
-      728                                           SLTEKLPK               Q07791
-      729                                   SLTEKLPKLNVPLNPK               Q07791
-      730                                             SLYGLK        Q07791;Q07793
-      731                                  SLYGLKQSGANWYETIK        Q07791;Q07793
-      732                     SLYGLKQSGANWYETIKSYLINCCDMQEVR               Q07791
-      733                     SLYGLKQSGANWYETIKSYLIQQCGMEEVR               Q07793
-      734                              SPSIDASPPENNSSHNIVPIK               Q07793
-      735                                         SPTDTSDVSK               Q07791
-      736                                 SPTDTSDVSKDIPHIHSR               Q07791
-      737              SPTDTSDVSKDIPHIHSRQTNSSLGGMDDSNVLTTTK               Q07791
-      738                                       SQIGNIYLLNGK               Q07791
-      739                                  SQIGNIYLLNGKVIGGK               Q07791
-      740                               SQIGNIYLLNGKVIGGKSTK               Q07791
-      741                                          SRTPHIINK               Q07791
-      742                         SRTPHIINKESTEMGGTIESDTTSPR               Q07791
-      743                                           SRWNPEDK               Q06204
-      744                                 SRWNPEDKILTIDFGGTR               Q06204
-      745                                      SSDHATPNIMPDK               Q07791
-      746                                   SSDHATPNIMPDKSSK               Q07791
-      747                SSDHATPNIMPDKSSKNVTADSILDDLPLPDLTNK               Q07791
-      748                             SSKNVTADSILDDLPLPDLTNK               Q07791
-      749                   SSKNVTADSILDDLPLPDLTNKSPTDTSDVSK               Q07791
-      750                                   SSNSESTTPIISIETK               Q07791
-      751                  SSNSESTTPIISIETKAVCDNTPSIDTDPPEYR               Q07791
-      752     SSNSESTTPIISIETKAVCDNTPSIDTDPPEYRSSDHATPNIMPDK               Q07791
-      753                                SSTPQISNIESTGSGGMHK               Q07793
-      754          SSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASK               Q07793
-      755        SSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASKSK               Q07793
-      756                                            STISIIK               Q07791
-      757                                      STISIIKSTNEEK               Q07791
-      758                                    STISIIKSTNEEKFR               Q07791
-      759             STKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK               Q07791
-      760        STKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIK               Q07791
-      761                                           STKHRHIK        Q07791;Q07793
-      762                                             STNEEK               Q07791
-      763                                           STNEEKFR               Q07791
-      764                                         STNEEKFRNR               Q07791
-      765                                        STTEPIQLNNK P0CX57;Q03856;Q07793
-      766                                STTEPIQLNNKHDLHLGQK               Q07793
-      767    STTEPIQLNNKHDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASR               Q07793
-      768                              STTEPIQLNNKHDLHLRPETY               P0CX57
-      769                              STTEPIQLNNKHDLHLRPGTY               Q03856
-      770                                       SVNKYPYPLIHR               Q07791
-      771                               SVNKYPYPLIHRMLGHANFR               Q07791
-      772                                      SVSKMQTNNQELK        Q03483;Q07791
-      773         SVSKMQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQR               Q07791
-      774         SVSKMQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR               Q03483
-      775                                      SYLINCCDMQEVR               Q07791
-      776                               SYLINCCDMQEVRGWSCVFK               Q07791
-      777             SYLINCCDMQEVRGWSCVFKNSQVTICLFVDDMILFSK               Q07791
-      778                                      SYLIQQCGMEEVR               Q07793
-      779                               SYLIQQCGMEEVRGWSCVFK               Q07793
-      780             SYLIQQCGMEEVRGWSCVFKNSQVTICLFVDDMVLFSK               Q07793
-      781                                          SYTNTTKPK P0CX57;Q03856;Q07793
-      782                                      SYTNTTKPKVIAR P0CX57;Q03856;Q07793
-      783                                  SYTNTTKPKVIARNPQK P0CX57;Q03856;Q07793
-      784                            TARAHNVSTSNNSPSTDNDSISK P0CX57;Q03856;Q07793
-      785                 TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK P0CX57;Q03856;Q07793
-      786                                             TEECEK        P0CX57;Q07793
-      787                                         TEECEKASTK        P0CX57;Q07793
-      788                                           TFKLLTNK               Q07791
-      789                                        TFKLLTNKWIH               Q07791
-      790                           TIDSNDELPDHLLIDSGASQTLVR               Q07791
-      791      TIDSNDELPDHLLIDSGASQTLVRSAHYLHHATPNSEINIVDAQK               Q07791
-      792                                           TIESTLAR               Q06204
-      793                 TIESTLARELESLILPADSIVNVVDQFQEELLSR               Q06204
-      794                                             TKTNMK        Q03483;Q07791
-      795                             TKTNMKLSQLFAEIQLIYDENK        Q03483;Q07791
-      796                           TKVRNNVLPPHTLTSEENFSTWVK        Q03483;Q07791
-      797                                          TLHKFFTNR               Q07791
-      798                             TLHKFFTNRGITACYTTTADSR               Q07791
-      799                                           TLHKFLEK               Q07793
-      800                             TLHKFLEKNGITPCYTTTADSR               Q07793
-      801                          TLIRSAHHIHSASSNPDINVVDAQK               Q07793
-      802                         TLIRSAHHIHSASSNPDINVVDAQKR               Q07793
-      803                                            TLLDDCR               Q07793
-      804                    TLLDDCRTQLQCSGLPNHLWFSAIEFSTIVR               Q07793
-      805             TLLDDCRTQLQCSGLPNHLWFSAIEFSTIVRNSLASPK               Q07793
-      806                           TLLHCSGLPNHLWFSAVEFSTIIR               Q07791
-      807                    TLLHCSGLPNHLWFSAVEFSTIIRNSLVSPK               Q07791
-      808                 TLLHCSGLPNHLWFSAVEFSTIIRNSLVSPKNDK               Q07791
-      809                                            TLLNDCR               Q07791
-      810                    TLLNDCRTLLHCSGLPNHLWFSAVEFSTIIR               Q07791
-      811             TLLNDCRTLLHCSGLPNHLWFSAVEFSTIIRNSLVSPK               Q07791
-      812                                            TNIRAPR               Q07793
-      813                             TNIRAPREVDPNISESNILPSK               Q07793
-      814                               TNMKLSQLFAEIQLIYDENK        Q03483;Q07791
-      815                    TNMKLSQLFAEIQLIYDENKIMNLNKPSQYK        Q03483;Q07791
-      816                                            TNNSKSK P0CX57;Q03856;Q07793
-      817                                         TNNSKSKTAR P0CX57;Q03856;Q07793
-      818                                            TNSSKPR        Q03483;Q07791
-      819                                         TNSSKPRAAK        Q03483;Q07791
-      820                                TNSSKPRAAKAHNIATSSK        Q03483;Q07791
-      821                                            TPHIINK               Q07791
-      822                           TPHIINKESTEMGGTIESDTTSPR               Q07791
-      823                   TPHIINKESTEMGGTIESDTTSPRHSSTFTAR               Q07791
-      824               TPTTVSEQNTEESIIADLPLPDLPPESPTEFPDPFK               Q07793
-      825       TPTTVSEQNTEESIIADLPLPDLPPESPTEFPDPFKELPPINSR               Q07793
-      826                           TQLQCSGLPNHLWFSAIEFSTIVR               Q07793
-      827                    TQLQCSGLPNHLWFSAIEFSTIVRNSLASPK               Q07793
-      828                  TQLQCSGLPNHLWFSAIEFSTIVRNSLASPKSK               Q07793
-      829                            TREVCVPSIHEFYLHGNGSDNLF               P48238
-      830                                       TRFQWVYPLHDR               Q07791
-      831                                      TRFQWVYPLHDRR               Q07791
-      832                   TSIKALHTPNIAYDLLSLSELANQNITACFTR               Q07791
-      833              TSIKALHTPNIAYDLLSLSELANQNITACFTRNTLER               Q07791
-      834                   TSIKVLHTPNIAYDLLSLNELAAVDITACFTK               Q07793
-      835              TSIKVLHTPNIAYDLLSLNELAAVDITACFTKNVLER               Q07793
-      836                                          TSPNTTNTK        Q03483;Q07791
-      837                                      TSPNTTNTKVTSR               Q07791
-      838                                  TSPNTTNTKVTSRNYHR               Q07791
-      839                                      TSPNTTNTKVTTR               Q03483
-      840                                  TSPNTTNTKVTTRNYHR               Q03483
-      841                                            TSSDKNI               Q07793
-      842                                      TTLRYDEAITYNK        Q07791;Q07793
-      843                                   TTLRYDEAITYNKDIK               Q07793
-      844                                   TTLRYDEAITYNKDNK               Q07791
-      845                                        TTNSTPSIDDR               Q07791
-      846                        TTNSTPSIDDRSSNSESTTPIISIETK               Q07791
-      847       TTNSTPSIDDRSSNSESTTPIISIETKAVCDNTPSIDTDPPEYR               Q07791
-      848                                     TTRLGGTEEPYIQR               Q07791
-      849                              TTRLGGTEEPYIQRNSDTNIK               Q07791
-      850                                   TVDTTNYVILQDNQSK               Q07791
-      851                  TVDTTNYVILQDNQSKLDQFNYDTLTFDDDLNR               Q07791
-      852                                      TVDTTNYVILQGK               Q07793
-      853                                   TVDTTNYVILQGKESR               Q07793
-      854                  TVDTTNYVILQGKESRLDQFNYDALTFDEDLNR               Q07793
-      855                                       TVPQISDQETEK               Q07793
-      856                                      TVPQISDQETEKR               Q07793
-      857                                  TVPQISDQETEKRIIHR               Q07793
-      858                                         TWDTDEYYDR               Q07793
-      859                                        TWDTDEYYDRK               Q07793
-      860                                   TWDTDEYYDRKEIDPK               Q07793
-      861                           TYIKFLQNSNLGGIIPTVNGKPVR P0CX57;Q03856;Q07793
-      862                                           VACQLIMR P0CX57;Q03856;Q07793
-      863                                    VACQLIMRGLSGEYK P0CX57;Q03856;Q07793
-      864                                 VACQLIMRGLSGEYKFLR P0CX57;Q03856;Q07793
-      865                                          VAVLPENSR               P48238
-      866                              VAVLPENSRNYLVESSMDSSR               P48238
-      867                    VAVLPENSRNYLVESSMDSSREYSQPFFDWR               P48238
-      868                                             VHEMQK        Q07791;Q07793
-      869                                  VHEMQKLIGLASYVGYK        Q07791;Q07793
-      870                                VHEMQKLIGLASYVGYKFR        Q07791;Q07793
-      871                                           VIARNPQK P0CX57;Q03856;Q07793
-      872                                      VIARNPQKTNNSK P0CX57;Q03856;Q07793
-      873                                           VIGGKSTK               Q07791
-      874        VIGGKSTKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK               Q07791
-      875                                         VINSMFIFNK        Q07791;Q07793
-      876                                        VINSMFIFNKK        Q07791;Q07793
-      877                                       VINSMFIFNKKR        Q07791;Q07793
-      878                       VLHTPNIAYDLLSLNELAAVDITACFTK               Q07793
-      879                  VLHTPNIAYDLLSLNELAAVDITACFTKNVLER               Q07793
-      880       VLHTPNIAYDLLSLNELAAVDITACFTKNVLERSDGTVLAPIVK               Q07793
-      881                                           VLVIQMDR               Q07791
-      882                                    VLVIQMDRGSEYTNK               Q07791
-      883                                VLVIQMDRGSEYTNKTLHK               Q07791
-      884                      VNNDHINESTVSSQYLSDDNELSLGQQQK               Q07791
-      885                VNNDHINESTVSSQYLSDDNELSLGQQQKESKPTR               Q07791
-      886                     VNSDHINESTVSSQYLSDDNELSLRPATER               Q03483
-      887                    VNSDHINESTVSSQYLSDDNELSLRPATERI               Q03483
-      888     VNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK               Q03483
-      889     VNSQQETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK               Q07791
-      890                                          VNYGLENIK               Q07791
-      891                                       VNYGLENIKTTR               Q07791
-      892                            VNYGLENIKTTRLGGTEEPYIQR               Q07791
-      893                             VRAPKEVDADISEYNILPSTIR               Q07791
-      894                             VRNNVLPPHTLTSEENFSTWVK        Q03483;Q07791
-      895                         VRNNVLPPHTLTSEENFSTWVKFYIR        Q03483;Q07791
-      896                                            VSKTNIR               Q07793
-      897                                         VSKTNIRAPR               Q07793
-      898                                          VSRDTWNTK               Q07793
-      899                                       VSRDTWNTKNMR               Q07793
-      900                                            VTNIIDR P0CX57;Q03856;Q07793
-      901                                 VTNIIDRLNNNGIHINNK P0CX57;Q03856;Q07793
-      902                         VTNIIDRLNNNGIHINNKVACQLIMR P0CX57;Q03856;Q07793
-      903                                           VTSRNYHR               Q07791
-      904                                    VTSRNYHRTNSSKPR               Q07791
-      905                                           VTTRNYHR               Q03483
-      906                                    VTTRNYHRTNSSKPR               Q03483
-      907                                            WLPLSLK               Q06204
-      908                                 WLPLSLKNILLQYNIIPK               Q06204
-      909                                             WNPEDK               Q06204
-      910                                   WNPEDKILTIDFGGTR               Q06204
-      911                                 WNPEDKILTIDFGGTRLK               Q06204
-      912                                           WVYPLHDR               Q07793
-      913                                          WVYPLHDRR               Q07793
-      914                          WVYPLHDRREDSILDVFTTILAFIK               Q07793
-      915                                          YDEAITYNK        Q07791;Q07793
-      916                                       YDEAITYNKDIK               Q07793
-      917                                     YDEAITYNKDIKEK               Q07793
-      918                                       YDEAITYNKDNK               Q07791
-      919                                     YDEAITYNKDNKEK               Q07791
-      920                                          YGDFYWVSK               Q07793
-      921                                         YGDFYWVSKK               Q07793
-      922                   YGDFYWVSKKYLLPSNISVPTINNVHTSESTR               Q07793
-      923                                            YIEAYHK               Q07793
-      924                                     YIEAYHKEVNQLLK               Q07793
-      925                                   YIEAYHKEVNQLLKMK               Q07793
-      926                                          YLIPSHISK               Q07791
-      927                                  YLIPSHISKLTINNVNK               Q07791
-      928                                YLIPSHISKLTINNVNKSK               Q07791
-      929                             YLLPSNISVPTINNVHTSESTR               Q07793
-      930                            YLLPSNISVPTINNVHTSESTRK               Q07793
-      931                    YLLPSNISVPTINNVHTSESTRKYPYPFIHR               Q07793
-      932                                            YLRNQYR        Q03483;Q07791
-      933                                          YLRNQYRTK        Q03483;Q07791
-      934                                           YMKLGMEK               Q07791
-      935                                      YMKLGMEKSLTEK               Q07791
-      936                                      YMKLGMENSLTEK               Q07793
-      937                                   YMKLGMENSLTEKIPK               Q07793
-      938                                           YPYPFIHR               Q07793
-      939                                YPYPFIHRMLAHANAQTIR               Q07793
-      940                            YPYPFIHRMLAHANAQTIRYSLK               Q07793
-      941                                           YPYPLIHR               Q07791
-      942                                   YPYPLIHRMLGHANFR               Q07791
-      943                               YPYPLIHRMLGHANFRSIQK               Q07791
-      944                           YQESYEPFQYLHTDIFGPVHHLPK               Q07791
-      945              YQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEK               Q07791
-      946            YQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEKTR               Q07791
-      947            YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK               Q07793
-      948          YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFR               Q07793
-      949  YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFRWVYPLHDR               Q07793
-      950                                           YQRGKYMK               Q07793
-      951                                           YQRSKYMK               Q07791
-      952                                      YRTTNSTPSIDDR               Q07791
-      953                      YRTTNSTPSIDDRSSNSESTTPIISIETK               Q07791
-      954                  YSLKNNTITYFNESDVDWSSAIDYQCPDCLIGK               Q07793
-      955               YSLKNNTITYFNESDVDWSSAIDYQCPDCLIGKSTK               Q07793
-      956                      YTRHRHLNMTVAELFLDIHAIYEEQQGSR P0CX57;Q03856;Q07793
-      957                                            YVEAYHK               Q07791
-      958                                     YVEAYHKEISQLLK               Q07791
-      959                             YVEAYHKEISQLLKMNTWDTNK               Q07791
-      960                                YVRPPPMLTSPNDFPNWVK P0CX57;Q03856;Q07793
-      961                            YVRPPPMLTSPNDFPNWVKTYIK P0CX57;Q03856;Q07793
-      962        YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR P0CX57;Q03856;Q07793
-      963                                         YYDRNDIDPK               Q07791
-      964                                        YYDRNDIDPKK               Q07791
-      965                                           YYSSIHIK               Q06204
-      966                       YYSSIHIKLQFLNHSNLLGAAIATYLNK               Q06204
-      967                 YYSSIHIKLQFLNHSNLLGAAIATYLNKSDNQVQ               Q06204
+      1                                         AAADALSDLEIK               P09938
+      2                                      AAADALSDLEIKDSK               P09938
+      3                                 AAADALSDLEIKDSKSNLNK               P09938
+      4                                           AAGLTAAYAR        P40212;Q12690
+      5                                  AAGLTAAYARTIGIAVDHR        P40212;Q12690
+      6                                 AAGLTAAYARTIGIAVDHRR        P40212;Q12690
+      7                                    AAKIAPRPLDLLRPVVR        P40212;Q12690
+      8                               AAKIAPRPLDLLRPVVRAPTVK        P40212;Q12690
+      9                                 AANLGGVAVSGLEMAQNSQK               P39708
+      10                         AANLGGVAVSGLEMAQNSQKVTWTAER               P39708
+      11                   AANLGGVAVSGLEMAQNSQKVTWTAERVDQELK               P39708
+      12                                AANLGGVAVSGLEMAQNSQR               P07262
+      13                         AANLGGVAVSGLEMAQNSQRITWTSER               P07262
+      14                   AANLGGVAVSGLEMAQNSQRITWTSERVDQELK               P07262
+      15                                              AARAAK               P40212
+      16                                AARAAKIAPRPLDLLRPVVR               P40212
+      17                                        ADTREALDFFAR P00330;P00331;P38113
+      18                                    ADTREALDFFARGLIK               P38113
+      19                                    ADTREALDFFARGLVK        P00330;P00331
+      20                                        ADTREALDFFSR               P07246
+      21                                    ADTREALDFFSRGLIK               P07246
+      22                                             AEAEAEK        P40212;Q12690
+      23                                            AEAEAEKK        P40212;Q12690
+      24                                           AEAEAEKKK        P40212;Q12690
+      25                                     AEASFWTAEEIDLSK               P09938
+      26                             AEASFWTAEEIDLSKDIHDWNNR               P09938
+      27                       AEASFWTAEEIDLSKDIHDWNNRMNENER               P09938
+      28                                              AEWALR               P09938
+      29                                  AEWALRWIQDADALFGER               P09938
+      30           AEWALRWIQDADALFGERLVAFASIEGVFFSGSFASIFWLK               P09938
+      31                        AGDWVAISGAAGGLGSLAVQYATAMGYR               P07246
+      32              AGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEK               P07246
+      33            AGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEKEK               P07246
+      34                             AGHWAAISGAAGGLGSLAVQYAK               P00331
+      35                        AGHWAAISGAAGGLGSLAVQYAKAMGYR               P00331
+      36              AGHWAAISGAAGGLGSLAVQYAKAMGYRVLGIDGGPGK               P00331
+      37                                         AGRGFTLAEVK        P40212;Q12690
+      38                               AGRGFTLAEVKAAGLTAAYAR        P40212;Q12690
+      39                                              AGVMSK               P09938
+      40                                           AGVMSKSTK               P09938
+      41                               AGVMSKSTKQEAGAFTFNEDF               P09938
+      42                                          AIIFYESNGK               P00331
+      43                                      AIIFYESNGKLEHK               P00331
+      44                     AIIFYESNGKLEHKDIPVPKPKPNELLINVK               P00331
+      45                                          AISKNLPILK        P40212;Q12690
+      46                                      AISKNLPILKNHFR        P40212;Q12690
+      47                                          AIVFYETDGK               P38113
+      48                                      AIVFYETDGKLEYK               P38113
+      49                     AIVFYETDGKLEYKDVTVPEPKPNEILVHVK               P38113
+      50                                            ALKEADLK               P07246
+      51                ALKEADLKAGDWVAISGAAGGLGSLAVQYATAMGYR               P07246
+      52                ALKRANVIPGQWVTISGACGGLGSLAIQYALAMGYR               P38113
+      53                     ALKSANLMAGHWVAISGAAGGLGSLAVQYAK               P00330
+      54                ALKSANLMAGHWVAISGAAGGLGSLAVQYAKAMGYR               P00330
+      55                                            ALKSANLR               P00331
+      56                     ALKSANLRAGHWAAISGAAGGLGSLAVQYAK               P00331
+      57                                            ALVAQGVK               P07262
+      58                      ALVAQGVKFIAEGSNMGSTPEAIAVFETAR               P07262
+      59      ALVAQGVKFIAEGSNMGSTPEAIAVFETARSTATGPSEAVWYGPPK               P07262
+      60                                            ALVASGVK               P39708
+      61                      ALVASGVKFVAEGANMGSTPEAISVFETAR               P39708
+      62               ALVASGVKFVAEGANMGSTPEAISVFETARSTATNAK               P39708
+      63                                     AMGYRVLGIDGGEGK               P00330
+      64                                AMGYRVLGIDGGEGKEELFR               P00330
+      65                                     AMGYRVLGIDGGPGK               P00331
+      66                    AMGYRVLGIDGGPGKEELFTSLGGEVFIDFTK               P00331
+      67                                           ANELLINVK               P00330
+      68                      ANELLINVKYSGVCHTDLHAWHGDWPLPVK               P00330
+      69                                     ANGTTVLVGMPAGAK               P00330
+      70                          ANGTTVLVGMPAGAKCCSDVFNQVVK               P00330
+      71              ANGTTVLVGMPAGAKCCSDVFNQVVKSISIVGSYVGNR               P00330
+      72                                     ANGTVVLVGLPAGAK               P00331
+      73                          ANGTVVLVGLPAGAKCSSDVFNHVVK               P00331
+      74              ANGTVVLVGLPAGAKCSSDVFNHVVKSISIVGSYVGNR               P00331
+      75                    ANVIPGQWVTISGACGGLGSLAIQYALAMGYR               P38113
+      76          ANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAK               P38113
+      77         ANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAKR               P38113
+      78                          APEAEQVLSAAATFPIAQPATDVEAR        P40212;Q12690
+      79               APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR        P40212;Q12690
+      80            APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFRTLR        P40212;Q12690
+      81                                            APTVKYNR        P40212;Q12690
+      82                                           APTVKYNRK        P40212;Q12690
+      83                                         AREKAEAEAEK        P40212;Q12690
+      84                            ATDGGAHGVINVSVSEAAIEASTR               P00330
+      85                         ATDGGAHGVINVSVSEAAIEASTRYVR               P00330
+      86          ATDGGAHGVINVSVSEAAIEASTRYVRANGTTVLVGMPAGAK               P00330
+      87                            ATNGGAHGIINVSVSEAAIEASTR               P00331
+      88                         ATNGGAHGIINVSVSEAAIEASTRYCR               P00331
+      89          ATNGGAHGIINVSVSEAAIEASTRYCRANGTVVLVGLPAGAK               P00331
+      90                            ATNGGSHGVINVSVSEAAIEASTR               P38113
+      91                                              ATRAAK               Q12690
+      92                                ATRAAKIAPRPLDLLRPVVR               Q12690
+      93                                         AVQDNGESAFR        P40212;Q12690
+      94                                      AVQDNGESAFRTLR        P40212;Q12690
+      95                                   AVQDNGESAFRTLRLAR        P40212;Q12690
+      96                                          AYLKSHQVHR               P09938
+      97                                        AYLKSHQVHRHK               P09938
+      98                                         CCSDVFNQVVK               P00330
+      99                             CCSDVFNQVVKSISIVGSYVGNR               P00330
+      100                        CCSDVFNQVVKSISIVGSYVGNRADTR               P00330
+      101                                        CSSDVFNHVVK               P00331
+      102                            CSSDVFNHVVKSISIVGSYVGNR               P00331
+      103                        CSSDVFNHVVKSISIVGSYVGNRADTR               P00331
+      104                                             DAENHK               P09938
+      105                                         DAENHKAYLK               P09938
+      106                                   DAENHKAYLKSHQVHR               P09938
+      107                                          DAVWFGPPK               P39708
+      108                      DAVWFGPPKAANLGGVAVSGLEMAQNSQK               P39708
+      109               DAVWFGPPKAANLGGVAVSGLEMAQNSQKVTWTAER               P39708
+      110                                  DEGLHTDFACLLFAHLK               P09938
+      111                        DEGLHTDFACLLFAHLKNKPDPAIVEK               P09938
+      112             DEGLHTDFACLLFAHLKNKPDPAIVEKIVTEAVEIEQR               P09938
+      113                      DGKAPEAEQVLSAAATFPIAQPATDVEAR               P40212
+      114           DGKAPEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR               P40212
+      115                                         DGKVLPSLVK               P07262
+      116                                DGKVLPSLVKGANIASFIK               P07262
+      117                                           DIHDWNNR               P09938
+      118                                     DIHDWNNRMNENER               P09938
+      119                                DIHDWNNRMNENERFFISR               P09938
+      120                                  DIPVPEPKPNEILINVK               P07246
+      121             DIPVPEPKPNEILINVKYSGVCHTDLHAWHGDWPLPVK               P07246
+      122                                           DIPVPKPK               P00330
+      123                                  DIPVPKPKANELLINVK               P00330
+      124             DIPVPKPKANELLINVKYSGVCHTDLHAWHGDWPLPVK               P00330
+      125                                  DIPVPKPKPNELLINVK               P00331
+      126             DIPVPKPKPNELLINVKYSGVCHTDLHAWHGDWPLPTK               P00331
+      127                                           DIVGAIIK               P38113
+      128                   DIVGAIIKATNGGSHGVINVSVSEAAIEASTR               P38113
+      129                                           DIVGAVLK               P00330
+      130                   DIVGAVLKATDGGAHGVINVSVSEAAIEASTR               P00330
+      131                DIVGAVLKATDGGAHGVINVSVSEAAIEASTRYVR               P00330
+      132                                           DIVSAVVK               P00331
+      133                   DIVSAVVKATNGGAHGIINVSVSEAAIEASTR               P00331
+      134                DIVSAVVKATNGGAHGIINVSVSEAAIEASTRYCR               P00331
+      135                              DPKESEFLFNAIHTIPEIGEK               P09938
+      136                        DPKESEFLFNAIHTIPEIGEKAEWALR               P09938
+      137                                           DSKSNLNK               P09938
+      138                                     DSKSNLNKELETLR               P09938
+      139                                     DTDVPAGDIGVGGR               P39708
+      140                           DTDVPAGDIGVGGREIGYLFGAYR               P39708
+      141                        DTDVPAGDIGVGGREIGYLFGAYRSYK               P39708
+      142                                  DVTVPEPKPNEILVHVK               P38113
+      143             DVTVPEPKPNEILVHVKYSGVCHSDLHAWHGDWPFQLK               P38113
+      144                  EADLKAGDWVAISGAAGGLGSLAVQYATAMGYR               P07246
+      145        EADLKAGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEK               P07246
+      146                                           EALDFFAR P00330;P00331;P38113
+      147                                       EALDFFARGLIK               P38113
+      148                      EALDFFARGLIKSPIHLAGLSDVPEIFAK               P38113
+      149                                       EALDFFARGLVK        P00330;P00331
+      150                                   EALDFFARGLVKSPIK        P00330;P00331
+      151                                           EALDFFSR               P07246
+      152                                       EALDFFSRGLIK               P07246
+      153                                   EALDFFSRGLIKSPIK               P07246
+      154                                  EELFRSIGGEVFIDFTK               P00330
+      155                                EELFRSIGGEVFIDFTKEK               P00330
+      156                                  EELFTSLGGEVFIDFTK               P00331
+      157                                EELFTSLGGEVFIDFTKEK               P00331
+      158                        EELFTSLGGEVFIDFTKEKDIVSAVVK               P00331
+      159                                             EENRVK               P09938
+      160                                        EENRVKSDMLK               P09938
+      161                                          EEPLLNEDK               P09938
+      162                                        EEPLLNEDKER               P09938
+      163                                 EEPLLNEDKERTVLFPIK               P09938
+      164                                         EIGYLFGAYR        P07262;P39708
+      165                                      EIGYLFGAYRSYK        P07262;P39708
+      166                            EIGYLFGAYRSYKNSWEGVLTGK        P07262;P39708
+      167                                          EKAEAEAEK        P40212;Q12690
+      168                                         EKAEAEAEKK        P40212;Q12690
+      169                                         EKDIVGAVLK               P00330
+      170                 EKDIVGAVLKATDGGAHGVINVSVSEAAIEASTR               P00330
+      171                                         EKDIVSAVVK               P00331
+      172                 EKDIVSAVVKATNGGAHGIINVSVSEAAIEASTR               P00331
+      173                                             EKLFKK               P07246
+      174                                        EKLSKDAENHK               P09938
+      175                                             ELETLR               P09938
+      176                                         ELETLREENR               P09938
+      177                                       ELETLREENRVK               P09938
+      178                                           ELSRHIGK               P39708
+      179                             ELSRHIGKDTDVPAGDIGVGGR               P39708
+      180                             ELSRHIGQDTDVPAGDIGVGGR               P07262
+      181                   ELSRHIGQDTDVPAGDIGVGGREIGYLFGAYR               P07262
+      182                                      EMEKEEPLLNEDK               P09938
+      183                                    EMEKEEPLLNEDKER               P09938
+      184                                          ERTVLFPIK               P09938
+      185                                 ERTVLFPIKYHEIWQAYK               P09938
+      186                                 ESEFLFNAIHTIPEIGEK               P09938
+      187                           ESEFLFNAIHTIPEIGEKAEWALR               P09938
+      188               ESEFLFNAIHTIPEIGEKAEWALRWIQDADALFGER               P09938
+      189                                             ESFEGK        P07262;P39708
+      190                                            ESFEGKR        P07262;P39708
+      191                            ESFEGKRVTISGSGNVAQYAALK        P07262;P39708
+      192                                  ETPSKAAADALSDLEIK               P09938
+      193                               ETPSKAAADALSDLEIKDSK               P09938
+      194                                        EYQSKIIVFPR        P40212;Q12690
+      195                                     EYQSKIIVFPRDGK               P40212
+      196                                     EYQSKIIVFPRNGK               Q12690
+      197                FFISRVLAFFAASDGIVNENLVENFSTEVQIPEAK               P09938
+      198                                        FHPSVNLSILK        P07262;P39708
+      199                               FHPSVNLSILKFLGFEQIFK        P07262;P39708
+      200                   FHPSVNLSILKFLGFEQIFKNALTGLDMGGGK               P39708
+      201                   FHPSVNLSILKFLGFEQIFKNSLTGLDMGGGK               P07262
+      202                             FIAEGSNMGSTPEAIAVFETAR               P07262
+      203             FIAEGSNMGSTPEAIAVFETARSTATGPSEAVWYGPPK               P07262
+      204                                 FKSLEEIVDEYSTFSESK               P39708
+      205                               FKSLEEIVDEYSTFSESKMK               P39708
+      206                                          FLGFEQIFK        P07262;P39708
+      207                              FLGFEQIFKNALTGLDMGGGK               P39708
+      208                      FLGFEQIFKNALTGLDMGGGKGGLCVDLK               P39708
+      209                              FLGFEQIFKNSLTGLDMGGGK               P07262
+      210                      FLGFEQIFKNSLTGLDMGGGKGGLCVDLK               P07262
+      211                                    FPLIGGHEGAGVVVK               P38113
+      212                              FPLIGGHEGAGVVVKLGSNVK               P38113
+      213                           FPLIGGHEGAGVVVKLGSNVKGWK               P38113
+      214                                             FPQYKK               P39708
+      215                                   FPQYKKVLPIVSVPER               P39708
+      216                                            FRGIREK        P40212;Q12690
+      217                             FVAEGANMGSTPEAISVFETAR               P39708
+      218                      FVAEGANMGSTPEAISVFETARSTATNAK               P39708
+      219             FVAEGANMGSTPEAISVFETARSTATNAKDAVWFGPPK               P39708
+      220                                          GANIASFIK               P07262
+      221                              GANIASFIKVSDAMFDQGDVF               P07262
+      222                              GANIASFVMVADAMLDQGDVF               P39708
+      223                              GCIISETGITSEQIHDIASAK               P39708
+      224                            GCIISETGITSEQIHDIASAKIR               P39708
+      225                          GCIISETGITSEQIHDIASAKIRFK               P39708
+      226                              GCIISETGITSEQVADISSAK               P07262
+      227                          GCIISETGITSEQVADISSAKVNFK               P07262
+      228          GCIISETGITSEQVADISSAKVNFKSLEQIVNEYSTFSENK               P07262
+      229                                             GEIVGR               P38113
+      230                                      GEIVGRYVVETSK               P38113
+      231                                         GEQEVAQGYR               P07262
+      232                                  GEQEVAQGYRVQYNSAK               P07262
+      233                              GEQEVAQGYRVQYNSAKGPYK               P07262
+      234                                           GFTLAEVK        P40212;Q12690
+      235                                 GFTLAEVKAAGLTAAYAR        P40212;Q12690
+      236                        GFTLAEVKAAGLTAAYARTIGIAVDHR        P40212;Q12690
+      237                                           GGLCVDLK        P07262;P39708
+      238                                         GGLCVDLKGK               P39708
+      239                                   GGLCVDLKGKSDNEIR               P39708
+      240                                         GGLCVDLKGR               P07262
+      241                                   GGLCVDLKGRSNNEIR               P07262
+      242                                    GGLRFHPSVNLSILK        P07262;P39708
+      243                           GGLRFHPSVNLSILKFLGFEQIFK        P07262;P39708
+      244          GGPHGVINVSVSEAAISLSTEYVRPCGTVVLVGLPANAYVK               P07246
+      245 GGPHGVINVSVSEAAISLSTEYVRPCGTVVLVGLPANAYVKSEVFSHVVK               P07246
+      246                                             GIREKR        P40212;Q12690
+      247                                             GKILGR               P07246
+      248                                      GKILGRYVVDTSK               P07246
+      249                                             GKLHYK               P07246
+      250                            GKLHYKDIPVPEPKPNEILINVK               P07246
+      251                                           GKSDNEIR               P39708
+      252                                          GKSDNEIRR               P39708
+      253                              GLIKSPIHLAGLSDVPEIFAK               P38113
+      254                           GLIKSPIHLAGLSDVPEIFAKMEK               P38113
+      255                                           GLIKSPIK               P07246
+      256                                  GLIKSPIKIVGLSELPK               P07246
+      257                  GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK               P39708
+      258            GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGK               P39708
+      259           GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGKR               P39708
+      260                  GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK               P07262
+      261            GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGK               P07262
+      262           GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGKR               P07262
+      263                                           GLVKSPIK        P00330;P00331
+      264                              GLVKSPIKVVGLSSLPEIYEK               P00331
+      265                              GLVKSPIKVVGLSTLPEIYEK               P00330
+      266                                    GMMPGLTFSNELICR               P09938
+      267                   GMMPGLTFSNELICRDEGLHTDFACLLFAHLK               P09938
+      268         GMMPGLTFSNELICRDEGLHTDFACLLFAHLKNKPDPAIVEK               P09938
+      269                                           GPYKGGLR        P07262;P39708
+      270                                GPYKGGLRFHPSVNLSILK        P07262;P39708
+      271                                             GQIAGR               P00331
+      272                                      GQIAGRYVVDTSK               P00331
+      273                                             GQIVGR               P00330
+      274                                      GQIVGRYVVDTSK               P00330
+      275                                           GRSNNEIR               P07262
+      276                                          GRSNNEIRR               P07262
+      277                                            GSYVGNR               P07246
+      278                                        GSYVGNRADTR               P07246
+      279                                GSYVGNRADTREALDFFSR               P07246
+      280                                           GVIFYENK               P07246
+      281                                         GVIFYENKGK               P07246
+      282                                     GVIFYENKGKLHYK               P07246
+      283                                         GVIFYESHGK               P00330
+      284                                     GVIFYESHGKLEYK               P00330
+      285                             GVIFYESHGKLEYKDIPVPKPK               P00330
+      286                                        GWKIGDYAGIK        P00330;P00331
+      287                                        GWKVGDFAGIK               P38113
+      288                                        GWKVGDLAGIK               P07246
+      289                                 HIGKDTDVPAGDIGVGGR               P39708
+      290                       HIGKDTDVPAGDIGVGGREIGYLFGAYR               P39708
+      291                                 HIGQDTDVPAGDIGVGGR               P07262
+      292                       HIGQDTDVPAGDIGVGGREIGYLFGAYR               P07262
+      293                    HIGQDTDVPAGDIGVGGREIGYLFGAYRSYK               P07262
+      294                                           HKLKEMEK               P09938
+      295                                            HWQERVK        P40212;Q12690
+      296                                    HWQERVKVHFDQAGK        P40212;Q12690
+      297                                     IAPRPLDLLRPVVR        P40212;Q12690
+      298                                IAPRPLDLLRPVVRAPTVK        P40212;Q12690
+      299                             IAPRPLDLLRPVVRAPTVKYNR        P40212;Q12690
+      300                                            ICYAFMR        P07262;P39708
+      301                                        ICYAFMRELSR        P07262;P39708
+      302                                    ICYAFMRELSRHIGK               P39708
+      303                      ICYAFMRELSRHIGQDTDVPAGDIGVGGR               P07262
+      304                                          IFEKFPQYK               P39708
+      305                                         IFEKFPQYKK               P39708
+      306                                           IGDYAGIK        P00330;P00331
+      307                                       IIQFRVTWENDK               P07262
+      308                             IIQFRVTWENDKGEQEVAQGYR               P07262
+      309                             IIQFRVTWENDNGEQEVAQGYR               P39708
+      310                      IIQFRVTWENDNGEQEVAQGYRVQFNSAK               P39708
+      311                                             IIVFPR        P40212;Q12690
+      312                                          IIVFPRDGK               P40212
+      313                IIVFPRDGKAPEAEQVLSAAATFPIAQPATDVEAR               P40212
+      314                                          IIVFPRNGK               Q12690
+      315                IIVFPRNGKAPEAEQVLSAAATFPIAQPATDVEAR               Q12690
+      316                                        ILGRYVVDTSK               P07246
+      317                               IMINCFNDCIQAAQEYSTEK               P39708
+      318                     IMINCFNDCIQAAQEYSTEKNTNTLPSLVK               P39708
+      319                                     IMINCFNECIDYAK               P07262
+      320                                    IMINCFNECIDYAKK               P07262
+      321                                 IMINCFNECIDYAKKYTK               P07262
+      322                             IQQGTDLAEVAPILCAGVTVYK               P07246
+      323                          IQQGTDLAEVAPILCAGVTVYKALK               P07246
+      324                     IQQGTDLAEVAPILCAGVTVYKALKEADLK               P07246
+      325                               IRFKSLEEIVDEYSTFSESK               P39708
+      326                                            ITWTSER               P07262
+      327                                      ITWTSERVDQELK               P07262
+      328                                     ITWTSERVDQELKR               P07262
+      329                                          IVGLSELPK               P07246
+      330                                   IVGLSELPKVYDLMEK               P07246
+      331                                 IVGLSELPKVYDLMEKGK               P07246
+      332                                        IVTEAVEIEQR               P09938
+      333            IVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADR               P09938
+      334    IVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNK               P09938
+      335                                             KFRGIR        P40212;Q12690
+      336                                             KHWQER        P40212;Q12690
+      337                                           KHWQERVK        P40212;Q12690
+      338                              KIMINCFNDCIQAAQEYSTEK               P39708
+      339                    KIMINCFNDCIQAAQEYSTEKNTNTLPSLVK               P39708
+      340                                 KLFEQLGGEIFIDFTEEK               P38113
+      341                         KLFEQLGGEIFIDFTEEKDIVGAIIK               P38113
+      342                                       KLGGEVFIDFTK               P07246
+      343                                     KLGGEVFIDFTKTK               P07246
+      344                                  KRGMMPGLTFSNELICR               P09938
+      345                                        KVLPIVSVPER        P07262;P39708
+      346                                   KVLPIVSVPERIIQFR        P07262;P39708
+      347                                             KVRAGR        P40212;Q12690
+      348                                            KYTKDGK               P07262
+      349                               KYYKVENPFDFMENISLAGK               P09938
+      350                                             LARSEK        P40212;Q12690
+      351                                            LARSEKK        P40212;Q12690
+      352                              LEHKDIPVPKPKPNELLINVK               P00331
+      353         LEHKDIPVPKPKPNELLINVKYSGVCHTDLHAWHGDWPLPTK               P00331
+      354                                       LEYKDIPVPKPK               P00330
+      355                              LEYKDIPVPKPKANELLINVK               P00330
+      356                              LEYKDVTVPEPKPNEILVHVK               P38113
+      357         LEYKDVTVPEPKPNEILVHVKYSGVCHSDLHAWHGDWPFQLK               P38113
+      358                                  LFEQLGGEIFIDFTEEK               P38113
+      359                          LFEQLGGEIFIDFTEEKDIVGAIIK               P38113
+      360  LFEQLGGEIFIDFTEEKDIVGAIIKATNGGSHGVINVSVSEAAIEASTR               P38113
+      361                                    LFKKLGGEVFIDFTK               P07246
+      362                                        LGGEVFIDFTK               P07246
+      363                                      LGGEVFIDFTKTK               P07246
+      364                           LGGEVFIDFTKTKNMVSDIQEATK               P07246
+      365                                             LGSNVK        P07246;P38113
+      366                                          LGSNVKGWK        P07246;P38113
+      367                                  LGSNVKGWKVGDFAGIK               P38113
+      368                                  LGSNVKGWKVGDLAGIK               P07246
+      369                              LHYKDIPVPEPKPNEILINVK               P07246
+      370         LHYKDIPVPEPKPNEILINVKYSGVCHTDLHAWHGDWPLPVK               P07246
+      371                                             LKEMEK               P09938
+      372                                    LKEMEKEEPLLNEDK               P09938
+      373                                            LKEYQSK        P40212;Q12690
+      374                                      LKEYQSKIIVFPR        P40212;Q12690
+      375                                           LLVAFGNK               P09938
+      376                                          LLVAFGNKK               P09938
+      377                                       LLVAFGNKKYYK               P09938
+      378                              LPLVGGHEGAGVVVGMGENVK        P00330;P00331
+      379                           LPLVGGHEGAGVVVGMGENVKGWK        P00330;P00331
+      380                   LPLVGGHEGAGVVVGMGENVKGWKIGDYAGIK        P00330;P00331
+      381                                    LPLVGGHEGAGVVVK               P07246
+      382                              LPLVGGHEGAGVVVKLGSNVK               P07246
+      383                           LPLVGGHEGAGVVVKLGSNVKGWK               P07246
+      384                                          LQSTAAIPK               P07246
+      385                                       LQSTAAIPKTQK               P07246
+      386                               LQSTAAIPKTQKGVIFYENK               P07246
+      387                                          LRTSTLFTR               P07246
+      388                                         LRTSTLFTRR               P07246
+      389                                          LSKDAENHK               P09938
+      390                                      LSKDAENHKAYLK               P09938
+      391                            LVAFASIEGVFFSGSFASIFWLK               P09938
+      392                           LVAFASIEGVFFSGSFASIFWLKK               P09938
+      393                          LVAFASIEGVFFSGSFASIFWLKKR               P09938
+      394                                        MAISKNLPILK        P40212;Q12690
+      395                                    MAISKNLPILKNHFR        P40212;Q12690
+      396                                          MEKGEIVGR               P38113
+      397                                   MEKGEIVGRYVVETSK               P38113
+      398                                          MEKGQIAGR               P00331
+      399                                   MEKGQIAGRYVVDTSK               P00331
+      400                                          MEKGQIVGR               P00330
+      401                                   MEKGQIVGRYVVDTSK               P00330
+      402                 MKYVAGARPWTHVSNVDIALPCATQNEVSGDEAK               P39708
+      403         MKYVAGARPWTHVSNVDIALPCATQNEVSGDEAKALVASGVK               P39708
+      404                                         MLRTSTLFTR               P07246
+      405                                        MLRTSTLFTRR               P07246
+      406                                             MNENER               P09938
+      407                                        MNENERFFISR               P09938
+      408          MNENERFFISRVLAFFAASDGIVNENLVENFSTEVQIPEAK               P09938
+      409                                           MPKETPSK               P09938
+      410                               MPKETPSKAAADALSDLEIK               P09938
+      411                                          MPSQVIPEK               P38113
+      412                                        MPSQVIPEKQK               P38113
+      413                              MPSQVIPEKQKAIVFYETDGK               P38113
+      414                     MSEPEFQQAYEEVVSSLEDSTLFEQHPEYR               P07262
+      415                    MSEPEFQQAYEEVVSSLEDSTLFEQHPEYRK               P07262
+      416          MSEPEFQQAYEEVVSSLEDSTLFEQHPEYRKVLPIVSVPER               P07262
+      417                                           MSIPETQK        P00330;P00331
+      418                                 MSIPETQKAIIFYESNGK               P00331
+      419                             MSIPETQKAIIFYESNGKLEHK               P00331
+      420                                 MSIPETQKGVIFYESHGK               P00330
+      421                             MSIPETQKGVIFYESHGKLEYK               P00330
+      422                             MTSEPEFQQAYDEIVSSVEDSK               P39708
+      423                         MTSEPEFQQAYDEIVSSVEDSKIFEK               P39708
+      424                    MTSEPEFQQAYDEIVSSVEDSKIFEKFPQYK               P39708
+      425                                       NALTGLDMGGGK               P39708
+      426                               NALTGLDMGGGKGGLCVDLK               P39708
+      427                             NALTGLDMGGGKGGLCVDLKGK               P39708
+      428                                             NARAAR               P40212
+      429                                          NARAARAAK               P40212
+      430                                             NARATR               Q12690
+      431                                          NARATRAAK               Q12690
+      432                      NGKAPEAEQVLSAAATFPIAQPATDVEAR               Q12690
+      433           NGKAPEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR               Q12690
+      434                                         NHFRKHWQER        P40212;Q12690
+      435                                      NILRLQSTAAIPK               P07246
+      436                                   NILRLQSTAAIPKTQK               P07246
+      437                                         NKPDPAIVEK               P09938
+      438                              NKPDPAIVEKIVTEAVEIEQR               P09938
+      439  NKPDPAIVEKIVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADR               P09938
+      440                                             NLPILK        P40212;Q12690
+      441                                         NLPILKNHFR        P40212;Q12690
+      442                                        NLPILKNHFRK        P40212;Q12690
+      443                                        NMVSDIQEATK               P07246
+      444                                        NQEIFDANVQR        P40212;Q12690
+      445                                      NQEIFDANVQRLK        P40212;Q12690
+      446                                 NQEIFDANVQRLKEYQSK        P40212;Q12690
+      447                                       NSLTGLDMGGGK               P07262
+      448                               NSLTGLDMGGGKGGLCVDLK               P07262
+      449                             NSLTGLDMGGGKGGLCVDLKGR               P07262
+      450                                         NSWEGVLTGK        P07262;P39708
+      451        NSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK               P39708
+      452  NSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGK               P39708
+      453        NSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK               P07262
+      454  NSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGK               P07262
+      455                                         NTNTLPSLVK               P39708
+      456                    NTNTLPSLVKGANIASFVMVADAMLDQGDVF               P39708
+      457                                            PKETPSK               P09938
+      458                                PKETPSKAAADALSDLEIK               P09938
+      459                                           PSQVIPEK               P38113
+      460                                         PSQVIPEKQK               P38113
+      461                               PSQVIPEKQKAIVFYETDGK               P38113
+      462                                       QEAGAFTFNEDF               P09938
+      463                                       QKAIVFYETDGK               P38113
+      464                                   QKAIVFYETDGKLEYK               P38113
+      465                                     QNRNQEIFDANVQR        P40212;Q12690
+      466                                   QNRNQEIFDANVQRLK        P40212;Q12690
+      467                                   RAEASFWTAEEIDLSK               P09938
+      468                           RAEASFWTAEEIDLSKDIHDWNNR               P09938
+      469                  RANVIPGQWVTISGACGGLGSLAIQYALAMGYR               P38113
+      470        RANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAK               P38113
+      471                                   RGMMPGLTFSNELICR               P09938
+      472                  RGMMPGLTFSNELICRDEGLHTDFACLLFAHLK               P09938
+      473                                           RICYAFMR        P07262;P39708
+      474                                       RICYAFMRELSR        P07262;P39708
+      475                                    RIMINCFNECIDYAK               P07262
+      476                                   RIMINCFNECIDYAKK               P07262
+      477                                RKLFEQLGGEIFIDFTEEK               P38113
+      478                                            RNARAAR               P40212
+      479                                            RNARATR               Q12690
+      480                                    RQNRNQEIFDANVQR        P40212;Q12690
+      481                                          RVQPSLFSR               P07246
+      482                                      RVQPSLFSRNILR               P07246
+      483                                            RVSDYQK               P09938
+      484                                      RVSDYQKAGVMSK               P09938
+      485                                  RVTISGSGNVAQYAALK        P07262;P39708
+      486                   RVTISGSGNVAQYAALKVIELGGIVVSLSDSK               P39708
+      487                   RVTISGSGNVAQYAALKVIELGGTVVSLSDSK               P07262
+      488                       SANLMAGHWVAISGAAGGLGSLAVQYAK               P00330
+      489                  SANLMAGHWVAISGAAGGLGSLAVQYAKAMGYR               P00330
+      490        SANLMAGHWVAISGAAGGLGSLAVQYAKAMGYRVLGIDGGEGK               P00330
+      491                       SANLRAGHWAAISGAAGGLGSLAVQYAK               P00331
+      492                  SANLRAGHWAAISGAAGGLGSLAVQYAKAMGYR               P00331
+      493                                            SDMLKEK               P09938
+      494                                         SDMLKEKLSK               P09938
+      495                                             SDNEIR               P39708
+      496                                            SDNEIRR               P39708
+      497                                     SDNEIRRICYAFMR               P39708
+      498                                             SEKKFR        P40212;Q12690
+      499                      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR               P07262
+      500                     SEPEFQQAYEEVVSSLEDSTLFEQHPEYRK               P07262
+      501           SEPEFQQAYEEVVSSLEDSTLFEQHPEYRKVLPIVSVPER               P07262
+      502                                          SEVFSHVVK               P07246
+      503                                     SEVFSHVVKSINIK               P07246
+      504                              SEVFSHVVKSINIKGSYVGNR               P07246
+      505                         SFYGFQIMIENIHSETYSLLIDTYIK               P09938
+      506                      SFYGFQIMIENIHSETYSLLIDTYIKDPK               P09938
+      507    SFYGFQIMIENIHSETYSLLIDTYIKDPKESEFLFNAIHTIPEIGEK               P09938
+      508                                             SHQVHR               P09938
+      509                                           SHQVHRHK               P09938
+      510                                         SHQVHRHKLK               P09938
+      511                                       SIGGEVFIDFTK               P00330
+      512                                     SIGGEVFIDFTKEK               P00330
+      513                             SIGGEVFIDFTKEKDIVGAVLK               P00330
+      514                                       SINIKGSYVGNR               P07246
+      515                                   SINIKGSYVGNRADTR               P07246
+      516                                            SIPETQK        P00330;P00331
+      517                                  SIPETQKAIIFYESNGK               P00331
+      518                              SIPETQKAIIFYESNGKLEHK               P00331
+      519                                  SIPETQKGVIFYESHGK               P00330
+      520                              SIPETQKGVIFYESHGKLEYK               P00330
+      521                                       SISIVGSCVGNR               P38113
+      522                                   SISIVGSCVGNRADTR               P38113
+      523                           SISIVGSCVGNRADTREALDFFAR               P38113
+      524                                       SISIVGSYVGNR        P00330;P00331
+      525                                   SISIVGSYVGNRADTR        P00330;P00331
+      526                           SISIVGSYVGNRADTREALDFFAR        P00330;P00331
+      527                                   SLEEIVDEYSTFSESK               P39708
+      528                                 SLEEIVDEYSTFSESKMK               P39708
+      529 SLEEIVDEYSTFSESKMKYVAGARPWTHVSNVDIALPCATQNEVSGDEAK               P39708
+      530                                   SLEQIVNEYSTFSENK               P07262
+      531                    SLEQIVNEYSTFSENKVQYIAGARPWTHVQK               P07262
+      532 SLEQIVNEYSTFSENKVQYIAGARPWTHVQKVDIALPCATQNEVSGEEAK               P07262
+      533                                        SNLNKELETLR               P09938
+      534                                    SNLNKELETLREENR               P09938
+      535                                             SNNEIR               P07262
+      536                                            SNNEIRR               P07262
+      537                                     SNNEIRRICYAFMR               P07262
+      538                                  SPIHLAGLSDVPEIFAK               P38113
+      539                               SPIHLAGLSDVPEIFAKMEK               P38113
+      540                         SPIHLAGLSDVPEIFAKMEKGEIVGR               P38113
+      541                                      SPIKIVGLSELPK               P07246
+      542                               SPIKIVGLSELPKVYDLMEK               P07246
+      543                                  SPIKVVGLSSLPEIYEK               P00331
+      544                               SPIKVVGLSSLPEIYEKMEK               P00331
+      545                                  SPIKVVGLSTLPEIYEK               P00330
+      546                               SPIKVVGLSTLPEIYEKMEK               P00330
+      547                                   STATGPSEAVWYGPPK               P07262
+      548               STATGPSEAVWYGPPKAANLGGVAVSGLEMAQNSQR               P07262
+      549        STATGPSEAVWYGPPKAANLGGVAVSGLEMAQNSQRITWTSER               P07262
+      550                                            STATNAK               P39708
+      551                                   STATNAKDAVWFGPPK               P39708
+      552               STATNAKDAVWFGPPKAANLGGVAVSGLEMAQNSQK               P39708
+      553                                    STKQEAGAFTFNEDF               P09938
+      554                                      SYKNSWEGVLTGK        P07262;P39708
+      555     SYKNSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK               P39708
+      556     SYKNSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK               P07262
+      557                                          TIGIAVDHR        P40212;Q12690
+      558                                         TIGIAVDHRR        P40212;Q12690
+      559                                      TIGIAVDHRRQNR        P40212;Q12690
+      560                                      TKNMVSDIQEATK               P07246
+      561                                             TLRLAR        P40212;Q12690
+      562                                          TLRLARSEK        P40212;Q12690
+      563                                             TNFFEK               P09938
+      564                                            TNFFEKR               P09938
+      565                                      TNFFEKRVSDYQK               P09938
+      566                                        TQKGVIFYENK               P07246
+      567                                      TQKGVIFYENKGK               P07246
+      568                              TSEPEFQQAYDEIVSSVEDSK               P39708
+      569                          TSEPEFQQAYDEIVSSVEDSKIFEK               P39708
+      570                     TSEPEFQQAYDEIVSSVEDSKIFEKFPQYK               P39708
+      571                                            TSTLFTR               P07246
+      572                                           TSTLFTRR               P07246
+      573                                   TSTLFTRRVQPSLFSR               P07246
+      574                                            TVLFPIK               P09938
+      575                                   TVLFPIKYHEIWQAYK               P09938
+      576                                  TVLFPIKYHEIWQAYKR               P09938
+      577                                VDIALPCATQNEVSGEEAK               P07262
+      578                        VDIALPCATQNEVSGEEAKALVAQGVK               P07262
+      579  VDIALPCATQNEVSGEEAKALVAQGVKFIAEGSNMGSTPEAIAVFETAR               P07262
+      580                                             VDQELK        P07262;P39708
+      581                                            VDQELKK               P39708
+      582                        VDQELKKIMINCFNDCIQAAQEYSTEK               P39708
+      583                                            VDQELKR               P07262
+      584                              VDQELKRIMINCFNECIDYAK               P07262
+      585                                   VENPFDFMENISLAGK               P09938
+      586                             VENPFDFMENISLAGKTNFFEK               P09938
+      587                            VENPFDFMENISLAGKTNFFEKR               P09938
+      588                                           VGDFAGIK               P38113
+      589                                           VGDLAGIK               P07246
+      590                                           VHFDQAGK        P40212;Q12690
+      591                                          VHFDQAGKK        P40212;Q12690
+      592                                       VHFDQAGKKVSR        P40212;Q12690
+      593                                    VIELGGIVVSLSDSK               P39708
+      594               VIELGGIVVSLSDSKGCIISETGITSEQIHDIASAK               P39708
+      595             VIELGGIVVSLSDSKGCIISETGITSEQIHDIASAKIR               P39708
+      596                                    VIELGGTVVSLSDSK               P07262
+      597               VIELGGTVVSLSDSKGCIISETGITSEQVADISSAK               P07262
+      598           VIELGGTVVSLSDSKGCIISETGITSEQVADISSAKVNFK               P07262
+      599                                         VIGIDGGNAK               P38113
+      600                                        VIGIDGGNAKR               P38113
+      601                                       VIGIDGGNAKRK               P38113
+      602                                            VKSDMLK               P09938
+      603                                          VKSDMLKEK               P09938
+      604                                         VKVHFDQAGK        P40212;Q12690
+      605                                        VKVHFDQAGKK        P40212;Q12690
+      606                     VLAFFAASDGIVNENLVENFSTEVQIPEAK               P09938
+      607                                         VLGIDAGEEK               P07246
+      608                                       VLGIDAGEEKEK               P07246
+      609                                    VLGIDAGEEKEKLFK               P07246
+      610                                         VLGIDGGEGK               P00330
+      611                                    VLGIDGGEGKEELFR               P00330
+      612                        VLGIDGGEGKEELFRSIGGEVFIDFTK               P00330
+      613                                         VLGIDGGPGK               P00331
+      614                        VLGIDGGPGKEELFTSLGGEVFIDFTK               P00331
+      615                      VLGIDGGPGKEELFTSLGGEVFIDFTKEK               P00331
+      616                                         VLPIVSVPER        P07262;P39708
+      617                                    VLPIVSVPERIIQFR        P07262;P39708
+      618                             VLPIVSVPERIIQFRVTWENDK               P07262
+      619                   VLPIVSVPERIIQFRVTWENDNGEQEVAQGYR               P39708
+      620                                            VLPSLVK               P07262
+      621                                   VLPSLVKGANIASFIK               P07262
+      622                       VLPSLVKGANIASFIKVSDAMFDQGDVF               P07262
+      623                               VNFKSLEQIVNEYSTFSENK               P07262
+      624                VNFKSLEQIVNEYSTFSENKVQYIAGARPWTHVQK               P07262
+      625                                            VQFNSAK               P39708
+      626                                        VQFNSAKGPYK               P39708
+      627                                    VQFNSAKGPYKGGLR               P39708
+      628                                           VQPSLFSR               P07246
+      629                                       VQPSLFSRNILR               P07246
+      630                              VQPSLFSRNILRLQSTAAIPK               P07246
+      631                                    VQYIAGARPWTHVQK               P07262
+      632                 VQYIAGARPWTHVQKVDIALPCATQNEVSGEEAK               P07262
+      633         VQYIAGARPWTHVQKVDIALPCATQNEVSGEEAKALVAQGVK               P07262
+      634                                            VQYNSAK               P07262
+      635                                        VQYNSAKGPYK               P07262
+      636                                    VQYNSAKGPYKGGLR               P07262
+      637                                      VRAGRGFTLAEVK        P40212;Q12690
+      638                                       VSDAMFDQGDVF               P07262
+      639                                             VSDYQK               P09938
+      640                                       VSDYQKAGVMSK               P09938
+      641                                    VSDYQKAGVMSKSTK               P09938
+      642                                            VSRRNAR        P40212;Q12690
+      643                                   VTISGSGNVAQYAALK        P07262;P39708
+      644                    VTISGSGNVAQYAALKVIELGGIVVSLSDSK               P39708
+      645                    VTISGSGNVAQYAALKVIELGGTVVSLSDSK               P07262
+      646                                            VTWENDK               P07262
+      647                                  VTWENDKGEQEVAQGYR               P07262
+      648                           VTWENDKGEQEVAQGYRVQYNSAK               P07262
+      649                                  VTWENDNGEQEVAQGYR               P39708
+      650                           VTWENDNGEQEVAQGYRVQFNSAK               P39708
+      651                       VTWENDNGEQEVAQGYRVQFNSAKGPYK               P39708
+      652                                            VTWTAER               P39708
+      653                                      VTWTAERVDQELK               P39708
+      654                                     VTWTAERVDQELKK               P39708
+      655                                      VVGLSSLPEIYEK               P00331
+      656                                   VVGLSSLPEIYEKMEK               P00331
+      657                             VVGLSSLPEIYEKMEKGQIAGR               P00331
+      658                                      VVGLSTLPEIYEK               P00330
+      659                                   VVGLSTLPEIYEKMEK               P00330
+      660                             VVGLSTLPEIYEKMEKGQIVGR               P00330
+      661                                            VYDLMEK               P07246
+      662                                          VYDLMEKGK               P07246
+      663                                      VYDLMEKGKILGR               P07246
+      664                                       WIQDADALFGER               P09938
+      665                WIQDADALFGERLVAFASIEGVFFSGSFASIFWLK               P09938
+      666               WIQDADALFGERLVAFASIEGVFFSGSFASIFWLKK               P09938
+      667    WLNGSCMTCEFCESGHESNCPDADLSGYTHDGSFQQFATADAIQAAK               P07246
+      668                                 YCRANGTVVLVGLPAGAK               P00331
+      669                      YCRANGTVVLVGLPAGAKCSSDVFNHVVK               P00331
+      670                      YCRPNGTVVLVGMPAHAYCNSDVFNQVVK               P38113
+      671          YCRPNGTVVLVGMPAHAYCNSDVFNQVVKSISIVGSCVGNR               P38113
+      672      YCRPNGTVVLVGMPAHAYCNSDVFNQVVKSISIVGSCVGNRADTR               P38113
+      673                       YFLDALPVALLGMNADLMNQYVEFVADR               P09938
+      674               YFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNK               P09938
+      675              YFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNKK               P09938
+      676                                          YHEIWQAYK               P09938
+      677                                         YHEIWQAYKR               P09938
+      678                          YHEIWQAYKRAEASFWTAEEIDLSK               P09938
+      679                                             YNRKVR        P40212;Q12690
+      680                              YSGVCHSDLHAWHGDWPFQLK               P38113
+      681               YSGVCHSDLHAWHGDWPFQLKFPLIGGHEGAGVVVK               P38113
+      682         YSGVCHSDLHAWHGDWPFQLKFPLIGGHEGAGVVVKLGSNVK               P38113
+      683                              YSGVCHTDLHAWHGDWPLPTK               P00331
+      684         YSGVCHTDLHAWHGDWPLPTKLPLVGGHEGAGVVVGMGENVK               P00331
+      685      YSGVCHTDLHAWHGDWPLPTKLPLVGGHEGAGVVVGMGENVKGWK               P00331
+      686                              YSGVCHTDLHAWHGDWPLPVK        P00330;P07246
+      687         YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVGMGENVK               P00330
+      688      YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVGMGENVKGWK               P00330
+      689               YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVK               P07246
+      690         YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVKLGSNVK               P07246
+      691                                             YTKDGK               P07262
+      692                                      YTKDGKVLPSLVK               P07262
+      693                   YVAGARPWTHVSNVDIALPCATQNEVSGDEAK               P39708
+      694           YVAGARPWTHVSNVDIALPCATQNEVSGDEAKALVASGVK               P39708
+      695                                 YVRANGTTVLVGMPAGAK               P00330
+      696                      YVRANGTTVLVGMPAGAKCCSDVFNQVVK               P00330
+      697                                            YVVDTSK P00330;P00331;P07246
+      698                                            YVVETSK               P38113
+      699                                YYKVENPFDFMENISLAGK               P09938
+      700                          YYKVENPFDFMENISLAGKTNFFEK               P09938
       
       $proteins
         protein
-      1  P0CX57
-      2  P48238
-      3  Q03483
-      4  Q03856
-      5  Q06204
-      6  Q07791
-      7  Q07793
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  peptide
-      1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          AHNVSTSNNSPSTDNDSISK;AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK;AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLRPETY;DILSVDYTDIMK;DILSVDYTDIMKILSK;DILSVDYTDIMKILSKSIEK;ESQQLSQHSPISHGSACASVTSK;ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK;ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK;EVHTNQDPLDVSASK;EVHTNQDPLDVSASKTEECEK;EVHTNQDPLDVSASKTEECEKASTK;FLQNSNLGGIIPTVNGKPVR;FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK;FLRYTR;FLRYTRHR;GLSGEYK;GLSGEYKFLR;GLSGEYKFLRYTR;HDLHLRPETY;HLNMTVAELFLDIHAIYEEQQGSR;HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR;HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR;HRHLNMTVAELFLDIHAIYEEQQGSR;HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR;ILSKSIEK;ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK;KYVRPPPMLTSPNDFPNWVK;KYVRPPPMLTSPNDFPNWVKTYIK;LNNNGIHINNK;LNNNGIHINNKVACQLIMR;LNNNGIHINNKVACQLIMRGLSGEYK;MESQQLSQHSPISHGSACASVTSK;MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK;MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK;MQSDTQEANDIVTLANLQYNGSTPADAFETK;MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR;MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK;NDSRSYTNTTKPK;NDSRSYTNTTKPKVIAR;NPQKTNNSK;NPQKTNNSKSK;NPSDEK;NPSDEKNDSR;NPSDEKNDSRSYTNTTKPK;NSKPNYR;NSKPNYRR;NSKPNYRRNPSDEK;QITDDELTFLYNTFQIFAPSQFLPTWVK;QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK;QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK;RNPSDEK;RNPSDEKNDSR;SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK;SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR;SKTARAHNVSTSNNSPSTDNDSISK;STTEPIQLNNK;STTEPIQLNNKHDLHLRPETY;SYTNTTKPK;SYTNTTKPKVIAR;SYTNTTKPKVIARNPQK;TARAHNVSTSNNSPSTDNDSISK;TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK;TEECEK;TEECEKASTK;TNNSKSK;TNNSKSKTAR;TYIKFLQNSNLGGIIPTVNGKPVR;VACQLIMR;VACQLIMRGLSGEYK;VACQLIMRGLSGEYKFLR;VIARNPQK;VIARNPQKTNNSK;VTNIIDR;VTNIIDRLNNNGIHINNK;VTNIIDRLNNNGIHINNKVACQLIMR;YTRHRHLNMTVAELFLDIHAIYEEQQGSR;YVRPPPMLTSPNDFPNWVK;YVRPPPMLTSPNDFPNWVKTYIK;YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR
-      2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ACLNKEVGTYECEGER;AKCFKELEMENIEK;CFKELEMENIEK;CFKELEMENIEKGDIK;DIIEWCR;DIIEWCRDYEVNK;DIIEWCRDYEVNKTR;DTYSFFTSLSDIQDSSSNEEQCGVGSILSEDSFTFEGSNVSIR;DYEVNK;DYEVNKTR;DYEVNKTREVCVPSIHEFYLHGNGSDNLF;EARQREK;ELEMENIEK;ELEMENIEKGDIK;ELEMENIEKGDIKK;EVCVPSIHEFYLHGNGSDNLF;EVGTYECEGER;EYSQPFFDWR;EYSQPFFDWRHEMVEHGEESVKPCGCHK;EYSQPFFDWRHEMVEHGEESVKPCGCHKSR;FTIPPK;FTIPPKIEQR;FTIPPKIEQRK;GDIKKSLFYR;GKACLNK;GKACLNKEVGTYECEGER;HEMVEHGEESVKPCGCHK;HEMVEHGEESVKPCGCHKSR;HEMVEHGEESVKPCGCHKSRK;IEQRKEAR;KAKCFK;KEARQR;KSLFYR;KSLFYRDIIEWCR;LFSLDLNALNENENGSK;LFSLDLNALNENENGSKNPVK;LFSLDLNALNENENGSKNPVKFTIPPK;LRRVAVLPENSR;MGKACLNK;MGKACLNKEVGTYECEGER;NPVKFTIPPK;NPVKFTIPPKIEQR;NYLVESSMDSSR;NYLVESSMDSSREYSQPFFDWR;NYLVESSMDSSREYSQPFFDWRHEMVEHGEESVKPCGCHK;RVAVLPENSR;RVAVLPENSRNYLVESSMDSSR;SLFYRDIIEWCR;SLFYRDIIEWCRDYEVNK;TREVCVPSIHEFYLHGNGSDNLF;VAVLPENSR;VAVLPENSRNYLVESSMDSSR;VAVLPENSRNYLVESSMDSSREYSQPFFDWR
-      3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   AAKAHNIATSSK;AAKAHNIATSSKFSR;AHNIATSSK;AHNIATSSKFSR;AHNIATSSKFSRVNSDHINESTVSSQYLSDDNELSLRPATER;DSTKVNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK;DWIALANLEYNGSTSADTFEITVSTIIQR;DWIALANLEYNGSTSADTFEITVSTIIQRLK;DWIALANLEYNGSTSADTFEITVSTIIQRLKENNINVSDR;ENNINVSDR;ENNINVSDRLACQLILK;ENNINVSDRLACQLILKGLSGDFK;ESQQLHQNPHSQHGSAYASVTSK;ESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDR;ESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDRDSTK;EVPSNQDPLAVSASNLPEFDR;EVPSNQDPLAVSASNLPEFDRDSTK;FLKNSNLGDIIPNDQGEIK;FLKNSNLGDIIPNDQGEIKR;FSRVNSDHINESTVSSQYLSDDNELSLRPATER;FSRVNSDHINESTVSSQYLSDDNELSLRPATERI;FYIRFLK;FYIRFLKNSNLGDIIPNDQGEIK;GLSGDFK;GLSGDFKYLR;GLSGDFKYLRNQYR;IMNLNKPSQYK;IMNLNKPSQYKQHSEYK;IMNLNKPSQYKQHSEYKNVSR;LACQLILK;LACQLILKGLSGDFK;LACQLILKGLSGDFKYLR;LKENNINVSDR;LKENNINVSDRLACQLILK;LSQLFAEIQLIYDENK;LSQLFAEIQLIYDENKIMNLNKPSQYK;LSQLFAEIQLIYDENKIMNLNKPSQYKQHSEYK;MESQQLHQNPHSQHGSAYASVTSK;MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDR;MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDRDSTK;MQTNNQELK;MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR;MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQRLK;NNVLPPHTLTSEENFSTWVK;NNVLPPHTLTSEENFSTWVKFYIR;NNVLPPHTLTSEENFSTWVKFYIRFLK;NQYRTK;NQYRTKTNMK;NSNLGDIIPNDQGEIK;NSNLGDIIPNDQGEIKR;NSNLGDIIPNDQGEIKRQMTYEEHAYIYNTFQAFAPFHLLPTWVK;NVSRTSPNTTNTK;NVSRTSPNTTNTKVTTR;NYHRTNSSKPR;NYHRTNSSKPRAAK;QHSEYK;QHSEYKNVSR;QHSEYKNVSRTSPNTTNTK;QILEINYSDILTVLCK;QILEINYSDILTVLCKSVSK;QILEINYSDILTVLCKSVSKMQTNNQELK;QMTYEEHAYIYNTFQAFAPFHLLPTWVK;QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK;QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCKSVSK;RQMTYEEHAYIYNTFQAFAPFHLLPTWVK;RQMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK;SVSKMQTNNQELK;SVSKMQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR;TKTNMK;TKTNMKLSQLFAEIQLIYDENK;TKVRNNVLPPHTLTSEENFSTWVK;TNMKLSQLFAEIQLIYDENK;TNMKLSQLFAEIQLIYDENKIMNLNKPSQYK;TNSSKPR;TNSSKPRAAK;TNSSKPRAAKAHNIATSSK;TSPNTTNTK;TSPNTTNTKVTTR;TSPNTTNTKVTTRNYHR;VNSDHINESTVSSQYLSDDNELSLRPATER;VNSDHINESTVSSQYLSDDNELSLRPATERI;VNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK;VRNNVLPPHTLTSEENFSTWVK;VRNNVLPPHTLTSEENFSTWVKFYIR;VTTRNYHR;VTTRNYHRTNSSKPR;YLRNQYR;YLRNQYRTK
-      4                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          AHNVSTSNNSPSTDNDSISK;AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK;AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLRPGTY;DILSVDYTDIMK;DILSVDYTDIMKILSK;DILSVDYTDIMKILSKSIEK;ESQQLSNYPHISHGSACASVTSK;ESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASK;ESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASKIQEYDK;EVHTNQDPLDVSASK;EVHTNQDPLDVSASKIQEYDK;EVHTNQDPLDVSASKIQEYDKASTK;FLQNSNLGGIIPTVNGKPVR;FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK;FLRYTR;FLRYTRHR;GLSGEYK;GLSGEYKFLR;GLSGEYKFLRYTR;HDLHLRPGTY;HLNMTVAELFLDIHAIYEEQQGSR;HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR;HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR;HRHLNMTVAELFLDIHAIYEEQQGSR;HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR;ILSKSIEK;ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK;IQEYDK;IQEYDKASTK;KYVRPPPMLTSPNDFPNWVK;KYVRPPPMLTSPNDFPNWVKTYIK;LNNNGIHINNK;LNNNGIHINNKVACQLIMR;LNNNGIHINNKVACQLIMRGLSGEYK;MESQQLSNYPHISHGSACASVTSK;MESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASK;MESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASKIQEYDK;MQSDTQEANDIVTLANLQYNGSTPADAFETK;MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR;MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK;NDSRSYTNTTKPK;NDSRSYTNTTKPKVIAR;NPQKTNNSK;NPQKTNNSKSK;NPSDEK;NPSDEKNDSR;NPSDEKNDSRSYTNTTKPK;NSKPNYR;NSKPNYRR;NSKPNYRRNPSDEK;QITDDELTFLYNTFQIFAPSQFLPTWVK;QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK;QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK;RNPSDEK;RNPSDEKNDSR;SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK;SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR;SKTARAHNVSTSNNSPSTDNDSISK;STTEPIQLNNK;STTEPIQLNNKHDLHLRPGTY;SYTNTTKPK;SYTNTTKPKVIAR;SYTNTTKPKVIARNPQK;TARAHNVSTSNNSPSTDNDSISK;TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK;TNNSKSK;TNNSKSKTAR;TYIKFLQNSNLGGIIPTVNGKPVR;VACQLIMR;VACQLIMRGLSGEYK;VACQLIMRGLSGEYKFLR;VIARNPQK;VIARNPQKTNNSK;VTNIIDR;VTNIIDRLNNNGIHINNK;VTNIIDRLNNNGIHINNKVACQLIMR;YTRHRHLNMTVAELFLDIHAIYEEQQGSR;YVRPPPMLTSPNDFPNWVK;YVRPPPMLTSPNDFPNWVKTYIK;YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR
-      5                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      AAFYVAAIVQAIDIITGCK;AAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYR;AAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYREQIK;DALRETLPSSYNK;DALRETLPSSYNKETLNFK;ELESLILPADSIVNVVDQFQEELLSR;ELESLILPADSIVNVVDQFQEELLSRLQTNTISMLPQCLVPDK;ELESLILPADSIVNVVDQFQEELLSRLQTNTISMLPQCLVPDKR;EQIKYYSSIHIK;EQIKYYSSIHIKLQFLNHSNLLGAAIATYLNK;ETLNFK;ETLNFKHVLINSEIGFIGK;ETLNFKHVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGK;ETLPSSYNK;ETLPSSYNKETLNFK;ETLPSSYNKETLNFKHVLINSEIGFIGK;FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTR;FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIK;FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIKK;FFVSVTFSFPLNPEGEVVAMGK;FFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVK;FFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVKQLIQSSFHR;FICENDSISLIIGTGTNACFEVPYGYLPPFK;FICENDSISLIIGTGTNACFEVPYGYLPPFKR;FICENDSISLIIGTGTNACFEVPYGYLPPFKRDALR;GFVMTDTLQGSTVK;GFVMTDTLQGSTVKQLIQSSFHR;HVLINSEIGFIGK;HVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGK;HVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGKWLPLSLK;IISENIEEFFCTMNVCHVINDAIAVSLTSK;ILTIDFGGTR;ILTIDFGGTRLK;KKNESSEASK;KNESSEASK;KNESSEASKFFVSVTFSFPLNPEGEVVAMGK;LAANGYIK;LAANGYIKK;LAANGYIKKK;LKFAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTR;LKFAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIK;LLIKRAAFYVAAIVQAIDIITGCK;LQFLNHSNLLGAAIATYLNK;LQFLNHSNLLGAAIATYLNKSDNQVQ;LQTNTISMLPQCLVPDK;LQTNTISMLPQCLVPDKR;LQTNTISMLPQCLVPDKRSR;MTIESTLAR;MTIESTLARELESLILPADSIVNVVDQFQEELLSR;NESSEASK;NESSEASKFFVSVTFSFPLNPEGEVVAMGK;NESSEASKFFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVK;NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIAR;NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIARLLIK;NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIARLLIKR;NILLQYNIIPK;NILLQYNIIPKNFPVEFNGELVCQLAEDCTNAWFENEHYALICQIAR;NVIALQPFDIHGAISYEMPLECVTSGK;NVIALQPFDIHGAISYEMPLECVTSGKWLPLSLK;NVIALQPFDIHGAISYEMPLECVTSGKWLPLSLKNILLQYNIIPK;NYNFIHIGYVGSFLHNSNFYR;NYNFIHIGYVGSFLHNSNFYREQIK;NYNFIHIGYVGSFLHNSNFYREQIKYYSSIHIK;QLIQSSFHR;QLIQSSFHRIISENIEEFFCTMNVCHVINDAIAVSLTSK;RAAFYVAAIVQAIDIITGCK;RAAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYR;RDALRETLPSSYNK;RSRWNPEDK;SDNQVQ;SRWNPEDK;SRWNPEDKILTIDFGGTR;TIESTLAR;TIESTLARELESLILPADSIVNVVDQFQEELLSR;WLPLSLK;WLPLSLKNILLQYNIIPK;WNPEDK;WNPEDKILTIDFGGTR;WNPEDKILTIDFGGTRLK;YYSSIHIK;YYSSIHIKLQFLNHSNLLGAAIATYLNK;YYSSIHIKLQFLNHSNLLGAAIATYLNKSDNQVQ
-      6 AAKAHNIATSSK;AAKAHNIATSSKFSR;AHGVAER;AHGVAERLNR;AHGVAERLNRTLLNDCR;AHNIATSSK;AHNIATSSKFSR;AHNIATSSKFSRVNNDHINESTVSSQYLSDDNELSLGQQQK;ALHTPNIAYDLLSLSELANQNITACFTR;ALHTPNIAYDLLSLSELANQNITACFTRNTLER;ALHTPNIAYDLLSLSELANQNITACFTRNTLERSDGTVLAPIVK;AMRLRDEVSGNNLYVYYIETK;APGQPGHYIDQDELEIDEDEYK;APGQPGHYIDQDELEIDEDEYKEK;APGQPGHYIDQDELEIDEDEYKEKVHEMQK;APKEVDADISEYNILPSTIR;APKEVDADISEYNILPSTIRSR;ARFVAR;ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK;ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIK;ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIKGLLTDSR;AVCDNTPSIDTDPPEYR;AVCDNTPSIDTDPPEYRSSDHATPNIMPDK;AVCDNTPSIDTDPPEYRSSDHATPNIMPDKSSK;DEVSGNNLYVYYIETK;DEVSGNNLYVYYIETKMNIADVMTKPLPIK;DEVSGNNLYVYYIETKMNIADVMTKPLPIKTFK;DGTHKAR;DGTHKARFVAR;DIPHIHSR;DIPHIHSRQTNSSLGGMDDSNVLTTTK;DIPHIHSRQTNSSLGGMDDSNVLTTTKSK;DKQLIWHK;DKQLIWHKSKPVKPTNK;DLNANK;DLNANKK;DLNANKKIITTLK;DNKEKDR;DRYVEAYHK;DRYVEAYHKEISQLLK;DSTKVNSQQETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK;DTWNNK;DTWNNKNMR;DTWNNKNMRSLEPPR;DWIALANLEYDGSTSADTFEITVSTIIQR;DWIALANLEYDGSTSADTFEITVSTIIQRLK;DWIALANLEYDGSTSADTFEITVSTIIQRLKENNINVSDR;EELYIRPPPHLGLNDK;EELYIRPPPHLGLNDKLLR;EELYIRPPPHLGLNDKLLRLR;EESILNVFTSILAFIK;EESILNVFTSILAFIKNQFNAR;EESILNVFTSILAFIKNQFNARVLVIQMDR;EISQLLK;EISQLLKMNTWDTNK;EISQLLKMNTWDTNKYYDR;EKDRYVEAYHK;EKVHEMQK;EKVHEMQKLIGLASYVGYK;ENNINVSDR;ENNINVSDRLACQLILK;ENNINVSDRLACQLILKGLSGDFK;EPVQKVR;EPVQKVRAPK;ESDIEWSNASTYQCPDCLIGK;ESDIEWSNASTYQCPDCLIGKSTK;ESDIEWSNASTYQCPDCLIGKSTKHR;ESKPTR;ESKPTRTIDSNDELPDHLLIDSGASQTLVR;ESQQLHQNPHSLHGSAAASVTSK;ESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDR;ESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDRDSTK;ESTEMGGTIESDTTSPR;ESTEMGGTIESDTTSPRHSSTFTAR;ESTEMGGTIESDTTSPRHSSTFTARNQK;EVDADISEYNILPSTIR;EVDADISEYNILPSTIRSR;EVDADISEYNILPSTIRSRTPHIINK;EVPSNQDPLAVSASNLPEFDR;EVPSNQDPLAVSASNLPEFDRDSTK;FDLLYYINTLAQHILFPSR;FDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTR;FDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTRDK;FFGTKAMR;FFGTKAMRLR;FFTNRGITACYTTTADSR;FFTNRGITACYTTTADSRAHGVAER;FLKNSNLGDIIPNDQGEIK;FLKNSNLGDIIPNDQGEIKR;FQWVYPLHDR;FQWVYPLHDRR;FQWVYPLHDRREESILNVFTSILAFIK;FRFDLLYYINTLAQHILFPSR;FRFDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTR;FRNRFFGTK;FSRVNNDHINESTVSSQYLSDDNELSLGQQQK;FSRVNNDHINESTVSSQYLSDDNELSLGQQQKESKPTR;FYIRFLK;FYIRFLKNSNLGDIIPNDQGEIK;GIPGYALHPSR;GIPGYALHPSRNSYGYIIYLPSLK;GIPGYALHPSRNSYGYIIYLPSLKK;GITACYTTTADSR;GITACYTTTADSRAHGVAER;GITACYTTTADSRAHGVAERLNR;GLLTDSR;GLLTDSRSTISIIK;GLLTDSRSTISIIKSTNEEK;GLSGDFK;GLSGDFKYLR;GLSGDFKYLRNQYR;GSEYTNK;GSEYTNKTLHK;GSEYTNKTLHKFFTNR;GSRLKYQESYEPFQYLHTDIFGPVHHLPK;GVKSIKPVR;GVKSIKPVRTTLR;GWSCVFK;GWSCVFKNSQVTICLFVDDMILFSK;GWSCVFKNSQVTICLFVDDMILFSKDLNANK;HGDFYWLSK;HGDFYWLSKK;HGDFYWLSKKYLIPSHISK;HIKGSR;HIKGSRLK;HRHIKGSR;HSSTFTAR;HSSTFTARNQK;HSSTFTARNQKRPGSPNDMIDLTSQDR;IHPRGIPGYALHPSR;IHPRGIPGYALHPSRNSYGYIIYLPSLK;IINLGEGDNEIQYDILGLEIK;IINLGEGDNEIQYDILGLEIKYQR;IINLGEGDNEIQYDILGLEIKYQRSK;IITTLK;IITTLKK;IITTLKKQYDTK;IMNLNKPSQYK;IMNLNKPSQYKQHSEYK;IMNLNKPSQYKQHSEYKNVSR;INLIAAIK;INLIAAIKGVK;INLIAAIKGVKSIKPVR;KIITTLK;KIITTLKK;KLRAPGQPGHYIDQDELEIDEDEYK;KNAVTYLK;KNAVTYLKESDIEWSNASTYQCPDCLIGK;KPIIKGLLTDSR;KPIIKGLLTDSRSTISIIK;KQYDTK;KQYDTKIINLGEGDNEIQYDILGLEIK;KRDGTHK;KRINLIAAIK;KRSLEDNETEIEVSR;KSLYGLK;KSLYGLKQSGANWYETIK;KTVDTTNYVILQDNQSK;KTVDTTNYVILQDNQSKLDQFNYDTLTFDDDLNR;KVINSMFIFNK;KVINSMFIFNKK;KYLIPSHISK;KYLIPSHISKLTINNVNK;LACQLILK;LACQLILKGLSGDFK;LACQLILKGLSGDFKYLR;LDQFNYDTLTFDDDLNR;LGGTEEPYIQR;LGGTEEPYIQRNSDTNIK;LGGTEEPYIQRNSDTNIKYR;LGMEKSLTEK;LGMEKSLTEKLPK;LIGLASYVGYK;LIGLASYVGYKFR;LIGLASYVGYKFRFDLLYYINTLAQHILFPSR;LKENNINVSDR;LKENNINVSDRLACQLILK;LKYQESYEPFQYLHTDIFGPVHHLPK;LKYQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEK;LLRLRK;LLTNKWIH;LNRTLLNDCR;LNRTLLNDCRTLLHCSGLPNHLWFSAVEFSTIIR;LNVPLNPK;LNVPLNPKGK;LNVPLNPKGKK;LPKLNVPLNPK;LPKLNVPLNPKGK;LRAPGQPGHYIDQDELEIDEDEYK;LRAPGQPGHYIDQDELEIDEDEYKEK;LRDEVSGNNLYVYYIETK;LRDEVSGNNLYVYYIETKMNIADVMTKPLPIK;LRKSLYGLK;LSQLFAEIQLIYDENK;LSQLFAEIQLIYDENKIMNLNKPSQYK;LSQLFAEIQLIYDENKIMNLNKPSQYKQHSEYK;LTINNVNK;LTINNVNKSK;LTINNVNKSKSVNK;LVVISDASYGNQPYYK;LVVISDASYGNQPYYKSQIGNIYLLNGK;LVVISDASYGNQPYYKSQIGNIYLLNGKVIGGK;MESQQLHQNPHSLHGSAAASVTSK;MESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDR;MESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDRDSTK;MLGHANFR;MLGHANFRSIQK;MLGHANFRSIQKSLK;MNIADVMTKPLPIK;MNIADVMTKPLPIKTFK;MNIADVMTKPLPIKTFKLLTNK;MNTWDTNK;MNTWDTNKYYDR;MNTWDTNKYYDRNDIDPK;MQTNNQELK;MQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQR;MQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQRLK;NAVTYLK;NAVTYLKESDIEWSNASTYQCPDCLIGK;NAVTYLKESDIEWSNASTYQCPDCLIGKSTK;NDIDPK;NDIDPKK;NDIDPKKVINSMFIFNK;NDKSAR;NDKSARQHAGLAGLDITTILPFGQPVIVNNHNPDSK;NMRSLEPPR;NMRSLEPPRSK;NNVLPPHTLTSEENFSTWVK;NNVLPPHTLTSEENFSTWVKFYIR;NNVLPPHTLTSEENFSTWVKFYIRFLK;NQFNAR;NQFNARVLVIQMDR;NQFNARVLVIQMDRGSEYTNK;NQKRPGSPNDMIDLTSQDR;NQKRPGSPNDMIDLTSQDRVNYGLENIK;NQYRTK;NQYRTKTNMK;NRFFGTK;NRFFGTKAMR;NSDTNIK;NSDTNIKYR;NSDTNIKYRTTNSTPSIDDR;NSLVSPK;NSLVSPKNDK;NSLVSPKNDKSAR;NSNLGDIIPNDQGEIK;NSNLGDIIPNDQGEIKR;NSNLGDIIPNDQGEIKRQMTYEEHAYIYNTFQAFAPFHLLPTWVK;NSQVTICLFVDDMILFSK;NSQVTICLFVDDMILFSKDLNANK;NSQVTICLFVDDMILFSKDLNANKK;NSYGYIIYLPSLK;NSYGYIIYLPSLKK;NSYGYIIYLPSLKKTVDTTNYVILQDNQSK;NTLERSDGTVLAPIVK;NTLERSDGTVLAPIVKHGDFYWLSK;NVSRTSPNTTNTK;NVSRTSPNTTNTKVTSR;NVTADSILDDLPLPDLTNK;NVTADSILDDLPLPDLTNKSPTDTSDVSK;NVTADSILDDLPLPDLTNKSPTDTSDVSKDIPHIHSR;NYHRTNSSKPR;NYHRTNSSKPRAAK;QDIPINAIGNLHFNFQNGTK;QDIPINAIGNLHFNFQNGTKTSIK;QHAGLAGLDITTILPFGQPVIVNNHNPDSK;QHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPR;QHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPRGIPGYALHPSR;QHSEYK;QHSEYKNVSR;QHSEYKNVSRTSPNTTNTK;QILEINYADILTVLCK;QILEINYADILTVLCKSVSK;QILEINYADILTVLCKSVSKMQTNNQELK;QLIWHK;QLIWHKSKPVKPTNK;QLIWHKSKPVKPTNKLVVISDASYGNQPYYK;QMTYEEHAYIYNTFQAFAPFHLLPTWVK;QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCK;QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCKSVSK;QSGANWYETIK;QSGANWYETIKSYLINCCDMQEVR;QSGANWYETIKSYLINCCDMQEVRGWSCVFK;QTNSSLGGMDDSNVLTTTK;QTNSSLGGMDDSNVLTTTKSK;QTNSSLGGMDDSNVLTTTKSKK;QVLDMTYELIQFIWNTR;QVLDMTYELIQFIWNTRDK;QVLDMTYELIQFIWNTRDKQLIWHK;QYDTKIINLGEGDNEIQYDILGLEIK;QYDTKIINLGEGDNEIQYDILGLEIKYQR;RDGTHK;RDGTHKAR;REESILNVFTSILAFIK;REESILNVFTSILAFIKNQFNAR;RINLIAAIK;RINLIAAIKGVK;RPGSPNDMIDLTSQDR;RPGSPNDMIDLTSQDRVNYGLENIK;RPGSPNDMIDLTSQDRVNYGLENIKTTR;RQMTYEEHAYIYNTFQAFAPFHLLPTWVK;RQMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCK;RSLEDNETEIEVSR;RSLEDNETEIEVSRDTWNNK;SAHYLHHATPNSEINIVDAQK;SAHYLHHATPNSEINIVDAQKQDIPINAIGNLHFNFQNGTK;SAHYLHHATPNSEINIVDAQKQDIPINAIGNLHFNFQNGTKTSIK;SAPSYFISFTDEK;SAPSYFISFTDEKTR;SAPSYFISFTDEKTRFQWVYPLHDR;SARQHAGLAGLDITTILPFGQPVIVNNHNPDSK;SARQHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPR;SDGTVLAPIVK;SDGTVLAPIVKHGDFYWLSK;SDGTVLAPIVKHGDFYWLSKK;SIKPVR;SIKPVRTTLR;SIKPVRTTLRYDEAITYNK;SIQKSLK;SIQKSLKK;SKPVKPTNK;SKPVKPTNKLVVISDASYGNQPYYK;SKPVKPTNKLVVISDASYGNQPYYKSQIGNIYLLNGK;SKSVNK;SKSVNKYPYPLIHR;SKYMKLGMEK;SLEDNETEIEVSR;SLEDNETEIEVSRDTWNNK;SLEDNETEIEVSRDTWNNKNMR;SLEPPR;SLEPPRSK;SLEPPRSKK;SLKKNAVTYLK;SLTEKLPK;SLTEKLPKLNVPLNPK;SLYGLK;SLYGLKQSGANWYETIK;SLYGLKQSGANWYETIKSYLINCCDMQEVR;SPTDTSDVSK;SPTDTSDVSKDIPHIHSR;SPTDTSDVSKDIPHIHSRQTNSSLGGMDDSNVLTTTK;SQIGNIYLLNGK;SQIGNIYLLNGKVIGGK;SQIGNIYLLNGKVIGGKSTK;SRTPHIINK;SRTPHIINKESTEMGGTIESDTTSPR;SSDHATPNIMPDK;SSDHATPNIMPDKSSK;SSDHATPNIMPDKSSKNVTADSILDDLPLPDLTNK;SSKNVTADSILDDLPLPDLTNK;SSKNVTADSILDDLPLPDLTNKSPTDTSDVSK;SSNSESTTPIISIETK;SSNSESTTPIISIETKAVCDNTPSIDTDPPEYR;SSNSESTTPIISIETKAVCDNTPSIDTDPPEYRSSDHATPNIMPDK;STISIIK;STISIIKSTNEEK;STISIIKSTNEEKFR;STKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK;STKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIK;STKHRHIK;STNEEK;STNEEKFR;STNEEKFRNR;SVNKYPYPLIHR;SVNKYPYPLIHRMLGHANFR;SVSKMQTNNQELK;SVSKMQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQR;SYLINCCDMQEVR;SYLINCCDMQEVRGWSCVFK;SYLINCCDMQEVRGWSCVFKNSQVTICLFVDDMILFSK;TFKLLTNK;TFKLLTNKWIH;TIDSNDELPDHLLIDSGASQTLVR;TIDSNDELPDHLLIDSGASQTLVRSAHYLHHATPNSEINIVDAQK;TKTNMK;TKTNMKLSQLFAEIQLIYDENK;TKVRNNVLPPHTLTSEENFSTWVK;TLHKFFTNR;TLHKFFTNRGITACYTTTADSR;TLLHCSGLPNHLWFSAVEFSTIIR;TLLHCSGLPNHLWFSAVEFSTIIRNSLVSPK;TLLHCSGLPNHLWFSAVEFSTIIRNSLVSPKNDK;TLLNDCR;TLLNDCRTLLHCSGLPNHLWFSAVEFSTIIR;TLLNDCRTLLHCSGLPNHLWFSAVEFSTIIRNSLVSPK;TNMKLSQLFAEIQLIYDENK;TNMKLSQLFAEIQLIYDENKIMNLNKPSQYK;TNSSKPR;TNSSKPRAAK;TNSSKPRAAKAHNIATSSK;TPHIINK;TPHIINKESTEMGGTIESDTTSPR;TPHIINKESTEMGGTIESDTTSPRHSSTFTAR;TRFQWVYPLHDR;TRFQWVYPLHDRR;TSIKALHTPNIAYDLLSLSELANQNITACFTR;TSIKALHTPNIAYDLLSLSELANQNITACFTRNTLER;TSPNTTNTK;TSPNTTNTKVTSR;TSPNTTNTKVTSRNYHR;TTLRYDEAITYNK;TTLRYDEAITYNKDNK;TTNSTPSIDDR;TTNSTPSIDDRSSNSESTTPIISIETK;TTNSTPSIDDRSSNSESTTPIISIETKAVCDNTPSIDTDPPEYR;TTRLGGTEEPYIQR;TTRLGGTEEPYIQRNSDTNIK;TVDTTNYVILQDNQSK;TVDTTNYVILQDNQSKLDQFNYDTLTFDDDLNR;VHEMQK;VHEMQKLIGLASYVGYK;VHEMQKLIGLASYVGYKFR;VIGGKSTK;VIGGKSTKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK;VINSMFIFNK;VINSMFIFNKK;VINSMFIFNKKR;VLVIQMDR;VLVIQMDRGSEYTNK;VLVIQMDRGSEYTNKTLHK;VNNDHINESTVSSQYLSDDNELSLGQQQK;VNNDHINESTVSSQYLSDDNELSLGQQQKESKPTR;VNSQQETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK;VNYGLENIK;VNYGLENIKTTR;VNYGLENIKTTRLGGTEEPYIQR;VRAPKEVDADISEYNILPSTIR;VRNNVLPPHTLTSEENFSTWVK;VRNNVLPPHTLTSEENFSTWVKFYIR;VTSRNYHR;VTSRNYHRTNSSKPR;YDEAITYNK;YDEAITYNKDNK;YDEAITYNKDNKEK;YLIPSHISK;YLIPSHISKLTINNVNK;YLIPSHISKLTINNVNKSK;YLRNQYR;YLRNQYRTK;YMKLGMEK;YMKLGMEKSLTEK;YPYPLIHR;YPYPLIHRMLGHANFR;YPYPLIHRMLGHANFRSIQK;YQESYEPFQYLHTDIFGPVHHLPK;YQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEK;YQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEKTR;YQRSKYMK;YRTTNSTPSIDDR;YRTTNSTPSIDDRSSNSESTTPIISIETK;YVEAYHK;YVEAYHKEISQLLK;YVEAYHKEISQLLKMNTWDTNK;YYDRNDIDPK;YYDRNDIDPKK
-      7                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            AHGVAER;AHGVAERLNR;AHGVAERLNRTLLDDCR;AHNVSTSNNSPSTDNDSISK;AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK;AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLGQK;APREVDPNISESNILPSK;APREVDPNISESNILPSKK;ARFVAR;AVKSIKPIR;AVKSIKPIRTTLR;AVSPTDSTPPSTHTEDSK;AVSPTDSTPPSTHTEDSKR;AVSPTDSTPPSTHTEDSKRVSK;DFRHSDSYSENETNHTNVPISSTGGTNNK;DFRHSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEK;DGTHKAR;DGTHKARFVAR;DIKEKEK;DILSVDYTDIMK;DILSVDYTDIMKILSK;DILSVDYTDIMKILSKSIEK;DKQLIWHK;DKQLIWHKHK;DTWNTK;DTWNTKNMR;DTWNTKNMRSLEPPR;EDSILDVFTTILAFIK;EDSILDVFTTILAFIKNQFQASVLVIQMDR;EDSILDVFTTILAFIKNQFQASVLVIQMDRGSEYTNR;EELYIRPPPHLGMNDK;EELYIRPPPHLGMNDKLIR;EELYIRPPPHLGMNDKLIRLK;EIDPKR;EIDPKRVINSMFIFNK;EKEKYIEAYHK;EKVHEMQK;EKVHEMQKLIGLASYVGYK;EKYIEAYHK;EKYIEAYHKEVNQLLK;ELPPINSR;ELPPINSRQTNSSLGGIGDSNAYTTINSK;ELPPINSRQTNSSLGGIGDSNAYTTINSKK;ESQQLSQHSPISHGSACASVTSK;ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK;ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK;ESRLDQFNYDALTFDEDLNR;EVDPNISESNILPSK;EVDPNISESNILPSKK;EVDPNISESNILPSKKR;EVHTNQDPLDVSASK;EVHTNQDPLDVSASKTEECEK;EVHTNQDPLDVSASKTEECEKASTK;EVNQLLK;EVNQLLKMK;EVNQLLKMKTWDTDEYYDR;FDLLYYINTLAQHILFPSR;FDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTR;FDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTRDK;FLEKNGITPCYTTTADSR;FLEKNGITPCYTTTADSRAHGVAER;FLQNSNLGGIIPTVNGKPVR;FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK;FLRYTR;FLRYTRHR;FRFDLLYYINTLAQHILFPSR;FRFDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTR;FRWVYPLHDR;FRWVYPLHDRR;GIPGYALHPSR;GIPGYALHPSRNSYGYIIYLPSLK;GIPGYALHPSRNSYGYIIYLPSLKK;GKYMKLGMENSLTEK;GLSGEYK;GLSGEYKFLR;GLSGEYKFLRYTR;GRKLSAPGQPGLYIDQDELEIDEDEYK;GSEYTNR;GSEYTNRTLHK;GSEYTNRTLHKFLEK;GSRLKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK;GWSCVFK;GWSCVFKNSQVTICLFVDDMVLFSK;GWSCVFKNSQVTICLFVDDMVLFSKNLNSNK;HDLHLGQK;HDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASR;HDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASRTLIR;HIKGSR;HIKGSRLK;HKTSSDK;HKTSSDKNI;HLNMTVAELFLDIHAIYEEQQGSR;HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR;HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR;HRHIKGSR;HRHLNMTVAELFLDIHAIYEEQQGSR;HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR;HSDSYSENETNHTNVPISSTGGTNNK;HSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEK;HSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEKR;IHLIAAVK;IHLIAAVKAVK;IHLIAAVKAVKSIKPIR;IHPRGIPGYALHPSR;IHPRGIPGYALHPSRNSYGYIIYLPSLK;IIEKLK;IIEKLKMQYDTK;IIHRSPSIDASPPENNSSHNIVPIK;IINLGESDEEIQYDILGLEIK;IINLGESDEEIQYDILGLEIKYQR;IINLGESDEEIQYDILGLEIKYQRGK;ILSKSIEK;ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK;IPKLNVPLNPK;IPKLNVPLNPKGR;KEIDPK;KEIDPKR;KLSAPGQPGLYIDQDELEIDEDEYK;KLSAPGQPGLYIDQDELEIDEDEYKEK;KRDGTHK;KRIHLIAAVK;KRSLEDNETEIK;KRSSTPQISNIESTGSGGMHK;KSARQHAGLAGLDISTLLPFGQPVIVNDHNPNSK;KSLYGLK;KSLYGLKQSGANWYETIK;KTVDTTNYVILQGK;KTVDTTNYVILQGKESR;KYLLPSNISVPTINNVHTSESTR;KYLLPSNISVPTINNVHTSESTRK;KYPYPFIHR;KYPYPFIHRMLAHANAQTIR;KYVRPPPMLTSPNDFPNWVK;KYVRPPPMLTSPNDFPNWVKTYIK;LDQFNYDALTFDEDLNR;LGMENSLTEK;LGMENSLTEKIPK;LGMENSLTEKIPKLNVPLNPK;LIGLASYVGYK;LIGLASYVGYKFR;LIGLASYVGYKFRFDLLYYINTLAQHILFPSR;LIRLKK;LKKSLYGLK;LKMQYDTK;LKMQYDTKIINLGESDEEIQYDILGLEIK;LKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK;LKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFR;LNNNGIHINNK;LNNNGIHINNKVACQLIMR;LNNNGIHINNKVACQLIMRGLSGEYK;LNRTLLDDCR;LNRTLLDDCRTQLQCSGLPNHLWFSAIEFSTIVR;LNVPLLAPMSQSNTHESSHASK;LNVPLLAPMSQSNTHESSHASKSK;LNVPLLAPMSQSNTHESSHASKSKDFR;LNVPLNPK;LNVPLNPKGR;LNVPLNPKGRK;LSAPGQPGLYIDQDELEIDEDEYK;LSAPGQPGLYIDQDELEIDEDEYKEK;LSAPGQPGLYIDQDELEIDEDEYKEKVHEMQK;LTASYHSFIASNEIQESNDLNIESDHDFQSDIELHPEQPR;LTASYHSFIASNEIQESNDLNIESDHDFQSDIELHPEQPRNVLSK;LTESTVNHTNHSDDELPGHLLLDSGASR;LTESTVNHTNHSDDELPGHLLLDSGASRTLIR;MESQQLSQHSPISHGSACASVTSK;MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK;MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK;MKTWDTDEYYDR;MKTWDTDEYYDRK;MLAHANAQTIR;MLAHANAQTIRYSLK;MLAHANAQTIRYSLKNNTITYFNESDVDWSSAIDYQCPDCLIGK;MQSDTQEANDIVTLANLQYNGSTPADAFETK;MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR;MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK;MQYDTK;MQYDTKIINLGESDEEIQYDILGLEIK;MQYDTKIINLGESDEEIQYDILGLEIKYQR;NDSRSYTNTTKPK;NDSRSYTNTTKPKVIAR;NGITPCYTTTADSR;NGITPCYTTTADSRAHGVAER;NGITPCYTTTADSRAHGVAERLNR;NIPINAIGDLQFHFQDNTK;NIPINAIGDLQFHFQDNTKTSIK;NLNSNK;NLNSNKR;NLNSNKRIIEK;NMRSLEPPR;NMRSLEPPRSK;NNTITYFNESDVDWSSAIDYQCPDCLIGK;NNTITYFNESDVDWSSAIDYQCPDCLIGKSTK;NNTITYFNESDVDWSSAIDYQCPDCLIGKSTKHR;NPQKTNNSK;NPQKTNNSKSK;NPSDEK;NPSDEKNDSR;NPSDEKNDSRSYTNTTKPK;NQFQASVLVIQMDR;NQFQASVLVIQMDRGSEYTNR;NQFQASVLVIQMDRGSEYTNRTLHK;NSKPNYR;NSKPNYRR;NSKPNYRRNPSDEK;NSLASPK;NSLASPKSK;NSLASPKSKK;NSQVTICLFVDDMVLFSK;NSQVTICLFVDDMVLFSKNLNSNK;NSQVTICLFVDDMVLFSKNLNSNKR;NSYGYIIYLPSLK;NSYGYIIYLPSLKK;NSYGYIIYLPSLKKTVDTTNYVILQGK;NVLERSDGTVLAPIVK;NVLERSDGTVLAPIVKYGDFYWVSK;NVLSKAVSPTDSTPPSTHTEDSK;NVLSKAVSPTDSTPPSTHTEDSKR;QHAGLAGLDISTLLPFGQPVIVNDHNPNSK;QHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPR;QHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPRGIPGYALHPSR;QITDDELTFLYNTFQIFAPSQFLPTWVK;QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK;QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK;QLIWHK;QLIWHKHK;QLIWHKHKTSSDK;QSGANWYETIK;QSGANWYETIKSYLIQQCGMEEVR;QSGANWYETIKSYLIQQCGMEEVRGWSCVFK;QTNSSLGGIGDSNAYTTINSK;QTNSSLGGIGDSNAYTTINSKK;QTNSSLGGIGDSNAYTTINSKKR;QVLDMTYELIQFMWDTR;QVLDMTYELIQFMWDTRDK;QVLDMTYELIQFMWDTRDKQLIWHK;RDGTHK;RDGTHKAR;REDSILDVFTTILAFIK;REDSILDVFTTILAFIKNQFQASVLVIQMDR;RIHLIAAVK;RIHLIAAVKAVK;RIIEKLK;RIIHRSPSIDASPPENNSSHNIVPIK;RNIPINAIGDLQFHFQDNTK;RNIPINAIGDLQFHFQDNTKTSIK;RNPSDEK;RNPSDEKNDSR;RSLEDNETEIK;RSLEDNETEIKVSR;RSSTPQISNIESTGSGGMHK;RSSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASK;RVINSMFIFNK;RVINSMFIFNKK;RVSKTNIR;SAHHIHSASSNPDINVVDAQK;SAHHIHSASSNPDINVVDAQKR;SAHHIHSASSNPDINVVDAQKRNIPINAIGDLQFHFQDNTK;SARQHAGLAGLDISTLLPFGQPVIVNDHNPNSK;SARQHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPR;SDGTVLAPIVK;SDGTVLAPIVKYGDFYWVSK;SDGTVLAPIVKYGDFYWVSKK;SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK;SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR;SIKPIR;SIKPIRTTLR;SIKPIRTTLRYDEAITYNK;SKDFRHSDSYSENETNHTNVPISSTGGTNNK;SKKSAR;SKTARAHNVSTSNNSPSTDNDSISK;SLEDNETEIK;SLEDNETEIKVSR;SLEDNETEIKVSRDTWNTK;SLEPPR;SLEPPRSK;SLEPPRSKK;SLYGLK;SLYGLKQSGANWYETIK;SLYGLKQSGANWYETIKSYLIQQCGMEEVR;SPSIDASPPENNSSHNIVPIK;SSTPQISNIESTGSGGMHK;SSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASK;SSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASKSK;STKHRHIK;STTEPIQLNNK;STTEPIQLNNKHDLHLGQK;STTEPIQLNNKHDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASR;SYLIQQCGMEEVR;SYLIQQCGMEEVRGWSCVFK;SYLIQQCGMEEVRGWSCVFKNSQVTICLFVDDMVLFSK;SYTNTTKPK;SYTNTTKPKVIAR;SYTNTTKPKVIARNPQK;TARAHNVSTSNNSPSTDNDSISK;TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK;TEECEK;TEECEKASTK;TLHKFLEK;TLHKFLEKNGITPCYTTTADSR;TLIRSAHHIHSASSNPDINVVDAQK;TLIRSAHHIHSASSNPDINVVDAQKR;TLLDDCR;TLLDDCRTQLQCSGLPNHLWFSAIEFSTIVR;TLLDDCRTQLQCSGLPNHLWFSAIEFSTIVRNSLASPK;TNIRAPR;TNIRAPREVDPNISESNILPSK;TNNSKSK;TNNSKSKTAR;TPTTVSEQNTEESIIADLPLPDLPPESPTEFPDPFK;TPTTVSEQNTEESIIADLPLPDLPPESPTEFPDPFKELPPINSR;TQLQCSGLPNHLWFSAIEFSTIVR;TQLQCSGLPNHLWFSAIEFSTIVRNSLASPK;TQLQCSGLPNHLWFSAIEFSTIVRNSLASPKSK;TSIKVLHTPNIAYDLLSLNELAAVDITACFTK;TSIKVLHTPNIAYDLLSLNELAAVDITACFTKNVLER;TSSDKNI;TTLRYDEAITYNK;TTLRYDEAITYNKDIK;TVDTTNYVILQGK;TVDTTNYVILQGKESR;TVDTTNYVILQGKESRLDQFNYDALTFDEDLNR;TVPQISDQETEK;TVPQISDQETEKR;TVPQISDQETEKRIIHR;TWDTDEYYDR;TWDTDEYYDRK;TWDTDEYYDRKEIDPK;TYIKFLQNSNLGGIIPTVNGKPVR;VACQLIMR;VACQLIMRGLSGEYK;VACQLIMRGLSGEYKFLR;VHEMQK;VHEMQKLIGLASYVGYK;VHEMQKLIGLASYVGYKFR;VIARNPQK;VIARNPQKTNNSK;VINSMFIFNK;VINSMFIFNKK;VINSMFIFNKKR;VLHTPNIAYDLLSLNELAAVDITACFTK;VLHTPNIAYDLLSLNELAAVDITACFTKNVLER;VLHTPNIAYDLLSLNELAAVDITACFTKNVLERSDGTVLAPIVK;VSKTNIR;VSKTNIRAPR;VSRDTWNTK;VSRDTWNTKNMR;VTNIIDR;VTNIIDRLNNNGIHINNK;VTNIIDRLNNNGIHINNKVACQLIMR;WVYPLHDR;WVYPLHDRR;WVYPLHDRREDSILDVFTTILAFIK;YDEAITYNK;YDEAITYNKDIK;YDEAITYNKDIKEK;YGDFYWVSK;YGDFYWVSKK;YGDFYWVSKKYLLPSNISVPTINNVHTSESTR;YIEAYHK;YIEAYHKEVNQLLK;YIEAYHKEVNQLLKMK;YLLPSNISVPTINNVHTSESTR;YLLPSNISVPTINNVHTSESTRK;YLLPSNISVPTINNVHTSESTRKYPYPFIHR;YMKLGMENSLTEK;YMKLGMENSLTEKIPK;YPYPFIHR;YPYPFIHRMLAHANAQTIR;YPYPFIHRMLAHANAQTIRYSLK;YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK;YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFR;YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFRWVYPLHDR;YQRGKYMK;YSLKNNTITYFNESDVDWSSAIDYQCPDCLIGK;YSLKNNTITYFNESDVDWSSAIDYQCPDCLIGKSTK;YTRHRHLNMTVAELFLDIHAIYEEQQGSR;YVRPPPMLTSPNDFPNWVK;YVRPPPMLTSPNDFPNWVKTYIK;YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR
+      1  P00330
+      2  P00331
+      3  P07246
+      4  P07262
+      5  P09938
+      6  P38113
+      7  P39708
+      8  P40212
+      9  Q12690
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 peptide
+      1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ADTREALDFFAR;ADTREALDFFARGLVK;ALKSANLMAGHWVAISGAAGGLGSLAVQYAK;ALKSANLMAGHWVAISGAAGGLGSLAVQYAKAMGYR;AMGYRVLGIDGGEGK;AMGYRVLGIDGGEGKEELFR;ANELLINVK;ANELLINVKYSGVCHTDLHAWHGDWPLPVK;ANGTTVLVGMPAGAK;ANGTTVLVGMPAGAKCCSDVFNQVVK;ANGTTVLVGMPAGAKCCSDVFNQVVKSISIVGSYVGNR;ATDGGAHGVINVSVSEAAIEASTR;ATDGGAHGVINVSVSEAAIEASTRYVR;ATDGGAHGVINVSVSEAAIEASTRYVRANGTTVLVGMPAGAK;CCSDVFNQVVK;CCSDVFNQVVKSISIVGSYVGNR;CCSDVFNQVVKSISIVGSYVGNRADTR;DIPVPKPK;DIPVPKPKANELLINVK;DIPVPKPKANELLINVKYSGVCHTDLHAWHGDWPLPVK;DIVGAVLK;DIVGAVLKATDGGAHGVINVSVSEAAIEASTR;DIVGAVLKATDGGAHGVINVSVSEAAIEASTRYVR;EALDFFAR;EALDFFARGLVK;EALDFFARGLVKSPIK;EELFRSIGGEVFIDFTK;EELFRSIGGEVFIDFTKEK;EKDIVGAVLK;EKDIVGAVLKATDGGAHGVINVSVSEAAIEASTR;GLVKSPIK;GLVKSPIKVVGLSTLPEIYEK;GQIVGR;GQIVGRYVVDTSK;GVIFYESHGK;GVIFYESHGKLEYK;GVIFYESHGKLEYKDIPVPKPK;GWKIGDYAGIK;IGDYAGIK;LEYKDIPVPKPK;LEYKDIPVPKPKANELLINVK;LPLVGGHEGAGVVVGMGENVK;LPLVGGHEGAGVVVGMGENVKGWK;LPLVGGHEGAGVVVGMGENVKGWKIGDYAGIK;MEKGQIVGR;MEKGQIVGRYVVDTSK;MSIPETQK;MSIPETQKGVIFYESHGK;MSIPETQKGVIFYESHGKLEYK;SANLMAGHWVAISGAAGGLGSLAVQYAK;SANLMAGHWVAISGAAGGLGSLAVQYAKAMGYR;SANLMAGHWVAISGAAGGLGSLAVQYAKAMGYRVLGIDGGEGK;SIGGEVFIDFTK;SIGGEVFIDFTKEK;SIGGEVFIDFTKEKDIVGAVLK;SIPETQK;SIPETQKGVIFYESHGK;SIPETQKGVIFYESHGKLEYK;SISIVGSYVGNR;SISIVGSYVGNRADTR;SISIVGSYVGNRADTREALDFFAR;SPIKVVGLSTLPEIYEK;SPIKVVGLSTLPEIYEKMEK;VLGIDGGEGK;VLGIDGGEGKEELFR;VLGIDGGEGKEELFRSIGGEVFIDFTK;VVGLSTLPEIYEK;VVGLSTLPEIYEKMEK;VVGLSTLPEIYEKMEKGQIVGR;YSGVCHTDLHAWHGDWPLPVK;YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVGMGENVK;YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVGMGENVKGWK;YVRANGTTVLVGMPAGAK;YVRANGTTVLVGMPAGAKCCSDVFNQVVK;YVVDTSK
+      2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ADTREALDFFAR;ADTREALDFFARGLVK;AGHWAAISGAAGGLGSLAVQYAK;AGHWAAISGAAGGLGSLAVQYAKAMGYR;AGHWAAISGAAGGLGSLAVQYAKAMGYRVLGIDGGPGK;AIIFYESNGK;AIIFYESNGKLEHK;AIIFYESNGKLEHKDIPVPKPKPNELLINVK;ALKSANLR;ALKSANLRAGHWAAISGAAGGLGSLAVQYAK;AMGYRVLGIDGGPGK;AMGYRVLGIDGGPGKEELFTSLGGEVFIDFTK;ANGTVVLVGLPAGAK;ANGTVVLVGLPAGAKCSSDVFNHVVK;ANGTVVLVGLPAGAKCSSDVFNHVVKSISIVGSYVGNR;ATNGGAHGIINVSVSEAAIEASTR;ATNGGAHGIINVSVSEAAIEASTRYCR;ATNGGAHGIINVSVSEAAIEASTRYCRANGTVVLVGLPAGAK;CSSDVFNHVVK;CSSDVFNHVVKSISIVGSYVGNR;CSSDVFNHVVKSISIVGSYVGNRADTR;DIPVPKPKPNELLINVK;DIPVPKPKPNELLINVKYSGVCHTDLHAWHGDWPLPTK;DIVSAVVK;DIVSAVVKATNGGAHGIINVSVSEAAIEASTR;DIVSAVVKATNGGAHGIINVSVSEAAIEASTRYCR;EALDFFAR;EALDFFARGLVK;EALDFFARGLVKSPIK;EELFTSLGGEVFIDFTK;EELFTSLGGEVFIDFTKEK;EELFTSLGGEVFIDFTKEKDIVSAVVK;EKDIVSAVVK;EKDIVSAVVKATNGGAHGIINVSVSEAAIEASTR;GLVKSPIK;GLVKSPIKVVGLSSLPEIYEK;GQIAGR;GQIAGRYVVDTSK;GWKIGDYAGIK;IGDYAGIK;LEHKDIPVPKPKPNELLINVK;LEHKDIPVPKPKPNELLINVKYSGVCHTDLHAWHGDWPLPTK;LPLVGGHEGAGVVVGMGENVK;LPLVGGHEGAGVVVGMGENVKGWK;LPLVGGHEGAGVVVGMGENVKGWKIGDYAGIK;MEKGQIAGR;MEKGQIAGRYVVDTSK;MSIPETQK;MSIPETQKAIIFYESNGK;MSIPETQKAIIFYESNGKLEHK;SANLRAGHWAAISGAAGGLGSLAVQYAK;SANLRAGHWAAISGAAGGLGSLAVQYAKAMGYR;SIPETQK;SIPETQKAIIFYESNGK;SIPETQKAIIFYESNGKLEHK;SISIVGSYVGNR;SISIVGSYVGNRADTR;SISIVGSYVGNRADTREALDFFAR;SPIKVVGLSSLPEIYEK;SPIKVVGLSSLPEIYEKMEK;VLGIDGGPGK;VLGIDGGPGKEELFTSLGGEVFIDFTK;VLGIDGGPGKEELFTSLGGEVFIDFTKEK;VVGLSSLPEIYEK;VVGLSSLPEIYEKMEK;VVGLSSLPEIYEKMEKGQIAGR;YCRANGTVVLVGLPAGAK;YCRANGTVVLVGLPAGAKCSSDVFNHVVK;YSGVCHTDLHAWHGDWPLPTK;YSGVCHTDLHAWHGDWPLPTKLPLVGGHEGAGVVVGMGENVK;YSGVCHTDLHAWHGDWPLPTKLPLVGGHEGAGVVVGMGENVKGWK;YVVDTSK
+      3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ADTREALDFFSR;ADTREALDFFSRGLIK;AGDWVAISGAAGGLGSLAVQYATAMGYR;AGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEK;AGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEKEK;ALKEADLK;ALKEADLKAGDWVAISGAAGGLGSLAVQYATAMGYR;DIPVPEPKPNEILINVK;DIPVPEPKPNEILINVKYSGVCHTDLHAWHGDWPLPVK;EADLKAGDWVAISGAAGGLGSLAVQYATAMGYR;EADLKAGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEK;EALDFFSR;EALDFFSRGLIK;EALDFFSRGLIKSPIK;EKLFKK;GGPHGVINVSVSEAAISLSTEYVRPCGTVVLVGLPANAYVK;GGPHGVINVSVSEAAISLSTEYVRPCGTVVLVGLPANAYVKSEVFSHVVK;GKILGR;GKILGRYVVDTSK;GKLHYK;GKLHYKDIPVPEPKPNEILINVK;GLIKSPIK;GLIKSPIKIVGLSELPK;GSYVGNR;GSYVGNRADTR;GSYVGNRADTREALDFFSR;GVIFYENK;GVIFYENKGK;GVIFYENKGKLHYK;GWKVGDLAGIK;ILGRYVVDTSK;IQQGTDLAEVAPILCAGVTVYK;IQQGTDLAEVAPILCAGVTVYKALK;IQQGTDLAEVAPILCAGVTVYKALKEADLK;IVGLSELPK;IVGLSELPKVYDLMEK;IVGLSELPKVYDLMEKGK;KLGGEVFIDFTK;KLGGEVFIDFTKTK;LFKKLGGEVFIDFTK;LGGEVFIDFTK;LGGEVFIDFTKTK;LGGEVFIDFTKTKNMVSDIQEATK;LGSNVK;LGSNVKGWK;LGSNVKGWKVGDLAGIK;LHYKDIPVPEPKPNEILINVK;LHYKDIPVPEPKPNEILINVKYSGVCHTDLHAWHGDWPLPVK;LPLVGGHEGAGVVVK;LPLVGGHEGAGVVVKLGSNVK;LPLVGGHEGAGVVVKLGSNVKGWK;LQSTAAIPK;LQSTAAIPKTQK;LQSTAAIPKTQKGVIFYENK;LRTSTLFTR;LRTSTLFTRR;MLRTSTLFTR;MLRTSTLFTRR;NILRLQSTAAIPK;NILRLQSTAAIPKTQK;NMVSDIQEATK;RVQPSLFSR;RVQPSLFSRNILR;SEVFSHVVK;SEVFSHVVKSINIK;SEVFSHVVKSINIKGSYVGNR;SINIKGSYVGNR;SINIKGSYVGNRADTR;SPIKIVGLSELPK;SPIKIVGLSELPKVYDLMEK;TKNMVSDIQEATK;TQKGVIFYENK;TQKGVIFYENKGK;TSTLFTR;TSTLFTRR;TSTLFTRRVQPSLFSR;VGDLAGIK;VLGIDAGEEK;VLGIDAGEEKEK;VLGIDAGEEKEKLFK;VQPSLFSR;VQPSLFSRNILR;VQPSLFSRNILRLQSTAAIPK;VYDLMEK;VYDLMEKGK;VYDLMEKGKILGR;WLNGSCMTCEFCESGHESNCPDADLSGYTHDGSFQQFATADAIQAAK;YSGVCHTDLHAWHGDWPLPVK;YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVK;YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVKLGSNVK;YVVDTSK
+      4 AANLGGVAVSGLEMAQNSQR;AANLGGVAVSGLEMAQNSQRITWTSER;AANLGGVAVSGLEMAQNSQRITWTSERVDQELK;ALVAQGVK;ALVAQGVKFIAEGSNMGSTPEAIAVFETAR;ALVAQGVKFIAEGSNMGSTPEAIAVFETARSTATGPSEAVWYGPPK;DGKVLPSLVK;DGKVLPSLVKGANIASFIK;EIGYLFGAYR;EIGYLFGAYRSYK;EIGYLFGAYRSYKNSWEGVLTGK;ELSRHIGQDTDVPAGDIGVGGR;ELSRHIGQDTDVPAGDIGVGGREIGYLFGAYR;ESFEGK;ESFEGKR;ESFEGKRVTISGSGNVAQYAALK;FHPSVNLSILK;FHPSVNLSILKFLGFEQIFK;FHPSVNLSILKFLGFEQIFKNSLTGLDMGGGK;FIAEGSNMGSTPEAIAVFETAR;FIAEGSNMGSTPEAIAVFETARSTATGPSEAVWYGPPK;FLGFEQIFK;FLGFEQIFKNSLTGLDMGGGK;FLGFEQIFKNSLTGLDMGGGKGGLCVDLK;GANIASFIK;GANIASFIKVSDAMFDQGDVF;GCIISETGITSEQVADISSAK;GCIISETGITSEQVADISSAKVNFK;GCIISETGITSEQVADISSAKVNFKSLEQIVNEYSTFSENK;GEQEVAQGYR;GEQEVAQGYRVQYNSAK;GEQEVAQGYRVQYNSAKGPYK;GGLCVDLK;GGLCVDLKGR;GGLCVDLKGRSNNEIR;GGLRFHPSVNLSILK;GGLRFHPSVNLSILKFLGFEQIFK;GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK;GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGK;GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGKR;GPYKGGLR;GPYKGGLRFHPSVNLSILK;GRSNNEIR;GRSNNEIRR;HIGQDTDVPAGDIGVGGR;HIGQDTDVPAGDIGVGGREIGYLFGAYR;HIGQDTDVPAGDIGVGGREIGYLFGAYRSYK;ICYAFMR;ICYAFMRELSR;ICYAFMRELSRHIGQDTDVPAGDIGVGGR;IIQFRVTWENDK;IIQFRVTWENDKGEQEVAQGYR;IMINCFNECIDYAK;IMINCFNECIDYAKK;IMINCFNECIDYAKKYTK;ITWTSER;ITWTSERVDQELK;ITWTSERVDQELKR;KVLPIVSVPER;KVLPIVSVPERIIQFR;KYTKDGK;MSEPEFQQAYEEVVSSLEDSTLFEQHPEYR;MSEPEFQQAYEEVVSSLEDSTLFEQHPEYRK;MSEPEFQQAYEEVVSSLEDSTLFEQHPEYRKVLPIVSVPER;NSLTGLDMGGGK;NSLTGLDMGGGKGGLCVDLK;NSLTGLDMGGGKGGLCVDLKGR;NSWEGVLTGK;NSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK;NSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGK;RICYAFMR;RICYAFMRELSR;RIMINCFNECIDYAK;RIMINCFNECIDYAKK;RVTISGSGNVAQYAALK;RVTISGSGNVAQYAALKVIELGGTVVSLSDSK;SEPEFQQAYEEVVSSLEDSTLFEQHPEYR;SEPEFQQAYEEVVSSLEDSTLFEQHPEYRK;SEPEFQQAYEEVVSSLEDSTLFEQHPEYRKVLPIVSVPER;SLEQIVNEYSTFSENK;SLEQIVNEYSTFSENKVQYIAGARPWTHVQK;SLEQIVNEYSTFSENKVQYIAGARPWTHVQKVDIALPCATQNEVSGEEAK;SNNEIR;SNNEIRR;SNNEIRRICYAFMR;STATGPSEAVWYGPPK;STATGPSEAVWYGPPKAANLGGVAVSGLEMAQNSQR;STATGPSEAVWYGPPKAANLGGVAVSGLEMAQNSQRITWTSER;SYKNSWEGVLTGK;SYKNSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK;VDIALPCATQNEVSGEEAK;VDIALPCATQNEVSGEEAKALVAQGVK;VDIALPCATQNEVSGEEAKALVAQGVKFIAEGSNMGSTPEAIAVFETAR;VDQELK;VDQELKR;VDQELKRIMINCFNECIDYAK;VIELGGTVVSLSDSK;VIELGGTVVSLSDSKGCIISETGITSEQVADISSAK;VIELGGTVVSLSDSKGCIISETGITSEQVADISSAKVNFK;VLPIVSVPER;VLPIVSVPERIIQFR;VLPIVSVPERIIQFRVTWENDK;VLPSLVK;VLPSLVKGANIASFIK;VLPSLVKGANIASFIKVSDAMFDQGDVF;VNFKSLEQIVNEYSTFSENK;VNFKSLEQIVNEYSTFSENKVQYIAGARPWTHVQK;VQYIAGARPWTHVQK;VQYIAGARPWTHVQKVDIALPCATQNEVSGEEAK;VQYIAGARPWTHVQKVDIALPCATQNEVSGEEAKALVAQGVK;VQYNSAK;VQYNSAKGPYK;VQYNSAKGPYKGGLR;VSDAMFDQGDVF;VTISGSGNVAQYAALK;VTISGSGNVAQYAALKVIELGGTVVSLSDSK;VTWENDK;VTWENDKGEQEVAQGYR;VTWENDKGEQEVAQGYRVQYNSAK;YTKDGK;YTKDGKVLPSLVK
+      5                                                                                                                                                                                                                                                                                                                                                                                                                                            AAADALSDLEIK;AAADALSDLEIKDSK;AAADALSDLEIKDSKSNLNK;AEASFWTAEEIDLSK;AEASFWTAEEIDLSKDIHDWNNR;AEASFWTAEEIDLSKDIHDWNNRMNENER;AEWALR;AEWALRWIQDADALFGER;AEWALRWIQDADALFGERLVAFASIEGVFFSGSFASIFWLK;AGVMSK;AGVMSKSTK;AGVMSKSTKQEAGAFTFNEDF;AYLKSHQVHR;AYLKSHQVHRHK;DAENHK;DAENHKAYLK;DAENHKAYLKSHQVHR;DEGLHTDFACLLFAHLK;DEGLHTDFACLLFAHLKNKPDPAIVEK;DEGLHTDFACLLFAHLKNKPDPAIVEKIVTEAVEIEQR;DIHDWNNR;DIHDWNNRMNENER;DIHDWNNRMNENERFFISR;DPKESEFLFNAIHTIPEIGEK;DPKESEFLFNAIHTIPEIGEKAEWALR;DSKSNLNK;DSKSNLNKELETLR;EENRVK;EENRVKSDMLK;EEPLLNEDK;EEPLLNEDKER;EEPLLNEDKERTVLFPIK;EKLSKDAENHK;ELETLR;ELETLREENR;ELETLREENRVK;EMEKEEPLLNEDK;EMEKEEPLLNEDKER;ERTVLFPIK;ERTVLFPIKYHEIWQAYK;ESEFLFNAIHTIPEIGEK;ESEFLFNAIHTIPEIGEKAEWALR;ESEFLFNAIHTIPEIGEKAEWALRWIQDADALFGER;ETPSKAAADALSDLEIK;ETPSKAAADALSDLEIKDSK;FFISRVLAFFAASDGIVNENLVENFSTEVQIPEAK;GMMPGLTFSNELICR;GMMPGLTFSNELICRDEGLHTDFACLLFAHLK;GMMPGLTFSNELICRDEGLHTDFACLLFAHLKNKPDPAIVEK;HKLKEMEK;IVTEAVEIEQR;IVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADR;IVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNK;KRGMMPGLTFSNELICR;KYYKVENPFDFMENISLAGK;LKEMEK;LKEMEKEEPLLNEDK;LLVAFGNK;LLVAFGNKK;LLVAFGNKKYYK;LSKDAENHK;LSKDAENHKAYLK;LVAFASIEGVFFSGSFASIFWLK;LVAFASIEGVFFSGSFASIFWLKK;LVAFASIEGVFFSGSFASIFWLKKR;MNENER;MNENERFFISR;MNENERFFISRVLAFFAASDGIVNENLVENFSTEVQIPEAK;MPKETPSK;MPKETPSKAAADALSDLEIK;NKPDPAIVEK;NKPDPAIVEKIVTEAVEIEQR;NKPDPAIVEKIVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADR;PKETPSK;PKETPSKAAADALSDLEIK;QEAGAFTFNEDF;RAEASFWTAEEIDLSK;RAEASFWTAEEIDLSKDIHDWNNR;RGMMPGLTFSNELICR;RGMMPGLTFSNELICRDEGLHTDFACLLFAHLK;RVSDYQK;RVSDYQKAGVMSK;SDMLKEK;SDMLKEKLSK;SFYGFQIMIENIHSETYSLLIDTYIK;SFYGFQIMIENIHSETYSLLIDTYIKDPK;SFYGFQIMIENIHSETYSLLIDTYIKDPKESEFLFNAIHTIPEIGEK;SHQVHR;SHQVHRHK;SHQVHRHKLK;SNLNKELETLR;SNLNKELETLREENR;STKQEAGAFTFNEDF;TNFFEK;TNFFEKR;TNFFEKRVSDYQK;TVLFPIK;TVLFPIKYHEIWQAYK;TVLFPIKYHEIWQAYKR;VENPFDFMENISLAGK;VENPFDFMENISLAGKTNFFEK;VENPFDFMENISLAGKTNFFEKR;VKSDMLK;VKSDMLKEK;VLAFFAASDGIVNENLVENFSTEVQIPEAK;VSDYQK;VSDYQKAGVMSK;VSDYQKAGVMSKSTK;WIQDADALFGER;WIQDADALFGERLVAFASIEGVFFSGSFASIFWLK;WIQDADALFGERLVAFASIEGVFFSGSFASIFWLKK;YFLDALPVALLGMNADLMNQYVEFVADR;YFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNK;YFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNKK;YHEIWQAYK;YHEIWQAYKR;YHEIWQAYKRAEASFWTAEEIDLSK;YYKVENPFDFMENISLAGK;YYKVENPFDFMENISLAGKTNFFEK
+      6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ADTREALDFFAR;ADTREALDFFARGLIK;AIVFYETDGK;AIVFYETDGKLEYK;AIVFYETDGKLEYKDVTVPEPKPNEILVHVK;ALKRANVIPGQWVTISGACGGLGSLAIQYALAMGYR;ANVIPGQWVTISGACGGLGSLAIQYALAMGYR;ANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAK;ANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAKR;ATNGGSHGVINVSVSEAAIEASTR;DIVGAIIK;DIVGAIIKATNGGSHGVINVSVSEAAIEASTR;DVTVPEPKPNEILVHVK;DVTVPEPKPNEILVHVKYSGVCHSDLHAWHGDWPFQLK;EALDFFAR;EALDFFARGLIK;EALDFFARGLIKSPIHLAGLSDVPEIFAK;FPLIGGHEGAGVVVK;FPLIGGHEGAGVVVKLGSNVK;FPLIGGHEGAGVVVKLGSNVKGWK;GEIVGR;GEIVGRYVVETSK;GLIKSPIHLAGLSDVPEIFAK;GLIKSPIHLAGLSDVPEIFAKMEK;GWKVGDFAGIK;KLFEQLGGEIFIDFTEEK;KLFEQLGGEIFIDFTEEKDIVGAIIK;LEYKDVTVPEPKPNEILVHVK;LEYKDVTVPEPKPNEILVHVKYSGVCHSDLHAWHGDWPFQLK;LFEQLGGEIFIDFTEEK;LFEQLGGEIFIDFTEEKDIVGAIIK;LFEQLGGEIFIDFTEEKDIVGAIIKATNGGSHGVINVSVSEAAIEASTR;LGSNVK;LGSNVKGWK;LGSNVKGWKVGDFAGIK;MEKGEIVGR;MEKGEIVGRYVVETSK;MPSQVIPEK;MPSQVIPEKQK;MPSQVIPEKQKAIVFYETDGK;PSQVIPEK;PSQVIPEKQK;PSQVIPEKQKAIVFYETDGK;QKAIVFYETDGK;QKAIVFYETDGKLEYK;RANVIPGQWVTISGACGGLGSLAIQYALAMGYR;RANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAK;RKLFEQLGGEIFIDFTEEK;SISIVGSCVGNR;SISIVGSCVGNRADTR;SISIVGSCVGNRADTREALDFFAR;SPIHLAGLSDVPEIFAK;SPIHLAGLSDVPEIFAKMEK;SPIHLAGLSDVPEIFAKMEKGEIVGR;VGDFAGIK;VIGIDGGNAK;VIGIDGGNAKR;VIGIDGGNAKRK;YCRPNGTVVLVGMPAHAYCNSDVFNQVVK;YCRPNGTVVLVGMPAHAYCNSDVFNQVVKSISIVGSCVGNR;YCRPNGTVVLVGMPAHAYCNSDVFNQVVKSISIVGSCVGNRADTR;YSGVCHSDLHAWHGDWPFQLK;YSGVCHSDLHAWHGDWPFQLKFPLIGGHEGAGVVVK;YSGVCHSDLHAWHGDWPFQLKFPLIGGHEGAGVVVKLGSNVK;YVVETSK
+      7                                                                               AANLGGVAVSGLEMAQNSQK;AANLGGVAVSGLEMAQNSQKVTWTAER;AANLGGVAVSGLEMAQNSQKVTWTAERVDQELK;ALVASGVK;ALVASGVKFVAEGANMGSTPEAISVFETAR;ALVASGVKFVAEGANMGSTPEAISVFETARSTATNAK;DAVWFGPPK;DAVWFGPPKAANLGGVAVSGLEMAQNSQK;DAVWFGPPKAANLGGVAVSGLEMAQNSQKVTWTAER;DTDVPAGDIGVGGR;DTDVPAGDIGVGGREIGYLFGAYR;DTDVPAGDIGVGGREIGYLFGAYRSYK;EIGYLFGAYR;EIGYLFGAYRSYK;EIGYLFGAYRSYKNSWEGVLTGK;ELSRHIGK;ELSRHIGKDTDVPAGDIGVGGR;ESFEGK;ESFEGKR;ESFEGKRVTISGSGNVAQYAALK;FHPSVNLSILK;FHPSVNLSILKFLGFEQIFK;FHPSVNLSILKFLGFEQIFKNALTGLDMGGGK;FKSLEEIVDEYSTFSESK;FKSLEEIVDEYSTFSESKMK;FLGFEQIFK;FLGFEQIFKNALTGLDMGGGK;FLGFEQIFKNALTGLDMGGGKGGLCVDLK;FPQYKK;FPQYKKVLPIVSVPER;FVAEGANMGSTPEAISVFETAR;FVAEGANMGSTPEAISVFETARSTATNAK;FVAEGANMGSTPEAISVFETARSTATNAKDAVWFGPPK;GANIASFVMVADAMLDQGDVF;GCIISETGITSEQIHDIASAK;GCIISETGITSEQIHDIASAKIR;GCIISETGITSEQIHDIASAKIRFK;GGLCVDLK;GGLCVDLKGK;GGLCVDLKGKSDNEIR;GGLRFHPSVNLSILK;GGLRFHPSVNLSILKFLGFEQIFK;GKSDNEIR;GKSDNEIRR;GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK;GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGK;GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGKR;GPYKGGLR;GPYKGGLRFHPSVNLSILK;HIGKDTDVPAGDIGVGGR;HIGKDTDVPAGDIGVGGREIGYLFGAYR;ICYAFMR;ICYAFMRELSR;ICYAFMRELSRHIGK;IFEKFPQYK;IFEKFPQYKK;IIQFRVTWENDNGEQEVAQGYR;IIQFRVTWENDNGEQEVAQGYRVQFNSAK;IMINCFNDCIQAAQEYSTEK;IMINCFNDCIQAAQEYSTEKNTNTLPSLVK;IRFKSLEEIVDEYSTFSESK;KIMINCFNDCIQAAQEYSTEK;KIMINCFNDCIQAAQEYSTEKNTNTLPSLVK;KVLPIVSVPER;KVLPIVSVPERIIQFR;MKYVAGARPWTHVSNVDIALPCATQNEVSGDEAK;MKYVAGARPWTHVSNVDIALPCATQNEVSGDEAKALVASGVK;MTSEPEFQQAYDEIVSSVEDSK;MTSEPEFQQAYDEIVSSVEDSKIFEK;MTSEPEFQQAYDEIVSSVEDSKIFEKFPQYK;NALTGLDMGGGK;NALTGLDMGGGKGGLCVDLK;NALTGLDMGGGKGGLCVDLKGK;NSWEGVLTGK;NSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK;NSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGK;NTNTLPSLVK;NTNTLPSLVKGANIASFVMVADAMLDQGDVF;RICYAFMR;RICYAFMRELSR;RVTISGSGNVAQYAALK;RVTISGSGNVAQYAALKVIELGGIVVSLSDSK;SDNEIR;SDNEIRR;SDNEIRRICYAFMR;SLEEIVDEYSTFSESK;SLEEIVDEYSTFSESKMK;SLEEIVDEYSTFSESKMKYVAGARPWTHVSNVDIALPCATQNEVSGDEAK;STATNAK;STATNAKDAVWFGPPK;STATNAKDAVWFGPPKAANLGGVAVSGLEMAQNSQK;SYKNSWEGVLTGK;SYKNSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK;TSEPEFQQAYDEIVSSVEDSK;TSEPEFQQAYDEIVSSVEDSKIFEK;TSEPEFQQAYDEIVSSVEDSKIFEKFPQYK;VDQELK;VDQELKK;VDQELKKIMINCFNDCIQAAQEYSTEK;VIELGGIVVSLSDSK;VIELGGIVVSLSDSKGCIISETGITSEQIHDIASAK;VIELGGIVVSLSDSKGCIISETGITSEQIHDIASAKIR;VLPIVSVPER;VLPIVSVPERIIQFR;VLPIVSVPERIIQFRVTWENDNGEQEVAQGYR;VQFNSAK;VQFNSAKGPYK;VQFNSAKGPYKGGLR;VTISGSGNVAQYAALK;VTISGSGNVAQYAALKVIELGGIVVSLSDSK;VTWENDNGEQEVAQGYR;VTWENDNGEQEVAQGYRVQFNSAK;VTWENDNGEQEVAQGYRVQFNSAKGPYK;VTWTAER;VTWTAERVDQELK;VTWTAERVDQELKK;YVAGARPWTHVSNVDIALPCATQNEVSGDEAK;YVAGARPWTHVSNVDIALPCATQNEVSGDEAKALVASGVK
+      8                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          AAGLTAAYAR;AAGLTAAYARTIGIAVDHR;AAGLTAAYARTIGIAVDHRR;AAKIAPRPLDLLRPVVR;AAKIAPRPLDLLRPVVRAPTVK;AARAAK;AARAAKIAPRPLDLLRPVVR;AEAEAEK;AEAEAEKK;AEAEAEKKK;AGRGFTLAEVK;AGRGFTLAEVKAAGLTAAYAR;AISKNLPILK;AISKNLPILKNHFR;APEAEQVLSAAATFPIAQPATDVEAR;APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR;APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFRTLR;APTVKYNR;APTVKYNRK;AREKAEAEAEK;AVQDNGESAFR;AVQDNGESAFRTLR;AVQDNGESAFRTLRLAR;DGKAPEAEQVLSAAATFPIAQPATDVEAR;DGKAPEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR;EKAEAEAEK;EKAEAEAEKK;EYQSKIIVFPR;EYQSKIIVFPRDGK;FRGIREK;GFTLAEVK;GFTLAEVKAAGLTAAYAR;GFTLAEVKAAGLTAAYARTIGIAVDHR;GIREKR;HWQERVK;HWQERVKVHFDQAGK;IAPRPLDLLRPVVR;IAPRPLDLLRPVVRAPTVK;IAPRPLDLLRPVVRAPTVKYNR;IIVFPR;IIVFPRDGK;IIVFPRDGKAPEAEQVLSAAATFPIAQPATDVEAR;KFRGIR;KHWQER;KHWQERVK;KVRAGR;LARSEK;LARSEKK;LKEYQSK;LKEYQSKIIVFPR;MAISKNLPILK;MAISKNLPILKNHFR;NARAAR;NARAARAAK;NHFRKHWQER;NLPILK;NLPILKNHFR;NLPILKNHFRK;NQEIFDANVQR;NQEIFDANVQRLK;NQEIFDANVQRLKEYQSK;QNRNQEIFDANVQR;QNRNQEIFDANVQRLK;RNARAAR;RQNRNQEIFDANVQR;SEKKFR;TIGIAVDHR;TIGIAVDHRR;TIGIAVDHRRQNR;TLRLAR;TLRLARSEK;VHFDQAGK;VHFDQAGKK;VHFDQAGKKVSR;VKVHFDQAGK;VKVHFDQAGKK;VRAGRGFTLAEVK;VSRRNAR;YNRKVR
+      9                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          AAGLTAAYAR;AAGLTAAYARTIGIAVDHR;AAGLTAAYARTIGIAVDHRR;AAKIAPRPLDLLRPVVR;AAKIAPRPLDLLRPVVRAPTVK;AEAEAEK;AEAEAEKK;AEAEAEKKK;AGRGFTLAEVK;AGRGFTLAEVKAAGLTAAYAR;AISKNLPILK;AISKNLPILKNHFR;APEAEQVLSAAATFPIAQPATDVEAR;APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR;APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFRTLR;APTVKYNR;APTVKYNRK;AREKAEAEAEK;ATRAAK;ATRAAKIAPRPLDLLRPVVR;AVQDNGESAFR;AVQDNGESAFRTLR;AVQDNGESAFRTLRLAR;EKAEAEAEK;EKAEAEAEKK;EYQSKIIVFPR;EYQSKIIVFPRNGK;FRGIREK;GFTLAEVK;GFTLAEVKAAGLTAAYAR;GFTLAEVKAAGLTAAYARTIGIAVDHR;GIREKR;HWQERVK;HWQERVKVHFDQAGK;IAPRPLDLLRPVVR;IAPRPLDLLRPVVRAPTVK;IAPRPLDLLRPVVRAPTVKYNR;IIVFPR;IIVFPRNGK;IIVFPRNGKAPEAEQVLSAAATFPIAQPATDVEAR;KFRGIR;KHWQER;KHWQERVK;KVRAGR;LARSEK;LARSEKK;LKEYQSK;LKEYQSKIIVFPR;MAISKNLPILK;MAISKNLPILKNHFR;NARATR;NARATRAAK;NGKAPEAEQVLSAAATFPIAQPATDVEAR;NGKAPEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR;NHFRKHWQER;NLPILK;NLPILKNHFR;NLPILKNHFRK;NQEIFDANVQR;NQEIFDANVQRLK;NQEIFDANVQRLKEYQSK;QNRNQEIFDANVQR;QNRNQEIFDANVQRLK;RNARATR;RQNRNQEIFDANVQR;SEKKFR;TIGIAVDHR;TIGIAVDHRR;TIGIAVDHRRQNR;TLRLAR;TLRLARSEK;VHFDQAGK;VHFDQAGKK;VHFDQAGKKVSR;VKVHFDQAGK;VKVHFDQAGKK;VRAGRGFTLAEVK;VSRRNAR;YNRKVR
       
 
 ---
@@ -998,2462 +735,1668 @@
       mappingCollProt
     Output
       $peptides
-                                                           protein
-      1                              pept_MESQQLHQNPHSQHGSAYASVTSK
-      2                                 pept_EVPSNQDPLAVSASNLPEFDR
-      3        pept_VNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK
-      4                                  pept_NNVLPPHTLTSEENFSTWVK
-      5                                      pept_NSNLGDIIPNDQGEIK
-      6                          pept_QMTYEEHAYIYNTFQAFAPFHLLPTWVK
-      7                                      pept_QILEINYSDILTVLCK
-      8                                             pept_MQTNNQELK
-      9                         pept_DWIALANLEYNGSTSADTFEITVSTIIQR
-      10                                            pept_ENNINVSDR
-      11                                             pept_LACQLILK
-      12                                              pept_GLSGDFK
-      13                                     pept_LSQLFAEIQLIYDENK
-      14                                          pept_IMNLNKPSQYK
-      15                                               pept_QHSEYK
-      16                                            pept_TSPNTTNTK
-      17                                              pept_TNSSKPR
-      18                                            pept_AHNIATSSK
-      19                       pept_VNSDHINESTVSSQYLSDDNELSLRPATER
-      20        pept_MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDR
-      21                            pept_EVPSNQDPLAVSASNLPEFDRDSTK
-      22   pept_DSTKVNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK
-      23                               pept_VRNNVLPPHTLTSEENFSTWVK
-      24                             pept_NNVLPPHTLTSEENFSTWVKFYIR
-      25                                              pept_FYIRFLK
-      26                                  pept_FLKNSNLGDIIPNDQGEIK
-      27                                    pept_NSNLGDIIPNDQGEIKR
-      28                        pept_RQMTYEEHAYIYNTFQAFAPFHLLPTWVK
-      29         pept_QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK
-      30                                 pept_QILEINYSDILTVLCKSVSK
-      31                                        pept_SVSKMQTNNQELK
-      32               pept_MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR
-      33                      pept_DWIALANLEYNGSTSADTFEITVSTIIQRLK
-      34                                          pept_LKENNINVSDR
-      35                                    pept_ENNINVSDRLACQLILK
-      36                                      pept_LACQLILKGLSGDFK
-      37                                           pept_GLSGDFKYLR
-      38                                              pept_YLRNQYR
-      39                                               pept_NQYRTK
-      40                                               pept_TKTNMK
-      41                                 pept_TNMKLSQLFAEIQLIYDENK
-      42                          pept_LSQLFAEIQLIYDENKIMNLNKPSQYK
-      43                                    pept_IMNLNKPSQYKQHSEYK
-      44                                           pept_QHSEYKNVSR
-      45                                        pept_NVSRTSPNTTNTK
-      46                                        pept_TSPNTTNTKVTTR
-      47                                             pept_VTTRNYHR
-      48                                          pept_NYHRTNSSKPR
-      49                                           pept_TNSSKPRAAK
-      50                                         pept_AAKAHNIATSSK
-      51                                         pept_AHNIATSSKFSR
-      52                    pept_FSRVNSDHINESTVSSQYLSDDNELSLRPATER
-      53                      pept_VNSDHINESTVSSQYLSDDNELSLRPATERI
-      54    pept_MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDRDSTK
-      55                             pept_TKVRNNVLPPHTLTSEENFSTWVK
-      56                           pept_VRNNVLPPHTLTSEENFSTWVKFYIR
-      57                          pept_NNVLPPHTLTSEENFSTWVKFYIRFLK
-      58                              pept_FYIRFLKNSNLGDIIPNDQGEIK
-      59                                 pept_FLKNSNLGDIIPNDQGEIKR
-      60        pept_NSNLGDIIPNDQGEIKRQMTYEEHAYIYNTFQAFAPFHLLPTWVK
-      61        pept_RQMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK
-      62     pept_QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCKSVSK
-      63                        pept_QILEINYSDILTVLCKSVSKMQTNNQELK
-      64           pept_SVSKMQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR
-      65             pept_MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQRLK
-      66             pept_DWIALANLEYNGSTSADTFEITVSTIIQRLKENNINVSDR
-      67                                  pept_LKENNINVSDRLACQLILK
-      68                             pept_ENNINVSDRLACQLILKGLSGDFK
-      69                                   pept_LACQLILKGLSGDFKYLR
-      70                                       pept_GLSGDFKYLRNQYR
-      71                                            pept_YLRNQYRTK
-      72                                           pept_NQYRTKTNMK
-      73                               pept_TKTNMKLSQLFAEIQLIYDENK
-      74                      pept_TNMKLSQLFAEIQLIYDENKIMNLNKPSQYK
-      75                    pept_LSQLFAEIQLIYDENKIMNLNKPSQYKQHSEYK
-      76                                pept_IMNLNKPSQYKQHSEYKNVSR
-      77                                  pept_QHSEYKNVSRTSPNTTNTK
-      78                                    pept_NVSRTSPNTTNTKVTTR
-      79                                    pept_TSPNTTNTKVTTRNYHR
-      80                                      pept_VTTRNYHRTNSSKPR
-      81                                       pept_NYHRTNSSKPRAAK
-      82                                  pept_TNSSKPRAAKAHNIATSSK
-      83                                      pept_AAKAHNIATSSKFSR
-      84           pept_AHNIATSSKFSRVNSDHINESTVSSQYLSDDNELSLRPATER
-      85                   pept_FSRVNSDHINESTVSSQYLSDDNELSLRPATERI
-      86                              pept_ESQQLHQNPHSQHGSAYASVTSK
-      87         pept_ESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDR
-      88     pept_ESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDRDSTK
-      89                                            pept_MTIESTLAR
-      90                           pept_ELESLILPADSIVNVVDQFQEELLSR
-      91                                    pept_LQTNTISMLPQCLVPDK
-      92                                               pept_WNPEDK
-      93                                           pept_ILTIDFGGTR
-      94              pept_FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTR
-      95                                             pept_LAANGYIK
-      96                                             pept_NESSEASK
-      97                               pept_FFVSVTFSFPLNPEGEVVAMGK
-      98                                       pept_GFVMTDTLQGSTVK
-      99                                            pept_QLIQSSFHR
-      100                      pept_IISENIEEFFCTMNVCHVINDAIAVSLTSK
-      101                     pept_FICENDSISLIIGTGTNACFEVPYGYLPPFK
-      102                                           pept_ETLPSSYNK
-      103                                              pept_ETLNFK
-      104                                       pept_HVLINSEIGFIGK
-      105                         pept_NVIALQPFDIHGAISYEMPLECVTSGK
-      106                                             pept_WLPLSLK
-      107                                         pept_NILLQYNIIPK
-      108                pept_NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIAR
-      109                                 pept_AAFYVAAIVQAIDIITGCK
-      110                               pept_NYNFIHIGYVGSFLHNSNFYR
-      111                                            pept_YYSSIHIK
-      112                                pept_LQFLNHSNLLGAAIATYLNK
-      113                                              pept_SDNQVQ
-      114                 pept_MTIESTLARELESLILPADSIVNVVDQFQEELLSR
-      115         pept_ELESLILPADSIVNVVDQFQEELLSRLQTNTISMLPQCLVPDK
-      116                                  pept_LQTNTISMLPQCLVPDKR
-      117                                            pept_SRWNPEDK
-      118                                    pept_WNPEDKILTIDFGGTR
-      119                                        pept_ILTIDFGGTRLK
-      120           pept_LKFAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTR
-      121     pept_FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIK
-      122                                           pept_LAANGYIKK
-      123                                           pept_KNESSEASK
-      124                      pept_NESSEASKFFVSVTFSFPLNPEGEVVAMGK
-      125                pept_FFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVK
-      126                             pept_GFVMTDTLQGSTVKQLIQSSFHR
-      127             pept_QLIQSSFHRIISENIEEFFCTMNVCHVINDAIAVSLTSK
-      128                    pept_FICENDSISLIIGTGTNACFEVPYGYLPPFKR
-      129                                       pept_DALRETLPSSYNK
-      130                                     pept_ETLPSSYNKETLNFK
-      131                                 pept_ETLNFKHVLINSEIGFIGK
-      132            pept_HVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGK
-      133                  pept_NVIALQPFDIHGAISYEMPLECVTSGKWLPLSLK
-      134                                  pept_WLPLSLKNILLQYNIIPK
-      135     pept_NILLQYNIIPKNFPVEFNGELVCQLAEDCTNAWFENEHYALICQIAR
-      136            pept_NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIARLLIK
-      137                                pept_RAAFYVAAIVQAIDIITGCK
-      138            pept_AAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYR
-      139                           pept_NYNFIHIGYVGSFLHNSNFYREQIK
-      140                                        pept_EQIKYYSSIHIK
-      141                        pept_YYSSIHIKLQFLNHSNLLGAAIATYLNK
-      142                          pept_LQFLNHSNLLGAAIATYLNKSDNQVQ
-      143        pept_ELESLILPADSIVNVVDQFQEELLSRLQTNTISMLPQCLVPDKR
-      144                                pept_LQTNTISMLPQCLVPDKRSR
-      145                                           pept_RSRWNPEDK
-      146                                  pept_SRWNPEDKILTIDFGGTR
-      147                                  pept_WNPEDKILTIDFGGTRLK
-      148   pept_LKFAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIK
-      149    pept_FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIKK
-      150                                          pept_LAANGYIKKK
-      151                                          pept_KKNESSEASK
-      152                     pept_KNESSEASKFFVSVTFSFPLNPEGEVVAMGK
-      153        pept_NESSEASKFFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVK
-      154       pept_FFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVKQLIQSSFHR
-      155                pept_FICENDSISLIIGTGTNACFEVPYGYLPPFKRDALR
-      156                                      pept_RDALRETLPSSYNK
-      157                                 pept_DALRETLPSSYNKETLNFK
-      158                        pept_ETLPSSYNKETLNFKHVLINSEIGFIGK
-      159      pept_ETLNFKHVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGK
-      160     pept_HVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGKWLPLSLK
-      161       pept_NVIALQPFDIHGAISYEMPLECVTSGKWLPLSLKNILLQYNIIPK
-      162           pept_NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIARLLIKR
-      163                            pept_LLIKRAAFYVAAIVQAIDIITGCK
-      164           pept_RAAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYR
-      165        pept_AAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYREQIK
-      166                   pept_NYNFIHIGYVGSFLHNSNFYREQIKYYSSIHIK
-      167                    pept_EQIKYYSSIHIKLQFLNHSNLLGAAIATYLNK
-      168                  pept_YYSSIHIKLQFLNHSNLLGAAIATYLNKSDNQVQ
-      169                                            pept_TIESTLAR
-      170                  pept_TIESTLARELESLILPADSIVNVVDQFQEELLSR
-      171                                         pept_EVGTYECEGER
-      172         pept_DTYSFFTSLSDIQDSSSNEEQCGVGSILSEDSFTFEGSNVSIR
-      173                                   pept_LFSLDLNALNENENGSK
-      174                                              pept_FTIPPK
-      175                                           pept_VAVLPENSR
-      176                                        pept_NYLVESSMDSSR
-      177                                          pept_EYSQPFFDWR
-      178                                  pept_HEMVEHGEESVKPCGCHK
-      179                                           pept_ELEMENIEK
-      180                                             pept_DIIEWCR
-      181                                              pept_DYEVNK
-      182                               pept_EVCVPSIHEFYLHGNGSDNLF
-      183                                            pept_MGKACLNK
-      184                                    pept_ACLNKEVGTYECEGER
-      185                               pept_LFSLDLNALNENENGSKNPVK
-      186                                          pept_NPVKFTIPPK
-      187                                          pept_FTIPPKIEQR
-      188                                          pept_RVAVLPENSR
-      189                               pept_VAVLPENSRNYLVESSMDSSR
-      190                              pept_NYLVESSMDSSREYSQPFFDWR
-      191                        pept_EYSQPFFDWRHEMVEHGEESVKPCGCHK
-      192                                pept_HEMVEHGEESVKPCGCHKSR
-      193                                        pept_CFKELEMENIEK
-      194                                       pept_ELEMENIEKGDIK
-      195                                              pept_KSLFYR
-      196                                        pept_SLFYRDIIEWCR
-      197                                       pept_DIIEWCRDYEVNK
-      198                                            pept_DYEVNKTR
-      199                             pept_TREVCVPSIHEFYLHGNGSDNLF
-      200                                 pept_MGKACLNKEVGTYECEGER
-      201                         pept_LFSLDLNALNENENGSKNPVKFTIPPK
-      202                                      pept_NPVKFTIPPKIEQR
-      203                                         pept_FTIPPKIEQRK
-      204                                            pept_IEQRKEAR
-      205                                              pept_KEARQR
-      206                                             pept_EARQREK
-      207                                        pept_LRRVAVLPENSR
-      208                              pept_RVAVLPENSRNYLVESSMDSSR
-      209                     pept_VAVLPENSRNYLVESSMDSSREYSQPFFDWR
-      210            pept_NYLVESSMDSSREYSQPFFDWRHEMVEHGEESVKPCGCHK
-      211                      pept_EYSQPFFDWRHEMVEHGEESVKPCGCHKSR
-      212                               pept_HEMVEHGEESVKPCGCHKSRK
-      213                                              pept_KAKCFK
-      214                                      pept_AKCFKELEMENIEK
-      215                                    pept_CFKELEMENIEKGDIK
-      216                                      pept_ELEMENIEKGDIKK
-      217                                          pept_GDIKKSLFYR
-      218                                       pept_KSLFYRDIIEWCR
-      219                                  pept_SLFYRDIIEWCRDYEVNK
-      220                                     pept_DIIEWCRDYEVNKTR
-      221                       pept_DYEVNKTREVCVPSIHEFYLHGNGSDNLF
-      222                                             pept_GKACLNK
-      223                                  pept_GKACLNKEVGTYECEGER
-      224                            pept_MESQQLSQHSPISHGSACASVTSK
-      225                                     pept_EVHTNQDPLDVSASK
-      226                                              pept_TEECEK
-      227                                 pept_YVRPPPMLTSPNDFPNWVK
-      228                                pept_FLQNSNLGGIIPTVNGKPVR
-      229                        pept_QITDDELTFLYNTFQIFAPSQFLPTWVK
-      230                                        pept_DILSVDYTDIMK
-      231                     pept_MQSDTQEANDIVTLANLQYNGSTPADAFETK
-      232                                             pept_VTNIIDR
-      233                                         pept_LNNNGIHINNK
-      234                                            pept_VACQLIMR
-      235                                             pept_GLSGEYK
-      236                            pept_HLNMTVAELFLDIHAIYEEQQGSR
-      237                                             pept_NSKPNYR
-      238                                              pept_NPSDEK
-      239                                           pept_SYTNTTKPK
-      240                                pept_AHNVSTSNNSPSTDNDSISK
-      241                                         pept_STTEPIQLNNK
-      242                                          pept_HDLHLRPETY
-      243             pept_MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK
-      244                               pept_EVHTNQDPLDVSASKTEECEK
-      245                                          pept_TEECEKASTK
-      246                                pept_KYVRPPPMLTSPNDFPNWVK
-      247                             pept_YVRPPPMLTSPNDFPNWVKTYIK
-      248                            pept_TYIKFLQNSNLGGIIPTVNGKPVR
-      249    pept_FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK
-      250            pept_QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK
-      251                                    pept_DILSVDYTDIMKILSK
-      252                                            pept_ILSKSIEK
-      253                 pept_SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
-      254              pept_MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
-      255                                  pept_VTNIIDRLNNNGIHINNK
-      256                                 pept_LNNNGIHINNKVACQLIMR
-      257                                     pept_VACQLIMRGLSGEYK
-      258                                          pept_GLSGEYKFLR
-      259                                              pept_FLRYTR
-      260                          pept_HRHLNMTVAELFLDIHAIYEEQQGSR
-      261                     pept_HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
-      262                                            pept_NSKPNYRR
-      263                                             pept_RNPSDEK
-      264                                          pept_NPSDEKNDSR
-      265                                       pept_NDSRSYTNTTKPK
-      266                                       pept_SYTNTTKPKVIAR
-      267                                            pept_VIARNPQK
-      268                                           pept_NPQKTNNSK
-      269                                             pept_TNNSKSK
-      270                             pept_TARAHNVSTSNNSPSTDNDSISK
-      271                     pept_AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
-      272                               pept_STTEPIQLNNKHDLHLRPETY
-      273       pept_MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK
-      274                           pept_EVHTNQDPLDVSASKTEECEKASTK
-      275                            pept_KYVRPPPMLTSPNDFPNWVKTYIK
-      276         pept_YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR
-      277        pept_QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK
-      278                                pept_DILSVDYTDIMKILSKSIEK
-      279             pept_ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
-      280          pept_SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
-      281   pept_MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK
-      282                          pept_VTNIIDRLNNNGIHINNKVACQLIMR
-      283                          pept_LNNNGIHINNKVACQLIMRGLSGEYK
-      284                                  pept_VACQLIMRGLSGEYKFLR
-      285                                       pept_GLSGEYKFLRYTR
-      286                                            pept_FLRYTRHR
-      287                       pept_YTRHRHLNMTVAELFLDIHAIYEEQQGSR
-      288                   pept_HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
-      289                    pept_HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR
-      290                                      pept_NSKPNYRRNPSDEK
-      291                                         pept_RNPSDEKNDSR
-      292                                 pept_NPSDEKNDSRSYTNTTKPK
-      293                                   pept_NDSRSYTNTTKPKVIAR
-      294                                   pept_SYTNTTKPKVIARNPQK
-      295                                       pept_VIARNPQKTNNSK
-      296                                         pept_NPQKTNNSKSK
-      297                                          pept_TNNSKSKTAR
-      298                           pept_SKTARAHNVSTSNNSPSTDNDSISK
-      299                  pept_TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
-      300           pept_AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLRPETY
-      301                             pept_ESQQLSQHSPISHGSACASVTSK
-      302              pept_ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK
-      303        pept_ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK
-      304                            pept_MESQQLHQNPHSLHGSAAASVTSK
-      305                               pept_EVPSNQDPLAVSASNLPEFDR
-      306      pept_VNSQQETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK
-      307                                pept_NNVLPPHTLTSEENFSTWVK
-      308                                    pept_NSNLGDIIPNDQGEIK
-      309                        pept_QMTYEEHAYIYNTFQAFAPFHLLPTWVK
-      310                                    pept_QILEINYADILTVLCK
-      311                                           pept_MQTNNQELK
-      312                       pept_DWIALANLEYDGSTSADTFEITVSTIIQR
-      313                                           pept_ENNINVSDR
-      314                                            pept_LACQLILK
-      315                                             pept_GLSGDFK
-      316                                    pept_LSQLFAEIQLIYDENK
-      317                                         pept_IMNLNKPSQYK
-      318                                              pept_QHSEYK
-      319                                           pept_TSPNTTNTK
-      320                                             pept_TNSSKPR
-      321                                           pept_AHNIATSSK
-      322                       pept_VNNDHINESTVSSQYLSDDNELSLGQQQK
-      323                                              pept_ESKPTR
-      324                            pept_TIDSNDELPDHLLIDSGASQTLVR
-      325                               pept_SAHYLHHATPNSEINIVDAQK
-      326                                pept_QDIPINAIGNLHFNFQNGTK
-      327                        pept_ALHTPNIAYDLLSLSELANQNITACFTR
-      328                                         pept_SDGTVLAPIVK
-      329                                           pept_HGDFYWLSK
-      330                                           pept_YLIPSHISK
-      331                                            pept_LTINNVNK
-      332                                            pept_YPYPLIHR
-      333                                            pept_MLGHANFR
-      334                                             pept_NAVTYLK
-      335                               pept_ESDIEWSNASTYQCPDCLIGK
-      336                            pept_YQESYEPFQYLHTDIFGPVHHLPK
-      337                                       pept_SAPSYFISFTDEK
-      338                                          pept_FQWVYPLHDR
-      339                                    pept_EESILNVFTSILAFIK
-      340                                              pept_NQFNAR
-      341                                            pept_VLVIQMDR
-      342                                             pept_GSEYTNK
-      343                                       pept_GITACYTTTADSR
-      344                                             pept_AHGVAER
-      345                                             pept_TLLNDCR
-      346                            pept_TLLHCSGLPNHLWFSAVEFSTIIR
-      347                                             pept_NSLVSPK
-      348                      pept_QHAGLAGLDITTILPFGQPVIVNNHNPDSK
-      349                                         pept_GIPGYALHPSR
-      350                                       pept_NSYGYIIYLPSLK
-      351                                    pept_TVDTTNYVILQDNQSK
-      352                                   pept_LDQFNYDTLTFDDDLNR
-      353                                   pept_EVDADISEYNILPSTIR
-      354                                             pept_TPHIINK
-      355                                   pept_ESTEMGGTIESDTTSPR
-      356                                            pept_HSSTFTAR
-      357                                    pept_RPGSPNDMIDLTSQDR
-      358                                           pept_VNYGLENIK
-      359                                         pept_LGGTEEPYIQR
-      360                                             pept_NSDTNIK
-      361                                         pept_TTNSTPSIDDR
-      362                                    pept_SSNSESTTPIISIETK
-      363                                   pept_AVCDNTPSIDTDPPEYR
-      364                                       pept_SSDHATPNIMPDK
-      365                                 pept_NVTADSILDDLPLPDLTNK
-      366                                          pept_SPTDTSDVSK
-      367                                            pept_DIPHIHSR
-      368                                 pept_QTNSSLGGMDDSNVLTTTK
-      369                                       pept_SLEDNETEIEVSR
-      370                                              pept_DTWNNK
-      371                                              pept_SLEPPR
-      372                                            pept_INLIAAIK
-      373                                              pept_SIKPVR
-      374                                           pept_YDEAITYNK
-      375                                             pept_YVEAYHK
-      376                                             pept_EISQLLK
-      377                                            pept_MNTWDTNK
-      378                                              pept_NDIDPK
-      379                                          pept_VINSMFIFNK
-      380                                    pept_EELYIRPPPHLGLNDK
-      381                                              pept_SLYGLK
-      382                                         pept_QSGANWYETIK
-      383                                       pept_SYLINCCDMQEVR
-      384                                             pept_GWSCVFK
-      385                                  pept_NSQVTICLFVDDMILFSK
-      386                                              pept_DLNANK
-      387                                              pept_IITTLK
-      388                               pept_IINLGEGDNEIQYDILGLEIK
-      389                                            pept_LNVPLNPK
-      390                              pept_APGQPGHYIDQDELEIDEDEYK
-      391                                              pept_VHEMQK
-      392                                         pept_LIGLASYVGYK
-      393                                 pept_FDLLYYINTLAQHILFPSR
-      394                                   pept_QVLDMTYELIQFIWNTR
-      395                                              pept_QLIWHK
-      396                                           pept_SKPVKPTNK
-      397                                    pept_LVVISDASYGNQPYYK
-      398                                        pept_SQIGNIYLLNGK
-      399                 pept_ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK
-      400                                             pept_GLLTDSR
-      401                                             pept_STISIIK
-      402                                              pept_STNEEK
-      403                                    pept_DEVSGNNLYVYYIETK
-      404                                      pept_MNIADVMTKPLPIK
-      405       pept_MESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDR
-      406                           pept_EVPSNQDPLAVSASNLPEFDRDSTK
-      407  pept_DSTKVNSQQETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK
-      408                              pept_VRNNVLPPHTLTSEENFSTWVK
-      409                            pept_NNVLPPHTLTSEENFSTWVKFYIR
-      410                                             pept_FYIRFLK
-      411                                 pept_FLKNSNLGDIIPNDQGEIK
-      412                                   pept_NSNLGDIIPNDQGEIKR
-      413                       pept_RQMTYEEHAYIYNTFQAFAPFHLLPTWVK
-      414        pept_QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCK
-      415                                pept_QILEINYADILTVLCKSVSK
-      416                                       pept_SVSKMQTNNQELK
-      417              pept_MQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQR
-      418                     pept_DWIALANLEYDGSTSADTFEITVSTIIQRLK
-      419                                         pept_LKENNINVSDR
-      420                                   pept_ENNINVSDRLACQLILK
-      421                                     pept_LACQLILKGLSGDFK
-      422                                          pept_GLSGDFKYLR
-      423                                             pept_YLRNQYR
-      424                                              pept_NQYRTK
-      425                                              pept_TKTNMK
-      426                                pept_TNMKLSQLFAEIQLIYDENK
-      427                         pept_LSQLFAEIQLIYDENKIMNLNKPSQYK
-      428                                   pept_IMNLNKPSQYKQHSEYK
-      429                                          pept_QHSEYKNVSR
-      430                                       pept_NVSRTSPNTTNTK
-      431                                       pept_TSPNTTNTKVTSR
-      432                                            pept_VTSRNYHR
-      433                                         pept_NYHRTNSSKPR
-      434                                          pept_TNSSKPRAAK
-      435                                        pept_AAKAHNIATSSK
-      436                                        pept_AHNIATSSKFSR
-      437                    pept_FSRVNNDHINESTVSSQYLSDDNELSLGQQQK
-      438                 pept_VNNDHINESTVSSQYLSDDNELSLGQQQKESKPTR
-      439                      pept_ESKPTRTIDSNDELPDHLLIDSGASQTLVR
-      440       pept_TIDSNDELPDHLLIDSGASQTLVRSAHYLHHATPNSEINIVDAQK
-      441           pept_SAHYLHHATPNSEINIVDAQKQDIPINAIGNLHFNFQNGTK
-      442                            pept_QDIPINAIGNLHFNFQNGTKTSIK
-      443                    pept_TSIKALHTPNIAYDLLSLSELANQNITACFTR
-      444                   pept_ALHTPNIAYDLLSLSELANQNITACFTRNTLER
-      445                                    pept_NTLERSDGTVLAPIVK
-      446                                pept_SDGTVLAPIVKHGDFYWLSK
-      447                                          pept_HGDFYWLSKK
-      448                                          pept_KYLIPSHISK
-      449                                   pept_YLIPSHISKLTINNVNK
-      450                                          pept_LTINNVNKSK
-      451                                              pept_SKSVNK
-      452                                        pept_SVNKYPYPLIHR
-      453                                    pept_YPYPLIHRMLGHANFR
-      454                                        pept_MLGHANFRSIQK
-      455                                             pept_SIQKSLK
-      456                                            pept_KNAVTYLK
-      457                        pept_NAVTYLKESDIEWSNASTYQCPDCLIGK
-      458                            pept_ESDIEWSNASTYQCPDCLIGKSTK
-      459                                              pept_HIKGSR
-      460                          pept_LKYQESYEPFQYLHTDIFGPVHHLPK
-      461               pept_YQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEK
-      462                                     pept_SAPSYFISFTDEKTR
-      463                                        pept_TRFQWVYPLHDR
-      464                                         pept_FQWVYPLHDRR
-      465                                   pept_REESILNVFTSILAFIK
-      466                              pept_EESILNVFTSILAFIKNQFNAR
-      467                                      pept_NQFNARVLVIQMDR
-      468                                     pept_VLVIQMDRGSEYTNK
-      469                                         pept_GSEYTNKTLHK
-      470                                           pept_TLHKFFTNR
-      471                                  pept_FFTNRGITACYTTTADSR
-      472                                pept_GITACYTTTADSRAHGVAER
-      473                                          pept_AHGVAERLNR
-      474                                          pept_LNRTLLNDCR
-      475                     pept_TLLNDCRTLLHCSGLPNHLWFSAVEFSTIIR
-      476                     pept_TLLHCSGLPNHLWFSAVEFSTIIRNSLVSPK
-      477                                          pept_NSLVSPKNDK
-      478                                              pept_NDKSAR
-      479                   pept_SARQHAGLAGLDITTILPFGQPVIVNNHNPDSK
-      480                  pept_QHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPR
-      481                                     pept_IHPRGIPGYALHPSR
-      482                            pept_GIPGYALHPSRNSYGYIIYLPSLK
-      483                                      pept_NSYGYIIYLPSLKK
-      484                                   pept_KTVDTTNYVILQDNQSK
-      485                   pept_TVDTTNYVILQDNQSKLDQFNYDTLTFDDDLNR
-      486                                             pept_EPVQKVR
-      487                                pept_APKEVDADISEYNILPSTIR
-      488                                 pept_EVDADISEYNILPSTIRSR
-      489                                           pept_SRTPHIINK
-      490                            pept_TPHIINKESTEMGGTIESDTTSPR
-      491                           pept_ESTEMGGTIESDTTSPRHSSTFTAR
-      492                                         pept_HSSTFTARNQK
-      493                                 pept_NQKRPGSPNDMIDLTSQDR
-      494                           pept_RPGSPNDMIDLTSQDRVNYGLENIK
-      495                                        pept_VNYGLENIKTTR
-      496                                      pept_TTRLGGTEEPYIQR
-      497                                  pept_LGGTEEPYIQRNSDTNIK
-      498                                           pept_NSDTNIKYR
-      499                                       pept_YRTTNSTPSIDDR
-      500                         pept_TTNSTPSIDDRSSNSESTTPIISIETK
-      501                   pept_SSNSESTTPIISIETKAVCDNTPSIDTDPPEYR
-      502                      pept_AVCDNTPSIDTDPPEYRSSDHATPNIMPDK
-      503                                    pept_SSDHATPNIMPDKSSK
-      504                              pept_SSKNVTADSILDDLPLPDLTNK
-      505                       pept_NVTADSILDDLPLPDLTNKSPTDTSDVSK
-      506                                  pept_SPTDTSDVSKDIPHIHSR
-      507                         pept_DIPHIHSRQTNSSLGGMDDSNVLTTTK
-      508                               pept_QTNSSLGGMDDSNVLTTTKSK
-      509                                      pept_RSLEDNETEIEVSR
-      510                                 pept_SLEDNETEIEVSRDTWNNK
-      511                                           pept_DTWNNKNMR
-      512                                           pept_NMRSLEPPR
-      513                                            pept_SLEPPRSK
-      514                                           pept_RINLIAAIK
-      515                                         pept_INLIAAIKGVK
-      516                                           pept_GVKSIKPVR
-      517                                          pept_SIKPVRTTLR
-      518                                       pept_TTLRYDEAITYNK
-      519                                        pept_YDEAITYNKDNK
-      520                                           pept_DRYVEAYHK
-      521                                      pept_YVEAYHKEISQLLK
-      522                                     pept_EISQLLKMNTWDTNK
-      523                                        pept_MNTWDTNKYYDR
-      524                                          pept_YYDRNDIDPK
-      525                                             pept_NDIDPKK
-      526                                         pept_KVINSMFIFNK
-      527                                         pept_VINSMFIFNKK
-      528                                              pept_RDGTHK
-      529                                             pept_DGTHKAR
-      530                                              pept_ARFVAR
-      531                                 pept_EELYIRPPPHLGLNDKLLR
-      532                                             pept_KSLYGLK
-      533                                   pept_SLYGLKQSGANWYETIK
-      534                            pept_QSGANWYETIKSYLINCCDMQEVR
-      535                                pept_SYLINCCDMQEVRGWSCVFK
-      536                           pept_GWSCVFKNSQVTICLFVDDMILFSK
-      537                            pept_NSQVTICLFVDDMILFSKDLNANK
-      538                                             pept_DLNANKK
-      539                                             pept_KIITTLK
-      540                                             pept_IITTLKK
-      541                                              pept_KQYDTK
-      542                          pept_QYDTKIINLGEGDNEIQYDILGLEIK
-      543                            pept_IINLGEGDNEIQYDILGLEIKYQR
-      544                                            pept_YMKLGMEK
-      545                                          pept_LGMEKSLTEK
-      546                                            pept_SLTEKLPK
-      547                                         pept_LPKLNVPLNPK
-      548                                          pept_LNVPLNPKGK
-      549                            pept_LRAPGQPGHYIDQDELEIDEDEYK
-      550                            pept_APGQPGHYIDQDELEIDEDEYKEK
-      551                                            pept_EKVHEMQK
-      552                                   pept_VHEMQKLIGLASYVGYK
-      553                                       pept_LIGLASYVGYKFR
-      554                               pept_FRFDLLYYINTLAQHILFPSR
-      555                pept_FDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTR
-      556                                 pept_QVLDMTYELIQFIWNTRDK
-      557                                            pept_DKQLIWHK
-      558                                     pept_QLIWHKSKPVKPTNK
-      559                           pept_SKPVKPTNKLVVISDASYGNQPYYK
-      560                        pept_LVVISDASYGNQPYYKSQIGNIYLLNGK
-      561                                   pept_SQIGNIYLLNGKVIGGK
-      562                                            pept_VIGGKSTK
-      563              pept_STKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK
-      564            pept_ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIK
-      565                                        pept_KPIIKGLLTDSR
-      566                                      pept_GLLTDSRSTISIIK
-      567                                       pept_STISIIKSTNEEK
-      568                                            pept_STNEEKFR
-      569                                             pept_NRFFGTK
-      570                                            pept_FFGTKAMR
-      571                                  pept_LRDEVSGNNLYVYYIETK
-      572                      pept_DEVSGNNLYVYYIETKMNIADVMTKPLPIK
-      573                                   pept_MNIADVMTKPLPIKTFK
-      574                                            pept_TFKLLTNK
-      575                                            pept_LLTNKWIH
-      576   pept_MESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDRDSTK
-      577                            pept_TKVRNNVLPPHTLTSEENFSTWVK
-      578                          pept_VRNNVLPPHTLTSEENFSTWVKFYIR
-      579                         pept_NNVLPPHTLTSEENFSTWVKFYIRFLK
-      580                             pept_FYIRFLKNSNLGDIIPNDQGEIK
-      581                                pept_FLKNSNLGDIIPNDQGEIKR
-      582       pept_NSNLGDIIPNDQGEIKRQMTYEEHAYIYNTFQAFAPFHLLPTWVK
-      583       pept_RQMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCK
-      584    pept_QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCKSVSK
-      585                       pept_QILEINYADILTVLCKSVSKMQTNNQELK
-      586          pept_SVSKMQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQR
-      587            pept_MQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQRLK
-      588            pept_DWIALANLEYDGSTSADTFEITVSTIIQRLKENNINVSDR
-      589                                 pept_LKENNINVSDRLACQLILK
-      590                            pept_ENNINVSDRLACQLILKGLSGDFK
-      591                                  pept_LACQLILKGLSGDFKYLR
-      592                                      pept_GLSGDFKYLRNQYR
-      593                                           pept_YLRNQYRTK
-      594                                          pept_NQYRTKTNMK
-      595                              pept_TKTNMKLSQLFAEIQLIYDENK
-      596                     pept_TNMKLSQLFAEIQLIYDENKIMNLNKPSQYK
-      597                   pept_LSQLFAEIQLIYDENKIMNLNKPSQYKQHSEYK
-      598                               pept_IMNLNKPSQYKQHSEYKNVSR
-      599                                 pept_QHSEYKNVSRTSPNTTNTK
-      600                                   pept_NVSRTSPNTTNTKVTSR
-      601                                   pept_TSPNTTNTKVTSRNYHR
-      602                                     pept_VTSRNYHRTNSSKPR
-      603                                      pept_NYHRTNSSKPRAAK
-      604                                 pept_TNSSKPRAAKAHNIATSSK
-      605                                     pept_AAKAHNIATSSKFSR
-      606           pept_AHNIATSSKFSRVNNDHINESTVSSQYLSDDNELSLGQQQK
-      607              pept_FSRVNNDHINESTVSSQYLSDDNELSLGQQQKESKPTR
-      608       pept_SAHYLHHATPNSEINIVDAQKQDIPINAIGNLHFNFQNGTKTSIK
-      609               pept_TSIKALHTPNIAYDLLSLSELANQNITACFTRNTLER
-      610        pept_ALHTPNIAYDLLSLSELANQNITACFTRNTLERSDGTVLAPIVK
-      611                           pept_NTLERSDGTVLAPIVKHGDFYWLSK
-      612                               pept_SDGTVLAPIVKHGDFYWLSKK
-      613                                 pept_HGDFYWLSKKYLIPSHISK
-      614                                  pept_KYLIPSHISKLTINNVNK
-      615                                 pept_YLIPSHISKLTINNVNKSK
-      616                                      pept_LTINNVNKSKSVNK
-      617                                      pept_SKSVNKYPYPLIHR
-      618                                pept_SVNKYPYPLIHRMLGHANFR
-      619                                pept_YPYPLIHRMLGHANFRSIQK
-      620                                     pept_MLGHANFRSIQKSLK
-      621                                            pept_SIQKSLKK
-      622                                         pept_SLKKNAVTYLK
-      623                       pept_KNAVTYLKESDIEWSNASTYQCPDCLIGK
-      624                     pept_NAVTYLKESDIEWSNASTYQCPDCLIGKSTK
-      625                          pept_ESDIEWSNASTYQCPDCLIGKSTKHR
-      626                                            pept_STKHRHIK
-      627                                            pept_HRHIKGSR
-      628                                            pept_HIKGSRLK
-      629                       pept_GSRLKYQESYEPFQYLHTDIFGPVHHLPK
-      630             pept_LKYQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEK
-      631             pept_YQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEKTR
-      632                           pept_SAPSYFISFTDEKTRFQWVYPLHDR
-      633                                       pept_TRFQWVYPLHDRR
-      634                         pept_FQWVYPLHDRREESILNVFTSILAFIK
-      635                             pept_REESILNVFTSILAFIKNQFNAR
-      636                      pept_EESILNVFTSILAFIKNQFNARVLVIQMDR
-      637                               pept_NQFNARVLVIQMDRGSEYTNK
-      638                                 pept_VLVIQMDRGSEYTNKTLHK
-      639                                    pept_GSEYTNKTLHKFFTNR
-      640                              pept_TLHKFFTNRGITACYTTTADSR
-      641                           pept_FFTNRGITACYTTTADSRAHGVAER
-      642                             pept_GITACYTTTADSRAHGVAERLNR
-      643                                   pept_AHGVAERLNRTLLNDCR
-      644                  pept_LNRTLLNDCRTLLHCSGLPNHLWFSAVEFSTIIR
-      645              pept_TLLNDCRTLLHCSGLPNHLWFSAVEFSTIIRNSLVSPK
-      646                  pept_TLLHCSGLPNHLWFSAVEFSTIIRNSLVSPKNDK
-      647                                       pept_NSLVSPKNDKSAR
-      648                pept_NDKSARQHAGLAGLDITTILPFGQPVIVNNHNPDSK
-      649               pept_SARQHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPR
-      650       pept_QHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPRGIPGYALHPSR
-      651                        pept_IHPRGIPGYALHPSRNSYGYIIYLPSLK
-      652                           pept_GIPGYALHPSRNSYGYIIYLPSLKK
-      653                      pept_NSYGYIIYLPSLKKTVDTTNYVILQDNQSK
-      654                  pept_KTVDTTNYVILQDNQSKLDQFNYDTLTFDDDLNR
-      655                                          pept_EPVQKVRAPK
-      656                              pept_VRAPKEVDADISEYNILPSTIR
-      657                              pept_APKEVDADISEYNILPSTIRSR
-      658                          pept_EVDADISEYNILPSTIRSRTPHIINK
-      659                          pept_SRTPHIINKESTEMGGTIESDTTSPR
-      660                    pept_TPHIINKESTEMGGTIESDTTSPRHSSTFTAR
-      661                        pept_ESTEMGGTIESDTTSPRHSSTFTARNQK
-      662                         pept_HSSTFTARNQKRPGSPNDMIDLTSQDR
-      663                        pept_NQKRPGSPNDMIDLTSQDRVNYGLENIK
-      664                        pept_RPGSPNDMIDLTSQDRVNYGLENIKTTR
-      665                             pept_VNYGLENIKTTRLGGTEEPYIQR
-      666                               pept_TTRLGGTEEPYIQRNSDTNIK
-      667                                pept_LGGTEEPYIQRNSDTNIKYR
-      668                                pept_NSDTNIKYRTTNSTPSIDDR
-      669                       pept_YRTTNSTPSIDDRSSNSESTTPIISIETK
-      670        pept_TTNSTPSIDDRSSNSESTTPIISIETKAVCDNTPSIDTDPPEYR
-      671      pept_SSNSESTTPIISIETKAVCDNTPSIDTDPPEYRSSDHATPNIMPDK
-      672                   pept_AVCDNTPSIDTDPPEYRSSDHATPNIMPDKSSK
-      673                 pept_SSDHATPNIMPDKSSKNVTADSILDDLPLPDLTNK
-      674                    pept_SSKNVTADSILDDLPLPDLTNKSPTDTSDVSK
-      675               pept_NVTADSILDDLPLPDLTNKSPTDTSDVSKDIPHIHSR
-      676               pept_SPTDTSDVSKDIPHIHSRQTNSSLGGMDDSNVLTTTK
-      677                       pept_DIPHIHSRQTNSSLGGMDDSNVLTTTKSK
-      678                              pept_QTNSSLGGMDDSNVLTTTKSKK
-      679                                     pept_KRSLEDNETEIEVSR
-      680                                pept_RSLEDNETEIEVSRDTWNNK
-      681                              pept_SLEDNETEIEVSRDTWNNKNMR
-      682                                     pept_DTWNNKNMRSLEPPR
-      683                                         pept_NMRSLEPPRSK
-      684                                           pept_SLEPPRSKK
-      685                                          pept_KRINLIAAIK
-      686                                        pept_RINLIAAIKGVK
-      687                                   pept_INLIAAIKGVKSIKPVR
-      688                                       pept_GVKSIKPVRTTLR
-      689                                 pept_SIKPVRTTLRYDEAITYNK
-      690                                    pept_TTLRYDEAITYNKDNK
-      691                                      pept_YDEAITYNKDNKEK
-      692                                             pept_DNKEKDR
-      693                                         pept_EKDRYVEAYHK
-      694                                    pept_DRYVEAYHKEISQLLK
-      695                              pept_YVEAYHKEISQLLKMNTWDTNK
-      696                                 pept_EISQLLKMNTWDTNKYYDR
-      697                                  pept_MNTWDTNKYYDRNDIDPK
-      698                                         pept_YYDRNDIDPKK
-      699                                   pept_NDIDPKKVINSMFIFNK
-      700                                        pept_KVINSMFIFNKK
-      701                                        pept_VINSMFIFNKKR
-      702                                             pept_KRDGTHK
-      703                                            pept_RDGTHKAR
-      704                                         pept_DGTHKARFVAR
-      705                               pept_EELYIRPPPHLGLNDKLLRLR
-      706                                              pept_LLRLRK
-      707                                           pept_LRKSLYGLK
-      708                                  pept_KSLYGLKQSGANWYETIK
-      709                      pept_SLYGLKQSGANWYETIKSYLINCCDMQEVR
-      710                     pept_QSGANWYETIKSYLINCCDMQEVRGWSCVFK
-      711              pept_SYLINCCDMQEVRGWSCVFKNSQVTICLFVDDMILFSK
-      712                     pept_GWSCVFKNSQVTICLFVDDMILFSKDLNANK
-      713                           pept_NSQVTICLFVDDMILFSKDLNANKK
-      714                                       pept_DLNANKKIITTLK
-      715                                            pept_KIITTLKK
-      716                                        pept_IITTLKKQYDTK
-      717                         pept_KQYDTKIINLGEGDNEIQYDILGLEIK
-      718                       pept_QYDTKIINLGEGDNEIQYDILGLEIKYQR
-      719                          pept_IINLGEGDNEIQYDILGLEIKYQRSK
-      720                                            pept_YQRSKYMK
-      721                                          pept_SKYMKLGMEK
-      722                                       pept_YMKLGMEKSLTEK
-      723                                       pept_LGMEKSLTEKLPK
-      724                                    pept_SLTEKLPKLNVPLNPK
-      725                                       pept_LPKLNVPLNPKGK
-      726                                         pept_LNVPLNPKGKK
-      727                           pept_KLRAPGQPGHYIDQDELEIDEDEYK
-      728                          pept_LRAPGQPGHYIDQDELEIDEDEYKEK
-      729                      pept_APGQPGHYIDQDELEIDEDEYKEKVHEMQK
-      730                                 pept_EKVHEMQKLIGLASYVGYK
-      731                                 pept_VHEMQKLIGLASYVGYKFR
-      732                    pept_LIGLASYVGYKFRFDLLYYINTLAQHILFPSR
-      733              pept_FRFDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTR
-      734              pept_FDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTRDK
-      735                           pept_QVLDMTYELIQFIWNTRDKQLIWHK
-      736                                   pept_DKQLIWHKSKPVKPTNK
-      737                     pept_QLIWHKSKPVKPTNKLVVISDASYGNQPYYK
-      738               pept_SKPVKPTNKLVVISDASYGNQPYYKSQIGNIYLLNGK
-      739                   pept_LVVISDASYGNQPYYKSQIGNIYLLNGKVIGGK
-      740                                pept_SQIGNIYLLNGKVIGGKSTK
-      741         pept_VIGGKSTKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK
-      742         pept_STKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIK
-      743     pept_ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIKGLLTDSR
-      744                                 pept_KPIIKGLLTDSRSTISIIK
-      745                                pept_GLLTDSRSTISIIKSTNEEK
-      746                                     pept_STISIIKSTNEEKFR
-      747                                          pept_STNEEKFRNR
-      748                                           pept_FRNRFFGTK
-      749                                          pept_NRFFGTKAMR
-      750                                          pept_FFGTKAMRLR
-      751                               pept_AMRLRDEVSGNNLYVYYIETK
-      752                    pept_LRDEVSGNNLYVYYIETKMNIADVMTKPLPIK
-      753                   pept_DEVSGNNLYVYYIETKMNIADVMTKPLPIKTFK
-      754                              pept_MNIADVMTKPLPIKTFKLLTNK
-      755                                         pept_TFKLLTNKWIH
-      756                             pept_ESQQLHQNPHSLHGSAAASVTSK
-      757        pept_ESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDR
-      758    pept_ESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDRDSTK
-      759                            pept_MESQQLSNYPHISHGSACASVTSK
-      760                                     pept_EVHTNQDPLDVSASK
-      761                                              pept_IQEYDK
-      762                                 pept_YVRPPPMLTSPNDFPNWVK
-      763                                pept_FLQNSNLGGIIPTVNGKPVR
-      764                        pept_QITDDELTFLYNTFQIFAPSQFLPTWVK
-      765                                        pept_DILSVDYTDIMK
-      766                     pept_MQSDTQEANDIVTLANLQYNGSTPADAFETK
-      767                                             pept_VTNIIDR
-      768                                         pept_LNNNGIHINNK
-      769                                            pept_VACQLIMR
-      770                                             pept_GLSGEYK
-      771                            pept_HLNMTVAELFLDIHAIYEEQQGSR
-      772                                             pept_NSKPNYR
-      773                                              pept_NPSDEK
-      774                                           pept_SYTNTTKPK
-      775                                pept_AHNVSTSNNSPSTDNDSISK
-      776                                         pept_STTEPIQLNNK
-      777                                          pept_HDLHLRPGTY
-      778             pept_MESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASK
-      779                               pept_EVHTNQDPLDVSASKIQEYDK
-      780                                          pept_IQEYDKASTK
-      781                                pept_KYVRPPPMLTSPNDFPNWVK
-      782                             pept_YVRPPPMLTSPNDFPNWVKTYIK
-      783                            pept_TYIKFLQNSNLGGIIPTVNGKPVR
-      784    pept_FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK
-      785            pept_QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK
-      786                                    pept_DILSVDYTDIMKILSK
-      787                                            pept_ILSKSIEK
-      788                 pept_SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
-      789              pept_MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
-      790                                  pept_VTNIIDRLNNNGIHINNK
-      791                                 pept_LNNNGIHINNKVACQLIMR
-      792                                     pept_VACQLIMRGLSGEYK
-      793                                          pept_GLSGEYKFLR
-      794                                              pept_FLRYTR
-      795                          pept_HRHLNMTVAELFLDIHAIYEEQQGSR
-      796                     pept_HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
-      797                                            pept_NSKPNYRR
-      798                                             pept_RNPSDEK
-      799                                          pept_NPSDEKNDSR
-      800                                       pept_NDSRSYTNTTKPK
-      801                                       pept_SYTNTTKPKVIAR
-      802                                            pept_VIARNPQK
-      803                                           pept_NPQKTNNSK
-      804                                             pept_TNNSKSK
-      805                             pept_TARAHNVSTSNNSPSTDNDSISK
-      806                     pept_AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
-      807                               pept_STTEPIQLNNKHDLHLRPGTY
-      808       pept_MESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASKIQEYDK
-      809                           pept_EVHTNQDPLDVSASKIQEYDKASTK
-      810                            pept_KYVRPPPMLTSPNDFPNWVKTYIK
-      811         pept_YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR
-      812        pept_QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK
-      813                                pept_DILSVDYTDIMKILSKSIEK
-      814             pept_ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
-      815          pept_SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
-      816   pept_MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK
-      817                          pept_VTNIIDRLNNNGIHINNKVACQLIMR
-      818                          pept_LNNNGIHINNKVACQLIMRGLSGEYK
-      819                                  pept_VACQLIMRGLSGEYKFLR
-      820                                       pept_GLSGEYKFLRYTR
-      821                                            pept_FLRYTRHR
-      822                       pept_YTRHRHLNMTVAELFLDIHAIYEEQQGSR
-      823                   pept_HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
-      824                    pept_HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR
-      825                                      pept_NSKPNYRRNPSDEK
-      826                                         pept_RNPSDEKNDSR
-      827                                 pept_NPSDEKNDSRSYTNTTKPK
-      828                                   pept_NDSRSYTNTTKPKVIAR
-      829                                   pept_SYTNTTKPKVIARNPQK
-      830                                       pept_VIARNPQKTNNSK
-      831                                         pept_NPQKTNNSKSK
-      832                                          pept_TNNSKSKTAR
-      833                           pept_SKTARAHNVSTSNNSPSTDNDSISK
-      834                  pept_TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
-      835           pept_AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLRPGTY
-      836                             pept_ESQQLSNYPHISHGSACASVTSK
-      837              pept_ESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASK
-      838        pept_ESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASKIQEYDK
-      839                            pept_MESQQLSQHSPISHGSACASVTSK
-      840                                     pept_EVHTNQDPLDVSASK
-      841                                              pept_TEECEK
-      842                                 pept_YVRPPPMLTSPNDFPNWVK
-      843                                pept_FLQNSNLGGIIPTVNGKPVR
-      844                        pept_QITDDELTFLYNTFQIFAPSQFLPTWVK
-      845                                        pept_DILSVDYTDIMK
-      846                     pept_MQSDTQEANDIVTLANLQYNGSTPADAFETK
-      847                                             pept_VTNIIDR
-      848                                         pept_LNNNGIHINNK
-      849                                            pept_VACQLIMR
-      850                                             pept_GLSGEYK
-      851                            pept_HLNMTVAELFLDIHAIYEEQQGSR
-      852                                             pept_NSKPNYR
-      853                                              pept_NPSDEK
-      854                                           pept_SYTNTTKPK
-      855                                pept_AHNVSTSNNSPSTDNDSISK
-      856                                         pept_STTEPIQLNNK
-      857                                            pept_HDLHLGQK
-      858                        pept_LTESTVNHTNHSDDELPGHLLLDSGASR
-      859                               pept_SAHHIHSASSNPDINVVDAQK
-      860                                 pept_NIPINAIGDLQFHFQDNTK
-      861                        pept_VLHTPNIAYDLLSLNELAAVDITACFTK
-      862                                         pept_SDGTVLAPIVK
-      863                                           pept_YGDFYWVSK
-      864                              pept_YLLPSNISVPTINNVHTSESTR
-      865                                            pept_YPYPFIHR
-      866                                         pept_MLAHANAQTIR
-      867                       pept_NNTITYFNESDVDWSSAIDYQCPDCLIGK
-      868             pept_YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK
-      869                                            pept_WVYPLHDR
-      870                                    pept_EDSILDVFTTILAFIK
-      871                                      pept_NQFQASVLVIQMDR
-      872                                             pept_GSEYTNR
-      873                                      pept_NGITPCYTTTADSR
-      874                                             pept_AHGVAER
-      875                                             pept_TLLDDCR
-      876                            pept_TQLQCSGLPNHLWFSAIEFSTIVR
-      877                                             pept_NSLASPK
-      878                      pept_QHAGLAGLDISTLLPFGQPVIVNDHNPNSK
-      879                                         pept_GIPGYALHPSR
-      880                                       pept_NSYGYIIYLPSLK
-      881                                       pept_TVDTTNYVILQGK
-      882                                   pept_LDQFNYDALTFDEDLNR
-      883            pept_LTASYHSFIASNEIQESNDLNIESDHDFQSDIELHPEQPR
-      884                                  pept_AVSPTDSTPPSTHTEDSK
-      885                                     pept_EVDPNISESNILPSK
-      886                                 pept_SSTPQISNIESTGSGGMHK
-      887                              pept_LNVPLLAPMSQSNTHESSHASK
-      888                          pept_HSDSYSENETNHTNVPISSTGGTNNK
-      889                                        pept_TVPQISDQETEK
-      890                               pept_SPSIDASPPENNSSHNIVPIK
-      891                pept_TPTTVSEQNTEESIIADLPLPDLPPESPTEFPDPFK
-      892                                            pept_ELPPINSR
-      893                               pept_QTNSSLGGIGDSNAYTTINSK
-      894                                          pept_SLEDNETEIK
-      895                                              pept_DTWNTK
-      896                                              pept_SLEPPR
-      897                                            pept_IHLIAAVK
-      898                                              pept_SIKPIR
-      899                                           pept_YDEAITYNK
-      900                                             pept_YIEAYHK
-      901                                             pept_EVNQLLK
-      902                                          pept_TWDTDEYYDR
-      903                                          pept_VINSMFIFNK
-      904                                    pept_EELYIRPPPHLGMNDK
-      905                                              pept_SLYGLK
-      906                                         pept_QSGANWYETIK
-      907                                       pept_SYLIQQCGMEEVR
-      908                                             pept_GWSCVFK
-      909                                  pept_NSQVTICLFVDDMVLFSK
-      910                                              pept_NLNSNK
-      911                                              pept_MQYDTK
-      912                               pept_IINLGESDEEIQYDILGLEIK
-      913                                          pept_LGMENSLTEK
-      914                                            pept_LNVPLNPK
-      915                            pept_LSAPGQPGLYIDQDELEIDEDEYK
-      916                                              pept_VHEMQK
-      917                                         pept_LIGLASYVGYK
-      918                                 pept_FDLLYYINTLAQHILFPSR
-      919                                   pept_QVLDMTYELIQFMWDTR
-      920                                              pept_QLIWHK
-      921             pept_MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK
-      922                               pept_EVHTNQDPLDVSASKTEECEK
-      923                                          pept_TEECEKASTK
-      924                                pept_KYVRPPPMLTSPNDFPNWVK
-      925                             pept_YVRPPPMLTSPNDFPNWVKTYIK
-      926                            pept_TYIKFLQNSNLGGIIPTVNGKPVR
-      927    pept_FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK
-      928            pept_QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK
-      929                                    pept_DILSVDYTDIMKILSK
-      930                                            pept_ILSKSIEK
-      931                 pept_SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
-      932              pept_MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
-      933                                  pept_VTNIIDRLNNNGIHINNK
-      934                                 pept_LNNNGIHINNKVACQLIMR
-      935                                     pept_VACQLIMRGLSGEYK
-      936                                          pept_GLSGEYKFLR
-      937                                              pept_FLRYTR
-      938                          pept_HRHLNMTVAELFLDIHAIYEEQQGSR
-      939                     pept_HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
-      940                                            pept_NSKPNYRR
-      941                                             pept_RNPSDEK
-      942                                          pept_NPSDEKNDSR
-      943                                       pept_NDSRSYTNTTKPK
-      944                                       pept_SYTNTTKPKVIAR
-      945                                            pept_VIARNPQK
-      946                                           pept_NPQKTNNSK
-      947                                             pept_TNNSKSK
-      948                             pept_TARAHNVSTSNNSPSTDNDSISK
-      949                     pept_AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
-      950                                 pept_STTEPIQLNNKHDLHLGQK
-      951                pept_HDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASR
-      952                    pept_LTESTVNHTNHSDDELPGHLLLDSGASRTLIR
-      953                           pept_TLIRSAHHIHSASSNPDINVVDAQK
-      954                              pept_SAHHIHSASSNPDINVVDAQKR
-      955                                pept_RNIPINAIGDLQFHFQDNTK
-      956                             pept_NIPINAIGDLQFHFQDNTKTSIK
-      957                    pept_TSIKVLHTPNIAYDLLSLNELAAVDITACFTK
-      958                   pept_VLHTPNIAYDLLSLNELAAVDITACFTKNVLER
-      959                                    pept_NVLERSDGTVLAPIVK
-      960                                pept_SDGTVLAPIVKYGDFYWVSK
-      961                                          pept_YGDFYWVSKK
-      962                             pept_KYLLPSNISVPTINNVHTSESTR
-      963                             pept_YLLPSNISVPTINNVHTSESTRK
-      964                                           pept_KYPYPFIHR
-      965                                 pept_YPYPFIHRMLAHANAQTIR
-      966                                     pept_MLAHANAQTIRYSLK
-      967                   pept_YSLKNNTITYFNESDVDWSSAIDYQCPDCLIGK
-      968                    pept_NNTITYFNESDVDWSSAIDYQCPDCLIGKSTK
-      969                                              pept_HIKGSR
-      970           pept_LKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK
-      971           pept_YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFR
-      972                                          pept_FRWVYPLHDR
-      973                                           pept_WVYPLHDRR
-      974                                   pept_REDSILDVFTTILAFIK
-      975                      pept_EDSILDVFTTILAFIKNQFQASVLVIQMDR
-      976                               pept_NQFQASVLVIQMDRGSEYTNR
-      977                                         pept_GSEYTNRTLHK
-      978                                            pept_TLHKFLEK
-      979                                  pept_FLEKNGITPCYTTTADSR
-      980                               pept_NGITPCYTTTADSRAHGVAER
-      981                                          pept_AHGVAERLNR
-      982                                          pept_LNRTLLDDCR
-      983                     pept_TLLDDCRTQLQCSGLPNHLWFSAIEFSTIVR
-      984                     pept_TQLQCSGLPNHLWFSAIEFSTIVRNSLASPK
-      985                                           pept_NSLASPKSK
-      986                   pept_SARQHAGLAGLDISTLLPFGQPVIVNDHNPNSK
-      987                  pept_QHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPR
-      988                                     pept_IHPRGIPGYALHPSR
-      989                            pept_GIPGYALHPSRNSYGYIIYLPSLK
-      990                                      pept_NSYGYIIYLPSLKK
-      991                                      pept_KTVDTTNYVILQGK
-      992                                    pept_TVDTTNYVILQGKESR
-      993                                pept_ESRLDQFNYDALTFDEDLNR
-      994       pept_LTASYHSFIASNEIQESNDLNIESDHDFQSDIELHPEQPRNVLSK
-      995                             pept_NVLSKAVSPTDSTPPSTHTEDSK
-      996                                 pept_AVSPTDSTPPSTHTEDSKR
-      997                                             pept_VSKTNIR
-      998                                             pept_TNIRAPR
-      999                                  pept_APREVDPNISESNILPSK
-      1000                                   pept_EVDPNISESNILPSKK
-      1001                               pept_RSSTPQISNIESTGSGGMHK
-      1002          pept_SSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASK
-      1003                           pept_LNVPLLAPMSQSNTHESSHASKSK
-      1004                      pept_DFRHSDSYSENETNHTNVPISSTGGTNNK
-      1005             pept_HSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEK
-      1006                                      pept_TVPQISDQETEKR
-      1007                          pept_IIHRSPSIDASPPENNSSHNIVPIK
-      1008       pept_TPTTVSEQNTEESIIADLPLPDLPPESPTEFPDPFKELPPINSR
-      1009                      pept_ELPPINSRQTNSSLGGIGDSNAYTTINSK
-      1010                             pept_QTNSSLGGIGDSNAYTTINSKK
-      1011                                        pept_RSLEDNETEIK
-      1012                                      pept_SLEDNETEIKVSR
-      1013                                          pept_VSRDTWNTK
-      1014                                          pept_DTWNTKNMR
-      1015                                          pept_NMRSLEPPR
-      1016                                           pept_SLEPPRSK
-      1017                                          pept_RIHLIAAVK
-      1018                                        pept_IHLIAAVKAVK
-      1019                                          pept_AVKSIKPIR
-      1020                                         pept_SIKPIRTTLR
-      1021                                      pept_TTLRYDEAITYNK
-      1022                                       pept_YDEAITYNKDIK
-      1023                                          pept_EKYIEAYHK
-      1024                                     pept_YIEAYHKEVNQLLK
-      1025                                          pept_EVNQLLKMK
-      1026                                       pept_MKTWDTDEYYDR
-      1027                                        pept_TWDTDEYYDRK
-      1028                                             pept_KEIDPK
-      1029                                             pept_EIDPKR
-      1030                                        pept_RVINSMFIFNK
-      1031                                        pept_VINSMFIFNKK
-      1032                                             pept_RDGTHK
-      1033                                            pept_DGTHKAR
-      1034                                             pept_ARFVAR
-      1035                                pept_EELYIRPPPHLGMNDKLIR
-      1036                                            pept_KSLYGLK
-      1037                                  pept_SLYGLKQSGANWYETIK
-      1038                           pept_QSGANWYETIKSYLIQQCGMEEVR
-      1039                               pept_SYLIQQCGMEEVRGWSCVFK
-      1040                          pept_GWSCVFKNSQVTICLFVDDMVLFSK
-      1041                           pept_NSQVTICLFVDDMVLFSKNLNSNK
-      1042                                            pept_NLNSNKR
-      1043                                             pept_IIEKLK
-      1044                                           pept_LKMQYDTK
-      1045                        pept_MQYDTKIINLGESDEEIQYDILGLEIK
-      1046                           pept_IINLGESDEEIQYDILGLEIKYQR
-      1047                                      pept_YMKLGMENSLTEK
-      1048                                      pept_LGMENSLTEKIPK
-      1049                                        pept_IPKLNVPLNPK
-      1050                                         pept_LNVPLNPKGR
-      1051                          pept_KLSAPGQPGLYIDQDELEIDEDEYK
-      1052                         pept_LSAPGQPGLYIDQDELEIDEDEYKEK
-      1053                                           pept_EKVHEMQK
-      1054                                  pept_VHEMQKLIGLASYVGYK
-      1055                                      pept_LIGLASYVGYKFR
-      1056                              pept_FRFDLLYYINTLAQHILFPSR
-      1057               pept_FDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTR
-      1058                                pept_QVLDMTYELIQFMWDTRDK
-      1059                                           pept_DKQLIWHK
-      1060                                           pept_QLIWHKHK
-      1061                                            pept_HKTSSDK
-      1062                                            pept_TSSDKNI
-      1063      pept_MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK
-      1064                          pept_EVHTNQDPLDVSASKTEECEKASTK
-      1065                           pept_KYVRPPPMLTSPNDFPNWVKTYIK
-      1066        pept_YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR
-      1067       pept_QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK
-      1068                               pept_DILSVDYTDIMKILSKSIEK
-      1069            pept_ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
-      1070         pept_SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
-      1071  pept_MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK
-      1072                         pept_VTNIIDRLNNNGIHINNKVACQLIMR
-      1073                         pept_LNNNGIHINNKVACQLIMRGLSGEYK
-      1074                                 pept_VACQLIMRGLSGEYKFLR
-      1075                                      pept_GLSGEYKFLRYTR
-      1076                                           pept_FLRYTRHR
-      1077                      pept_YTRHRHLNMTVAELFLDIHAIYEEQQGSR
-      1078                  pept_HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
-      1079                   pept_HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR
-      1080                                     pept_NSKPNYRRNPSDEK
-      1081                                        pept_RNPSDEKNDSR
-      1082                                pept_NPSDEKNDSRSYTNTTKPK
-      1083                                  pept_NDSRSYTNTTKPKVIAR
-      1084                                  pept_SYTNTTKPKVIARNPQK
-      1085                                      pept_VIARNPQKTNNSK
-      1086                                        pept_NPQKTNNSKSK
-      1087                                         pept_TNNSKSKTAR
-      1088                          pept_SKTARAHNVSTSNNSPSTDNDSISK
-      1089                 pept_TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
-      1090            pept_AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLGQK
-      1091    pept_STTEPIQLNNKHDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASR
-      1092           pept_HDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASRTLIR
-      1093                         pept_TLIRSAHHIHSASSNPDINVVDAQKR
-      1094          pept_SAHHIHSASSNPDINVVDAQKRNIPINAIGDLQFHFQDNTK
-      1095                           pept_RNIPINAIGDLQFHFQDNTKTSIK
-      1096              pept_TSIKVLHTPNIAYDLLSLNELAAVDITACFTKNVLER
-      1097       pept_VLHTPNIAYDLLSLNELAAVDITACFTKNVLERSDGTVLAPIVK
-      1098                          pept_NVLERSDGTVLAPIVKYGDFYWVSK
-      1099                              pept_SDGTVLAPIVKYGDFYWVSKK
-      1100                   pept_YGDFYWVSKKYLLPSNISVPTINNVHTSESTR
-      1101                           pept_KYLLPSNISVPTINNVHTSESTRK
-      1102                    pept_YLLPSNISVPTINNVHTSESTRKYPYPFIHR
-      1103                               pept_KYPYPFIHRMLAHANAQTIR
-      1104                            pept_YPYPFIHRMLAHANAQTIRYSLK
-      1105       pept_MLAHANAQTIRYSLKNNTITYFNESDVDWSSAIDYQCPDCLIGK
-      1106               pept_YSLKNNTITYFNESDVDWSSAIDYQCPDCLIGKSTK
-      1107                 pept_NNTITYFNESDVDWSSAIDYQCPDCLIGKSTKHR
-      1108                                           pept_STKHRHIK
-      1109                                           pept_HRHIKGSR
-      1110                                           pept_HIKGSRLK
-      1111       pept_GSRLKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK
-      1112        pept_LKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFR
-      1113  pept_YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFRWVYPLHDR
-      1114                                        pept_FRWVYPLHDRR
-      1115                          pept_WVYPLHDRREDSILDVFTTILAFIK
-      1116                    pept_REDSILDVFTTILAFIKNQFQASVLVIQMDR
-      1117              pept_EDSILDVFTTILAFIKNQFQASVLVIQMDRGSEYTNR
-      1118                          pept_NQFQASVLVIQMDRGSEYTNRTLHK
-      1119                                    pept_GSEYTNRTLHKFLEK
-      1120                             pept_TLHKFLEKNGITPCYTTTADSR
-      1121                          pept_FLEKNGITPCYTTTADSRAHGVAER
-      1122                           pept_NGITPCYTTTADSRAHGVAERLNR
-      1123                                  pept_AHGVAERLNRTLLDDCR
-      1124                 pept_LNRTLLDDCRTQLQCSGLPNHLWFSAIEFSTIVR
-      1125             pept_TLLDDCRTQLQCSGLPNHLWFSAIEFSTIVRNSLASPK
-      1126                  pept_TQLQCSGLPNHLWFSAIEFSTIVRNSLASPKSK
-      1127                                         pept_NSLASPKSKK
-      1128                                             pept_SKKSAR
-      1129                 pept_KSARQHAGLAGLDISTLLPFGQPVIVNDHNPNSK
-      1130              pept_SARQHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPR
-      1131      pept_QHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPRGIPGYALHPSR
-      1132                       pept_IHPRGIPGYALHPSRNSYGYIIYLPSLK
-      1133                          pept_GIPGYALHPSRNSYGYIIYLPSLKK
-      1134                        pept_NSYGYIIYLPSLKKTVDTTNYVILQGK
-      1135                                  pept_KTVDTTNYVILQGKESR
-      1136                  pept_TVDTTNYVILQGKESRLDQFNYDALTFDEDLNR
-      1137                           pept_NVLSKAVSPTDSTPPSTHTEDSKR
-      1138                             pept_AVSPTDSTPPSTHTEDSKRVSK
-      1139                                           pept_RVSKTNIR
-      1140                                         pept_VSKTNIRAPR
-      1141                             pept_TNIRAPREVDPNISESNILPSK
-      1142                                pept_APREVDPNISESNILPSKK
-      1143                                  pept_EVDPNISESNILPSKKR
-      1144                              pept_KRSSTPQISNIESTGSGGMHK
-      1145         pept_RSSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASK
-      1146        pept_SSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASKSK
-      1147                        pept_LNVPLLAPMSQSNTHESSHASKSKDFR
-      1148                    pept_SKDFRHSDSYSENETNHTNVPISSTGGTNNK
-      1149          pept_DFRHSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEK
-      1150            pept_HSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEKR
-      1151                                  pept_TVPQISDQETEKRIIHR
-      1152                         pept_RIIHRSPSIDASPPENNSSHNIVPIK
-      1153                     pept_ELPPINSRQTNSSLGGIGDSNAYTTINSKK
-      1154                            pept_QTNSSLGGIGDSNAYTTINSKKR
-      1155                                       pept_KRSLEDNETEIK
-      1156                                     pept_RSLEDNETEIKVSR
-      1157                                pept_SLEDNETEIKVSRDTWNTK
-      1158                                       pept_VSRDTWNTKNMR
-      1159                                    pept_DTWNTKNMRSLEPPR
-      1160                                        pept_NMRSLEPPRSK
-      1161                                          pept_SLEPPRSKK
-      1162                                         pept_KRIHLIAAVK
-      1163                                       pept_RIHLIAAVKAVK
-      1164                                  pept_IHLIAAVKAVKSIKPIR
-      1165                                      pept_AVKSIKPIRTTLR
-      1166                                pept_SIKPIRTTLRYDEAITYNK
-      1167                                   pept_TTLRYDEAITYNKDIK
-      1168                                     pept_YDEAITYNKDIKEK
-      1169                                            pept_DIKEKEK
-      1170                                        pept_EKEKYIEAYHK
-      1171                                   pept_EKYIEAYHKEVNQLLK
-      1172                                   pept_YIEAYHKEVNQLLKMK
-      1173                                pept_EVNQLLKMKTWDTDEYYDR
-      1174                                      pept_MKTWDTDEYYDRK
-      1175                                   pept_TWDTDEYYDRKEIDPK
-      1176                                            pept_KEIDPKR
-      1177                                   pept_EIDPKRVINSMFIFNK
-      1178                                       pept_RVINSMFIFNKK
-      1179                                       pept_VINSMFIFNKKR
-      1180                                            pept_KRDGTHK
-      1181                                           pept_RDGTHKAR
-      1182                                        pept_DGTHKARFVAR
-      1183                              pept_EELYIRPPPHLGMNDKLIRLK
-      1184                                             pept_LIRLKK
-      1185                                          pept_LKKSLYGLK
-      1186                                 pept_KSLYGLKQSGANWYETIK
-      1187                     pept_SLYGLKQSGANWYETIKSYLIQQCGMEEVR
-      1188                    pept_QSGANWYETIKSYLIQQCGMEEVRGWSCVFK
-      1189             pept_SYLIQQCGMEEVRGWSCVFKNSQVTICLFVDDMVLFSK
-      1190                    pept_GWSCVFKNSQVTICLFVDDMVLFSKNLNSNK
-      1191                          pept_NSQVTICLFVDDMVLFSKNLNSNKR
-      1192                                        pept_NLNSNKRIIEK
-      1193                                            pept_RIIEKLK
-      1194                                       pept_IIEKLKMQYDTK
-      1195                      pept_LKMQYDTKIINLGESDEEIQYDILGLEIK
-      1196                     pept_MQYDTKIINLGESDEEIQYDILGLEIKYQR
-      1197                         pept_IINLGESDEEIQYDILGLEIKYQRGK
-      1198                                           pept_YQRGKYMK
-      1199                                    pept_GKYMKLGMENSLTEK
-      1200                                   pept_YMKLGMENSLTEKIPK
-      1201                              pept_LGMENSLTEKIPKLNVPLNPK
-      1202                                      pept_IPKLNVPLNPKGR
-      1203                                        pept_LNVPLNPKGRK
-      1204                        pept_GRKLSAPGQPGLYIDQDELEIDEDEYK
-      1205                        pept_KLSAPGQPGLYIDQDELEIDEDEYKEK
-      1206                   pept_LSAPGQPGLYIDQDELEIDEDEYKEKVHEMQK
-      1207                                pept_EKVHEMQKLIGLASYVGYK
-      1208                                pept_VHEMQKLIGLASYVGYKFR
-      1209                   pept_LIGLASYVGYKFRFDLLYYINTLAQHILFPSR
-      1210             pept_FRFDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTR
-      1211             pept_FDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTRDK
-      1212                          pept_QVLDMTYELIQFMWDTRDKQLIWHK
-      1213                                         pept_DKQLIWHKHK
-      1214                                      pept_QLIWHKHKTSSDK
-      1215                                          pept_HKTSSDKNI
-      1216                            pept_ESQQLSQHSPISHGSACASVTSK
-      1217             pept_ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK
-      1218       pept_ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK
-                                                      peptide
-      1                              MESQQLHQNPHSQHGSAYASVTSK
-      2                                 EVPSNQDPLAVSASNLPEFDR
-      3        VNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK
-      4                                  NNVLPPHTLTSEENFSTWVK
-      5                                      NSNLGDIIPNDQGEIK
-      6                          QMTYEEHAYIYNTFQAFAPFHLLPTWVK
-      7                                      QILEINYSDILTVLCK
-      8                                             MQTNNQELK
-      9                         DWIALANLEYNGSTSADTFEITVSTIIQR
-      10                                            ENNINVSDR
-      11                                             LACQLILK
-      12                                              GLSGDFK
-      13                                     LSQLFAEIQLIYDENK
-      14                                          IMNLNKPSQYK
-      15                                               QHSEYK
-      16                                            TSPNTTNTK
-      17                                              TNSSKPR
-      18                                            AHNIATSSK
-      19                       VNSDHINESTVSSQYLSDDNELSLRPATER
-      20        MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDR
-      21                            EVPSNQDPLAVSASNLPEFDRDSTK
-      22   DSTKVNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK
-      23                               VRNNVLPPHTLTSEENFSTWVK
-      24                             NNVLPPHTLTSEENFSTWVKFYIR
-      25                                              FYIRFLK
-      26                                  FLKNSNLGDIIPNDQGEIK
-      27                                    NSNLGDIIPNDQGEIKR
-      28                        RQMTYEEHAYIYNTFQAFAPFHLLPTWVK
-      29         QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK
-      30                                 QILEINYSDILTVLCKSVSK
-      31                                        SVSKMQTNNQELK
-      32               MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR
-      33                      DWIALANLEYNGSTSADTFEITVSTIIQRLK
-      34                                          LKENNINVSDR
-      35                                    ENNINVSDRLACQLILK
-      36                                      LACQLILKGLSGDFK
-      37                                           GLSGDFKYLR
-      38                                              YLRNQYR
-      39                                               NQYRTK
-      40                                               TKTNMK
-      41                                 TNMKLSQLFAEIQLIYDENK
-      42                          LSQLFAEIQLIYDENKIMNLNKPSQYK
-      43                                    IMNLNKPSQYKQHSEYK
-      44                                           QHSEYKNVSR
-      45                                        NVSRTSPNTTNTK
-      46                                        TSPNTTNTKVTTR
-      47                                             VTTRNYHR
-      48                                          NYHRTNSSKPR
-      49                                           TNSSKPRAAK
-      50                                         AAKAHNIATSSK
-      51                                         AHNIATSSKFSR
-      52                    FSRVNSDHINESTVSSQYLSDDNELSLRPATER
-      53                      VNSDHINESTVSSQYLSDDNELSLRPATERI
-      54    MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDRDSTK
-      55                             TKVRNNVLPPHTLTSEENFSTWVK
-      56                           VRNNVLPPHTLTSEENFSTWVKFYIR
-      57                          NNVLPPHTLTSEENFSTWVKFYIRFLK
-      58                              FYIRFLKNSNLGDIIPNDQGEIK
-      59                                 FLKNSNLGDIIPNDQGEIKR
-      60        NSNLGDIIPNDQGEIKRQMTYEEHAYIYNTFQAFAPFHLLPTWVK
-      61        RQMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK
-      62     QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCKSVSK
-      63                        QILEINYSDILTVLCKSVSKMQTNNQELK
-      64           SVSKMQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR
-      65             MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQRLK
-      66             DWIALANLEYNGSTSADTFEITVSTIIQRLKENNINVSDR
-      67                                  LKENNINVSDRLACQLILK
-      68                             ENNINVSDRLACQLILKGLSGDFK
-      69                                   LACQLILKGLSGDFKYLR
-      70                                       GLSGDFKYLRNQYR
-      71                                            YLRNQYRTK
-      72                                           NQYRTKTNMK
-      73                               TKTNMKLSQLFAEIQLIYDENK
-      74                      TNMKLSQLFAEIQLIYDENKIMNLNKPSQYK
-      75                    LSQLFAEIQLIYDENKIMNLNKPSQYKQHSEYK
-      76                                IMNLNKPSQYKQHSEYKNVSR
-      77                                  QHSEYKNVSRTSPNTTNTK
-      78                                    NVSRTSPNTTNTKVTTR
-      79                                    TSPNTTNTKVTTRNYHR
-      80                                      VTTRNYHRTNSSKPR
-      81                                       NYHRTNSSKPRAAK
-      82                                  TNSSKPRAAKAHNIATSSK
-      83                                      AAKAHNIATSSKFSR
-      84           AHNIATSSKFSRVNSDHINESTVSSQYLSDDNELSLRPATER
-      85                   FSRVNSDHINESTVSSQYLSDDNELSLRPATERI
-      86                              ESQQLHQNPHSQHGSAYASVTSK
-      87         ESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDR
-      88     ESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDRDSTK
-      89                                            MTIESTLAR
-      90                           ELESLILPADSIVNVVDQFQEELLSR
-      91                                    LQTNTISMLPQCLVPDK
-      92                                               WNPEDK
-      93                                           ILTIDFGGTR
-      94              FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTR
-      95                                             LAANGYIK
-      96                                             NESSEASK
-      97                               FFVSVTFSFPLNPEGEVVAMGK
-      98                                       GFVMTDTLQGSTVK
-      99                                            QLIQSSFHR
-      100                      IISENIEEFFCTMNVCHVINDAIAVSLTSK
-      101                     FICENDSISLIIGTGTNACFEVPYGYLPPFK
-      102                                           ETLPSSYNK
-      103                                              ETLNFK
-      104                                       HVLINSEIGFIGK
-      105                         NVIALQPFDIHGAISYEMPLECVTSGK
-      106                                             WLPLSLK
-      107                                         NILLQYNIIPK
-      108                NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIAR
-      109                                 AAFYVAAIVQAIDIITGCK
-      110                               NYNFIHIGYVGSFLHNSNFYR
-      111                                            YYSSIHIK
-      112                                LQFLNHSNLLGAAIATYLNK
-      113                                              SDNQVQ
-      114                 MTIESTLARELESLILPADSIVNVVDQFQEELLSR
-      115         ELESLILPADSIVNVVDQFQEELLSRLQTNTISMLPQCLVPDK
-      116                                  LQTNTISMLPQCLVPDKR
-      117                                            SRWNPEDK
-      118                                    WNPEDKILTIDFGGTR
-      119                                        ILTIDFGGTRLK
-      120           LKFAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTR
-      121     FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIK
-      122                                           LAANGYIKK
-      123                                           KNESSEASK
-      124                      NESSEASKFFVSVTFSFPLNPEGEVVAMGK
-      125                FFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVK
-      126                             GFVMTDTLQGSTVKQLIQSSFHR
-      127             QLIQSSFHRIISENIEEFFCTMNVCHVINDAIAVSLTSK
-      128                    FICENDSISLIIGTGTNACFEVPYGYLPPFKR
-      129                                       DALRETLPSSYNK
-      130                                     ETLPSSYNKETLNFK
-      131                                 ETLNFKHVLINSEIGFIGK
-      132            HVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGK
-      133                  NVIALQPFDIHGAISYEMPLECVTSGKWLPLSLK
-      134                                  WLPLSLKNILLQYNIIPK
-      135     NILLQYNIIPKNFPVEFNGELVCQLAEDCTNAWFENEHYALICQIAR
-      136            NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIARLLIK
-      137                                RAAFYVAAIVQAIDIITGCK
-      138            AAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYR
-      139                           NYNFIHIGYVGSFLHNSNFYREQIK
-      140                                        EQIKYYSSIHIK
-      141                        YYSSIHIKLQFLNHSNLLGAAIATYLNK
-      142                          LQFLNHSNLLGAAIATYLNKSDNQVQ
-      143        ELESLILPADSIVNVVDQFQEELLSRLQTNTISMLPQCLVPDKR
-      144                                LQTNTISMLPQCLVPDKRSR
-      145                                           RSRWNPEDK
-      146                                  SRWNPEDKILTIDFGGTR
-      147                                  WNPEDKILTIDFGGTRLK
-      148   LKFAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIK
-      149    FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIKK
-      150                                          LAANGYIKKK
-      151                                          KKNESSEASK
-      152                     KNESSEASKFFVSVTFSFPLNPEGEVVAMGK
-      153        NESSEASKFFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVK
-      154       FFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVKQLIQSSFHR
-      155                FICENDSISLIIGTGTNACFEVPYGYLPPFKRDALR
-      156                                      RDALRETLPSSYNK
-      157                                 DALRETLPSSYNKETLNFK
-      158                        ETLPSSYNKETLNFKHVLINSEIGFIGK
-      159      ETLNFKHVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGK
-      160     HVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGKWLPLSLK
-      161       NVIALQPFDIHGAISYEMPLECVTSGKWLPLSLKNILLQYNIIPK
-      162           NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIARLLIKR
-      163                            LLIKRAAFYVAAIVQAIDIITGCK
-      164           RAAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYR
-      165        AAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYREQIK
-      166                   NYNFIHIGYVGSFLHNSNFYREQIKYYSSIHIK
-      167                    EQIKYYSSIHIKLQFLNHSNLLGAAIATYLNK
-      168                  YYSSIHIKLQFLNHSNLLGAAIATYLNKSDNQVQ
-      169                                            TIESTLAR
-      170                  TIESTLARELESLILPADSIVNVVDQFQEELLSR
-      171                                         EVGTYECEGER
-      172         DTYSFFTSLSDIQDSSSNEEQCGVGSILSEDSFTFEGSNVSIR
-      173                                   LFSLDLNALNENENGSK
-      174                                              FTIPPK
-      175                                           VAVLPENSR
-      176                                        NYLVESSMDSSR
-      177                                          EYSQPFFDWR
-      178                                  HEMVEHGEESVKPCGCHK
-      179                                           ELEMENIEK
-      180                                             DIIEWCR
-      181                                              DYEVNK
-      182                               EVCVPSIHEFYLHGNGSDNLF
-      183                                            MGKACLNK
-      184                                    ACLNKEVGTYECEGER
-      185                               LFSLDLNALNENENGSKNPVK
-      186                                          NPVKFTIPPK
-      187                                          FTIPPKIEQR
-      188                                          RVAVLPENSR
-      189                               VAVLPENSRNYLVESSMDSSR
-      190                              NYLVESSMDSSREYSQPFFDWR
-      191                        EYSQPFFDWRHEMVEHGEESVKPCGCHK
-      192                                HEMVEHGEESVKPCGCHKSR
-      193                                        CFKELEMENIEK
-      194                                       ELEMENIEKGDIK
-      195                                              KSLFYR
-      196                                        SLFYRDIIEWCR
-      197                                       DIIEWCRDYEVNK
-      198                                            DYEVNKTR
-      199                             TREVCVPSIHEFYLHGNGSDNLF
-      200                                 MGKACLNKEVGTYECEGER
-      201                         LFSLDLNALNENENGSKNPVKFTIPPK
-      202                                      NPVKFTIPPKIEQR
-      203                                         FTIPPKIEQRK
-      204                                            IEQRKEAR
-      205                                              KEARQR
-      206                                             EARQREK
-      207                                        LRRVAVLPENSR
-      208                              RVAVLPENSRNYLVESSMDSSR
-      209                     VAVLPENSRNYLVESSMDSSREYSQPFFDWR
-      210            NYLVESSMDSSREYSQPFFDWRHEMVEHGEESVKPCGCHK
-      211                      EYSQPFFDWRHEMVEHGEESVKPCGCHKSR
-      212                               HEMVEHGEESVKPCGCHKSRK
-      213                                              KAKCFK
-      214                                      AKCFKELEMENIEK
-      215                                    CFKELEMENIEKGDIK
-      216                                      ELEMENIEKGDIKK
-      217                                          GDIKKSLFYR
-      218                                       KSLFYRDIIEWCR
-      219                                  SLFYRDIIEWCRDYEVNK
-      220                                     DIIEWCRDYEVNKTR
-      221                       DYEVNKTREVCVPSIHEFYLHGNGSDNLF
-      222                                             GKACLNK
-      223                                  GKACLNKEVGTYECEGER
-      224                            MESQQLSQHSPISHGSACASVTSK
-      225                                     EVHTNQDPLDVSASK
-      226                                              TEECEK
-      227                                 YVRPPPMLTSPNDFPNWVK
-      228                                FLQNSNLGGIIPTVNGKPVR
-      229                        QITDDELTFLYNTFQIFAPSQFLPTWVK
-      230                                        DILSVDYTDIMK
-      231                     MQSDTQEANDIVTLANLQYNGSTPADAFETK
-      232                                             VTNIIDR
-      233                                         LNNNGIHINNK
-      234                                            VACQLIMR
-      235                                             GLSGEYK
-      236                            HLNMTVAELFLDIHAIYEEQQGSR
-      237                                             NSKPNYR
-      238                                              NPSDEK
-      239                                           SYTNTTKPK
-      240                                AHNVSTSNNSPSTDNDSISK
-      241                                         STTEPIQLNNK
-      242                                          HDLHLRPETY
-      243             MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK
-      244                               EVHTNQDPLDVSASKTEECEK
-      245                                          TEECEKASTK
-      246                                KYVRPPPMLTSPNDFPNWVK
-      247                             YVRPPPMLTSPNDFPNWVKTYIK
-      248                            TYIKFLQNSNLGGIIPTVNGKPVR
-      249    FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK
-      250            QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK
-      251                                    DILSVDYTDIMKILSK
-      252                                            ILSKSIEK
-      253                 SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
-      254              MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
-      255                                  VTNIIDRLNNNGIHINNK
-      256                                 LNNNGIHINNKVACQLIMR
-      257                                     VACQLIMRGLSGEYK
-      258                                          GLSGEYKFLR
-      259                                              FLRYTR
-      260                          HRHLNMTVAELFLDIHAIYEEQQGSR
-      261                     HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
-      262                                            NSKPNYRR
-      263                                             RNPSDEK
-      264                                          NPSDEKNDSR
-      265                                       NDSRSYTNTTKPK
-      266                                       SYTNTTKPKVIAR
-      267                                            VIARNPQK
-      268                                           NPQKTNNSK
-      269                                             TNNSKSK
-      270                             TARAHNVSTSNNSPSTDNDSISK
-      271                     AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
-      272                               STTEPIQLNNKHDLHLRPETY
-      273       MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK
-      274                           EVHTNQDPLDVSASKTEECEKASTK
-      275                            KYVRPPPMLTSPNDFPNWVKTYIK
-      276         YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR
-      277        QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK
-      278                                DILSVDYTDIMKILSKSIEK
-      279             ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
-      280          SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
-      281   MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK
-      282                          VTNIIDRLNNNGIHINNKVACQLIMR
-      283                          LNNNGIHINNKVACQLIMRGLSGEYK
-      284                                  VACQLIMRGLSGEYKFLR
-      285                                       GLSGEYKFLRYTR
-      286                                            FLRYTRHR
-      287                       YTRHRHLNMTVAELFLDIHAIYEEQQGSR
-      288                   HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
-      289                    HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR
-      290                                      NSKPNYRRNPSDEK
-      291                                         RNPSDEKNDSR
-      292                                 NPSDEKNDSRSYTNTTKPK
-      293                                   NDSRSYTNTTKPKVIAR
-      294                                   SYTNTTKPKVIARNPQK
-      295                                       VIARNPQKTNNSK
-      296                                         NPQKTNNSKSK
-      297                                          TNNSKSKTAR
-      298                           SKTARAHNVSTSNNSPSTDNDSISK
-      299                  TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
-      300           AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLRPETY
-      301                             ESQQLSQHSPISHGSACASVTSK
-      302              ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK
-      303        ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK
-      304                            MESQQLHQNPHSLHGSAAASVTSK
-      305                               EVPSNQDPLAVSASNLPEFDR
-      306      VNSQQETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK
-      307                                NNVLPPHTLTSEENFSTWVK
-      308                                    NSNLGDIIPNDQGEIK
-      309                        QMTYEEHAYIYNTFQAFAPFHLLPTWVK
-      310                                    QILEINYADILTVLCK
-      311                                           MQTNNQELK
-      312                       DWIALANLEYDGSTSADTFEITVSTIIQR
-      313                                           ENNINVSDR
-      314                                            LACQLILK
-      315                                             GLSGDFK
-      316                                    LSQLFAEIQLIYDENK
-      317                                         IMNLNKPSQYK
-      318                                              QHSEYK
-      319                                           TSPNTTNTK
-      320                                             TNSSKPR
-      321                                           AHNIATSSK
-      322                       VNNDHINESTVSSQYLSDDNELSLGQQQK
-      323                                              ESKPTR
-      324                            TIDSNDELPDHLLIDSGASQTLVR
-      325                               SAHYLHHATPNSEINIVDAQK
-      326                                QDIPINAIGNLHFNFQNGTK
-      327                        ALHTPNIAYDLLSLSELANQNITACFTR
-      328                                         SDGTVLAPIVK
-      329                                           HGDFYWLSK
-      330                                           YLIPSHISK
-      331                                            LTINNVNK
-      332                                            YPYPLIHR
-      333                                            MLGHANFR
-      334                                             NAVTYLK
-      335                               ESDIEWSNASTYQCPDCLIGK
-      336                            YQESYEPFQYLHTDIFGPVHHLPK
-      337                                       SAPSYFISFTDEK
-      338                                          FQWVYPLHDR
-      339                                    EESILNVFTSILAFIK
-      340                                              NQFNAR
-      341                                            VLVIQMDR
-      342                                             GSEYTNK
-      343                                       GITACYTTTADSR
-      344                                             AHGVAER
-      345                                             TLLNDCR
-      346                            TLLHCSGLPNHLWFSAVEFSTIIR
-      347                                             NSLVSPK
-      348                      QHAGLAGLDITTILPFGQPVIVNNHNPDSK
-      349                                         GIPGYALHPSR
-      350                                       NSYGYIIYLPSLK
-      351                                    TVDTTNYVILQDNQSK
-      352                                   LDQFNYDTLTFDDDLNR
-      353                                   EVDADISEYNILPSTIR
-      354                                             TPHIINK
-      355                                   ESTEMGGTIESDTTSPR
-      356                                            HSSTFTAR
-      357                                    RPGSPNDMIDLTSQDR
-      358                                           VNYGLENIK
-      359                                         LGGTEEPYIQR
-      360                                             NSDTNIK
-      361                                         TTNSTPSIDDR
-      362                                    SSNSESTTPIISIETK
-      363                                   AVCDNTPSIDTDPPEYR
-      364                                       SSDHATPNIMPDK
-      365                                 NVTADSILDDLPLPDLTNK
-      366                                          SPTDTSDVSK
-      367                                            DIPHIHSR
-      368                                 QTNSSLGGMDDSNVLTTTK
-      369                                       SLEDNETEIEVSR
-      370                                              DTWNNK
-      371                                              SLEPPR
-      372                                            INLIAAIK
-      373                                              SIKPVR
-      374                                           YDEAITYNK
-      375                                             YVEAYHK
-      376                                             EISQLLK
-      377                                            MNTWDTNK
-      378                                              NDIDPK
-      379                                          VINSMFIFNK
-      380                                    EELYIRPPPHLGLNDK
-      381                                              SLYGLK
-      382                                         QSGANWYETIK
-      383                                       SYLINCCDMQEVR
-      384                                             GWSCVFK
-      385                                  NSQVTICLFVDDMILFSK
-      386                                              DLNANK
-      387                                              IITTLK
-      388                               IINLGEGDNEIQYDILGLEIK
-      389                                            LNVPLNPK
-      390                              APGQPGHYIDQDELEIDEDEYK
-      391                                              VHEMQK
-      392                                         LIGLASYVGYK
-      393                                 FDLLYYINTLAQHILFPSR
-      394                                   QVLDMTYELIQFIWNTR
-      395                                              QLIWHK
-      396                                           SKPVKPTNK
-      397                                    LVVISDASYGNQPYYK
-      398                                        SQIGNIYLLNGK
-      399                 ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK
-      400                                             GLLTDSR
-      401                                             STISIIK
-      402                                              STNEEK
-      403                                    DEVSGNNLYVYYIETK
-      404                                      MNIADVMTKPLPIK
-      405       MESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDR
-      406                           EVPSNQDPLAVSASNLPEFDRDSTK
-      407  DSTKVNSQQETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK
-      408                              VRNNVLPPHTLTSEENFSTWVK
-      409                            NNVLPPHTLTSEENFSTWVKFYIR
-      410                                             FYIRFLK
-      411                                 FLKNSNLGDIIPNDQGEIK
-      412                                   NSNLGDIIPNDQGEIKR
-      413                       RQMTYEEHAYIYNTFQAFAPFHLLPTWVK
-      414        QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCK
-      415                                QILEINYADILTVLCKSVSK
-      416                                       SVSKMQTNNQELK
-      417              MQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQR
-      418                     DWIALANLEYDGSTSADTFEITVSTIIQRLK
-      419                                         LKENNINVSDR
-      420                                   ENNINVSDRLACQLILK
-      421                                     LACQLILKGLSGDFK
-      422                                          GLSGDFKYLR
-      423                                             YLRNQYR
-      424                                              NQYRTK
-      425                                              TKTNMK
-      426                                TNMKLSQLFAEIQLIYDENK
-      427                         LSQLFAEIQLIYDENKIMNLNKPSQYK
-      428                                   IMNLNKPSQYKQHSEYK
-      429                                          QHSEYKNVSR
-      430                                       NVSRTSPNTTNTK
-      431                                       TSPNTTNTKVTSR
-      432                                            VTSRNYHR
-      433                                         NYHRTNSSKPR
-      434                                          TNSSKPRAAK
-      435                                        AAKAHNIATSSK
-      436                                        AHNIATSSKFSR
-      437                    FSRVNNDHINESTVSSQYLSDDNELSLGQQQK
-      438                 VNNDHINESTVSSQYLSDDNELSLGQQQKESKPTR
-      439                      ESKPTRTIDSNDELPDHLLIDSGASQTLVR
-      440       TIDSNDELPDHLLIDSGASQTLVRSAHYLHHATPNSEINIVDAQK
-      441           SAHYLHHATPNSEINIVDAQKQDIPINAIGNLHFNFQNGTK
-      442                            QDIPINAIGNLHFNFQNGTKTSIK
-      443                    TSIKALHTPNIAYDLLSLSELANQNITACFTR
-      444                   ALHTPNIAYDLLSLSELANQNITACFTRNTLER
-      445                                    NTLERSDGTVLAPIVK
-      446                                SDGTVLAPIVKHGDFYWLSK
-      447                                          HGDFYWLSKK
-      448                                          KYLIPSHISK
-      449                                   YLIPSHISKLTINNVNK
-      450                                          LTINNVNKSK
-      451                                              SKSVNK
-      452                                        SVNKYPYPLIHR
-      453                                    YPYPLIHRMLGHANFR
-      454                                        MLGHANFRSIQK
-      455                                             SIQKSLK
-      456                                            KNAVTYLK
-      457                        NAVTYLKESDIEWSNASTYQCPDCLIGK
-      458                            ESDIEWSNASTYQCPDCLIGKSTK
-      459                                              HIKGSR
-      460                          LKYQESYEPFQYLHTDIFGPVHHLPK
-      461               YQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEK
-      462                                     SAPSYFISFTDEKTR
-      463                                        TRFQWVYPLHDR
-      464                                         FQWVYPLHDRR
-      465                                   REESILNVFTSILAFIK
-      466                              EESILNVFTSILAFIKNQFNAR
-      467                                      NQFNARVLVIQMDR
-      468                                     VLVIQMDRGSEYTNK
-      469                                         GSEYTNKTLHK
-      470                                           TLHKFFTNR
-      471                                  FFTNRGITACYTTTADSR
-      472                                GITACYTTTADSRAHGVAER
-      473                                          AHGVAERLNR
-      474                                          LNRTLLNDCR
-      475                     TLLNDCRTLLHCSGLPNHLWFSAVEFSTIIR
-      476                     TLLHCSGLPNHLWFSAVEFSTIIRNSLVSPK
-      477                                          NSLVSPKNDK
-      478                                              NDKSAR
-      479                   SARQHAGLAGLDITTILPFGQPVIVNNHNPDSK
-      480                  QHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPR
-      481                                     IHPRGIPGYALHPSR
-      482                            GIPGYALHPSRNSYGYIIYLPSLK
-      483                                      NSYGYIIYLPSLKK
-      484                                   KTVDTTNYVILQDNQSK
-      485                   TVDTTNYVILQDNQSKLDQFNYDTLTFDDDLNR
-      486                                             EPVQKVR
-      487                                APKEVDADISEYNILPSTIR
-      488                                 EVDADISEYNILPSTIRSR
-      489                                           SRTPHIINK
-      490                            TPHIINKESTEMGGTIESDTTSPR
-      491                           ESTEMGGTIESDTTSPRHSSTFTAR
-      492                                         HSSTFTARNQK
-      493                                 NQKRPGSPNDMIDLTSQDR
-      494                           RPGSPNDMIDLTSQDRVNYGLENIK
-      495                                        VNYGLENIKTTR
-      496                                      TTRLGGTEEPYIQR
-      497                                  LGGTEEPYIQRNSDTNIK
-      498                                           NSDTNIKYR
-      499                                       YRTTNSTPSIDDR
-      500                         TTNSTPSIDDRSSNSESTTPIISIETK
-      501                   SSNSESTTPIISIETKAVCDNTPSIDTDPPEYR
-      502                      AVCDNTPSIDTDPPEYRSSDHATPNIMPDK
-      503                                    SSDHATPNIMPDKSSK
-      504                              SSKNVTADSILDDLPLPDLTNK
-      505                       NVTADSILDDLPLPDLTNKSPTDTSDVSK
-      506                                  SPTDTSDVSKDIPHIHSR
-      507                         DIPHIHSRQTNSSLGGMDDSNVLTTTK
-      508                               QTNSSLGGMDDSNVLTTTKSK
-      509                                      RSLEDNETEIEVSR
-      510                                 SLEDNETEIEVSRDTWNNK
-      511                                           DTWNNKNMR
-      512                                           NMRSLEPPR
-      513                                            SLEPPRSK
-      514                                           RINLIAAIK
-      515                                         INLIAAIKGVK
-      516                                           GVKSIKPVR
-      517                                          SIKPVRTTLR
-      518                                       TTLRYDEAITYNK
-      519                                        YDEAITYNKDNK
-      520                                           DRYVEAYHK
-      521                                      YVEAYHKEISQLLK
-      522                                     EISQLLKMNTWDTNK
-      523                                        MNTWDTNKYYDR
-      524                                          YYDRNDIDPK
-      525                                             NDIDPKK
-      526                                         KVINSMFIFNK
-      527                                         VINSMFIFNKK
-      528                                              RDGTHK
-      529                                             DGTHKAR
-      530                                              ARFVAR
-      531                                 EELYIRPPPHLGLNDKLLR
-      532                                             KSLYGLK
-      533                                   SLYGLKQSGANWYETIK
-      534                            QSGANWYETIKSYLINCCDMQEVR
-      535                                SYLINCCDMQEVRGWSCVFK
-      536                           GWSCVFKNSQVTICLFVDDMILFSK
-      537                            NSQVTICLFVDDMILFSKDLNANK
-      538                                             DLNANKK
-      539                                             KIITTLK
-      540                                             IITTLKK
-      541                                              KQYDTK
-      542                          QYDTKIINLGEGDNEIQYDILGLEIK
-      543                            IINLGEGDNEIQYDILGLEIKYQR
-      544                                            YMKLGMEK
-      545                                          LGMEKSLTEK
-      546                                            SLTEKLPK
-      547                                         LPKLNVPLNPK
-      548                                          LNVPLNPKGK
-      549                            LRAPGQPGHYIDQDELEIDEDEYK
-      550                            APGQPGHYIDQDELEIDEDEYKEK
-      551                                            EKVHEMQK
-      552                                   VHEMQKLIGLASYVGYK
-      553                                       LIGLASYVGYKFR
-      554                               FRFDLLYYINTLAQHILFPSR
-      555                FDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTR
-      556                                 QVLDMTYELIQFIWNTRDK
-      557                                            DKQLIWHK
-      558                                     QLIWHKSKPVKPTNK
-      559                           SKPVKPTNKLVVISDASYGNQPYYK
-      560                        LVVISDASYGNQPYYKSQIGNIYLLNGK
-      561                                   SQIGNIYLLNGKVIGGK
-      562                                            VIGGKSTK
-      563              STKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK
-      564            ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIK
-      565                                        KPIIKGLLTDSR
-      566                                      GLLTDSRSTISIIK
-      567                                       STISIIKSTNEEK
-      568                                            STNEEKFR
-      569                                             NRFFGTK
-      570                                            FFGTKAMR
-      571                                  LRDEVSGNNLYVYYIETK
-      572                      DEVSGNNLYVYYIETKMNIADVMTKPLPIK
-      573                                   MNIADVMTKPLPIKTFK
-      574                                            TFKLLTNK
-      575                                            LLTNKWIH
-      576   MESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDRDSTK
-      577                            TKVRNNVLPPHTLTSEENFSTWVK
-      578                          VRNNVLPPHTLTSEENFSTWVKFYIR
-      579                         NNVLPPHTLTSEENFSTWVKFYIRFLK
-      580                             FYIRFLKNSNLGDIIPNDQGEIK
-      581                                FLKNSNLGDIIPNDQGEIKR
-      582       NSNLGDIIPNDQGEIKRQMTYEEHAYIYNTFQAFAPFHLLPTWVK
-      583       RQMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCK
-      584    QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCKSVSK
-      585                       QILEINYADILTVLCKSVSKMQTNNQELK
-      586          SVSKMQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQR
-      587            MQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQRLK
-      588            DWIALANLEYDGSTSADTFEITVSTIIQRLKENNINVSDR
-      589                                 LKENNINVSDRLACQLILK
-      590                            ENNINVSDRLACQLILKGLSGDFK
-      591                                  LACQLILKGLSGDFKYLR
-      592                                      GLSGDFKYLRNQYR
-      593                                           YLRNQYRTK
-      594                                          NQYRTKTNMK
-      595                              TKTNMKLSQLFAEIQLIYDENK
-      596                     TNMKLSQLFAEIQLIYDENKIMNLNKPSQYK
-      597                   LSQLFAEIQLIYDENKIMNLNKPSQYKQHSEYK
-      598                               IMNLNKPSQYKQHSEYKNVSR
-      599                                 QHSEYKNVSRTSPNTTNTK
-      600                                   NVSRTSPNTTNTKVTSR
-      601                                   TSPNTTNTKVTSRNYHR
-      602                                     VTSRNYHRTNSSKPR
-      603                                      NYHRTNSSKPRAAK
-      604                                 TNSSKPRAAKAHNIATSSK
-      605                                     AAKAHNIATSSKFSR
-      606           AHNIATSSKFSRVNNDHINESTVSSQYLSDDNELSLGQQQK
-      607              FSRVNNDHINESTVSSQYLSDDNELSLGQQQKESKPTR
-      608       SAHYLHHATPNSEINIVDAQKQDIPINAIGNLHFNFQNGTKTSIK
-      609               TSIKALHTPNIAYDLLSLSELANQNITACFTRNTLER
-      610        ALHTPNIAYDLLSLSELANQNITACFTRNTLERSDGTVLAPIVK
-      611                           NTLERSDGTVLAPIVKHGDFYWLSK
-      612                               SDGTVLAPIVKHGDFYWLSKK
-      613                                 HGDFYWLSKKYLIPSHISK
-      614                                  KYLIPSHISKLTINNVNK
-      615                                 YLIPSHISKLTINNVNKSK
-      616                                      LTINNVNKSKSVNK
-      617                                      SKSVNKYPYPLIHR
-      618                                SVNKYPYPLIHRMLGHANFR
-      619                                YPYPLIHRMLGHANFRSIQK
-      620                                     MLGHANFRSIQKSLK
-      621                                            SIQKSLKK
-      622                                         SLKKNAVTYLK
-      623                       KNAVTYLKESDIEWSNASTYQCPDCLIGK
-      624                     NAVTYLKESDIEWSNASTYQCPDCLIGKSTK
-      625                          ESDIEWSNASTYQCPDCLIGKSTKHR
-      626                                            STKHRHIK
-      627                                            HRHIKGSR
-      628                                            HIKGSRLK
-      629                       GSRLKYQESYEPFQYLHTDIFGPVHHLPK
-      630             LKYQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEK
-      631             YQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEKTR
-      632                           SAPSYFISFTDEKTRFQWVYPLHDR
-      633                                       TRFQWVYPLHDRR
-      634                         FQWVYPLHDRREESILNVFTSILAFIK
-      635                             REESILNVFTSILAFIKNQFNAR
-      636                      EESILNVFTSILAFIKNQFNARVLVIQMDR
-      637                               NQFNARVLVIQMDRGSEYTNK
-      638                                 VLVIQMDRGSEYTNKTLHK
-      639                                    GSEYTNKTLHKFFTNR
-      640                              TLHKFFTNRGITACYTTTADSR
-      641                           FFTNRGITACYTTTADSRAHGVAER
-      642                             GITACYTTTADSRAHGVAERLNR
-      643                                   AHGVAERLNRTLLNDCR
-      644                  LNRTLLNDCRTLLHCSGLPNHLWFSAVEFSTIIR
-      645              TLLNDCRTLLHCSGLPNHLWFSAVEFSTIIRNSLVSPK
-      646                  TLLHCSGLPNHLWFSAVEFSTIIRNSLVSPKNDK
-      647                                       NSLVSPKNDKSAR
-      648                NDKSARQHAGLAGLDITTILPFGQPVIVNNHNPDSK
-      649               SARQHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPR
-      650       QHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPRGIPGYALHPSR
-      651                        IHPRGIPGYALHPSRNSYGYIIYLPSLK
-      652                           GIPGYALHPSRNSYGYIIYLPSLKK
-      653                      NSYGYIIYLPSLKKTVDTTNYVILQDNQSK
-      654                  KTVDTTNYVILQDNQSKLDQFNYDTLTFDDDLNR
-      655                                          EPVQKVRAPK
-      656                              VRAPKEVDADISEYNILPSTIR
-      657                              APKEVDADISEYNILPSTIRSR
-      658                          EVDADISEYNILPSTIRSRTPHIINK
-      659                          SRTPHIINKESTEMGGTIESDTTSPR
-      660                    TPHIINKESTEMGGTIESDTTSPRHSSTFTAR
-      661                        ESTEMGGTIESDTTSPRHSSTFTARNQK
-      662                         HSSTFTARNQKRPGSPNDMIDLTSQDR
-      663                        NQKRPGSPNDMIDLTSQDRVNYGLENIK
-      664                        RPGSPNDMIDLTSQDRVNYGLENIKTTR
-      665                             VNYGLENIKTTRLGGTEEPYIQR
-      666                               TTRLGGTEEPYIQRNSDTNIK
-      667                                LGGTEEPYIQRNSDTNIKYR
-      668                                NSDTNIKYRTTNSTPSIDDR
-      669                       YRTTNSTPSIDDRSSNSESTTPIISIETK
-      670        TTNSTPSIDDRSSNSESTTPIISIETKAVCDNTPSIDTDPPEYR
-      671      SSNSESTTPIISIETKAVCDNTPSIDTDPPEYRSSDHATPNIMPDK
-      672                   AVCDNTPSIDTDPPEYRSSDHATPNIMPDKSSK
-      673                 SSDHATPNIMPDKSSKNVTADSILDDLPLPDLTNK
-      674                    SSKNVTADSILDDLPLPDLTNKSPTDTSDVSK
-      675               NVTADSILDDLPLPDLTNKSPTDTSDVSKDIPHIHSR
-      676               SPTDTSDVSKDIPHIHSRQTNSSLGGMDDSNVLTTTK
-      677                       DIPHIHSRQTNSSLGGMDDSNVLTTTKSK
-      678                              QTNSSLGGMDDSNVLTTTKSKK
-      679                                     KRSLEDNETEIEVSR
-      680                                RSLEDNETEIEVSRDTWNNK
-      681                              SLEDNETEIEVSRDTWNNKNMR
-      682                                     DTWNNKNMRSLEPPR
-      683                                         NMRSLEPPRSK
-      684                                           SLEPPRSKK
-      685                                          KRINLIAAIK
-      686                                        RINLIAAIKGVK
-      687                                   INLIAAIKGVKSIKPVR
-      688                                       GVKSIKPVRTTLR
-      689                                 SIKPVRTTLRYDEAITYNK
-      690                                    TTLRYDEAITYNKDNK
-      691                                      YDEAITYNKDNKEK
-      692                                             DNKEKDR
-      693                                         EKDRYVEAYHK
-      694                                    DRYVEAYHKEISQLLK
-      695                              YVEAYHKEISQLLKMNTWDTNK
-      696                                 EISQLLKMNTWDTNKYYDR
-      697                                  MNTWDTNKYYDRNDIDPK
-      698                                         YYDRNDIDPKK
-      699                                   NDIDPKKVINSMFIFNK
-      700                                        KVINSMFIFNKK
-      701                                        VINSMFIFNKKR
-      702                                             KRDGTHK
-      703                                            RDGTHKAR
-      704                                         DGTHKARFVAR
-      705                               EELYIRPPPHLGLNDKLLRLR
-      706                                              LLRLRK
-      707                                           LRKSLYGLK
-      708                                  KSLYGLKQSGANWYETIK
-      709                      SLYGLKQSGANWYETIKSYLINCCDMQEVR
-      710                     QSGANWYETIKSYLINCCDMQEVRGWSCVFK
-      711              SYLINCCDMQEVRGWSCVFKNSQVTICLFVDDMILFSK
-      712                     GWSCVFKNSQVTICLFVDDMILFSKDLNANK
-      713                           NSQVTICLFVDDMILFSKDLNANKK
-      714                                       DLNANKKIITTLK
-      715                                            KIITTLKK
-      716                                        IITTLKKQYDTK
-      717                         KQYDTKIINLGEGDNEIQYDILGLEIK
-      718                       QYDTKIINLGEGDNEIQYDILGLEIKYQR
-      719                          IINLGEGDNEIQYDILGLEIKYQRSK
-      720                                            YQRSKYMK
-      721                                          SKYMKLGMEK
-      722                                       YMKLGMEKSLTEK
-      723                                       LGMEKSLTEKLPK
-      724                                    SLTEKLPKLNVPLNPK
-      725                                       LPKLNVPLNPKGK
-      726                                         LNVPLNPKGKK
-      727                           KLRAPGQPGHYIDQDELEIDEDEYK
-      728                          LRAPGQPGHYIDQDELEIDEDEYKEK
-      729                      APGQPGHYIDQDELEIDEDEYKEKVHEMQK
-      730                                 EKVHEMQKLIGLASYVGYK
-      731                                 VHEMQKLIGLASYVGYKFR
-      732                    LIGLASYVGYKFRFDLLYYINTLAQHILFPSR
-      733              FRFDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTR
-      734              FDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTRDK
-      735                           QVLDMTYELIQFIWNTRDKQLIWHK
-      736                                   DKQLIWHKSKPVKPTNK
-      737                     QLIWHKSKPVKPTNKLVVISDASYGNQPYYK
-      738               SKPVKPTNKLVVISDASYGNQPYYKSQIGNIYLLNGK
-      739                   LVVISDASYGNQPYYKSQIGNIYLLNGKVIGGK
-      740                                SQIGNIYLLNGKVIGGKSTK
-      741         VIGGKSTKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK
-      742         STKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIK
-      743     ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIKGLLTDSR
-      744                                 KPIIKGLLTDSRSTISIIK
-      745                                GLLTDSRSTISIIKSTNEEK
-      746                                     STISIIKSTNEEKFR
-      747                                          STNEEKFRNR
-      748                                           FRNRFFGTK
-      749                                          NRFFGTKAMR
-      750                                          FFGTKAMRLR
-      751                               AMRLRDEVSGNNLYVYYIETK
-      752                    LRDEVSGNNLYVYYIETKMNIADVMTKPLPIK
-      753                   DEVSGNNLYVYYIETKMNIADVMTKPLPIKTFK
-      754                              MNIADVMTKPLPIKTFKLLTNK
-      755                                         TFKLLTNKWIH
-      756                             ESQQLHQNPHSLHGSAAASVTSK
-      757        ESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDR
-      758    ESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDRDSTK
-      759                            MESQQLSNYPHISHGSACASVTSK
-      760                                     EVHTNQDPLDVSASK
-      761                                              IQEYDK
-      762                                 YVRPPPMLTSPNDFPNWVK
-      763                                FLQNSNLGGIIPTVNGKPVR
-      764                        QITDDELTFLYNTFQIFAPSQFLPTWVK
-      765                                        DILSVDYTDIMK
-      766                     MQSDTQEANDIVTLANLQYNGSTPADAFETK
-      767                                             VTNIIDR
-      768                                         LNNNGIHINNK
-      769                                            VACQLIMR
-      770                                             GLSGEYK
-      771                            HLNMTVAELFLDIHAIYEEQQGSR
-      772                                             NSKPNYR
-      773                                              NPSDEK
-      774                                           SYTNTTKPK
-      775                                AHNVSTSNNSPSTDNDSISK
-      776                                         STTEPIQLNNK
-      777                                          HDLHLRPGTY
-      778             MESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASK
-      779                               EVHTNQDPLDVSASKIQEYDK
-      780                                          IQEYDKASTK
-      781                                KYVRPPPMLTSPNDFPNWVK
-      782                             YVRPPPMLTSPNDFPNWVKTYIK
-      783                            TYIKFLQNSNLGGIIPTVNGKPVR
-      784    FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK
-      785            QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK
-      786                                    DILSVDYTDIMKILSK
-      787                                            ILSKSIEK
-      788                 SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
-      789              MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
-      790                                  VTNIIDRLNNNGIHINNK
-      791                                 LNNNGIHINNKVACQLIMR
-      792                                     VACQLIMRGLSGEYK
-      793                                          GLSGEYKFLR
-      794                                              FLRYTR
-      795                          HRHLNMTVAELFLDIHAIYEEQQGSR
-      796                     HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
-      797                                            NSKPNYRR
-      798                                             RNPSDEK
-      799                                          NPSDEKNDSR
-      800                                       NDSRSYTNTTKPK
-      801                                       SYTNTTKPKVIAR
-      802                                            VIARNPQK
-      803                                           NPQKTNNSK
-      804                                             TNNSKSK
-      805                             TARAHNVSTSNNSPSTDNDSISK
-      806                     AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
-      807                               STTEPIQLNNKHDLHLRPGTY
-      808       MESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASKIQEYDK
-      809                           EVHTNQDPLDVSASKIQEYDKASTK
-      810                            KYVRPPPMLTSPNDFPNWVKTYIK
-      811         YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR
-      812        QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK
-      813                                DILSVDYTDIMKILSKSIEK
-      814             ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
-      815          SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
-      816   MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK
-      817                          VTNIIDRLNNNGIHINNKVACQLIMR
-      818                          LNNNGIHINNKVACQLIMRGLSGEYK
-      819                                  VACQLIMRGLSGEYKFLR
-      820                                       GLSGEYKFLRYTR
-      821                                            FLRYTRHR
-      822                       YTRHRHLNMTVAELFLDIHAIYEEQQGSR
-      823                   HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
-      824                    HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR
-      825                                      NSKPNYRRNPSDEK
-      826                                         RNPSDEKNDSR
-      827                                 NPSDEKNDSRSYTNTTKPK
-      828                                   NDSRSYTNTTKPKVIAR
-      829                                   SYTNTTKPKVIARNPQK
-      830                                       VIARNPQKTNNSK
-      831                                         NPQKTNNSKSK
-      832                                          TNNSKSKTAR
-      833                           SKTARAHNVSTSNNSPSTDNDSISK
-      834                  TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
-      835           AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLRPGTY
-      836                             ESQQLSNYPHISHGSACASVTSK
-      837              ESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASK
-      838        ESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASKIQEYDK
-      839                            MESQQLSQHSPISHGSACASVTSK
-      840                                     EVHTNQDPLDVSASK
-      841                                              TEECEK
-      842                                 YVRPPPMLTSPNDFPNWVK
-      843                                FLQNSNLGGIIPTVNGKPVR
-      844                        QITDDELTFLYNTFQIFAPSQFLPTWVK
-      845                                        DILSVDYTDIMK
-      846                     MQSDTQEANDIVTLANLQYNGSTPADAFETK
-      847                                             VTNIIDR
-      848                                         LNNNGIHINNK
-      849                                            VACQLIMR
-      850                                             GLSGEYK
-      851                            HLNMTVAELFLDIHAIYEEQQGSR
-      852                                             NSKPNYR
-      853                                              NPSDEK
-      854                                           SYTNTTKPK
-      855                                AHNVSTSNNSPSTDNDSISK
-      856                                         STTEPIQLNNK
-      857                                            HDLHLGQK
-      858                        LTESTVNHTNHSDDELPGHLLLDSGASR
-      859                               SAHHIHSASSNPDINVVDAQK
-      860                                 NIPINAIGDLQFHFQDNTK
-      861                        VLHTPNIAYDLLSLNELAAVDITACFTK
-      862                                         SDGTVLAPIVK
-      863                                           YGDFYWVSK
-      864                              YLLPSNISVPTINNVHTSESTR
-      865                                            YPYPFIHR
-      866                                         MLAHANAQTIR
-      867                       NNTITYFNESDVDWSSAIDYQCPDCLIGK
-      868             YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK
-      869                                            WVYPLHDR
-      870                                    EDSILDVFTTILAFIK
-      871                                      NQFQASVLVIQMDR
-      872                                             GSEYTNR
-      873                                      NGITPCYTTTADSR
-      874                                             AHGVAER
-      875                                             TLLDDCR
-      876                            TQLQCSGLPNHLWFSAIEFSTIVR
-      877                                             NSLASPK
-      878                      QHAGLAGLDISTLLPFGQPVIVNDHNPNSK
-      879                                         GIPGYALHPSR
-      880                                       NSYGYIIYLPSLK
-      881                                       TVDTTNYVILQGK
-      882                                   LDQFNYDALTFDEDLNR
-      883            LTASYHSFIASNEIQESNDLNIESDHDFQSDIELHPEQPR
-      884                                  AVSPTDSTPPSTHTEDSK
-      885                                     EVDPNISESNILPSK
-      886                                 SSTPQISNIESTGSGGMHK
-      887                              LNVPLLAPMSQSNTHESSHASK
-      888                          HSDSYSENETNHTNVPISSTGGTNNK
-      889                                        TVPQISDQETEK
-      890                               SPSIDASPPENNSSHNIVPIK
-      891                TPTTVSEQNTEESIIADLPLPDLPPESPTEFPDPFK
-      892                                            ELPPINSR
-      893                               QTNSSLGGIGDSNAYTTINSK
-      894                                          SLEDNETEIK
-      895                                              DTWNTK
-      896                                              SLEPPR
-      897                                            IHLIAAVK
-      898                                              SIKPIR
-      899                                           YDEAITYNK
-      900                                             YIEAYHK
-      901                                             EVNQLLK
-      902                                          TWDTDEYYDR
-      903                                          VINSMFIFNK
-      904                                    EELYIRPPPHLGMNDK
-      905                                              SLYGLK
-      906                                         QSGANWYETIK
-      907                                       SYLIQQCGMEEVR
-      908                                             GWSCVFK
-      909                                  NSQVTICLFVDDMVLFSK
-      910                                              NLNSNK
-      911                                              MQYDTK
-      912                               IINLGESDEEIQYDILGLEIK
-      913                                          LGMENSLTEK
-      914                                            LNVPLNPK
-      915                            LSAPGQPGLYIDQDELEIDEDEYK
-      916                                              VHEMQK
-      917                                         LIGLASYVGYK
-      918                                 FDLLYYINTLAQHILFPSR
-      919                                   QVLDMTYELIQFMWDTR
-      920                                              QLIWHK
-      921             MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK
-      922                               EVHTNQDPLDVSASKTEECEK
-      923                                          TEECEKASTK
-      924                                KYVRPPPMLTSPNDFPNWVK
-      925                             YVRPPPMLTSPNDFPNWVKTYIK
-      926                            TYIKFLQNSNLGGIIPTVNGKPVR
-      927    FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK
-      928            QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK
-      929                                    DILSVDYTDIMKILSK
-      930                                            ILSKSIEK
-      931                 SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
-      932              MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
-      933                                  VTNIIDRLNNNGIHINNK
-      934                                 LNNNGIHINNKVACQLIMR
-      935                                     VACQLIMRGLSGEYK
-      936                                          GLSGEYKFLR
-      937                                              FLRYTR
-      938                          HRHLNMTVAELFLDIHAIYEEQQGSR
-      939                     HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
-      940                                            NSKPNYRR
-      941                                             RNPSDEK
-      942                                          NPSDEKNDSR
-      943                                       NDSRSYTNTTKPK
-      944                                       SYTNTTKPKVIAR
-      945                                            VIARNPQK
-      946                                           NPQKTNNSK
-      947                                             TNNSKSK
-      948                             TARAHNVSTSNNSPSTDNDSISK
-      949                     AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
-      950                                 STTEPIQLNNKHDLHLGQK
-      951                HDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASR
-      952                    LTESTVNHTNHSDDELPGHLLLDSGASRTLIR
-      953                           TLIRSAHHIHSASSNPDINVVDAQK
-      954                              SAHHIHSASSNPDINVVDAQKR
-      955                                RNIPINAIGDLQFHFQDNTK
-      956                             NIPINAIGDLQFHFQDNTKTSIK
-      957                    TSIKVLHTPNIAYDLLSLNELAAVDITACFTK
-      958                   VLHTPNIAYDLLSLNELAAVDITACFTKNVLER
-      959                                    NVLERSDGTVLAPIVK
-      960                                SDGTVLAPIVKYGDFYWVSK
-      961                                          YGDFYWVSKK
-      962                             KYLLPSNISVPTINNVHTSESTR
-      963                             YLLPSNISVPTINNVHTSESTRK
-      964                                           KYPYPFIHR
-      965                                 YPYPFIHRMLAHANAQTIR
-      966                                     MLAHANAQTIRYSLK
-      967                   YSLKNNTITYFNESDVDWSSAIDYQCPDCLIGK
-      968                    NNTITYFNESDVDWSSAIDYQCPDCLIGKSTK
-      969                                              HIKGSR
-      970           LKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK
-      971           YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFR
-      972                                          FRWVYPLHDR
-      973                                           WVYPLHDRR
-      974                                   REDSILDVFTTILAFIK
-      975                      EDSILDVFTTILAFIKNQFQASVLVIQMDR
-      976                               NQFQASVLVIQMDRGSEYTNR
-      977                                         GSEYTNRTLHK
-      978                                            TLHKFLEK
-      979                                  FLEKNGITPCYTTTADSR
-      980                               NGITPCYTTTADSRAHGVAER
-      981                                          AHGVAERLNR
-      982                                          LNRTLLDDCR
-      983                     TLLDDCRTQLQCSGLPNHLWFSAIEFSTIVR
-      984                     TQLQCSGLPNHLWFSAIEFSTIVRNSLASPK
-      985                                           NSLASPKSK
-      986                   SARQHAGLAGLDISTLLPFGQPVIVNDHNPNSK
-      987                  QHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPR
-      988                                     IHPRGIPGYALHPSR
-      989                            GIPGYALHPSRNSYGYIIYLPSLK
-      990                                      NSYGYIIYLPSLKK
-      991                                      KTVDTTNYVILQGK
-      992                                    TVDTTNYVILQGKESR
-      993                                ESRLDQFNYDALTFDEDLNR
-      994       LTASYHSFIASNEIQESNDLNIESDHDFQSDIELHPEQPRNVLSK
-      995                             NVLSKAVSPTDSTPPSTHTEDSK
-      996                                 AVSPTDSTPPSTHTEDSKR
-      997                                             VSKTNIR
-      998                                             TNIRAPR
-      999                                  APREVDPNISESNILPSK
-      1000                                   EVDPNISESNILPSKK
-      1001                               RSSTPQISNIESTGSGGMHK
-      1002          SSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASK
-      1003                           LNVPLLAPMSQSNTHESSHASKSK
-      1004                      DFRHSDSYSENETNHTNVPISSTGGTNNK
-      1005             HSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEK
-      1006                                      TVPQISDQETEKR
-      1007                          IIHRSPSIDASPPENNSSHNIVPIK
-      1008       TPTTVSEQNTEESIIADLPLPDLPPESPTEFPDPFKELPPINSR
-      1009                      ELPPINSRQTNSSLGGIGDSNAYTTINSK
-      1010                             QTNSSLGGIGDSNAYTTINSKK
-      1011                                        RSLEDNETEIK
-      1012                                      SLEDNETEIKVSR
-      1013                                          VSRDTWNTK
-      1014                                          DTWNTKNMR
-      1015                                          NMRSLEPPR
-      1016                                           SLEPPRSK
-      1017                                          RIHLIAAVK
-      1018                                        IHLIAAVKAVK
-      1019                                          AVKSIKPIR
-      1020                                         SIKPIRTTLR
-      1021                                      TTLRYDEAITYNK
-      1022                                       YDEAITYNKDIK
-      1023                                          EKYIEAYHK
-      1024                                     YIEAYHKEVNQLLK
-      1025                                          EVNQLLKMK
-      1026                                       MKTWDTDEYYDR
-      1027                                        TWDTDEYYDRK
-      1028                                             KEIDPK
-      1029                                             EIDPKR
-      1030                                        RVINSMFIFNK
-      1031                                        VINSMFIFNKK
-      1032                                             RDGTHK
-      1033                                            DGTHKAR
-      1034                                             ARFVAR
-      1035                                EELYIRPPPHLGMNDKLIR
-      1036                                            KSLYGLK
-      1037                                  SLYGLKQSGANWYETIK
-      1038                           QSGANWYETIKSYLIQQCGMEEVR
-      1039                               SYLIQQCGMEEVRGWSCVFK
-      1040                          GWSCVFKNSQVTICLFVDDMVLFSK
-      1041                           NSQVTICLFVDDMVLFSKNLNSNK
-      1042                                            NLNSNKR
-      1043                                             IIEKLK
-      1044                                           LKMQYDTK
-      1045                        MQYDTKIINLGESDEEIQYDILGLEIK
-      1046                           IINLGESDEEIQYDILGLEIKYQR
-      1047                                      YMKLGMENSLTEK
-      1048                                      LGMENSLTEKIPK
-      1049                                        IPKLNVPLNPK
-      1050                                         LNVPLNPKGR
-      1051                          KLSAPGQPGLYIDQDELEIDEDEYK
-      1052                         LSAPGQPGLYIDQDELEIDEDEYKEK
-      1053                                           EKVHEMQK
-      1054                                  VHEMQKLIGLASYVGYK
-      1055                                      LIGLASYVGYKFR
-      1056                              FRFDLLYYINTLAQHILFPSR
-      1057               FDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTR
-      1058                                QVLDMTYELIQFMWDTRDK
-      1059                                           DKQLIWHK
-      1060                                           QLIWHKHK
-      1061                                            HKTSSDK
-      1062                                            TSSDKNI
-      1063      MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK
-      1064                          EVHTNQDPLDVSASKTEECEKASTK
-      1065                           KYVRPPPMLTSPNDFPNWVKTYIK
-      1066        YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR
-      1067       QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK
-      1068                               DILSVDYTDIMKILSKSIEK
-      1069            ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK
-      1070         SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR
-      1071  MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK
-      1072                         VTNIIDRLNNNGIHINNKVACQLIMR
-      1073                         LNNNGIHINNKVACQLIMRGLSGEYK
-      1074                                 VACQLIMRGLSGEYKFLR
-      1075                                      GLSGEYKFLRYTR
-      1076                                           FLRYTRHR
-      1077                      YTRHRHLNMTVAELFLDIHAIYEEQQGSR
-      1078                  HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR
-      1079                   HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR
-      1080                                     NSKPNYRRNPSDEK
-      1081                                        RNPSDEKNDSR
-      1082                                NPSDEKNDSRSYTNTTKPK
-      1083                                  NDSRSYTNTTKPKVIAR
-      1084                                  SYTNTTKPKVIARNPQK
-      1085                                      VIARNPQKTNNSK
-      1086                                        NPQKTNNSKSK
-      1087                                         TNNSKSKTAR
-      1088                          SKTARAHNVSTSNNSPSTDNDSISK
-      1089                 TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK
-      1090            AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLGQK
-      1091    STTEPIQLNNKHDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASR
-      1092           HDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASRTLIR
-      1093                         TLIRSAHHIHSASSNPDINVVDAQKR
-      1094          SAHHIHSASSNPDINVVDAQKRNIPINAIGDLQFHFQDNTK
-      1095                           RNIPINAIGDLQFHFQDNTKTSIK
-      1096              TSIKVLHTPNIAYDLLSLNELAAVDITACFTKNVLER
-      1097       VLHTPNIAYDLLSLNELAAVDITACFTKNVLERSDGTVLAPIVK
-      1098                          NVLERSDGTVLAPIVKYGDFYWVSK
-      1099                              SDGTVLAPIVKYGDFYWVSKK
-      1100                   YGDFYWVSKKYLLPSNISVPTINNVHTSESTR
-      1101                           KYLLPSNISVPTINNVHTSESTRK
-      1102                    YLLPSNISVPTINNVHTSESTRKYPYPFIHR
-      1103                               KYPYPFIHRMLAHANAQTIR
-      1104                            YPYPFIHRMLAHANAQTIRYSLK
-      1105       MLAHANAQTIRYSLKNNTITYFNESDVDWSSAIDYQCPDCLIGK
-      1106               YSLKNNTITYFNESDVDWSSAIDYQCPDCLIGKSTK
-      1107                 NNTITYFNESDVDWSSAIDYQCPDCLIGKSTKHR
-      1108                                           STKHRHIK
-      1109                                           HRHIKGSR
-      1110                                           HIKGSRLK
-      1111       GSRLKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK
-      1112        LKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFR
-      1113  YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFRWVYPLHDR
-      1114                                        FRWVYPLHDRR
-      1115                          WVYPLHDRREDSILDVFTTILAFIK
-      1116                    REDSILDVFTTILAFIKNQFQASVLVIQMDR
-      1117              EDSILDVFTTILAFIKNQFQASVLVIQMDRGSEYTNR
-      1118                          NQFQASVLVIQMDRGSEYTNRTLHK
-      1119                                    GSEYTNRTLHKFLEK
-      1120                             TLHKFLEKNGITPCYTTTADSR
-      1121                          FLEKNGITPCYTTTADSRAHGVAER
-      1122                           NGITPCYTTTADSRAHGVAERLNR
-      1123                                  AHGVAERLNRTLLDDCR
-      1124                 LNRTLLDDCRTQLQCSGLPNHLWFSAIEFSTIVR
-      1125             TLLDDCRTQLQCSGLPNHLWFSAIEFSTIVRNSLASPK
-      1126                  TQLQCSGLPNHLWFSAIEFSTIVRNSLASPKSK
-      1127                                         NSLASPKSKK
-      1128                                             SKKSAR
-      1129                 KSARQHAGLAGLDISTLLPFGQPVIVNDHNPNSK
-      1130              SARQHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPR
-      1131      QHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPRGIPGYALHPSR
-      1132                       IHPRGIPGYALHPSRNSYGYIIYLPSLK
-      1133                          GIPGYALHPSRNSYGYIIYLPSLKK
-      1134                        NSYGYIIYLPSLKKTVDTTNYVILQGK
-      1135                                  KTVDTTNYVILQGKESR
-      1136                  TVDTTNYVILQGKESRLDQFNYDALTFDEDLNR
-      1137                           NVLSKAVSPTDSTPPSTHTEDSKR
-      1138                             AVSPTDSTPPSTHTEDSKRVSK
-      1139                                           RVSKTNIR
-      1140                                         VSKTNIRAPR
-      1141                             TNIRAPREVDPNISESNILPSK
-      1142                                APREVDPNISESNILPSKK
-      1143                                  EVDPNISESNILPSKKR
-      1144                              KRSSTPQISNIESTGSGGMHK
-      1145         RSSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASK
-      1146        SSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASKSK
-      1147                        LNVPLLAPMSQSNTHESSHASKSKDFR
-      1148                    SKDFRHSDSYSENETNHTNVPISSTGGTNNK
-      1149          DFRHSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEK
-      1150            HSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEKR
-      1151                                  TVPQISDQETEKRIIHR
-      1152                         RIIHRSPSIDASPPENNSSHNIVPIK
-      1153                     ELPPINSRQTNSSLGGIGDSNAYTTINSKK
-      1154                            QTNSSLGGIGDSNAYTTINSKKR
-      1155                                       KRSLEDNETEIK
-      1156                                     RSLEDNETEIKVSR
-      1157                                SLEDNETEIKVSRDTWNTK
-      1158                                       VSRDTWNTKNMR
-      1159                                    DTWNTKNMRSLEPPR
-      1160                                        NMRSLEPPRSK
-      1161                                          SLEPPRSKK
-      1162                                         KRIHLIAAVK
-      1163                                       RIHLIAAVKAVK
-      1164                                  IHLIAAVKAVKSIKPIR
-      1165                                      AVKSIKPIRTTLR
-      1166                                SIKPIRTTLRYDEAITYNK
-      1167                                   TTLRYDEAITYNKDIK
-      1168                                     YDEAITYNKDIKEK
-      1169                                            DIKEKEK
-      1170                                        EKEKYIEAYHK
-      1171                                   EKYIEAYHKEVNQLLK
-      1172                                   YIEAYHKEVNQLLKMK
-      1173                                EVNQLLKMKTWDTDEYYDR
-      1174                                      MKTWDTDEYYDRK
-      1175                                   TWDTDEYYDRKEIDPK
-      1176                                            KEIDPKR
-      1177                                   EIDPKRVINSMFIFNK
-      1178                                       RVINSMFIFNKK
-      1179                                       VINSMFIFNKKR
-      1180                                            KRDGTHK
-      1181                                           RDGTHKAR
-      1182                                        DGTHKARFVAR
-      1183                              EELYIRPPPHLGMNDKLIRLK
-      1184                                             LIRLKK
-      1185                                          LKKSLYGLK
-      1186                                 KSLYGLKQSGANWYETIK
-      1187                     SLYGLKQSGANWYETIKSYLIQQCGMEEVR
-      1188                    QSGANWYETIKSYLIQQCGMEEVRGWSCVFK
-      1189             SYLIQQCGMEEVRGWSCVFKNSQVTICLFVDDMVLFSK
-      1190                    GWSCVFKNSQVTICLFVDDMVLFSKNLNSNK
-      1191                          NSQVTICLFVDDMVLFSKNLNSNKR
-      1192                                        NLNSNKRIIEK
-      1193                                            RIIEKLK
-      1194                                       IIEKLKMQYDTK
-      1195                      LKMQYDTKIINLGESDEEIQYDILGLEIK
-      1196                     MQYDTKIINLGESDEEIQYDILGLEIKYQR
-      1197                         IINLGESDEEIQYDILGLEIKYQRGK
-      1198                                           YQRGKYMK
-      1199                                    GKYMKLGMENSLTEK
-      1200                                   YMKLGMENSLTEKIPK
-      1201                              LGMENSLTEKIPKLNVPLNPK
-      1202                                      IPKLNVPLNPKGR
-      1203                                        LNVPLNPKGRK
-      1204                        GRKLSAPGQPGLYIDQDELEIDEDEYK
-      1205                        KLSAPGQPGLYIDQDELEIDEDEYKEK
-      1206                   LSAPGQPGLYIDQDELEIDEDEYKEKVHEMQK
-      1207                                EKVHEMQKLIGLASYVGYK
-      1208                                VHEMQKLIGLASYVGYKFR
-      1209                   LIGLASYVGYKFRFDLLYYINTLAQHILFPSR
-      1210             FRFDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTR
-      1211             FDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTRDK
-      1212                          QVLDMTYELIQFMWDTRDKQLIWHK
-      1213                                         DKQLIWHKHK
-      1214                                      QLIWHKHKTSSDK
-      1215                                          HKTSSDKNI
-      1216                            ESQQLSQHSPISHGSACASVTSK
-      1217             ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK
-      1218       ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK
+                                                          protein
+      1                                         pept_AAADALSDLEIK
+      2                                               pept_ELETLR
+      3                                               pept_DAENHK
+      4                                               pept_SHQVHR
+      5                                            pept_EEPLLNEDK
+      6                                              pept_TVLFPIK
+      7                                            pept_YHEIWQAYK
+      8                                      pept_AEASFWTAEEIDLSK
+      9                                             pept_DIHDWNNR
+      10                                              pept_MNENER
+      11                      pept_VLAFFAASDGIVNENLVENFSTEVQIPEAK
+      12                          pept_SFYGFQIMIENIHSETYSLLIDTYIK
+      13                                  pept_ESEFLFNAIHTIPEIGEK
+      14                                              pept_AEWALR
+      15                                        pept_WIQDADALFGER
+      16                             pept_LVAFASIEGVFFSGSFASIFWLK
+      17                                     pept_GMMPGLTFSNELICR
+      18                                   pept_DEGLHTDFACLLFAHLK
+      19                                          pept_NKPDPAIVEK
+      20                                         pept_IVTEAVEIEQR
+      21                        pept_YFLDALPVALLGMNADLMNQYVEFVADR
+      22                                            pept_LLVAFGNK
+      23                                    pept_VENPFDFMENISLAGK
+      24                                              pept_TNFFEK
+      25                                              pept_VSDYQK
+      26                                              pept_AGVMSK
+      27                                        pept_QEAGAFTFNEDF
+      28                                            pept_MPKETPSK
+      29                                   pept_ETPSKAAADALSDLEIK
+      30                                     pept_AAADALSDLEIKDSK
+      31                                            pept_DSKSNLNK
+      32                                         pept_SNLNKELETLR
+      33                                          pept_ELETLREENR
+      34                                              pept_EENRVK
+      35                                             pept_VKSDMLK
+      36                                             pept_SDMLKEK
+      37                                           pept_LSKDAENHK
+      38                                          pept_DAENHKAYLK
+      39                                          pept_AYLKSHQVHR
+      40                                            pept_SHQVHRHK
+      41                                              pept_LKEMEK
+      42                                       pept_EMEKEEPLLNEDK
+      43                                         pept_EEPLLNEDKER
+      44                                           pept_ERTVLFPIK
+      45                                    pept_TVLFPIKYHEIWQAYK
+      46                                          pept_YHEIWQAYKR
+      47                                    pept_RAEASFWTAEEIDLSK
+      48                             pept_AEASFWTAEEIDLSKDIHDWNNR
+      49                                      pept_DIHDWNNRMNENER
+      50                                         pept_MNENERFFISR
+      51                 pept_FFISRVLAFFAASDGIVNENLVENFSTEVQIPEAK
+      52                       pept_SFYGFQIMIENIHSETYSLLIDTYIKDPK
+      53                               pept_DPKESEFLFNAIHTIPEIGEK
+      54                            pept_ESEFLFNAIHTIPEIGEKAEWALR
+      55                                  pept_AEWALRWIQDADALFGER
+      56                 pept_WIQDADALFGERLVAFASIEGVFFSGSFASIFWLK
+      57                            pept_LVAFASIEGVFFSGSFASIFWLKK
+      58                                    pept_RGMMPGLTFSNELICR
+      59                    pept_GMMPGLTFSNELICRDEGLHTDFACLLFAHLK
+      60                         pept_DEGLHTDFACLLFAHLKNKPDPAIVEK
+      61                               pept_NKPDPAIVEKIVTEAVEIEQR
+      62             pept_IVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADR
+      63                pept_YFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNK
+      64                                           pept_LLVAFGNKK
+      65                                 pept_YYKVENPFDFMENISLAGK
+      66                              pept_VENPFDFMENISLAGKTNFFEK
+      67                                             pept_TNFFEKR
+      68                                             pept_RVSDYQK
+      69                                        pept_VSDYQKAGVMSK
+      70                                           pept_AGVMSKSTK
+      71                                     pept_STKQEAGAFTFNEDF
+      72                                pept_MPKETPSKAAADALSDLEIK
+      73                                pept_ETPSKAAADALSDLEIKDSK
+      74                                pept_AAADALSDLEIKDSKSNLNK
+      75                                      pept_DSKSNLNKELETLR
+      76                                     pept_SNLNKELETLREENR
+      77                                        pept_ELETLREENRVK
+      78                                         pept_EENRVKSDMLK
+      79                                           pept_VKSDMLKEK
+      80                                          pept_SDMLKEKLSK
+      81                                         pept_EKLSKDAENHK
+      82                                       pept_LSKDAENHKAYLK
+      83                                    pept_DAENHKAYLKSHQVHR
+      84                                        pept_AYLKSHQVHRHK
+      85                                          pept_SHQVHRHKLK
+      86                                            pept_HKLKEMEK
+      87                                     pept_LKEMEKEEPLLNEDK
+      88                                     pept_EMEKEEPLLNEDKER
+      89                                  pept_EEPLLNEDKERTVLFPIK
+      90                                  pept_ERTVLFPIKYHEIWQAYK
+      91                                   pept_TVLFPIKYHEIWQAYKR
+      92                           pept_YHEIWQAYKRAEASFWTAEEIDLSK
+      93                            pept_RAEASFWTAEEIDLSKDIHDWNNR
+      94                       pept_AEASFWTAEEIDLSKDIHDWNNRMNENER
+      95                                 pept_DIHDWNNRMNENERFFISR
+      96           pept_MNENERFFISRVLAFFAASDGIVNENLVENFSTEVQIPEAK
+      97     pept_SFYGFQIMIENIHSETYSLLIDTYIKDPKESEFLFNAIHTIPEIGEK
+      98                         pept_DPKESEFLFNAIHTIPEIGEKAEWALR
+      99                pept_ESEFLFNAIHTIPEIGEKAEWALRWIQDADALFGER
+      100          pept_AEWALRWIQDADALFGERLVAFASIEGVFFSGSFASIFWLK
+      101               pept_WIQDADALFGERLVAFASIEGVFFSGSFASIFWLKK
+      102                          pept_LVAFASIEGVFFSGSFASIFWLKKR
+      103                                  pept_KRGMMPGLTFSNELICR
+      104                  pept_RGMMPGLTFSNELICRDEGLHTDFACLLFAHLK
+      105         pept_GMMPGLTFSNELICRDEGLHTDFACLLFAHLKNKPDPAIVEK
+      106             pept_DEGLHTDFACLLFAHLKNKPDPAIVEKIVTEAVEIEQR
+      107  pept_NKPDPAIVEKIVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADR
+      108    pept_IVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNK
+      109              pept_YFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNKK
+      110                                       pept_LLVAFGNKKYYK
+      111                               pept_KYYKVENPFDFMENISLAGK
+      112                          pept_YYKVENPFDFMENISLAGKTNFFEK
+      113                            pept_VENPFDFMENISLAGKTNFFEKR
+      114                                      pept_TNFFEKRVSDYQK
+      115                                      pept_RVSDYQKAGVMSK
+      116                                    pept_VSDYQKAGVMSKSTK
+      117                              pept_AGVMSKSTKQEAGAFTFNEDF
+      118                                            pept_PKETPSK
+      119                                pept_PKETPSKAAADALSDLEIK
+      120                             pept_MTSEPEFQQAYDEIVSSVEDSK
+      121                                         pept_VLPIVSVPER
+      122                                  pept_VTWENDNGEQEVAQGYR
+      123                                            pept_VQFNSAK
+      124                                        pept_FHPSVNLSILK
+      125                                          pept_FLGFEQIFK
+      126                                       pept_NALTGLDMGGGK
+      127                                           pept_GGLCVDLK
+      128                                             pept_SDNEIR
+      129                                            pept_ICYAFMR
+      130                                     pept_DTDVPAGDIGVGGR
+      131                                         pept_EIGYLFGAYR
+      132                                         pept_NSWEGVLTGK
+      133                  pept_GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK
+      134                                             pept_ESFEGK
+      135                                   pept_VTISGSGNVAQYAALK
+      136                                    pept_VIELGGIVVSLSDSK
+      137                              pept_GCIISETGITSEQIHDIASAK
+      138                                   pept_SLEEIVDEYSTFSESK
+      139                   pept_YVAGARPWTHVSNVDIALPCATQNEVSGDEAK
+      140                                           pept_ALVASGVK
+      141                             pept_FVAEGANMGSTPEAISVFETAR
+      142                                            pept_STATNAK
+      143                                          pept_DAVWFGPPK
+      144                               pept_AANLGGVAVSGLEMAQNSQK
+      145                                            pept_VTWTAER
+      146                                             pept_VDQELK
+      147                               pept_IMINCFNDCIQAAQEYSTEK
+      148                                         pept_NTNTLPSLVK
+      149                              pept_GANIASFVMVADAMLDQGDVF
+      150                         pept_MTSEPEFQQAYDEIVSSVEDSKIFEK
+      151                                          pept_IFEKFPQYK
+      152                                             pept_FPQYKK
+      153                                        pept_KVLPIVSVPER
+      154                                    pept_VLPIVSVPERIIQFR
+      155                             pept_IIQFRVTWENDNGEQEVAQGYR
+      156                           pept_VTWENDNGEQEVAQGYRVQFNSAK
+      157                                        pept_VQFNSAKGPYK
+      158                                           pept_GPYKGGLR
+      159                                    pept_GGLRFHPSVNLSILK
+      160                               pept_FHPSVNLSILKFLGFEQIFK
+      161                              pept_FLGFEQIFKNALTGLDMGGGK
+      162                               pept_NALTGLDMGGGKGGLCVDLK
+      163                                         pept_GGLCVDLKGK
+      164                                           pept_GKSDNEIR
+      165                                            pept_SDNEIRR
+      166                                           pept_RICYAFMR
+      167                                        pept_ICYAFMRELSR
+      168                                           pept_ELSRHIGK
+      169                                 pept_HIGKDTDVPAGDIGVGGR
+      170                           pept_DTDVPAGDIGVGGREIGYLFGAYR
+      171                                      pept_EIGYLFGAYRSYK
+      172                                      pept_SYKNSWEGVLTGK
+      173        pept_NSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK
+      174            pept_GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGK
+      175                                            pept_ESFEGKR
+      176                                  pept_RVTISGSGNVAQYAALK
+      177                    pept_VTISGSGNVAQYAALKVIELGGIVVSLSDSK
+      178               pept_VIELGGIVVSLSDSKGCIISETGITSEQIHDIASAK
+      179                            pept_GCIISETGITSEQIHDIASAKIR
+      180                                 pept_FKSLEEIVDEYSTFSESK
+      181                                 pept_SLEEIVDEYSTFSESKMK
+      182                 pept_MKYVAGARPWTHVSNVDIALPCATQNEVSGDEAK
+      183           pept_YVAGARPWTHVSNVDIALPCATQNEVSGDEAKALVASGVK
+      184                     pept_ALVASGVKFVAEGANMGSTPEAISVFETAR
+      185                      pept_FVAEGANMGSTPEAISVFETARSTATNAK
+      186                                   pept_STATNAKDAVWFGPPK
+      187                      pept_DAVWFGPPKAANLGGVAVSGLEMAQNSQK
+      188                        pept_AANLGGVAVSGLEMAQNSQKVTWTAER
+      189                                      pept_VTWTAERVDQELK
+      190                                            pept_VDQELKK
+      191                              pept_KIMINCFNDCIQAAQEYSTEK
+      192                     pept_IMINCFNDCIQAAQEYSTEKNTNTLPSLVK
+      193                    pept_NTNTLPSLVKGANIASFVMVADAMLDQGDVF
+      194                    pept_MTSEPEFQQAYDEIVSSVEDSKIFEKFPQYK
+      195                                         pept_IFEKFPQYKK
+      196                                   pept_FPQYKKVLPIVSVPER
+      197                                   pept_KVLPIVSVPERIIQFR
+      198                   pept_VLPIVSVPERIIQFRVTWENDNGEQEVAQGYR
+      199                      pept_IIQFRVTWENDNGEQEVAQGYRVQFNSAK
+      200                       pept_VTWENDNGEQEVAQGYRVQFNSAKGPYK
+      201                                    pept_VQFNSAKGPYKGGLR
+      202                                pept_GPYKGGLRFHPSVNLSILK
+      203                           pept_GGLRFHPSVNLSILKFLGFEQIFK
+      204                   pept_FHPSVNLSILKFLGFEQIFKNALTGLDMGGGK
+      205                      pept_FLGFEQIFKNALTGLDMGGGKGGLCVDLK
+      206                             pept_NALTGLDMGGGKGGLCVDLKGK
+      207                                   pept_GGLCVDLKGKSDNEIR
+      208                                          pept_GKSDNEIRR
+      209                                     pept_SDNEIRRICYAFMR
+      210                                       pept_RICYAFMRELSR
+      211                                    pept_ICYAFMRELSRHIGK
+      212                             pept_ELSRHIGKDTDVPAGDIGVGGR
+      213                       pept_HIGKDTDVPAGDIGVGGREIGYLFGAYR
+      214                        pept_DTDVPAGDIGVGGREIGYLFGAYRSYK
+      215                            pept_EIGYLFGAYRSYKNSWEGVLTGK
+      216     pept_SYKNSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK
+      217  pept_NSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGK
+      218           pept_GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGKR
+      219                            pept_ESFEGKRVTISGSGNVAQYAALK
+      220                   pept_RVTISGSGNVAQYAALKVIELGGIVVSLSDSK
+      221             pept_VIELGGIVVSLSDSKGCIISETGITSEQIHDIASAKIR
+      222                          pept_GCIISETGITSEQIHDIASAKIRFK
+      223                               pept_IRFKSLEEIVDEYSTFSESK
+      224                               pept_FKSLEEIVDEYSTFSESKMK
+      225 pept_SLEEIVDEYSTFSESKMKYVAGARPWTHVSNVDIALPCATQNEVSGDEAK
+      226         pept_MKYVAGARPWTHVSNVDIALPCATQNEVSGDEAKALVASGVK
+      227              pept_ALVASGVKFVAEGANMGSTPEAISVFETARSTATNAK
+      228             pept_FVAEGANMGSTPEAISVFETARSTATNAKDAVWFGPPK
+      229               pept_STATNAKDAVWFGPPKAANLGGVAVSGLEMAQNSQK
+      230               pept_DAVWFGPPKAANLGGVAVSGLEMAQNSQKVTWTAER
+      231                  pept_AANLGGVAVSGLEMAQNSQKVTWTAERVDQELK
+      232                                     pept_VTWTAERVDQELKK
+      233                        pept_VDQELKKIMINCFNDCIQAAQEYSTEK
+      234                    pept_KIMINCFNDCIQAAQEYSTEKNTNTLPSLVK
+      235                              pept_TSEPEFQQAYDEIVSSVEDSK
+      236                          pept_TSEPEFQQAYDEIVSSVEDSKIFEK
+      237                     pept_TSEPEFQQAYDEIVSSVEDSKIFEKFPQYK
+      238                     pept_MSEPEFQQAYEEVVSSLEDSTLFEQHPEYR
+      239                                         pept_VLPIVSVPER
+      240                                            pept_VTWENDK
+      241                                         pept_GEQEVAQGYR
+      242                                            pept_VQYNSAK
+      243                                        pept_FHPSVNLSILK
+      244                                          pept_FLGFEQIFK
+      245                                       pept_NSLTGLDMGGGK
+      246                                           pept_GGLCVDLK
+      247                                             pept_SNNEIR
+      248                                            pept_ICYAFMR
+      249                                 pept_HIGQDTDVPAGDIGVGGR
+      250                                         pept_EIGYLFGAYR
+      251                                         pept_NSWEGVLTGK
+      252                  pept_GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK
+      253                                             pept_ESFEGK
+      254                                   pept_VTISGSGNVAQYAALK
+      255                                    pept_VIELGGTVVSLSDSK
+      256                              pept_GCIISETGITSEQVADISSAK
+      257                                   pept_SLEQIVNEYSTFSENK
+      258                                    pept_VQYIAGARPWTHVQK
+      259                                pept_VDIALPCATQNEVSGEEAK
+      260                                           pept_ALVAQGVK
+      261                             pept_FIAEGSNMGSTPEAIAVFETAR
+      262                                   pept_STATGPSEAVWYGPPK
+      263                               pept_AANLGGVAVSGLEMAQNSQR
+      264                                            pept_ITWTSER
+      265                                             pept_VDQELK
+      266                                     pept_IMINCFNECIDYAK
+      267                                            pept_VLPSLVK
+      268                                          pept_GANIASFIK
+      269                                       pept_VSDAMFDQGDVF
+      270                    pept_MSEPEFQQAYEEVVSSLEDSTLFEQHPEYRK
+      271                                        pept_KVLPIVSVPER
+      272                                    pept_VLPIVSVPERIIQFR
+      273                                       pept_IIQFRVTWENDK
+      274                                  pept_VTWENDKGEQEVAQGYR
+      275                                  pept_GEQEVAQGYRVQYNSAK
+      276                                        pept_VQYNSAKGPYK
+      277                                           pept_GPYKGGLR
+      278                                    pept_GGLRFHPSVNLSILK
+      279                               pept_FHPSVNLSILKFLGFEQIFK
+      280                              pept_FLGFEQIFKNSLTGLDMGGGK
+      281                               pept_NSLTGLDMGGGKGGLCVDLK
+      282                                         pept_GGLCVDLKGR
+      283                                           pept_GRSNNEIR
+      284                                            pept_SNNEIRR
+      285                                           pept_RICYAFMR
+      286                                        pept_ICYAFMRELSR
+      287                             pept_ELSRHIGQDTDVPAGDIGVGGR
+      288                       pept_HIGQDTDVPAGDIGVGGREIGYLFGAYR
+      289                                      pept_EIGYLFGAYRSYK
+      290                                      pept_SYKNSWEGVLTGK
+      291        pept_NSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK
+      292            pept_GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGK
+      293                                            pept_ESFEGKR
+      294                                  pept_RVTISGSGNVAQYAALK
+      295                    pept_VTISGSGNVAQYAALKVIELGGTVVSLSDSK
+      296               pept_VIELGGTVVSLSDSKGCIISETGITSEQVADISSAK
+      297                          pept_GCIISETGITSEQVADISSAKVNFK
+      298                               pept_VNFKSLEQIVNEYSTFSENK
+      299                    pept_SLEQIVNEYSTFSENKVQYIAGARPWTHVQK
+      300                 pept_VQYIAGARPWTHVQKVDIALPCATQNEVSGEEAK
+      301                        pept_VDIALPCATQNEVSGEEAKALVAQGVK
+      302                     pept_ALVAQGVKFIAEGSNMGSTPEAIAVFETAR
+      303             pept_FIAEGSNMGSTPEAIAVFETARSTATGPSEAVWYGPPK
+      304               pept_STATGPSEAVWYGPPKAANLGGVAVSGLEMAQNSQR
+      305                        pept_AANLGGVAVSGLEMAQNSQRITWTSER
+      306                                      pept_ITWTSERVDQELK
+      307                                            pept_VDQELKR
+      308                                    pept_RIMINCFNECIDYAK
+      309                                    pept_IMINCFNECIDYAKK
+      310                                             pept_YTKDGK
+      311                                         pept_DGKVLPSLVK
+      312                                   pept_VLPSLVKGANIASFIK
+      313                              pept_GANIASFIKVSDAMFDQGDVF
+      314          pept_MSEPEFQQAYEEVVSSLEDSTLFEQHPEYRKVLPIVSVPER
+      315                                   pept_KVLPIVSVPERIIQFR
+      316                             pept_VLPIVSVPERIIQFRVTWENDK
+      317                             pept_IIQFRVTWENDKGEQEVAQGYR
+      318                           pept_VTWENDKGEQEVAQGYRVQYNSAK
+      319                              pept_GEQEVAQGYRVQYNSAKGPYK
+      320                                    pept_VQYNSAKGPYKGGLR
+      321                                pept_GPYKGGLRFHPSVNLSILK
+      322                           pept_GGLRFHPSVNLSILKFLGFEQIFK
+      323                   pept_FHPSVNLSILKFLGFEQIFKNSLTGLDMGGGK
+      324                      pept_FLGFEQIFKNSLTGLDMGGGKGGLCVDLK
+      325                             pept_NSLTGLDMGGGKGGLCVDLKGR
+      326                                   pept_GGLCVDLKGRSNNEIR
+      327                                          pept_GRSNNEIRR
+      328                                     pept_SNNEIRRICYAFMR
+      329                                       pept_RICYAFMRELSR
+      330                      pept_ICYAFMRELSRHIGQDTDVPAGDIGVGGR
+      331                   pept_ELSRHIGQDTDVPAGDIGVGGREIGYLFGAYR
+      332                    pept_HIGQDTDVPAGDIGVGGREIGYLFGAYRSYK
+      333                            pept_EIGYLFGAYRSYKNSWEGVLTGK
+      334     pept_SYKNSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK
+      335  pept_NSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGK
+      336           pept_GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGKR
+      337                            pept_ESFEGKRVTISGSGNVAQYAALK
+      338                   pept_RVTISGSGNVAQYAALKVIELGGTVVSLSDSK
+      339           pept_VIELGGTVVSLSDSKGCIISETGITSEQVADISSAKVNFK
+      340          pept_GCIISETGITSEQVADISSAKVNFKSLEQIVNEYSTFSENK
+      341                pept_VNFKSLEQIVNEYSTFSENKVQYIAGARPWTHVQK
+      342 pept_SLEQIVNEYSTFSENKVQYIAGARPWTHVQKVDIALPCATQNEVSGEEAK
+      343         pept_VQYIAGARPWTHVQKVDIALPCATQNEVSGEEAKALVAQGVK
+      344  pept_VDIALPCATQNEVSGEEAKALVAQGVKFIAEGSNMGSTPEAIAVFETAR
+      345     pept_ALVAQGVKFIAEGSNMGSTPEAIAVFETARSTATGPSEAVWYGPPK
+      346        pept_STATGPSEAVWYGPPKAANLGGVAVSGLEMAQNSQRITWTSER
+      347                  pept_AANLGGVAVSGLEMAQNSQRITWTSERVDQELK
+      348                                     pept_ITWTSERVDQELKR
+      349                              pept_VDQELKRIMINCFNECIDYAK
+      350                                   pept_RIMINCFNECIDYAKK
+      351                                 pept_IMINCFNECIDYAKKYTK
+      352                                            pept_KYTKDGK
+      353                                      pept_YTKDGKVLPSLVK
+      354                                pept_DGKVLPSLVKGANIASFIK
+      355                       pept_VLPSLVKGANIASFIKVSDAMFDQGDVF
+      356                      pept_SEPEFQQAYEEVVSSLEDSTLFEQHPEYR
+      357                     pept_SEPEFQQAYEEVVSSLEDSTLFEQHPEYRK
+      358           pept_SEPEFQQAYEEVVSSLEDSTLFEQHPEYRKVLPIVSVPER
+      359                                             pept_NLPILK
+      360                                           pept_VHFDQAGK
+      361                                     pept_IAPRPLDLLRPVVR
+      362                                           pept_GFTLAEVK
+      363                                         pept_AAGLTAAYAR
+      364                                          pept_TIGIAVDHR
+      365                                        pept_NQEIFDANVQR
+      366                                             pept_IIVFPR
+      367                         pept_APEAEQVLSAAATFPIAQPATDVEAR
+      368                                        pept_AVQDNGESAFR
+      369                                            pept_AEAEAEK
+      370                                        pept_MAISKNLPILK
+      371                                         pept_NLPILKNHFR
+      372                                             pept_KHWQER
+      373                                            pept_HWQERVK
+      374                                         pept_VKVHFDQAGK
+      375                                          pept_VHFDQAGKK
+      376                                             pept_NARAAR
+      377                                             pept_AARAAK
+      378                                  pept_AAKIAPRPLDLLRPVVR
+      379                                pept_IAPRPLDLLRPVVRAPTVK
+      380                                           pept_APTVKYNR
+      381                                        pept_AGRGFTLAEVK
+      382                                 pept_GFTLAEVKAAGLTAAYAR
+      383                                pept_AAGLTAAYARTIGIAVDHR
+      384                                         pept_TIGIAVDHRR
+      385                                     pept_QNRNQEIFDANVQR
+      386                                      pept_NQEIFDANVQRLK
+      387                                            pept_LKEYQSK
+      388                                        pept_EYQSKIIVFPR
+      389                                          pept_IIVFPRDGK
+      390                      pept_DGKAPEAEQVLSAAATFPIAQPATDVEAR
+      391              pept_APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR
+      392                                     pept_AVQDNGESAFRTLR
+      393                                             pept_TLRLAR
+      394                                             pept_LARSEK
+      395                                          pept_EKAEAEAEK
+      396                                           pept_AEAEAEKK
+      397                                    pept_MAISKNLPILKNHFR
+      398                                        pept_NLPILKNHFRK
+      399                                         pept_NHFRKHWQER
+      400                                           pept_KHWQERVK
+      401                                    pept_HWQERVKVHFDQAGK
+      402                                        pept_VKVHFDQAGKK
+      403                                       pept_VHFDQAGKKVSR
+      404                                            pept_VSRRNAR
+      405                                            pept_RNARAAR
+      406                                          pept_NARAARAAK
+      407                               pept_AARAAKIAPRPLDLLRPVVR
+      408                             pept_AAKIAPRPLDLLRPVVRAPTVK
+      409                             pept_IAPRPLDLLRPVVRAPTVKYNR
+      410                                          pept_APTVKYNRK
+      411                                             pept_YNRKVR
+      412                                             pept_KVRAGR
+      413                                      pept_VRAGRGFTLAEVK
+      414                              pept_AGRGFTLAEVKAAGLTAAYAR
+      415                        pept_GFTLAEVKAAGLTAAYARTIGIAVDHR
+      416                               pept_AAGLTAAYARTIGIAVDHRR
+      417                                      pept_TIGIAVDHRRQNR
+      418                                    pept_RQNRNQEIFDANVQR
+      419                                   pept_QNRNQEIFDANVQRLK
+      420                                 pept_NQEIFDANVQRLKEYQSK
+      421                                      pept_LKEYQSKIIVFPR
+      422                                     pept_EYQSKIIVFPRDGK
+      423                pept_IIVFPRDGKAPEAEQVLSAAATFPIAQPATDVEAR
+      424           pept_DGKAPEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR
+      425           pept_APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFRTLR
+      426                                  pept_AVQDNGESAFRTLRLAR
+      427                                          pept_TLRLARSEK
+      428                                            pept_LARSEKK
+      429                                             pept_SEKKFR
+      430                                             pept_KFRGIR
+      431                                            pept_FRGIREK
+      432                                             pept_GIREKR
+      433                                        pept_AREKAEAEAEK
+      434                                         pept_EKAEAEAEKK
+      435                                          pept_AEAEAEKKK
+      436                                         pept_AISKNLPILK
+      437                                     pept_AISKNLPILKNHFR
+      438                                             pept_NLPILK
+      439                                           pept_VHFDQAGK
+      440                                     pept_IAPRPLDLLRPVVR
+      441                                           pept_GFTLAEVK
+      442                                         pept_AAGLTAAYAR
+      443                                          pept_TIGIAVDHR
+      444                                        pept_NQEIFDANVQR
+      445                                             pept_IIVFPR
+      446                         pept_APEAEQVLSAAATFPIAQPATDVEAR
+      447                                        pept_AVQDNGESAFR
+      448                                            pept_AEAEAEK
+      449                                        pept_MAISKNLPILK
+      450                                         pept_NLPILKNHFR
+      451                                             pept_KHWQER
+      452                                            pept_HWQERVK
+      453                                         pept_VKVHFDQAGK
+      454                                          pept_VHFDQAGKK
+      455                                             pept_NARATR
+      456                                             pept_ATRAAK
+      457                                  pept_AAKIAPRPLDLLRPVVR
+      458                                pept_IAPRPLDLLRPVVRAPTVK
+      459                                           pept_APTVKYNR
+      460                                        pept_AGRGFTLAEVK
+      461                                 pept_GFTLAEVKAAGLTAAYAR
+      462                                pept_AAGLTAAYARTIGIAVDHR
+      463                                         pept_TIGIAVDHRR
+      464                                     pept_QNRNQEIFDANVQR
+      465                                      pept_NQEIFDANVQRLK
+      466                                            pept_LKEYQSK
+      467                                        pept_EYQSKIIVFPR
+      468                                          pept_IIVFPRNGK
+      469                      pept_NGKAPEAEQVLSAAATFPIAQPATDVEAR
+      470              pept_APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR
+      471                                     pept_AVQDNGESAFRTLR
+      472                                             pept_TLRLAR
+      473                                             pept_LARSEK
+      474                                          pept_EKAEAEAEK
+      475                                           pept_AEAEAEKK
+      476                                    pept_MAISKNLPILKNHFR
+      477                                        pept_NLPILKNHFRK
+      478                                         pept_NHFRKHWQER
+      479                                           pept_KHWQERVK
+      480                                    pept_HWQERVKVHFDQAGK
+      481                                        pept_VKVHFDQAGKK
+      482                                       pept_VHFDQAGKKVSR
+      483                                            pept_VSRRNAR
+      484                                            pept_RNARATR
+      485                                          pept_NARATRAAK
+      486                               pept_ATRAAKIAPRPLDLLRPVVR
+      487                             pept_AAKIAPRPLDLLRPVVRAPTVK
+      488                             pept_IAPRPLDLLRPVVRAPTVKYNR
+      489                                          pept_APTVKYNRK
+      490                                             pept_YNRKVR
+      491                                             pept_KVRAGR
+      492                                      pept_VRAGRGFTLAEVK
+      493                              pept_AGRGFTLAEVKAAGLTAAYAR
+      494                        pept_GFTLAEVKAAGLTAAYARTIGIAVDHR
+      495                               pept_AAGLTAAYARTIGIAVDHRR
+      496                                      pept_TIGIAVDHRRQNR
+      497                                    pept_RQNRNQEIFDANVQR
+      498                                   pept_QNRNQEIFDANVQRLK
+      499                                 pept_NQEIFDANVQRLKEYQSK
+      500                                      pept_LKEYQSKIIVFPR
+      501                                     pept_EYQSKIIVFPRNGK
+      502                pept_IIVFPRNGKAPEAEQVLSAAATFPIAQPATDVEAR
+      503           pept_NGKAPEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR
+      504           pept_APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFRTLR
+      505                                  pept_AVQDNGESAFRTLRLAR
+      506                                          pept_TLRLARSEK
+      507                                            pept_LARSEKK
+      508                                             pept_SEKKFR
+      509                                             pept_KFRGIR
+      510                                            pept_FRGIREK
+      511                                             pept_GIREKR
+      512                                        pept_AREKAEAEAEK
+      513                                         pept_EKAEAEAEKK
+      514                                          pept_AEAEAEKKK
+      515                                         pept_AISKNLPILK
+      516                                     pept_AISKNLPILKNHFR
+      517                                           pept_MSIPETQK
+      518                                         pept_GVIFYESHGK
+      519                                           pept_DIPVPKPK
+      520                                          pept_ANELLINVK
+      521                              pept_YSGVCHTDLHAWHGDWPLPVK
+      522                              pept_LPLVGGHEGAGVVVGMGENVK
+      523                                           pept_IGDYAGIK
+      524                       pept_SANLMAGHWVAISGAAGGLGSLAVQYAK
+      525                                         pept_VLGIDGGEGK
+      526                                       pept_SIGGEVFIDFTK
+      527                                           pept_DIVGAVLK
+      528                           pept_ATDGGAHGVINVSVSEAAIEASTR
+      529                                    pept_ANGTTVLVGMPAGAK
+      530                                        pept_CCSDVFNQVVK
+      531                                       pept_SISIVGSYVGNR
+      532                                           pept_EALDFFAR
+      533                                      pept_VVGLSTLPEIYEK
+      534                                             pept_GQIVGR
+      535                                            pept_YVVDTSK
+      536                                 pept_MSIPETQKGVIFYESHGK
+      537                                     pept_GVIFYESHGKLEYK
+      538                                       pept_LEYKDIPVPKPK
+      539                                  pept_DIPVPKPKANELLINVK
+      540                     pept_ANELLINVKYSGVCHTDLHAWHGDWPLPVK
+      541         pept_YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVGMGENVK
+      542                           pept_LPLVGGHEGAGVVVGMGENVKGWK
+      543                                        pept_GWKIGDYAGIK
+      544                    pept_ALKSANLMAGHWVAISGAAGGLGSLAVQYAK
+      545                  pept_SANLMAGHWVAISGAAGGLGSLAVQYAKAMGYR
+      546                                    pept_AMGYRVLGIDGGEGK
+      547                                    pept_VLGIDGGEGKEELFR
+      548                                  pept_EELFRSIGGEVFIDFTK
+      549                                     pept_SIGGEVFIDFTKEK
+      550                                         pept_EKDIVGAVLK
+      551                   pept_DIVGAVLKATDGGAHGVINVSVSEAAIEASTR
+      552                        pept_ATDGGAHGVINVSVSEAAIEASTRYVR
+      553                                 pept_YVRANGTTVLVGMPAGAK
+      554                         pept_ANGTTVLVGMPAGAKCCSDVFNQVVK
+      555                            pept_CCSDVFNQVVKSISIVGSYVGNR
+      556                                   pept_SISIVGSYVGNRADTR
+      557                                       pept_ADTREALDFFAR
+      558                                       pept_EALDFFARGLVK
+      559                                           pept_GLVKSPIK
+      560                                  pept_SPIKVVGLSTLPEIYEK
+      561                                   pept_VVGLSTLPEIYEKMEK
+      562                                          pept_MEKGQIVGR
+      563                                      pept_GQIVGRYVVDTSK
+      564                             pept_MSIPETQKGVIFYESHGKLEYK
+      565                             pept_GVIFYESHGKLEYKDIPVPKPK
+      566                              pept_LEYKDIPVPKPKANELLINVK
+      567             pept_DIPVPKPKANELLINVKYSGVCHTDLHAWHGDWPLPVK
+      568      pept_YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVGMGENVKGWK
+      569                   pept_LPLVGGHEGAGVVVGMGENVKGWKIGDYAGIK
+      570               pept_ALKSANLMAGHWVAISGAAGGLGSLAVQYAKAMGYR
+      571        pept_SANLMAGHWVAISGAAGGLGSLAVQYAKAMGYRVLGIDGGEGK
+      572                               pept_AMGYRVLGIDGGEGKEELFR
+      573                        pept_VLGIDGGEGKEELFRSIGGEVFIDFTK
+      574                                pept_EELFRSIGGEVFIDFTKEK
+      575                             pept_SIGGEVFIDFTKEKDIVGAVLK
+      576                 pept_EKDIVGAVLKATDGGAHGVINVSVSEAAIEASTR
+      577                pept_DIVGAVLKATDGGAHGVINVSVSEAAIEASTRYVR
+      578         pept_ATDGGAHGVINVSVSEAAIEASTRYVRANGTTVLVGMPAGAK
+      579                      pept_YVRANGTTVLVGMPAGAKCCSDVFNQVVK
+      580             pept_ANGTTVLVGMPAGAKCCSDVFNQVVKSISIVGSYVGNR
+      581                        pept_CCSDVFNQVVKSISIVGSYVGNRADTR
+      582                           pept_SISIVGSYVGNRADTREALDFFAR
+      583                                   pept_ADTREALDFFARGLVK
+      584                                   pept_EALDFFARGLVKSPIK
+      585                              pept_GLVKSPIKVVGLSTLPEIYEK
+      586                               pept_SPIKVVGLSTLPEIYEKMEK
+      587                             pept_VVGLSTLPEIYEKMEKGQIVGR
+      588                                   pept_MEKGQIVGRYVVDTSK
+      589                                            pept_SIPETQK
+      590                                  pept_SIPETQKGVIFYESHGK
+      591                              pept_SIPETQKGVIFYESHGKLEYK
+      592                                           pept_MSIPETQK
+      593                                         pept_AIIFYESNGK
+      594                                  pept_DIPVPKPKPNELLINVK
+      595                              pept_YSGVCHTDLHAWHGDWPLPTK
+      596                              pept_LPLVGGHEGAGVVVGMGENVK
+      597                                           pept_IGDYAGIK
+      598                            pept_AGHWAAISGAAGGLGSLAVQYAK
+      599                                         pept_VLGIDGGPGK
+      600                                  pept_EELFTSLGGEVFIDFTK
+      601                                           pept_DIVSAVVK
+      602                           pept_ATNGGAHGIINVSVSEAAIEASTR
+      603                                    pept_ANGTVVLVGLPAGAK
+      604                                        pept_CSSDVFNHVVK
+      605                                       pept_SISIVGSYVGNR
+      606                                           pept_EALDFFAR
+      607                                      pept_VVGLSSLPEIYEK
+      608                                             pept_GQIAGR
+      609                                            pept_YVVDTSK
+      610                                 pept_MSIPETQKAIIFYESNGK
+      611                                     pept_AIIFYESNGKLEHK
+      612                              pept_LEHKDIPVPKPKPNELLINVK
+      613             pept_DIPVPKPKPNELLINVKYSGVCHTDLHAWHGDWPLPTK
+      614         pept_YSGVCHTDLHAWHGDWPLPTKLPLVGGHEGAGVVVGMGENVK
+      615                           pept_LPLVGGHEGAGVVVGMGENVKGWK
+      616                                        pept_GWKIGDYAGIK
+      617                                           pept_ALKSANLR
+      618                       pept_SANLRAGHWAAISGAAGGLGSLAVQYAK
+      619                       pept_AGHWAAISGAAGGLGSLAVQYAKAMGYR
+      620                                    pept_AMGYRVLGIDGGPGK
+      621                        pept_VLGIDGGPGKEELFTSLGGEVFIDFTK
+      622                                pept_EELFTSLGGEVFIDFTKEK
+      623                                         pept_EKDIVSAVVK
+      624                   pept_DIVSAVVKATNGGAHGIINVSVSEAAIEASTR
+      625                        pept_ATNGGAHGIINVSVSEAAIEASTRYCR
+      626                                 pept_YCRANGTVVLVGLPAGAK
+      627                         pept_ANGTVVLVGLPAGAKCSSDVFNHVVK
+      628                            pept_CSSDVFNHVVKSISIVGSYVGNR
+      629                                   pept_SISIVGSYVGNRADTR
+      630                                       pept_ADTREALDFFAR
+      631                                       pept_EALDFFARGLVK
+      632                                           pept_GLVKSPIK
+      633                                  pept_SPIKVVGLSSLPEIYEK
+      634                                   pept_VVGLSSLPEIYEKMEK
+      635                                          pept_MEKGQIAGR
+      636                                      pept_GQIAGRYVVDTSK
+      637                             pept_MSIPETQKAIIFYESNGKLEHK
+      638                    pept_AIIFYESNGKLEHKDIPVPKPKPNELLINVK
+      639         pept_LEHKDIPVPKPKPNELLINVKYSGVCHTDLHAWHGDWPLPTK
+      640      pept_YSGVCHTDLHAWHGDWPLPTKLPLVGGHEGAGVVVGMGENVKGWK
+      641                   pept_LPLVGGHEGAGVVVGMGENVKGWKIGDYAGIK
+      642                    pept_ALKSANLRAGHWAAISGAAGGLGSLAVQYAK
+      643                  pept_SANLRAGHWAAISGAAGGLGSLAVQYAKAMGYR
+      644             pept_AGHWAAISGAAGGLGSLAVQYAKAMGYRVLGIDGGPGK
+      645                   pept_AMGYRVLGIDGGPGKEELFTSLGGEVFIDFTK
+      646                      pept_VLGIDGGPGKEELFTSLGGEVFIDFTKEK
+      647                        pept_EELFTSLGGEVFIDFTKEKDIVSAVVK
+      648                 pept_EKDIVSAVVKATNGGAHGIINVSVSEAAIEASTR
+      649                pept_DIVSAVVKATNGGAHGIINVSVSEAAIEASTRYCR
+      650         pept_ATNGGAHGIINVSVSEAAIEASTRYCRANGTVVLVGLPAGAK
+      651                      pept_YCRANGTVVLVGLPAGAKCSSDVFNHVVK
+      652             pept_ANGTVVLVGLPAGAKCSSDVFNHVVKSISIVGSYVGNR
+      653                        pept_CSSDVFNHVVKSISIVGSYVGNRADTR
+      654                           pept_SISIVGSYVGNRADTREALDFFAR
+      655                                   pept_ADTREALDFFARGLVK
+      656                                   pept_EALDFFARGLVKSPIK
+      657                              pept_GLVKSPIKVVGLSSLPEIYEK
+      658                               pept_SPIKVVGLSSLPEIYEKMEK
+      659                             pept_VVGLSSLPEIYEKMEKGQIAGR
+      660                                   pept_MEKGQIAGRYVVDTSK
+      661                                            pept_SIPETQK
+      662                                  pept_SIPETQKAIIFYESNGK
+      663                              pept_SIPETQKAIIFYESNGKLEHK
+      664                                            pept_TSTLFTR
+      665                                           pept_VQPSLFSR
+      666                                          pept_LQSTAAIPK
+      667                                           pept_GVIFYENK
+      668                                  pept_DIPVPEPKPNEILINVK
+      669                              pept_YSGVCHTDLHAWHGDWPLPVK
+      670                                    pept_LPLVGGHEGAGVVVK
+      671                                             pept_LGSNVK
+      672                                           pept_VGDLAGIK
+      673    pept_WLNGSCMTCEFCESGHESNCPDADLSGYTHDGSFQQFATADAIQAAK
+      674                             pept_IQQGTDLAEVAPILCAGVTVYK
+      675                       pept_AGDWVAISGAAGGLGSLAVQYATAMGYR
+      676                                         pept_VLGIDAGEEK
+      677                                        pept_LGGEVFIDFTK
+      678                                        pept_NMVSDIQEATK
+      679          pept_GGPHGVINVSVSEAAISLSTEYVRPCGTVVLVGLPANAYVK
+      680                                          pept_SEVFSHVVK
+      681                                            pept_GSYVGNR
+      682                                           pept_EALDFFSR
+      683                                          pept_IVGLSELPK
+      684                                            pept_VYDLMEK
+      685                                            pept_YVVDTSK
+      686                                         pept_MLRTSTLFTR
+      687                                           pept_TSTLFTRR
+      688                                          pept_RVQPSLFSR
+      689                                       pept_VQPSLFSRNILR
+      690                                      pept_NILRLQSTAAIPK
+      691                                       pept_LQSTAAIPKTQK
+      692                                        pept_TQKGVIFYENK
+      693                                         pept_GVIFYENKGK
+      694                                             pept_GKLHYK
+      695                              pept_LHYKDIPVPEPKPNEILINVK
+      696             pept_DIPVPEPKPNEILINVKYSGVCHTDLHAWHGDWPLPVK
+      697               pept_YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVK
+      698                              pept_LPLVGGHEGAGVVVKLGSNVK
+      699                                          pept_LGSNVKGWK
+      700                                        pept_GWKVGDLAGIK
+      701                          pept_IQQGTDLAEVAPILCAGVTVYKALK
+      702                                           pept_ALKEADLK
+      703                  pept_EADLKAGDWVAISGAAGGLGSLAVQYATAMGYR
+      704             pept_AGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEK
+      705                                       pept_VLGIDAGEEKEK
+      706                                       pept_KLGGEVFIDFTK
+      707                                      pept_LGGEVFIDFTKTK
+      708                                      pept_TKNMVSDIQEATK
+      709 pept_GGPHGVINVSVSEAAISLSTEYVRPCGTVVLVGLPANAYVKSEVFSHVVK
+      710                                     pept_SEVFSHVVKSINIK
+      711                                       pept_SINIKGSYVGNR
+      712                                        pept_GSYVGNRADTR
+      713                                       pept_ADTREALDFFSR
+      714                                       pept_EALDFFSRGLIK
+      715                                           pept_GLIKSPIK
+      716                                      pept_SPIKIVGLSELPK
+      717                                   pept_IVGLSELPKVYDLMEK
+      718                                          pept_VYDLMEKGK
+      719                                             pept_GKILGR
+      720                                        pept_ILGRYVVDTSK
+      721                                        pept_MLRTSTLFTRR
+      722                                   pept_TSTLFTRRVQPSLFSR
+      723                                      pept_RVQPSLFSRNILR
+      724                              pept_VQPSLFSRNILRLQSTAAIPK
+      725                                   pept_NILRLQSTAAIPKTQK
+      726                               pept_LQSTAAIPKTQKGVIFYENK
+      727                                      pept_TQKGVIFYENKGK
+      728                                     pept_GVIFYENKGKLHYK
+      729                            pept_GKLHYKDIPVPEPKPNEILINVK
+      730         pept_LHYKDIPVPEPKPNEILINVKYSGVCHTDLHAWHGDWPLPVK
+      731         pept_YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVKLGSNVK
+      732                           pept_LPLVGGHEGAGVVVKLGSNVKGWK
+      733                                  pept_LGSNVKGWKVGDLAGIK
+      734                     pept_IQQGTDLAEVAPILCAGVTVYKALKEADLK
+      735               pept_ALKEADLKAGDWVAISGAAGGLGSLAVQYATAMGYR
+      736        pept_EADLKAGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEK
+      737           pept_AGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEKEK
+      738                                    pept_VLGIDAGEEKEKLFK
+      739                                             pept_EKLFKK
+      740                                    pept_LFKKLGGEVFIDFTK
+      741                                     pept_KLGGEVFIDFTKTK
+      742                           pept_LGGEVFIDFTKTKNMVSDIQEATK
+      743                              pept_SEVFSHVVKSINIKGSYVGNR
+      744                                   pept_SINIKGSYVGNRADTR
+      745                                pept_GSYVGNRADTREALDFFSR
+      746                                   pept_ADTREALDFFSRGLIK
+      747                                   pept_EALDFFSRGLIKSPIK
+      748                                  pept_GLIKSPIKIVGLSELPK
+      749                               pept_SPIKIVGLSELPKVYDLMEK
+      750                                 pept_IVGLSELPKVYDLMEKGK
+      751                                      pept_VYDLMEKGKILGR
+      752                                      pept_GKILGRYVVDTSK
+      753                                          pept_LRTSTLFTR
+      754                                         pept_LRTSTLFTRR
+      755                                          pept_MPSQVIPEK
+      756                                         pept_AIVFYETDGK
+      757                                  pept_DVTVPEPKPNEILVHVK
+      758                              pept_YSGVCHSDLHAWHGDWPFQLK
+      759                                    pept_FPLIGGHEGAGVVVK
+      760                                             pept_LGSNVK
+      761                                           pept_VGDFAGIK
+      762                   pept_ANVIPGQWVTISGACGGLGSLAIQYALAMGYR
+      763                                         pept_VIGIDGGNAK
+      764                                  pept_LFEQLGGEIFIDFTEEK
+      765                                           pept_DIVGAIIK
+      766                           pept_ATNGGSHGVINVSVSEAAIEASTR
+      767                      pept_YCRPNGTVVLVGMPAHAYCNSDVFNQVVK
+      768                                       pept_SISIVGSCVGNR
+      769                                           pept_EALDFFAR
+      770                                  pept_SPIHLAGLSDVPEIFAK
+      771                                             pept_GEIVGR
+      772                                            pept_YVVETSK
+      773                                        pept_MPSQVIPEKQK
+      774                                       pept_QKAIVFYETDGK
+      775                                     pept_AIVFYETDGKLEYK
+      776                              pept_LEYKDVTVPEPKPNEILVHVK
+      777             pept_DVTVPEPKPNEILVHVKYSGVCHSDLHAWHGDWPFQLK
+      778               pept_YSGVCHSDLHAWHGDWPFQLKFPLIGGHEGAGVVVK
+      779                              pept_FPLIGGHEGAGVVVKLGSNVK
+      780                                          pept_LGSNVKGWK
+      781                                        pept_GWKVGDFAGIK
+      782                  pept_RANVIPGQWVTISGACGGLGSLAIQYALAMGYR
+      783         pept_ANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAK
+      784                                        pept_VIGIDGGNAKR
+      785                                 pept_KLFEQLGGEIFIDFTEEK
+      786                          pept_LFEQLGGEIFIDFTEEKDIVGAIIK
+      787                   pept_DIVGAIIKATNGGSHGVINVSVSEAAIEASTR
+      788          pept_YCRPNGTVVLVGMPAHAYCNSDVFNQVVKSISIVGSCVGNR
+      789                                   pept_SISIVGSCVGNRADTR
+      790                                       pept_ADTREALDFFAR
+      791                                       pept_EALDFFARGLIK
+      792                              pept_GLIKSPIHLAGLSDVPEIFAK
+      793                               pept_SPIHLAGLSDVPEIFAKMEK
+      794                                          pept_MEKGEIVGR
+      795                                      pept_GEIVGRYVVETSK
+      796                              pept_MPSQVIPEKQKAIVFYETDGK
+      797                                   pept_QKAIVFYETDGKLEYK
+      798                    pept_AIVFYETDGKLEYKDVTVPEPKPNEILVHVK
+      799         pept_LEYKDVTVPEPKPNEILVHVKYSGVCHSDLHAWHGDWPFQLK
+      800         pept_YSGVCHSDLHAWHGDWPFQLKFPLIGGHEGAGVVVKLGSNVK
+      801                           pept_FPLIGGHEGAGVVVKLGSNVKGWK
+      802                                  pept_LGSNVKGWKVGDFAGIK
+      803               pept_ALKRANVIPGQWVTISGACGGLGSLAIQYALAMGYR
+      804        pept_RANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAK
+      805        pept_ANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAKR
+      806                                       pept_VIGIDGGNAKRK
+      807                                pept_RKLFEQLGGEIFIDFTEEK
+      808                         pept_KLFEQLGGEIFIDFTEEKDIVGAIIK
+      809  pept_LFEQLGGEIFIDFTEEKDIVGAIIKATNGGSHGVINVSVSEAAIEASTR
+      810      pept_YCRPNGTVVLVGMPAHAYCNSDVFNQVVKSISIVGSCVGNRADTR
+      811                           pept_SISIVGSCVGNRADTREALDFFAR
+      812                                   pept_ADTREALDFFARGLIK
+      813                      pept_EALDFFARGLIKSPIHLAGLSDVPEIFAK
+      814                           pept_GLIKSPIHLAGLSDVPEIFAKMEK
+      815                         pept_SPIHLAGLSDVPEIFAKMEKGEIVGR
+      816                                   pept_MEKGEIVGRYVVETSK
+      817                                           pept_PSQVIPEK
+      818                                         pept_PSQVIPEKQK
+      819                               pept_PSQVIPEKQKAIVFYETDGK
+                                                     peptide
+      1                                         AAADALSDLEIK
+      2                                               ELETLR
+      3                                               DAENHK
+      4                                               SHQVHR
+      5                                            EEPLLNEDK
+      6                                              TVLFPIK
+      7                                            YHEIWQAYK
+      8                                      AEASFWTAEEIDLSK
+      9                                             DIHDWNNR
+      10                                              MNENER
+      11                      VLAFFAASDGIVNENLVENFSTEVQIPEAK
+      12                          SFYGFQIMIENIHSETYSLLIDTYIK
+      13                                  ESEFLFNAIHTIPEIGEK
+      14                                              AEWALR
+      15                                        WIQDADALFGER
+      16                             LVAFASIEGVFFSGSFASIFWLK
+      17                                     GMMPGLTFSNELICR
+      18                                   DEGLHTDFACLLFAHLK
+      19                                          NKPDPAIVEK
+      20                                         IVTEAVEIEQR
+      21                        YFLDALPVALLGMNADLMNQYVEFVADR
+      22                                            LLVAFGNK
+      23                                    VENPFDFMENISLAGK
+      24                                              TNFFEK
+      25                                              VSDYQK
+      26                                              AGVMSK
+      27                                        QEAGAFTFNEDF
+      28                                            MPKETPSK
+      29                                   ETPSKAAADALSDLEIK
+      30                                     AAADALSDLEIKDSK
+      31                                            DSKSNLNK
+      32                                         SNLNKELETLR
+      33                                          ELETLREENR
+      34                                              EENRVK
+      35                                             VKSDMLK
+      36                                             SDMLKEK
+      37                                           LSKDAENHK
+      38                                          DAENHKAYLK
+      39                                          AYLKSHQVHR
+      40                                            SHQVHRHK
+      41                                              LKEMEK
+      42                                       EMEKEEPLLNEDK
+      43                                         EEPLLNEDKER
+      44                                           ERTVLFPIK
+      45                                    TVLFPIKYHEIWQAYK
+      46                                          YHEIWQAYKR
+      47                                    RAEASFWTAEEIDLSK
+      48                             AEASFWTAEEIDLSKDIHDWNNR
+      49                                      DIHDWNNRMNENER
+      50                                         MNENERFFISR
+      51                 FFISRVLAFFAASDGIVNENLVENFSTEVQIPEAK
+      52                       SFYGFQIMIENIHSETYSLLIDTYIKDPK
+      53                               DPKESEFLFNAIHTIPEIGEK
+      54                            ESEFLFNAIHTIPEIGEKAEWALR
+      55                                  AEWALRWIQDADALFGER
+      56                 WIQDADALFGERLVAFASIEGVFFSGSFASIFWLK
+      57                            LVAFASIEGVFFSGSFASIFWLKK
+      58                                    RGMMPGLTFSNELICR
+      59                    GMMPGLTFSNELICRDEGLHTDFACLLFAHLK
+      60                         DEGLHTDFACLLFAHLKNKPDPAIVEK
+      61                               NKPDPAIVEKIVTEAVEIEQR
+      62             IVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADR
+      63                YFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNK
+      64                                           LLVAFGNKK
+      65                                 YYKVENPFDFMENISLAGK
+      66                              VENPFDFMENISLAGKTNFFEK
+      67                                             TNFFEKR
+      68                                             RVSDYQK
+      69                                        VSDYQKAGVMSK
+      70                                           AGVMSKSTK
+      71                                     STKQEAGAFTFNEDF
+      72                                MPKETPSKAAADALSDLEIK
+      73                                ETPSKAAADALSDLEIKDSK
+      74                                AAADALSDLEIKDSKSNLNK
+      75                                      DSKSNLNKELETLR
+      76                                     SNLNKELETLREENR
+      77                                        ELETLREENRVK
+      78                                         EENRVKSDMLK
+      79                                           VKSDMLKEK
+      80                                          SDMLKEKLSK
+      81                                         EKLSKDAENHK
+      82                                       LSKDAENHKAYLK
+      83                                    DAENHKAYLKSHQVHR
+      84                                        AYLKSHQVHRHK
+      85                                          SHQVHRHKLK
+      86                                            HKLKEMEK
+      87                                     LKEMEKEEPLLNEDK
+      88                                     EMEKEEPLLNEDKER
+      89                                  EEPLLNEDKERTVLFPIK
+      90                                  ERTVLFPIKYHEIWQAYK
+      91                                   TVLFPIKYHEIWQAYKR
+      92                           YHEIWQAYKRAEASFWTAEEIDLSK
+      93                            RAEASFWTAEEIDLSKDIHDWNNR
+      94                       AEASFWTAEEIDLSKDIHDWNNRMNENER
+      95                                 DIHDWNNRMNENERFFISR
+      96           MNENERFFISRVLAFFAASDGIVNENLVENFSTEVQIPEAK
+      97     SFYGFQIMIENIHSETYSLLIDTYIKDPKESEFLFNAIHTIPEIGEK
+      98                         DPKESEFLFNAIHTIPEIGEKAEWALR
+      99                ESEFLFNAIHTIPEIGEKAEWALRWIQDADALFGER
+      100          AEWALRWIQDADALFGERLVAFASIEGVFFSGSFASIFWLK
+      101               WIQDADALFGERLVAFASIEGVFFSGSFASIFWLKK
+      102                          LVAFASIEGVFFSGSFASIFWLKKR
+      103                                  KRGMMPGLTFSNELICR
+      104                  RGMMPGLTFSNELICRDEGLHTDFACLLFAHLK
+      105         GMMPGLTFSNELICRDEGLHTDFACLLFAHLKNKPDPAIVEK
+      106             DEGLHTDFACLLFAHLKNKPDPAIVEKIVTEAVEIEQR
+      107  NKPDPAIVEKIVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADR
+      108    IVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNK
+      109              YFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNKK
+      110                                       LLVAFGNKKYYK
+      111                               KYYKVENPFDFMENISLAGK
+      112                          YYKVENPFDFMENISLAGKTNFFEK
+      113                            VENPFDFMENISLAGKTNFFEKR
+      114                                      TNFFEKRVSDYQK
+      115                                      RVSDYQKAGVMSK
+      116                                    VSDYQKAGVMSKSTK
+      117                              AGVMSKSTKQEAGAFTFNEDF
+      118                                            PKETPSK
+      119                                PKETPSKAAADALSDLEIK
+      120                             MTSEPEFQQAYDEIVSSVEDSK
+      121                                         VLPIVSVPER
+      122                                  VTWENDNGEQEVAQGYR
+      123                                            VQFNSAK
+      124                                        FHPSVNLSILK
+      125                                          FLGFEQIFK
+      126                                       NALTGLDMGGGK
+      127                                           GGLCVDLK
+      128                                             SDNEIR
+      129                                            ICYAFMR
+      130                                     DTDVPAGDIGVGGR
+      131                                         EIGYLFGAYR
+      132                                         NSWEGVLTGK
+      133                  GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK
+      134                                             ESFEGK
+      135                                   VTISGSGNVAQYAALK
+      136                                    VIELGGIVVSLSDSK
+      137                              GCIISETGITSEQIHDIASAK
+      138                                   SLEEIVDEYSTFSESK
+      139                   YVAGARPWTHVSNVDIALPCATQNEVSGDEAK
+      140                                           ALVASGVK
+      141                             FVAEGANMGSTPEAISVFETAR
+      142                                            STATNAK
+      143                                          DAVWFGPPK
+      144                               AANLGGVAVSGLEMAQNSQK
+      145                                            VTWTAER
+      146                                             VDQELK
+      147                               IMINCFNDCIQAAQEYSTEK
+      148                                         NTNTLPSLVK
+      149                              GANIASFVMVADAMLDQGDVF
+      150                         MTSEPEFQQAYDEIVSSVEDSKIFEK
+      151                                          IFEKFPQYK
+      152                                             FPQYKK
+      153                                        KVLPIVSVPER
+      154                                    VLPIVSVPERIIQFR
+      155                             IIQFRVTWENDNGEQEVAQGYR
+      156                           VTWENDNGEQEVAQGYRVQFNSAK
+      157                                        VQFNSAKGPYK
+      158                                           GPYKGGLR
+      159                                    GGLRFHPSVNLSILK
+      160                               FHPSVNLSILKFLGFEQIFK
+      161                              FLGFEQIFKNALTGLDMGGGK
+      162                               NALTGLDMGGGKGGLCVDLK
+      163                                         GGLCVDLKGK
+      164                                           GKSDNEIR
+      165                                            SDNEIRR
+      166                                           RICYAFMR
+      167                                        ICYAFMRELSR
+      168                                           ELSRHIGK
+      169                                 HIGKDTDVPAGDIGVGGR
+      170                           DTDVPAGDIGVGGREIGYLFGAYR
+      171                                      EIGYLFGAYRSYK
+      172                                      SYKNSWEGVLTGK
+      173        NSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK
+      174            GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGK
+      175                                            ESFEGKR
+      176                                  RVTISGSGNVAQYAALK
+      177                    VTISGSGNVAQYAALKVIELGGIVVSLSDSK
+      178               VIELGGIVVSLSDSKGCIISETGITSEQIHDIASAK
+      179                            GCIISETGITSEQIHDIASAKIR
+      180                                 FKSLEEIVDEYSTFSESK
+      181                                 SLEEIVDEYSTFSESKMK
+      182                 MKYVAGARPWTHVSNVDIALPCATQNEVSGDEAK
+      183           YVAGARPWTHVSNVDIALPCATQNEVSGDEAKALVASGVK
+      184                     ALVASGVKFVAEGANMGSTPEAISVFETAR
+      185                      FVAEGANMGSTPEAISVFETARSTATNAK
+      186                                   STATNAKDAVWFGPPK
+      187                      DAVWFGPPKAANLGGVAVSGLEMAQNSQK
+      188                        AANLGGVAVSGLEMAQNSQKVTWTAER
+      189                                      VTWTAERVDQELK
+      190                                            VDQELKK
+      191                              KIMINCFNDCIQAAQEYSTEK
+      192                     IMINCFNDCIQAAQEYSTEKNTNTLPSLVK
+      193                    NTNTLPSLVKGANIASFVMVADAMLDQGDVF
+      194                    MTSEPEFQQAYDEIVSSVEDSKIFEKFPQYK
+      195                                         IFEKFPQYKK
+      196                                   FPQYKKVLPIVSVPER
+      197                                   KVLPIVSVPERIIQFR
+      198                   VLPIVSVPERIIQFRVTWENDNGEQEVAQGYR
+      199                      IIQFRVTWENDNGEQEVAQGYRVQFNSAK
+      200                       VTWENDNGEQEVAQGYRVQFNSAKGPYK
+      201                                    VQFNSAKGPYKGGLR
+      202                                GPYKGGLRFHPSVNLSILK
+      203                           GGLRFHPSVNLSILKFLGFEQIFK
+      204                   FHPSVNLSILKFLGFEQIFKNALTGLDMGGGK
+      205                      FLGFEQIFKNALTGLDMGGGKGGLCVDLK
+      206                             NALTGLDMGGGKGGLCVDLKGK
+      207                                   GGLCVDLKGKSDNEIR
+      208                                          GKSDNEIRR
+      209                                     SDNEIRRICYAFMR
+      210                                       RICYAFMRELSR
+      211                                    ICYAFMRELSRHIGK
+      212                             ELSRHIGKDTDVPAGDIGVGGR
+      213                       HIGKDTDVPAGDIGVGGREIGYLFGAYR
+      214                        DTDVPAGDIGVGGREIGYLFGAYRSYK
+      215                            EIGYLFGAYRSYKNSWEGVLTGK
+      216     SYKNSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK
+      217  NSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGK
+      218           GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGKR
+      219                            ESFEGKRVTISGSGNVAQYAALK
+      220                   RVTISGSGNVAQYAALKVIELGGIVVSLSDSK
+      221             VIELGGIVVSLSDSKGCIISETGITSEQIHDIASAKIR
+      222                          GCIISETGITSEQIHDIASAKIRFK
+      223                               IRFKSLEEIVDEYSTFSESK
+      224                               FKSLEEIVDEYSTFSESKMK
+      225 SLEEIVDEYSTFSESKMKYVAGARPWTHVSNVDIALPCATQNEVSGDEAK
+      226         MKYVAGARPWTHVSNVDIALPCATQNEVSGDEAKALVASGVK
+      227              ALVASGVKFVAEGANMGSTPEAISVFETARSTATNAK
+      228             FVAEGANMGSTPEAISVFETARSTATNAKDAVWFGPPK
+      229               STATNAKDAVWFGPPKAANLGGVAVSGLEMAQNSQK
+      230               DAVWFGPPKAANLGGVAVSGLEMAQNSQKVTWTAER
+      231                  AANLGGVAVSGLEMAQNSQKVTWTAERVDQELK
+      232                                     VTWTAERVDQELKK
+      233                        VDQELKKIMINCFNDCIQAAQEYSTEK
+      234                    KIMINCFNDCIQAAQEYSTEKNTNTLPSLVK
+      235                              TSEPEFQQAYDEIVSSVEDSK
+      236                          TSEPEFQQAYDEIVSSVEDSKIFEK
+      237                     TSEPEFQQAYDEIVSSVEDSKIFEKFPQYK
+      238                     MSEPEFQQAYEEVVSSLEDSTLFEQHPEYR
+      239                                         VLPIVSVPER
+      240                                            VTWENDK
+      241                                         GEQEVAQGYR
+      242                                            VQYNSAK
+      243                                        FHPSVNLSILK
+      244                                          FLGFEQIFK
+      245                                       NSLTGLDMGGGK
+      246                                           GGLCVDLK
+      247                                             SNNEIR
+      248                                            ICYAFMR
+      249                                 HIGQDTDVPAGDIGVGGR
+      250                                         EIGYLFGAYR
+      251                                         NSWEGVLTGK
+      252                  GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK
+      253                                             ESFEGK
+      254                                   VTISGSGNVAQYAALK
+      255                                    VIELGGTVVSLSDSK
+      256                              GCIISETGITSEQVADISSAK
+      257                                   SLEQIVNEYSTFSENK
+      258                                    VQYIAGARPWTHVQK
+      259                                VDIALPCATQNEVSGEEAK
+      260                                           ALVAQGVK
+      261                             FIAEGSNMGSTPEAIAVFETAR
+      262                                   STATGPSEAVWYGPPK
+      263                               AANLGGVAVSGLEMAQNSQR
+      264                                            ITWTSER
+      265                                             VDQELK
+      266                                     IMINCFNECIDYAK
+      267                                            VLPSLVK
+      268                                          GANIASFIK
+      269                                       VSDAMFDQGDVF
+      270                    MSEPEFQQAYEEVVSSLEDSTLFEQHPEYRK
+      271                                        KVLPIVSVPER
+      272                                    VLPIVSVPERIIQFR
+      273                                       IIQFRVTWENDK
+      274                                  VTWENDKGEQEVAQGYR
+      275                                  GEQEVAQGYRVQYNSAK
+      276                                        VQYNSAKGPYK
+      277                                           GPYKGGLR
+      278                                    GGLRFHPSVNLSILK
+      279                               FHPSVNLSILKFLGFEQIFK
+      280                              FLGFEQIFKNSLTGLDMGGGK
+      281                               NSLTGLDMGGGKGGLCVDLK
+      282                                         GGLCVDLKGR
+      283                                           GRSNNEIR
+      284                                            SNNEIRR
+      285                                           RICYAFMR
+      286                                        ICYAFMRELSR
+      287                             ELSRHIGQDTDVPAGDIGVGGR
+      288                       HIGQDTDVPAGDIGVGGREIGYLFGAYR
+      289                                      EIGYLFGAYRSYK
+      290                                      SYKNSWEGVLTGK
+      291        NSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK
+      292            GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGK
+      293                                            ESFEGKR
+      294                                  RVTISGSGNVAQYAALK
+      295                    VTISGSGNVAQYAALKVIELGGTVVSLSDSK
+      296               VIELGGTVVSLSDSKGCIISETGITSEQVADISSAK
+      297                          GCIISETGITSEQVADISSAKVNFK
+      298                               VNFKSLEQIVNEYSTFSENK
+      299                    SLEQIVNEYSTFSENKVQYIAGARPWTHVQK
+      300                 VQYIAGARPWTHVQKVDIALPCATQNEVSGEEAK
+      301                        VDIALPCATQNEVSGEEAKALVAQGVK
+      302                     ALVAQGVKFIAEGSNMGSTPEAIAVFETAR
+      303             FIAEGSNMGSTPEAIAVFETARSTATGPSEAVWYGPPK
+      304               STATGPSEAVWYGPPKAANLGGVAVSGLEMAQNSQR
+      305                        AANLGGVAVSGLEMAQNSQRITWTSER
+      306                                      ITWTSERVDQELK
+      307                                            VDQELKR
+      308                                    RIMINCFNECIDYAK
+      309                                    IMINCFNECIDYAKK
+      310                                             YTKDGK
+      311                                         DGKVLPSLVK
+      312                                   VLPSLVKGANIASFIK
+      313                              GANIASFIKVSDAMFDQGDVF
+      314          MSEPEFQQAYEEVVSSLEDSTLFEQHPEYRKVLPIVSVPER
+      315                                   KVLPIVSVPERIIQFR
+      316                             VLPIVSVPERIIQFRVTWENDK
+      317                             IIQFRVTWENDKGEQEVAQGYR
+      318                           VTWENDKGEQEVAQGYRVQYNSAK
+      319                              GEQEVAQGYRVQYNSAKGPYK
+      320                                    VQYNSAKGPYKGGLR
+      321                                GPYKGGLRFHPSVNLSILK
+      322                           GGLRFHPSVNLSILKFLGFEQIFK
+      323                   FHPSVNLSILKFLGFEQIFKNSLTGLDMGGGK
+      324                      FLGFEQIFKNSLTGLDMGGGKGGLCVDLK
+      325                             NSLTGLDMGGGKGGLCVDLKGR
+      326                                   GGLCVDLKGRSNNEIR
+      327                                          GRSNNEIRR
+      328                                     SNNEIRRICYAFMR
+      329                                       RICYAFMRELSR
+      330                      ICYAFMRELSRHIGQDTDVPAGDIGVGGR
+      331                   ELSRHIGQDTDVPAGDIGVGGREIGYLFGAYR
+      332                    HIGQDTDVPAGDIGVGGREIGYLFGAYRSYK
+      333                            EIGYLFGAYRSYKNSWEGVLTGK
+      334     SYKNSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK
+      335  NSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGK
+      336           GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGKR
+      337                            ESFEGKRVTISGSGNVAQYAALK
+      338                   RVTISGSGNVAQYAALKVIELGGTVVSLSDSK
+      339           VIELGGTVVSLSDSKGCIISETGITSEQVADISSAKVNFK
+      340          GCIISETGITSEQVADISSAKVNFKSLEQIVNEYSTFSENK
+      341                VNFKSLEQIVNEYSTFSENKVQYIAGARPWTHVQK
+      342 SLEQIVNEYSTFSENKVQYIAGARPWTHVQKVDIALPCATQNEVSGEEAK
+      343         VQYIAGARPWTHVQKVDIALPCATQNEVSGEEAKALVAQGVK
+      344  VDIALPCATQNEVSGEEAKALVAQGVKFIAEGSNMGSTPEAIAVFETAR
+      345     ALVAQGVKFIAEGSNMGSTPEAIAVFETARSTATGPSEAVWYGPPK
+      346        STATGPSEAVWYGPPKAANLGGVAVSGLEMAQNSQRITWTSER
+      347                  AANLGGVAVSGLEMAQNSQRITWTSERVDQELK
+      348                                     ITWTSERVDQELKR
+      349                              VDQELKRIMINCFNECIDYAK
+      350                                   RIMINCFNECIDYAKK
+      351                                 IMINCFNECIDYAKKYTK
+      352                                            KYTKDGK
+      353                                      YTKDGKVLPSLVK
+      354                                DGKVLPSLVKGANIASFIK
+      355                       VLPSLVKGANIASFIKVSDAMFDQGDVF
+      356                      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR
+      357                     SEPEFQQAYEEVVSSLEDSTLFEQHPEYRK
+      358           SEPEFQQAYEEVVSSLEDSTLFEQHPEYRKVLPIVSVPER
+      359                                             NLPILK
+      360                                           VHFDQAGK
+      361                                     IAPRPLDLLRPVVR
+      362                                           GFTLAEVK
+      363                                         AAGLTAAYAR
+      364                                          TIGIAVDHR
+      365                                        NQEIFDANVQR
+      366                                             IIVFPR
+      367                         APEAEQVLSAAATFPIAQPATDVEAR
+      368                                        AVQDNGESAFR
+      369                                            AEAEAEK
+      370                                        MAISKNLPILK
+      371                                         NLPILKNHFR
+      372                                             KHWQER
+      373                                            HWQERVK
+      374                                         VKVHFDQAGK
+      375                                          VHFDQAGKK
+      376                                             NARAAR
+      377                                             AARAAK
+      378                                  AAKIAPRPLDLLRPVVR
+      379                                IAPRPLDLLRPVVRAPTVK
+      380                                           APTVKYNR
+      381                                        AGRGFTLAEVK
+      382                                 GFTLAEVKAAGLTAAYAR
+      383                                AAGLTAAYARTIGIAVDHR
+      384                                         TIGIAVDHRR
+      385                                     QNRNQEIFDANVQR
+      386                                      NQEIFDANVQRLK
+      387                                            LKEYQSK
+      388                                        EYQSKIIVFPR
+      389                                          IIVFPRDGK
+      390                      DGKAPEAEQVLSAAATFPIAQPATDVEAR
+      391              APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR
+      392                                     AVQDNGESAFRTLR
+      393                                             TLRLAR
+      394                                             LARSEK
+      395                                          EKAEAEAEK
+      396                                           AEAEAEKK
+      397                                    MAISKNLPILKNHFR
+      398                                        NLPILKNHFRK
+      399                                         NHFRKHWQER
+      400                                           KHWQERVK
+      401                                    HWQERVKVHFDQAGK
+      402                                        VKVHFDQAGKK
+      403                                       VHFDQAGKKVSR
+      404                                            VSRRNAR
+      405                                            RNARAAR
+      406                                          NARAARAAK
+      407                               AARAAKIAPRPLDLLRPVVR
+      408                             AAKIAPRPLDLLRPVVRAPTVK
+      409                             IAPRPLDLLRPVVRAPTVKYNR
+      410                                          APTVKYNRK
+      411                                             YNRKVR
+      412                                             KVRAGR
+      413                                      VRAGRGFTLAEVK
+      414                              AGRGFTLAEVKAAGLTAAYAR
+      415                        GFTLAEVKAAGLTAAYARTIGIAVDHR
+      416                               AAGLTAAYARTIGIAVDHRR
+      417                                      TIGIAVDHRRQNR
+      418                                    RQNRNQEIFDANVQR
+      419                                   QNRNQEIFDANVQRLK
+      420                                 NQEIFDANVQRLKEYQSK
+      421                                      LKEYQSKIIVFPR
+      422                                     EYQSKIIVFPRDGK
+      423                IIVFPRDGKAPEAEQVLSAAATFPIAQPATDVEAR
+      424           DGKAPEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR
+      425           APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFRTLR
+      426                                  AVQDNGESAFRTLRLAR
+      427                                          TLRLARSEK
+      428                                            LARSEKK
+      429                                             SEKKFR
+      430                                             KFRGIR
+      431                                            FRGIREK
+      432                                             GIREKR
+      433                                        AREKAEAEAEK
+      434                                         EKAEAEAEKK
+      435                                          AEAEAEKKK
+      436                                         AISKNLPILK
+      437                                     AISKNLPILKNHFR
+      438                                             NLPILK
+      439                                           VHFDQAGK
+      440                                     IAPRPLDLLRPVVR
+      441                                           GFTLAEVK
+      442                                         AAGLTAAYAR
+      443                                          TIGIAVDHR
+      444                                        NQEIFDANVQR
+      445                                             IIVFPR
+      446                         APEAEQVLSAAATFPIAQPATDVEAR
+      447                                        AVQDNGESAFR
+      448                                            AEAEAEK
+      449                                        MAISKNLPILK
+      450                                         NLPILKNHFR
+      451                                             KHWQER
+      452                                            HWQERVK
+      453                                         VKVHFDQAGK
+      454                                          VHFDQAGKK
+      455                                             NARATR
+      456                                             ATRAAK
+      457                                  AAKIAPRPLDLLRPVVR
+      458                                IAPRPLDLLRPVVRAPTVK
+      459                                           APTVKYNR
+      460                                        AGRGFTLAEVK
+      461                                 GFTLAEVKAAGLTAAYAR
+      462                                AAGLTAAYARTIGIAVDHR
+      463                                         TIGIAVDHRR
+      464                                     QNRNQEIFDANVQR
+      465                                      NQEIFDANVQRLK
+      466                                            LKEYQSK
+      467                                        EYQSKIIVFPR
+      468                                          IIVFPRNGK
+      469                      NGKAPEAEQVLSAAATFPIAQPATDVEAR
+      470              APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR
+      471                                     AVQDNGESAFRTLR
+      472                                             TLRLAR
+      473                                             LARSEK
+      474                                          EKAEAEAEK
+      475                                           AEAEAEKK
+      476                                    MAISKNLPILKNHFR
+      477                                        NLPILKNHFRK
+      478                                         NHFRKHWQER
+      479                                           KHWQERVK
+      480                                    HWQERVKVHFDQAGK
+      481                                        VKVHFDQAGKK
+      482                                       VHFDQAGKKVSR
+      483                                            VSRRNAR
+      484                                            RNARATR
+      485                                          NARATRAAK
+      486                               ATRAAKIAPRPLDLLRPVVR
+      487                             AAKIAPRPLDLLRPVVRAPTVK
+      488                             IAPRPLDLLRPVVRAPTVKYNR
+      489                                          APTVKYNRK
+      490                                             YNRKVR
+      491                                             KVRAGR
+      492                                      VRAGRGFTLAEVK
+      493                              AGRGFTLAEVKAAGLTAAYAR
+      494                        GFTLAEVKAAGLTAAYARTIGIAVDHR
+      495                               AAGLTAAYARTIGIAVDHRR
+      496                                      TIGIAVDHRRQNR
+      497                                    RQNRNQEIFDANVQR
+      498                                   QNRNQEIFDANVQRLK
+      499                                 NQEIFDANVQRLKEYQSK
+      500                                      LKEYQSKIIVFPR
+      501                                     EYQSKIIVFPRNGK
+      502                IIVFPRNGKAPEAEQVLSAAATFPIAQPATDVEAR
+      503           NGKAPEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR
+      504           APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFRTLR
+      505                                  AVQDNGESAFRTLRLAR
+      506                                          TLRLARSEK
+      507                                            LARSEKK
+      508                                             SEKKFR
+      509                                             KFRGIR
+      510                                            FRGIREK
+      511                                             GIREKR
+      512                                        AREKAEAEAEK
+      513                                         EKAEAEAEKK
+      514                                          AEAEAEKKK
+      515                                         AISKNLPILK
+      516                                     AISKNLPILKNHFR
+      517                                           MSIPETQK
+      518                                         GVIFYESHGK
+      519                                           DIPVPKPK
+      520                                          ANELLINVK
+      521                              YSGVCHTDLHAWHGDWPLPVK
+      522                              LPLVGGHEGAGVVVGMGENVK
+      523                                           IGDYAGIK
+      524                       SANLMAGHWVAISGAAGGLGSLAVQYAK
+      525                                         VLGIDGGEGK
+      526                                       SIGGEVFIDFTK
+      527                                           DIVGAVLK
+      528                           ATDGGAHGVINVSVSEAAIEASTR
+      529                                    ANGTTVLVGMPAGAK
+      530                                        CCSDVFNQVVK
+      531                                       SISIVGSYVGNR
+      532                                           EALDFFAR
+      533                                      VVGLSTLPEIYEK
+      534                                             GQIVGR
+      535                                            YVVDTSK
+      536                                 MSIPETQKGVIFYESHGK
+      537                                     GVIFYESHGKLEYK
+      538                                       LEYKDIPVPKPK
+      539                                  DIPVPKPKANELLINVK
+      540                     ANELLINVKYSGVCHTDLHAWHGDWPLPVK
+      541         YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVGMGENVK
+      542                           LPLVGGHEGAGVVVGMGENVKGWK
+      543                                        GWKIGDYAGIK
+      544                    ALKSANLMAGHWVAISGAAGGLGSLAVQYAK
+      545                  SANLMAGHWVAISGAAGGLGSLAVQYAKAMGYR
+      546                                    AMGYRVLGIDGGEGK
+      547                                    VLGIDGGEGKEELFR
+      548                                  EELFRSIGGEVFIDFTK
+      549                                     SIGGEVFIDFTKEK
+      550                                         EKDIVGAVLK
+      551                   DIVGAVLKATDGGAHGVINVSVSEAAIEASTR
+      552                        ATDGGAHGVINVSVSEAAIEASTRYVR
+      553                                 YVRANGTTVLVGMPAGAK
+      554                         ANGTTVLVGMPAGAKCCSDVFNQVVK
+      555                            CCSDVFNQVVKSISIVGSYVGNR
+      556                                   SISIVGSYVGNRADTR
+      557                                       ADTREALDFFAR
+      558                                       EALDFFARGLVK
+      559                                           GLVKSPIK
+      560                                  SPIKVVGLSTLPEIYEK
+      561                                   VVGLSTLPEIYEKMEK
+      562                                          MEKGQIVGR
+      563                                      GQIVGRYVVDTSK
+      564                             MSIPETQKGVIFYESHGKLEYK
+      565                             GVIFYESHGKLEYKDIPVPKPK
+      566                              LEYKDIPVPKPKANELLINVK
+      567             DIPVPKPKANELLINVKYSGVCHTDLHAWHGDWPLPVK
+      568      YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVGMGENVKGWK
+      569                   LPLVGGHEGAGVVVGMGENVKGWKIGDYAGIK
+      570               ALKSANLMAGHWVAISGAAGGLGSLAVQYAKAMGYR
+      571        SANLMAGHWVAISGAAGGLGSLAVQYAKAMGYRVLGIDGGEGK
+      572                               AMGYRVLGIDGGEGKEELFR
+      573                        VLGIDGGEGKEELFRSIGGEVFIDFTK
+      574                                EELFRSIGGEVFIDFTKEK
+      575                             SIGGEVFIDFTKEKDIVGAVLK
+      576                 EKDIVGAVLKATDGGAHGVINVSVSEAAIEASTR
+      577                DIVGAVLKATDGGAHGVINVSVSEAAIEASTRYVR
+      578         ATDGGAHGVINVSVSEAAIEASTRYVRANGTTVLVGMPAGAK
+      579                      YVRANGTTVLVGMPAGAKCCSDVFNQVVK
+      580             ANGTTVLVGMPAGAKCCSDVFNQVVKSISIVGSYVGNR
+      581                        CCSDVFNQVVKSISIVGSYVGNRADTR
+      582                           SISIVGSYVGNRADTREALDFFAR
+      583                                   ADTREALDFFARGLVK
+      584                                   EALDFFARGLVKSPIK
+      585                              GLVKSPIKVVGLSTLPEIYEK
+      586                               SPIKVVGLSTLPEIYEKMEK
+      587                             VVGLSTLPEIYEKMEKGQIVGR
+      588                                   MEKGQIVGRYVVDTSK
+      589                                            SIPETQK
+      590                                  SIPETQKGVIFYESHGK
+      591                              SIPETQKGVIFYESHGKLEYK
+      592                                           MSIPETQK
+      593                                         AIIFYESNGK
+      594                                  DIPVPKPKPNELLINVK
+      595                              YSGVCHTDLHAWHGDWPLPTK
+      596                              LPLVGGHEGAGVVVGMGENVK
+      597                                           IGDYAGIK
+      598                            AGHWAAISGAAGGLGSLAVQYAK
+      599                                         VLGIDGGPGK
+      600                                  EELFTSLGGEVFIDFTK
+      601                                           DIVSAVVK
+      602                           ATNGGAHGIINVSVSEAAIEASTR
+      603                                    ANGTVVLVGLPAGAK
+      604                                        CSSDVFNHVVK
+      605                                       SISIVGSYVGNR
+      606                                           EALDFFAR
+      607                                      VVGLSSLPEIYEK
+      608                                             GQIAGR
+      609                                            YVVDTSK
+      610                                 MSIPETQKAIIFYESNGK
+      611                                     AIIFYESNGKLEHK
+      612                              LEHKDIPVPKPKPNELLINVK
+      613             DIPVPKPKPNELLINVKYSGVCHTDLHAWHGDWPLPTK
+      614         YSGVCHTDLHAWHGDWPLPTKLPLVGGHEGAGVVVGMGENVK
+      615                           LPLVGGHEGAGVVVGMGENVKGWK
+      616                                        GWKIGDYAGIK
+      617                                           ALKSANLR
+      618                       SANLRAGHWAAISGAAGGLGSLAVQYAK
+      619                       AGHWAAISGAAGGLGSLAVQYAKAMGYR
+      620                                    AMGYRVLGIDGGPGK
+      621                        VLGIDGGPGKEELFTSLGGEVFIDFTK
+      622                                EELFTSLGGEVFIDFTKEK
+      623                                         EKDIVSAVVK
+      624                   DIVSAVVKATNGGAHGIINVSVSEAAIEASTR
+      625                        ATNGGAHGIINVSVSEAAIEASTRYCR
+      626                                 YCRANGTVVLVGLPAGAK
+      627                         ANGTVVLVGLPAGAKCSSDVFNHVVK
+      628                            CSSDVFNHVVKSISIVGSYVGNR
+      629                                   SISIVGSYVGNRADTR
+      630                                       ADTREALDFFAR
+      631                                       EALDFFARGLVK
+      632                                           GLVKSPIK
+      633                                  SPIKVVGLSSLPEIYEK
+      634                                   VVGLSSLPEIYEKMEK
+      635                                          MEKGQIAGR
+      636                                      GQIAGRYVVDTSK
+      637                             MSIPETQKAIIFYESNGKLEHK
+      638                    AIIFYESNGKLEHKDIPVPKPKPNELLINVK
+      639         LEHKDIPVPKPKPNELLINVKYSGVCHTDLHAWHGDWPLPTK
+      640      YSGVCHTDLHAWHGDWPLPTKLPLVGGHEGAGVVVGMGENVKGWK
+      641                   LPLVGGHEGAGVVVGMGENVKGWKIGDYAGIK
+      642                    ALKSANLRAGHWAAISGAAGGLGSLAVQYAK
+      643                  SANLRAGHWAAISGAAGGLGSLAVQYAKAMGYR
+      644             AGHWAAISGAAGGLGSLAVQYAKAMGYRVLGIDGGPGK
+      645                   AMGYRVLGIDGGPGKEELFTSLGGEVFIDFTK
+      646                      VLGIDGGPGKEELFTSLGGEVFIDFTKEK
+      647                        EELFTSLGGEVFIDFTKEKDIVSAVVK
+      648                 EKDIVSAVVKATNGGAHGIINVSVSEAAIEASTR
+      649                DIVSAVVKATNGGAHGIINVSVSEAAIEASTRYCR
+      650         ATNGGAHGIINVSVSEAAIEASTRYCRANGTVVLVGLPAGAK
+      651                      YCRANGTVVLVGLPAGAKCSSDVFNHVVK
+      652             ANGTVVLVGLPAGAKCSSDVFNHVVKSISIVGSYVGNR
+      653                        CSSDVFNHVVKSISIVGSYVGNRADTR
+      654                           SISIVGSYVGNRADTREALDFFAR
+      655                                   ADTREALDFFARGLVK
+      656                                   EALDFFARGLVKSPIK
+      657                              GLVKSPIKVVGLSSLPEIYEK
+      658                               SPIKVVGLSSLPEIYEKMEK
+      659                             VVGLSSLPEIYEKMEKGQIAGR
+      660                                   MEKGQIAGRYVVDTSK
+      661                                            SIPETQK
+      662                                  SIPETQKAIIFYESNGK
+      663                              SIPETQKAIIFYESNGKLEHK
+      664                                            TSTLFTR
+      665                                           VQPSLFSR
+      666                                          LQSTAAIPK
+      667                                           GVIFYENK
+      668                                  DIPVPEPKPNEILINVK
+      669                              YSGVCHTDLHAWHGDWPLPVK
+      670                                    LPLVGGHEGAGVVVK
+      671                                             LGSNVK
+      672                                           VGDLAGIK
+      673    WLNGSCMTCEFCESGHESNCPDADLSGYTHDGSFQQFATADAIQAAK
+      674                             IQQGTDLAEVAPILCAGVTVYK
+      675                       AGDWVAISGAAGGLGSLAVQYATAMGYR
+      676                                         VLGIDAGEEK
+      677                                        LGGEVFIDFTK
+      678                                        NMVSDIQEATK
+      679          GGPHGVINVSVSEAAISLSTEYVRPCGTVVLVGLPANAYVK
+      680                                          SEVFSHVVK
+      681                                            GSYVGNR
+      682                                           EALDFFSR
+      683                                          IVGLSELPK
+      684                                            VYDLMEK
+      685                                            YVVDTSK
+      686                                         MLRTSTLFTR
+      687                                           TSTLFTRR
+      688                                          RVQPSLFSR
+      689                                       VQPSLFSRNILR
+      690                                      NILRLQSTAAIPK
+      691                                       LQSTAAIPKTQK
+      692                                        TQKGVIFYENK
+      693                                         GVIFYENKGK
+      694                                             GKLHYK
+      695                              LHYKDIPVPEPKPNEILINVK
+      696             DIPVPEPKPNEILINVKYSGVCHTDLHAWHGDWPLPVK
+      697               YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVK
+      698                              LPLVGGHEGAGVVVKLGSNVK
+      699                                          LGSNVKGWK
+      700                                        GWKVGDLAGIK
+      701                          IQQGTDLAEVAPILCAGVTVYKALK
+      702                                           ALKEADLK
+      703                  EADLKAGDWVAISGAAGGLGSLAVQYATAMGYR
+      704             AGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEK
+      705                                       VLGIDAGEEKEK
+      706                                       KLGGEVFIDFTK
+      707                                      LGGEVFIDFTKTK
+      708                                      TKNMVSDIQEATK
+      709 GGPHGVINVSVSEAAISLSTEYVRPCGTVVLVGLPANAYVKSEVFSHVVK
+      710                                     SEVFSHVVKSINIK
+      711                                       SINIKGSYVGNR
+      712                                        GSYVGNRADTR
+      713                                       ADTREALDFFSR
+      714                                       EALDFFSRGLIK
+      715                                           GLIKSPIK
+      716                                      SPIKIVGLSELPK
+      717                                   IVGLSELPKVYDLMEK
+      718                                          VYDLMEKGK
+      719                                             GKILGR
+      720                                        ILGRYVVDTSK
+      721                                        MLRTSTLFTRR
+      722                                   TSTLFTRRVQPSLFSR
+      723                                      RVQPSLFSRNILR
+      724                              VQPSLFSRNILRLQSTAAIPK
+      725                                   NILRLQSTAAIPKTQK
+      726                               LQSTAAIPKTQKGVIFYENK
+      727                                      TQKGVIFYENKGK
+      728                                     GVIFYENKGKLHYK
+      729                            GKLHYKDIPVPEPKPNEILINVK
+      730         LHYKDIPVPEPKPNEILINVKYSGVCHTDLHAWHGDWPLPVK
+      731         YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVKLGSNVK
+      732                           LPLVGGHEGAGVVVKLGSNVKGWK
+      733                                  LGSNVKGWKVGDLAGIK
+      734                     IQQGTDLAEVAPILCAGVTVYKALKEADLK
+      735               ALKEADLKAGDWVAISGAAGGLGSLAVQYATAMGYR
+      736        EADLKAGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEK
+      737           AGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEKEK
+      738                                    VLGIDAGEEKEKLFK
+      739                                             EKLFKK
+      740                                    LFKKLGGEVFIDFTK
+      741                                     KLGGEVFIDFTKTK
+      742                           LGGEVFIDFTKTKNMVSDIQEATK
+      743                              SEVFSHVVKSINIKGSYVGNR
+      744                                   SINIKGSYVGNRADTR
+      745                                GSYVGNRADTREALDFFSR
+      746                                   ADTREALDFFSRGLIK
+      747                                   EALDFFSRGLIKSPIK
+      748                                  GLIKSPIKIVGLSELPK
+      749                               SPIKIVGLSELPKVYDLMEK
+      750                                 IVGLSELPKVYDLMEKGK
+      751                                      VYDLMEKGKILGR
+      752                                      GKILGRYVVDTSK
+      753                                          LRTSTLFTR
+      754                                         LRTSTLFTRR
+      755                                          MPSQVIPEK
+      756                                         AIVFYETDGK
+      757                                  DVTVPEPKPNEILVHVK
+      758                              YSGVCHSDLHAWHGDWPFQLK
+      759                                    FPLIGGHEGAGVVVK
+      760                                             LGSNVK
+      761                                           VGDFAGIK
+      762                   ANVIPGQWVTISGACGGLGSLAIQYALAMGYR
+      763                                         VIGIDGGNAK
+      764                                  LFEQLGGEIFIDFTEEK
+      765                                           DIVGAIIK
+      766                           ATNGGSHGVINVSVSEAAIEASTR
+      767                      YCRPNGTVVLVGMPAHAYCNSDVFNQVVK
+      768                                       SISIVGSCVGNR
+      769                                           EALDFFAR
+      770                                  SPIHLAGLSDVPEIFAK
+      771                                             GEIVGR
+      772                                            YVVETSK
+      773                                        MPSQVIPEKQK
+      774                                       QKAIVFYETDGK
+      775                                     AIVFYETDGKLEYK
+      776                              LEYKDVTVPEPKPNEILVHVK
+      777             DVTVPEPKPNEILVHVKYSGVCHSDLHAWHGDWPFQLK
+      778               YSGVCHSDLHAWHGDWPFQLKFPLIGGHEGAGVVVK
+      779                              FPLIGGHEGAGVVVKLGSNVK
+      780                                          LGSNVKGWK
+      781                                        GWKVGDFAGIK
+      782                  RANVIPGQWVTISGACGGLGSLAIQYALAMGYR
+      783         ANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAK
+      784                                        VIGIDGGNAKR
+      785                                 KLFEQLGGEIFIDFTEEK
+      786                          LFEQLGGEIFIDFTEEKDIVGAIIK
+      787                   DIVGAIIKATNGGSHGVINVSVSEAAIEASTR
+      788          YCRPNGTVVLVGMPAHAYCNSDVFNQVVKSISIVGSCVGNR
+      789                                   SISIVGSCVGNRADTR
+      790                                       ADTREALDFFAR
+      791                                       EALDFFARGLIK
+      792                              GLIKSPIHLAGLSDVPEIFAK
+      793                               SPIHLAGLSDVPEIFAKMEK
+      794                                          MEKGEIVGR
+      795                                      GEIVGRYVVETSK
+      796                              MPSQVIPEKQKAIVFYETDGK
+      797                                   QKAIVFYETDGKLEYK
+      798                    AIVFYETDGKLEYKDVTVPEPKPNEILVHVK
+      799         LEYKDVTVPEPKPNEILVHVKYSGVCHSDLHAWHGDWPFQLK
+      800         YSGVCHSDLHAWHGDWPFQLKFPLIGGHEGAGVVVKLGSNVK
+      801                           FPLIGGHEGAGVVVKLGSNVKGWK
+      802                                  LGSNVKGWKVGDFAGIK
+      803               ALKRANVIPGQWVTISGACGGLGSLAIQYALAMGYR
+      804        RANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAK
+      805        ANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAKR
+      806                                       VIGIDGGNAKRK
+      807                                RKLFEQLGGEIFIDFTEEK
+      808                         KLFEQLGGEIFIDFTEEKDIVGAIIK
+      809  LFEQLGGEIFIDFTEEKDIVGAIIKATNGGSHGVINVSVSEAAIEASTR
+      810      YCRPNGTVVLVGMPAHAYCNSDVFNQVVKSISIVGSCVGNRADTR
+      811                           SISIVGSCVGNRADTREALDFFAR
+      812                                   ADTREALDFFARGLIK
+      813                      EALDFFARGLIKSPIHLAGLSDVPEIFAK
+      814                           GLIKSPIHLAGLSDVPEIFAKMEK
+      815                         SPIHLAGLSDVPEIFAKMEKGEIVGR
+      816                                   MEKGEIVGRYVVETSK
+      817                                           PSQVIPEK
+      818                                         PSQVIPEKQK
+      819                               PSQVIPEKQKAIVFYETDGK
       
       $proteins
         protein
-      1  P0CX57
-      2  P48238
-      3  Q03483
-      4  Q03856
-      5  Q06204
-      6  Q07791
-      7  Q07793
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  peptide
-      1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          AHNVSTSNNSPSTDNDSISK;AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK;AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLRPETY;DILSVDYTDIMK;DILSVDYTDIMKILSK;DILSVDYTDIMKILSKSIEK;ESQQLSQHSPISHGSACASVTSK;ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK;ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK;EVHTNQDPLDVSASK;EVHTNQDPLDVSASKTEECEK;EVHTNQDPLDVSASKTEECEKASTK;FLQNSNLGGIIPTVNGKPVR;FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK;FLRYTR;FLRYTRHR;GLSGEYK;GLSGEYKFLR;GLSGEYKFLRYTR;HDLHLRPETY;HLNMTVAELFLDIHAIYEEQQGSR;HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR;HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR;HRHLNMTVAELFLDIHAIYEEQQGSR;HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR;ILSKSIEK;ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK;KYVRPPPMLTSPNDFPNWVK;KYVRPPPMLTSPNDFPNWVKTYIK;LNNNGIHINNK;LNNNGIHINNKVACQLIMR;LNNNGIHINNKVACQLIMRGLSGEYK;MESQQLSQHSPISHGSACASVTSK;MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK;MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK;MQSDTQEANDIVTLANLQYNGSTPADAFETK;MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR;MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK;NDSRSYTNTTKPK;NDSRSYTNTTKPKVIAR;NPQKTNNSK;NPQKTNNSKSK;NPSDEK;NPSDEKNDSR;NPSDEKNDSRSYTNTTKPK;NSKPNYR;NSKPNYRR;NSKPNYRRNPSDEK;QITDDELTFLYNTFQIFAPSQFLPTWVK;QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK;QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK;RNPSDEK;RNPSDEKNDSR;SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK;SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR;SKTARAHNVSTSNNSPSTDNDSISK;STTEPIQLNNK;STTEPIQLNNKHDLHLRPETY;SYTNTTKPK;SYTNTTKPKVIAR;SYTNTTKPKVIARNPQK;TARAHNVSTSNNSPSTDNDSISK;TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK;TEECEK;TEECEKASTK;TNNSKSK;TNNSKSKTAR;TYIKFLQNSNLGGIIPTVNGKPVR;VACQLIMR;VACQLIMRGLSGEYK;VACQLIMRGLSGEYKFLR;VIARNPQK;VIARNPQKTNNSK;VTNIIDR;VTNIIDRLNNNGIHINNK;VTNIIDRLNNNGIHINNKVACQLIMR;YTRHRHLNMTVAELFLDIHAIYEEQQGSR;YVRPPPMLTSPNDFPNWVK;YVRPPPMLTSPNDFPNWVKTYIK;YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR
-      2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ACLNKEVGTYECEGER;AKCFKELEMENIEK;CFKELEMENIEK;CFKELEMENIEKGDIK;DIIEWCR;DIIEWCRDYEVNK;DIIEWCRDYEVNKTR;DTYSFFTSLSDIQDSSSNEEQCGVGSILSEDSFTFEGSNVSIR;DYEVNK;DYEVNKTR;DYEVNKTREVCVPSIHEFYLHGNGSDNLF;EARQREK;ELEMENIEK;ELEMENIEKGDIK;ELEMENIEKGDIKK;EVCVPSIHEFYLHGNGSDNLF;EVGTYECEGER;EYSQPFFDWR;EYSQPFFDWRHEMVEHGEESVKPCGCHK;EYSQPFFDWRHEMVEHGEESVKPCGCHKSR;FTIPPK;FTIPPKIEQR;FTIPPKIEQRK;GDIKKSLFYR;GKACLNK;GKACLNKEVGTYECEGER;HEMVEHGEESVKPCGCHK;HEMVEHGEESVKPCGCHKSR;HEMVEHGEESVKPCGCHKSRK;IEQRKEAR;KAKCFK;KEARQR;KSLFYR;KSLFYRDIIEWCR;LFSLDLNALNENENGSK;LFSLDLNALNENENGSKNPVK;LFSLDLNALNENENGSKNPVKFTIPPK;LRRVAVLPENSR;MGKACLNK;MGKACLNKEVGTYECEGER;NPVKFTIPPK;NPVKFTIPPKIEQR;NYLVESSMDSSR;NYLVESSMDSSREYSQPFFDWR;NYLVESSMDSSREYSQPFFDWRHEMVEHGEESVKPCGCHK;RVAVLPENSR;RVAVLPENSRNYLVESSMDSSR;SLFYRDIIEWCR;SLFYRDIIEWCRDYEVNK;TREVCVPSIHEFYLHGNGSDNLF;VAVLPENSR;VAVLPENSRNYLVESSMDSSR;VAVLPENSRNYLVESSMDSSREYSQPFFDWR
-      3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   AAKAHNIATSSK;AAKAHNIATSSKFSR;AHNIATSSK;AHNIATSSKFSR;AHNIATSSKFSRVNSDHINESTVSSQYLSDDNELSLRPATER;DSTKVNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK;DWIALANLEYNGSTSADTFEITVSTIIQR;DWIALANLEYNGSTSADTFEITVSTIIQRLK;DWIALANLEYNGSTSADTFEITVSTIIQRLKENNINVSDR;ENNINVSDR;ENNINVSDRLACQLILK;ENNINVSDRLACQLILKGLSGDFK;ESQQLHQNPHSQHGSAYASVTSK;ESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDR;ESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDRDSTK;EVPSNQDPLAVSASNLPEFDR;EVPSNQDPLAVSASNLPEFDRDSTK;FLKNSNLGDIIPNDQGEIK;FLKNSNLGDIIPNDQGEIKR;FSRVNSDHINESTVSSQYLSDDNELSLRPATER;FSRVNSDHINESTVSSQYLSDDNELSLRPATERI;FYIRFLK;FYIRFLKNSNLGDIIPNDQGEIK;GLSGDFK;GLSGDFKYLR;GLSGDFKYLRNQYR;IMNLNKPSQYK;IMNLNKPSQYKQHSEYK;IMNLNKPSQYKQHSEYKNVSR;LACQLILK;LACQLILKGLSGDFK;LACQLILKGLSGDFKYLR;LKENNINVSDR;LKENNINVSDRLACQLILK;LSQLFAEIQLIYDENK;LSQLFAEIQLIYDENKIMNLNKPSQYK;LSQLFAEIQLIYDENKIMNLNKPSQYKQHSEYK;MESQQLHQNPHSQHGSAYASVTSK;MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDR;MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDRDSTK;MQTNNQELK;MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR;MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQRLK;NNVLPPHTLTSEENFSTWVK;NNVLPPHTLTSEENFSTWVKFYIR;NNVLPPHTLTSEENFSTWVKFYIRFLK;NQYRTK;NQYRTKTNMK;NSNLGDIIPNDQGEIK;NSNLGDIIPNDQGEIKR;NSNLGDIIPNDQGEIKRQMTYEEHAYIYNTFQAFAPFHLLPTWVK;NVSRTSPNTTNTK;NVSRTSPNTTNTKVTTR;NYHRTNSSKPR;NYHRTNSSKPRAAK;QHSEYK;QHSEYKNVSR;QHSEYKNVSRTSPNTTNTK;QILEINYSDILTVLCK;QILEINYSDILTVLCKSVSK;QILEINYSDILTVLCKSVSKMQTNNQELK;QMTYEEHAYIYNTFQAFAPFHLLPTWVK;QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK;QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCKSVSK;RQMTYEEHAYIYNTFQAFAPFHLLPTWVK;RQMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK;SVSKMQTNNQELK;SVSKMQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR;TKTNMK;TKTNMKLSQLFAEIQLIYDENK;TKVRNNVLPPHTLTSEENFSTWVK;TNMKLSQLFAEIQLIYDENK;TNMKLSQLFAEIQLIYDENKIMNLNKPSQYK;TNSSKPR;TNSSKPRAAK;TNSSKPRAAKAHNIATSSK;TSPNTTNTK;TSPNTTNTKVTTR;TSPNTTNTKVTTRNYHR;VNSDHINESTVSSQYLSDDNELSLRPATER;VNSDHINESTVSSQYLSDDNELSLRPATERI;VNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK;VRNNVLPPHTLTSEENFSTWVK;VRNNVLPPHTLTSEENFSTWVKFYIR;VTTRNYHR;VTTRNYHRTNSSKPR;YLRNQYR;YLRNQYRTK
-      4                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          AHNVSTSNNSPSTDNDSISK;AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK;AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLRPGTY;DILSVDYTDIMK;DILSVDYTDIMKILSK;DILSVDYTDIMKILSKSIEK;ESQQLSNYPHISHGSACASVTSK;ESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASK;ESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASKIQEYDK;EVHTNQDPLDVSASK;EVHTNQDPLDVSASKIQEYDK;EVHTNQDPLDVSASKIQEYDKASTK;FLQNSNLGGIIPTVNGKPVR;FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK;FLRYTR;FLRYTRHR;GLSGEYK;GLSGEYKFLR;GLSGEYKFLRYTR;HDLHLRPGTY;HLNMTVAELFLDIHAIYEEQQGSR;HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR;HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR;HRHLNMTVAELFLDIHAIYEEQQGSR;HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR;ILSKSIEK;ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK;IQEYDK;IQEYDKASTK;KYVRPPPMLTSPNDFPNWVK;KYVRPPPMLTSPNDFPNWVKTYIK;LNNNGIHINNK;LNNNGIHINNKVACQLIMR;LNNNGIHINNKVACQLIMRGLSGEYK;MESQQLSNYPHISHGSACASVTSK;MESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASK;MESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASKIQEYDK;MQSDTQEANDIVTLANLQYNGSTPADAFETK;MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR;MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK;NDSRSYTNTTKPK;NDSRSYTNTTKPKVIAR;NPQKTNNSK;NPQKTNNSKSK;NPSDEK;NPSDEKNDSR;NPSDEKNDSRSYTNTTKPK;NSKPNYR;NSKPNYRR;NSKPNYRRNPSDEK;QITDDELTFLYNTFQIFAPSQFLPTWVK;QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK;QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK;RNPSDEK;RNPSDEKNDSR;SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK;SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR;SKTARAHNVSTSNNSPSTDNDSISK;STTEPIQLNNK;STTEPIQLNNKHDLHLRPGTY;SYTNTTKPK;SYTNTTKPKVIAR;SYTNTTKPKVIARNPQK;TARAHNVSTSNNSPSTDNDSISK;TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK;TNNSKSK;TNNSKSKTAR;TYIKFLQNSNLGGIIPTVNGKPVR;VACQLIMR;VACQLIMRGLSGEYK;VACQLIMRGLSGEYKFLR;VIARNPQK;VIARNPQKTNNSK;VTNIIDR;VTNIIDRLNNNGIHINNK;VTNIIDRLNNNGIHINNKVACQLIMR;YTRHRHLNMTVAELFLDIHAIYEEQQGSR;YVRPPPMLTSPNDFPNWVK;YVRPPPMLTSPNDFPNWVKTYIK;YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR
-      5                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      AAFYVAAIVQAIDIITGCK;AAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYR;AAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYREQIK;DALRETLPSSYNK;DALRETLPSSYNKETLNFK;ELESLILPADSIVNVVDQFQEELLSR;ELESLILPADSIVNVVDQFQEELLSRLQTNTISMLPQCLVPDK;ELESLILPADSIVNVVDQFQEELLSRLQTNTISMLPQCLVPDKR;EQIKYYSSIHIK;EQIKYYSSIHIKLQFLNHSNLLGAAIATYLNK;ETLNFK;ETLNFKHVLINSEIGFIGK;ETLNFKHVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGK;ETLPSSYNK;ETLPSSYNKETLNFK;ETLPSSYNKETLNFKHVLINSEIGFIGK;FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTR;FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIK;FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIKK;FFVSVTFSFPLNPEGEVVAMGK;FFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVK;FFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVKQLIQSSFHR;FICENDSISLIIGTGTNACFEVPYGYLPPFK;FICENDSISLIIGTGTNACFEVPYGYLPPFKR;FICENDSISLIIGTGTNACFEVPYGYLPPFKRDALR;GFVMTDTLQGSTVK;GFVMTDTLQGSTVKQLIQSSFHR;HVLINSEIGFIGK;HVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGK;HVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGKWLPLSLK;IISENIEEFFCTMNVCHVINDAIAVSLTSK;ILTIDFGGTR;ILTIDFGGTRLK;KKNESSEASK;KNESSEASK;KNESSEASKFFVSVTFSFPLNPEGEVVAMGK;LAANGYIK;LAANGYIKK;LAANGYIKKK;LKFAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTR;LKFAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIK;LLIKRAAFYVAAIVQAIDIITGCK;LQFLNHSNLLGAAIATYLNK;LQFLNHSNLLGAAIATYLNKSDNQVQ;LQTNTISMLPQCLVPDK;LQTNTISMLPQCLVPDKR;LQTNTISMLPQCLVPDKRSR;MTIESTLAR;MTIESTLARELESLILPADSIVNVVDQFQEELLSR;NESSEASK;NESSEASKFFVSVTFSFPLNPEGEVVAMGK;NESSEASKFFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVK;NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIAR;NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIARLLIK;NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIARLLIKR;NILLQYNIIPK;NILLQYNIIPKNFPVEFNGELVCQLAEDCTNAWFENEHYALICQIAR;NVIALQPFDIHGAISYEMPLECVTSGK;NVIALQPFDIHGAISYEMPLECVTSGKWLPLSLK;NVIALQPFDIHGAISYEMPLECVTSGKWLPLSLKNILLQYNIIPK;NYNFIHIGYVGSFLHNSNFYR;NYNFIHIGYVGSFLHNSNFYREQIK;NYNFIHIGYVGSFLHNSNFYREQIKYYSSIHIK;QLIQSSFHR;QLIQSSFHRIISENIEEFFCTMNVCHVINDAIAVSLTSK;RAAFYVAAIVQAIDIITGCK;RAAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYR;RDALRETLPSSYNK;RSRWNPEDK;SDNQVQ;SRWNPEDK;SRWNPEDKILTIDFGGTR;TIESTLAR;TIESTLARELESLILPADSIVNVVDQFQEELLSR;WLPLSLK;WLPLSLKNILLQYNIIPK;WNPEDK;WNPEDKILTIDFGGTR;WNPEDKILTIDFGGTRLK;YYSSIHIK;YYSSIHIKLQFLNHSNLLGAAIATYLNK;YYSSIHIKLQFLNHSNLLGAAIATYLNKSDNQVQ
-      6 AAKAHNIATSSK;AAKAHNIATSSKFSR;AHGVAER;AHGVAERLNR;AHGVAERLNRTLLNDCR;AHNIATSSK;AHNIATSSKFSR;AHNIATSSKFSRVNNDHINESTVSSQYLSDDNELSLGQQQK;ALHTPNIAYDLLSLSELANQNITACFTR;ALHTPNIAYDLLSLSELANQNITACFTRNTLER;ALHTPNIAYDLLSLSELANQNITACFTRNTLERSDGTVLAPIVK;AMRLRDEVSGNNLYVYYIETK;APGQPGHYIDQDELEIDEDEYK;APGQPGHYIDQDELEIDEDEYKEK;APGQPGHYIDQDELEIDEDEYKEKVHEMQK;APKEVDADISEYNILPSTIR;APKEVDADISEYNILPSTIRSR;ARFVAR;ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK;ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIK;ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIKGLLTDSR;AVCDNTPSIDTDPPEYR;AVCDNTPSIDTDPPEYRSSDHATPNIMPDK;AVCDNTPSIDTDPPEYRSSDHATPNIMPDKSSK;DEVSGNNLYVYYIETK;DEVSGNNLYVYYIETKMNIADVMTKPLPIK;DEVSGNNLYVYYIETKMNIADVMTKPLPIKTFK;DGTHKAR;DGTHKARFVAR;DIPHIHSR;DIPHIHSRQTNSSLGGMDDSNVLTTTK;DIPHIHSRQTNSSLGGMDDSNVLTTTKSK;DKQLIWHK;DKQLIWHKSKPVKPTNK;DLNANK;DLNANKK;DLNANKKIITTLK;DNKEKDR;DRYVEAYHK;DRYVEAYHKEISQLLK;DSTKVNSQQETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK;DTWNNK;DTWNNKNMR;DTWNNKNMRSLEPPR;DWIALANLEYDGSTSADTFEITVSTIIQR;DWIALANLEYDGSTSADTFEITVSTIIQRLK;DWIALANLEYDGSTSADTFEITVSTIIQRLKENNINVSDR;EELYIRPPPHLGLNDK;EELYIRPPPHLGLNDKLLR;EELYIRPPPHLGLNDKLLRLR;EESILNVFTSILAFIK;EESILNVFTSILAFIKNQFNAR;EESILNVFTSILAFIKNQFNARVLVIQMDR;EISQLLK;EISQLLKMNTWDTNK;EISQLLKMNTWDTNKYYDR;EKDRYVEAYHK;EKVHEMQK;EKVHEMQKLIGLASYVGYK;ENNINVSDR;ENNINVSDRLACQLILK;ENNINVSDRLACQLILKGLSGDFK;EPVQKVR;EPVQKVRAPK;ESDIEWSNASTYQCPDCLIGK;ESDIEWSNASTYQCPDCLIGKSTK;ESDIEWSNASTYQCPDCLIGKSTKHR;ESKPTR;ESKPTRTIDSNDELPDHLLIDSGASQTLVR;ESQQLHQNPHSLHGSAAASVTSK;ESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDR;ESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDRDSTK;ESTEMGGTIESDTTSPR;ESTEMGGTIESDTTSPRHSSTFTAR;ESTEMGGTIESDTTSPRHSSTFTARNQK;EVDADISEYNILPSTIR;EVDADISEYNILPSTIRSR;EVDADISEYNILPSTIRSRTPHIINK;EVPSNQDPLAVSASNLPEFDR;EVPSNQDPLAVSASNLPEFDRDSTK;FDLLYYINTLAQHILFPSR;FDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTR;FDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTRDK;FFGTKAMR;FFGTKAMRLR;FFTNRGITACYTTTADSR;FFTNRGITACYTTTADSRAHGVAER;FLKNSNLGDIIPNDQGEIK;FLKNSNLGDIIPNDQGEIKR;FQWVYPLHDR;FQWVYPLHDRR;FQWVYPLHDRREESILNVFTSILAFIK;FRFDLLYYINTLAQHILFPSR;FRFDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTR;FRNRFFGTK;FSRVNNDHINESTVSSQYLSDDNELSLGQQQK;FSRVNNDHINESTVSSQYLSDDNELSLGQQQKESKPTR;FYIRFLK;FYIRFLKNSNLGDIIPNDQGEIK;GIPGYALHPSR;GIPGYALHPSRNSYGYIIYLPSLK;GIPGYALHPSRNSYGYIIYLPSLKK;GITACYTTTADSR;GITACYTTTADSRAHGVAER;GITACYTTTADSRAHGVAERLNR;GLLTDSR;GLLTDSRSTISIIK;GLLTDSRSTISIIKSTNEEK;GLSGDFK;GLSGDFKYLR;GLSGDFKYLRNQYR;GSEYTNK;GSEYTNKTLHK;GSEYTNKTLHKFFTNR;GSRLKYQESYEPFQYLHTDIFGPVHHLPK;GVKSIKPVR;GVKSIKPVRTTLR;GWSCVFK;GWSCVFKNSQVTICLFVDDMILFSK;GWSCVFKNSQVTICLFVDDMILFSKDLNANK;HGDFYWLSK;HGDFYWLSKK;HGDFYWLSKKYLIPSHISK;HIKGSR;HIKGSRLK;HRHIKGSR;HSSTFTAR;HSSTFTARNQK;HSSTFTARNQKRPGSPNDMIDLTSQDR;IHPRGIPGYALHPSR;IHPRGIPGYALHPSRNSYGYIIYLPSLK;IINLGEGDNEIQYDILGLEIK;IINLGEGDNEIQYDILGLEIKYQR;IINLGEGDNEIQYDILGLEIKYQRSK;IITTLK;IITTLKK;IITTLKKQYDTK;IMNLNKPSQYK;IMNLNKPSQYKQHSEYK;IMNLNKPSQYKQHSEYKNVSR;INLIAAIK;INLIAAIKGVK;INLIAAIKGVKSIKPVR;KIITTLK;KIITTLKK;KLRAPGQPGHYIDQDELEIDEDEYK;KNAVTYLK;KNAVTYLKESDIEWSNASTYQCPDCLIGK;KPIIKGLLTDSR;KPIIKGLLTDSRSTISIIK;KQYDTK;KQYDTKIINLGEGDNEIQYDILGLEIK;KRDGTHK;KRINLIAAIK;KRSLEDNETEIEVSR;KSLYGLK;KSLYGLKQSGANWYETIK;KTVDTTNYVILQDNQSK;KTVDTTNYVILQDNQSKLDQFNYDTLTFDDDLNR;KVINSMFIFNK;KVINSMFIFNKK;KYLIPSHISK;KYLIPSHISKLTINNVNK;LACQLILK;LACQLILKGLSGDFK;LACQLILKGLSGDFKYLR;LDQFNYDTLTFDDDLNR;LGGTEEPYIQR;LGGTEEPYIQRNSDTNIK;LGGTEEPYIQRNSDTNIKYR;LGMEKSLTEK;LGMEKSLTEKLPK;LIGLASYVGYK;LIGLASYVGYKFR;LIGLASYVGYKFRFDLLYYINTLAQHILFPSR;LKENNINVSDR;LKENNINVSDRLACQLILK;LKYQESYEPFQYLHTDIFGPVHHLPK;LKYQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEK;LLRLRK;LLTNKWIH;LNRTLLNDCR;LNRTLLNDCRTLLHCSGLPNHLWFSAVEFSTIIR;LNVPLNPK;LNVPLNPKGK;LNVPLNPKGKK;LPKLNVPLNPK;LPKLNVPLNPKGK;LRAPGQPGHYIDQDELEIDEDEYK;LRAPGQPGHYIDQDELEIDEDEYKEK;LRDEVSGNNLYVYYIETK;LRDEVSGNNLYVYYIETKMNIADVMTKPLPIK;LRKSLYGLK;LSQLFAEIQLIYDENK;LSQLFAEIQLIYDENKIMNLNKPSQYK;LSQLFAEIQLIYDENKIMNLNKPSQYKQHSEYK;LTINNVNK;LTINNVNKSK;LTINNVNKSKSVNK;LVVISDASYGNQPYYK;LVVISDASYGNQPYYKSQIGNIYLLNGK;LVVISDASYGNQPYYKSQIGNIYLLNGKVIGGK;MESQQLHQNPHSLHGSAAASVTSK;MESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDR;MESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDRDSTK;MLGHANFR;MLGHANFRSIQK;MLGHANFRSIQKSLK;MNIADVMTKPLPIK;MNIADVMTKPLPIKTFK;MNIADVMTKPLPIKTFKLLTNK;MNTWDTNK;MNTWDTNKYYDR;MNTWDTNKYYDRNDIDPK;MQTNNQELK;MQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQR;MQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQRLK;NAVTYLK;NAVTYLKESDIEWSNASTYQCPDCLIGK;NAVTYLKESDIEWSNASTYQCPDCLIGKSTK;NDIDPK;NDIDPKK;NDIDPKKVINSMFIFNK;NDKSAR;NDKSARQHAGLAGLDITTILPFGQPVIVNNHNPDSK;NMRSLEPPR;NMRSLEPPRSK;NNVLPPHTLTSEENFSTWVK;NNVLPPHTLTSEENFSTWVKFYIR;NNVLPPHTLTSEENFSTWVKFYIRFLK;NQFNAR;NQFNARVLVIQMDR;NQFNARVLVIQMDRGSEYTNK;NQKRPGSPNDMIDLTSQDR;NQKRPGSPNDMIDLTSQDRVNYGLENIK;NQYRTK;NQYRTKTNMK;NRFFGTK;NRFFGTKAMR;NSDTNIK;NSDTNIKYR;NSDTNIKYRTTNSTPSIDDR;NSLVSPK;NSLVSPKNDK;NSLVSPKNDKSAR;NSNLGDIIPNDQGEIK;NSNLGDIIPNDQGEIKR;NSNLGDIIPNDQGEIKRQMTYEEHAYIYNTFQAFAPFHLLPTWVK;NSQVTICLFVDDMILFSK;NSQVTICLFVDDMILFSKDLNANK;NSQVTICLFVDDMILFSKDLNANKK;NSYGYIIYLPSLK;NSYGYIIYLPSLKK;NSYGYIIYLPSLKKTVDTTNYVILQDNQSK;NTLERSDGTVLAPIVK;NTLERSDGTVLAPIVKHGDFYWLSK;NVSRTSPNTTNTK;NVSRTSPNTTNTKVTSR;NVTADSILDDLPLPDLTNK;NVTADSILDDLPLPDLTNKSPTDTSDVSK;NVTADSILDDLPLPDLTNKSPTDTSDVSKDIPHIHSR;NYHRTNSSKPR;NYHRTNSSKPRAAK;QDIPINAIGNLHFNFQNGTK;QDIPINAIGNLHFNFQNGTKTSIK;QHAGLAGLDITTILPFGQPVIVNNHNPDSK;QHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPR;QHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPRGIPGYALHPSR;QHSEYK;QHSEYKNVSR;QHSEYKNVSRTSPNTTNTK;QILEINYADILTVLCK;QILEINYADILTVLCKSVSK;QILEINYADILTVLCKSVSKMQTNNQELK;QLIWHK;QLIWHKSKPVKPTNK;QLIWHKSKPVKPTNKLVVISDASYGNQPYYK;QMTYEEHAYIYNTFQAFAPFHLLPTWVK;QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCK;QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCKSVSK;QSGANWYETIK;QSGANWYETIKSYLINCCDMQEVR;QSGANWYETIKSYLINCCDMQEVRGWSCVFK;QTNSSLGGMDDSNVLTTTK;QTNSSLGGMDDSNVLTTTKSK;QTNSSLGGMDDSNVLTTTKSKK;QVLDMTYELIQFIWNTR;QVLDMTYELIQFIWNTRDK;QVLDMTYELIQFIWNTRDKQLIWHK;QYDTKIINLGEGDNEIQYDILGLEIK;QYDTKIINLGEGDNEIQYDILGLEIKYQR;RDGTHK;RDGTHKAR;REESILNVFTSILAFIK;REESILNVFTSILAFIKNQFNAR;RINLIAAIK;RINLIAAIKGVK;RPGSPNDMIDLTSQDR;RPGSPNDMIDLTSQDRVNYGLENIK;RPGSPNDMIDLTSQDRVNYGLENIKTTR;RQMTYEEHAYIYNTFQAFAPFHLLPTWVK;RQMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCK;RSLEDNETEIEVSR;RSLEDNETEIEVSRDTWNNK;SAHYLHHATPNSEINIVDAQK;SAHYLHHATPNSEINIVDAQKQDIPINAIGNLHFNFQNGTK;SAHYLHHATPNSEINIVDAQKQDIPINAIGNLHFNFQNGTKTSIK;SAPSYFISFTDEK;SAPSYFISFTDEKTR;SAPSYFISFTDEKTRFQWVYPLHDR;SARQHAGLAGLDITTILPFGQPVIVNNHNPDSK;SARQHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPR;SDGTVLAPIVK;SDGTVLAPIVKHGDFYWLSK;SDGTVLAPIVKHGDFYWLSKK;SIKPVR;SIKPVRTTLR;SIKPVRTTLRYDEAITYNK;SIQKSLK;SIQKSLKK;SKPVKPTNK;SKPVKPTNKLVVISDASYGNQPYYK;SKPVKPTNKLVVISDASYGNQPYYKSQIGNIYLLNGK;SKSVNK;SKSVNKYPYPLIHR;SKYMKLGMEK;SLEDNETEIEVSR;SLEDNETEIEVSRDTWNNK;SLEDNETEIEVSRDTWNNKNMR;SLEPPR;SLEPPRSK;SLEPPRSKK;SLKKNAVTYLK;SLTEKLPK;SLTEKLPKLNVPLNPK;SLYGLK;SLYGLKQSGANWYETIK;SLYGLKQSGANWYETIKSYLINCCDMQEVR;SPTDTSDVSK;SPTDTSDVSKDIPHIHSR;SPTDTSDVSKDIPHIHSRQTNSSLGGMDDSNVLTTTK;SQIGNIYLLNGK;SQIGNIYLLNGKVIGGK;SQIGNIYLLNGKVIGGKSTK;SRTPHIINK;SRTPHIINKESTEMGGTIESDTTSPR;SSDHATPNIMPDK;SSDHATPNIMPDKSSK;SSDHATPNIMPDKSSKNVTADSILDDLPLPDLTNK;SSKNVTADSILDDLPLPDLTNK;SSKNVTADSILDDLPLPDLTNKSPTDTSDVSK;SSNSESTTPIISIETK;SSNSESTTPIISIETKAVCDNTPSIDTDPPEYR;SSNSESTTPIISIETKAVCDNTPSIDTDPPEYRSSDHATPNIMPDK;STISIIK;STISIIKSTNEEK;STISIIKSTNEEKFR;STKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK;STKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIK;STKHRHIK;STNEEK;STNEEKFR;STNEEKFRNR;SVNKYPYPLIHR;SVNKYPYPLIHRMLGHANFR;SVSKMQTNNQELK;SVSKMQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQR;SYLINCCDMQEVR;SYLINCCDMQEVRGWSCVFK;SYLINCCDMQEVRGWSCVFKNSQVTICLFVDDMILFSK;TFKLLTNK;TFKLLTNKWIH;TIDSNDELPDHLLIDSGASQTLVR;TIDSNDELPDHLLIDSGASQTLVRSAHYLHHATPNSEINIVDAQK;TKTNMK;TKTNMKLSQLFAEIQLIYDENK;TKVRNNVLPPHTLTSEENFSTWVK;TLHKFFTNR;TLHKFFTNRGITACYTTTADSR;TLLHCSGLPNHLWFSAVEFSTIIR;TLLHCSGLPNHLWFSAVEFSTIIRNSLVSPK;TLLHCSGLPNHLWFSAVEFSTIIRNSLVSPKNDK;TLLNDCR;TLLNDCRTLLHCSGLPNHLWFSAVEFSTIIR;TLLNDCRTLLHCSGLPNHLWFSAVEFSTIIRNSLVSPK;TNMKLSQLFAEIQLIYDENK;TNMKLSQLFAEIQLIYDENKIMNLNKPSQYK;TNSSKPR;TNSSKPRAAK;TNSSKPRAAKAHNIATSSK;TPHIINK;TPHIINKESTEMGGTIESDTTSPR;TPHIINKESTEMGGTIESDTTSPRHSSTFTAR;TRFQWVYPLHDR;TRFQWVYPLHDRR;TSIKALHTPNIAYDLLSLSELANQNITACFTR;TSIKALHTPNIAYDLLSLSELANQNITACFTRNTLER;TSPNTTNTK;TSPNTTNTKVTSR;TSPNTTNTKVTSRNYHR;TTLRYDEAITYNK;TTLRYDEAITYNKDNK;TTNSTPSIDDR;TTNSTPSIDDRSSNSESTTPIISIETK;TTNSTPSIDDRSSNSESTTPIISIETKAVCDNTPSIDTDPPEYR;TTRLGGTEEPYIQR;TTRLGGTEEPYIQRNSDTNIK;TVDTTNYVILQDNQSK;TVDTTNYVILQDNQSKLDQFNYDTLTFDDDLNR;VHEMQK;VHEMQKLIGLASYVGYK;VHEMQKLIGLASYVGYKFR;VIGGKSTK;VIGGKSTKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK;VINSMFIFNK;VINSMFIFNKK;VINSMFIFNKKR;VLVIQMDR;VLVIQMDRGSEYTNK;VLVIQMDRGSEYTNKTLHK;VNNDHINESTVSSQYLSDDNELSLGQQQK;VNNDHINESTVSSQYLSDDNELSLGQQQKESKPTR;VNSQQETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK;VNYGLENIK;VNYGLENIKTTR;VNYGLENIKTTRLGGTEEPYIQR;VRAPKEVDADISEYNILPSTIR;VRNNVLPPHTLTSEENFSTWVK;VRNNVLPPHTLTSEENFSTWVKFYIR;VTSRNYHR;VTSRNYHRTNSSKPR;YDEAITYNK;YDEAITYNKDNK;YDEAITYNKDNKEK;YLIPSHISK;YLIPSHISKLTINNVNK;YLIPSHISKLTINNVNKSK;YLRNQYR;YLRNQYRTK;YMKLGMEK;YMKLGMEKSLTEK;YPYPLIHR;YPYPLIHRMLGHANFR;YPYPLIHRMLGHANFRSIQK;YQESYEPFQYLHTDIFGPVHHLPK;YQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEK;YQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEKTR;YQRSKYMK;YRTTNSTPSIDDR;YRTTNSTPSIDDRSSNSESTTPIISIETK;YVEAYHK;YVEAYHKEISQLLK;YVEAYHKEISQLLKMNTWDTNK;YYDRNDIDPK;YYDRNDIDPKK
-      7                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            AHGVAER;AHGVAERLNR;AHGVAERLNRTLLDDCR;AHNVSTSNNSPSTDNDSISK;AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK;AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLGQK;APREVDPNISESNILPSK;APREVDPNISESNILPSKK;ARFVAR;AVKSIKPIR;AVKSIKPIRTTLR;AVSPTDSTPPSTHTEDSK;AVSPTDSTPPSTHTEDSKR;AVSPTDSTPPSTHTEDSKRVSK;DFRHSDSYSENETNHTNVPISSTGGTNNK;DFRHSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEK;DGTHKAR;DGTHKARFVAR;DIKEKEK;DILSVDYTDIMK;DILSVDYTDIMKILSK;DILSVDYTDIMKILSKSIEK;DKQLIWHK;DKQLIWHKHK;DTWNTK;DTWNTKNMR;DTWNTKNMRSLEPPR;EDSILDVFTTILAFIK;EDSILDVFTTILAFIKNQFQASVLVIQMDR;EDSILDVFTTILAFIKNQFQASVLVIQMDRGSEYTNR;EELYIRPPPHLGMNDK;EELYIRPPPHLGMNDKLIR;EELYIRPPPHLGMNDKLIRLK;EIDPKR;EIDPKRVINSMFIFNK;EKEKYIEAYHK;EKVHEMQK;EKVHEMQKLIGLASYVGYK;EKYIEAYHK;EKYIEAYHKEVNQLLK;ELPPINSR;ELPPINSRQTNSSLGGIGDSNAYTTINSK;ELPPINSRQTNSSLGGIGDSNAYTTINSKK;ESQQLSQHSPISHGSACASVTSK;ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK;ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK;ESRLDQFNYDALTFDEDLNR;EVDPNISESNILPSK;EVDPNISESNILPSKK;EVDPNISESNILPSKKR;EVHTNQDPLDVSASK;EVHTNQDPLDVSASKTEECEK;EVHTNQDPLDVSASKTEECEKASTK;EVNQLLK;EVNQLLKMK;EVNQLLKMKTWDTDEYYDR;FDLLYYINTLAQHILFPSR;FDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTR;FDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTRDK;FLEKNGITPCYTTTADSR;FLEKNGITPCYTTTADSRAHGVAER;FLQNSNLGGIIPTVNGKPVR;FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK;FLRYTR;FLRYTRHR;FRFDLLYYINTLAQHILFPSR;FRFDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTR;FRWVYPLHDR;FRWVYPLHDRR;GIPGYALHPSR;GIPGYALHPSRNSYGYIIYLPSLK;GIPGYALHPSRNSYGYIIYLPSLKK;GKYMKLGMENSLTEK;GLSGEYK;GLSGEYKFLR;GLSGEYKFLRYTR;GRKLSAPGQPGLYIDQDELEIDEDEYK;GSEYTNR;GSEYTNRTLHK;GSEYTNRTLHKFLEK;GSRLKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK;GWSCVFK;GWSCVFKNSQVTICLFVDDMVLFSK;GWSCVFKNSQVTICLFVDDMVLFSKNLNSNK;HDLHLGQK;HDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASR;HDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASRTLIR;HIKGSR;HIKGSRLK;HKTSSDK;HKTSSDKNI;HLNMTVAELFLDIHAIYEEQQGSR;HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR;HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR;HRHIKGSR;HRHLNMTVAELFLDIHAIYEEQQGSR;HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR;HSDSYSENETNHTNVPISSTGGTNNK;HSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEK;HSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEKR;IHLIAAVK;IHLIAAVKAVK;IHLIAAVKAVKSIKPIR;IHPRGIPGYALHPSR;IHPRGIPGYALHPSRNSYGYIIYLPSLK;IIEKLK;IIEKLKMQYDTK;IIHRSPSIDASPPENNSSHNIVPIK;IINLGESDEEIQYDILGLEIK;IINLGESDEEIQYDILGLEIKYQR;IINLGESDEEIQYDILGLEIKYQRGK;ILSKSIEK;ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK;IPKLNVPLNPK;IPKLNVPLNPKGR;KEIDPK;KEIDPKR;KLSAPGQPGLYIDQDELEIDEDEYK;KLSAPGQPGLYIDQDELEIDEDEYKEK;KRDGTHK;KRIHLIAAVK;KRSLEDNETEIK;KRSSTPQISNIESTGSGGMHK;KSARQHAGLAGLDISTLLPFGQPVIVNDHNPNSK;KSLYGLK;KSLYGLKQSGANWYETIK;KTVDTTNYVILQGK;KTVDTTNYVILQGKESR;KYLLPSNISVPTINNVHTSESTR;KYLLPSNISVPTINNVHTSESTRK;KYPYPFIHR;KYPYPFIHRMLAHANAQTIR;KYVRPPPMLTSPNDFPNWVK;KYVRPPPMLTSPNDFPNWVKTYIK;LDQFNYDALTFDEDLNR;LGMENSLTEK;LGMENSLTEKIPK;LGMENSLTEKIPKLNVPLNPK;LIGLASYVGYK;LIGLASYVGYKFR;LIGLASYVGYKFRFDLLYYINTLAQHILFPSR;LIRLKK;LKKSLYGLK;LKMQYDTK;LKMQYDTKIINLGESDEEIQYDILGLEIK;LKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK;LKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFR;LNNNGIHINNK;LNNNGIHINNKVACQLIMR;LNNNGIHINNKVACQLIMRGLSGEYK;LNRTLLDDCR;LNRTLLDDCRTQLQCSGLPNHLWFSAIEFSTIVR;LNVPLLAPMSQSNTHESSHASK;LNVPLLAPMSQSNTHESSHASKSK;LNVPLLAPMSQSNTHESSHASKSKDFR;LNVPLNPK;LNVPLNPKGR;LNVPLNPKGRK;LSAPGQPGLYIDQDELEIDEDEYK;LSAPGQPGLYIDQDELEIDEDEYKEK;LSAPGQPGLYIDQDELEIDEDEYKEKVHEMQK;LTASYHSFIASNEIQESNDLNIESDHDFQSDIELHPEQPR;LTASYHSFIASNEIQESNDLNIESDHDFQSDIELHPEQPRNVLSK;LTESTVNHTNHSDDELPGHLLLDSGASR;LTESTVNHTNHSDDELPGHLLLDSGASRTLIR;MESQQLSQHSPISHGSACASVTSK;MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK;MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK;MKTWDTDEYYDR;MKTWDTDEYYDRK;MLAHANAQTIR;MLAHANAQTIRYSLK;MLAHANAQTIRYSLKNNTITYFNESDVDWSSAIDYQCPDCLIGK;MQSDTQEANDIVTLANLQYNGSTPADAFETK;MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR;MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK;MQYDTK;MQYDTKIINLGESDEEIQYDILGLEIK;MQYDTKIINLGESDEEIQYDILGLEIKYQR;NDSRSYTNTTKPK;NDSRSYTNTTKPKVIAR;NGITPCYTTTADSR;NGITPCYTTTADSRAHGVAER;NGITPCYTTTADSRAHGVAERLNR;NIPINAIGDLQFHFQDNTK;NIPINAIGDLQFHFQDNTKTSIK;NLNSNK;NLNSNKR;NLNSNKRIIEK;NMRSLEPPR;NMRSLEPPRSK;NNTITYFNESDVDWSSAIDYQCPDCLIGK;NNTITYFNESDVDWSSAIDYQCPDCLIGKSTK;NNTITYFNESDVDWSSAIDYQCPDCLIGKSTKHR;NPQKTNNSK;NPQKTNNSKSK;NPSDEK;NPSDEKNDSR;NPSDEKNDSRSYTNTTKPK;NQFQASVLVIQMDR;NQFQASVLVIQMDRGSEYTNR;NQFQASVLVIQMDRGSEYTNRTLHK;NSKPNYR;NSKPNYRR;NSKPNYRRNPSDEK;NSLASPK;NSLASPKSK;NSLASPKSKK;NSQVTICLFVDDMVLFSK;NSQVTICLFVDDMVLFSKNLNSNK;NSQVTICLFVDDMVLFSKNLNSNKR;NSYGYIIYLPSLK;NSYGYIIYLPSLKK;NSYGYIIYLPSLKKTVDTTNYVILQGK;NVLERSDGTVLAPIVK;NVLERSDGTVLAPIVKYGDFYWVSK;NVLSKAVSPTDSTPPSTHTEDSK;NVLSKAVSPTDSTPPSTHTEDSKR;QHAGLAGLDISTLLPFGQPVIVNDHNPNSK;QHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPR;QHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPRGIPGYALHPSR;QITDDELTFLYNTFQIFAPSQFLPTWVK;QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK;QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK;QLIWHK;QLIWHKHK;QLIWHKHKTSSDK;QSGANWYETIK;QSGANWYETIKSYLIQQCGMEEVR;QSGANWYETIKSYLIQQCGMEEVRGWSCVFK;QTNSSLGGIGDSNAYTTINSK;QTNSSLGGIGDSNAYTTINSKK;QTNSSLGGIGDSNAYTTINSKKR;QVLDMTYELIQFMWDTR;QVLDMTYELIQFMWDTRDK;QVLDMTYELIQFMWDTRDKQLIWHK;RDGTHK;RDGTHKAR;REDSILDVFTTILAFIK;REDSILDVFTTILAFIKNQFQASVLVIQMDR;RIHLIAAVK;RIHLIAAVKAVK;RIIEKLK;RIIHRSPSIDASPPENNSSHNIVPIK;RNIPINAIGDLQFHFQDNTK;RNIPINAIGDLQFHFQDNTKTSIK;RNPSDEK;RNPSDEKNDSR;RSLEDNETEIK;RSLEDNETEIKVSR;RSSTPQISNIESTGSGGMHK;RSSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASK;RVINSMFIFNK;RVINSMFIFNKK;RVSKTNIR;SAHHIHSASSNPDINVVDAQK;SAHHIHSASSNPDINVVDAQKR;SAHHIHSASSNPDINVVDAQKRNIPINAIGDLQFHFQDNTK;SARQHAGLAGLDISTLLPFGQPVIVNDHNPNSK;SARQHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPR;SDGTVLAPIVK;SDGTVLAPIVKYGDFYWVSK;SDGTVLAPIVKYGDFYWVSKK;SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK;SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR;SIKPIR;SIKPIRTTLR;SIKPIRTTLRYDEAITYNK;SKDFRHSDSYSENETNHTNVPISSTGGTNNK;SKKSAR;SKTARAHNVSTSNNSPSTDNDSISK;SLEDNETEIK;SLEDNETEIKVSR;SLEDNETEIKVSRDTWNTK;SLEPPR;SLEPPRSK;SLEPPRSKK;SLYGLK;SLYGLKQSGANWYETIK;SLYGLKQSGANWYETIKSYLIQQCGMEEVR;SPSIDASPPENNSSHNIVPIK;SSTPQISNIESTGSGGMHK;SSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASK;SSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASKSK;STKHRHIK;STTEPIQLNNK;STTEPIQLNNKHDLHLGQK;STTEPIQLNNKHDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASR;SYLIQQCGMEEVR;SYLIQQCGMEEVRGWSCVFK;SYLIQQCGMEEVRGWSCVFKNSQVTICLFVDDMVLFSK;SYTNTTKPK;SYTNTTKPKVIAR;SYTNTTKPKVIARNPQK;TARAHNVSTSNNSPSTDNDSISK;TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK;TEECEK;TEECEKASTK;TLHKFLEK;TLHKFLEKNGITPCYTTTADSR;TLIRSAHHIHSASSNPDINVVDAQK;TLIRSAHHIHSASSNPDINVVDAQKR;TLLDDCR;TLLDDCRTQLQCSGLPNHLWFSAIEFSTIVR;TLLDDCRTQLQCSGLPNHLWFSAIEFSTIVRNSLASPK;TNIRAPR;TNIRAPREVDPNISESNILPSK;TNNSKSK;TNNSKSKTAR;TPTTVSEQNTEESIIADLPLPDLPPESPTEFPDPFK;TPTTVSEQNTEESIIADLPLPDLPPESPTEFPDPFKELPPINSR;TQLQCSGLPNHLWFSAIEFSTIVR;TQLQCSGLPNHLWFSAIEFSTIVRNSLASPK;TQLQCSGLPNHLWFSAIEFSTIVRNSLASPKSK;TSIKVLHTPNIAYDLLSLNELAAVDITACFTK;TSIKVLHTPNIAYDLLSLNELAAVDITACFTKNVLER;TSSDKNI;TTLRYDEAITYNK;TTLRYDEAITYNKDIK;TVDTTNYVILQGK;TVDTTNYVILQGKESR;TVDTTNYVILQGKESRLDQFNYDALTFDEDLNR;TVPQISDQETEK;TVPQISDQETEKR;TVPQISDQETEKRIIHR;TWDTDEYYDR;TWDTDEYYDRK;TWDTDEYYDRKEIDPK;TYIKFLQNSNLGGIIPTVNGKPVR;VACQLIMR;VACQLIMRGLSGEYK;VACQLIMRGLSGEYKFLR;VHEMQK;VHEMQKLIGLASYVGYK;VHEMQKLIGLASYVGYKFR;VIARNPQK;VIARNPQKTNNSK;VINSMFIFNK;VINSMFIFNKK;VINSMFIFNKKR;VLHTPNIAYDLLSLNELAAVDITACFTK;VLHTPNIAYDLLSLNELAAVDITACFTKNVLER;VLHTPNIAYDLLSLNELAAVDITACFTKNVLERSDGTVLAPIVK;VSKTNIR;VSKTNIRAPR;VSRDTWNTK;VSRDTWNTKNMR;VTNIIDR;VTNIIDRLNNNGIHINNK;VTNIIDRLNNNGIHINNKVACQLIMR;WVYPLHDR;WVYPLHDRR;WVYPLHDRREDSILDVFTTILAFIK;YDEAITYNK;YDEAITYNKDIK;YDEAITYNKDIKEK;YGDFYWVSK;YGDFYWVSKK;YGDFYWVSKKYLLPSNISVPTINNVHTSESTR;YIEAYHK;YIEAYHKEVNQLLK;YIEAYHKEVNQLLKMK;YLLPSNISVPTINNVHTSESTR;YLLPSNISVPTINNVHTSESTRK;YLLPSNISVPTINNVHTSESTRKYPYPFIHR;YMKLGMENSLTEK;YMKLGMENSLTEKIPK;YPYPFIHR;YPYPFIHRMLAHANAQTIR;YPYPFIHRMLAHANAQTIRYSLK;YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK;YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFR;YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFRWVYPLHDR;YQRGKYMK;YSLKNNTITYFNESDVDWSSAIDYQCPDCLIGK;YSLKNNTITYFNESDVDWSSAIDYQCPDCLIGKSTK;YTRHRHLNMTVAELFLDIHAIYEEQQGSR;YVRPPPMLTSPNDFPNWVK;YVRPPPMLTSPNDFPNWVKTYIK;YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR
+      1  P00330
+      2  P00331
+      3  P07246
+      4  P07262
+      5  P09938
+      6  P38113
+      7  P39708
+      8  P40212
+      9  Q12690
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 peptide
+      1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ADTREALDFFAR;ADTREALDFFARGLVK;ALKSANLMAGHWVAISGAAGGLGSLAVQYAK;ALKSANLMAGHWVAISGAAGGLGSLAVQYAKAMGYR;AMGYRVLGIDGGEGK;AMGYRVLGIDGGEGKEELFR;ANELLINVK;ANELLINVKYSGVCHTDLHAWHGDWPLPVK;ANGTTVLVGMPAGAK;ANGTTVLVGMPAGAKCCSDVFNQVVK;ANGTTVLVGMPAGAKCCSDVFNQVVKSISIVGSYVGNR;ATDGGAHGVINVSVSEAAIEASTR;ATDGGAHGVINVSVSEAAIEASTRYVR;ATDGGAHGVINVSVSEAAIEASTRYVRANGTTVLVGMPAGAK;CCSDVFNQVVK;CCSDVFNQVVKSISIVGSYVGNR;CCSDVFNQVVKSISIVGSYVGNRADTR;DIPVPKPK;DIPVPKPKANELLINVK;DIPVPKPKANELLINVKYSGVCHTDLHAWHGDWPLPVK;DIVGAVLK;DIVGAVLKATDGGAHGVINVSVSEAAIEASTR;DIVGAVLKATDGGAHGVINVSVSEAAIEASTRYVR;EALDFFAR;EALDFFARGLVK;EALDFFARGLVKSPIK;EELFRSIGGEVFIDFTK;EELFRSIGGEVFIDFTKEK;EKDIVGAVLK;EKDIVGAVLKATDGGAHGVINVSVSEAAIEASTR;GLVKSPIK;GLVKSPIKVVGLSTLPEIYEK;GQIVGR;GQIVGRYVVDTSK;GVIFYESHGK;GVIFYESHGKLEYK;GVIFYESHGKLEYKDIPVPKPK;GWKIGDYAGIK;IGDYAGIK;LEYKDIPVPKPK;LEYKDIPVPKPKANELLINVK;LPLVGGHEGAGVVVGMGENVK;LPLVGGHEGAGVVVGMGENVKGWK;LPLVGGHEGAGVVVGMGENVKGWKIGDYAGIK;MEKGQIVGR;MEKGQIVGRYVVDTSK;MSIPETQK;MSIPETQKGVIFYESHGK;MSIPETQKGVIFYESHGKLEYK;SANLMAGHWVAISGAAGGLGSLAVQYAK;SANLMAGHWVAISGAAGGLGSLAVQYAKAMGYR;SANLMAGHWVAISGAAGGLGSLAVQYAKAMGYRVLGIDGGEGK;SIGGEVFIDFTK;SIGGEVFIDFTKEK;SIGGEVFIDFTKEKDIVGAVLK;SIPETQK;SIPETQKGVIFYESHGK;SIPETQKGVIFYESHGKLEYK;SISIVGSYVGNR;SISIVGSYVGNRADTR;SISIVGSYVGNRADTREALDFFAR;SPIKVVGLSTLPEIYEK;SPIKVVGLSTLPEIYEKMEK;VLGIDGGEGK;VLGIDGGEGKEELFR;VLGIDGGEGKEELFRSIGGEVFIDFTK;VVGLSTLPEIYEK;VVGLSTLPEIYEKMEK;VVGLSTLPEIYEKMEKGQIVGR;YSGVCHTDLHAWHGDWPLPVK;YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVGMGENVK;YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVGMGENVKGWK;YVRANGTTVLVGMPAGAK;YVRANGTTVLVGMPAGAKCCSDVFNQVVK;YVVDTSK
+      2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ADTREALDFFAR;ADTREALDFFARGLVK;AGHWAAISGAAGGLGSLAVQYAK;AGHWAAISGAAGGLGSLAVQYAKAMGYR;AGHWAAISGAAGGLGSLAVQYAKAMGYRVLGIDGGPGK;AIIFYESNGK;AIIFYESNGKLEHK;AIIFYESNGKLEHKDIPVPKPKPNELLINVK;ALKSANLR;ALKSANLRAGHWAAISGAAGGLGSLAVQYAK;AMGYRVLGIDGGPGK;AMGYRVLGIDGGPGKEELFTSLGGEVFIDFTK;ANGTVVLVGLPAGAK;ANGTVVLVGLPAGAKCSSDVFNHVVK;ANGTVVLVGLPAGAKCSSDVFNHVVKSISIVGSYVGNR;ATNGGAHGIINVSVSEAAIEASTR;ATNGGAHGIINVSVSEAAIEASTRYCR;ATNGGAHGIINVSVSEAAIEASTRYCRANGTVVLVGLPAGAK;CSSDVFNHVVK;CSSDVFNHVVKSISIVGSYVGNR;CSSDVFNHVVKSISIVGSYVGNRADTR;DIPVPKPKPNELLINVK;DIPVPKPKPNELLINVKYSGVCHTDLHAWHGDWPLPTK;DIVSAVVK;DIVSAVVKATNGGAHGIINVSVSEAAIEASTR;DIVSAVVKATNGGAHGIINVSVSEAAIEASTRYCR;EALDFFAR;EALDFFARGLVK;EALDFFARGLVKSPIK;EELFTSLGGEVFIDFTK;EELFTSLGGEVFIDFTKEK;EELFTSLGGEVFIDFTKEKDIVSAVVK;EKDIVSAVVK;EKDIVSAVVKATNGGAHGIINVSVSEAAIEASTR;GLVKSPIK;GLVKSPIKVVGLSSLPEIYEK;GQIAGR;GQIAGRYVVDTSK;GWKIGDYAGIK;IGDYAGIK;LEHKDIPVPKPKPNELLINVK;LEHKDIPVPKPKPNELLINVKYSGVCHTDLHAWHGDWPLPTK;LPLVGGHEGAGVVVGMGENVK;LPLVGGHEGAGVVVGMGENVKGWK;LPLVGGHEGAGVVVGMGENVKGWKIGDYAGIK;MEKGQIAGR;MEKGQIAGRYVVDTSK;MSIPETQK;MSIPETQKAIIFYESNGK;MSIPETQKAIIFYESNGKLEHK;SANLRAGHWAAISGAAGGLGSLAVQYAK;SANLRAGHWAAISGAAGGLGSLAVQYAKAMGYR;SIPETQK;SIPETQKAIIFYESNGK;SIPETQKAIIFYESNGKLEHK;SISIVGSYVGNR;SISIVGSYVGNRADTR;SISIVGSYVGNRADTREALDFFAR;SPIKVVGLSSLPEIYEK;SPIKVVGLSSLPEIYEKMEK;VLGIDGGPGK;VLGIDGGPGKEELFTSLGGEVFIDFTK;VLGIDGGPGKEELFTSLGGEVFIDFTKEK;VVGLSSLPEIYEK;VVGLSSLPEIYEKMEK;VVGLSSLPEIYEKMEKGQIAGR;YCRANGTVVLVGLPAGAK;YCRANGTVVLVGLPAGAKCSSDVFNHVVK;YSGVCHTDLHAWHGDWPLPTK;YSGVCHTDLHAWHGDWPLPTKLPLVGGHEGAGVVVGMGENVK;YSGVCHTDLHAWHGDWPLPTKLPLVGGHEGAGVVVGMGENVKGWK;YVVDTSK
+      3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ADTREALDFFSR;ADTREALDFFSRGLIK;AGDWVAISGAAGGLGSLAVQYATAMGYR;AGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEK;AGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEKEK;ALKEADLK;ALKEADLKAGDWVAISGAAGGLGSLAVQYATAMGYR;DIPVPEPKPNEILINVK;DIPVPEPKPNEILINVKYSGVCHTDLHAWHGDWPLPVK;EADLKAGDWVAISGAAGGLGSLAVQYATAMGYR;EADLKAGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEK;EALDFFSR;EALDFFSRGLIK;EALDFFSRGLIKSPIK;EKLFKK;GGPHGVINVSVSEAAISLSTEYVRPCGTVVLVGLPANAYVK;GGPHGVINVSVSEAAISLSTEYVRPCGTVVLVGLPANAYVKSEVFSHVVK;GKILGR;GKILGRYVVDTSK;GKLHYK;GKLHYKDIPVPEPKPNEILINVK;GLIKSPIK;GLIKSPIKIVGLSELPK;GSYVGNR;GSYVGNRADTR;GSYVGNRADTREALDFFSR;GVIFYENK;GVIFYENKGK;GVIFYENKGKLHYK;GWKVGDLAGIK;ILGRYVVDTSK;IQQGTDLAEVAPILCAGVTVYK;IQQGTDLAEVAPILCAGVTVYKALK;IQQGTDLAEVAPILCAGVTVYKALKEADLK;IVGLSELPK;IVGLSELPKVYDLMEK;IVGLSELPKVYDLMEKGK;KLGGEVFIDFTK;KLGGEVFIDFTKTK;LFKKLGGEVFIDFTK;LGGEVFIDFTK;LGGEVFIDFTKTK;LGGEVFIDFTKTKNMVSDIQEATK;LGSNVK;LGSNVKGWK;LGSNVKGWKVGDLAGIK;LHYKDIPVPEPKPNEILINVK;LHYKDIPVPEPKPNEILINVKYSGVCHTDLHAWHGDWPLPVK;LPLVGGHEGAGVVVK;LPLVGGHEGAGVVVKLGSNVK;LPLVGGHEGAGVVVKLGSNVKGWK;LQSTAAIPK;LQSTAAIPKTQK;LQSTAAIPKTQKGVIFYENK;LRTSTLFTR;LRTSTLFTRR;MLRTSTLFTR;MLRTSTLFTRR;NILRLQSTAAIPK;NILRLQSTAAIPKTQK;NMVSDIQEATK;RVQPSLFSR;RVQPSLFSRNILR;SEVFSHVVK;SEVFSHVVKSINIK;SEVFSHVVKSINIKGSYVGNR;SINIKGSYVGNR;SINIKGSYVGNRADTR;SPIKIVGLSELPK;SPIKIVGLSELPKVYDLMEK;TKNMVSDIQEATK;TQKGVIFYENK;TQKGVIFYENKGK;TSTLFTR;TSTLFTRR;TSTLFTRRVQPSLFSR;VGDLAGIK;VLGIDAGEEK;VLGIDAGEEKEK;VLGIDAGEEKEKLFK;VQPSLFSR;VQPSLFSRNILR;VQPSLFSRNILRLQSTAAIPK;VYDLMEK;VYDLMEKGK;VYDLMEKGKILGR;WLNGSCMTCEFCESGHESNCPDADLSGYTHDGSFQQFATADAIQAAK;YSGVCHTDLHAWHGDWPLPVK;YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVK;YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVKLGSNVK;YVVDTSK
+      4 AANLGGVAVSGLEMAQNSQR;AANLGGVAVSGLEMAQNSQRITWTSER;AANLGGVAVSGLEMAQNSQRITWTSERVDQELK;ALVAQGVK;ALVAQGVKFIAEGSNMGSTPEAIAVFETAR;ALVAQGVKFIAEGSNMGSTPEAIAVFETARSTATGPSEAVWYGPPK;DGKVLPSLVK;DGKVLPSLVKGANIASFIK;EIGYLFGAYR;EIGYLFGAYRSYK;EIGYLFGAYRSYKNSWEGVLTGK;ELSRHIGQDTDVPAGDIGVGGR;ELSRHIGQDTDVPAGDIGVGGREIGYLFGAYR;ESFEGK;ESFEGKR;ESFEGKRVTISGSGNVAQYAALK;FHPSVNLSILK;FHPSVNLSILKFLGFEQIFK;FHPSVNLSILKFLGFEQIFKNSLTGLDMGGGK;FIAEGSNMGSTPEAIAVFETAR;FIAEGSNMGSTPEAIAVFETARSTATGPSEAVWYGPPK;FLGFEQIFK;FLGFEQIFKNSLTGLDMGGGK;FLGFEQIFKNSLTGLDMGGGKGGLCVDLK;GANIASFIK;GANIASFIKVSDAMFDQGDVF;GCIISETGITSEQVADISSAK;GCIISETGITSEQVADISSAKVNFK;GCIISETGITSEQVADISSAKVNFKSLEQIVNEYSTFSENK;GEQEVAQGYR;GEQEVAQGYRVQYNSAK;GEQEVAQGYRVQYNSAKGPYK;GGLCVDLK;GGLCVDLKGR;GGLCVDLKGRSNNEIR;GGLRFHPSVNLSILK;GGLRFHPSVNLSILKFLGFEQIFK;GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK;GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGK;GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGKR;GPYKGGLR;GPYKGGLRFHPSVNLSILK;GRSNNEIR;GRSNNEIRR;HIGQDTDVPAGDIGVGGR;HIGQDTDVPAGDIGVGGREIGYLFGAYR;HIGQDTDVPAGDIGVGGREIGYLFGAYRSYK;ICYAFMR;ICYAFMRELSR;ICYAFMRELSRHIGQDTDVPAGDIGVGGR;IIQFRVTWENDK;IIQFRVTWENDKGEQEVAQGYR;IMINCFNECIDYAK;IMINCFNECIDYAKK;IMINCFNECIDYAKKYTK;ITWTSER;ITWTSERVDQELK;ITWTSERVDQELKR;KVLPIVSVPER;KVLPIVSVPERIIQFR;KYTKDGK;MSEPEFQQAYEEVVSSLEDSTLFEQHPEYR;MSEPEFQQAYEEVVSSLEDSTLFEQHPEYRK;MSEPEFQQAYEEVVSSLEDSTLFEQHPEYRKVLPIVSVPER;NSLTGLDMGGGK;NSLTGLDMGGGKGGLCVDLK;NSLTGLDMGGGKGGLCVDLKGR;NSWEGVLTGK;NSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK;NSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGK;RICYAFMR;RICYAFMRELSR;RIMINCFNECIDYAK;RIMINCFNECIDYAKK;RVTISGSGNVAQYAALK;RVTISGSGNVAQYAALKVIELGGTVVSLSDSK;SEPEFQQAYEEVVSSLEDSTLFEQHPEYR;SEPEFQQAYEEVVSSLEDSTLFEQHPEYRK;SEPEFQQAYEEVVSSLEDSTLFEQHPEYRKVLPIVSVPER;SLEQIVNEYSTFSENK;SLEQIVNEYSTFSENKVQYIAGARPWTHVQK;SLEQIVNEYSTFSENKVQYIAGARPWTHVQKVDIALPCATQNEVSGEEAK;SNNEIR;SNNEIRR;SNNEIRRICYAFMR;STATGPSEAVWYGPPK;STATGPSEAVWYGPPKAANLGGVAVSGLEMAQNSQR;STATGPSEAVWYGPPKAANLGGVAVSGLEMAQNSQRITWTSER;SYKNSWEGVLTGK;SYKNSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK;VDIALPCATQNEVSGEEAK;VDIALPCATQNEVSGEEAKALVAQGVK;VDIALPCATQNEVSGEEAKALVAQGVKFIAEGSNMGSTPEAIAVFETAR;VDQELK;VDQELKR;VDQELKRIMINCFNECIDYAK;VIELGGTVVSLSDSK;VIELGGTVVSLSDSKGCIISETGITSEQVADISSAK;VIELGGTVVSLSDSKGCIISETGITSEQVADISSAKVNFK;VLPIVSVPER;VLPIVSVPERIIQFR;VLPIVSVPERIIQFRVTWENDK;VLPSLVK;VLPSLVKGANIASFIK;VLPSLVKGANIASFIKVSDAMFDQGDVF;VNFKSLEQIVNEYSTFSENK;VNFKSLEQIVNEYSTFSENKVQYIAGARPWTHVQK;VQYIAGARPWTHVQK;VQYIAGARPWTHVQKVDIALPCATQNEVSGEEAK;VQYIAGARPWTHVQKVDIALPCATQNEVSGEEAKALVAQGVK;VQYNSAK;VQYNSAKGPYK;VQYNSAKGPYKGGLR;VSDAMFDQGDVF;VTISGSGNVAQYAALK;VTISGSGNVAQYAALKVIELGGTVVSLSDSK;VTWENDK;VTWENDKGEQEVAQGYR;VTWENDKGEQEVAQGYRVQYNSAK;YTKDGK;YTKDGKVLPSLVK
+      5                                                                                                                                                                                                                                                                                                                                                                                                                                            AAADALSDLEIK;AAADALSDLEIKDSK;AAADALSDLEIKDSKSNLNK;AEASFWTAEEIDLSK;AEASFWTAEEIDLSKDIHDWNNR;AEASFWTAEEIDLSKDIHDWNNRMNENER;AEWALR;AEWALRWIQDADALFGER;AEWALRWIQDADALFGERLVAFASIEGVFFSGSFASIFWLK;AGVMSK;AGVMSKSTK;AGVMSKSTKQEAGAFTFNEDF;AYLKSHQVHR;AYLKSHQVHRHK;DAENHK;DAENHKAYLK;DAENHKAYLKSHQVHR;DEGLHTDFACLLFAHLK;DEGLHTDFACLLFAHLKNKPDPAIVEK;DEGLHTDFACLLFAHLKNKPDPAIVEKIVTEAVEIEQR;DIHDWNNR;DIHDWNNRMNENER;DIHDWNNRMNENERFFISR;DPKESEFLFNAIHTIPEIGEK;DPKESEFLFNAIHTIPEIGEKAEWALR;DSKSNLNK;DSKSNLNKELETLR;EENRVK;EENRVKSDMLK;EEPLLNEDK;EEPLLNEDKER;EEPLLNEDKERTVLFPIK;EKLSKDAENHK;ELETLR;ELETLREENR;ELETLREENRVK;EMEKEEPLLNEDK;EMEKEEPLLNEDKER;ERTVLFPIK;ERTVLFPIKYHEIWQAYK;ESEFLFNAIHTIPEIGEK;ESEFLFNAIHTIPEIGEKAEWALR;ESEFLFNAIHTIPEIGEKAEWALRWIQDADALFGER;ETPSKAAADALSDLEIK;ETPSKAAADALSDLEIKDSK;FFISRVLAFFAASDGIVNENLVENFSTEVQIPEAK;GMMPGLTFSNELICR;GMMPGLTFSNELICRDEGLHTDFACLLFAHLK;GMMPGLTFSNELICRDEGLHTDFACLLFAHLKNKPDPAIVEK;HKLKEMEK;IVTEAVEIEQR;IVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADR;IVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNK;KRGMMPGLTFSNELICR;KYYKVENPFDFMENISLAGK;LKEMEK;LKEMEKEEPLLNEDK;LLVAFGNK;LLVAFGNKK;LLVAFGNKKYYK;LSKDAENHK;LSKDAENHKAYLK;LVAFASIEGVFFSGSFASIFWLK;LVAFASIEGVFFSGSFASIFWLKK;LVAFASIEGVFFSGSFASIFWLKKR;MNENER;MNENERFFISR;MNENERFFISRVLAFFAASDGIVNENLVENFSTEVQIPEAK;MPKETPSK;MPKETPSKAAADALSDLEIK;NKPDPAIVEK;NKPDPAIVEKIVTEAVEIEQR;NKPDPAIVEKIVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADR;PKETPSK;PKETPSKAAADALSDLEIK;QEAGAFTFNEDF;RAEASFWTAEEIDLSK;RAEASFWTAEEIDLSKDIHDWNNR;RGMMPGLTFSNELICR;RGMMPGLTFSNELICRDEGLHTDFACLLFAHLK;RVSDYQK;RVSDYQKAGVMSK;SDMLKEK;SDMLKEKLSK;SFYGFQIMIENIHSETYSLLIDTYIK;SFYGFQIMIENIHSETYSLLIDTYIKDPK;SFYGFQIMIENIHSETYSLLIDTYIKDPKESEFLFNAIHTIPEIGEK;SHQVHR;SHQVHRHK;SHQVHRHKLK;SNLNKELETLR;SNLNKELETLREENR;STKQEAGAFTFNEDF;TNFFEK;TNFFEKR;TNFFEKRVSDYQK;TVLFPIK;TVLFPIKYHEIWQAYK;TVLFPIKYHEIWQAYKR;VENPFDFMENISLAGK;VENPFDFMENISLAGKTNFFEK;VENPFDFMENISLAGKTNFFEKR;VKSDMLK;VKSDMLKEK;VLAFFAASDGIVNENLVENFSTEVQIPEAK;VSDYQK;VSDYQKAGVMSK;VSDYQKAGVMSKSTK;WIQDADALFGER;WIQDADALFGERLVAFASIEGVFFSGSFASIFWLK;WIQDADALFGERLVAFASIEGVFFSGSFASIFWLKK;YFLDALPVALLGMNADLMNQYVEFVADR;YFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNK;YFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNKK;YHEIWQAYK;YHEIWQAYKR;YHEIWQAYKRAEASFWTAEEIDLSK;YYKVENPFDFMENISLAGK;YYKVENPFDFMENISLAGKTNFFEK
+      6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ADTREALDFFAR;ADTREALDFFARGLIK;AIVFYETDGK;AIVFYETDGKLEYK;AIVFYETDGKLEYKDVTVPEPKPNEILVHVK;ALKRANVIPGQWVTISGACGGLGSLAIQYALAMGYR;ANVIPGQWVTISGACGGLGSLAIQYALAMGYR;ANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAK;ANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAKR;ATNGGSHGVINVSVSEAAIEASTR;DIVGAIIK;DIVGAIIKATNGGSHGVINVSVSEAAIEASTR;DVTVPEPKPNEILVHVK;DVTVPEPKPNEILVHVKYSGVCHSDLHAWHGDWPFQLK;EALDFFAR;EALDFFARGLIK;EALDFFARGLIKSPIHLAGLSDVPEIFAK;FPLIGGHEGAGVVVK;FPLIGGHEGAGVVVKLGSNVK;FPLIGGHEGAGVVVKLGSNVKGWK;GEIVGR;GEIVGRYVVETSK;GLIKSPIHLAGLSDVPEIFAK;GLIKSPIHLAGLSDVPEIFAKMEK;GWKVGDFAGIK;KLFEQLGGEIFIDFTEEK;KLFEQLGGEIFIDFTEEKDIVGAIIK;LEYKDVTVPEPKPNEILVHVK;LEYKDVTVPEPKPNEILVHVKYSGVCHSDLHAWHGDWPFQLK;LFEQLGGEIFIDFTEEK;LFEQLGGEIFIDFTEEKDIVGAIIK;LFEQLGGEIFIDFTEEKDIVGAIIKATNGGSHGVINVSVSEAAIEASTR;LGSNVK;LGSNVKGWK;LGSNVKGWKVGDFAGIK;MEKGEIVGR;MEKGEIVGRYVVETSK;MPSQVIPEK;MPSQVIPEKQK;MPSQVIPEKQKAIVFYETDGK;PSQVIPEK;PSQVIPEKQK;PSQVIPEKQKAIVFYETDGK;QKAIVFYETDGK;QKAIVFYETDGKLEYK;RANVIPGQWVTISGACGGLGSLAIQYALAMGYR;RANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAK;RKLFEQLGGEIFIDFTEEK;SISIVGSCVGNR;SISIVGSCVGNRADTR;SISIVGSCVGNRADTREALDFFAR;SPIHLAGLSDVPEIFAK;SPIHLAGLSDVPEIFAKMEK;SPIHLAGLSDVPEIFAKMEKGEIVGR;VGDFAGIK;VIGIDGGNAK;VIGIDGGNAKR;VIGIDGGNAKRK;YCRPNGTVVLVGMPAHAYCNSDVFNQVVK;YCRPNGTVVLVGMPAHAYCNSDVFNQVVKSISIVGSCVGNR;YCRPNGTVVLVGMPAHAYCNSDVFNQVVKSISIVGSCVGNRADTR;YSGVCHSDLHAWHGDWPFQLK;YSGVCHSDLHAWHGDWPFQLKFPLIGGHEGAGVVVK;YSGVCHSDLHAWHGDWPFQLKFPLIGGHEGAGVVVKLGSNVK;YVVETSK
+      7                                                                               AANLGGVAVSGLEMAQNSQK;AANLGGVAVSGLEMAQNSQKVTWTAER;AANLGGVAVSGLEMAQNSQKVTWTAERVDQELK;ALVASGVK;ALVASGVKFVAEGANMGSTPEAISVFETAR;ALVASGVKFVAEGANMGSTPEAISVFETARSTATNAK;DAVWFGPPK;DAVWFGPPKAANLGGVAVSGLEMAQNSQK;DAVWFGPPKAANLGGVAVSGLEMAQNSQKVTWTAER;DTDVPAGDIGVGGR;DTDVPAGDIGVGGREIGYLFGAYR;DTDVPAGDIGVGGREIGYLFGAYRSYK;EIGYLFGAYR;EIGYLFGAYRSYK;EIGYLFGAYRSYKNSWEGVLTGK;ELSRHIGK;ELSRHIGKDTDVPAGDIGVGGR;ESFEGK;ESFEGKR;ESFEGKRVTISGSGNVAQYAALK;FHPSVNLSILK;FHPSVNLSILKFLGFEQIFK;FHPSVNLSILKFLGFEQIFKNALTGLDMGGGK;FKSLEEIVDEYSTFSESK;FKSLEEIVDEYSTFSESKMK;FLGFEQIFK;FLGFEQIFKNALTGLDMGGGK;FLGFEQIFKNALTGLDMGGGKGGLCVDLK;FPQYKK;FPQYKKVLPIVSVPER;FVAEGANMGSTPEAISVFETAR;FVAEGANMGSTPEAISVFETARSTATNAK;FVAEGANMGSTPEAISVFETARSTATNAKDAVWFGPPK;GANIASFVMVADAMLDQGDVF;GCIISETGITSEQIHDIASAK;GCIISETGITSEQIHDIASAKIR;GCIISETGITSEQIHDIASAKIRFK;GGLCVDLK;GGLCVDLKGK;GGLCVDLKGKSDNEIR;GGLRFHPSVNLSILK;GGLRFHPSVNLSILKFLGFEQIFK;GKSDNEIR;GKSDNEIRR;GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK;GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGK;GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGKR;GPYKGGLR;GPYKGGLRFHPSVNLSILK;HIGKDTDVPAGDIGVGGR;HIGKDTDVPAGDIGVGGREIGYLFGAYR;ICYAFMR;ICYAFMRELSR;ICYAFMRELSRHIGK;IFEKFPQYK;IFEKFPQYKK;IIQFRVTWENDNGEQEVAQGYR;IIQFRVTWENDNGEQEVAQGYRVQFNSAK;IMINCFNDCIQAAQEYSTEK;IMINCFNDCIQAAQEYSTEKNTNTLPSLVK;IRFKSLEEIVDEYSTFSESK;KIMINCFNDCIQAAQEYSTEK;KIMINCFNDCIQAAQEYSTEKNTNTLPSLVK;KVLPIVSVPER;KVLPIVSVPERIIQFR;MKYVAGARPWTHVSNVDIALPCATQNEVSGDEAK;MKYVAGARPWTHVSNVDIALPCATQNEVSGDEAKALVASGVK;MTSEPEFQQAYDEIVSSVEDSK;MTSEPEFQQAYDEIVSSVEDSKIFEK;MTSEPEFQQAYDEIVSSVEDSKIFEKFPQYK;NALTGLDMGGGK;NALTGLDMGGGKGGLCVDLK;NALTGLDMGGGKGGLCVDLKGK;NSWEGVLTGK;NSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK;NSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGK;NTNTLPSLVK;NTNTLPSLVKGANIASFVMVADAMLDQGDVF;RICYAFMR;RICYAFMRELSR;RVTISGSGNVAQYAALK;RVTISGSGNVAQYAALKVIELGGIVVSLSDSK;SDNEIR;SDNEIRR;SDNEIRRICYAFMR;SLEEIVDEYSTFSESK;SLEEIVDEYSTFSESKMK;SLEEIVDEYSTFSESKMKYVAGARPWTHVSNVDIALPCATQNEVSGDEAK;STATNAK;STATNAKDAVWFGPPK;STATNAKDAVWFGPPKAANLGGVAVSGLEMAQNSQK;SYKNSWEGVLTGK;SYKNSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK;TSEPEFQQAYDEIVSSVEDSK;TSEPEFQQAYDEIVSSVEDSKIFEK;TSEPEFQQAYDEIVSSVEDSKIFEKFPQYK;VDQELK;VDQELKK;VDQELKKIMINCFNDCIQAAQEYSTEK;VIELGGIVVSLSDSK;VIELGGIVVSLSDSKGCIISETGITSEQIHDIASAK;VIELGGIVVSLSDSKGCIISETGITSEQIHDIASAKIR;VLPIVSVPER;VLPIVSVPERIIQFR;VLPIVSVPERIIQFRVTWENDNGEQEVAQGYR;VQFNSAK;VQFNSAKGPYK;VQFNSAKGPYKGGLR;VTISGSGNVAQYAALK;VTISGSGNVAQYAALKVIELGGIVVSLSDSK;VTWENDNGEQEVAQGYR;VTWENDNGEQEVAQGYRVQFNSAK;VTWENDNGEQEVAQGYRVQFNSAKGPYK;VTWTAER;VTWTAERVDQELK;VTWTAERVDQELKK;YVAGARPWTHVSNVDIALPCATQNEVSGDEAK;YVAGARPWTHVSNVDIALPCATQNEVSGDEAKALVASGVK
+      8                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          AAGLTAAYAR;AAGLTAAYARTIGIAVDHR;AAGLTAAYARTIGIAVDHRR;AAKIAPRPLDLLRPVVR;AAKIAPRPLDLLRPVVRAPTVK;AARAAK;AARAAKIAPRPLDLLRPVVR;AEAEAEK;AEAEAEKK;AEAEAEKKK;AGRGFTLAEVK;AGRGFTLAEVKAAGLTAAYAR;AISKNLPILK;AISKNLPILKNHFR;APEAEQVLSAAATFPIAQPATDVEAR;APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR;APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFRTLR;APTVKYNR;APTVKYNRK;AREKAEAEAEK;AVQDNGESAFR;AVQDNGESAFRTLR;AVQDNGESAFRTLRLAR;DGKAPEAEQVLSAAATFPIAQPATDVEAR;DGKAPEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR;EKAEAEAEK;EKAEAEAEKK;EYQSKIIVFPR;EYQSKIIVFPRDGK;FRGIREK;GFTLAEVK;GFTLAEVKAAGLTAAYAR;GFTLAEVKAAGLTAAYARTIGIAVDHR;GIREKR;HWQERVK;HWQERVKVHFDQAGK;IAPRPLDLLRPVVR;IAPRPLDLLRPVVRAPTVK;IAPRPLDLLRPVVRAPTVKYNR;IIVFPR;IIVFPRDGK;IIVFPRDGKAPEAEQVLSAAATFPIAQPATDVEAR;KFRGIR;KHWQER;KHWQERVK;KVRAGR;LARSEK;LARSEKK;LKEYQSK;LKEYQSKIIVFPR;MAISKNLPILK;MAISKNLPILKNHFR;NARAAR;NARAARAAK;NHFRKHWQER;NLPILK;NLPILKNHFR;NLPILKNHFRK;NQEIFDANVQR;NQEIFDANVQRLK;NQEIFDANVQRLKEYQSK;QNRNQEIFDANVQR;QNRNQEIFDANVQRLK;RNARAAR;RQNRNQEIFDANVQR;SEKKFR;TIGIAVDHR;TIGIAVDHRR;TIGIAVDHRRQNR;TLRLAR;TLRLARSEK;VHFDQAGK;VHFDQAGKK;VHFDQAGKKVSR;VKVHFDQAGK;VKVHFDQAGKK;VRAGRGFTLAEVK;VSRRNAR;YNRKVR
+      9                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          AAGLTAAYAR;AAGLTAAYARTIGIAVDHR;AAGLTAAYARTIGIAVDHRR;AAKIAPRPLDLLRPVVR;AAKIAPRPLDLLRPVVRAPTVK;AEAEAEK;AEAEAEKK;AEAEAEKKK;AGRGFTLAEVK;AGRGFTLAEVKAAGLTAAYAR;AISKNLPILK;AISKNLPILKNHFR;APEAEQVLSAAATFPIAQPATDVEAR;APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR;APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFRTLR;APTVKYNR;APTVKYNRK;AREKAEAEAEK;ATRAAK;ATRAAKIAPRPLDLLRPVVR;AVQDNGESAFR;AVQDNGESAFRTLR;AVQDNGESAFRTLRLAR;EKAEAEAEK;EKAEAEAEKK;EYQSKIIVFPR;EYQSKIIVFPRNGK;FRGIREK;GFTLAEVK;GFTLAEVKAAGLTAAYAR;GFTLAEVKAAGLTAAYARTIGIAVDHR;GIREKR;HWQERVK;HWQERVKVHFDQAGK;IAPRPLDLLRPVVR;IAPRPLDLLRPVVRAPTVK;IAPRPLDLLRPVVRAPTVKYNR;IIVFPR;IIVFPRNGK;IIVFPRNGKAPEAEQVLSAAATFPIAQPATDVEAR;KFRGIR;KHWQER;KHWQERVK;KVRAGR;LARSEK;LARSEKK;LKEYQSK;LKEYQSKIIVFPR;MAISKNLPILK;MAISKNLPILKNHFR;NARATR;NARATRAAK;NGKAPEAEQVLSAAATFPIAQPATDVEAR;NGKAPEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR;NHFRKHWQER;NLPILK;NLPILKNHFR;NLPILKNHFRK;NQEIFDANVQR;NQEIFDANVQRLK;NQEIFDANVQRLKEYQSK;QNRNQEIFDANVQR;QNRNQEIFDANVQRLK;RNARATR;RQNRNQEIFDANVQR;SEKKFR;TIGIAVDHR;TIGIAVDHRR;TIGIAVDHRRQNR;TLRLAR;TLRLARSEK;VHFDQAGK;VHFDQAGKK;VHFDQAGKKVSR;VKVHFDQAGK;VKVHFDQAGKK;VRAGRGFTLAEVK;VSRRNAR;YNRKVR
       
 
 ---
@@ -3463,2194 +2406,1528 @@
     Output
       $peptides
                                                      peptide              protein
-      1                                  AAFYVAAIVQAIDIITGCK               Q06204
-      2             AAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYR               Q06204
-      3         AAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYREQIK               Q06204
-      4                                         AAKAHNIATSSK        Q03483;Q07791
-      5                                      AAKAHNIATSSKFSR        Q03483;Q07791
-      6                                     ACLNKEVGTYECEGER               P48238
-      7                                              AHGVAER        Q07791;Q07793
-      8                                           AHGVAERLNR        Q07791;Q07793
-      9                                    AHGVAERLNRTLLDDCR               Q07793
-      10                                   AHGVAERLNRTLLNDCR               Q07791
-      11                                           AHNIATSSK        Q03483;Q07791
-      12                                        AHNIATSSKFSR        Q03483;Q07791
-      13           AHNIATSSKFSRVNNDHINESTVSSQYLSDDNELSLGQQQK               Q07791
-      14          AHNIATSSKFSRVNSDHINESTVSSQYLSDDNELSLRPATER               Q03483
-      15                                AHNVSTSNNSPSTDNDSISK P0CX57;Q03856;Q07793
-      16                     AHNVSTSNNSPSTDNDSISKSTTEPIQLNNK P0CX57;Q03856;Q07793
-      17             AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLGQK               Q07793
-      18           AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLRPETY               P0CX57
-      19           AHNVSTSNNSPSTDNDSISKSTTEPIQLNNKHDLHLRPGTY               Q03856
-      20                                      AKCFKELEMENIEK               P48238
-      21                        ALHTPNIAYDLLSLSELANQNITACFTR               Q07791
-      22                   ALHTPNIAYDLLSLSELANQNITACFTRNTLER               Q07791
-      23        ALHTPNIAYDLLSLSELANQNITACFTRNTLERSDGTVLAPIVK               Q07791
-      24                               AMRLRDEVSGNNLYVYYIETK               Q07791
-      25                              APGQPGHYIDQDELEIDEDEYK               Q07791
-      26                            APGQPGHYIDQDELEIDEDEYKEK               Q07791
-      27                      APGQPGHYIDQDELEIDEDEYKEKVHEMQK               Q07791
-      28                                APKEVDADISEYNILPSTIR               Q07791
-      29                              APKEVDADISEYNILPSTIRSR               Q07791
-      30                                  APREVDPNISESNILPSK               Q07793
-      31                                 APREVDPNISESNILPSKK               Q07793
-      32                                              ARFVAR        Q07791;Q07793
-      33                 ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK               Q07791
-      34            ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIK               Q07791
-      35     ASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIKGLLTDSR               Q07791
-      36                                   AVCDNTPSIDTDPPEYR               Q07791
-      37                      AVCDNTPSIDTDPPEYRSSDHATPNIMPDK               Q07791
-      38                   AVCDNTPSIDTDPPEYRSSDHATPNIMPDKSSK               Q07791
-      39                                           AVKSIKPIR               Q07793
-      40                                       AVKSIKPIRTTLR               Q07793
-      41                                  AVSPTDSTPPSTHTEDSK               Q07793
-      42                                 AVSPTDSTPPSTHTEDSKR               Q07793
-      43                              AVSPTDSTPPSTHTEDSKRVSK               Q07793
-      44                                        CFKELEMENIEK               P48238
-      45                                    CFKELEMENIEKGDIK               P48238
-      46                                       DALRETLPSSYNK               Q06204
-      47                                 DALRETLPSSYNKETLNFK               Q06204
-      48                                    DEVSGNNLYVYYIETK               Q07791
-      49                      DEVSGNNLYVYYIETKMNIADVMTKPLPIK               Q07791
-      50                   DEVSGNNLYVYYIETKMNIADVMTKPLPIKTFK               Q07791
-      51                       DFRHSDSYSENETNHTNVPISSTGGTNNK               Q07793
-      52           DFRHSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEK               Q07793
-      53                                             DGTHKAR        Q07791;Q07793
-      54                                         DGTHKARFVAR        Q07791;Q07793
-      55                                             DIIEWCR               P48238
-      56                                       DIIEWCRDYEVNK               P48238
-      57                                     DIIEWCRDYEVNKTR               P48238
-      58                                             DIKEKEK               Q07793
-      59                                        DILSVDYTDIMK P0CX57;Q03856;Q07793
-      60                                    DILSVDYTDIMKILSK P0CX57;Q03856;Q07793
-      61                                DILSVDYTDIMKILSKSIEK P0CX57;Q03856;Q07793
-      62                                            DIPHIHSR               Q07791
-      63                         DIPHIHSRQTNSSLGGMDDSNVLTTTK               Q07791
-      64                       DIPHIHSRQTNSSLGGMDDSNVLTTTKSK               Q07791
-      65                                            DKQLIWHK        Q07791;Q07793
-      66                                          DKQLIWHKHK               Q07793
-      67                                   DKQLIWHKSKPVKPTNK               Q07791
-      68                                              DLNANK               Q07791
-      69                                             DLNANKK               Q07791
-      70                                       DLNANKKIITTLK               Q07791
-      71                                             DNKEKDR               Q07791
-      72                                           DRYVEAYHK               Q07791
-      73                                    DRYVEAYHKEISQLLK               Q07791
-      74  DSTKVNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK               Q03483
-      75  DSTKVNSQQETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK               Q07791
-      76                                              DTWNNK               Q07791
-      77                                           DTWNNKNMR               Q07791
-      78                                     DTWNNKNMRSLEPPR               Q07791
-      79                                              DTWNTK               Q07793
-      80                                           DTWNTKNMR               Q07793
-      81                                     DTWNTKNMRSLEPPR               Q07793
-      82         DTYSFFTSLSDIQDSSSNEEQCGVGSILSEDSFTFEGSNVSIR               P48238
-      83                       DWIALANLEYDGSTSADTFEITVSTIIQR               Q07791
-      84                     DWIALANLEYDGSTSADTFEITVSTIIQRLK               Q07791
-      85            DWIALANLEYDGSTSADTFEITVSTIIQRLKENNINVSDR               Q07791
-      86                       DWIALANLEYNGSTSADTFEITVSTIIQR               Q03483
-      87                     DWIALANLEYNGSTSADTFEITVSTIIQRLK               Q03483
-      88            DWIALANLEYNGSTSADTFEITVSTIIQRLKENNINVSDR               Q03483
-      89                                              DYEVNK               P48238
-      90                                            DYEVNKTR               P48238
-      91                       DYEVNKTREVCVPSIHEFYLHGNGSDNLF               P48238
-      92                                             EARQREK               P48238
-      93                                    EDSILDVFTTILAFIK               Q07793
-      94                      EDSILDVFTTILAFIKNQFQASVLVIQMDR               Q07793
-      95               EDSILDVFTTILAFIKNQFQASVLVIQMDRGSEYTNR               Q07793
-      96                                    EELYIRPPPHLGLNDK               Q07791
-      97                                 EELYIRPPPHLGLNDKLLR               Q07791
-      98                               EELYIRPPPHLGLNDKLLRLR               Q07791
-      99                                    EELYIRPPPHLGMNDK               Q07793
-      100                                EELYIRPPPHLGMNDKLIR               Q07793
-      101                              EELYIRPPPHLGMNDKLIRLK               Q07793
-      102                                   EESILNVFTSILAFIK               Q07791
-      103                             EESILNVFTSILAFIKNQFNAR               Q07791
-      104                     EESILNVFTSILAFIKNQFNARVLVIQMDR               Q07791
-      105                                             EIDPKR               Q07793
-      106                                   EIDPKRVINSMFIFNK               Q07793
-      107                                            EISQLLK               Q07791
-      108                                    EISQLLKMNTWDTNK               Q07791
-      109                                EISQLLKMNTWDTNKYYDR               Q07791
-      110                                        EKDRYVEAYHK               Q07791
-      111                                        EKEKYIEAYHK               Q07793
-      112                                           EKVHEMQK        Q07791;Q07793
-      113                                EKVHEMQKLIGLASYVGYK        Q07791;Q07793
-      114                                          EKYIEAYHK               Q07793
-      115                                   EKYIEAYHKEVNQLLK               Q07793
-      116                                          ELEMENIEK               P48238
-      117                                      ELEMENIEKGDIK               P48238
-      118                                     ELEMENIEKGDIKK               P48238
-      119                         ELESLILPADSIVNVVDQFQEELLSR               Q06204
-      120        ELESLILPADSIVNVVDQFQEELLSRLQTNTISMLPQCLVPDK               Q06204
-      121       ELESLILPADSIVNVVDQFQEELLSRLQTNTISMLPQCLVPDKR               Q06204
-      122                                           ELPPINSR               Q07793
-      123                      ELPPINSRQTNSSLGGIGDSNAYTTINSK               Q07793
-      124                     ELPPINSRQTNSSLGGIGDSNAYTTINSKK               Q07793
-      125                                          ENNINVSDR        Q03483;Q07791
-      126                                  ENNINVSDRLACQLILK        Q03483;Q07791
-      127                           ENNINVSDRLACQLILKGLSGDFK        Q03483;Q07791
-      128                                            EPVQKVR               Q07791
-      129                                         EPVQKVRAPK               Q07791
-      130                                       EQIKYYSSIHIK               Q06204
-      131                   EQIKYYSSIHIKLQFLNHSNLLGAAIATYLNK               Q06204
-      132                              ESDIEWSNASTYQCPDCLIGK               Q07791
-      133                           ESDIEWSNASTYQCPDCLIGKSTK               Q07791
-      134                         ESDIEWSNASTYQCPDCLIGKSTKHR               Q07791
-      135                                             ESKPTR               Q07791
-      136                     ESKPTRTIDSNDELPDHLLIDSGASQTLVR               Q07791
-      137                            ESQQLHQNPHSLHGSAAASVTSK               Q07791
-      138       ESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDR               Q07791
-      139   ESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDRDSTK               Q07791
-      140                            ESQQLHQNPHSQHGSAYASVTSK               Q03483
-      141       ESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDR               Q03483
-      142   ESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDRDSTK               Q03483
-      143                            ESQQLSNYPHISHGSACASVTSK               Q03856
-      144             ESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASK               Q03856
-      145       ESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASKIQEYDK               Q03856
-      146                            ESQQLSQHSPISHGSACASVTSK        P0CX57;Q07793
-      147             ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK        P0CX57;Q07793
-      148       ESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK        P0CX57;Q07793
-      149                               ESRLDQFNYDALTFDEDLNR               Q07793
-      150                                  ESTEMGGTIESDTTSPR               Q07791
-      151                          ESTEMGGTIESDTTSPRHSSTFTAR               Q07791
-      152                       ESTEMGGTIESDTTSPRHSSTFTARNQK               Q07791
-      153                                             ETLNFK               Q06204
-      154                                ETLNFKHVLINSEIGFIGK               Q06204
-      155     ETLNFKHVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGK               Q06204
-      156                                          ETLPSSYNK               Q06204
-      157                                    ETLPSSYNKETLNFK               Q06204
-      158                       ETLPSSYNKETLNFKHVLINSEIGFIGK               Q06204
-      159                              EVCVPSIHEFYLHGNGSDNLF               P48238
-      160                                  EVDADISEYNILPSTIR               Q07791
-      161                                EVDADISEYNILPSTIRSR               Q07791
-      162                         EVDADISEYNILPSTIRSRTPHIINK               Q07791
-      163                                    EVDPNISESNILPSK               Q07793
-      164                                   EVDPNISESNILPSKK               Q07793
-      165                                  EVDPNISESNILPSKKR               Q07793
-      166                                        EVGTYECEGER               P48238
-      167                                    EVHTNQDPLDVSASK P0CX57;Q03856;Q07793
-      168                              EVHTNQDPLDVSASKIQEYDK               Q03856
-      169                          EVHTNQDPLDVSASKIQEYDKASTK               Q03856
-      170                              EVHTNQDPLDVSASKTEECEK        P0CX57;Q07793
-      171                          EVHTNQDPLDVSASKTEECEKASTK        P0CX57;Q07793
-      172                                            EVNQLLK               Q07793
-      173                                          EVNQLLKMK               Q07793
-      174                                EVNQLLKMKTWDTDEYYDR               Q07793
-      175                              EVPSNQDPLAVSASNLPEFDR        Q03483;Q07791
-      176                          EVPSNQDPLAVSASNLPEFDRDSTK        Q03483;Q07791
-      177                                         EYSQPFFDWR               P48238
-      178                       EYSQPFFDWRHEMVEHGEESVKPCGCHK               P48238
-      179                     EYSQPFFDWRHEMVEHGEESVKPCGCHKSR               P48238
-      180            FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTR               Q06204
-      181    FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIK               Q06204
-      182   FAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIKK               Q06204
-      183                                FDLLYYINTLAQHILFPSR        Q07791;Q07793
-      184               FDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTR               Q07791
-      185             FDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTRDK               Q07791
-      186               FDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTR               Q07793
-      187             FDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTRDK               Q07793
-      188                                           FFGTKAMR               Q07791
-      189                                         FFGTKAMRLR               Q07791
-      190                                 FFTNRGITACYTTTADSR               Q07791
-      191                          FFTNRGITACYTTTADSRAHGVAER               Q07791
-      192                             FFVSVTFSFPLNPEGEVVAMGK               Q06204
-      193               FFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVK               Q06204
-      194      FFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVKQLIQSSFHR               Q06204
-      195                    FICENDSISLIIGTGTNACFEVPYGYLPPFK               Q06204
-      196                   FICENDSISLIIGTGTNACFEVPYGYLPPFKR               Q06204
-      197               FICENDSISLIIGTGTNACFEVPYGYLPPFKRDALR               Q06204
-      198                                 FLEKNGITPCYTTTADSR               Q07793
-      199                          FLEKNGITPCYTTTADSRAHGVAER               Q07793
-      200                                FLKNSNLGDIIPNDQGEIK        Q03483;Q07791
-      201                               FLKNSNLGDIIPNDQGEIKR        Q03483;Q07791
-      202                               FLQNSNLGGIIPTVNGKPVR P0CX57;Q03856;Q07793
-      203   FLQNSNLGGIIPTVNGKPVRQITDDELTFLYNTFQIFAPSQFLPTWVK P0CX57;Q03856;Q07793
-      204                                             FLRYTR P0CX57;Q03856;Q07793
-      205                                           FLRYTRHR P0CX57;Q03856;Q07793
-      206                                         FQWVYPLHDR               Q07791
-      207                                        FQWVYPLHDRR               Q07791
-      208                        FQWVYPLHDRREESILNVFTSILAFIK               Q07791
-      209                              FRFDLLYYINTLAQHILFPSR        Q07791;Q07793
-      210             FRFDLLYYINTLAQHILFPSRQVLDMTYELIQFIWNTR               Q07791
-      211             FRFDLLYYINTLAQHILFPSRQVLDMTYELIQFMWDTR               Q07793
-      212                                          FRNRFFGTK               Q07791
-      213                                         FRWVYPLHDR               Q07793
-      214                                        FRWVYPLHDRR               Q07793
-      215                   FSRVNNDHINESTVSSQYLSDDNELSLGQQQK               Q07791
-      216             FSRVNNDHINESTVSSQYLSDDNELSLGQQQKESKPTR               Q07791
-      217                  FSRVNSDHINESTVSSQYLSDDNELSLRPATER               Q03483
-      218                 FSRVNSDHINESTVSSQYLSDDNELSLRPATERI               Q03483
-      219                                             FTIPPK               P48238
-      220                                         FTIPPKIEQR               P48238
-      221                                        FTIPPKIEQRK               P48238
-      222                                            FYIRFLK        Q03483;Q07791
-      223                            FYIRFLKNSNLGDIIPNDQGEIK        Q03483;Q07791
-      224                                         GDIKKSLFYR               P48238
-      225                                     GFVMTDTLQGSTVK               Q06204
-      226                            GFVMTDTLQGSTVKQLIQSSFHR               Q06204
-      227                                        GIPGYALHPSR        Q07791;Q07793
-      228                           GIPGYALHPSRNSYGYIIYLPSLK        Q07791;Q07793
-      229                          GIPGYALHPSRNSYGYIIYLPSLKK        Q07791;Q07793
-      230                                      GITACYTTTADSR               Q07791
-      231                               GITACYTTTADSRAHGVAER               Q07791
-      232                            GITACYTTTADSRAHGVAERLNR               Q07791
-      233                                            GKACLNK               P48238
-      234                                 GKACLNKEVGTYECEGER               P48238
-      235                                    GKYMKLGMENSLTEK               Q07793
-      236                                            GLLTDSR               Q07791
-      237                                     GLLTDSRSTISIIK               Q07791
-      238                               GLLTDSRSTISIIKSTNEEK               Q07791
-      239                                            GLSGDFK        Q03483;Q07791
-      240                                         GLSGDFKYLR        Q03483;Q07791
-      241                                     GLSGDFKYLRNQYR        Q03483;Q07791
-      242                                            GLSGEYK P0CX57;Q03856;Q07793
-      243                                         GLSGEYKFLR P0CX57;Q03856;Q07793
-      244                                      GLSGEYKFLRYTR P0CX57;Q03856;Q07793
-      245                        GRKLSAPGQPGLYIDQDELEIDEDEYK               Q07793
-      246                                            GSEYTNK               Q07791
-      247                                        GSEYTNKTLHK               Q07791
-      248                                   GSEYTNKTLHKFFTNR               Q07791
-      249                                            GSEYTNR               Q07793
-      250                                        GSEYTNRTLHK               Q07793
-      251                                    GSEYTNRTLHKFLEK               Q07793
-      252                      GSRLKYQESYEPFQYLHTDIFGPVHHLPK               Q07791
-      253       GSRLKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK               Q07793
-      254                                          GVKSIKPVR               Q07791
-      255                                      GVKSIKPVRTTLR               Q07791
-      256                                            GWSCVFK        Q07791;Q07793
-      257                          GWSCVFKNSQVTICLFVDDMILFSK               Q07791
-      258                    GWSCVFKNSQVTICLFVDDMILFSKDLNANK               Q07791
-      259                          GWSCVFKNSQVTICLFVDDMVLFSK               Q07793
-      260                    GWSCVFKNSQVTICLFVDDMVLFSKNLNSNK               Q07793
-      261                                           HDLHLGQK               Q07793
-      262               HDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASR               Q07793
-      263           HDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASRTLIR               Q07793
-      264                                         HDLHLRPETY               P0CX57
-      265                                         HDLHLRPGTY               Q03856
-      266                                 HEMVEHGEESVKPCGCHK               P48238
-      267                               HEMVEHGEESVKPCGCHKSR               P48238
-      268                              HEMVEHGEESVKPCGCHKSRK               P48238
-      269                                          HGDFYWLSK               Q07791
-      270                                         HGDFYWLSKK               Q07791
-      271                                HGDFYWLSKKYLIPSHISK               Q07791
-      272                                             HIKGSR        Q07791;Q07793
-      273                                           HIKGSRLK        Q07791;Q07793
-      274                                            HKTSSDK               Q07793
-      275                                          HKTSSDKNI               Q07793
-      276                           HLNMTVAELFLDIHAIYEEQQGSR P0CX57;Q03856;Q07793
-      277                    HLNMTVAELFLDIHAIYEEQQGSRNSKPNYR P0CX57;Q03856;Q07793
-      278                   HLNMTVAELFLDIHAIYEEQQGSRNSKPNYRR P0CX57;Q03856;Q07793
-      279                                           HRHIKGSR        Q07791;Q07793
-      280                         HRHLNMTVAELFLDIHAIYEEQQGSR P0CX57;Q03856;Q07793
-      281                  HRHLNMTVAELFLDIHAIYEEQQGSRNSKPNYR P0CX57;Q03856;Q07793
-      282                         HSDSYSENETNHTNVPISSTGGTNNK               Q07793
-      283             HSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEK               Q07793
-      284            HSDSYSENETNHTNVPISSTGGTNNKTVPQISDQETEKR               Q07793
-      285                                           HSSTFTAR               Q07791
-      286                                        HSSTFTARNQK               Q07791
-      287                        HSSTFTARNQKRPGSPNDMIDLTSQDR               Q07791
-      288                                      HVLINSEIGFIGK               Q06204
-      289           HVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGK               Q06204
-      290    HVLINSEIGFIGKNVIALQPFDIHGAISYEMPLECVTSGKWLPLSLK               Q06204
-      291                                           IEQRKEAR               P48238
-      292                                           IHLIAAVK               Q07793
-      293                                        IHLIAAVKAVK               Q07793
-      294                                  IHLIAAVKAVKSIKPIR               Q07793
-      295                                    IHPRGIPGYALHPSR        Q07791;Q07793
-      296                       IHPRGIPGYALHPSRNSYGYIIYLPSLK        Q07791;Q07793
-      297                                             IIEKLK               Q07793
-      298                                       IIEKLKMQYDTK               Q07793
-      299                          IIHRSPSIDASPPENNSSHNIVPIK               Q07793
-      300                              IINLGEGDNEIQYDILGLEIK               Q07791
-      301                           IINLGEGDNEIQYDILGLEIKYQR               Q07791
-      302                         IINLGEGDNEIQYDILGLEIKYQRSK               Q07791
-      303                              IINLGESDEEIQYDILGLEIK               Q07793
-      304                           IINLGESDEEIQYDILGLEIKYQR               Q07793
-      305                         IINLGESDEEIQYDILGLEIKYQRGK               Q07793
-      306                     IISENIEEFFCTMNVCHVINDAIAVSLTSK               Q06204
-      307                                             IITTLK               Q07791
-      308                                            IITTLKK               Q07791
-      309                                       IITTLKKQYDTK               Q07791
-      310                                           ILSKSIEK P0CX57;Q03856;Q07793
-      311            ILSKSIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK P0CX57;Q03856;Q07793
-      312                                         ILTIDFGGTR               Q06204
-      313                                       ILTIDFGGTRLK               Q06204
-      314                                        IMNLNKPSQYK        Q03483;Q07791
-      315                                  IMNLNKPSQYKQHSEYK        Q03483;Q07791
-      316                              IMNLNKPSQYKQHSEYKNVSR        Q03483;Q07791
-      317                                           INLIAAIK               Q07791
-      318                                        INLIAAIKGVK               Q07791
-      319                                  INLIAAIKGVKSIKPVR               Q07791
-      320                                        IPKLNVPLNPK               Q07793
-      321                                      IPKLNVPLNPKGR               Q07793
-      322                                             IQEYDK               Q03856
-      323                                         IQEYDKASTK               Q03856
-      324                                             KAKCFK               P48238
-      325                                             KEARQR               P48238
-      326                                             KEIDPK               Q07793
-      327                                            KEIDPKR               Q07793
-      328                                            KIITTLK               Q07791
-      329                                           KIITTLKK               Q07791
-      330                                         KKNESSEASK               Q06204
-      331                          KLRAPGQPGHYIDQDELEIDEDEYK               Q07791
-      332                          KLSAPGQPGLYIDQDELEIDEDEYK               Q07793
-      333                        KLSAPGQPGLYIDQDELEIDEDEYKEK               Q07793
-      334                                           KNAVTYLK               Q07791
-      335                      KNAVTYLKESDIEWSNASTYQCPDCLIGK               Q07791
-      336                                          KNESSEASK               Q06204
-      337                    KNESSEASKFFVSVTFSFPLNPEGEVVAMGK               Q06204
-      338                                       KPIIKGLLTDSR               Q07791
-      339                                KPIIKGLLTDSRSTISIIK               Q07791
-      340                                             KQYDTK               Q07791
-      341                        KQYDTKIINLGEGDNEIQYDILGLEIK               Q07791
-      342                                            KRDGTHK        Q07791;Q07793
-      343                                         KRIHLIAAVK               Q07793
-      344                                         KRINLIAAIK               Q07791
-      345                                    KRSLEDNETEIEVSR               Q07791
-      346                                       KRSLEDNETEIK               Q07793
-      347                              KRSSTPQISNIESTGSGGMHK               Q07793
-      348                 KSARQHAGLAGLDISTLLPFGQPVIVNDHNPNSK               Q07793
-      349                                             KSLFYR               P48238
-      350                                      KSLFYRDIIEWCR               P48238
-      351                                            KSLYGLK        Q07791;Q07793
-      352                                 KSLYGLKQSGANWYETIK        Q07791;Q07793
-      353                                  KTVDTTNYVILQDNQSK               Q07791
-      354                 KTVDTTNYVILQDNQSKLDQFNYDTLTFDDDLNR               Q07791
-      355                                     KTVDTTNYVILQGK               Q07793
-      356                                  KTVDTTNYVILQGKESR               Q07793
-      357                                        KVINSMFIFNK               Q07791
-      358                                       KVINSMFIFNKK               Q07791
-      359                                         KYLIPSHISK               Q07791
-      360                                 KYLIPSHISKLTINNVNK               Q07791
-      361                            KYLLPSNISVPTINNVHTSESTR               Q07793
-      362                           KYLLPSNISVPTINNVHTSESTRK               Q07793
-      363                                          KYPYPFIHR               Q07793
-      364                               KYPYPFIHRMLAHANAQTIR               Q07793
-      365                               KYVRPPPMLTSPNDFPNWVK P0CX57;Q03856;Q07793
-      366                           KYVRPPPMLTSPNDFPNWVKTYIK P0CX57;Q03856;Q07793
-      367                                           LAANGYIK               Q06204
-      368                                          LAANGYIKK               Q06204
-      369                                         LAANGYIKKK               Q06204
-      370                                           LACQLILK        Q03483;Q07791
-      371                                    LACQLILKGLSGDFK        Q03483;Q07791
-      372                                 LACQLILKGLSGDFKYLR        Q03483;Q07791
-      373                                  LDQFNYDALTFDEDLNR               Q07793
-      374                                  LDQFNYDTLTFDDDLNR               Q07791
-      375                                  LFSLDLNALNENENGSK               P48238
-      376                              LFSLDLNALNENENGSKNPVK               P48238
-      377                        LFSLDLNALNENENGSKNPVKFTIPPK               P48238
-      378                                        LGGTEEPYIQR               Q07791
-      379                                 LGGTEEPYIQRNSDTNIK               Q07791
-      380                               LGGTEEPYIQRNSDTNIKYR               Q07791
-      381                                         LGMEKSLTEK               Q07791
-      382                                      LGMEKSLTEKLPK               Q07791
-      383                                         LGMENSLTEK               Q07793
-      384                                      LGMENSLTEKIPK               Q07793
-      385                              LGMENSLTEKIPKLNVPLNPK               Q07793
-      386                                        LIGLASYVGYK        Q07791;Q07793
-      387                                      LIGLASYVGYKFR        Q07791;Q07793
-      388                   LIGLASYVGYKFRFDLLYYINTLAQHILFPSR        Q07791;Q07793
-      389                                             LIRLKK               Q07793
-      390                                        LKENNINVSDR        Q03483;Q07791
-      391                                LKENNINVSDRLACQLILK        Q03483;Q07791
-      392          LKFAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTR               Q06204
-      393  LKFAIISLPQIVIEYNDAFELTYNIVDSNFFNQIIYTICTRLAANGYIK               Q06204
-      394                                          LKKSLYGLK               Q07793
-      395                                           LKMQYDTK               Q07793
-      396                      LKMQYDTKIINLGESDEEIQYDILGLEIK               Q07793
-      397                         LKYQESYEPFQYLHTDIFGPVHHLPK               Q07791
-      398            LKYQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEK               Q07791
-      399          LKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK               Q07793
-      400        LKYQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFR               Q07793
-      401                           LLIKRAAFYVAAIVQAIDIITGCK               Q06204
-      402                                             LLRLRK               Q07791
-      403                                           LLTNKWIH               Q07791
-      404                                        LNNNGIHINNK P0CX57;Q03856;Q07793
-      405                                LNNNGIHINNKVACQLIMR P0CX57;Q03856;Q07793
-      406                         LNNNGIHINNKVACQLIMRGLSGEYK P0CX57;Q03856;Q07793
-      407                                         LNRTLLDDCR               Q07793
-      408                 LNRTLLDDCRTQLQCSGLPNHLWFSAIEFSTIVR               Q07793
-      409                                         LNRTLLNDCR               Q07791
-      410                 LNRTLLNDCRTLLHCSGLPNHLWFSAVEFSTIIR               Q07791
-      411                             LNVPLLAPMSQSNTHESSHASK               Q07793
-      412                           LNVPLLAPMSQSNTHESSHASKSK               Q07793
-      413                        LNVPLLAPMSQSNTHESSHASKSKDFR               Q07793
-      414                                           LNVPLNPK        Q07791;Q07793
-      415                                         LNVPLNPKGK               Q07791
-      416                                        LNVPLNPKGKK               Q07791
-      417                                         LNVPLNPKGR               Q07793
-      418                                        LNVPLNPKGRK               Q07793
-      419                                        LPKLNVPLNPK               Q07791
-      420                                      LPKLNVPLNPKGK               Q07791
-      421                               LQFLNHSNLLGAAIATYLNK               Q06204
-      422                         LQFLNHSNLLGAAIATYLNKSDNQVQ               Q06204
-      423                                  LQTNTISMLPQCLVPDK               Q06204
-      424                                 LQTNTISMLPQCLVPDKR               Q06204
-      425                               LQTNTISMLPQCLVPDKRSR               Q06204
-      426                           LRAPGQPGHYIDQDELEIDEDEYK               Q07791
-      427                         LRAPGQPGHYIDQDELEIDEDEYKEK               Q07791
-      428                                 LRDEVSGNNLYVYYIETK               Q07791
-      429                   LRDEVSGNNLYVYYIETKMNIADVMTKPLPIK               Q07791
-      430                                          LRKSLYGLK               Q07791
-      431                                       LRRVAVLPENSR               P48238
-      432                           LSAPGQPGLYIDQDELEIDEDEYK               Q07793
-      433                         LSAPGQPGLYIDQDELEIDEDEYKEK               Q07793
-      434                   LSAPGQPGLYIDQDELEIDEDEYKEKVHEMQK               Q07793
-      435                                   LSQLFAEIQLIYDENK        Q03483;Q07791
-      436                        LSQLFAEIQLIYDENKIMNLNKPSQYK        Q03483;Q07791
-      437                  LSQLFAEIQLIYDENKIMNLNKPSQYKQHSEYK        Q03483;Q07791
-      438           LTASYHSFIASNEIQESNDLNIESDHDFQSDIELHPEQPR               Q07793
-      439      LTASYHSFIASNEIQESNDLNIESDHDFQSDIELHPEQPRNVLSK               Q07793
-      440                       LTESTVNHTNHSDDELPGHLLLDSGASR               Q07793
-      441                   LTESTVNHTNHSDDELPGHLLLDSGASRTLIR               Q07793
-      442                                           LTINNVNK               Q07791
-      443                                         LTINNVNKSK               Q07791
-      444                                     LTINNVNKSKSVNK               Q07791
-      445                                   LVVISDASYGNQPYYK               Q07791
-      446                       LVVISDASYGNQPYYKSQIGNIYLLNGK               Q07791
-      447                  LVVISDASYGNQPYYKSQIGNIYLLNGKVIGGK               Q07791
-      448                           MESQQLHQNPHSLHGSAAASVTSK               Q07791
-      449      MESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDR               Q07791
-      450  MESQQLHQNPHSLHGSAAASVTSKEVPSNQDPLAVSASNLPEFDRDSTK               Q07791
-      451                           MESQQLHQNPHSQHGSAYASVTSK               Q03483
-      452      MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDR               Q03483
-      453  MESQQLHQNPHSQHGSAYASVTSKEVPSNQDPLAVSASNLPEFDRDSTK               Q03483
-      454                           MESQQLSNYPHISHGSACASVTSK               Q03856
-      455            MESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASK               Q03856
-      456      MESQQLSNYPHISHGSACASVTSKEVHTNQDPLDVSASKIQEYDK               Q03856
-      457                           MESQQLSQHSPISHGSACASVTSK        P0CX57;Q07793
-      458            MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASK        P0CX57;Q07793
-      459      MESQQLSQHSPISHGSACASVTSKEVHTNQDPLDVSASKTEECEK        P0CX57;Q07793
-      460                                           MGKACLNK               P48238
-      461                                MGKACLNKEVGTYECEGER               P48238
-      462                                       MKTWDTDEYYDR               Q07793
-      463                                      MKTWDTDEYYDRK               Q07793
-      464                                        MLAHANAQTIR               Q07793
-      465                                    MLAHANAQTIRYSLK               Q07793
-      466       MLAHANAQTIRYSLKNNTITYFNESDVDWSSAIDYQCPDCLIGK               Q07793
-      467                                           MLGHANFR               Q07791
-      468                                       MLGHANFRSIQK               Q07791
-      469                                    MLGHANFRSIQKSLK               Q07791
-      470                                     MNIADVMTKPLPIK               Q07791
-      471                                  MNIADVMTKPLPIKTFK               Q07791
-      472                             MNIADVMTKPLPIKTFKLLTNK               Q07791
-      473                                           MNTWDTNK               Q07791
-      474                                       MNTWDTNKYYDR               Q07791
-      475                                 MNTWDTNKYYDRNDIDPK               Q07791
-      476                    MQSDTQEANDIVTLANLQYNGSTPADAFETK P0CX57;Q03856;Q07793
-      477             MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR P0CX57;Q03856;Q07793
-      478  MQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDRLNNNGIHINNK P0CX57;Q03856;Q07793
-      479                                          MQTNNQELK        Q03483;Q07791
-      480             MQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQR               Q07791
-      481           MQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQRLK               Q07791
-      482             MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR               Q03483
-      483           MQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQRLK               Q03483
-      484                                             MQYDTK               Q07793
-      485                        MQYDTKIINLGESDEEIQYDILGLEIK               Q07793
-      486                     MQYDTKIINLGESDEEIQYDILGLEIKYQR               Q07793
-      487                                          MTIESTLAR               Q06204
-      488                MTIESTLARELESLILPADSIVNVVDQFQEELLSR               Q06204
-      489                                            NAVTYLK               Q07791
-      490                       NAVTYLKESDIEWSNASTYQCPDCLIGK               Q07791
-      491                    NAVTYLKESDIEWSNASTYQCPDCLIGKSTK               Q07791
-      492                                             NDIDPK               Q07791
-      493                                            NDIDPKK               Q07791
-      494                                  NDIDPKKVINSMFIFNK               Q07791
-      495                                             NDKSAR               Q07791
-      496               NDKSARQHAGLAGLDITTILPFGQPVIVNNHNPDSK               Q07791
-      497                                      NDSRSYTNTTKPK P0CX57;Q03856;Q07793
-      498                                  NDSRSYTNTTKPKVIAR P0CX57;Q03856;Q07793
-      499                                           NESSEASK               Q06204
-      500                     NESSEASKFFVSVTFSFPLNPEGEVVAMGK               Q06204
-      501       NESSEASKFFVSVTFSFPLNPEGEVVAMGKGFVMTDTLQGSTVK               Q06204
-      502               NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIAR               Q06204
-      503           NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIARLLIK               Q06204
-      504          NFPVEFNGELVCQLAEDCTNAWFENEHYALICQIARLLIKR               Q06204
-      505                                     NGITPCYTTTADSR               Q07793
-      506                              NGITPCYTTTADSRAHGVAER               Q07793
-      507                           NGITPCYTTTADSRAHGVAERLNR               Q07793
-      508                                        NILLQYNIIPK               Q06204
-      509    NILLQYNIIPKNFPVEFNGELVCQLAEDCTNAWFENEHYALICQIAR               Q06204
-      510                                NIPINAIGDLQFHFQDNTK               Q07793
-      511                            NIPINAIGDLQFHFQDNTKTSIK               Q07793
-      512                                             NLNSNK               Q07793
-      513                                            NLNSNKR               Q07793
-      514                                        NLNSNKRIIEK               Q07793
-      515                                          NMRSLEPPR        Q07791;Q07793
-      516                                        NMRSLEPPRSK        Q07791;Q07793
-      517                      NNTITYFNESDVDWSSAIDYQCPDCLIGK               Q07793
-      518                   NNTITYFNESDVDWSSAIDYQCPDCLIGKSTK               Q07793
-      519                 NNTITYFNESDVDWSSAIDYQCPDCLIGKSTKHR               Q07793
-      520                               NNVLPPHTLTSEENFSTWVK        Q03483;Q07791
-      521                           NNVLPPHTLTSEENFSTWVKFYIR        Q03483;Q07791
-      522                        NNVLPPHTLTSEENFSTWVKFYIRFLK        Q03483;Q07791
-      523                                          NPQKTNNSK P0CX57;Q03856;Q07793
-      524                                        NPQKTNNSKSK P0CX57;Q03856;Q07793
-      525                                             NPSDEK P0CX57;Q03856;Q07793
-      526                                         NPSDEKNDSR P0CX57;Q03856;Q07793
-      527                                NPSDEKNDSRSYTNTTKPK P0CX57;Q03856;Q07793
-      528                                         NPVKFTIPPK               P48238
-      529                                     NPVKFTIPPKIEQR               P48238
-      530                                             NQFNAR               Q07791
-      531                                     NQFNARVLVIQMDR               Q07791
-      532                              NQFNARVLVIQMDRGSEYTNK               Q07791
-      533                                     NQFQASVLVIQMDR               Q07793
-      534                              NQFQASVLVIQMDRGSEYTNR               Q07793
-      535                          NQFQASVLVIQMDRGSEYTNRTLHK               Q07793
-      536                                NQKRPGSPNDMIDLTSQDR               Q07791
-      537                       NQKRPGSPNDMIDLTSQDRVNYGLENIK               Q07791
-      538                                             NQYRTK        Q03483;Q07791
-      539                                         NQYRTKTNMK        Q03483;Q07791
-      540                                            NRFFGTK               Q07791
-      541                                         NRFFGTKAMR               Q07791
-      542                                            NSDTNIK               Q07791
-      543                                          NSDTNIKYR               Q07791
-      544                               NSDTNIKYRTTNSTPSIDDR               Q07791
-      545                                            NSKPNYR P0CX57;Q03856;Q07793
-      546                                           NSKPNYRR P0CX57;Q03856;Q07793
-      547                                     NSKPNYRRNPSDEK P0CX57;Q03856;Q07793
-      548                                            NSLASPK               Q07793
-      549                                          NSLASPKSK               Q07793
-      550                                         NSLASPKSKK               Q07793
-      551                                            NSLVSPK               Q07791
-      552                                         NSLVSPKNDK               Q07791
-      553                                      NSLVSPKNDKSAR               Q07791
-      554                                   NSNLGDIIPNDQGEIK        Q03483;Q07791
-      555                                  NSNLGDIIPNDQGEIKR        Q03483;Q07791
-      556      NSNLGDIIPNDQGEIKRQMTYEEHAYIYNTFQAFAPFHLLPTWVK        Q03483;Q07791
-      557                                 NSQVTICLFVDDMILFSK               Q07791
-      558                           NSQVTICLFVDDMILFSKDLNANK               Q07791
-      559                          NSQVTICLFVDDMILFSKDLNANKK               Q07791
-      560                                 NSQVTICLFVDDMVLFSK               Q07793
-      561                           NSQVTICLFVDDMVLFSKNLNSNK               Q07793
-      562                          NSQVTICLFVDDMVLFSKNLNSNKR               Q07793
-      563                                      NSYGYIIYLPSLK        Q07791;Q07793
-      564                                     NSYGYIIYLPSLKK        Q07791;Q07793
-      565                     NSYGYIIYLPSLKKTVDTTNYVILQDNQSK               Q07791
-      566                        NSYGYIIYLPSLKKTVDTTNYVILQGK               Q07793
-      567                                   NTLERSDGTVLAPIVK               Q07791
-      568                          NTLERSDGTVLAPIVKHGDFYWLSK               Q07791
-      569                        NVIALQPFDIHGAISYEMPLECVTSGK               Q06204
-      570                 NVIALQPFDIHGAISYEMPLECVTSGKWLPLSLK               Q06204
-      571      NVIALQPFDIHGAISYEMPLECVTSGKWLPLSLKNILLQYNIIPK               Q06204
-      572                                   NVLERSDGTVLAPIVK               Q07793
-      573                          NVLERSDGTVLAPIVKYGDFYWVSK               Q07793
-      574                            NVLSKAVSPTDSTPPSTHTEDSK               Q07793
-      575                           NVLSKAVSPTDSTPPSTHTEDSKR               Q07793
-      576                                      NVSRTSPNTTNTK        Q03483;Q07791
-      577                                  NVSRTSPNTTNTKVTSR               Q07791
-      578                                  NVSRTSPNTTNTKVTTR               Q03483
-      579                                NVTADSILDDLPLPDLTNK               Q07791
-      580                      NVTADSILDDLPLPDLTNKSPTDTSDVSK               Q07791
-      581              NVTADSILDDLPLPDLTNKSPTDTSDVSKDIPHIHSR               Q07791
-      582                                        NYHRTNSSKPR        Q03483;Q07791
-      583                                     NYHRTNSSKPRAAK        Q03483;Q07791
-      584                                       NYLVESSMDSSR               P48238
-      585                             NYLVESSMDSSREYSQPFFDWR               P48238
-      586           NYLVESSMDSSREYSQPFFDWRHEMVEHGEESVKPCGCHK               P48238
-      587                              NYNFIHIGYVGSFLHNSNFYR               Q06204
-      588                          NYNFIHIGYVGSFLHNSNFYREQIK               Q06204
-      589                  NYNFIHIGYVGSFLHNSNFYREQIKYYSSIHIK               Q06204
-      590                               QDIPINAIGNLHFNFQNGTK               Q07791
-      591                           QDIPINAIGNLHFNFQNGTKTSIK               Q07791
-      592                     QHAGLAGLDISTLLPFGQPVIVNDHNPNSK               Q07793
-      593                 QHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPR               Q07793
-      594      QHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPRGIPGYALHPSR               Q07793
-      595                     QHAGLAGLDITTILPFGQPVIVNNHNPDSK               Q07791
-      596                 QHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPR               Q07791
-      597      QHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPRGIPGYALHPSR               Q07791
-      598                                             QHSEYK        Q03483;Q07791
-      599                                         QHSEYKNVSR        Q03483;Q07791
-      600                                QHSEYKNVSRTSPNTTNTK        Q03483;Q07791
-      601                                   QILEINYADILTVLCK               Q07791
-      602                               QILEINYADILTVLCKSVSK               Q07791
-      603                      QILEINYADILTVLCKSVSKMQTNNQELK               Q07791
-      604                                   QILEINYSDILTVLCK               Q03483
-      605                               QILEINYSDILTVLCKSVSK               Q03483
-      606                      QILEINYSDILTVLCKSVSKMQTNNQELK               Q03483
-      607                       QITDDELTFLYNTFQIFAPSQFLPTWVK P0CX57;Q03856;Q07793
-      608           QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMK P0CX57;Q03856;Q07793
-      609       QITDDELTFLYNTFQIFAPSQFLPTWVKDILSVDYTDIMKILSK P0CX57;Q03856;Q07793
-      610                                          QLIQSSFHR               Q06204
-      611            QLIQSSFHRIISENIEEFFCTMNVCHVINDAIAVSLTSK               Q06204
-      612                                             QLIWHK        Q07791;Q07793
-      613                                           QLIWHKHK               Q07793
-      614                                      QLIWHKHKTSSDK               Q07793
-      615                                    QLIWHKSKPVKPTNK               Q07791
-      616                    QLIWHKSKPVKPTNKLVVISDASYGNQPYYK               Q07791
-      617                       QMTYEEHAYIYNTFQAFAPFHLLPTWVK        Q03483;Q07791
-      618       QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCK               Q07791
-      619   QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCKSVSK               Q07791
-      620       QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK               Q03483
-      621   QMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCKSVSK               Q03483
-      622                                        QSGANWYETIK        Q07791;Q07793
-      623                           QSGANWYETIKSYLINCCDMQEVR               Q07791
-      624                    QSGANWYETIKSYLINCCDMQEVRGWSCVFK               Q07791
-      625                           QSGANWYETIKSYLIQQCGMEEVR               Q07793
-      626                    QSGANWYETIKSYLIQQCGMEEVRGWSCVFK               Q07793
-      627                              QTNSSLGGIGDSNAYTTINSK               Q07793
-      628                             QTNSSLGGIGDSNAYTTINSKK               Q07793
-      629                            QTNSSLGGIGDSNAYTTINSKKR               Q07793
-      630                                QTNSSLGGMDDSNVLTTTK               Q07791
-      631                              QTNSSLGGMDDSNVLTTTKSK               Q07791
-      632                             QTNSSLGGMDDSNVLTTTKSKK               Q07791
-      633                                  QVLDMTYELIQFIWNTR               Q07791
-      634                                QVLDMTYELIQFIWNTRDK               Q07791
-      635                          QVLDMTYELIQFIWNTRDKQLIWHK               Q07791
-      636                                  QVLDMTYELIQFMWDTR               Q07793
-      637                                QVLDMTYELIQFMWDTRDK               Q07793
-      638                          QVLDMTYELIQFMWDTRDKQLIWHK               Q07793
-      639                         QYDTKIINLGEGDNEIQYDILGLEIK               Q07791
-      640                      QYDTKIINLGEGDNEIQYDILGLEIKYQR               Q07791
-      641                               RAAFYVAAIVQAIDIITGCK               Q06204
-      642          RAAFYVAAIVQAIDIITGCKNYNFIHIGYVGSFLHNSNFYR               Q06204
-      643                                     RDALRETLPSSYNK               Q06204
-      644                                             RDGTHK        Q07791;Q07793
-      645                                           RDGTHKAR        Q07791;Q07793
-      646                                  REDSILDVFTTILAFIK               Q07793
-      647                    REDSILDVFTTILAFIKNQFQASVLVIQMDR               Q07793
-      648                                  REESILNVFTSILAFIK               Q07791
-      649                            REESILNVFTSILAFIKNQFNAR               Q07791
-      650                                          RIHLIAAVK               Q07793
-      651                                       RIHLIAAVKAVK               Q07793
-      652                                            RIIEKLK               Q07793
-      653                         RIIHRSPSIDASPPENNSSHNIVPIK               Q07793
-      654                                          RINLIAAIK               Q07791
-      655                                       RINLIAAIKGVK               Q07791
-      656                               RNIPINAIGDLQFHFQDNTK               Q07793
-      657                           RNIPINAIGDLQFHFQDNTKTSIK               Q07793
-      658                                            RNPSDEK P0CX57;Q03856;Q07793
-      659                                        RNPSDEKNDSR P0CX57;Q03856;Q07793
-      660                                   RPGSPNDMIDLTSQDR               Q07791
-      661                          RPGSPNDMIDLTSQDRVNYGLENIK               Q07791
-      662                       RPGSPNDMIDLTSQDRVNYGLENIKTTR               Q07791
-      663                      RQMTYEEHAYIYNTFQAFAPFHLLPTWVK        Q03483;Q07791
-      664      RQMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYADILTVLCK               Q07791
-      665      RQMTYEEHAYIYNTFQAFAPFHLLPTWVKQILEINYSDILTVLCK               Q03483
-      666                                     RSLEDNETEIEVSR               Q07791
-      667                               RSLEDNETEIEVSRDTWNNK               Q07791
-      668                                        RSLEDNETEIK               Q07793
-      669                                     RSLEDNETEIKVSR               Q07793
-      670                                          RSRWNPEDK               Q06204
-      671                               RSSTPQISNIESTGSGGMHK               Q07793
-      672         RSSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASK               Q07793
-      673                                         RVAVLPENSR               P48238
-      674                             RVAVLPENSRNYLVESSMDSSR               P48238
-      675                                        RVINSMFIFNK               Q07793
-      676                                       RVINSMFIFNKK               Q07793
-      677                                           RVSKTNIR               Q07793
-      678                              SAHHIHSASSNPDINVVDAQK               Q07793
-      679                             SAHHIHSASSNPDINVVDAQKR               Q07793
-      680          SAHHIHSASSNPDINVVDAQKRNIPINAIGDLQFHFQDNTK               Q07793
-      681                              SAHYLHHATPNSEINIVDAQK               Q07791
-      682          SAHYLHHATPNSEINIVDAQKQDIPINAIGNLHFNFQNGTK               Q07791
-      683      SAHYLHHATPNSEINIVDAQKQDIPINAIGNLHFNFQNGTKTSIK               Q07791
-      684                                      SAPSYFISFTDEK               Q07791
-      685                                    SAPSYFISFTDEKTR               Q07791
-      686                          SAPSYFISFTDEKTRFQWVYPLHDR               Q07791
-      687                  SARQHAGLAGLDISTLLPFGQPVIVNDHNPNSK               Q07793
-      688              SARQHAGLAGLDISTLLPFGQPVIVNDHNPNSKIHPR               Q07793
-      689                  SARQHAGLAGLDITTILPFGQPVIVNNHNPDSK               Q07791
-      690              SARQHAGLAGLDITTILPFGQPVIVNNHNPDSKIHPR               Q07791
-      691                                        SDGTVLAPIVK        Q07791;Q07793
-      692                               SDGTVLAPIVKHGDFYWLSK               Q07791
-      693                              SDGTVLAPIVKHGDFYWLSKK               Q07791
-      694                               SDGTVLAPIVKYGDFYWVSK               Q07793
-      695                              SDGTVLAPIVKYGDFYWVSKK               Q07793
-      696                                             SDNQVQ               Q06204
-      697                SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETK P0CX57;Q03856;Q07793
-      698         SIEKMQSDTQEANDIVTLANLQYNGSTPADAFETKVTNIIDR P0CX57;Q03856;Q07793
-      699                                             SIKPIR               Q07793
-      700                                         SIKPIRTTLR               Q07793
-      701                                SIKPIRTTLRYDEAITYNK               Q07793
-      702                                             SIKPVR               Q07791
-      703                                         SIKPVRTTLR               Q07791
-      704                                SIKPVRTTLRYDEAITYNK               Q07791
-      705                                            SIQKSLK               Q07791
-      706                                           SIQKSLKK               Q07791
-      707                    SKDFRHSDSYSENETNHTNVPISSTGGTNNK               Q07793
-      708                                             SKKSAR               Q07793
-      709                                          SKPVKPTNK               Q07791
-      710                          SKPVKPTNKLVVISDASYGNQPYYK               Q07791
-      711              SKPVKPTNKLVVISDASYGNQPYYKSQIGNIYLLNGK               Q07791
-      712                                             SKSVNK               Q07791
-      713                                     SKSVNKYPYPLIHR               Q07791
-      714                          SKTARAHNVSTSNNSPSTDNDSISK P0CX57;Q03856;Q07793
-      715                                         SKYMKLGMEK               Q07791
-      716                                      SLEDNETEIEVSR               Q07791
-      717                                SLEDNETEIEVSRDTWNNK               Q07791
-      718                             SLEDNETEIEVSRDTWNNKNMR               Q07791
-      719                                         SLEDNETEIK               Q07793
-      720                                      SLEDNETEIKVSR               Q07793
-      721                                SLEDNETEIKVSRDTWNTK               Q07793
-      722                                             SLEPPR        Q07791;Q07793
-      723                                           SLEPPRSK        Q07791;Q07793
-      724                                          SLEPPRSKK        Q07791;Q07793
-      725                                       SLFYRDIIEWCR               P48238
-      726                                 SLFYRDIIEWCRDYEVNK               P48238
-      727                                        SLKKNAVTYLK               Q07791
-      728                                           SLTEKLPK               Q07791
-      729                                   SLTEKLPKLNVPLNPK               Q07791
-      730                                             SLYGLK        Q07791;Q07793
-      731                                  SLYGLKQSGANWYETIK        Q07791;Q07793
-      732                     SLYGLKQSGANWYETIKSYLINCCDMQEVR               Q07791
-      733                     SLYGLKQSGANWYETIKSYLIQQCGMEEVR               Q07793
-      734                              SPSIDASPPENNSSHNIVPIK               Q07793
-      735                                         SPTDTSDVSK               Q07791
-      736                                 SPTDTSDVSKDIPHIHSR               Q07791
-      737              SPTDTSDVSKDIPHIHSRQTNSSLGGMDDSNVLTTTK               Q07791
-      738                                       SQIGNIYLLNGK               Q07791
-      739                                  SQIGNIYLLNGKVIGGK               Q07791
-      740                               SQIGNIYLLNGKVIGGKSTK               Q07791
-      741                                          SRTPHIINK               Q07791
-      742                         SRTPHIINKESTEMGGTIESDTTSPR               Q07791
-      743                                           SRWNPEDK               Q06204
-      744                                 SRWNPEDKILTIDFGGTR               Q06204
-      745                                      SSDHATPNIMPDK               Q07791
-      746                                   SSDHATPNIMPDKSSK               Q07791
-      747                SSDHATPNIMPDKSSKNVTADSILDDLPLPDLTNK               Q07791
-      748                             SSKNVTADSILDDLPLPDLTNK               Q07791
-      749                   SSKNVTADSILDDLPLPDLTNKSPTDTSDVSK               Q07791
-      750                                   SSNSESTTPIISIETK               Q07791
-      751                  SSNSESTTPIISIETKAVCDNTPSIDTDPPEYR               Q07791
-      752     SSNSESTTPIISIETKAVCDNTPSIDTDPPEYRSSDHATPNIMPDK               Q07791
-      753                                SSTPQISNIESTGSGGMHK               Q07793
-      754          SSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASK               Q07793
-      755        SSTPQISNIESTGSGGMHKLNVPLLAPMSQSNTHESSHASKSK               Q07793
-      756                                            STISIIK               Q07791
-      757                                      STISIIKSTNEEK               Q07791
-      758                                    STISIIKSTNEEKFR               Q07791
-      759             STKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK               Q07791
-      760        STKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNKKPIIK               Q07791
-      761                                           STKHRHIK        Q07791;Q07793
-      762                                             STNEEK               Q07791
-      763                                           STNEEKFR               Q07791
-      764                                         STNEEKFRNR               Q07791
-      765                                        STTEPIQLNNK P0CX57;Q03856;Q07793
-      766                                STTEPIQLNNKHDLHLGQK               Q07793
-      767    STTEPIQLNNKHDLHLGQKLTESTVNHTNHSDDELPGHLLLDSGASR               Q07793
-      768                              STTEPIQLNNKHDLHLRPETY               P0CX57
-      769                              STTEPIQLNNKHDLHLRPGTY               Q03856
-      770                                       SVNKYPYPLIHR               Q07791
-      771                               SVNKYPYPLIHRMLGHANFR               Q07791
-      772                                      SVSKMQTNNQELK        Q03483;Q07791
-      773         SVSKMQTNNQELKDWIALANLEYDGSTSADTFEITVSTIIQR               Q07791
-      774         SVSKMQTNNQELKDWIALANLEYNGSTSADTFEITVSTIIQR               Q03483
-      775                                      SYLINCCDMQEVR               Q07791
-      776                               SYLINCCDMQEVRGWSCVFK               Q07791
-      777             SYLINCCDMQEVRGWSCVFKNSQVTICLFVDDMILFSK               Q07791
-      778                                      SYLIQQCGMEEVR               Q07793
-      779                               SYLIQQCGMEEVRGWSCVFK               Q07793
-      780             SYLIQQCGMEEVRGWSCVFKNSQVTICLFVDDMVLFSK               Q07793
-      781                                          SYTNTTKPK P0CX57;Q03856;Q07793
-      782                                      SYTNTTKPKVIAR P0CX57;Q03856;Q07793
-      783                                  SYTNTTKPKVIARNPQK P0CX57;Q03856;Q07793
-      784                            TARAHNVSTSNNSPSTDNDSISK P0CX57;Q03856;Q07793
-      785                 TARAHNVSTSNNSPSTDNDSISKSTTEPIQLNNK P0CX57;Q03856;Q07793
-      786                                             TEECEK        P0CX57;Q07793
-      787                                         TEECEKASTK        P0CX57;Q07793
-      788                                           TFKLLTNK               Q07791
-      789                                        TFKLLTNKWIH               Q07791
-      790                           TIDSNDELPDHLLIDSGASQTLVR               Q07791
-      791      TIDSNDELPDHLLIDSGASQTLVRSAHYLHHATPNSEINIVDAQK               Q07791
-      792                                           TIESTLAR               Q06204
-      793                 TIESTLARELESLILPADSIVNVVDQFQEELLSR               Q06204
-      794                                             TKTNMK        Q03483;Q07791
-      795                             TKTNMKLSQLFAEIQLIYDENK        Q03483;Q07791
-      796                           TKVRNNVLPPHTLTSEENFSTWVK        Q03483;Q07791
-      797                                          TLHKFFTNR               Q07791
-      798                             TLHKFFTNRGITACYTTTADSR               Q07791
-      799                                           TLHKFLEK               Q07793
-      800                             TLHKFLEKNGITPCYTTTADSR               Q07793
-      801                          TLIRSAHHIHSASSNPDINVVDAQK               Q07793
-      802                         TLIRSAHHIHSASSNPDINVVDAQKR               Q07793
-      803                                            TLLDDCR               Q07793
-      804                    TLLDDCRTQLQCSGLPNHLWFSAIEFSTIVR               Q07793
-      805             TLLDDCRTQLQCSGLPNHLWFSAIEFSTIVRNSLASPK               Q07793
-      806                           TLLHCSGLPNHLWFSAVEFSTIIR               Q07791
-      807                    TLLHCSGLPNHLWFSAVEFSTIIRNSLVSPK               Q07791
-      808                 TLLHCSGLPNHLWFSAVEFSTIIRNSLVSPKNDK               Q07791
-      809                                            TLLNDCR               Q07791
-      810                    TLLNDCRTLLHCSGLPNHLWFSAVEFSTIIR               Q07791
-      811             TLLNDCRTLLHCSGLPNHLWFSAVEFSTIIRNSLVSPK               Q07791
-      812                                            TNIRAPR               Q07793
-      813                             TNIRAPREVDPNISESNILPSK               Q07793
-      814                               TNMKLSQLFAEIQLIYDENK        Q03483;Q07791
-      815                    TNMKLSQLFAEIQLIYDENKIMNLNKPSQYK        Q03483;Q07791
-      816                                            TNNSKSK P0CX57;Q03856;Q07793
-      817                                         TNNSKSKTAR P0CX57;Q03856;Q07793
-      818                                            TNSSKPR        Q03483;Q07791
-      819                                         TNSSKPRAAK        Q03483;Q07791
-      820                                TNSSKPRAAKAHNIATSSK        Q03483;Q07791
-      821                                            TPHIINK               Q07791
-      822                           TPHIINKESTEMGGTIESDTTSPR               Q07791
-      823                   TPHIINKESTEMGGTIESDTTSPRHSSTFTAR               Q07791
-      824               TPTTVSEQNTEESIIADLPLPDLPPESPTEFPDPFK               Q07793
-      825       TPTTVSEQNTEESIIADLPLPDLPPESPTEFPDPFKELPPINSR               Q07793
-      826                           TQLQCSGLPNHLWFSAIEFSTIVR               Q07793
-      827                    TQLQCSGLPNHLWFSAIEFSTIVRNSLASPK               Q07793
-      828                  TQLQCSGLPNHLWFSAIEFSTIVRNSLASPKSK               Q07793
-      829                            TREVCVPSIHEFYLHGNGSDNLF               P48238
-      830                                       TRFQWVYPLHDR               Q07791
-      831                                      TRFQWVYPLHDRR               Q07791
-      832                   TSIKALHTPNIAYDLLSLSELANQNITACFTR               Q07791
-      833              TSIKALHTPNIAYDLLSLSELANQNITACFTRNTLER               Q07791
-      834                   TSIKVLHTPNIAYDLLSLNELAAVDITACFTK               Q07793
-      835              TSIKVLHTPNIAYDLLSLNELAAVDITACFTKNVLER               Q07793
-      836                                          TSPNTTNTK        Q03483;Q07791
-      837                                      TSPNTTNTKVTSR               Q07791
-      838                                  TSPNTTNTKVTSRNYHR               Q07791
-      839                                      TSPNTTNTKVTTR               Q03483
-      840                                  TSPNTTNTKVTTRNYHR               Q03483
-      841                                            TSSDKNI               Q07793
-      842                                      TTLRYDEAITYNK        Q07791;Q07793
-      843                                   TTLRYDEAITYNKDIK               Q07793
-      844                                   TTLRYDEAITYNKDNK               Q07791
-      845                                        TTNSTPSIDDR               Q07791
-      846                        TTNSTPSIDDRSSNSESTTPIISIETK               Q07791
-      847       TTNSTPSIDDRSSNSESTTPIISIETKAVCDNTPSIDTDPPEYR               Q07791
-      848                                     TTRLGGTEEPYIQR               Q07791
-      849                              TTRLGGTEEPYIQRNSDTNIK               Q07791
-      850                                   TVDTTNYVILQDNQSK               Q07791
-      851                  TVDTTNYVILQDNQSKLDQFNYDTLTFDDDLNR               Q07791
-      852                                      TVDTTNYVILQGK               Q07793
-      853                                   TVDTTNYVILQGKESR               Q07793
-      854                  TVDTTNYVILQGKESRLDQFNYDALTFDEDLNR               Q07793
-      855                                       TVPQISDQETEK               Q07793
-      856                                      TVPQISDQETEKR               Q07793
-      857                                  TVPQISDQETEKRIIHR               Q07793
-      858                                         TWDTDEYYDR               Q07793
-      859                                        TWDTDEYYDRK               Q07793
-      860                                   TWDTDEYYDRKEIDPK               Q07793
-      861                           TYIKFLQNSNLGGIIPTVNGKPVR P0CX57;Q03856;Q07793
-      862                                           VACQLIMR P0CX57;Q03856;Q07793
-      863                                    VACQLIMRGLSGEYK P0CX57;Q03856;Q07793
-      864                                 VACQLIMRGLSGEYKFLR P0CX57;Q03856;Q07793
-      865                                          VAVLPENSR               P48238
-      866                              VAVLPENSRNYLVESSMDSSR               P48238
-      867                    VAVLPENSRNYLVESSMDSSREYSQPFFDWR               P48238
-      868                                             VHEMQK        Q07791;Q07793
-      869                                  VHEMQKLIGLASYVGYK        Q07791;Q07793
-      870                                VHEMQKLIGLASYVGYKFR        Q07791;Q07793
-      871                                           VIARNPQK P0CX57;Q03856;Q07793
-      872                                      VIARNPQKTNNSK P0CX57;Q03856;Q07793
-      873                                           VIGGKSTK               Q07791
-      874        VIGGKSTKASLTCTSTTEAEIHAVSEAIPLLNNLSHLVQELNK               Q07791
-      875                                         VINSMFIFNK        Q07791;Q07793
-      876                                        VINSMFIFNKK        Q07791;Q07793
-      877                                       VINSMFIFNKKR        Q07791;Q07793
-      878                       VLHTPNIAYDLLSLNELAAVDITACFTK               Q07793
-      879                  VLHTPNIAYDLLSLNELAAVDITACFTKNVLER               Q07793
-      880       VLHTPNIAYDLLSLNELAAVDITACFTKNVLERSDGTVLAPIVK               Q07793
-      881                                           VLVIQMDR               Q07791
-      882                                    VLVIQMDRGSEYTNK               Q07791
-      883                                VLVIQMDRGSEYTNKTLHK               Q07791
-      884                      VNNDHINESTVSSQYLSDDNELSLGQQQK               Q07791
-      885                VNNDHINESTVSSQYLSDDNELSLGQQQKESKPTR               Q07791
-      886                     VNSDHINESTVSSQYLSDDNELSLRPATER               Q03483
-      887                    VNSDHINESTVSSQYLSDDNELSLRPATERI               Q03483
-      888     VNSQEETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK               Q03483
-      889     VNSQQETTPGTSAVPENHHHVSPQPASVPPPQNGQYQQHGMMTPNK               Q07791
-      890                                          VNYGLENIK               Q07791
-      891                                       VNYGLENIKTTR               Q07791
-      892                            VNYGLENIKTTRLGGTEEPYIQR               Q07791
-      893                             VRAPKEVDADISEYNILPSTIR               Q07791
-      894                             VRNNVLPPHTLTSEENFSTWVK        Q03483;Q07791
-      895                         VRNNVLPPHTLTSEENFSTWVKFYIR        Q03483;Q07791
-      896                                            VSKTNIR               Q07793
-      897                                         VSKTNIRAPR               Q07793
-      898                                          VSRDTWNTK               Q07793
-      899                                       VSRDTWNTKNMR               Q07793
-      900                                            VTNIIDR P0CX57;Q03856;Q07793
-      901                                 VTNIIDRLNNNGIHINNK P0CX57;Q03856;Q07793
-      902                         VTNIIDRLNNNGIHINNKVACQLIMR P0CX57;Q03856;Q07793
-      903                                           VTSRNYHR               Q07791
-      904                                    VTSRNYHRTNSSKPR               Q07791
-      905                                           VTTRNYHR               Q03483
-      906                                    VTTRNYHRTNSSKPR               Q03483
-      907                                            WLPLSLK               Q06204
-      908                                 WLPLSLKNILLQYNIIPK               Q06204
-      909                                             WNPEDK               Q06204
-      910                                   WNPEDKILTIDFGGTR               Q06204
-      911                                 WNPEDKILTIDFGGTRLK               Q06204
-      912                                           WVYPLHDR               Q07793
-      913                                          WVYPLHDRR               Q07793
-      914                          WVYPLHDRREDSILDVFTTILAFIK               Q07793
-      915                                          YDEAITYNK        Q07791;Q07793
-      916                                       YDEAITYNKDIK               Q07793
-      917                                     YDEAITYNKDIKEK               Q07793
-      918                                       YDEAITYNKDNK               Q07791
-      919                                     YDEAITYNKDNKEK               Q07791
-      920                                          YGDFYWVSK               Q07793
-      921                                         YGDFYWVSKK               Q07793
-      922                   YGDFYWVSKKYLLPSNISVPTINNVHTSESTR               Q07793
-      923                                            YIEAYHK               Q07793
-      924                                     YIEAYHKEVNQLLK               Q07793
-      925                                   YIEAYHKEVNQLLKMK               Q07793
-      926                                          YLIPSHISK               Q07791
-      927                                  YLIPSHISKLTINNVNK               Q07791
-      928                                YLIPSHISKLTINNVNKSK               Q07791
-      929                             YLLPSNISVPTINNVHTSESTR               Q07793
-      930                            YLLPSNISVPTINNVHTSESTRK               Q07793
-      931                    YLLPSNISVPTINNVHTSESTRKYPYPFIHR               Q07793
-      932                                            YLRNQYR        Q03483;Q07791
-      933                                          YLRNQYRTK        Q03483;Q07791
-      934                                           YMKLGMEK               Q07791
-      935                                      YMKLGMEKSLTEK               Q07791
-      936                                      YMKLGMENSLTEK               Q07793
-      937                                   YMKLGMENSLTEKIPK               Q07793
-      938                                           YPYPFIHR               Q07793
-      939                                YPYPFIHRMLAHANAQTIR               Q07793
-      940                            YPYPFIHRMLAHANAQTIRYSLK               Q07793
-      941                                           YPYPLIHR               Q07791
-      942                                   YPYPLIHRMLGHANFR               Q07791
-      943                               YPYPLIHRMLGHANFRSIQK               Q07791
-      944                           YQESYEPFQYLHTDIFGPVHHLPK               Q07791
-      945              YQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEK               Q07791
-      946            YQESYEPFQYLHTDIFGPVHHLPKSAPSYFISFTDEKTR               Q07791
-      947            YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTK               Q07793
-      948          YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFR               Q07793
-      949  YQNSYEPFQYLHTDIFGPVHNLPNSAPSYFISFTDETTKFRWVYPLHDR               Q07793
-      950                                           YQRGKYMK               Q07793
-      951                                           YQRSKYMK               Q07791
-      952                                      YRTTNSTPSIDDR               Q07791
-      953                      YRTTNSTPSIDDRSSNSESTTPIISIETK               Q07791
-      954                  YSLKNNTITYFNESDVDWSSAIDYQCPDCLIGK               Q07793
-      955               YSLKNNTITYFNESDVDWSSAIDYQCPDCLIGKSTK               Q07793
-      956                      YTRHRHLNMTVAELFLDIHAIYEEQQGSR P0CX57;Q03856;Q07793
-      957                                            YVEAYHK               Q07791
-      958                                     YVEAYHKEISQLLK               Q07791
-      959                             YVEAYHKEISQLLKMNTWDTNK               Q07791
-      960                                YVRPPPMLTSPNDFPNWVK P0CX57;Q03856;Q07793
-      961                            YVRPPPMLTSPNDFPNWVKTYIK P0CX57;Q03856;Q07793
-      962        YVRPPPMLTSPNDFPNWVKTYIKFLQNSNLGGIIPTVNGKPVR P0CX57;Q03856;Q07793
-      963                                         YYDRNDIDPK               Q07791
-      964                                        YYDRNDIDPKK               Q07791
-      965                                           YYSSIHIK               Q06204
-      966                       YYSSIHIKLQFLNHSNLLGAAIATYLNK               Q06204
-      967                 YYSSIHIKLQFLNHSNLLGAAIATYLNKSDNQVQ               Q06204
+      1                                         AAADALSDLEIK               P09938
+      2                                      AAADALSDLEIKDSK               P09938
+      3                                 AAADALSDLEIKDSKSNLNK               P09938
+      4                                           AAGLTAAYAR        P40212;Q12690
+      5                                  AAGLTAAYARTIGIAVDHR        P40212;Q12690
+      6                                 AAGLTAAYARTIGIAVDHRR        P40212;Q12690
+      7                                    AAKIAPRPLDLLRPVVR        P40212;Q12690
+      8                               AAKIAPRPLDLLRPVVRAPTVK        P40212;Q12690
+      9                                 AANLGGVAVSGLEMAQNSQK               P39708
+      10                         AANLGGVAVSGLEMAQNSQKVTWTAER               P39708
+      11                   AANLGGVAVSGLEMAQNSQKVTWTAERVDQELK               P39708
+      12                                AANLGGVAVSGLEMAQNSQR               P07262
+      13                         AANLGGVAVSGLEMAQNSQRITWTSER               P07262
+      14                   AANLGGVAVSGLEMAQNSQRITWTSERVDQELK               P07262
+      15                                              AARAAK               P40212
+      16                                AARAAKIAPRPLDLLRPVVR               P40212
+      17                                        ADTREALDFFAR P00330;P00331;P38113
+      18                                    ADTREALDFFARGLIK               P38113
+      19                                    ADTREALDFFARGLVK        P00330;P00331
+      20                                        ADTREALDFFSR               P07246
+      21                                    ADTREALDFFSRGLIK               P07246
+      22                                             AEAEAEK        P40212;Q12690
+      23                                            AEAEAEKK        P40212;Q12690
+      24                                           AEAEAEKKK        P40212;Q12690
+      25                                     AEASFWTAEEIDLSK               P09938
+      26                             AEASFWTAEEIDLSKDIHDWNNR               P09938
+      27                       AEASFWTAEEIDLSKDIHDWNNRMNENER               P09938
+      28                                              AEWALR               P09938
+      29                                  AEWALRWIQDADALFGER               P09938
+      30           AEWALRWIQDADALFGERLVAFASIEGVFFSGSFASIFWLK               P09938
+      31                        AGDWVAISGAAGGLGSLAVQYATAMGYR               P07246
+      32              AGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEK               P07246
+      33            AGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEKEK               P07246
+      34                             AGHWAAISGAAGGLGSLAVQYAK               P00331
+      35                        AGHWAAISGAAGGLGSLAVQYAKAMGYR               P00331
+      36              AGHWAAISGAAGGLGSLAVQYAKAMGYRVLGIDGGPGK               P00331
+      37                                         AGRGFTLAEVK        P40212;Q12690
+      38                               AGRGFTLAEVKAAGLTAAYAR        P40212;Q12690
+      39                                              AGVMSK               P09938
+      40                                           AGVMSKSTK               P09938
+      41                               AGVMSKSTKQEAGAFTFNEDF               P09938
+      42                                          AIIFYESNGK               P00331
+      43                                      AIIFYESNGKLEHK               P00331
+      44                     AIIFYESNGKLEHKDIPVPKPKPNELLINVK               P00331
+      45                                          AISKNLPILK        P40212;Q12690
+      46                                      AISKNLPILKNHFR        P40212;Q12690
+      47                                          AIVFYETDGK               P38113
+      48                                      AIVFYETDGKLEYK               P38113
+      49                     AIVFYETDGKLEYKDVTVPEPKPNEILVHVK               P38113
+      50                                            ALKEADLK               P07246
+      51                ALKEADLKAGDWVAISGAAGGLGSLAVQYATAMGYR               P07246
+      52                ALKRANVIPGQWVTISGACGGLGSLAIQYALAMGYR               P38113
+      53                     ALKSANLMAGHWVAISGAAGGLGSLAVQYAK               P00330
+      54                ALKSANLMAGHWVAISGAAGGLGSLAVQYAKAMGYR               P00330
+      55                                            ALKSANLR               P00331
+      56                     ALKSANLRAGHWAAISGAAGGLGSLAVQYAK               P00331
+      57                                            ALVAQGVK               P07262
+      58                      ALVAQGVKFIAEGSNMGSTPEAIAVFETAR               P07262
+      59      ALVAQGVKFIAEGSNMGSTPEAIAVFETARSTATGPSEAVWYGPPK               P07262
+      60                                            ALVASGVK               P39708
+      61                      ALVASGVKFVAEGANMGSTPEAISVFETAR               P39708
+      62               ALVASGVKFVAEGANMGSTPEAISVFETARSTATNAK               P39708
+      63                                     AMGYRVLGIDGGEGK               P00330
+      64                                AMGYRVLGIDGGEGKEELFR               P00330
+      65                                     AMGYRVLGIDGGPGK               P00331
+      66                    AMGYRVLGIDGGPGKEELFTSLGGEVFIDFTK               P00331
+      67                                           ANELLINVK               P00330
+      68                      ANELLINVKYSGVCHTDLHAWHGDWPLPVK               P00330
+      69                                     ANGTTVLVGMPAGAK               P00330
+      70                          ANGTTVLVGMPAGAKCCSDVFNQVVK               P00330
+      71              ANGTTVLVGMPAGAKCCSDVFNQVVKSISIVGSYVGNR               P00330
+      72                                     ANGTVVLVGLPAGAK               P00331
+      73                          ANGTVVLVGLPAGAKCSSDVFNHVVK               P00331
+      74              ANGTVVLVGLPAGAKCSSDVFNHVVKSISIVGSYVGNR               P00331
+      75                    ANVIPGQWVTISGACGGLGSLAIQYALAMGYR               P38113
+      76          ANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAK               P38113
+      77         ANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAKR               P38113
+      78                          APEAEQVLSAAATFPIAQPATDVEAR        P40212;Q12690
+      79               APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR        P40212;Q12690
+      80            APEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFRTLR        P40212;Q12690
+      81                                            APTVKYNR        P40212;Q12690
+      82                                           APTVKYNRK        P40212;Q12690
+      83                                         AREKAEAEAEK        P40212;Q12690
+      84                            ATDGGAHGVINVSVSEAAIEASTR               P00330
+      85                         ATDGGAHGVINVSVSEAAIEASTRYVR               P00330
+      86          ATDGGAHGVINVSVSEAAIEASTRYVRANGTTVLVGMPAGAK               P00330
+      87                            ATNGGAHGIINVSVSEAAIEASTR               P00331
+      88                         ATNGGAHGIINVSVSEAAIEASTRYCR               P00331
+      89          ATNGGAHGIINVSVSEAAIEASTRYCRANGTVVLVGLPAGAK               P00331
+      90                            ATNGGSHGVINVSVSEAAIEASTR               P38113
+      91                                              ATRAAK               Q12690
+      92                                ATRAAKIAPRPLDLLRPVVR               Q12690
+      93                                         AVQDNGESAFR        P40212;Q12690
+      94                                      AVQDNGESAFRTLR        P40212;Q12690
+      95                                   AVQDNGESAFRTLRLAR        P40212;Q12690
+      96                                          AYLKSHQVHR               P09938
+      97                                        AYLKSHQVHRHK               P09938
+      98                                         CCSDVFNQVVK               P00330
+      99                             CCSDVFNQVVKSISIVGSYVGNR               P00330
+      100                        CCSDVFNQVVKSISIVGSYVGNRADTR               P00330
+      101                                        CSSDVFNHVVK               P00331
+      102                            CSSDVFNHVVKSISIVGSYVGNR               P00331
+      103                        CSSDVFNHVVKSISIVGSYVGNRADTR               P00331
+      104                                             DAENHK               P09938
+      105                                         DAENHKAYLK               P09938
+      106                                   DAENHKAYLKSHQVHR               P09938
+      107                                          DAVWFGPPK               P39708
+      108                      DAVWFGPPKAANLGGVAVSGLEMAQNSQK               P39708
+      109               DAVWFGPPKAANLGGVAVSGLEMAQNSQKVTWTAER               P39708
+      110                                  DEGLHTDFACLLFAHLK               P09938
+      111                        DEGLHTDFACLLFAHLKNKPDPAIVEK               P09938
+      112             DEGLHTDFACLLFAHLKNKPDPAIVEKIVTEAVEIEQR               P09938
+      113                      DGKAPEAEQVLSAAATFPIAQPATDVEAR               P40212
+      114           DGKAPEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR               P40212
+      115                                         DGKVLPSLVK               P07262
+      116                                DGKVLPSLVKGANIASFIK               P07262
+      117                                           DIHDWNNR               P09938
+      118                                     DIHDWNNRMNENER               P09938
+      119                                DIHDWNNRMNENERFFISR               P09938
+      120                                  DIPVPEPKPNEILINVK               P07246
+      121             DIPVPEPKPNEILINVKYSGVCHTDLHAWHGDWPLPVK               P07246
+      122                                           DIPVPKPK               P00330
+      123                                  DIPVPKPKANELLINVK               P00330
+      124             DIPVPKPKANELLINVKYSGVCHTDLHAWHGDWPLPVK               P00330
+      125                                  DIPVPKPKPNELLINVK               P00331
+      126             DIPVPKPKPNELLINVKYSGVCHTDLHAWHGDWPLPTK               P00331
+      127                                           DIVGAIIK               P38113
+      128                   DIVGAIIKATNGGSHGVINVSVSEAAIEASTR               P38113
+      129                                           DIVGAVLK               P00330
+      130                   DIVGAVLKATDGGAHGVINVSVSEAAIEASTR               P00330
+      131                DIVGAVLKATDGGAHGVINVSVSEAAIEASTRYVR               P00330
+      132                                           DIVSAVVK               P00331
+      133                   DIVSAVVKATNGGAHGIINVSVSEAAIEASTR               P00331
+      134                DIVSAVVKATNGGAHGIINVSVSEAAIEASTRYCR               P00331
+      135                              DPKESEFLFNAIHTIPEIGEK               P09938
+      136                        DPKESEFLFNAIHTIPEIGEKAEWALR               P09938
+      137                                           DSKSNLNK               P09938
+      138                                     DSKSNLNKELETLR               P09938
+      139                                     DTDVPAGDIGVGGR               P39708
+      140                           DTDVPAGDIGVGGREIGYLFGAYR               P39708
+      141                        DTDVPAGDIGVGGREIGYLFGAYRSYK               P39708
+      142                                  DVTVPEPKPNEILVHVK               P38113
+      143             DVTVPEPKPNEILVHVKYSGVCHSDLHAWHGDWPFQLK               P38113
+      144                  EADLKAGDWVAISGAAGGLGSLAVQYATAMGYR               P07246
+      145        EADLKAGDWVAISGAAGGLGSLAVQYATAMGYRVLGIDAGEEK               P07246
+      146                                           EALDFFAR P00330;P00331;P38113
+      147                                       EALDFFARGLIK               P38113
+      148                      EALDFFARGLIKSPIHLAGLSDVPEIFAK               P38113
+      149                                       EALDFFARGLVK        P00330;P00331
+      150                                   EALDFFARGLVKSPIK        P00330;P00331
+      151                                           EALDFFSR               P07246
+      152                                       EALDFFSRGLIK               P07246
+      153                                   EALDFFSRGLIKSPIK               P07246
+      154                                  EELFRSIGGEVFIDFTK               P00330
+      155                                EELFRSIGGEVFIDFTKEK               P00330
+      156                                  EELFTSLGGEVFIDFTK               P00331
+      157                                EELFTSLGGEVFIDFTKEK               P00331
+      158                        EELFTSLGGEVFIDFTKEKDIVSAVVK               P00331
+      159                                             EENRVK               P09938
+      160                                        EENRVKSDMLK               P09938
+      161                                          EEPLLNEDK               P09938
+      162                                        EEPLLNEDKER               P09938
+      163                                 EEPLLNEDKERTVLFPIK               P09938
+      164                                         EIGYLFGAYR        P07262;P39708
+      165                                      EIGYLFGAYRSYK        P07262;P39708
+      166                            EIGYLFGAYRSYKNSWEGVLTGK        P07262;P39708
+      167                                          EKAEAEAEK        P40212;Q12690
+      168                                         EKAEAEAEKK        P40212;Q12690
+      169                                         EKDIVGAVLK               P00330
+      170                 EKDIVGAVLKATDGGAHGVINVSVSEAAIEASTR               P00330
+      171                                         EKDIVSAVVK               P00331
+      172                 EKDIVSAVVKATNGGAHGIINVSVSEAAIEASTR               P00331
+      173                                             EKLFKK               P07246
+      174                                        EKLSKDAENHK               P09938
+      175                                             ELETLR               P09938
+      176                                         ELETLREENR               P09938
+      177                                       ELETLREENRVK               P09938
+      178                                           ELSRHIGK               P39708
+      179                             ELSRHIGKDTDVPAGDIGVGGR               P39708
+      180                             ELSRHIGQDTDVPAGDIGVGGR               P07262
+      181                   ELSRHIGQDTDVPAGDIGVGGREIGYLFGAYR               P07262
+      182                                      EMEKEEPLLNEDK               P09938
+      183                                    EMEKEEPLLNEDKER               P09938
+      184                                          ERTVLFPIK               P09938
+      185                                 ERTVLFPIKYHEIWQAYK               P09938
+      186                                 ESEFLFNAIHTIPEIGEK               P09938
+      187                           ESEFLFNAIHTIPEIGEKAEWALR               P09938
+      188               ESEFLFNAIHTIPEIGEKAEWALRWIQDADALFGER               P09938
+      189                                             ESFEGK        P07262;P39708
+      190                                            ESFEGKR        P07262;P39708
+      191                            ESFEGKRVTISGSGNVAQYAALK        P07262;P39708
+      192                                  ETPSKAAADALSDLEIK               P09938
+      193                               ETPSKAAADALSDLEIKDSK               P09938
+      194                                        EYQSKIIVFPR        P40212;Q12690
+      195                                     EYQSKIIVFPRDGK               P40212
+      196                                     EYQSKIIVFPRNGK               Q12690
+      197                FFISRVLAFFAASDGIVNENLVENFSTEVQIPEAK               P09938
+      198                                        FHPSVNLSILK        P07262;P39708
+      199                               FHPSVNLSILKFLGFEQIFK        P07262;P39708
+      200                   FHPSVNLSILKFLGFEQIFKNALTGLDMGGGK               P39708
+      201                   FHPSVNLSILKFLGFEQIFKNSLTGLDMGGGK               P07262
+      202                             FIAEGSNMGSTPEAIAVFETAR               P07262
+      203             FIAEGSNMGSTPEAIAVFETARSTATGPSEAVWYGPPK               P07262
+      204                                 FKSLEEIVDEYSTFSESK               P39708
+      205                               FKSLEEIVDEYSTFSESKMK               P39708
+      206                                          FLGFEQIFK        P07262;P39708
+      207                              FLGFEQIFKNALTGLDMGGGK               P39708
+      208                      FLGFEQIFKNALTGLDMGGGKGGLCVDLK               P39708
+      209                              FLGFEQIFKNSLTGLDMGGGK               P07262
+      210                      FLGFEQIFKNSLTGLDMGGGKGGLCVDLK               P07262
+      211                                    FPLIGGHEGAGVVVK               P38113
+      212                              FPLIGGHEGAGVVVKLGSNVK               P38113
+      213                           FPLIGGHEGAGVVVKLGSNVKGWK               P38113
+      214                                             FPQYKK               P39708
+      215                                   FPQYKKVLPIVSVPER               P39708
+      216                                            FRGIREK        P40212;Q12690
+      217                             FVAEGANMGSTPEAISVFETAR               P39708
+      218                      FVAEGANMGSTPEAISVFETARSTATNAK               P39708
+      219             FVAEGANMGSTPEAISVFETARSTATNAKDAVWFGPPK               P39708
+      220                                          GANIASFIK               P07262
+      221                              GANIASFIKVSDAMFDQGDVF               P07262
+      222                              GANIASFVMVADAMLDQGDVF               P39708
+      223                              GCIISETGITSEQIHDIASAK               P39708
+      224                            GCIISETGITSEQIHDIASAKIR               P39708
+      225                          GCIISETGITSEQIHDIASAKIRFK               P39708
+      226                              GCIISETGITSEQVADISSAK               P07262
+      227                          GCIISETGITSEQVADISSAKVNFK               P07262
+      228          GCIISETGITSEQVADISSAKVNFKSLEQIVNEYSTFSENK               P07262
+      229                                             GEIVGR               P38113
+      230                                      GEIVGRYVVETSK               P38113
+      231                                         GEQEVAQGYR               P07262
+      232                                  GEQEVAQGYRVQYNSAK               P07262
+      233                              GEQEVAQGYRVQYNSAKGPYK               P07262
+      234                                           GFTLAEVK        P40212;Q12690
+      235                                 GFTLAEVKAAGLTAAYAR        P40212;Q12690
+      236                        GFTLAEVKAAGLTAAYARTIGIAVDHR        P40212;Q12690
+      237                                           GGLCVDLK        P07262;P39708
+      238                                         GGLCVDLKGK               P39708
+      239                                   GGLCVDLKGKSDNEIR               P39708
+      240                                         GGLCVDLKGR               P07262
+      241                                   GGLCVDLKGRSNNEIR               P07262
+      242                                    GGLRFHPSVNLSILK        P07262;P39708
+      243                           GGLRFHPSVNLSILKFLGFEQIFK        P07262;P39708
+      244          GGPHGVINVSVSEAAISLSTEYVRPCGTVVLVGLPANAYVK               P07246
+      245 GGPHGVINVSVSEAAISLSTEYVRPCGTVVLVGLPANAYVKSEVFSHVVK               P07246
+      246                                             GIREKR        P40212;Q12690
+      247                                             GKILGR               P07246
+      248                                      GKILGRYVVDTSK               P07246
+      249                                             GKLHYK               P07246
+      250                            GKLHYKDIPVPEPKPNEILINVK               P07246
+      251                                           GKSDNEIR               P39708
+      252                                          GKSDNEIRR               P39708
+      253                              GLIKSPIHLAGLSDVPEIFAK               P38113
+      254                           GLIKSPIHLAGLSDVPEIFAKMEK               P38113
+      255                                           GLIKSPIK               P07246
+      256                                  GLIKSPIKIVGLSELPK               P07246
+      257                  GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK               P39708
+      258            GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGK               P39708
+      259           GLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGKR               P39708
+      260                  GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK               P07262
+      261            GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGK               P07262
+      262           GLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGKR               P07262
+      263                                           GLVKSPIK        P00330;P00331
+      264                              GLVKSPIKVVGLSSLPEIYEK               P00331
+      265                              GLVKSPIKVVGLSTLPEIYEK               P00330
+      266                                    GMMPGLTFSNELICR               P09938
+      267                   GMMPGLTFSNELICRDEGLHTDFACLLFAHLK               P09938
+      268         GMMPGLTFSNELICRDEGLHTDFACLLFAHLKNKPDPAIVEK               P09938
+      269                                           GPYKGGLR        P07262;P39708
+      270                                GPYKGGLRFHPSVNLSILK        P07262;P39708
+      271                                             GQIAGR               P00331
+      272                                      GQIAGRYVVDTSK               P00331
+      273                                             GQIVGR               P00330
+      274                                      GQIVGRYVVDTSK               P00330
+      275                                           GRSNNEIR               P07262
+      276                                          GRSNNEIRR               P07262
+      277                                            GSYVGNR               P07246
+      278                                        GSYVGNRADTR               P07246
+      279                                GSYVGNRADTREALDFFSR               P07246
+      280                                           GVIFYENK               P07246
+      281                                         GVIFYENKGK               P07246
+      282                                     GVIFYENKGKLHYK               P07246
+      283                                         GVIFYESHGK               P00330
+      284                                     GVIFYESHGKLEYK               P00330
+      285                             GVIFYESHGKLEYKDIPVPKPK               P00330
+      286                                        GWKIGDYAGIK        P00330;P00331
+      287                                        GWKVGDFAGIK               P38113
+      288                                        GWKVGDLAGIK               P07246
+      289                                 HIGKDTDVPAGDIGVGGR               P39708
+      290                       HIGKDTDVPAGDIGVGGREIGYLFGAYR               P39708
+      291                                 HIGQDTDVPAGDIGVGGR               P07262
+      292                       HIGQDTDVPAGDIGVGGREIGYLFGAYR               P07262
+      293                    HIGQDTDVPAGDIGVGGREIGYLFGAYRSYK               P07262
+      294                                           HKLKEMEK               P09938
+      295                                            HWQERVK        P40212;Q12690
+      296                                    HWQERVKVHFDQAGK        P40212;Q12690
+      297                                     IAPRPLDLLRPVVR        P40212;Q12690
+      298                                IAPRPLDLLRPVVRAPTVK        P40212;Q12690
+      299                             IAPRPLDLLRPVVRAPTVKYNR        P40212;Q12690
+      300                                            ICYAFMR        P07262;P39708
+      301                                        ICYAFMRELSR        P07262;P39708
+      302                                    ICYAFMRELSRHIGK               P39708
+      303                      ICYAFMRELSRHIGQDTDVPAGDIGVGGR               P07262
+      304                                          IFEKFPQYK               P39708
+      305                                         IFEKFPQYKK               P39708
+      306                                           IGDYAGIK        P00330;P00331
+      307                                       IIQFRVTWENDK               P07262
+      308                             IIQFRVTWENDKGEQEVAQGYR               P07262
+      309                             IIQFRVTWENDNGEQEVAQGYR               P39708
+      310                      IIQFRVTWENDNGEQEVAQGYRVQFNSAK               P39708
+      311                                             IIVFPR        P40212;Q12690
+      312                                          IIVFPRDGK               P40212
+      313                IIVFPRDGKAPEAEQVLSAAATFPIAQPATDVEAR               P40212
+      314                                          IIVFPRNGK               Q12690
+      315                IIVFPRNGKAPEAEQVLSAAATFPIAQPATDVEAR               Q12690
+      316                                        ILGRYVVDTSK               P07246
+      317                               IMINCFNDCIQAAQEYSTEK               P39708
+      318                     IMINCFNDCIQAAQEYSTEKNTNTLPSLVK               P39708
+      319                                     IMINCFNECIDYAK               P07262
+      320                                    IMINCFNECIDYAKK               P07262
+      321                                 IMINCFNECIDYAKKYTK               P07262
+      322                             IQQGTDLAEVAPILCAGVTVYK               P07246
+      323                          IQQGTDLAEVAPILCAGVTVYKALK               P07246
+      324                     IQQGTDLAEVAPILCAGVTVYKALKEADLK               P07246
+      325                               IRFKSLEEIVDEYSTFSESK               P39708
+      326                                            ITWTSER               P07262
+      327                                      ITWTSERVDQELK               P07262
+      328                                     ITWTSERVDQELKR               P07262
+      329                                          IVGLSELPK               P07246
+      330                                   IVGLSELPKVYDLMEK               P07246
+      331                                 IVGLSELPKVYDLMEKGK               P07246
+      332                                        IVTEAVEIEQR               P09938
+      333            IVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADR               P09938
+      334    IVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNK               P09938
+      335                                             KFRGIR        P40212;Q12690
+      336                                             KHWQER        P40212;Q12690
+      337                                           KHWQERVK        P40212;Q12690
+      338                              KIMINCFNDCIQAAQEYSTEK               P39708
+      339                    KIMINCFNDCIQAAQEYSTEKNTNTLPSLVK               P39708
+      340                                 KLFEQLGGEIFIDFTEEK               P38113
+      341                         KLFEQLGGEIFIDFTEEKDIVGAIIK               P38113
+      342                                       KLGGEVFIDFTK               P07246
+      343                                     KLGGEVFIDFTKTK               P07246
+      344                                  KRGMMPGLTFSNELICR               P09938
+      345                                        KVLPIVSVPER        P07262;P39708
+      346                                   KVLPIVSVPERIIQFR        P07262;P39708
+      347                                             KVRAGR        P40212;Q12690
+      348                                            KYTKDGK               P07262
+      349                               KYYKVENPFDFMENISLAGK               P09938
+      350                                             LARSEK        P40212;Q12690
+      351                                            LARSEKK        P40212;Q12690
+      352                              LEHKDIPVPKPKPNELLINVK               P00331
+      353         LEHKDIPVPKPKPNELLINVKYSGVCHTDLHAWHGDWPLPTK               P00331
+      354                                       LEYKDIPVPKPK               P00330
+      355                              LEYKDIPVPKPKANELLINVK               P00330
+      356                              LEYKDVTVPEPKPNEILVHVK               P38113
+      357         LEYKDVTVPEPKPNEILVHVKYSGVCHSDLHAWHGDWPFQLK               P38113
+      358                                  LFEQLGGEIFIDFTEEK               P38113
+      359                          LFEQLGGEIFIDFTEEKDIVGAIIK               P38113
+      360  LFEQLGGEIFIDFTEEKDIVGAIIKATNGGSHGVINVSVSEAAIEASTR               P38113
+      361                                    LFKKLGGEVFIDFTK               P07246
+      362                                        LGGEVFIDFTK               P07246
+      363                                      LGGEVFIDFTKTK               P07246
+      364                           LGGEVFIDFTKTKNMVSDIQEATK               P07246
+      365                                             LGSNVK        P07246;P38113
+      366                                          LGSNVKGWK        P07246;P38113
+      367                                  LGSNVKGWKVGDFAGIK               P38113
+      368                                  LGSNVKGWKVGDLAGIK               P07246
+      369                              LHYKDIPVPEPKPNEILINVK               P07246
+      370         LHYKDIPVPEPKPNEILINVKYSGVCHTDLHAWHGDWPLPVK               P07246
+      371                                             LKEMEK               P09938
+      372                                    LKEMEKEEPLLNEDK               P09938
+      373                                            LKEYQSK        P40212;Q12690
+      374                                      LKEYQSKIIVFPR        P40212;Q12690
+      375                                           LLVAFGNK               P09938
+      376                                          LLVAFGNKK               P09938
+      377                                       LLVAFGNKKYYK               P09938
+      378                              LPLVGGHEGAGVVVGMGENVK        P00330;P00331
+      379                           LPLVGGHEGAGVVVGMGENVKGWK        P00330;P00331
+      380                   LPLVGGHEGAGVVVGMGENVKGWKIGDYAGIK        P00330;P00331
+      381                                    LPLVGGHEGAGVVVK               P07246
+      382                              LPLVGGHEGAGVVVKLGSNVK               P07246
+      383                           LPLVGGHEGAGVVVKLGSNVKGWK               P07246
+      384                                          LQSTAAIPK               P07246
+      385                                       LQSTAAIPKTQK               P07246
+      386                               LQSTAAIPKTQKGVIFYENK               P07246
+      387                                          LRTSTLFTR               P07246
+      388                                         LRTSTLFTRR               P07246
+      389                                          LSKDAENHK               P09938
+      390                                      LSKDAENHKAYLK               P09938
+      391                            LVAFASIEGVFFSGSFASIFWLK               P09938
+      392                           LVAFASIEGVFFSGSFASIFWLKK               P09938
+      393                          LVAFASIEGVFFSGSFASIFWLKKR               P09938
+      394                                        MAISKNLPILK        P40212;Q12690
+      395                                    MAISKNLPILKNHFR        P40212;Q12690
+      396                                          MEKGEIVGR               P38113
+      397                                   MEKGEIVGRYVVETSK               P38113
+      398                                          MEKGQIAGR               P00331
+      399                                   MEKGQIAGRYVVDTSK               P00331
+      400                                          MEKGQIVGR               P00330
+      401                                   MEKGQIVGRYVVDTSK               P00330
+      402                 MKYVAGARPWTHVSNVDIALPCATQNEVSGDEAK               P39708
+      403         MKYVAGARPWTHVSNVDIALPCATQNEVSGDEAKALVASGVK               P39708
+      404                                         MLRTSTLFTR               P07246
+      405                                        MLRTSTLFTRR               P07246
+      406                                             MNENER               P09938
+      407                                        MNENERFFISR               P09938
+      408          MNENERFFISRVLAFFAASDGIVNENLVENFSTEVQIPEAK               P09938
+      409                                           MPKETPSK               P09938
+      410                               MPKETPSKAAADALSDLEIK               P09938
+      411                                          MPSQVIPEK               P38113
+      412                                        MPSQVIPEKQK               P38113
+      413                              MPSQVIPEKQKAIVFYETDGK               P38113
+      414                     MSEPEFQQAYEEVVSSLEDSTLFEQHPEYR               P07262
+      415                    MSEPEFQQAYEEVVSSLEDSTLFEQHPEYRK               P07262
+      416          MSEPEFQQAYEEVVSSLEDSTLFEQHPEYRKVLPIVSVPER               P07262
+      417                                           MSIPETQK        P00330;P00331
+      418                                 MSIPETQKAIIFYESNGK               P00331
+      419                             MSIPETQKAIIFYESNGKLEHK               P00331
+      420                                 MSIPETQKGVIFYESHGK               P00330
+      421                             MSIPETQKGVIFYESHGKLEYK               P00330
+      422                             MTSEPEFQQAYDEIVSSVEDSK               P39708
+      423                         MTSEPEFQQAYDEIVSSVEDSKIFEK               P39708
+      424                    MTSEPEFQQAYDEIVSSVEDSKIFEKFPQYK               P39708
+      425                                       NALTGLDMGGGK               P39708
+      426                               NALTGLDMGGGKGGLCVDLK               P39708
+      427                             NALTGLDMGGGKGGLCVDLKGK               P39708
+      428                                             NARAAR               P40212
+      429                                          NARAARAAK               P40212
+      430                                             NARATR               Q12690
+      431                                          NARATRAAK               Q12690
+      432                      NGKAPEAEQVLSAAATFPIAQPATDVEAR               Q12690
+      433           NGKAPEAEQVLSAAATFPIAQPATDVEARAVQDNGESAFR               Q12690
+      434                                         NHFRKHWQER        P40212;Q12690
+      435                                      NILRLQSTAAIPK               P07246
+      436                                   NILRLQSTAAIPKTQK               P07246
+      437                                         NKPDPAIVEK               P09938
+      438                              NKPDPAIVEKIVTEAVEIEQR               P09938
+      439  NKPDPAIVEKIVTEAVEIEQRYFLDALPVALLGMNADLMNQYVEFVADR               P09938
+      440                                             NLPILK        P40212;Q12690
+      441                                         NLPILKNHFR        P40212;Q12690
+      442                                        NLPILKNHFRK        P40212;Q12690
+      443                                        NMVSDIQEATK               P07246
+      444                                        NQEIFDANVQR        P40212;Q12690
+      445                                      NQEIFDANVQRLK        P40212;Q12690
+      446                                 NQEIFDANVQRLKEYQSK        P40212;Q12690
+      447                                       NSLTGLDMGGGK               P07262
+      448                               NSLTGLDMGGGKGGLCVDLK               P07262
+      449                             NSLTGLDMGGGKGGLCVDLKGR               P07262
+      450                                         NSWEGVLTGK        P07262;P39708
+      451        NSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK               P39708
+      452  NSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGK               P39708
+      453        NSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK               P07262
+      454  NSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGK               P07262
+      455                                         NTNTLPSLVK               P39708
+      456                    NTNTLPSLVKGANIASFVMVADAMLDQGDVF               P39708
+      457                                            PKETPSK               P09938
+      458                                PKETPSKAAADALSDLEIK               P09938
+      459                                           PSQVIPEK               P38113
+      460                                         PSQVIPEKQK               P38113
+      461                               PSQVIPEKQKAIVFYETDGK               P38113
+      462                                       QEAGAFTFNEDF               P09938
+      463                                       QKAIVFYETDGK               P38113
+      464                                   QKAIVFYETDGKLEYK               P38113
+      465                                     QNRNQEIFDANVQR        P40212;Q12690
+      466                                   QNRNQEIFDANVQRLK        P40212;Q12690
+      467                                   RAEASFWTAEEIDLSK               P09938
+      468                           RAEASFWTAEEIDLSKDIHDWNNR               P09938
+      469                  RANVIPGQWVTISGACGGLGSLAIQYALAMGYR               P38113
+      470        RANVIPGQWVTISGACGGLGSLAIQYALAMGYRVIGIDGGNAK               P38113
+      471                                   RGMMPGLTFSNELICR               P09938
+      472                  RGMMPGLTFSNELICRDEGLHTDFACLLFAHLK               P09938
+      473                                           RICYAFMR        P07262;P39708
+      474                                       RICYAFMRELSR        P07262;P39708
+      475                                    RIMINCFNECIDYAK               P07262
+      476                                   RIMINCFNECIDYAKK               P07262
+      477                                RKLFEQLGGEIFIDFTEEK               P38113
+      478                                            RNARAAR               P40212
+      479                                            RNARATR               Q12690
+      480                                    RQNRNQEIFDANVQR        P40212;Q12690
+      481                                          RVQPSLFSR               P07246
+      482                                      RVQPSLFSRNILR               P07246
+      483                                            RVSDYQK               P09938
+      484                                      RVSDYQKAGVMSK               P09938
+      485                                  RVTISGSGNVAQYAALK        P07262;P39708
+      486                   RVTISGSGNVAQYAALKVIELGGIVVSLSDSK               P39708
+      487                   RVTISGSGNVAQYAALKVIELGGTVVSLSDSK               P07262
+      488                       SANLMAGHWVAISGAAGGLGSLAVQYAK               P00330
+      489                  SANLMAGHWVAISGAAGGLGSLAVQYAKAMGYR               P00330
+      490        SANLMAGHWVAISGAAGGLGSLAVQYAKAMGYRVLGIDGGEGK               P00330
+      491                       SANLRAGHWAAISGAAGGLGSLAVQYAK               P00331
+      492                  SANLRAGHWAAISGAAGGLGSLAVQYAKAMGYR               P00331
+      493                                            SDMLKEK               P09938
+      494                                         SDMLKEKLSK               P09938
+      495                                             SDNEIR               P39708
+      496                                            SDNEIRR               P39708
+      497                                     SDNEIRRICYAFMR               P39708
+      498                                             SEKKFR        P40212;Q12690
+      499                      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR               P07262
+      500                     SEPEFQQAYEEVVSSLEDSTLFEQHPEYRK               P07262
+      501           SEPEFQQAYEEVVSSLEDSTLFEQHPEYRKVLPIVSVPER               P07262
+      502                                          SEVFSHVVK               P07246
+      503                                     SEVFSHVVKSINIK               P07246
+      504                              SEVFSHVVKSINIKGSYVGNR               P07246
+      505                         SFYGFQIMIENIHSETYSLLIDTYIK               P09938
+      506                      SFYGFQIMIENIHSETYSLLIDTYIKDPK               P09938
+      507    SFYGFQIMIENIHSETYSLLIDTYIKDPKESEFLFNAIHTIPEIGEK               P09938
+      508                                             SHQVHR               P09938
+      509                                           SHQVHRHK               P09938
+      510                                         SHQVHRHKLK               P09938
+      511                                       SIGGEVFIDFTK               P00330
+      512                                     SIGGEVFIDFTKEK               P00330
+      513                             SIGGEVFIDFTKEKDIVGAVLK               P00330
+      514                                       SINIKGSYVGNR               P07246
+      515                                   SINIKGSYVGNRADTR               P07246
+      516                                            SIPETQK        P00330;P00331
+      517                                  SIPETQKAIIFYESNGK               P00331
+      518                              SIPETQKAIIFYESNGKLEHK               P00331
+      519                                  SIPETQKGVIFYESHGK               P00330
+      520                              SIPETQKGVIFYESHGKLEYK               P00330
+      521                                       SISIVGSCVGNR               P38113
+      522                                   SISIVGSCVGNRADTR               P38113
+      523                           SISIVGSCVGNRADTREALDFFAR               P38113
+      524                                       SISIVGSYVGNR        P00330;P00331
+      525                                   SISIVGSYVGNRADTR        P00330;P00331
+      526                           SISIVGSYVGNRADTREALDFFAR        P00330;P00331
+      527                                   SLEEIVDEYSTFSESK               P39708
+      528                                 SLEEIVDEYSTFSESKMK               P39708
+      529 SLEEIVDEYSTFSESKMKYVAGARPWTHVSNVDIALPCATQNEVSGDEAK               P39708
+      530                                   SLEQIVNEYSTFSENK               P07262
+      531                    SLEQIVNEYSTFSENKVQYIAGARPWTHVQK               P07262
+      532 SLEQIVNEYSTFSENKVQYIAGARPWTHVQKVDIALPCATQNEVSGEEAK               P07262
+      533                                        SNLNKELETLR               P09938
+      534                                    SNLNKELETLREENR               P09938
+      535                                             SNNEIR               P07262
+      536                                            SNNEIRR               P07262
+      537                                     SNNEIRRICYAFMR               P07262
+      538                                  SPIHLAGLSDVPEIFAK               P38113
+      539                               SPIHLAGLSDVPEIFAKMEK               P38113
+      540                         SPIHLAGLSDVPEIFAKMEKGEIVGR               P38113
+      541                                      SPIKIVGLSELPK               P07246
+      542                               SPIKIVGLSELPKVYDLMEK               P07246
+      543                                  SPIKVVGLSSLPEIYEK               P00331
+      544                               SPIKVVGLSSLPEIYEKMEK               P00331
+      545                                  SPIKVVGLSTLPEIYEK               P00330
+      546                               SPIKVVGLSTLPEIYEKMEK               P00330
+      547                                   STATGPSEAVWYGPPK               P07262
+      548               STATGPSEAVWYGPPKAANLGGVAVSGLEMAQNSQR               P07262
+      549        STATGPSEAVWYGPPKAANLGGVAVSGLEMAQNSQRITWTSER               P07262
+      550                                            STATNAK               P39708
+      551                                   STATNAKDAVWFGPPK               P39708
+      552               STATNAKDAVWFGPPKAANLGGVAVSGLEMAQNSQK               P39708
+      553                                    STKQEAGAFTFNEDF               P09938
+      554                                      SYKNSWEGVLTGK        P07262;P39708
+      555     SYKNSWEGVLTGKGLNWGGSLIRPEATGFGLVYYTQAMIDYATNGK               P39708
+      556     SYKNSWEGVLTGKGLNWGGSLIRPEATGYGLVYYTQAMIDYATNGK               P07262
+      557                                          TIGIAVDHR        P40212;Q12690
+      558                                         TIGIAVDHRR        P40212;Q12690
+      559                                      TIGIAVDHRRQNR        P40212;Q12690
+      560                                      TKNMVSDIQEATK               P07246
+      561                                             TLRLAR        P40212;Q12690
+      562                                          TLRLARSEK        P40212;Q12690
+      563                                             TNFFEK               P09938
+      564                                            TNFFEKR               P09938
+      565                                      TNFFEKRVSDYQK               P09938
+      566                                        TQKGVIFYENK               P07246
+      567                                      TQKGVIFYENKGK               P07246
+      568                              TSEPEFQQAYDEIVSSVEDSK               P39708
+      569                          TSEPEFQQAYDEIVSSVEDSKIFEK               P39708
+      570                     TSEPEFQQAYDEIVSSVEDSKIFEKFPQYK               P39708
+      571                                            TSTLFTR               P07246
+      572                                           TSTLFTRR               P07246
+      573                                   TSTLFTRRVQPSLFSR               P07246
+      574                                            TVLFPIK               P09938
+      575                                   TVLFPIKYHEIWQAYK               P09938
+      576                                  TVLFPIKYHEIWQAYKR               P09938
+      577                                VDIALPCATQNEVSGEEAK               P07262
+      578                        VDIALPCATQNEVSGEEAKALVAQGVK               P07262
+      579  VDIALPCATQNEVSGEEAKALVAQGVKFIAEGSNMGSTPEAIAVFETAR               P07262
+      580                                             VDQELK        P07262;P39708
+      581                                            VDQELKK               P39708
+      582                        VDQELKKIMINCFNDCIQAAQEYSTEK               P39708
+      583                                            VDQELKR               P07262
+      584                              VDQELKRIMINCFNECIDYAK               P07262
+      585                                   VENPFDFMENISLAGK               P09938
+      586                             VENPFDFMENISLAGKTNFFEK               P09938
+      587                            VENPFDFMENISLAGKTNFFEKR               P09938
+      588                                           VGDFAGIK               P38113
+      589                                           VGDLAGIK               P07246
+      590                                           VHFDQAGK        P40212;Q12690
+      591                                          VHFDQAGKK        P40212;Q12690
+      592                                       VHFDQAGKKVSR        P40212;Q12690
+      593                                    VIELGGIVVSLSDSK               P39708
+      594               VIELGGIVVSLSDSKGCIISETGITSEQIHDIASAK               P39708
+      595             VIELGGIVVSLSDSKGCIISETGITSEQIHDIASAKIR               P39708
+      596                                    VIELGGTVVSLSDSK               P07262
+      597               VIELGGTVVSLSDSKGCIISETGITSEQVADISSAK               P07262
+      598           VIELGGTVVSLSDSKGCIISETGITSEQVADISSAKVNFK               P07262
+      599                                         VIGIDGGNAK               P38113
+      600                                        VIGIDGGNAKR               P38113
+      601                                       VIGIDGGNAKRK               P38113
+      602                                            VKSDMLK               P09938
+      603                                          VKSDMLKEK               P09938
+      604                                         VKVHFDQAGK        P40212;Q12690
+      605                                        VKVHFDQAGKK        P40212;Q12690
+      606                     VLAFFAASDGIVNENLVENFSTEVQIPEAK               P09938
+      607                                         VLGIDAGEEK               P07246
+      608                                       VLGIDAGEEKEK               P07246
+      609                                    VLGIDAGEEKEKLFK               P07246
+      610                                         VLGIDGGEGK               P00330
+      611                                    VLGIDGGEGKEELFR               P00330
+      612                        VLGIDGGEGKEELFRSIGGEVFIDFTK               P00330
+      613                                         VLGIDGGPGK               P00331
+      614                        VLGIDGGPGKEELFTSLGGEVFIDFTK               P00331
+      615                      VLGIDGGPGKEELFTSLGGEVFIDFTKEK               P00331
+      616                                         VLPIVSVPER        P07262;P39708
+      617                                    VLPIVSVPERIIQFR        P07262;P39708
+      618                             VLPIVSVPERIIQFRVTWENDK               P07262
+      619                   VLPIVSVPERIIQFRVTWENDNGEQEVAQGYR               P39708
+      620                                            VLPSLVK               P07262
+      621                                   VLPSLVKGANIASFIK               P07262
+      622                       VLPSLVKGANIASFIKVSDAMFDQGDVF               P07262
+      623                               VNFKSLEQIVNEYSTFSENK               P07262
+      624                VNFKSLEQIVNEYSTFSENKVQYIAGARPWTHVQK               P07262
+      625                                            VQFNSAK               P39708
+      626                                        VQFNSAKGPYK               P39708
+      627                                    VQFNSAKGPYKGGLR               P39708
+      628                                           VQPSLFSR               P07246
+      629                                       VQPSLFSRNILR               P07246
+      630                              VQPSLFSRNILRLQSTAAIPK               P07246
+      631                                    VQYIAGARPWTHVQK               P07262
+      632                 VQYIAGARPWTHVQKVDIALPCATQNEVSGEEAK               P07262
+      633         VQYIAGARPWTHVQKVDIALPCATQNEVSGEEAKALVAQGVK               P07262
+      634                                            VQYNSAK               P07262
+      635                                        VQYNSAKGPYK               P07262
+      636                                    VQYNSAKGPYKGGLR               P07262
+      637                                      VRAGRGFTLAEVK        P40212;Q12690
+      638                                       VSDAMFDQGDVF               P07262
+      639                                             VSDYQK               P09938
+      640                                       VSDYQKAGVMSK               P09938
+      641                                    VSDYQKAGVMSKSTK               P09938
+      642                                            VSRRNAR        P40212;Q12690
+      643                                   VTISGSGNVAQYAALK        P07262;P39708
+      644                    VTISGSGNVAQYAALKVIELGGIVVSLSDSK               P39708
+      645                    VTISGSGNVAQYAALKVIELGGTVVSLSDSK               P07262
+      646                                            VTWENDK               P07262
+      647                                  VTWENDKGEQEVAQGYR               P07262
+      648                           VTWENDKGEQEVAQGYRVQYNSAK               P07262
+      649                                  VTWENDNGEQEVAQGYR               P39708
+      650                           VTWENDNGEQEVAQGYRVQFNSAK               P39708
+      651                       VTWENDNGEQEVAQGYRVQFNSAKGPYK               P39708
+      652                                            VTWTAER               P39708
+      653                                      VTWTAERVDQELK               P39708
+      654                                     VTWTAERVDQELKK               P39708
+      655                                      VVGLSSLPEIYEK               P00331
+      656                                   VVGLSSLPEIYEKMEK               P00331
+      657                             VVGLSSLPEIYEKMEKGQIAGR               P00331
+      658                                      VVGLSTLPEIYEK               P00330
+      659                                   VVGLSTLPEIYEKMEK               P00330
+      660                             VVGLSTLPEIYEKMEKGQIVGR               P00330
+      661                                            VYDLMEK               P07246
+      662                                          VYDLMEKGK               P07246
+      663                                      VYDLMEKGKILGR               P07246
+      664                                       WIQDADALFGER               P09938
+      665                WIQDADALFGERLVAFASIEGVFFSGSFASIFWLK               P09938
+      666               WIQDADALFGERLVAFASIEGVFFSGSFASIFWLKK               P09938
+      667    WLNGSCMTCEFCESGHESNCPDADLSGYTHDGSFQQFATADAIQAAK               P07246
+      668                                 YCRANGTVVLVGLPAGAK               P00331
+      669                      YCRANGTVVLVGLPAGAKCSSDVFNHVVK               P00331
+      670                      YCRPNGTVVLVGMPAHAYCNSDVFNQVVK               P38113
+      671          YCRPNGTVVLVGMPAHAYCNSDVFNQVVKSISIVGSCVGNR               P38113
+      672      YCRPNGTVVLVGMPAHAYCNSDVFNQVVKSISIVGSCVGNRADTR               P38113
+      673                       YFLDALPVALLGMNADLMNQYVEFVADR               P09938
+      674               YFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNK               P09938
+      675              YFLDALPVALLGMNADLMNQYVEFVADRLLVAFGNKK               P09938
+      676                                          YHEIWQAYK               P09938
+      677                                         YHEIWQAYKR               P09938
+      678                          YHEIWQAYKRAEASFWTAEEIDLSK               P09938
+      679                                             YNRKVR        P40212;Q12690
+      680                              YSGVCHSDLHAWHGDWPFQLK               P38113
+      681               YSGVCHSDLHAWHGDWPFQLKFPLIGGHEGAGVVVK               P38113
+      682         YSGVCHSDLHAWHGDWPFQLKFPLIGGHEGAGVVVKLGSNVK               P38113
+      683                              YSGVCHTDLHAWHGDWPLPTK               P00331
+      684         YSGVCHTDLHAWHGDWPLPTKLPLVGGHEGAGVVVGMGENVK               P00331
+      685      YSGVCHTDLHAWHGDWPLPTKLPLVGGHEGAGVVVGMGENVKGWK               P00331
+      686                              YSGVCHTDLHAWHGDWPLPVK        P00330;P07246
+      687         YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVGMGENVK               P00330
+      688      YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVGMGENVKGWK               P00330
+      689               YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVK               P07246
+      690         YSGVCHTDLHAWHGDWPLPVKLPLVGGHEGAGVVVKLGSNVK               P07246
+      691                                             YTKDGK               P07262
+      692                                      YTKDGKVLPSLVK               P07262
+      693                   YVAGARPWTHVSNVDIALPCATQNEVSGDEAK               P39708
+      694           YVAGARPWTHVSNVDIALPCATQNEVSGDEAKALVASGVK               P39708
+      695                                 YVRANGTTVLVGMPAGAK               P00330
+      696                      YVRANGTTVLVGMPAGAKCCSDVFNQVVK               P00330
+      697                                            YVVDTSK P00330;P00331;P07246
+      698                                            YVVETSK               P38113
+      699                                YYKVENPFDFMENISLAGK               P09938
+      700                          YYKVENPFDFMENISLAGKTNFFEK               P09938
       
       $proteins
-           protein     peptide
-      1     Q03483 prot_Q03483
-      2     Q03483 prot_Q03483
-      3     Q03483 prot_Q03483
-      4     Q03483 prot_Q03483
-      5     Q03483 prot_Q03483
-      6     Q03483 prot_Q03483
-      7     Q03483 prot_Q03483
-      8     Q03483 prot_Q03483
-      9     Q03483 prot_Q03483
-      10    Q03483 prot_Q03483
-      11    Q03483 prot_Q03483
-      12    Q03483 prot_Q03483
-      13    Q03483 prot_Q03483
-      14    Q03483 prot_Q03483
-      15    Q03483 prot_Q03483
-      16    Q03483 prot_Q03483
-      17    Q03483 prot_Q03483
-      18    Q03483 prot_Q03483
-      19    Q03483 prot_Q03483
-      20    Q03483 prot_Q03483
-      21    Q03483 prot_Q03483
-      22    Q03483 prot_Q03483
-      23    Q03483 prot_Q03483
-      24    Q03483 prot_Q03483
-      25    Q03483 prot_Q03483
-      26    Q03483 prot_Q03483
-      27    Q03483 prot_Q03483
-      28    Q03483 prot_Q03483
-      29    Q03483 prot_Q03483
-      30    Q03483 prot_Q03483
-      31    Q03483 prot_Q03483
-      32    Q03483 prot_Q03483
-      33    Q03483 prot_Q03483
-      34    Q03483 prot_Q03483
-      35    Q03483 prot_Q03483
-      36    Q03483 prot_Q03483
-      37    Q03483 prot_Q03483
-      38    Q03483 prot_Q03483
-      39    Q03483 prot_Q03483
-      40    Q03483 prot_Q03483
-      41    Q03483 prot_Q03483
-      42    Q03483 prot_Q03483
-      43    Q03483 prot_Q03483
-      44    Q03483 prot_Q03483
-      45    Q03483 prot_Q03483
-      46    Q03483 prot_Q03483
-      47    Q03483 prot_Q03483
-      48    Q03483 prot_Q03483
-      49    Q03483 prot_Q03483
-      50    Q03483 prot_Q03483
-      51    Q03483 prot_Q03483
-      52    Q03483 prot_Q03483
-      53    Q03483 prot_Q03483
-      54    Q03483 prot_Q03483
-      55    Q03483 prot_Q03483
-      56    Q03483 prot_Q03483
-      57    Q03483 prot_Q03483
-      58    Q03483 prot_Q03483
-      59    Q03483 prot_Q03483
-      60    Q03483 prot_Q03483
-      61    Q03483 prot_Q03483
-      62    Q03483 prot_Q03483
-      63    Q03483 prot_Q03483
-      64    Q03483 prot_Q03483
-      65    Q03483 prot_Q03483
-      66    Q03483 prot_Q03483
-      67    Q03483 prot_Q03483
-      68    Q03483 prot_Q03483
-      69    Q03483 prot_Q03483
-      70    Q03483 prot_Q03483
-      71    Q03483 prot_Q03483
-      72    Q03483 prot_Q03483
-      73    Q03483 prot_Q03483
-      74    Q03483 prot_Q03483
-      75    Q03483 prot_Q03483
-      76    Q03483 prot_Q03483
-      77    Q03483 prot_Q03483
-      78    Q03483 prot_Q03483
-      79    Q03483 prot_Q03483
-      80    Q03483 prot_Q03483
-      81    Q03483 prot_Q03483
-      82    Q03483 prot_Q03483
-      83    Q03483 prot_Q03483
-      84    Q03483 prot_Q03483
-      85    Q03483 prot_Q03483
-      86    Q03483 prot_Q03483
-      87    Q03483 prot_Q03483
-      88    Q03483 prot_Q03483
-      89    Q06204 prot_Q06204
-      90    Q06204 prot_Q06204
-      91    Q06204 prot_Q06204
-      92    Q06204 prot_Q06204
-      93    Q06204 prot_Q06204
-      94    Q06204 prot_Q06204
-      95    Q06204 prot_Q06204
-      96    Q06204 prot_Q06204
-      97    Q06204 prot_Q06204
-      98    Q06204 prot_Q06204
-      99    Q06204 prot_Q06204
-      100   Q06204 prot_Q06204
-      101   Q06204 prot_Q06204
-      102   Q06204 prot_Q06204
-      103   Q06204 prot_Q06204
-      104   Q06204 prot_Q06204
-      105   Q06204 prot_Q06204
-      106   Q06204 prot_Q06204
-      107   Q06204 prot_Q06204
-      108   Q06204 prot_Q06204
-      109   Q06204 prot_Q06204
-      110   Q06204 prot_Q06204
-      111   Q06204 prot_Q06204
-      112   Q06204 prot_Q06204
-      113   Q06204 prot_Q06204
-      114   Q06204 prot_Q06204
-      115   Q06204 prot_Q06204
-      116   Q06204 prot_Q06204
-      117   Q06204 prot_Q06204
-      118   Q06204 prot_Q06204
-      119   Q06204 prot_Q06204
-      120   Q06204 prot_Q06204
-      121   Q06204 prot_Q06204
-      122   Q06204 prot_Q06204
-      123   Q06204 prot_Q06204
-      124   Q06204 prot_Q06204
-      125   Q06204 prot_Q06204
-      126   Q06204 prot_Q06204
-      127   Q06204 prot_Q06204
-      128   Q06204 prot_Q06204
-      129   Q06204 prot_Q06204
-      130   Q06204 prot_Q06204
-      131   Q06204 prot_Q06204
-      132   Q06204 prot_Q06204
-      133   Q06204 prot_Q06204
-      134   Q06204 prot_Q06204
-      135   Q06204 prot_Q06204
-      136   Q06204 prot_Q06204
-      137   Q06204 prot_Q06204
-      138   Q06204 prot_Q06204
-      139   Q06204 prot_Q06204
-      140   Q06204 prot_Q06204
-      141   Q06204 prot_Q06204
-      142   Q06204 prot_Q06204
-      143   Q06204 prot_Q06204
-      144   Q06204 prot_Q06204
-      145   Q06204 prot_Q06204
-      146   Q06204 prot_Q06204
-      147   Q06204 prot_Q06204
-      148   Q06204 prot_Q06204
-      149   Q06204 prot_Q06204
-      150   Q06204 prot_Q06204
-      151   Q06204 prot_Q06204
-      152   Q06204 prot_Q06204
-      153   Q06204 prot_Q06204
-      154   Q06204 prot_Q06204
-      155   Q06204 prot_Q06204
-      156   Q06204 prot_Q06204
-      157   Q06204 prot_Q06204
-      158   Q06204 prot_Q06204
-      159   Q06204 prot_Q06204
-      160   Q06204 prot_Q06204
-      161   Q06204 prot_Q06204
-      162   Q06204 prot_Q06204
-      163   Q06204 prot_Q06204
-      164   Q06204 prot_Q06204
-      165   Q06204 prot_Q06204
-      166   Q06204 prot_Q06204
-      167   Q06204 prot_Q06204
-      168   Q06204 prot_Q06204
-      169   Q06204 prot_Q06204
-      170   Q06204 prot_Q06204
-      171   P48238 prot_P48238
-      172   P48238 prot_P48238
-      173   P48238 prot_P48238
-      174   P48238 prot_P48238
-      175   P48238 prot_P48238
-      176   P48238 prot_P48238
-      177   P48238 prot_P48238
-      178   P48238 prot_P48238
-      179   P48238 prot_P48238
-      180   P48238 prot_P48238
-      181   P48238 prot_P48238
-      182   P48238 prot_P48238
-      183   P48238 prot_P48238
-      184   P48238 prot_P48238
-      185   P48238 prot_P48238
-      186   P48238 prot_P48238
-      187   P48238 prot_P48238
-      188   P48238 prot_P48238
-      189   P48238 prot_P48238
-      190   P48238 prot_P48238
-      191   P48238 prot_P48238
-      192   P48238 prot_P48238
-      193   P48238 prot_P48238
-      194   P48238 prot_P48238
-      195   P48238 prot_P48238
-      196   P48238 prot_P48238
-      197   P48238 prot_P48238
-      198   P48238 prot_P48238
-      199   P48238 prot_P48238
-      200   P48238 prot_P48238
-      201   P48238 prot_P48238
-      202   P48238 prot_P48238
-      203   P48238 prot_P48238
-      204   P48238 prot_P48238
-      205   P48238 prot_P48238
-      206   P48238 prot_P48238
-      207   P48238 prot_P48238
-      208   P48238 prot_P48238
-      209   P48238 prot_P48238
-      210   P48238 prot_P48238
-      211   P48238 prot_P48238
-      212   P48238 prot_P48238
-      213   P48238 prot_P48238
-      214   P48238 prot_P48238
-      215   P48238 prot_P48238
-      216   P48238 prot_P48238
-      217   P48238 prot_P48238
-      218   P48238 prot_P48238
-      219   P48238 prot_P48238
-      220   P48238 prot_P48238
-      221   P48238 prot_P48238
-      222   P48238 prot_P48238
-      223   P48238 prot_P48238
-      224   P0CX57 prot_P0CX57
-      225   P0CX57 prot_P0CX57
-      226   P0CX57 prot_P0CX57
-      227   P0CX57 prot_P0CX57
-      228   P0CX57 prot_P0CX57
-      229   P0CX57 prot_P0CX57
-      230   P0CX57 prot_P0CX57
-      231   P0CX57 prot_P0CX57
-      232   P0CX57 prot_P0CX57
-      233   P0CX57 prot_P0CX57
-      234   P0CX57 prot_P0CX57
-      235   P0CX57 prot_P0CX57
-      236   P0CX57 prot_P0CX57
-      237   P0CX57 prot_P0CX57
-      238   P0CX57 prot_P0CX57
-      239   P0CX57 prot_P0CX57
-      240   P0CX57 prot_P0CX57
-      241   P0CX57 prot_P0CX57
-      242   P0CX57 prot_P0CX57
-      243   P0CX57 prot_P0CX57
-      244   P0CX57 prot_P0CX57
-      245   P0CX57 prot_P0CX57
-      246   P0CX57 prot_P0CX57
-      247   P0CX57 prot_P0CX57
-      248   P0CX57 prot_P0CX57
-      249   P0CX57 prot_P0CX57
-      250   P0CX57 prot_P0CX57
-      251   P0CX57 prot_P0CX57
-      252   P0CX57 prot_P0CX57
-      253   P0CX57 prot_P0CX57
-      254   P0CX57 prot_P0CX57
-      255   P0CX57 prot_P0CX57
-      256   P0CX57 prot_P0CX57
-      257   P0CX57 prot_P0CX57
-      258   P0CX57 prot_P0CX57
-      259   P0CX57 prot_P0CX57
-      260   P0CX57 prot_P0CX57
-      261   P0CX57 prot_P0CX57
-      262   P0CX57 prot_P0CX57
-      263   P0CX57 prot_P0CX57
-      264   P0CX57 prot_P0CX57
-      265   P0CX57 prot_P0CX57
-      266   P0CX57 prot_P0CX57
-      267   P0CX57 prot_P0CX57
-      268   P0CX57 prot_P0CX57
-      269   P0CX57 prot_P0CX57
-      270   P0CX57 prot_P0CX57
-      271   P0CX57 prot_P0CX57
-      272   P0CX57 prot_P0CX57
-      273   P0CX57 prot_P0CX57
-      274   P0CX57 prot_P0CX57
-      275   P0CX57 prot_P0CX57
-      276   P0CX57 prot_P0CX57
-      277   P0CX57 prot_P0CX57
-      278   P0CX57 prot_P0CX57
-      279   P0CX57 prot_P0CX57
-      280   P0CX57 prot_P0CX57
-      281   P0CX57 prot_P0CX57
-      282   P0CX57 prot_P0CX57
-      283   P0CX57 prot_P0CX57
-      284   P0CX57 prot_P0CX57
-      285   P0CX57 prot_P0CX57
-      286   P0CX57 prot_P0CX57
-      287   P0CX57 prot_P0CX57
-      288   P0CX57 prot_P0CX57
-      289   P0CX57 prot_P0CX57
-      290   P0CX57 prot_P0CX57
-      291   P0CX57 prot_P0CX57
-      292   P0CX57 prot_P0CX57
-      293   P0CX57 prot_P0CX57
-      294   P0CX57 prot_P0CX57
-      295   P0CX57 prot_P0CX57
-      296   P0CX57 prot_P0CX57
-      297   P0CX57 prot_P0CX57
-      298   P0CX57 prot_P0CX57
-      299   P0CX57 prot_P0CX57
-      300   P0CX57 prot_P0CX57
-      301   P0CX57 prot_P0CX57
-      302   P0CX57 prot_P0CX57
-      303   P0CX57 prot_P0CX57
-      304   Q07791 prot_Q07791
-      305   Q07791 prot_Q07791
-      306   Q07791 prot_Q07791
-      307   Q07791 prot_Q07791
-      308   Q07791 prot_Q07791
-      309   Q07791 prot_Q07791
-      310   Q07791 prot_Q07791
-      311   Q07791 prot_Q07791
-      312   Q07791 prot_Q07791
-      313   Q07791 prot_Q07791
-      314   Q07791 prot_Q07791
-      315   Q07791 prot_Q07791
-      316   Q07791 prot_Q07791
-      317   Q07791 prot_Q07791
-      318   Q07791 prot_Q07791
-      319   Q07791 prot_Q07791
-      320   Q07791 prot_Q07791
-      321   Q07791 prot_Q07791
-      322   Q07791 prot_Q07791
-      323   Q07791 prot_Q07791
-      324   Q07791 prot_Q07791
-      325   Q07791 prot_Q07791
-      326   Q07791 prot_Q07791
-      327   Q07791 prot_Q07791
-      328   Q07791 prot_Q07791
-      329   Q07791 prot_Q07791
-      330   Q07791 prot_Q07791
-      331   Q07791 prot_Q07791
-      332   Q07791 prot_Q07791
-      333   Q07791 prot_Q07791
-      334   Q07791 prot_Q07791
-      335   Q07791 prot_Q07791
-      336   Q07791 prot_Q07791
-      337   Q07791 prot_Q07791
-      338   Q07791 prot_Q07791
-      339   Q07791 prot_Q07791
-      340   Q07791 prot_Q07791
-      341   Q07791 prot_Q07791
-      342   Q07791 prot_Q07791
-      343   Q07791 prot_Q07791
-      344   Q07791 prot_Q07791
-      345   Q07791 prot_Q07791
-      346   Q07791 prot_Q07791
-      347   Q07791 prot_Q07791
-      348   Q07791 prot_Q07791
-      349   Q07791 prot_Q07791
-      350   Q07791 prot_Q07791
-      351   Q07791 prot_Q07791
-      352   Q07791 prot_Q07791
-      353   Q07791 prot_Q07791
-      354   Q07791 prot_Q07791
-      355   Q07791 prot_Q07791
-      356   Q07791 prot_Q07791
-      357   Q07791 prot_Q07791
-      358   Q07791 prot_Q07791
-      359   Q07791 prot_Q07791
-      360   Q07791 prot_Q07791
-      361   Q07791 prot_Q07791
-      362   Q07791 prot_Q07791
-      363   Q07791 prot_Q07791
-      364   Q07791 prot_Q07791
-      365   Q07791 prot_Q07791
-      366   Q07791 prot_Q07791
-      367   Q07791 prot_Q07791
-      368   Q07791 prot_Q07791
-      369   Q07791 prot_Q07791
-      370   Q07791 prot_Q07791
-      371   Q07791 prot_Q07791
-      372   Q07791 prot_Q07791
-      373   Q07791 prot_Q07791
-      374   Q07791 prot_Q07791
-      375   Q07791 prot_Q07791
-      376   Q07791 prot_Q07791
-      377   Q07791 prot_Q07791
-      378   Q07791 prot_Q07791
-      379   Q07791 prot_Q07791
-      380   Q07791 prot_Q07791
-      381   Q07791 prot_Q07791
-      382   Q07791 prot_Q07791
-      383   Q07791 prot_Q07791
-      384   Q07791 prot_Q07791
-      385   Q07791 prot_Q07791
-      386   Q07791 prot_Q07791
-      387   Q07791 prot_Q07791
-      388   Q07791 prot_Q07791
-      389   Q07791 prot_Q07791
-      390   Q07791 prot_Q07791
-      391   Q07791 prot_Q07791
-      392   Q07791 prot_Q07791
-      393   Q07791 prot_Q07791
-      394   Q07791 prot_Q07791
-      395   Q07791 prot_Q07791
-      396   Q07791 prot_Q07791
-      397   Q07791 prot_Q07791
-      398   Q07791 prot_Q07791
-      399   Q07791 prot_Q07791
-      400   Q07791 prot_Q07791
-      401   Q07791 prot_Q07791
-      402   Q07791 prot_Q07791
-      403   Q07791 prot_Q07791
-      404   Q07791 prot_Q07791
-      405   Q07791 prot_Q07791
-      406   Q07791 prot_Q07791
-      407   Q07791 prot_Q07791
-      408   Q07791 prot_Q07791
-      409   Q07791 prot_Q07791
-      410   Q07791 prot_Q07791
-      411   Q07791 prot_Q07791
-      412   Q07791 prot_Q07791
-      413   Q07791 prot_Q07791
-      414   Q07791 prot_Q07791
-      415   Q07791 prot_Q07791
-      416   Q07791 prot_Q07791
-      417   Q07791 prot_Q07791
-      418   Q07791 prot_Q07791
-      419   Q07791 prot_Q07791
-      420   Q07791 prot_Q07791
-      421   Q07791 prot_Q07791
-      422   Q07791 prot_Q07791
-      423   Q07791 prot_Q07791
-      424   Q07791 prot_Q07791
-      425   Q07791 prot_Q07791
-      426   Q07791 prot_Q07791
-      427   Q07791 prot_Q07791
-      428   Q07791 prot_Q07791
-      429   Q07791 prot_Q07791
-      430   Q07791 prot_Q07791
-      431   Q07791 prot_Q07791
-      432   Q07791 prot_Q07791
-      433   Q07791 prot_Q07791
-      434   Q07791 prot_Q07791
-      435   Q07791 prot_Q07791
-      436   Q07791 prot_Q07791
-      437   Q07791 prot_Q07791
-      438   Q07791 prot_Q07791
-      439   Q07791 prot_Q07791
-      440   Q07791 prot_Q07791
-      441   Q07791 prot_Q07791
-      442   Q07791 prot_Q07791
-      443   Q07791 prot_Q07791
-      444   Q07791 prot_Q07791
-      445   Q07791 prot_Q07791
-      446   Q07791 prot_Q07791
-      447   Q07791 prot_Q07791
-      448   Q07791 prot_Q07791
-      449   Q07791 prot_Q07791
-      450   Q07791 prot_Q07791
-      451   Q07791 prot_Q07791
-      452   Q07791 prot_Q07791
-      453   Q07791 prot_Q07791
-      454   Q07791 prot_Q07791
-      455   Q07791 prot_Q07791
-      456   Q07791 prot_Q07791
-      457   Q07791 prot_Q07791
-      458   Q07791 prot_Q07791
-      459   Q07791 prot_Q07791
-      460   Q07791 prot_Q07791
-      461   Q07791 prot_Q07791
-      462   Q07791 prot_Q07791
-      463   Q07791 prot_Q07791
-      464   Q07791 prot_Q07791
-      465   Q07791 prot_Q07791
-      466   Q07791 prot_Q07791
-      467   Q07791 prot_Q07791
-      468   Q07791 prot_Q07791
-      469   Q07791 prot_Q07791
-      470   Q07791 prot_Q07791
-      471   Q07791 prot_Q07791
-      472   Q07791 prot_Q07791
-      473   Q07791 prot_Q07791
-      474   Q07791 prot_Q07791
-      475   Q07791 prot_Q07791
-      476   Q07791 prot_Q07791
-      477   Q07791 prot_Q07791
-      478   Q07791 prot_Q07791
-      479   Q07791 prot_Q07791
-      480   Q07791 prot_Q07791
-      481   Q07791 prot_Q07791
-      482   Q07791 prot_Q07791
-      483   Q07791 prot_Q07791
-      484   Q07791 prot_Q07791
-      485   Q07791 prot_Q07791
-      486   Q07791 prot_Q07791
-      487   Q07791 prot_Q07791
-      488   Q07791 prot_Q07791
-      489   Q07791 prot_Q07791
-      490   Q07791 prot_Q07791
-      491   Q07791 prot_Q07791
-      492   Q07791 prot_Q07791
-      493   Q07791 prot_Q07791
-      494   Q07791 prot_Q07791
-      495   Q07791 prot_Q07791
-      496   Q07791 prot_Q07791
-      497   Q07791 prot_Q07791
-      498   Q07791 prot_Q07791
-      499   Q07791 prot_Q07791
-      500   Q07791 prot_Q07791
-      501   Q07791 prot_Q07791
-      502   Q07791 prot_Q07791
-      503   Q07791 prot_Q07791
-      504   Q07791 prot_Q07791
-      505   Q07791 prot_Q07791
-      506   Q07791 prot_Q07791
-      507   Q07791 prot_Q07791
-      508   Q07791 prot_Q07791
-      509   Q07791 prot_Q07791
-      510   Q07791 prot_Q07791
-      511   Q07791 prot_Q07791
-      512   Q07791 prot_Q07791
-      513   Q07791 prot_Q07791
-      514   Q07791 prot_Q07791
-      515   Q07791 prot_Q07791
-      516   Q07791 prot_Q07791
-      517   Q07791 prot_Q07791
-      518   Q07791 prot_Q07791
-      519   Q07791 prot_Q07791
-      520   Q07791 prot_Q07791
-      521   Q07791 prot_Q07791
-      522   Q07791 prot_Q07791
-      523   Q07791 prot_Q07791
-      524   Q07791 prot_Q07791
-      525   Q07791 prot_Q07791
-      526   Q07791 prot_Q07791
-      527   Q07791 prot_Q07791
-      528   Q07791 prot_Q07791
-      529   Q07791 prot_Q07791
-      530   Q07791 prot_Q07791
-      531   Q07791 prot_Q07791
-      532   Q07791 prot_Q07791
-      533   Q07791 prot_Q07791
-      534   Q07791 prot_Q07791
-      535   Q07791 prot_Q07791
-      536   Q07791 prot_Q07791
-      537   Q07791 prot_Q07791
-      538   Q07791 prot_Q07791
-      539   Q07791 prot_Q07791
-      540   Q07791 prot_Q07791
-      541   Q07791 prot_Q07791
-      542   Q07791 prot_Q07791
-      543   Q07791 prot_Q07791
-      544   Q07791 prot_Q07791
-      545   Q07791 prot_Q07791
-      546   Q07791 prot_Q07791
-      547   Q07791 prot_Q07791
-      548   Q07791 prot_Q07791
-      549   Q07791 prot_Q07791
-      550   Q07791 prot_Q07791
-      551   Q07791 prot_Q07791
-      552   Q07791 prot_Q07791
-      553   Q07791 prot_Q07791
-      554   Q07791 prot_Q07791
-      555   Q07791 prot_Q07791
-      556   Q07791 prot_Q07791
-      557   Q07791 prot_Q07791
-      558   Q07791 prot_Q07791
-      559   Q07791 prot_Q07791
-      560   Q07791 prot_Q07791
-      561   Q07791 prot_Q07791
-      562   Q07791 prot_Q07791
-      563   Q07791 prot_Q07791
-      564   Q07791 prot_Q07791
-      565   Q07791 prot_Q07791
-      566   Q07791 prot_Q07791
-      567   Q07791 prot_Q07791
-      568   Q07791 prot_Q07791
-      569   Q07791 prot_Q07791
-      570   Q07791 prot_Q07791
-      571   Q07791 prot_Q07791
-      572   Q07791 prot_Q07791
-      573   Q07791 prot_Q07791
-      574   Q07791 prot_Q07791
-      575   Q07791 prot_Q07791
-      576   Q07791 prot_Q07791
-      577   Q07791 prot_Q07791
-      578   Q07791 prot_Q07791
-      579   Q07791 prot_Q07791
-      580   Q07791 prot_Q07791
-      581   Q07791 prot_Q07791
-      582   Q07791 prot_Q07791
-      583   Q07791 prot_Q07791
-      584   Q07791 prot_Q07791
-      585   Q07791 prot_Q07791
-      586   Q07791 prot_Q07791
-      587   Q07791 prot_Q07791
-      588   Q07791 prot_Q07791
-      589   Q07791 prot_Q07791
-      590   Q07791 prot_Q07791
-      591   Q07791 prot_Q07791
-      592   Q07791 prot_Q07791
-      593   Q07791 prot_Q07791
-      594   Q07791 prot_Q07791
-      595   Q07791 prot_Q07791
-      596   Q07791 prot_Q07791
-      597   Q07791 prot_Q07791
-      598   Q07791 prot_Q07791
-      599   Q07791 prot_Q07791
-      600   Q07791 prot_Q07791
-      601   Q07791 prot_Q07791
-      602   Q07791 prot_Q07791
-      603   Q07791 prot_Q07791
-      604   Q07791 prot_Q07791
-      605   Q07791 prot_Q07791
-      606   Q07791 prot_Q07791
-      607   Q07791 prot_Q07791
-      608   Q07791 prot_Q07791
-      609   Q07791 prot_Q07791
-      610   Q07791 prot_Q07791
-      611   Q07791 prot_Q07791
-      612   Q07791 prot_Q07791
-      613   Q07791 prot_Q07791
-      614   Q07791 prot_Q07791
-      615   Q07791 prot_Q07791
-      616   Q07791 prot_Q07791
-      617   Q07791 prot_Q07791
-      618   Q07791 prot_Q07791
-      619   Q07791 prot_Q07791
-      620   Q07791 prot_Q07791
-      621   Q07791 prot_Q07791
-      622   Q07791 prot_Q07791
-      623   Q07791 prot_Q07791
-      624   Q07791 prot_Q07791
-      625   Q07791 prot_Q07791
-      626   Q07791 prot_Q07791
-      627   Q07791 prot_Q07791
-      628   Q07791 prot_Q07791
-      629   Q07791 prot_Q07791
-      630   Q07791 prot_Q07791
-      631   Q07791 prot_Q07791
-      632   Q07791 prot_Q07791
-      633   Q07791 prot_Q07791
-      634   Q07791 prot_Q07791
-      635   Q07791 prot_Q07791
-      636   Q07791 prot_Q07791
-      637   Q07791 prot_Q07791
-      638   Q07791 prot_Q07791
-      639   Q07791 prot_Q07791
-      640   Q07791 prot_Q07791
-      641   Q07791 prot_Q07791
-      642   Q07791 prot_Q07791
-      643   Q07791 prot_Q07791
-      644   Q07791 prot_Q07791
-      645   Q07791 prot_Q07791
-      646   Q07791 prot_Q07791
-      647   Q07791 prot_Q07791
-      648   Q07791 prot_Q07791
-      649   Q07791 prot_Q07791
-      650   Q07791 prot_Q07791
-      651   Q07791 prot_Q07791
-      652   Q07791 prot_Q07791
-      653   Q07791 prot_Q07791
-      654   Q07791 prot_Q07791
-      655   Q07791 prot_Q07791
-      656   Q07791 prot_Q07791
-      657   Q07791 prot_Q07791
-      658   Q07791 prot_Q07791
-      659   Q07791 prot_Q07791
-      660   Q07791 prot_Q07791
-      661   Q07791 prot_Q07791
-      662   Q07791 prot_Q07791
-      663   Q07791 prot_Q07791
-      664   Q07791 prot_Q07791
-      665   Q07791 prot_Q07791
-      666   Q07791 prot_Q07791
-      667   Q07791 prot_Q07791
-      668   Q07791 prot_Q07791
-      669   Q07791 prot_Q07791
-      670   Q07791 prot_Q07791
-      671   Q07791 prot_Q07791
-      672   Q07791 prot_Q07791
-      673   Q07791 prot_Q07791
-      674   Q07791 prot_Q07791
-      675   Q07791 prot_Q07791
-      676   Q07791 prot_Q07791
-      677   Q07791 prot_Q07791
-      678   Q07791 prot_Q07791
-      679   Q07791 prot_Q07791
-      680   Q07791 prot_Q07791
-      681   Q07791 prot_Q07791
-      682   Q07791 prot_Q07791
-      683   Q07791 prot_Q07791
-      684   Q07791 prot_Q07791
-      685   Q07791 prot_Q07791
-      686   Q07791 prot_Q07791
-      687   Q07791 prot_Q07791
-      688   Q07791 prot_Q07791
-      689   Q07791 prot_Q07791
-      690   Q07791 prot_Q07791
-      691   Q07791 prot_Q07791
-      692   Q07791 prot_Q07791
-      693   Q07791 prot_Q07791
-      694   Q07791 prot_Q07791
-      695   Q07791 prot_Q07791
-      696   Q07791 prot_Q07791
-      697   Q07791 prot_Q07791
-      698   Q07791 prot_Q07791
-      699   Q07791 prot_Q07791
-      700   Q07791 prot_Q07791
-      701   Q07791 prot_Q07791
-      702   Q07791 prot_Q07791
-      703   Q07791 prot_Q07791
-      704   Q07791 prot_Q07791
-      705   Q07791 prot_Q07791
-      706   Q07791 prot_Q07791
-      707   Q07791 prot_Q07791
-      708   Q07791 prot_Q07791
-      709   Q07791 prot_Q07791
-      710   Q07791 prot_Q07791
-      711   Q07791 prot_Q07791
-      712   Q07791 prot_Q07791
-      713   Q07791 prot_Q07791
-      714   Q07791 prot_Q07791
-      715   Q07791 prot_Q07791
-      716   Q07791 prot_Q07791
-      717   Q07791 prot_Q07791
-      718   Q07791 prot_Q07791
-      719   Q07791 prot_Q07791
-      720   Q07791 prot_Q07791
-      721   Q07791 prot_Q07791
-      722   Q07791 prot_Q07791
-      723   Q07791 prot_Q07791
-      724   Q07791 prot_Q07791
-      725   Q07791 prot_Q07791
-      726   Q07791 prot_Q07791
-      727   Q07791 prot_Q07791
-      728   Q07791 prot_Q07791
-      729   Q07791 prot_Q07791
-      730   Q07791 prot_Q07791
-      731   Q07791 prot_Q07791
-      732   Q07791 prot_Q07791
-      733   Q07791 prot_Q07791
-      734   Q07791 prot_Q07791
-      735   Q07791 prot_Q07791
-      736   Q07791 prot_Q07791
-      737   Q07791 prot_Q07791
-      738   Q07791 prot_Q07791
-      739   Q07791 prot_Q07791
-      740   Q07791 prot_Q07791
-      741   Q07791 prot_Q07791
-      742   Q07791 prot_Q07791
-      743   Q07791 prot_Q07791
-      744   Q07791 prot_Q07791
-      745   Q07791 prot_Q07791
-      746   Q07791 prot_Q07791
-      747   Q07791 prot_Q07791
-      748   Q07791 prot_Q07791
-      749   Q07791 prot_Q07791
-      750   Q07791 prot_Q07791
-      751   Q07791 prot_Q07791
-      752   Q07791 prot_Q07791
-      753   Q07791 prot_Q07791
-      754   Q07791 prot_Q07791
-      755   Q07791 prot_Q07791
-      756   Q07791 prot_Q07791
-      757   Q07791 prot_Q07791
-      758   Q07791 prot_Q07791
-      759   Q03856 prot_Q03856
-      760   Q03856 prot_Q03856
-      761   Q03856 prot_Q03856
-      762   Q03856 prot_Q03856
-      763   Q03856 prot_Q03856
-      764   Q03856 prot_Q03856
-      765   Q03856 prot_Q03856
-      766   Q03856 prot_Q03856
-      767   Q03856 prot_Q03856
-      768   Q03856 prot_Q03856
-      769   Q03856 prot_Q03856
-      770   Q03856 prot_Q03856
-      771   Q03856 prot_Q03856
-      772   Q03856 prot_Q03856
-      773   Q03856 prot_Q03856
-      774   Q03856 prot_Q03856
-      775   Q03856 prot_Q03856
-      776   Q03856 prot_Q03856
-      777   Q03856 prot_Q03856
-      778   Q03856 prot_Q03856
-      779   Q03856 prot_Q03856
-      780   Q03856 prot_Q03856
-      781   Q03856 prot_Q03856
-      782   Q03856 prot_Q03856
-      783   Q03856 prot_Q03856
-      784   Q03856 prot_Q03856
-      785   Q03856 prot_Q03856
-      786   Q03856 prot_Q03856
-      787   Q03856 prot_Q03856
-      788   Q03856 prot_Q03856
-      789   Q03856 prot_Q03856
-      790   Q03856 prot_Q03856
-      791   Q03856 prot_Q03856
-      792   Q03856 prot_Q03856
-      793   Q03856 prot_Q03856
-      794   Q03856 prot_Q03856
-      795   Q03856 prot_Q03856
-      796   Q03856 prot_Q03856
-      797   Q03856 prot_Q03856
-      798   Q03856 prot_Q03856
-      799   Q03856 prot_Q03856
-      800   Q03856 prot_Q03856
-      801   Q03856 prot_Q03856
-      802   Q03856 prot_Q03856
-      803   Q03856 prot_Q03856
-      804   Q03856 prot_Q03856
-      805   Q03856 prot_Q03856
-      806   Q03856 prot_Q03856
-      807   Q03856 prot_Q03856
-      808   Q03856 prot_Q03856
-      809   Q03856 prot_Q03856
-      810   Q03856 prot_Q03856
-      811   Q03856 prot_Q03856
-      812   Q03856 prot_Q03856
-      813   Q03856 prot_Q03856
-      814   Q03856 prot_Q03856
-      815   Q03856 prot_Q03856
-      816   Q03856 prot_Q03856
-      817   Q03856 prot_Q03856
-      818   Q03856 prot_Q03856
-      819   Q03856 prot_Q03856
-      820   Q03856 prot_Q03856
-      821   Q03856 prot_Q03856
-      822   Q03856 prot_Q03856
-      823   Q03856 prot_Q03856
-      824   Q03856 prot_Q03856
-      825   Q03856 prot_Q03856
-      826   Q03856 prot_Q03856
-      827   Q03856 prot_Q03856
-      828   Q03856 prot_Q03856
-      829   Q03856 prot_Q03856
-      830   Q03856 prot_Q03856
-      831   Q03856 prot_Q03856
-      832   Q03856 prot_Q03856
-      833   Q03856 prot_Q03856
-      834   Q03856 prot_Q03856
-      835   Q03856 prot_Q03856
-      836   Q03856 prot_Q03856
-      837   Q03856 prot_Q03856
-      838   Q03856 prot_Q03856
-      839   Q07793 prot_Q07793
-      840   Q07793 prot_Q07793
-      841   Q07793 prot_Q07793
-      842   Q07793 prot_Q07793
-      843   Q07793 prot_Q07793
-      844   Q07793 prot_Q07793
-      845   Q07793 prot_Q07793
-      846   Q07793 prot_Q07793
-      847   Q07793 prot_Q07793
-      848   Q07793 prot_Q07793
-      849   Q07793 prot_Q07793
-      850   Q07793 prot_Q07793
-      851   Q07793 prot_Q07793
-      852   Q07793 prot_Q07793
-      853   Q07793 prot_Q07793
-      854   Q07793 prot_Q07793
-      855   Q07793 prot_Q07793
-      856   Q07793 prot_Q07793
-      857   Q07793 prot_Q07793
-      858   Q07793 prot_Q07793
-      859   Q07793 prot_Q07793
-      860   Q07793 prot_Q07793
-      861   Q07793 prot_Q07793
-      862   Q07793 prot_Q07793
-      863   Q07793 prot_Q07793
-      864   Q07793 prot_Q07793
-      865   Q07793 prot_Q07793
-      866   Q07793 prot_Q07793
-      867   Q07793 prot_Q07793
-      868   Q07793 prot_Q07793
-      869   Q07793 prot_Q07793
-      870   Q07793 prot_Q07793
-      871   Q07793 prot_Q07793
-      872   Q07793 prot_Q07793
-      873   Q07793 prot_Q07793
-      874   Q07793 prot_Q07793
-      875   Q07793 prot_Q07793
-      876   Q07793 prot_Q07793
-      877   Q07793 prot_Q07793
-      878   Q07793 prot_Q07793
-      879   Q07793 prot_Q07793
-      880   Q07793 prot_Q07793
-      881   Q07793 prot_Q07793
-      882   Q07793 prot_Q07793
-      883   Q07793 prot_Q07793
-      884   Q07793 prot_Q07793
-      885   Q07793 prot_Q07793
-      886   Q07793 prot_Q07793
-      887   Q07793 prot_Q07793
-      888   Q07793 prot_Q07793
-      889   Q07793 prot_Q07793
-      890   Q07793 prot_Q07793
-      891   Q07793 prot_Q07793
-      892   Q07793 prot_Q07793
-      893   Q07793 prot_Q07793
-      894   Q07793 prot_Q07793
-      895   Q07793 prot_Q07793
-      896   Q07793 prot_Q07793
-      897   Q07793 prot_Q07793
-      898   Q07793 prot_Q07793
-      899   Q07793 prot_Q07793
-      900   Q07793 prot_Q07793
-      901   Q07793 prot_Q07793
-      902   Q07793 prot_Q07793
-      903   Q07793 prot_Q07793
-      904   Q07793 prot_Q07793
-      905   Q07793 prot_Q07793
-      906   Q07793 prot_Q07793
-      907   Q07793 prot_Q07793
-      908   Q07793 prot_Q07793
-      909   Q07793 prot_Q07793
-      910   Q07793 prot_Q07793
-      911   Q07793 prot_Q07793
-      912   Q07793 prot_Q07793
-      913   Q07793 prot_Q07793
-      914   Q07793 prot_Q07793
-      915   Q07793 prot_Q07793
-      916   Q07793 prot_Q07793
-      917   Q07793 prot_Q07793
-      918   Q07793 prot_Q07793
-      919   Q07793 prot_Q07793
-      920   Q07793 prot_Q07793
-      921   Q07793 prot_Q07793
-      922   Q07793 prot_Q07793
-      923   Q07793 prot_Q07793
-      924   Q07793 prot_Q07793
-      925   Q07793 prot_Q07793
-      926   Q07793 prot_Q07793
-      927   Q07793 prot_Q07793
-      928   Q07793 prot_Q07793
-      929   Q07793 prot_Q07793
-      930   Q07793 prot_Q07793
-      931   Q07793 prot_Q07793
-      932   Q07793 prot_Q07793
-      933   Q07793 prot_Q07793
-      934   Q07793 prot_Q07793
-      935   Q07793 prot_Q07793
-      936   Q07793 prot_Q07793
-      937   Q07793 prot_Q07793
-      938   Q07793 prot_Q07793
-      939   Q07793 prot_Q07793
-      940   Q07793 prot_Q07793
-      941   Q07793 prot_Q07793
-      942   Q07793 prot_Q07793
-      943   Q07793 prot_Q07793
-      944   Q07793 prot_Q07793
-      945   Q07793 prot_Q07793
-      946   Q07793 prot_Q07793
-      947   Q07793 prot_Q07793
-      948   Q07793 prot_Q07793
-      949   Q07793 prot_Q07793
-      950   Q07793 prot_Q07793
-      951   Q07793 prot_Q07793
-      952   Q07793 prot_Q07793
-      953   Q07793 prot_Q07793
-      954   Q07793 prot_Q07793
-      955   Q07793 prot_Q07793
-      956   Q07793 prot_Q07793
-      957   Q07793 prot_Q07793
-      958   Q07793 prot_Q07793
-      959   Q07793 prot_Q07793
-      960   Q07793 prot_Q07793
-      961   Q07793 prot_Q07793
-      962   Q07793 prot_Q07793
-      963   Q07793 prot_Q07793
-      964   Q07793 prot_Q07793
-      965   Q07793 prot_Q07793
-      966   Q07793 prot_Q07793
-      967   Q07793 prot_Q07793
-      968   Q07793 prot_Q07793
-      969   Q07793 prot_Q07793
-      970   Q07793 prot_Q07793
-      971   Q07793 prot_Q07793
-      972   Q07793 prot_Q07793
-      973   Q07793 prot_Q07793
-      974   Q07793 prot_Q07793
-      975   Q07793 prot_Q07793
-      976   Q07793 prot_Q07793
-      977   Q07793 prot_Q07793
-      978   Q07793 prot_Q07793
-      979   Q07793 prot_Q07793
-      980   Q07793 prot_Q07793
-      981   Q07793 prot_Q07793
-      982   Q07793 prot_Q07793
-      983   Q07793 prot_Q07793
-      984   Q07793 prot_Q07793
-      985   Q07793 prot_Q07793
-      986   Q07793 prot_Q07793
-      987   Q07793 prot_Q07793
-      988   Q07793 prot_Q07793
-      989   Q07793 prot_Q07793
-      990   Q07793 prot_Q07793
-      991   Q07793 prot_Q07793
-      992   Q07793 prot_Q07793
-      993   Q07793 prot_Q07793
-      994   Q07793 prot_Q07793
-      995   Q07793 prot_Q07793
-      996   Q07793 prot_Q07793
-      997   Q07793 prot_Q07793
-      998   Q07793 prot_Q07793
-      999   Q07793 prot_Q07793
-      1000  Q07793 prot_Q07793
-      1001  Q07793 prot_Q07793
-      1002  Q07793 prot_Q07793
-      1003  Q07793 prot_Q07793
-      1004  Q07793 prot_Q07793
-      1005  Q07793 prot_Q07793
-      1006  Q07793 prot_Q07793
-      1007  Q07793 prot_Q07793
-      1008  Q07793 prot_Q07793
-      1009  Q07793 prot_Q07793
-      1010  Q07793 prot_Q07793
-      1011  Q07793 prot_Q07793
-      1012  Q07793 prot_Q07793
-      1013  Q07793 prot_Q07793
-      1014  Q07793 prot_Q07793
-      1015  Q07793 prot_Q07793
-      1016  Q07793 prot_Q07793
-      1017  Q07793 prot_Q07793
-      1018  Q07793 prot_Q07793
-      1019  Q07793 prot_Q07793
-      1020  Q07793 prot_Q07793
-      1021  Q07793 prot_Q07793
-      1022  Q07793 prot_Q07793
-      1023  Q07793 prot_Q07793
-      1024  Q07793 prot_Q07793
-      1025  Q07793 prot_Q07793
-      1026  Q07793 prot_Q07793
-      1027  Q07793 prot_Q07793
-      1028  Q07793 prot_Q07793
-      1029  Q07793 prot_Q07793
-      1030  Q07793 prot_Q07793
-      1031  Q07793 prot_Q07793
-      1032  Q07793 prot_Q07793
-      1033  Q07793 prot_Q07793
-      1034  Q07793 prot_Q07793
-      1035  Q07793 prot_Q07793
-      1036  Q07793 prot_Q07793
-      1037  Q07793 prot_Q07793
-      1038  Q07793 prot_Q07793
-      1039  Q07793 prot_Q07793
-      1040  Q07793 prot_Q07793
-      1041  Q07793 prot_Q07793
-      1042  Q07793 prot_Q07793
-      1043  Q07793 prot_Q07793
-      1044  Q07793 prot_Q07793
-      1045  Q07793 prot_Q07793
-      1046  Q07793 prot_Q07793
-      1047  Q07793 prot_Q07793
-      1048  Q07793 prot_Q07793
-      1049  Q07793 prot_Q07793
-      1050  Q07793 prot_Q07793
-      1051  Q07793 prot_Q07793
-      1052  Q07793 prot_Q07793
-      1053  Q07793 prot_Q07793
-      1054  Q07793 prot_Q07793
-      1055  Q07793 prot_Q07793
-      1056  Q07793 prot_Q07793
-      1057  Q07793 prot_Q07793
-      1058  Q07793 prot_Q07793
-      1059  Q07793 prot_Q07793
-      1060  Q07793 prot_Q07793
-      1061  Q07793 prot_Q07793
-      1062  Q07793 prot_Q07793
-      1063  Q07793 prot_Q07793
-      1064  Q07793 prot_Q07793
-      1065  Q07793 prot_Q07793
-      1066  Q07793 prot_Q07793
-      1067  Q07793 prot_Q07793
-      1068  Q07793 prot_Q07793
-      1069  Q07793 prot_Q07793
-      1070  Q07793 prot_Q07793
-      1071  Q07793 prot_Q07793
-      1072  Q07793 prot_Q07793
-      1073  Q07793 prot_Q07793
-      1074  Q07793 prot_Q07793
-      1075  Q07793 prot_Q07793
-      1076  Q07793 prot_Q07793
-      1077  Q07793 prot_Q07793
-      1078  Q07793 prot_Q07793
-      1079  Q07793 prot_Q07793
-      1080  Q07793 prot_Q07793
-      1081  Q07793 prot_Q07793
-      1082  Q07793 prot_Q07793
-      1083  Q07793 prot_Q07793
-      1084  Q07793 prot_Q07793
-      1085  Q07793 prot_Q07793
-      1086  Q07793 prot_Q07793
-      1087  Q07793 prot_Q07793
-      1088  Q07793 prot_Q07793
-      1089  Q07793 prot_Q07793
-      1090  Q07793 prot_Q07793
-      1091  Q07793 prot_Q07793
-      1092  Q07793 prot_Q07793
-      1093  Q07793 prot_Q07793
-      1094  Q07793 prot_Q07793
-      1095  Q07793 prot_Q07793
-      1096  Q07793 prot_Q07793
-      1097  Q07793 prot_Q07793
-      1098  Q07793 prot_Q07793
-      1099  Q07793 prot_Q07793
-      1100  Q07793 prot_Q07793
-      1101  Q07793 prot_Q07793
-      1102  Q07793 prot_Q07793
-      1103  Q07793 prot_Q07793
-      1104  Q07793 prot_Q07793
-      1105  Q07793 prot_Q07793
-      1106  Q07793 prot_Q07793
-      1107  Q07793 prot_Q07793
-      1108  Q07793 prot_Q07793
-      1109  Q07793 prot_Q07793
-      1110  Q07793 prot_Q07793
-      1111  Q07793 prot_Q07793
-      1112  Q07793 prot_Q07793
-      1113  Q07793 prot_Q07793
-      1114  Q07793 prot_Q07793
-      1115  Q07793 prot_Q07793
-      1116  Q07793 prot_Q07793
-      1117  Q07793 prot_Q07793
-      1118  Q07793 prot_Q07793
-      1119  Q07793 prot_Q07793
-      1120  Q07793 prot_Q07793
-      1121  Q07793 prot_Q07793
-      1122  Q07793 prot_Q07793
-      1123  Q07793 prot_Q07793
-      1124  Q07793 prot_Q07793
-      1125  Q07793 prot_Q07793
-      1126  Q07793 prot_Q07793
-      1127  Q07793 prot_Q07793
-      1128  Q07793 prot_Q07793
-      1129  Q07793 prot_Q07793
-      1130  Q07793 prot_Q07793
-      1131  Q07793 prot_Q07793
-      1132  Q07793 prot_Q07793
-      1133  Q07793 prot_Q07793
-      1134  Q07793 prot_Q07793
-      1135  Q07793 prot_Q07793
-      1136  Q07793 prot_Q07793
-      1137  Q07793 prot_Q07793
-      1138  Q07793 prot_Q07793
-      1139  Q07793 prot_Q07793
-      1140  Q07793 prot_Q07793
-      1141  Q07793 prot_Q07793
-      1142  Q07793 prot_Q07793
-      1143  Q07793 prot_Q07793
-      1144  Q07793 prot_Q07793
-      1145  Q07793 prot_Q07793
-      1146  Q07793 prot_Q07793
-      1147  Q07793 prot_Q07793
-      1148  Q07793 prot_Q07793
-      1149  Q07793 prot_Q07793
-      1150  Q07793 prot_Q07793
-      1151  Q07793 prot_Q07793
-      1152  Q07793 prot_Q07793
-      1153  Q07793 prot_Q07793
-      1154  Q07793 prot_Q07793
-      1155  Q07793 prot_Q07793
-      1156  Q07793 prot_Q07793
-      1157  Q07793 prot_Q07793
-      1158  Q07793 prot_Q07793
-      1159  Q07793 prot_Q07793
-      1160  Q07793 prot_Q07793
-      1161  Q07793 prot_Q07793
-      1162  Q07793 prot_Q07793
-      1163  Q07793 prot_Q07793
-      1164  Q07793 prot_Q07793
-      1165  Q07793 prot_Q07793
-      1166  Q07793 prot_Q07793
-      1167  Q07793 prot_Q07793
-      1168  Q07793 prot_Q07793
-      1169  Q07793 prot_Q07793
-      1170  Q07793 prot_Q07793
-      1171  Q07793 prot_Q07793
-      1172  Q07793 prot_Q07793
-      1173  Q07793 prot_Q07793
-      1174  Q07793 prot_Q07793
-      1175  Q07793 prot_Q07793
-      1176  Q07793 prot_Q07793
-      1177  Q07793 prot_Q07793
-      1178  Q07793 prot_Q07793
-      1179  Q07793 prot_Q07793
-      1180  Q07793 prot_Q07793
-      1181  Q07793 prot_Q07793
-      1182  Q07793 prot_Q07793
-      1183  Q07793 prot_Q07793
-      1184  Q07793 prot_Q07793
-      1185  Q07793 prot_Q07793
-      1186  Q07793 prot_Q07793
-      1187  Q07793 prot_Q07793
-      1188  Q07793 prot_Q07793
-      1189  Q07793 prot_Q07793
-      1190  Q07793 prot_Q07793
-      1191  Q07793 prot_Q07793
-      1192  Q07793 prot_Q07793
-      1193  Q07793 prot_Q07793
-      1194  Q07793 prot_Q07793
-      1195  Q07793 prot_Q07793
-      1196  Q07793 prot_Q07793
-      1197  Q07793 prot_Q07793
-      1198  Q07793 prot_Q07793
-      1199  Q07793 prot_Q07793
-      1200  Q07793 prot_Q07793
-      1201  Q07793 prot_Q07793
-      1202  Q07793 prot_Q07793
-      1203  Q07793 prot_Q07793
-      1204  Q07793 prot_Q07793
-      1205  Q07793 prot_Q07793
-      1206  Q07793 prot_Q07793
-      1207  Q07793 prot_Q07793
-      1208  Q07793 prot_Q07793
-      1209  Q07793 prot_Q07793
-      1210  Q07793 prot_Q07793
-      1211  Q07793 prot_Q07793
-      1212  Q07793 prot_Q07793
-      1213  Q07793 prot_Q07793
-      1214  Q07793 prot_Q07793
-      1215  Q07793 prot_Q07793
-      1216  Q07793 prot_Q07793
-      1217  Q07793 prot_Q07793
-      1218  Q07793 prot_Q07793
+          protein     peptide
+      1    P09938 prot_P09938
+      2    P09938 prot_P09938
+      3    P09938 prot_P09938
+      4    P09938 prot_P09938
+      5    P09938 prot_P09938
+      6    P09938 prot_P09938
+      7    P09938 prot_P09938
+      8    P09938 prot_P09938
+      9    P09938 prot_P09938
+      10   P09938 prot_P09938
+      11   P09938 prot_P09938
+      12   P09938 prot_P09938
+      13   P09938 prot_P09938
+      14   P09938 prot_P09938
+      15   P09938 prot_P09938
+      16   P09938 prot_P09938
+      17   P09938 prot_P09938
+      18   P09938 prot_P09938
+      19   P09938 prot_P09938
+      20   P09938 prot_P09938
+      21   P09938 prot_P09938
+      22   P09938 prot_P09938
+      23   P09938 prot_P09938
+      24   P09938 prot_P09938
+      25   P09938 prot_P09938
+      26   P09938 prot_P09938
+      27   P09938 prot_P09938
+      28   P09938 prot_P09938
+      29   P09938 prot_P09938
+      30   P09938 prot_P09938
+      31   P09938 prot_P09938
+      32   P09938 prot_P09938
+      33   P09938 prot_P09938
+      34   P09938 prot_P09938
+      35   P09938 prot_P09938
+      36   P09938 prot_P09938
+      37   P09938 prot_P09938
+      38   P09938 prot_P09938
+      39   P09938 prot_P09938
+      40   P09938 prot_P09938
+      41   P09938 prot_P09938
+      42   P09938 prot_P09938
+      43   P09938 prot_P09938
+      44   P09938 prot_P09938
+      45   P09938 prot_P09938
+      46   P09938 prot_P09938
+      47   P09938 prot_P09938
+      48   P09938 prot_P09938
+      49   P09938 prot_P09938
+      50   P09938 prot_P09938
+      51   P09938 prot_P09938
+      52   P09938 prot_P09938
+      53   P09938 prot_P09938
+      54   P09938 prot_P09938
+      55   P09938 prot_P09938
+      56   P09938 prot_P09938
+      57   P09938 prot_P09938
+      58   P09938 prot_P09938
+      59   P09938 prot_P09938
+      60   P09938 prot_P09938
+      61   P09938 prot_P09938
+      62   P09938 prot_P09938
+      63   P09938 prot_P09938
+      64   P09938 prot_P09938
+      65   P09938 prot_P09938
+      66   P09938 prot_P09938
+      67   P09938 prot_P09938
+      68   P09938 prot_P09938
+      69   P09938 prot_P09938
+      70   P09938 prot_P09938
+      71   P09938 prot_P09938
+      72   P09938 prot_P09938
+      73   P09938 prot_P09938
+      74   P09938 prot_P09938
+      75   P09938 prot_P09938
+      76   P09938 prot_P09938
+      77   P09938 prot_P09938
+      78   P09938 prot_P09938
+      79   P09938 prot_P09938
+      80   P09938 prot_P09938
+      81   P09938 prot_P09938
+      82   P09938 prot_P09938
+      83   P09938 prot_P09938
+      84   P09938 prot_P09938
+      85   P09938 prot_P09938
+      86   P09938 prot_P09938
+      87   P09938 prot_P09938
+      88   P09938 prot_P09938
+      89   P09938 prot_P09938
+      90   P09938 prot_P09938
+      91   P09938 prot_P09938
+      92   P09938 prot_P09938
+      93   P09938 prot_P09938
+      94   P09938 prot_P09938
+      95   P09938 prot_P09938
+      96   P09938 prot_P09938
+      97   P09938 prot_P09938
+      98   P09938 prot_P09938
+      99   P09938 prot_P09938
+      100  P09938 prot_P09938
+      101  P09938 prot_P09938
+      102  P09938 prot_P09938
+      103  P09938 prot_P09938
+      104  P09938 prot_P09938
+      105  P09938 prot_P09938
+      106  P09938 prot_P09938
+      107  P09938 prot_P09938
+      108  P09938 prot_P09938
+      109  P09938 prot_P09938
+      110  P09938 prot_P09938
+      111  P09938 prot_P09938
+      112  P09938 prot_P09938
+      113  P09938 prot_P09938
+      114  P09938 prot_P09938
+      115  P09938 prot_P09938
+      116  P09938 prot_P09938
+      117  P09938 prot_P09938
+      118  P09938 prot_P09938
+      119  P09938 prot_P09938
+      120  P39708 prot_P39708
+      121  P39708 prot_P39708
+      122  P39708 prot_P39708
+      123  P39708 prot_P39708
+      124  P39708 prot_P39708
+      125  P39708 prot_P39708
+      126  P39708 prot_P39708
+      127  P39708 prot_P39708
+      128  P39708 prot_P39708
+      129  P39708 prot_P39708
+      130  P39708 prot_P39708
+      131  P39708 prot_P39708
+      132  P39708 prot_P39708
+      133  P39708 prot_P39708
+      134  P39708 prot_P39708
+      135  P39708 prot_P39708
+      136  P39708 prot_P39708
+      137  P39708 prot_P39708
+      138  P39708 prot_P39708
+      139  P39708 prot_P39708
+      140  P39708 prot_P39708
+      141  P39708 prot_P39708
+      142  P39708 prot_P39708
+      143  P39708 prot_P39708
+      144  P39708 prot_P39708
+      145  P39708 prot_P39708
+      146  P39708 prot_P39708
+      147  P39708 prot_P39708
+      148  P39708 prot_P39708
+      149  P39708 prot_P39708
+      150  P39708 prot_P39708
+      151  P39708 prot_P39708
+      152  P39708 prot_P39708
+      153  P39708 prot_P39708
+      154  P39708 prot_P39708
+      155  P39708 prot_P39708
+      156  P39708 prot_P39708
+      157  P39708 prot_P39708
+      158  P39708 prot_P39708
+      159  P39708 prot_P39708
+      160  P39708 prot_P39708
+      161  P39708 prot_P39708
+      162  P39708 prot_P39708
+      163  P39708 prot_P39708
+      164  P39708 prot_P39708
+      165  P39708 prot_P39708
+      166  P39708 prot_P39708
+      167  P39708 prot_P39708
+      168  P39708 prot_P39708
+      169  P39708 prot_P39708
+      170  P39708 prot_P39708
+      171  P39708 prot_P39708
+      172  P39708 prot_P39708
+      173  P39708 prot_P39708
+      174  P39708 prot_P39708
+      175  P39708 prot_P39708
+      176  P39708 prot_P39708
+      177  P39708 prot_P39708
+      178  P39708 prot_P39708
+      179  P39708 prot_P39708
+      180  P39708 prot_P39708
+      181  P39708 prot_P39708
+      182  P39708 prot_P39708
+      183  P39708 prot_P39708
+      184  P39708 prot_P39708
+      185  P39708 prot_P39708
+      186  P39708 prot_P39708
+      187  P39708 prot_P39708
+      188  P39708 prot_P39708
+      189  P39708 prot_P39708
+      190  P39708 prot_P39708
+      191  P39708 prot_P39708
+      192  P39708 prot_P39708
+      193  P39708 prot_P39708
+      194  P39708 prot_P39708
+      195  P39708 prot_P39708
+      196  P39708 prot_P39708
+      197  P39708 prot_P39708
+      198  P39708 prot_P39708
+      199  P39708 prot_P39708
+      200  P39708 prot_P39708
+      201  P39708 prot_P39708
+      202  P39708 prot_P39708
+      203  P39708 prot_P39708
+      204  P39708 prot_P39708
+      205  P39708 prot_P39708
+      206  P39708 prot_P39708
+      207  P39708 prot_P39708
+      208  P39708 prot_P39708
+      209  P39708 prot_P39708
+      210  P39708 prot_P39708
+      211  P39708 prot_P39708
+      212  P39708 prot_P39708
+      213  P39708 prot_P39708
+      214  P39708 prot_P39708
+      215  P39708 prot_P39708
+      216  P39708 prot_P39708
+      217  P39708 prot_P39708
+      218  P39708 prot_P39708
+      219  P39708 prot_P39708
+      220  P39708 prot_P39708
+      221  P39708 prot_P39708
+      222  P39708 prot_P39708
+      223  P39708 prot_P39708
+      224  P39708 prot_P39708
+      225  P39708 prot_P39708
+      226  P39708 prot_P39708
+      227  P39708 prot_P39708
+      228  P39708 prot_P39708
+      229  P39708 prot_P39708
+      230  P39708 prot_P39708
+      231  P39708 prot_P39708
+      232  P39708 prot_P39708
+      233  P39708 prot_P39708
+      234  P39708 prot_P39708
+      235  P39708 prot_P39708
+      236  P39708 prot_P39708
+      237  P39708 prot_P39708
+      238  P07262 prot_P07262
+      239  P07262 prot_P07262
+      240  P07262 prot_P07262
+      241  P07262 prot_P07262
+      242  P07262 prot_P07262
+      243  P07262 prot_P07262
+      244  P07262 prot_P07262
+      245  P07262 prot_P07262
+      246  P07262 prot_P07262
+      247  P07262 prot_P07262
+      248  P07262 prot_P07262
+      249  P07262 prot_P07262
+      250  P07262 prot_P07262
+      251  P07262 prot_P07262
+      252  P07262 prot_P07262
+      253  P07262 prot_P07262
+      254  P07262 prot_P07262
+      255  P07262 prot_P07262
+      256  P07262 prot_P07262
+      257  P07262 prot_P07262
+      258  P07262 prot_P07262
+      259  P07262 prot_P07262
+      260  P07262 prot_P07262
+      261  P07262 prot_P07262
+      262  P07262 prot_P07262
+      263  P07262 prot_P07262
+      264  P07262 prot_P07262
+      265  P07262 prot_P07262
+      266  P07262 prot_P07262
+      267  P07262 prot_P07262
+      268  P07262 prot_P07262
+      269  P07262 prot_P07262
+      270  P07262 prot_P07262
+      271  P07262 prot_P07262
+      272  P07262 prot_P07262
+      273  P07262 prot_P07262
+      274  P07262 prot_P07262
+      275  P07262 prot_P07262
+      276  P07262 prot_P07262
+      277  P07262 prot_P07262
+      278  P07262 prot_P07262
+      279  P07262 prot_P07262
+      280  P07262 prot_P07262
+      281  P07262 prot_P07262
+      282  P07262 prot_P07262
+      283  P07262 prot_P07262
+      284  P07262 prot_P07262
+      285  P07262 prot_P07262
+      286  P07262 prot_P07262
+      287  P07262 prot_P07262
+      288  P07262 prot_P07262
+      289  P07262 prot_P07262
+      290  P07262 prot_P07262
+      291  P07262 prot_P07262
+      292  P07262 prot_P07262
+      293  P07262 prot_P07262
+      294  P07262 prot_P07262
+      295  P07262 prot_P07262
+      296  P07262 prot_P07262
+      297  P07262 prot_P07262
+      298  P07262 prot_P07262
+      299  P07262 prot_P07262
+      300  P07262 prot_P07262
+      301  P07262 prot_P07262
+      302  P07262 prot_P07262
+      303  P07262 prot_P07262
+      304  P07262 prot_P07262
+      305  P07262 prot_P07262
+      306  P07262 prot_P07262
+      307  P07262 prot_P07262
+      308  P07262 prot_P07262
+      309  P07262 prot_P07262
+      310  P07262 prot_P07262
+      311  P07262 prot_P07262
+      312  P07262 prot_P07262
+      313  P07262 prot_P07262
+      314  P07262 prot_P07262
+      315  P07262 prot_P07262
+      316  P07262 prot_P07262
+      317  P07262 prot_P07262
+      318  P07262 prot_P07262
+      319  P07262 prot_P07262
+      320  P07262 prot_P07262
+      321  P07262 prot_P07262
+      322  P07262 prot_P07262
+      323  P07262 prot_P07262
+      324  P07262 prot_P07262
+      325  P07262 prot_P07262
+      326  P07262 prot_P07262
+      327  P07262 prot_P07262
+      328  P07262 prot_P07262
+      329  P07262 prot_P07262
+      330  P07262 prot_P07262
+      331  P07262 prot_P07262
+      332  P07262 prot_P07262
+      333  P07262 prot_P07262
+      334  P07262 prot_P07262
+      335  P07262 prot_P07262
+      336  P07262 prot_P07262
+      337  P07262 prot_P07262
+      338  P07262 prot_P07262
+      339  P07262 prot_P07262
+      340  P07262 prot_P07262
+      341  P07262 prot_P07262
+      342  P07262 prot_P07262
+      343  P07262 prot_P07262
+      344  P07262 prot_P07262
+      345  P07262 prot_P07262
+      346  P07262 prot_P07262
+      347  P07262 prot_P07262
+      348  P07262 prot_P07262
+      349  P07262 prot_P07262
+      350  P07262 prot_P07262
+      351  P07262 prot_P07262
+      352  P07262 prot_P07262
+      353  P07262 prot_P07262
+      354  P07262 prot_P07262
+      355  P07262 prot_P07262
+      356  P07262 prot_P07262
+      357  P07262 prot_P07262
+      358  P07262 prot_P07262
+      359  P40212 prot_P40212
+      360  P40212 prot_P40212
+      361  P40212 prot_P40212
+      362  P40212 prot_P40212
+      363  P40212 prot_P40212
+      364  P40212 prot_P40212
+      365  P40212 prot_P40212
+      366  P40212 prot_P40212
+      367  P40212 prot_P40212
+      368  P40212 prot_P40212
+      369  P40212 prot_P40212
+      370  P40212 prot_P40212
+      371  P40212 prot_P40212
+      372  P40212 prot_P40212
+      373  P40212 prot_P40212
+      374  P40212 prot_P40212
+      375  P40212 prot_P40212
+      376  P40212 prot_P40212
+      377  P40212 prot_P40212
+      378  P40212 prot_P40212
+      379  P40212 prot_P40212
+      380  P40212 prot_P40212
+      381  P40212 prot_P40212
+      382  P40212 prot_P40212
+      383  P40212 prot_P40212
+      384  P40212 prot_P40212
+      385  P40212 prot_P40212
+      386  P40212 prot_P40212
+      387  P40212 prot_P40212
+      388  P40212 prot_P40212
+      389  P40212 prot_P40212
+      390  P40212 prot_P40212
+      391  P40212 prot_P40212
+      392  P40212 prot_P40212
+      393  P40212 prot_P40212
+      394  P40212 prot_P40212
+      395  P40212 prot_P40212
+      396  P40212 prot_P40212
+      397  P40212 prot_P40212
+      398  P40212 prot_P40212
+      399  P40212 prot_P40212
+      400  P40212 prot_P40212
+      401  P40212 prot_P40212
+      402  P40212 prot_P40212
+      403  P40212 prot_P40212
+      404  P40212 prot_P40212
+      405  P40212 prot_P40212
+      406  P40212 prot_P40212
+      407  P40212 prot_P40212
+      408  P40212 prot_P40212
+      409  P40212 prot_P40212
+      410  P40212 prot_P40212
+      411  P40212 prot_P40212
+      412  P40212 prot_P40212
+      413  P40212 prot_P40212
+      414  P40212 prot_P40212
+      415  P40212 prot_P40212
+      416  P40212 prot_P40212
+      417  P40212 prot_P40212
+      418  P40212 prot_P40212
+      419  P40212 prot_P40212
+      420  P40212 prot_P40212
+      421  P40212 prot_P40212
+      422  P40212 prot_P40212
+      423  P40212 prot_P40212
+      424  P40212 prot_P40212
+      425  P40212 prot_P40212
+      426  P40212 prot_P40212
+      427  P40212 prot_P40212
+      428  P40212 prot_P40212
+      429  P40212 prot_P40212
+      430  P40212 prot_P40212
+      431  P40212 prot_P40212
+      432  P40212 prot_P40212
+      433  P40212 prot_P40212
+      434  P40212 prot_P40212
+      435  P40212 prot_P40212
+      436  P40212 prot_P40212
+      437  P40212 prot_P40212
+      438  Q12690 prot_Q12690
+      439  Q12690 prot_Q12690
+      440  Q12690 prot_Q12690
+      441  Q12690 prot_Q12690
+      442  Q12690 prot_Q12690
+      443  Q12690 prot_Q12690
+      444  Q12690 prot_Q12690
+      445  Q12690 prot_Q12690
+      446  Q12690 prot_Q12690
+      447  Q12690 prot_Q12690
+      448  Q12690 prot_Q12690
+      449  Q12690 prot_Q12690
+      450  Q12690 prot_Q12690
+      451  Q12690 prot_Q12690
+      452  Q12690 prot_Q12690
+      453  Q12690 prot_Q12690
+      454  Q12690 prot_Q12690
+      455  Q12690 prot_Q12690
+      456  Q12690 prot_Q12690
+      457  Q12690 prot_Q12690
+      458  Q12690 prot_Q12690
+      459  Q12690 prot_Q12690
+      460  Q12690 prot_Q12690
+      461  Q12690 prot_Q12690
+      462  Q12690 prot_Q12690
+      463  Q12690 prot_Q12690
+      464  Q12690 prot_Q12690
+      465  Q12690 prot_Q12690
+      466  Q12690 prot_Q12690
+      467  Q12690 prot_Q12690
+      468  Q12690 prot_Q12690
+      469  Q12690 prot_Q12690
+      470  Q12690 prot_Q12690
+      471  Q12690 prot_Q12690
+      472  Q12690 prot_Q12690
+      473  Q12690 prot_Q12690
+      474  Q12690 prot_Q12690
+      475  Q12690 prot_Q12690
+      476  Q12690 prot_Q12690
+      477  Q12690 prot_Q12690
+      478  Q12690 prot_Q12690
+      479  Q12690 prot_Q12690
+      480  Q12690 prot_Q12690
+      481  Q12690 prot_Q12690
+      482  Q12690 prot_Q12690
+      483  Q12690 prot_Q12690
+      484  Q12690 prot_Q12690
+      485  Q12690 prot_Q12690
+      486  Q12690 prot_Q12690
+      487  Q12690 prot_Q12690
+      488  Q12690 prot_Q12690
+      489  Q12690 prot_Q12690
+      490  Q12690 prot_Q12690
+      491  Q12690 prot_Q12690
+      492  Q12690 prot_Q12690
+      493  Q12690 prot_Q12690
+      494  Q12690 prot_Q12690
+      495  Q12690 prot_Q12690
+      496  Q12690 prot_Q12690
+      497  Q12690 prot_Q12690
+      498  Q12690 prot_Q12690
+      499  Q12690 prot_Q12690
+      500  Q12690 prot_Q12690
+      501  Q12690 prot_Q12690
+      502  Q12690 prot_Q12690
+      503  Q12690 prot_Q12690
+      504  Q12690 prot_Q12690
+      505  Q12690 prot_Q12690
+      506  Q12690 prot_Q12690
+      507  Q12690 prot_Q12690
+      508  Q12690 prot_Q12690
+      509  Q12690 prot_Q12690
+      510  Q12690 prot_Q12690
+      511  Q12690 prot_Q12690
+      512  Q12690 prot_Q12690
+      513  Q12690 prot_Q12690
+      514  Q12690 prot_Q12690
+      515  Q12690 prot_Q12690
+      516  Q12690 prot_Q12690
+      517  P00330 prot_P00330
+      518  P00330 prot_P00330
+      519  P00330 prot_P00330
+      520  P00330 prot_P00330
+      521  P00330 prot_P00330
+      522  P00330 prot_P00330
+      523  P00330 prot_P00330
+      524  P00330 prot_P00330
+      525  P00330 prot_P00330
+      526  P00330 prot_P00330
+      527  P00330 prot_P00330
+      528  P00330 prot_P00330
+      529  P00330 prot_P00330
+      530  P00330 prot_P00330
+      531  P00330 prot_P00330
+      532  P00330 prot_P00330
+      533  P00330 prot_P00330
+      534  P00330 prot_P00330
+      535  P00330 prot_P00330
+      536  P00330 prot_P00330
+      537  P00330 prot_P00330
+      538  P00330 prot_P00330
+      539  P00330 prot_P00330
+      540  P00330 prot_P00330
+      541  P00330 prot_P00330
+      542  P00330 prot_P00330
+      543  P00330 prot_P00330
+      544  P00330 prot_P00330
+      545  P00330 prot_P00330
+      546  P00330 prot_P00330
+      547  P00330 prot_P00330
+      548  P00330 prot_P00330
+      549  P00330 prot_P00330
+      550  P00330 prot_P00330
+      551  P00330 prot_P00330
+      552  P00330 prot_P00330
+      553  P00330 prot_P00330
+      554  P00330 prot_P00330
+      555  P00330 prot_P00330
+      556  P00330 prot_P00330
+      557  P00330 prot_P00330
+      558  P00330 prot_P00330
+      559  P00330 prot_P00330
+      560  P00330 prot_P00330
+      561  P00330 prot_P00330
+      562  P00330 prot_P00330
+      563  P00330 prot_P00330
+      564  P00330 prot_P00330
+      565  P00330 prot_P00330
+      566  P00330 prot_P00330
+      567  P00330 prot_P00330
+      568  P00330 prot_P00330
+      569  P00330 prot_P00330
+      570  P00330 prot_P00330
+      571  P00330 prot_P00330
+      572  P00330 prot_P00330
+      573  P00330 prot_P00330
+      574  P00330 prot_P00330
+      575  P00330 prot_P00330
+      576  P00330 prot_P00330
+      577  P00330 prot_P00330
+      578  P00330 prot_P00330
+      579  P00330 prot_P00330
+      580  P00330 prot_P00330
+      581  P00330 prot_P00330
+      582  P00330 prot_P00330
+      583  P00330 prot_P00330
+      584  P00330 prot_P00330
+      585  P00330 prot_P00330
+      586  P00330 prot_P00330
+      587  P00330 prot_P00330
+      588  P00330 prot_P00330
+      589  P00330 prot_P00330
+      590  P00330 prot_P00330
+      591  P00330 prot_P00330
+      592  P00331 prot_P00331
+      593  P00331 prot_P00331
+      594  P00331 prot_P00331
+      595  P00331 prot_P00331
+      596  P00331 prot_P00331
+      597  P00331 prot_P00331
+      598  P00331 prot_P00331
+      599  P00331 prot_P00331
+      600  P00331 prot_P00331
+      601  P00331 prot_P00331
+      602  P00331 prot_P00331
+      603  P00331 prot_P00331
+      604  P00331 prot_P00331
+      605  P00331 prot_P00331
+      606  P00331 prot_P00331
+      607  P00331 prot_P00331
+      608  P00331 prot_P00331
+      609  P00331 prot_P00331
+      610  P00331 prot_P00331
+      611  P00331 prot_P00331
+      612  P00331 prot_P00331
+      613  P00331 prot_P00331
+      614  P00331 prot_P00331
+      615  P00331 prot_P00331
+      616  P00331 prot_P00331
+      617  P00331 prot_P00331
+      618  P00331 prot_P00331
+      619  P00331 prot_P00331
+      620  P00331 prot_P00331
+      621  P00331 prot_P00331
+      622  P00331 prot_P00331
+      623  P00331 prot_P00331
+      624  P00331 prot_P00331
+      625  P00331 prot_P00331
+      626  P00331 prot_P00331
+      627  P00331 prot_P00331
+      628  P00331 prot_P00331
+      629  P00331 prot_P00331
+      630  P00331 prot_P00331
+      631  P00331 prot_P00331
+      632  P00331 prot_P00331
+      633  P00331 prot_P00331
+      634  P00331 prot_P00331
+      635  P00331 prot_P00331
+      636  P00331 prot_P00331
+      637  P00331 prot_P00331
+      638  P00331 prot_P00331
+      639  P00331 prot_P00331
+      640  P00331 prot_P00331
+      641  P00331 prot_P00331
+      642  P00331 prot_P00331
+      643  P00331 prot_P00331
+      644  P00331 prot_P00331
+      645  P00331 prot_P00331
+      646  P00331 prot_P00331
+      647  P00331 prot_P00331
+      648  P00331 prot_P00331
+      649  P00331 prot_P00331
+      650  P00331 prot_P00331
+      651  P00331 prot_P00331
+      652  P00331 prot_P00331
+      653  P00331 prot_P00331
+      654  P00331 prot_P00331
+      655  P00331 prot_P00331
+      656  P00331 prot_P00331
+      657  P00331 prot_P00331
+      658  P00331 prot_P00331
+      659  P00331 prot_P00331
+      660  P00331 prot_P00331
+      661  P00331 prot_P00331
+      662  P00331 prot_P00331
+      663  P00331 prot_P00331
+      664  P07246 prot_P07246
+      665  P07246 prot_P07246
+      666  P07246 prot_P07246
+      667  P07246 prot_P07246
+      668  P07246 prot_P07246
+      669  P07246 prot_P07246
+      670  P07246 prot_P07246
+      671  P07246 prot_P07246
+      672  P07246 prot_P07246
+      673  P07246 prot_P07246
+      674  P07246 prot_P07246
+      675  P07246 prot_P07246
+      676  P07246 prot_P07246
+      677  P07246 prot_P07246
+      678  P07246 prot_P07246
+      679  P07246 prot_P07246
+      680  P07246 prot_P07246
+      681  P07246 prot_P07246
+      682  P07246 prot_P07246
+      683  P07246 prot_P07246
+      684  P07246 prot_P07246
+      685  P07246 prot_P07246
+      686  P07246 prot_P07246
+      687  P07246 prot_P07246
+      688  P07246 prot_P07246
+      689  P07246 prot_P07246
+      690  P07246 prot_P07246
+      691  P07246 prot_P07246
+      692  P07246 prot_P07246
+      693  P07246 prot_P07246
+      694  P07246 prot_P07246
+      695  P07246 prot_P07246
+      696  P07246 prot_P07246
+      697  P07246 prot_P07246
+      698  P07246 prot_P07246
+      699  P07246 prot_P07246
+      700  P07246 prot_P07246
+      701  P07246 prot_P07246
+      702  P07246 prot_P07246
+      703  P07246 prot_P07246
+      704  P07246 prot_P07246
+      705  P07246 prot_P07246
+      706  P07246 prot_P07246
+      707  P07246 prot_P07246
+      708  P07246 prot_P07246
+      709  P07246 prot_P07246
+      710  P07246 prot_P07246
+      711  P07246 prot_P07246
+      712  P07246 prot_P07246
+      713  P07246 prot_P07246
+      714  P07246 prot_P07246
+      715  P07246 prot_P07246
+      716  P07246 prot_P07246
+      717  P07246 prot_P07246
+      718  P07246 prot_P07246
+      719  P07246 prot_P07246
+      720  P07246 prot_P07246
+      721  P07246 prot_P07246
+      722  P07246 prot_P07246
+      723  P07246 prot_P07246
+      724  P07246 prot_P07246
+      725  P07246 prot_P07246
+      726  P07246 prot_P07246
+      727  P07246 prot_P07246
+      728  P07246 prot_P07246
+      729  P07246 prot_P07246
+      730  P07246 prot_P07246
+      731  P07246 prot_P07246
+      732  P07246 prot_P07246
+      733  P07246 prot_P07246
+      734  P07246 prot_P07246
+      735  P07246 prot_P07246
+      736  P07246 prot_P07246
+      737  P07246 prot_P07246
+      738  P07246 prot_P07246
+      739  P07246 prot_P07246
+      740  P07246 prot_P07246
+      741  P07246 prot_P07246
+      742  P07246 prot_P07246
+      743  P07246 prot_P07246
+      744  P07246 prot_P07246
+      745  P07246 prot_P07246
+      746  P07246 prot_P07246
+      747  P07246 prot_P07246
+      748  P07246 prot_P07246
+      749  P07246 prot_P07246
+      750  P07246 prot_P07246
+      751  P07246 prot_P07246
+      752  P07246 prot_P07246
+      753  P07246 prot_P07246
+      754  P07246 prot_P07246
+      755  P38113 prot_P38113
+      756  P38113 prot_P38113
+      757  P38113 prot_P38113
+      758  P38113 prot_P38113
+      759  P38113 prot_P38113
+      760  P38113 prot_P38113
+      761  P38113 prot_P38113
+      762  P38113 prot_P38113
+      763  P38113 prot_P38113
+      764  P38113 prot_P38113
+      765  P38113 prot_P38113
+      766  P38113 prot_P38113
+      767  P38113 prot_P38113
+      768  P38113 prot_P38113
+      769  P38113 prot_P38113
+      770  P38113 prot_P38113
+      771  P38113 prot_P38113
+      772  P38113 prot_P38113
+      773  P38113 prot_P38113
+      774  P38113 prot_P38113
+      775  P38113 prot_P38113
+      776  P38113 prot_P38113
+      777  P38113 prot_P38113
+      778  P38113 prot_P38113
+      779  P38113 prot_P38113
+      780  P38113 prot_P38113
+      781  P38113 prot_P38113
+      782  P38113 prot_P38113
+      783  P38113 prot_P38113
+      784  P38113 prot_P38113
+      785  P38113 prot_P38113
+      786  P38113 prot_P38113
+      787  P38113 prot_P38113
+      788  P38113 prot_P38113
+      789  P38113 prot_P38113
+      790  P38113 prot_P38113
+      791  P38113 prot_P38113
+      792  P38113 prot_P38113
+      793  P38113 prot_P38113
+      794  P38113 prot_P38113
+      795  P38113 prot_P38113
+      796  P38113 prot_P38113
+      797  P38113 prot_P38113
+      798  P38113 prot_P38113
+      799  P38113 prot_P38113
+      800  P38113 prot_P38113
+      801  P38113 prot_P38113
+      802  P38113 prot_P38113
+      803  P38113 prot_P38113
+      804  P38113 prot_P38113
+      805  P38113 prot_P38113
+      806  P38113 prot_P38113
+      807  P38113 prot_P38113
+      808  P38113 prot_P38113
+      809  P38113 prot_P38113
+      810  P38113 prot_P38113
+      811  P38113 prot_P38113
+      812  P38113 prot_P38113
+      813  P38113 prot_P38113
+      814  P38113 prot_P38113
+      815  P38113 prot_P38113
+      816  P38113 prot_P38113
+      817  P38113 prot_P38113
+      818  P38113 prot_P38113
+      819  P38113 prot_P38113
       
 
 # test generateQuantGraphs
@@ -5658,8 +3935,30 @@
     Code
       igraph::as_edgelist(graphs[[i]][[j]])
     Output
-           [,1]            [,2]                
-      [1,] "prot_4;prot_5" "pep_8;pep_9;pep_10"
+           [,1]                  
+      [1,] "sp|P09938|RIR2_YEAST"
+           [,2]                                                                                                                                                                                   
+      [1,] "TVLFPIK;ESEFLFNAIHTIPEIGEK;AEWALR;WIQDADALFGER;GMMPGLTFSNELICR;DEGLHTDFACLLFAHLK;NKPDPAIVEK;IVTEAVEIEQR;YFLDALPVALLGMNADLMNQYVEFVADR;LLVAFGNK;VENPFDFMENISLAGK;TNFFEK;AAADALSDLEIKDSK"
+
+---
+
+    Code
+      igraph::as_edgelist(graphs2[[i]][[j]])
+    Output
+            [,1]                   [,2]                          
+       [1,] "sp|P09938|RIR2_YEAST" "AAADALSDLEIKDSK"             
+       [2,] "sp|P09938|RIR2_YEAST" "AEWALR"                      
+       [3,] "sp|P09938|RIR2_YEAST" "DEGLHTDFACLLFAHLK"           
+       [4,] "sp|P09938|RIR2_YEAST" "ESEFLFNAIHTIPEIGEK"          
+       [5,] "sp|P09938|RIR2_YEAST" "GMMPGLTFSNELICR"             
+       [6,] "sp|P09938|RIR2_YEAST" "IVTEAVEIEQR"                 
+       [7,] "sp|P09938|RIR2_YEAST" "LLVAFGNK"                    
+       [8,] "sp|P09938|RIR2_YEAST" "NKPDPAIVEK"                  
+       [9,] "sp|P09938|RIR2_YEAST" "TNFFEK"                      
+      [10,] "sp|P09938|RIR2_YEAST" "TVLFPIK"                     
+      [11,] "sp|P09938|RIR2_YEAST" "VENPFDFMENISLAGK"            
+      [12,] "sp|P09938|RIR2_YEAST" "WIQDADALFGER"                
+      [13,] "sp|P09938|RIR2_YEAST" "YFLDALPVALLGMNADLMNQYVEFVADR"
 
 ---
 
@@ -5667,10 +3966,12 @@
       igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
     Output
       [[1]]
-      [1] NA NA
+      [1] NA
       
       [[2]]
-      [1] 1.086 1.054 1.029
+       [1] -0.292972966  0.004433508  0.191232468 -0.120386866 -0.142445006
+       [6]  0.472667622  0.143179424 -0.038385777 -0.304781677 -0.740978072
+      [11] -0.071004193 -0.271822442  0.943370788
       
 
 ---
@@ -5678,25 +3979,47 @@
     Code
       igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
     Output
-      [1]    NA 1.029 1.086 1.054
-
----
-
-    Code
-      igraph::vertex_attr(graphs3[[i]][[j]], "protOrigin")
-    Output
-      [1] "origin_1;origin_2" NA                  NA                 
-      [4] NA                 
+       [1]           NA  0.943370788  0.191232468  0.472667622  0.004433508
+       [6] -0.142445006 -0.038385777 -0.740978072  0.143179424 -0.271822442
+      [11] -0.292972966 -0.071004193 -0.120386866 -0.304781677
 
 ---
 
     Code
       igraph::as_edgelist(graphs[[i]][[j]])
     Output
-           [,1]     [,2]         
-      [1,] "prot_1" "pep_1;pep_2"
-      [2,] "prot_1" "pep_3;pep_4"
-      [3,] "prot_2" "pep_3;pep_4"
+           [,1]                   
+      [1,] "sp|P40212|RL13B_YEAST"
+      [2,] "sp|P40212|RL13B_YEAST"
+      [3,] "sp|Q12690|RL13A_YEAST"
+           [,2]                                                                                                    
+      [1,] "DGKAPEAEQVLSAAATFPIAQPATDVEAR"                                                                         
+      [2,] "IAPRPLDLLRPVVR;GFTLAEVK;AAGLTAAYAR;TIGIAVDHR;NQEIFDANVQR;IIVFPR;APEAEQVLSAAATFPIAQPATDVEAR;AVQDNGESAFR"
+      [3,] "IAPRPLDLLRPVVR;GFTLAEVK;AAGLTAAYAR;TIGIAVDHR;NQEIFDANVQR;IIVFPR;APEAEQVLSAAATFPIAQPATDVEAR;AVQDNGESAFR"
+
+---
+
+    Code
+      igraph::as_edgelist(graphs2[[i]][[j]])
+    Output
+            [,1]                    [,2]                           
+       [1,] "sp|P40212|RL13B_YEAST" "AAGLTAAYAR"                   
+       [2,] "sp|Q12690|RL13A_YEAST" "AAGLTAAYAR"                   
+       [3,] "sp|P40212|RL13B_YEAST" "APEAEQVLSAAATFPIAQPATDVEAR"   
+       [4,] "sp|Q12690|RL13A_YEAST" "APEAEQVLSAAATFPIAQPATDVEAR"   
+       [5,] "sp|P40212|RL13B_YEAST" "AVQDNGESAFR"                  
+       [6,] "sp|Q12690|RL13A_YEAST" "AVQDNGESAFR"                  
+       [7,] "sp|P40212|RL13B_YEAST" "DGKAPEAEQVLSAAATFPIAQPATDVEAR"
+       [8,] "sp|P40212|RL13B_YEAST" "GFTLAEVK"                     
+       [9,] "sp|Q12690|RL13A_YEAST" "GFTLAEVK"                     
+      [10,] "sp|P40212|RL13B_YEAST" "IAPRPLDLLRPVVR"               
+      [11,] "sp|Q12690|RL13A_YEAST" "IAPRPLDLLRPVVR"               
+      [12,] "sp|P40212|RL13B_YEAST" "IIVFPR"                       
+      [13,] "sp|Q12690|RL13A_YEAST" "IIVFPR"                       
+      [14,] "sp|P40212|RL13B_YEAST" "NQEIFDANVQR"                  
+      [15,] "sp|Q12690|RL13A_YEAST" "NQEIFDANVQR"                  
+      [16,] "sp|P40212|RL13B_YEAST" "TIGIAVDHR"                    
+      [17,] "sp|Q12690|RL13A_YEAST" "TIGIAVDHR"                    
 
 ---
 
@@ -5710,10 +4033,11 @@
       [1] NA
       
       [[3]]
-      [1] 0.993 0.942
+      [1] 0.5629332
       
       [[4]]
-      [1] 1.06 1.03
+      [1]  0.58930705  0.14363756  0.01310672 -0.39739349 -0.13466150 -0.77585684
+      [7] -0.39589269  0.25240396
       
 
 ---
@@ -5721,22 +4045,55 @@
     Code
       igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
     Output
-      [1]    NA    NA 0.993 0.942 1.060 1.030
-
----
-
-    Code
-      igraph::vertex_attr(graphs3[[i]][[j]], "protOrigin")
-    Output
-      [1] "origin_1" "origin_1" NA         NA         NA         NA        
+       [1]          NA          NA  0.01310672 -0.39589269  0.25240396  0.56293324
+       [7]  0.14363756  0.58930705 -0.77585684 -0.13466150 -0.39739349
 
 ---
 
     Code
       igraph::as_edgelist(graphs[[i]][[j]])
     Output
-           [,1]     [,2]   
-      [1,] "prot_3" "pep_5"
+           [,1]                  
+      [1,] "sp|P07262|DHE4_YEAST"
+      [2,] "sp|P39708|DHE5_YEAST"
+      [3,] "sp|P07262|DHE4_YEAST"
+      [4,] "sp|P39708|DHE5_YEAST"
+           [,2]                                                                                                                                                                                                                                                  
+      [1,] "HIGQDTDVPAGDIGVGGR;VIELGGTVVSLSDSK;GCIISETGITSEQVADISSAK;SLEQIVNEYSTFSENK;VDIALPCATQNEVSGEEAK;ALVAQGVK;FIAEGSNMGSTPEAIAVFETAR;STATGPSEAVWYGPPK;AANLGGVAVSGLEMAQNSQR;ITWTSER;IMINCFNECIDYAK;GANIASFIK;VTWENDKGEQEVAQGYR;SEPEFQQAYEEVVSSLEDSTLFEQHPEYR"
+      [2,] "VLPIVSVPER;FLGFEQIFK;ICYAFMR"                                                                                                                                                                                                                        
+      [3,] "VLPIVSVPER;FLGFEQIFK;ICYAFMR"                                                                                                                                                                                                                        
+      [4,] "GCIISETGITSEQIHDIASAK;SLEEIVDEYSTFSESK;AANLGGVAVSGLEMAQNSQK;GANIASFVMVADAMLDQGDVF"                                                                                                                                                                   
+
+---
+
+    Code
+      igraph::as_edgelist(graphs2[[i]][[j]])
+    Output
+            [,1]                   [,2]                           
+       [1,] "sp|P39708|DHE5_YEAST" "AANLGGVAVSGLEMAQNSQK"         
+       [2,] "sp|P07262|DHE4_YEAST" "AANLGGVAVSGLEMAQNSQR"         
+       [3,] "sp|P07262|DHE4_YEAST" "ALVAQGVK"                     
+       [4,] "sp|P07262|DHE4_YEAST" "FIAEGSNMGSTPEAIAVFETAR"       
+       [5,] "sp|P39708|DHE5_YEAST" "FLGFEQIFK"                    
+       [6,] "sp|P07262|DHE4_YEAST" "FLGFEQIFK"                    
+       [7,] "sp|P07262|DHE4_YEAST" "GANIASFIK"                    
+       [8,] "sp|P39708|DHE5_YEAST" "GANIASFVMVADAMLDQGDVF"        
+       [9,] "sp|P39708|DHE5_YEAST" "GCIISETGITSEQIHDIASAK"        
+      [10,] "sp|P07262|DHE4_YEAST" "GCIISETGITSEQVADISSAK"        
+      [11,] "sp|P07262|DHE4_YEAST" "HIGQDTDVPAGDIGVGGR"           
+      [12,] "sp|P39708|DHE5_YEAST" "ICYAFMR"                      
+      [13,] "sp|P07262|DHE4_YEAST" "ICYAFMR"                      
+      [14,] "sp|P07262|DHE4_YEAST" "IMINCFNECIDYAK"               
+      [15,] "sp|P07262|DHE4_YEAST" "ITWTSER"                      
+      [16,] "sp|P07262|DHE4_YEAST" "SEPEFQQAYEEVVSSLEDSTLFEQHPEYR"
+      [17,] "sp|P39708|DHE5_YEAST" "SLEEIVDEYSTFSESK"             
+      [18,] "sp|P07262|DHE4_YEAST" "SLEQIVNEYSTFSENK"             
+      [19,] "sp|P07262|DHE4_YEAST" "STATGPSEAVWYGPPK"             
+      [20,] "sp|P07262|DHE4_YEAST" "VDIALPCATQNEVSGEEAK"          
+      [21,] "sp|P07262|DHE4_YEAST" "VIELGGTVVSLSDSK"              
+      [22,] "sp|P39708|DHE5_YEAST" "VLPIVSVPER"                   
+      [23,] "sp|P07262|DHE4_YEAST" "VLPIVSVPER"                   
+      [24,] "sp|P07262|DHE4_YEAST" "VTWENDKGEQEVAQGYR"            
 
 ---
 
@@ -5745,55 +4102,20 @@
     Output
       [[1]]
       [1] NA
-      
-      [[2]]
-      [1] 0.964
-      
-
----
-
-    Code
-      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
-    Output
-      [1]    NA 0.964
-
----
-
-    Code
-      igraph::vertex_attr(graphs3[[i]][[j]], "protOrigin")
-    Output
-      [1] "origin_1" NA        
-
----
-
-    Code
-      igraph::as_edgelist(graphs[[i]][[j]])
-    Output
-           [,1]            [,2]                
-      [1,] "prot_4;prot_5" "pep_7"             
-      [2,] "prot_4;prot_5" "pep_8;pep_9;pep_10"
-      [3,] "prot_3"        "pep_6"             
-      [4,] "prot_3"        "pep_7"             
-
----
-
-    Code
-      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
-    Output
-      [[1]]
-      [1] NA NA
       
       [[2]]
       [1] NA
       
       [[3]]
-      [1] 1.086
+       [1]  0.10725480 -0.14617022 -0.38242964 -0.35835021  0.02413128  0.22823265
+       [7]  0.19351556 -0.03781759 -0.18372016 -0.62000099 -0.07475155  0.14529889
+      [13]  0.26913684  0.16728127
       
       [[4]]
-      [1] 0.9
+      [1] -0.1819461  0.1936064  0.3761326
       
       [[5]]
-      [1] 0.953 0.955 1.004
+      [1] -0.02547337  0.03992551  0.34626744  0.50831614
       
 
 ---
@@ -5801,26 +4123,73 @@
     Code
       igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
     Output
-      [1]    NA    NA 1.004 1.086 0.900 0.953 0.955
-
----
-
-    Code
-      igraph::vertex_attr(graphs3[[i]][[j]], "protOrigin")
-    Output
-      [1] "origin_1;origin_2" "origin_1"          NA                 
-      [4] NA                  NA                  NA                 
-      [7] NA                 
+       [1]          NA          NA  0.34626744 -0.18372016  0.22823265  0.19351556
+       [7]  0.19360642  0.14529889  0.50831614 -0.02547337 -0.38242964  0.10725480
+      [13]  0.37613263 -0.07475155 -0.62000099  0.16728127  0.03992551 -0.35835021
+      [19] -0.03781759  0.02413128 -0.14617022 -0.18194613  0.26913684
 
 ---
 
     Code
       igraph::as_edgelist(graphs[[i]][[j]])
     Output
-           [,1]     [,2]         
-      [1,] "prot_1" "pep_1"      
-      [2,] "prot_1" "pep_3;pep_4"
-      [3,] "prot_2" "pep_3;pep_4"
+            [,1]                  
+       [1,] "sp|P00330|ADH1_YEAST"
+       [2,] "sp|P00330|ADH1_YEAST"
+       [3,] "sp|P00331|ADH2_YEAST"
+       [4,] "sp|P00330|ADH1_YEAST"
+       [5,] "sp|P00331|ADH2_YEAST"
+       [6,] "sp|P38113|ADH5_YEAST"
+       [7,] "sp|P00330|ADH1_YEAST"
+       [8,] "sp|P07246|ADH3_YEAST"
+       [9,] "sp|P00331|ADH2_YEAST"
+      [10,] "sp|P07246|ADH3_YEAST"
+            [,2]                                                                                                                                          
+       [1,] "GVIFYESHGK;ANELLINVK;SANLMAGHWVAISGAAGGLGSLAVQYAK;SIGGEVFIDFTK;ATDGGAHGVINVSVSEAAIEASTR;CCSDVFNQVVK;VVGLSTLPEIYEK;VLGIDGGEGKEELFR;EKDIVGAVLK"
+       [2,] "LPLVGGHEGAGVVVGMGENVK;IGDYAGIK;SISIVGSYVGNR;SIPETQK"                                                                                         
+       [3,] "LPLVGGHEGAGVVVGMGENVK;IGDYAGIK;SISIVGSYVGNR;SIPETQK"                                                                                         
+       [4,] "EALDFFAR"                                                                                                                                    
+       [5,] "EALDFFAR"                                                                                                                                    
+       [6,] "EALDFFAR"                                                                                                                                    
+       [7,] "YSGVCHTDLHAWHGDWPLPVK"                                                                                                                       
+       [8,] "YSGVCHTDLHAWHGDWPLPVK"                                                                                                                       
+       [9,] "ANGTVVLVGLPAGAK;VVGLSSLPEIYEK"                                                                                                               
+      [10,] "DIPVPEPKPNEILINVK;IQQGTDLAEVAPILCAGVTVYK;EALDFFSR;IVGLSELPK"                                                                                 
+
+---
+
+    Code
+      igraph::as_edgelist(graphs2[[i]][[j]])
+    Output
+            [,1]                   [,2]                          
+       [1,] "sp|P00330|ADH1_YEAST" "ANELLINVK"                   
+       [2,] "sp|P00331|ADH2_YEAST" "ANGTVVLVGLPAGAK"             
+       [3,] "sp|P00330|ADH1_YEAST" "ATDGGAHGVINVSVSEAAIEASTR"    
+       [4,] "sp|P00330|ADH1_YEAST" "CCSDVFNQVVK"                 
+       [5,] "sp|P07246|ADH3_YEAST" "DIPVPEPKPNEILINVK"           
+       [6,] "sp|P00330|ADH1_YEAST" "EALDFFAR"                    
+       [7,] "sp|P00331|ADH2_YEAST" "EALDFFAR"                    
+       [8,] "sp|P38113|ADH5_YEAST" "EALDFFAR"                    
+       [9,] "sp|P07246|ADH3_YEAST" "EALDFFSR"                    
+      [10,] "sp|P00330|ADH1_YEAST" "EKDIVGAVLK"                  
+      [11,] "sp|P00330|ADH1_YEAST" "GVIFYESHGK"                  
+      [12,] "sp|P00330|ADH1_YEAST" "IGDYAGIK"                    
+      [13,] "sp|P00331|ADH2_YEAST" "IGDYAGIK"                    
+      [14,] "sp|P07246|ADH3_YEAST" "IQQGTDLAEVAPILCAGVTVYK"      
+      [15,] "sp|P07246|ADH3_YEAST" "IVGLSELPK"                   
+      [16,] "sp|P00330|ADH1_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
+      [17,] "sp|P00331|ADH2_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
+      [18,] "sp|P00330|ADH1_YEAST" "SANLMAGHWVAISGAAGGLGSLAVQYAK"
+      [19,] "sp|P00330|ADH1_YEAST" "SIGGEVFIDFTK"                
+      [20,] "sp|P00330|ADH1_YEAST" "SIPETQK"                     
+      [21,] "sp|P00331|ADH2_YEAST" "SIPETQK"                     
+      [22,] "sp|P00330|ADH1_YEAST" "SISIVGSYVGNR"                
+      [23,] "sp|P00331|ADH2_YEAST" "SISIVGSYVGNR"                
+      [24,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGKEELFR"             
+      [25,] "sp|P00331|ADH2_YEAST" "VVGLSSLPEIYEK"               
+      [26,] "sp|P00330|ADH1_YEAST" "VVGLSTLPEIYEK"               
+      [27,] "sp|P00330|ADH1_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
+      [28,] "sp|P07246|ADH3_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
 
 ---
 
@@ -5834,98 +4203,29 @@
       [1] NA
       
       [[3]]
-      [1] 0.991
-      
-      [[4]]
-      [1] 0.986 1.009
-      
-
----
-
-    Code
-      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
-    Output
-      [1]    NA    NA 0.991 0.986 1.009
-
----
-
-    Code
-      igraph::vertex_attr(graphs3[[i]][[j]], "protOrigin")
-    Output
-      [1] "origin_1" "origin_1" NA         NA         NA        
-
----
-
-    Code
-      igraph::as_edgelist(graphs[[i]][[j]])
-    Output
-           [,1]     [,2]         
-      [1,] "prot_1" "pep_1;pep_2"
-      [2,] "prot_1" "pep_3;pep_4"
-      [3,] "prot_2" "pep_3;pep_4"
-
----
-
-    Code
-      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
-    Output
-      [[1]]
       [1] NA
       
-      [[2]]
-      [1] NA
-      
-      [[3]]
-      [1] 0.945 0.982
-      
       [[4]]
-      [1] 1.023 0.943
-      
-
----
-
-    Code
-      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
-    Output
-      [1]    NA    NA 0.945 0.982 1.023 0.943
-
----
-
-    Code
-      igraph::vertex_attr(graphs3[[i]][[j]], "protOrigin")
-    Output
-      [1] "origin_1" "origin_1" NA         NA         NA         NA        
-
----
-
-    Code
-      igraph::as_edgelist(graphs[[i]][[j]])
-    Output
-           [,1]            [,2]         
-      [1,] "prot_3"        "pep_5"      
-      [2,] "prot_3"        "pep_7"      
-      [3,] "prot_4;prot_5" "pep_7"      
-      [4,] "prot_4;prot_5" "pep_8;pep_9"
-
----
-
-    Code
-      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
-    Output
-      [[1]]
       [1] NA
-      
-      [[2]]
-      [1] NA NA
-      
-      [[3]]
-      [1] 1.033
-      
-      [[4]]
-      [1] 0.92
       
       [[5]]
-      [1] 1.022 1.006
+      [1]  0.21528327 -0.09207158  0.02842311  0.13955118 -0.63067487  0.18148766
+      [7] -0.03688890  0.22186380 -0.26770691
+      
+      [[6]]
+      [1] -0.21849430 -0.06713498 -0.06334095  0.54525818
+      
+      [[7]]
+      [1] 0.02230337
+      
+      [[8]]
+      [1] 0.02734742
+      
+      [[9]]
+      [1]  0.1387510 -0.1020253
+      
+      [[10]]
+      [1] 0.10840358 0.10267535 0.08038862 0.20393169
       
 
 ---
@@ -5933,22 +4233,823 @@
     Code
       igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
     Output
-      [1]    NA    NA 1.033 0.920 1.022 1.006
+       [1]          NA          NA          NA          NA -0.09207158  0.13875096
+       [7] -0.63067487  0.18148766  0.10840358  0.02230337  0.08038862 -0.26770691
+      [13]  0.21528327 -0.06713498  0.10267535  0.20393169 -0.21849430  0.02842311
+      [19]  0.13955118  0.54525818 -0.06334095  0.22186380 -0.10202526 -0.03688890
+      [25]  0.02734742
 
 ---
 
     Code
-      igraph::vertex_attr(graphs3[[i]][[j]], "protOrigin")
+      igraph::as_edgelist(graphs[[i]][[j]])
     Output
-      [1] "origin_1"          "origin_1;origin_2" NA                 
-      [4] NA                  NA                  NA                 
+           [,1]                  
+      [1,] "sp|P09938|RIR2_YEAST"
+           [,2]                                                                                                                                                                                   
+      [1,] "TVLFPIK;ESEFLFNAIHTIPEIGEK;AEWALR;WIQDADALFGER;GMMPGLTFSNELICR;DEGLHTDFACLLFAHLK;NKPDPAIVEK;IVTEAVEIEQR;YFLDALPVALLGMNADLMNQYVEFVADR;LLVAFGNK;VENPFDFMENISLAGK;TNFFEK;AAADALSDLEIKDSK"
+
+---
+
+    Code
+      igraph::as_edgelist(graphs2[[i]][[j]])
+    Output
+            [,1]                   [,2]                          
+       [1,] "sp|P09938|RIR2_YEAST" "AAADALSDLEIKDSK"             
+       [2,] "sp|P09938|RIR2_YEAST" "AEWALR"                      
+       [3,] "sp|P09938|RIR2_YEAST" "DEGLHTDFACLLFAHLK"           
+       [4,] "sp|P09938|RIR2_YEAST" "ESEFLFNAIHTIPEIGEK"          
+       [5,] "sp|P09938|RIR2_YEAST" "GMMPGLTFSNELICR"             
+       [6,] "sp|P09938|RIR2_YEAST" "IVTEAVEIEQR"                 
+       [7,] "sp|P09938|RIR2_YEAST" "LLVAFGNK"                    
+       [8,] "sp|P09938|RIR2_YEAST" "NKPDPAIVEK"                  
+       [9,] "sp|P09938|RIR2_YEAST" "TNFFEK"                      
+      [10,] "sp|P09938|RIR2_YEAST" "TVLFPIK"                     
+      [11,] "sp|P09938|RIR2_YEAST" "VENPFDFMENISLAGK"            
+      [12,] "sp|P09938|RIR2_YEAST" "WIQDADALFGER"                
+      [13,] "sp|P09938|RIR2_YEAST" "YFLDALPVALLGMNADLMNQYVEFVADR"
+
+---
+
+    Code
+      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
+    Output
+      [[1]]
+      [1] NA
+      
+      [[2]]
+       [1] -0.042021813 -0.079402775  0.115912872 -0.037279447 -0.063980969
+       [6]  0.838710739  0.008827146  0.126756542 -0.165702541  0.007702199
+      [11] -0.164871801  0.054578421  0.111697052
+      
+
+---
+
+    Code
+      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
+    Output
+       [1]           NA  0.111697052  0.115912872  0.838710739 -0.079402775
+       [6] -0.063980969  0.126756542  0.007702199  0.008827146  0.054578421
+      [11] -0.042021813 -0.164871801 -0.037279447 -0.165702541
+
+---
+
+    Code
+      igraph::as_edgelist(graphs[[i]][[j]])
+    Output
+           [,1]                   
+      [1,] "sp|P40212|RL13B_YEAST"
+      [2,] "sp|P40212|RL13B_YEAST"
+      [3,] "sp|Q12690|RL13A_YEAST"
+           [,2]                                                                                                             
+      [1,] "DGKAPEAEQVLSAAATFPIAQPATDVEAR"                                                                                  
+      [2,] "VHFDQAGK;IAPRPLDLLRPVVR;GFTLAEVK;AAGLTAAYAR;TIGIAVDHR;NQEIFDANVQR;IIVFPR;APEAEQVLSAAATFPIAQPATDVEAR;AVQDNGESAFR"
+      [3,] "VHFDQAGK;IAPRPLDLLRPVVR;GFTLAEVK;AAGLTAAYAR;TIGIAVDHR;NQEIFDANVQR;IIVFPR;APEAEQVLSAAATFPIAQPATDVEAR;AVQDNGESAFR"
+
+---
+
+    Code
+      igraph::as_edgelist(graphs2[[i]][[j]])
+    Output
+            [,1]                    [,2]                           
+       [1,] "sp|P40212|RL13B_YEAST" "AAGLTAAYAR"                   
+       [2,] "sp|Q12690|RL13A_YEAST" "AAGLTAAYAR"                   
+       [3,] "sp|P40212|RL13B_YEAST" "APEAEQVLSAAATFPIAQPATDVEAR"   
+       [4,] "sp|Q12690|RL13A_YEAST" "APEAEQVLSAAATFPIAQPATDVEAR"   
+       [5,] "sp|P40212|RL13B_YEAST" "AVQDNGESAFR"                  
+       [6,] "sp|Q12690|RL13A_YEAST" "AVQDNGESAFR"                  
+       [7,] "sp|P40212|RL13B_YEAST" "DGKAPEAEQVLSAAATFPIAQPATDVEAR"
+       [8,] "sp|P40212|RL13B_YEAST" "GFTLAEVK"                     
+       [9,] "sp|Q12690|RL13A_YEAST" "GFTLAEVK"                     
+      [10,] "sp|P40212|RL13B_YEAST" "IAPRPLDLLRPVVR"               
+      [11,] "sp|Q12690|RL13A_YEAST" "IAPRPLDLLRPVVR"               
+      [12,] "sp|P40212|RL13B_YEAST" "IIVFPR"                       
+      [13,] "sp|Q12690|RL13A_YEAST" "IIVFPR"                       
+      [14,] "sp|P40212|RL13B_YEAST" "NQEIFDANVQR"                  
+      [15,] "sp|Q12690|RL13A_YEAST" "NQEIFDANVQR"                  
+      [16,] "sp|P40212|RL13B_YEAST" "TIGIAVDHR"                    
+      [17,] "sp|Q12690|RL13A_YEAST" "TIGIAVDHR"                    
+      [18,] "sp|P40212|RL13B_YEAST" "VHFDQAGK"                     
+      [19,] "sp|Q12690|RL13A_YEAST" "VHFDQAGK"                     
+
+---
+
+    Code
+      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
+    Output
+      [[1]]
+      [1] NA
+      
+      [[2]]
+      [1] NA
+      
+      [[3]]
+      [1] -0.3571344
+      
+      [[4]]
+      [1]  0.14782409 -0.11155284 -0.01198712  0.14834775  0.06050205  0.00222587
+      [7]  0.14990035  0.08832752  0.09826568
+      
+
+---
+
+    Code
+      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
+    Output
+       [1]          NA          NA  0.14834775  0.08832752  0.09826568 -0.35713437
+       [7] -0.01198712 -0.11155284  0.14990035  0.00222587  0.06050205  0.14782409
+
+---
+
+    Code
+      igraph::as_edgelist(graphs[[i]][[j]])
+    Output
+           [,1]                  
+      [1,] "sp|P07262|DHE4_YEAST"
+      [2,] "sp|P39708|DHE5_YEAST"
+      [3,] "sp|P07262|DHE4_YEAST"
+      [4,] "sp|P39708|DHE5_YEAST"
+           [,2]                                                                                                                                                                                                                                        
+      [1,] "HIGQDTDVPAGDIGVGGR;VIELGGTVVSLSDSK;GCIISETGITSEQVADISSAK;SLEQIVNEYSTFSENK;VDIALPCATQNEVSGEEAK;ALVAQGVK;FIAEGSNMGSTPEAIAVFETAR;STATGPSEAVWYGPPK;AANLGGVAVSGLEMAQNSQR;ITWTSER;IMINCFNECIDYAK;VTWENDKGEQEVAQGYR;SEPEFQQAYEEVVSSLEDSTLFEQHPEYR"
+      [2,] "VLPIVSVPER;FLGFEQIFK;ICYAFMR;NSWEGVLTGK;VTISGSGNVAQYAALK"                                                                                                                                                                                  
+      [3,] "VLPIVSVPER;FLGFEQIFK;ICYAFMR;NSWEGVLTGK;VTISGSGNVAQYAALK"                                                                                                                                                                                  
+      [4,] "GCIISETGITSEQIHDIASAK;SLEEIVDEYSTFSESK;AANLGGVAVSGLEMAQNSQK;GANIASFVMVADAMLDQGDVF"                                                                                                                                                         
+
+---
+
+    Code
+      igraph::as_edgelist(graphs2[[i]][[j]])
+    Output
+            [,1]                   [,2]                           
+       [1,] "sp|P39708|DHE5_YEAST" "AANLGGVAVSGLEMAQNSQK"         
+       [2,] "sp|P07262|DHE4_YEAST" "AANLGGVAVSGLEMAQNSQR"         
+       [3,] "sp|P07262|DHE4_YEAST" "ALVAQGVK"                     
+       [4,] "sp|P07262|DHE4_YEAST" "FIAEGSNMGSTPEAIAVFETAR"       
+       [5,] "sp|P39708|DHE5_YEAST" "FLGFEQIFK"                    
+       [6,] "sp|P07262|DHE4_YEAST" "FLGFEQIFK"                    
+       [7,] "sp|P39708|DHE5_YEAST" "GANIASFVMVADAMLDQGDVF"        
+       [8,] "sp|P39708|DHE5_YEAST" "GCIISETGITSEQIHDIASAK"        
+       [9,] "sp|P07262|DHE4_YEAST" "GCIISETGITSEQVADISSAK"        
+      [10,] "sp|P07262|DHE4_YEAST" "HIGQDTDVPAGDIGVGGR"           
+      [11,] "sp|P39708|DHE5_YEAST" "ICYAFMR"                      
+      [12,] "sp|P07262|DHE4_YEAST" "ICYAFMR"                      
+      [13,] "sp|P07262|DHE4_YEAST" "IMINCFNECIDYAK"               
+      [14,] "sp|P07262|DHE4_YEAST" "ITWTSER"                      
+      [15,] "sp|P39708|DHE5_YEAST" "NSWEGVLTGK"                   
+      [16,] "sp|P07262|DHE4_YEAST" "NSWEGVLTGK"                   
+      [17,] "sp|P07262|DHE4_YEAST" "SEPEFQQAYEEVVSSLEDSTLFEQHPEYR"
+      [18,] "sp|P39708|DHE5_YEAST" "SLEEIVDEYSTFSESK"             
+      [19,] "sp|P07262|DHE4_YEAST" "SLEQIVNEYSTFSENK"             
+      [20,] "sp|P07262|DHE4_YEAST" "STATGPSEAVWYGPPK"             
+      [21,] "sp|P07262|DHE4_YEAST" "VDIALPCATQNEVSGEEAK"          
+      [22,] "sp|P07262|DHE4_YEAST" "VIELGGTVVSLSDSK"              
+      [23,] "sp|P39708|DHE5_YEAST" "VLPIVSVPER"                   
+      [24,] "sp|P07262|DHE4_YEAST" "VLPIVSVPER"                   
+      [25,] "sp|P39708|DHE5_YEAST" "VTISGSGNVAQYAALK"             
+      [26,] "sp|P07262|DHE4_YEAST" "VTISGSGNVAQYAALK"             
+      [27,] "sp|P07262|DHE4_YEAST" "VTWENDKGEQEVAQGYR"            
+
+---
+
+    Code
+      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
+    Output
+      [[1]]
+      [1] NA
+      
+      [[2]]
+      [1] NA
+      
+      [[3]]
+       [1]  0.09224363 -0.02204827 -0.10088549 -0.11819258  0.11978694  0.31844858
+       [7]  0.15063462  0.07953019  0.02485284  0.11589520 -0.26032902 -0.10399753
+      [13]  0.41104838
+      
+      [[4]]
+      [1]  0.198883592 -0.122572055 -0.278235272  0.103131543  0.004229158
+      
+      [[5]]
+      [1] -0.1514286 -0.1094390  0.2395426 -0.2442402
+      
+
+---
+
+    Code
+      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
+    Output
+       [1]           NA           NA  0.239542581  0.024852844  0.318448579
+       [6]  0.150634622 -0.122572055 -0.244240194 -0.151428646 -0.100885492
+      [11]  0.092243629 -0.278235272 -0.260329022  0.115895205  0.103131543
+      [16]  0.411048385 -0.109439028 -0.118192578  0.079530193  0.119786936
+      [21] -0.022048268  0.198883592  0.004229158 -0.103997529
+
+---
+
+    Code
+      igraph::as_edgelist(graphs[[i]][[j]])
+    Output
+            [,1]                  
+       [1,] "sp|P00330|ADH1_YEAST"
+       [2,] "sp|P00330|ADH1_YEAST"
+       [3,] "sp|P00331|ADH2_YEAST"
+       [4,] "sp|P00330|ADH1_YEAST"
+       [5,] "sp|P00331|ADH2_YEAST"
+       [6,] "sp|P38113|ADH5_YEAST"
+       [7,] "sp|P00330|ADH1_YEAST"
+       [8,] "sp|P07246|ADH3_YEAST"
+       [9,] "sp|P00331|ADH2_YEAST"
+      [10,] "sp|P07246|ADH3_YEAST"
+            [,2]                                                                                                                                          
+       [1,] "GVIFYESHGK;ANELLINVK;SANLMAGHWVAISGAAGGLGSLAVQYAK;SIGGEVFIDFTK;ATDGGAHGVINVSVSEAAIEASTR;CCSDVFNQVVK;VVGLSTLPEIYEK;VLGIDGGEGKEELFR;EKDIVGAVLK"
+       [2,] "LPLVGGHEGAGVVVGMGENVK;IGDYAGIK;SISIVGSYVGNR;SIPETQK"                                                                                         
+       [3,] "LPLVGGHEGAGVVVGMGENVK;IGDYAGIK;SISIVGSYVGNR;SIPETQK"                                                                                         
+       [4,] "EALDFFAR"                                                                                                                                    
+       [5,] "EALDFFAR"                                                                                                                                    
+       [6,] "EALDFFAR"                                                                                                                                    
+       [7,] "YSGVCHTDLHAWHGDWPLPVK"                                                                                                                       
+       [8,] "YSGVCHTDLHAWHGDWPLPVK"                                                                                                                       
+       [9,] "ANGTVVLVGLPAGAK;VVGLSSLPEIYEK"                                                                                                               
+      [10,] "GVIFYENK;DIPVPEPKPNEILINVK;IQQGTDLAEVAPILCAGVTVYK;NMVSDIQEATK;EALDFFSR;IVGLSELPK"                                                            
+
+---
+
+    Code
+      igraph::as_edgelist(graphs2[[i]][[j]])
+    Output
+            [,1]                   [,2]                          
+       [1,] "sp|P00330|ADH1_YEAST" "ANELLINVK"                   
+       [2,] "sp|P00331|ADH2_YEAST" "ANGTVVLVGLPAGAK"             
+       [3,] "sp|P00330|ADH1_YEAST" "ATDGGAHGVINVSVSEAAIEASTR"    
+       [4,] "sp|P00330|ADH1_YEAST" "CCSDVFNQVVK"                 
+       [5,] "sp|P07246|ADH3_YEAST" "DIPVPEPKPNEILINVK"           
+       [6,] "sp|P00330|ADH1_YEAST" "EALDFFAR"                    
+       [7,] "sp|P00331|ADH2_YEAST" "EALDFFAR"                    
+       [8,] "sp|P38113|ADH5_YEAST" "EALDFFAR"                    
+       [9,] "sp|P07246|ADH3_YEAST" "EALDFFSR"                    
+      [10,] "sp|P00330|ADH1_YEAST" "EKDIVGAVLK"                  
+      [11,] "sp|P07246|ADH3_YEAST" "GVIFYENK"                    
+      [12,] "sp|P00330|ADH1_YEAST" "GVIFYESHGK"                  
+      [13,] "sp|P00330|ADH1_YEAST" "IGDYAGIK"                    
+      [14,] "sp|P00331|ADH2_YEAST" "IGDYAGIK"                    
+      [15,] "sp|P07246|ADH3_YEAST" "IQQGTDLAEVAPILCAGVTVYK"      
+      [16,] "sp|P07246|ADH3_YEAST" "IVGLSELPK"                   
+      [17,] "sp|P00330|ADH1_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
+      [18,] "sp|P00331|ADH2_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
+      [19,] "sp|P07246|ADH3_YEAST" "NMVSDIQEATK"                 
+      [20,] "sp|P00330|ADH1_YEAST" "SANLMAGHWVAISGAAGGLGSLAVQYAK"
+      [21,] "sp|P00330|ADH1_YEAST" "SIGGEVFIDFTK"                
+      [22,] "sp|P00330|ADH1_YEAST" "SIPETQK"                     
+      [23,] "sp|P00331|ADH2_YEAST" "SIPETQK"                     
+      [24,] "sp|P00330|ADH1_YEAST" "SISIVGSYVGNR"                
+      [25,] "sp|P00331|ADH2_YEAST" "SISIVGSYVGNR"                
+      [26,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGKEELFR"             
+      [27,] "sp|P00331|ADH2_YEAST" "VVGLSSLPEIYEK"               
+      [28,] "sp|P00330|ADH1_YEAST" "VVGLSTLPEIYEK"               
+      [29,] "sp|P00330|ADH1_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
+      [30,] "sp|P07246|ADH3_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
+
+---
+
+    Code
+      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
+    Output
+      [[1]]
+      [1] NA
+      
+      [[2]]
+      [1] NA
+      
+      [[3]]
+      [1] NA
+      
+      [[4]]
+      [1] NA
+      
+      [[5]]
+      [1] -0.006697426  0.070760032  0.350475752  0.057447208 -0.270528067
+      [6]  0.004216498 -0.027087276 -0.113497572 -0.194008822
+      
+      [[6]]
+      [1] -0.20364787  0.24394094  0.05179113 -0.48793617
+      
+      [[7]]
+      [1] 0.04043034
+      
+      [[8]]
+      [1] 0.05784412
+      
+      [[9]]
+      [1] 0.08175501 0.10502517
+      
+      [[10]]
+      [1] -0.04507882  0.23771122 -0.04933934  0.06141342 -0.08238383  0.02162021
+      
+
+---
+
+    Code
+      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
+    Output
+       [1]           NA           NA           NA           NA  0.070760032
+       [6]  0.081755008 -0.270528067  0.004216498  0.237711223  0.040430339
+      [11] -0.082383826 -0.194008822 -0.045078821 -0.006697426  0.243940937
+      [16] -0.049339340  0.021620209 -0.203647867  0.061413417  0.350475752
+      [21]  0.057447208 -0.487936174  0.051791133 -0.113497572  0.105025168
+      [26] -0.027087276  0.057844117
+
+---
+
+    Code
+      igraph::as_edgelist(graphs[[i]][[j]])
+    Output
+           [,1]                  
+      [1,] "sp|P09938|RIR2_YEAST"
+           [,2]                                                                                                                                                                                   
+      [1,] "TVLFPIK;ESEFLFNAIHTIPEIGEK;AEWALR;WIQDADALFGER;GMMPGLTFSNELICR;DEGLHTDFACLLFAHLK;NKPDPAIVEK;IVTEAVEIEQR;YFLDALPVALLGMNADLMNQYVEFVADR;LLVAFGNK;VENPFDFMENISLAGK;TNFFEK;AAADALSDLEIKDSK"
+
+---
+
+    Code
+      igraph::as_edgelist(graphs2[[i]][[j]])
+    Output
+            [,1]                   [,2]                          
+       [1,] "sp|P09938|RIR2_YEAST" "AAADALSDLEIKDSK"             
+       [2,] "sp|P09938|RIR2_YEAST" "AEWALR"                      
+       [3,] "sp|P09938|RIR2_YEAST" "DEGLHTDFACLLFAHLK"           
+       [4,] "sp|P09938|RIR2_YEAST" "ESEFLFNAIHTIPEIGEK"          
+       [5,] "sp|P09938|RIR2_YEAST" "GMMPGLTFSNELICR"             
+       [6,] "sp|P09938|RIR2_YEAST" "IVTEAVEIEQR"                 
+       [7,] "sp|P09938|RIR2_YEAST" "LLVAFGNK"                    
+       [8,] "sp|P09938|RIR2_YEAST" "NKPDPAIVEK"                  
+       [9,] "sp|P09938|RIR2_YEAST" "TNFFEK"                      
+      [10,] "sp|P09938|RIR2_YEAST" "TVLFPIK"                     
+      [11,] "sp|P09938|RIR2_YEAST" "VENPFDFMENISLAGK"            
+      [12,] "sp|P09938|RIR2_YEAST" "WIQDADALFGER"                
+      [13,] "sp|P09938|RIR2_YEAST" "YFLDALPVALLGMNADLMNQYVEFVADR"
+
+---
+
+    Code
+      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
+    Output
+      [[1]]
+      [1] NA
+      
+      [[2]]
+       [1] -0.235167819 -0.075361014  0.008786796  0.172695025  0.148656056
+       [6]  0.716461519 -0.042682429 -0.025600896 -0.181145626 -0.237651857
+      [11] -0.116078682 -0.062514628  0.067030712
+      
+
+---
+
+    Code
+      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
+    Output
+       [1]           NA  0.067030712  0.008786796  0.716461519 -0.075361014
+       [6]  0.148656056 -0.025600896 -0.237651857 -0.042682429 -0.062514628
+      [11] -0.235167819 -0.116078682  0.172695025 -0.181145626
+
+---
+
+    Code
+      igraph::as_edgelist(graphs[[i]][[j]])
+    Output
+           [,1]                   
+      [1,] "sp|P40212|RL13B_YEAST"
+      [2,] "sp|P40212|RL13B_YEAST"
+      [3,] "sp|Q12690|RL13A_YEAST"
+           [,2]                                                                                                    
+      [1,] "DGKAPEAEQVLSAAATFPIAQPATDVEAR"                                                                         
+      [2,] "IAPRPLDLLRPVVR;GFTLAEVK;AAGLTAAYAR;TIGIAVDHR;NQEIFDANVQR;IIVFPR;APEAEQVLSAAATFPIAQPATDVEAR;AVQDNGESAFR"
+      [3,] "IAPRPLDLLRPVVR;GFTLAEVK;AAGLTAAYAR;TIGIAVDHR;NQEIFDANVQR;IIVFPR;APEAEQVLSAAATFPIAQPATDVEAR;AVQDNGESAFR"
+
+---
+
+    Code
+      igraph::as_edgelist(graphs2[[i]][[j]])
+    Output
+            [,1]                    [,2]                           
+       [1,] "sp|P40212|RL13B_YEAST" "AAGLTAAYAR"                   
+       [2,] "sp|Q12690|RL13A_YEAST" "AAGLTAAYAR"                   
+       [3,] "sp|P40212|RL13B_YEAST" "APEAEQVLSAAATFPIAQPATDVEAR"   
+       [4,] "sp|Q12690|RL13A_YEAST" "APEAEQVLSAAATFPIAQPATDVEAR"   
+       [5,] "sp|P40212|RL13B_YEAST" "AVQDNGESAFR"                  
+       [6,] "sp|Q12690|RL13A_YEAST" "AVQDNGESAFR"                  
+       [7,] "sp|P40212|RL13B_YEAST" "DGKAPEAEQVLSAAATFPIAQPATDVEAR"
+       [8,] "sp|P40212|RL13B_YEAST" "GFTLAEVK"                     
+       [9,] "sp|Q12690|RL13A_YEAST" "GFTLAEVK"                     
+      [10,] "sp|P40212|RL13B_YEAST" "IAPRPLDLLRPVVR"               
+      [11,] "sp|Q12690|RL13A_YEAST" "IAPRPLDLLRPVVR"               
+      [12,] "sp|P40212|RL13B_YEAST" "IIVFPR"                       
+      [13,] "sp|Q12690|RL13A_YEAST" "IIVFPR"                       
+      [14,] "sp|P40212|RL13B_YEAST" "NQEIFDANVQR"                  
+      [15,] "sp|Q12690|RL13A_YEAST" "NQEIFDANVQR"                  
+      [16,] "sp|P40212|RL13B_YEAST" "TIGIAVDHR"                    
+      [17,] "sp|Q12690|RL13A_YEAST" "TIGIAVDHR"                    
+
+---
+
+    Code
+      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
+    Output
+      [[1]]
+      [1] NA
+      
+      [[2]]
+      [1] NA
+      
+      [[3]]
+      [1] -0.1963693
+      
+      [[4]]
+      [1] -0.411750216  0.101334913 -0.061441100 -0.089392354  0.041543875
+      [6]  0.198719736 -0.009722051  0.145837932
+      
+
+---
+
+    Code
+      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
+    Output
+       [1]           NA           NA -0.061441100 -0.009722051  0.145837932
+       [6] -0.196369294  0.101334913 -0.411750216  0.198719736  0.041543875
+      [11] -0.089392354
+
+---
+
+    Code
+      igraph::as_edgelist(graphs[[i]][[j]])
+    Output
+           [,1]                  
+      [1,] "sp|P07262|DHE4_YEAST"
+      [2,] "sp|P39708|DHE5_YEAST"
+      [3,] "sp|P07262|DHE4_YEAST"
+      [4,] "sp|P39708|DHE5_YEAST"
+           [,2]                                                                                                                                                                                                                                 
+      [1,] "HIGQDTDVPAGDIGVGGR;VIELGGTVVSLSDSK;GCIISETGITSEQVADISSAK;SLEQIVNEYSTFSENK;VDIALPCATQNEVSGEEAK;FIAEGSNMGSTPEAIAVFETAR;STATGPSEAVWYGPPK;AANLGGVAVSGLEMAQNSQR;IMINCFNECIDYAK;GANIASFIK;VTWENDKGEQEVAQGYR;SEPEFQQAYEEVVSSLEDSTLFEQHPEYR"
+      [2,] "VLPIVSVPER;FLGFEQIFK;ICYAFMR;NSWEGVLTGK"                                                                                                                                                                                            
+      [3,] "VLPIVSVPER;FLGFEQIFK;ICYAFMR;NSWEGVLTGK"                                                                                                                                                                                            
+      [4,] "GCIISETGITSEQIHDIASAK;SLEEIVDEYSTFSESK;AANLGGVAVSGLEMAQNSQK;GANIASFVMVADAMLDQGDVF"                                                                                                                                                  
+
+---
+
+    Code
+      igraph::as_edgelist(graphs2[[i]][[j]])
+    Output
+            [,1]                   [,2]                           
+       [1,] "sp|P39708|DHE5_YEAST" "AANLGGVAVSGLEMAQNSQK"         
+       [2,] "sp|P07262|DHE4_YEAST" "AANLGGVAVSGLEMAQNSQR"         
+       [3,] "sp|P07262|DHE4_YEAST" "FIAEGSNMGSTPEAIAVFETAR"       
+       [4,] "sp|P39708|DHE5_YEAST" "FLGFEQIFK"                    
+       [5,] "sp|P07262|DHE4_YEAST" "FLGFEQIFK"                    
+       [6,] "sp|P07262|DHE4_YEAST" "GANIASFIK"                    
+       [7,] "sp|P39708|DHE5_YEAST" "GANIASFVMVADAMLDQGDVF"        
+       [8,] "sp|P39708|DHE5_YEAST" "GCIISETGITSEQIHDIASAK"        
+       [9,] "sp|P07262|DHE4_YEAST" "GCIISETGITSEQVADISSAK"        
+      [10,] "sp|P07262|DHE4_YEAST" "HIGQDTDVPAGDIGVGGR"           
+      [11,] "sp|P39708|DHE5_YEAST" "ICYAFMR"                      
+      [12,] "sp|P07262|DHE4_YEAST" "ICYAFMR"                      
+      [13,] "sp|P07262|DHE4_YEAST" "IMINCFNECIDYAK"               
+      [14,] "sp|P39708|DHE5_YEAST" "NSWEGVLTGK"                   
+      [15,] "sp|P07262|DHE4_YEAST" "NSWEGVLTGK"                   
+      [16,] "sp|P07262|DHE4_YEAST" "SEPEFQQAYEEVVSSLEDSTLFEQHPEYR"
+      [17,] "sp|P39708|DHE5_YEAST" "SLEEIVDEYSTFSESK"             
+      [18,] "sp|P07262|DHE4_YEAST" "SLEQIVNEYSTFSENK"             
+      [19,] "sp|P07262|DHE4_YEAST" "STATGPSEAVWYGPPK"             
+      [20,] "sp|P07262|DHE4_YEAST" "VDIALPCATQNEVSGEEAK"          
+      [21,] "sp|P07262|DHE4_YEAST" "VIELGGTVVSLSDSK"              
+      [22,] "sp|P39708|DHE5_YEAST" "VLPIVSVPER"                   
+      [23,] "sp|P07262|DHE4_YEAST" "VLPIVSVPER"                   
+      [24,] "sp|P07262|DHE4_YEAST" "VTWENDKGEQEVAQGYR"            
+
+---
+
+    Code
+      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
+    Output
+      [[1]]
+      [1] NA
+      
+      [[2]]
+      [1] NA
+      
+      [[3]]
+       [1]  0.03384587 -0.06089419 -0.07591505 -0.10854762  0.21587394  0.04726963
+       [7]  0.18252055  0.19142851  0.01477236  0.10422146 -0.04102516  0.51593030
+      
+      [[4]]
+      [1]  0.116668760  0.022377069 -0.086125554  0.003060517
+      
+      [[5]]
+      [1] -0.159206235 -0.002688073  0.360248859 -0.017593383
+      
+
+---
+
+    Code
+      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
+    Output
+       [1]           NA           NA  0.360248859  0.191428511  0.047269628
+       [6]  0.022377069  0.104221457 -0.017593383 -0.159206235 -0.075915046
+      [11]  0.033845872 -0.086125554  0.014772357  0.003060517  0.515930301
+      [16] -0.002688073 -0.108547622  0.182520554  0.215873936 -0.060894189
+      [21]  0.116668760 -0.041025156
+
+---
+
+    Code
+      igraph::as_edgelist(graphs[[i]][[j]])
+    Output
+            [,1]                  
+       [1,] "sp|P00330|ADH1_YEAST"
+       [2,] "sp|P00330|ADH1_YEAST"
+       [3,] "sp|P00331|ADH2_YEAST"
+       [4,] "sp|P00330|ADH1_YEAST"
+       [5,] "sp|P00331|ADH2_YEAST"
+       [6,] "sp|P38113|ADH5_YEAST"
+       [7,] "sp|P00330|ADH1_YEAST"
+       [8,] "sp|P07246|ADH3_YEAST"
+       [9,] "sp|P00331|ADH2_YEAST"
+      [10,] "sp|P07246|ADH3_YEAST"
+            [,2]                                                                                                                                          
+       [1,] "GVIFYESHGK;ANELLINVK;SANLMAGHWVAISGAAGGLGSLAVQYAK;SIGGEVFIDFTK;ATDGGAHGVINVSVSEAAIEASTR;CCSDVFNQVVK;VVGLSTLPEIYEK;VLGIDGGEGKEELFR;EKDIVGAVLK"
+       [2,] "LPLVGGHEGAGVVVGMGENVK;IGDYAGIK;SISIVGSYVGNR;SIPETQK"                                                                                         
+       [3,] "LPLVGGHEGAGVVVGMGENVK;IGDYAGIK;SISIVGSYVGNR;SIPETQK"                                                                                         
+       [4,] "EALDFFAR"                                                                                                                                    
+       [5,] "EALDFFAR"                                                                                                                                    
+       [6,] "EALDFFAR"                                                                                                                                    
+       [7,] "YSGVCHTDLHAWHGDWPLPVK"                                                                                                                       
+       [8,] "YSGVCHTDLHAWHGDWPLPVK"                                                                                                                       
+       [9,] "ANGTVVLVGLPAGAK;VVGLSSLPEIYEK"                                                                                                               
+      [10,] "GVIFYENK;DIPVPEPKPNEILINVK;IQQGTDLAEVAPILCAGVTVYK;NMVSDIQEATK;EALDFFSR;IVGLSELPK"                                                            
+
+---
+
+    Code
+      igraph::as_edgelist(graphs2[[i]][[j]])
+    Output
+            [,1]                   [,2]                          
+       [1,] "sp|P00330|ADH1_YEAST" "ANELLINVK"                   
+       [2,] "sp|P00331|ADH2_YEAST" "ANGTVVLVGLPAGAK"             
+       [3,] "sp|P00330|ADH1_YEAST" "ATDGGAHGVINVSVSEAAIEASTR"    
+       [4,] "sp|P00330|ADH1_YEAST" "CCSDVFNQVVK"                 
+       [5,] "sp|P07246|ADH3_YEAST" "DIPVPEPKPNEILINVK"           
+       [6,] "sp|P00330|ADH1_YEAST" "EALDFFAR"                    
+       [7,] "sp|P00331|ADH2_YEAST" "EALDFFAR"                    
+       [8,] "sp|P38113|ADH5_YEAST" "EALDFFAR"                    
+       [9,] "sp|P07246|ADH3_YEAST" "EALDFFSR"                    
+      [10,] "sp|P00330|ADH1_YEAST" "EKDIVGAVLK"                  
+      [11,] "sp|P07246|ADH3_YEAST" "GVIFYENK"                    
+      [12,] "sp|P00330|ADH1_YEAST" "GVIFYESHGK"                  
+      [13,] "sp|P00330|ADH1_YEAST" "IGDYAGIK"                    
+      [14,] "sp|P00331|ADH2_YEAST" "IGDYAGIK"                    
+      [15,] "sp|P07246|ADH3_YEAST" "IQQGTDLAEVAPILCAGVTVYK"      
+      [16,] "sp|P07246|ADH3_YEAST" "IVGLSELPK"                   
+      [17,] "sp|P00330|ADH1_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
+      [18,] "sp|P00331|ADH2_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
+      [19,] "sp|P07246|ADH3_YEAST" "NMVSDIQEATK"                 
+      [20,] "sp|P00330|ADH1_YEAST" "SANLMAGHWVAISGAAGGLGSLAVQYAK"
+      [21,] "sp|P00330|ADH1_YEAST" "SIGGEVFIDFTK"                
+      [22,] "sp|P00330|ADH1_YEAST" "SIPETQK"                     
+      [23,] "sp|P00331|ADH2_YEAST" "SIPETQK"                     
+      [24,] "sp|P00330|ADH1_YEAST" "SISIVGSYVGNR"                
+      [25,] "sp|P00331|ADH2_YEAST" "SISIVGSYVGNR"                
+      [26,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGKEELFR"             
+      [27,] "sp|P00331|ADH2_YEAST" "VVGLSSLPEIYEK"               
+      [28,] "sp|P00330|ADH1_YEAST" "VVGLSTLPEIYEK"               
+      [29,] "sp|P00330|ADH1_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
+      [30,] "sp|P07246|ADH3_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
+
+---
+
+    Code
+      igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
+    Output
+      [[1]]
+      [1] NA
+      
+      [[2]]
+      [1] NA
+      
+      [[3]]
+      [1] NA
+      
+      [[4]]
+      [1] NA
+      
+      [[5]]
+      [1] -0.087528051 -0.165725358  0.118497828  0.038706117 -0.401723784
+      [6]  0.116186500  0.008793523  0.028237026 -0.261778795
+      
+      [[6]]
+      [1] -0.04444634  0.01943744 -0.01364488  0.06792060
+      
+      [[7]]
+      [1] 0.08284521
+      
+      [[8]]
+      [1] 0.6073239
+      
+      [[9]]
+      [1] -0.00937623 -0.02576491
+      
+      [[10]]
+      [1] -0.01637801  0.30405622 -0.00702171  0.06861860  0.18709162  0.21932946
+      
+
+---
+
+    Code
+      igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio")
+    Output
+       [1]           NA           NA           NA           NA -0.165725358
+       [6] -0.009376230 -0.401723784  0.116186500  0.304056221  0.082845209
+      [11]  0.187091620 -0.261778795 -0.016378013 -0.087528051  0.019437444
+      [16] -0.007021710  0.219329463 -0.044446343  0.068618599  0.118497828
+      [21]  0.038706117  0.067920600 -0.013644879  0.028237026 -0.025764915
+      [26]  0.008793523  0.607323895
 
 # test protOrigin
 
     Code
       igraph::V(graphs1[[i]])$name[igraph::V(graphs1[[i]])$type]
     Output
-      [1] "Q03483" "P0CX57" "Q07791" "Q03856" "Q07793"
+      [1] "P09938"
+
+---
+
+    Code
+      igraph::V(graphs1[[i]])$protOrigin
+    Output
+        [1] "yeast" NA      NA      NA      NA      NA      NA      NA      NA     
+       [10] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [19] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [28] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [37] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [46] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [55] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [64] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [73] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [82] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [91] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [100] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [109] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [118] NA      NA      NA     
+
+---
+
+    Code
+      igraph::V(graphs2[[i]])$name[igraph::V(graphs2[[i]])$type]
+    Output
+      [1] "P00330" "P00331" "P07246" "P38113"
+
+---
+
+    Code
+      igraph::V(graphs2[[i]])$protOrigin
+    Output
+       [1] NA         NA         NA         NA         NA         NA        
+       [7] NA         NA         NA         "yeast"    "yeast"    "spike_in"
+      [13] "spike_in"
+
+---
+
+    Code
+      igraph::V(graphs3[[i]])$name[igraph::V(graphs3[[i]])$type]
+    Output
+      [1] "P09938"
+
+---
+
+    Code
+      igraph::V(graphs3[[i]])$protOrigin
+    Output
+      [1] "yeast" NA     
+
+---
+
+    Code
+      igraph::V(graphs1[[i]])$name[igraph::V(graphs1[[i]])$type]
+    Output
+      [1] "P39708" "P07262"
+
+---
+
+    Code
+      igraph::V(graphs1[[i]])$protOrigin
+    Output
+        [1] "yeast" NA      NA      NA      NA      NA      NA      NA      NA     
+       [10] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [19] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [28] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [37] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [46] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [55] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [64] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [73] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [82] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+       [91] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [100] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [109] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [118] NA      NA      "yeast" NA      NA      NA      NA      NA      NA     
+      [127] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [136] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [145] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [154] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [163] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [172] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [181] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [190] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [199] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [208] NA      NA      NA      NA      NA      NA      NA     
+
+---
+
+    Code
+      igraph::V(graphs2[[i]])$name[igraph::V(graphs2[[i]])$type]
+    Output
+      [1] "P07262" "P39708"
+
+---
+
+    Code
+      igraph::V(graphs2[[i]])$protOrigin
+    Output
+      [1] NA      NA      NA      "yeast" "yeast"
+
+---
+
+    Code
+      igraph::V(graphs3[[i]])$name[igraph::V(graphs3[[i]])$type]
+    Output
+      [1] "P40212" "Q12690"
+
+---
+
+    Code
+      igraph::V(graphs3[[i]])$protOrigin
+    Output
+      [1] "yeast" "yeast" NA      NA      NA     
+
+---
+
+    Code
+      igraph::V(graphs1[[i]])$name[igraph::V(graphs1[[i]])$type]
+    Output
+      [1] "P40212" "Q12690"
+
+---
+
+    Code
+      igraph::V(graphs1[[i]])$protOrigin
+    Output
+       [1] "yeast" NA      NA      NA      NA      NA      NA      NA      NA     
+      [10] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [19] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [28] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [37] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [46] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [55] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [64] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [73] NA      NA      NA      NA      NA      NA      NA      NA      "yeast"
+      [82] NA      NA      NA      NA      NA      NA      NA      NA      NA     
+      [91] NA     
+
+---
+
+    Code
+      igraph::V(graphs2[[i]])$name[igraph::V(graphs2[[i]])$type]
+    Output
+      [1] "P09938"
+
+---
+
+    Code
+      igraph::V(graphs2[[i]])$protOrigin
+    Output
+      [1] NA      "yeast"
+
+---
+
+    Code
+      igraph::V(graphs3[[i]])$name[igraph::V(graphs3[[i]])$type]
+    Output
+      [1] "P39708" "P07262"
+
+---
+
+    Code
+      igraph::V(graphs3[[i]])$protOrigin
+    Output
+      [1] "yeast" "yeast" NA      NA      NA     
+
+---
+
+    Code
+      igraph::V(graphs1[[i]])$name[igraph::V(graphs1[[i]])$type]
+    Output
+      [1] "P00330" "P00331" "P07246" "P38113"
 
 ---
 
@@ -5967,9 +5068,9 @@
        [55] NA         NA         NA         NA         NA         NA        
        [61] NA         NA         NA         NA         NA         NA        
        [67] NA         NA         NA         NA         NA         NA        
-       [73] NA         NA         NA         NA         NA         NA        
+       [73] NA         NA         NA         NA         "yeast"    NA        
        [79] NA         NA         NA         NA         NA         NA        
-       [85] NA         NA         NA         NA         NA         "yeast"   
+       [85] NA         NA         NA         NA         NA         NA        
        [91] NA         NA         NA         NA         NA         NA        
        [97] NA         NA         NA         NA         NA         NA        
       [103] NA         NA         NA         NA         NA         NA        
@@ -5977,13 +5078,13 @@
       [115] NA         NA         NA         NA         NA         NA        
       [121] NA         NA         NA         NA         NA         NA        
       [127] NA         NA         NA         NA         NA         NA        
-      [133] NA         NA         NA         NA         NA         NA        
+      [133] "spike_in" NA         NA         NA         NA         NA        
       [139] NA         NA         NA         NA         NA         NA        
       [145] NA         NA         NA         NA         NA         NA        
       [151] NA         NA         NA         NA         NA         NA        
       [157] NA         NA         NA         NA         NA         NA        
       [163] NA         NA         NA         NA         NA         NA        
-      [169] NA         NA         "spike_in" NA         NA         NA        
+      [169] NA         NA         NA         NA         NA         NA        
       [175] NA         NA         NA         NA         NA         NA        
       [181] NA         NA         NA         NA         NA         NA        
       [187] NA         NA         NA         NA         NA         NA        
@@ -5992,7 +5093,7 @@
       [205] NA         NA         NA         NA         NA         NA        
       [211] NA         NA         NA         NA         NA         NA        
       [217] NA         NA         NA         NA         NA         NA        
-      [223] NA         NA         NA         NA         NA         NA        
+      [223] "spike_in" NA         NA         NA         NA         NA        
       [229] NA         NA         NA         NA         NA         NA        
       [235] NA         NA         NA         NA         NA         NA        
       [241] NA         NA         NA         NA         NA         NA        
@@ -6002,227 +5103,35 @@
       [265] NA         NA         NA         NA         NA         NA        
       [271] NA         NA         NA         NA         NA         NA        
       [277] NA         NA         NA         NA         NA         NA        
-      [283] NA         NA         NA         NA         NA         NA        
-      [289] NA         NA         NA         NA         NA         NA        
-      [295] NA         NA         NA         NA         NA         NA        
-      [301] NA         NA         NA         NA         NA         NA        
-      [307] NA         NA         NA         NA         NA         NA        
-      [313] NA         NA         NA         NA         NA         NA        
-      [319] NA         NA         NA         NA         NA         NA        
-      [325] NA         NA         NA         NA         NA         NA        
-      [331] NA         NA         NA         NA         NA         NA        
-      [337] NA         NA         NA         NA         NA         NA        
-      [343] NA         NA         NA         NA         NA         NA        
-      [349] NA         NA         NA         NA         NA         NA        
-      [355] NA         NA         NA         NA         NA         NA        
-      [361] NA         NA         NA         NA         NA         NA        
-      [367] NA         NA         NA         NA         NA         NA        
-      [373] NA         NA         NA         NA         NA         NA        
-      [379] NA         NA         NA         NA         NA         NA        
-      [385] NA         NA         NA         NA         NA         NA        
-      [391] NA         NA         NA         NA         NA         NA        
-      [397] NA         NA         NA         NA         NA         NA        
-      [403] NA         NA         NA         NA         NA         NA        
-      [409] NA         NA         NA         NA         NA         NA        
-      [415] NA         NA         NA         NA         NA         NA        
-      [421] NA         NA         NA         NA         NA         NA        
-      [427] NA         NA         NA         NA         NA         NA        
-      [433] NA         NA         NA         NA         NA         NA        
-      [439] NA         NA         NA         NA         NA         NA        
-      [445] NA         NA         NA         NA         NA         NA        
-      [451] NA         NA         NA         NA         NA         NA        
-      [457] NA         NA         NA         NA         NA         NA        
-      [463] NA         NA         NA         NA         NA         NA        
-      [469] NA         NA         NA         NA         NA         NA        
-      [475] NA         NA         NA         NA         NA         NA        
-      [481] NA         NA         NA         NA         NA         NA        
-      [487] NA         NA         NA         NA         NA         NA        
-      [493] NA         NA         NA         NA         NA         NA        
-      [499] NA         NA         NA         NA         NA         NA        
-      [505] NA         NA         NA         NA         NA         NA        
-      [511] NA         NA         NA         NA         NA         NA        
-      [517] NA         NA         NA         NA         NA         NA        
-      [523] NA         NA         NA         NA         NA         NA        
-      [529] NA         NA         NA         NA         NA         NA        
-      [535] NA         NA         NA         NA         NA         NA        
-      [541] NA         NA         NA         NA         NA         NA        
-      [547] NA         NA         NA         NA         NA         NA        
-      [553] NA         NA         NA         NA         NA         NA        
-      [559] NA         NA         NA         NA         NA         NA        
-      [565] NA         NA         NA         NA         "spike_in" NA        
-      [571] NA         NA         NA         NA         NA         NA        
-      [577] NA         NA         NA         NA         NA         NA        
-      [583] "spike_in" NA         NA         NA         NA         NA        
-      [589] NA         NA         NA         NA         NA         NA        
-      [595] NA         NA         NA         NA         NA         NA        
-      [601] NA         NA         NA         NA         NA         NA        
-      [607] NA         NA         NA         NA         NA         NA        
-      [613] NA         NA         NA         NA         NA         NA        
-      [619] NA         NA         NA         NA         NA         NA        
-      [625] NA         NA         NA         NA         NA         NA        
-      [631] NA         NA         NA         NA         NA         NA        
-      [637] NA         NA         NA         NA         NA         NA        
-      [643] NA         NA         NA         NA         NA         NA        
-      [649] NA         NA         NA         NA         NA         NA        
-      [655] NA         NA         NA         NA         NA         NA        
-      [661] NA         NA         NA         NA         NA         NA        
-      [667] NA         NA         NA         NA         NA         NA        
-      [673] NA         NA         NA         NA         NA         NA        
-      [679] NA         NA         NA         NA         NA         NA        
-      [685] NA         NA         NA         NA         NA         NA        
-      [691] NA         NA         NA         NA         NA         NA        
-      [697] NA         NA         NA         NA         NA         NA        
-      [703] NA         NA         NA         NA         NA         NA        
-      [709] NA         NA         NA         NA         NA         NA        
-      [715] NA         NA         NA         NA         NA         NA        
-      [721] NA         NA         NA         NA         NA         NA        
-      [727] NA         NA         NA         NA         NA         NA        
-      [733] NA         NA         NA         NA         NA         NA        
-      [739] NA         NA         NA         NA         NA         NA        
-      [745] NA         NA         NA         NA         NA         NA        
-      [751] NA         NA         NA         NA         NA         NA        
-      [757] NA         NA         NA         NA         NA         NA        
-      [763] NA         NA         NA         NA         NA         NA        
-      [769] NA         NA         NA         NA         NA         NA        
-      [775] NA         NA         NA         NA         NA         NA        
-      [781] NA         NA         NA         NA         NA         NA        
-      [787] NA         NA         NA         NA         NA         NA        
-      [793] NA         NA         NA         NA         NA         NA        
-      [799] NA         NA         NA         NA         NA         NA        
-      [805] NA         NA         NA         NA         NA         NA        
-      [811] NA         NA         NA         NA         NA         NA        
-      [817] NA         NA         NA         NA         NA         NA        
-      [823] NA         NA         NA         NA         NA         NA        
-      [829] NA         NA         NA         NA         NA         NA        
-      [835] NA         NA         NA        
+      [283] NA         NA        
 
 ---
 
     Code
       igraph::V(graphs2[[i]])$name[igraph::V(graphs2[[i]])$type]
     Output
-      [1] "P0CX57" "Q03483" "Q03856" "Q07791" "Q07793"
+      [1] "P40212" "Q12690"
 
 ---
 
     Code
       igraph::V(graphs2[[i]])$protOrigin
     Output
-       [1] NA         NA         NA         NA         NA         NA        
-       [7] NA         NA         NA         "yeast"    "yeast"    "spike_in"
-      [13] "spike_in" "spike_in"
+      [1] NA      NA      NA      "yeast" "yeast"
 
 ---
 
     Code
       igraph::V(graphs3[[i]])$name[igraph::V(graphs3[[i]])$type]
     Output
-      [1] "Q06204"
+      [1] "P38113" "P00331" "P00330" "P07246"
 
 ---
 
     Code
       igraph::V(graphs3[[i]])$protOrigin
     Output
-      [1] "yeast" NA     
-
----
-
-    Code
-      igraph::V(graphs1[[i]])$name[igraph::V(graphs1[[i]])$type]
-    Output
-      [1] "Q06204"
-
----
-
-    Code
-      igraph::V(graphs1[[i]])$protOrigin
-    Output
-       [1] "yeast" NA      NA      NA      NA      NA      NA      NA      NA     
-      [10] NA      NA      NA      NA      NA      NA      NA      NA      NA     
-      [19] NA      NA      NA      NA      NA      NA      NA      NA      NA     
-      [28] NA      NA      NA      NA      NA      NA      NA      NA      NA     
-      [37] NA      NA      NA      NA      NA      NA      NA      NA      NA     
-      [46] NA      NA      NA      NA      NA      NA      NA      NA      NA     
-      [55] NA      NA      NA      NA      NA      NA      NA      NA      NA     
-      [64] NA      NA      NA      NA      NA      NA      NA      NA      NA     
-      [73] NA      NA      NA      NA      NA      NA      NA      NA      NA     
-      [82] NA      NA     
-
----
-
-    Code
-      igraph::V(graphs2[[i]])$name[igraph::V(graphs2[[i]])$type]
-    Output
-      [1] "P48238"
-
----
-
-    Code
-      igraph::V(graphs2[[i]])$protOrigin
-    Output
-      [1] NA      "yeast"
-
----
-
-    Code
-      igraph::V(graphs3[[i]])$name[igraph::V(graphs3[[i]])$type]
-    Output
-      [1] "Q07791" "Q03483" "Q07793" "P0CX57" "Q03856"
-
----
-
-    Code
-      igraph::V(graphs3[[i]])$protOrigin
-    Output
-       [1] "spike_in" "yeast"    "spike_in" "yeast"    "spike_in" NA        
+       [1] "spike_in" "yeast"    "yeast"    "spike_in" NA         NA        
        [7] NA         NA         NA         NA         NA         NA        
-      [13] NA         NA        
-
----
-
-    Code
-      igraph::V(graphs1[[i]])$name[igraph::V(graphs1[[i]])$type]
-    Output
-      [1] "P48238"
-
----
-
-    Code
-      igraph::V(graphs1[[i]])$protOrigin
-    Output
-       [1] "yeast" NA      NA      NA      NA      NA      NA      NA      NA     
-      [10] NA      NA      NA      NA      NA      NA      NA      NA      NA     
-      [19] NA      NA      NA      NA      NA      NA      NA      NA      NA     
-      [28] NA      NA      NA      NA      NA      NA      NA      NA      NA     
-      [37] NA      NA      NA      NA      NA      NA      NA      NA      NA     
-      [46] NA      NA      NA      NA      NA      NA      NA      NA      NA     
-
----
-
-    Code
-      igraph::V(graphs2[[i]])$name[igraph::V(graphs2[[i]])$type]
-    Output
-      [1] "Q06204"
-
----
-
-    Code
-      igraph::V(graphs2[[i]])$protOrigin
-    Output
-      [1] NA      "yeast"
-
----
-
-    Code
-      igraph::V(graphs3[[i]])$name[igraph::V(graphs3[[i]])$type]
-    Output
-      [1] "P48238"
-
----
-
-    Code
-      igraph::V(graphs3[[i]])$protOrigin
-    Output
-      [1] "yeast" NA     
+      [13] NA        
 

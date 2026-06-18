@@ -17,8 +17,14 @@
 #' @seealso For the generation of the list of lists of igraphs:
 #'  [generateGraphsFromQuantData()]
 #'
-#' @examples ## TODO
-#' 
+#' @examples
+#'
+#' file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
+#' graphs <- readRDS(file)
+#'
+#' ProtInfo <- bppg:::.calculateProteinNodeInfo(G = graphs, verbose = FALSE)
+#'
+#'
 #' @importFrom pbapply pblapply pboptions
 #' @importFrom igraph V
 
@@ -88,7 +94,7 @@
 #' @return A table with the characteristics.
 #'
 #'
-#' @examples
+#' @examples # TODO
 #'
 #' @importFrom pbapply closepb pboptions startpb setpb
 #' @importFrom igraph gsize V
@@ -98,7 +104,7 @@
     fastalevel = TRUE,
     prototype = FALSE,
     #comparison = NULL,
-    file = NULL, 
+    file = NULL,
     verbose = FALSE) {
     if (!verbose) {
         pbo <- pbapply::pboptions(type = "none")

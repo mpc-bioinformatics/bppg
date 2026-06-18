@@ -65,7 +65,7 @@
 
 
 #' Funktion to format Tracking information into a dataframe with columnnames.
-#' 
+#'
 #' @param i     \strong{numeric} \cr
 #'              iterrator, for when this tracking was performed
 #' @param RES   \strong{list} \cr
@@ -84,7 +84,7 @@
     colnames(Tracking) <- track_colnames
     return(Tracking)
 }
-    
+
 
 
 #' Calulate initial values for Ci (protein weights) for optimization
@@ -318,9 +318,9 @@
 #' not (1 or 2) (see also \code{\link[Rsolnp]{solnp}})}
 #'
 #' @examples
-#' file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+#' file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
 #' graphs <- readRDS(file)
-#' G <- graphs$sample1_sample2[[2]]
+#' G <- graphs$"1_2"[[2]]
 #' bppg:::.minimizeSquaredError(G)
 #'
 #' @importFrom igraph as_biadjacency_matrix vertex_attr
@@ -343,7 +343,7 @@
         RES <- .errorEquation(RiLog = c(RiLog),
             Ci = c(1.0), M = M, rjLog = rjLog)
         Tracking <- .trackingDataFrame(-1, RES, c(RiLog), c(1.0))
-        result <- list(RiLog = c(RiLog), Ci = 1.0, RES = RES, 
+        result <- list(RiLog = c(RiLog), Ci = 1.0, RES = RES,
             Tracking = Tracking, outer.iter = 0, convergence = 0)
         return(result)
     }
@@ -460,7 +460,7 @@
 #'                                 [.minimizeSquaredError()] function.
 #'
 #' @return
-#' A dataframe containing the optimal Ci and Ri values together with the reached
+#' A data.frame containing the optimal Ci and Ri values together with the reached
 #' minimal error term for each grid point.
 #'
 #' @export
@@ -483,9 +483,9 @@
 #' [bppg::automatedAnalysisIteratedCi()].
 #'
 #' @examples
-#' file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+#' file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
 #' graphs <- readRDS(file)
-#' G <- graphs$sample1_sample2[[2]]
+#' G <- graphs$"1_2"[[2]]
 #' # small example with a small grid size
 #' iterateOverCi(G, gridSize = 100)
 #'
@@ -639,9 +639,9 @@ iterateOverCi <- function(G,
 #' @seealso [bppg::iterateOverCi()], [.minimizeSquaredError()]
 #'
 #' @examples
-#' file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+#' file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
 #' graphs <- readRDS(file)
-#' G <- graphs$sample1_sample2[[2]]
+#' G <- graphs$"1_2"[[2]]
 #' # small example with a small grid size
 #' res <- iterateOverCi(G, gridSize = 100)
 #' automatedAnalysisIteratedCi(G, res)

@@ -50,7 +50,7 @@ The \code{control} object to be passed to the
 \code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}} function.}
 }
 \value{
-A dataframe containing the optimal Ci and Ri values together with the reached
+A data.frame containing the optimal Ci and Ri values together with the reached
 minimal error term for each grid point.
 }
 \description{
@@ -71,9 +71,9 @@ The table can be further processed with
 \code{\link[=automatedAnalysisIteratedCi]{automatedAnalysisIteratedCi()}}.
 }
 \examples{
-file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
 graphs <- readRDS(file)
-G <- graphs$sample1_sample2[[2]]
+G <- graphs$"1_2"[[2]]
 # small example with a small grid size
 iterateOverCi(G, gridSize = 100)
 

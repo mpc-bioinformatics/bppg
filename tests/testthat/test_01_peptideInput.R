@@ -1,7 +1,9 @@
 
 test_that("read MaxQuant Output table", {
-    D1 <- bppg::readMqPeptideTable(test_path("testfiles/peptides.txt"))
-    D2 <- bppg::readMqPeptideTable(test_path("testfiles/peptides.txt"),
+    file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
+
+    D1 <- bppg::readMqPeptideTable(file)
+    D2 <- bppg::readMqPeptideTable(file,
                                    LFQ = TRUE,
                                    further_columns_to_keep = c("Proteins", "Score"))
     expect_snapshot(D1)

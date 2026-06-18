@@ -24,3 +24,11 @@ comparison, NA values are introduced. Row names are sorted alphabetically.
 Combine relative quantification results over multiple pairwise comparisons
 into a single SummarizedExperiments object.
 }
+\examples{
+# prepared result list. Check "inst/scripts/filter_fasta_and_quantData.R" for
+# details on how it was generated.
+file <- system.file("extdata", "resultsList.rds", package = "bppg")
+resultList <- readRDS(file)
+SE <- combineComparisons(resultList)
+
+}

@@ -4,10 +4,11 @@
       X
     Output
       class: SummarizedExperiment 
-      dim: 4 10 
+      dim: 5 10 
       metadata(0):
-      assays(3): sample1_sample2 sample1_sample3 sample2_sample3
-      rownames(4): prot_1 prot_2 prot_3 prot_4;prot_5
+      assays(36): 1_2 1_3 ... 7_9 8_9
+      rownames(5): sp|P07262|DHE4_YEAST sp|P09938|RIR2_YEAST
+        sp|P39708|DHE5_YEAST sp|P40212|RL13B_YEAST sp|Q12690|RL13A_YEAST
       rowData names(1): accession
       colnames(10): graphID proteinNr ... Ci_max case
       colData names(1): colnames
@@ -15,63 +16,34 @@
 ---
 
     Code
-      SummarizedExperiment::assays(X)$sample1_sample2
+      SummarizedExperiment::assays(X)$"1_2"
     Output
-                    graphID proteinNr    error_min    RiLog RiLog_min RiLog_max Ci
-      prot_1             NA         1 1.750500e-03 0.967500        NA        NA NA
-      prot_2             NA         2 1.750500e-03       NA  1.045762  3.672106 NA
-      prot_3             NA         1 1.232595e-32 0.964000        NA        NA  1
-      prot_4;prot_5      NA         1 1.632667e-03 1.056333        NA        NA  1
-                    Ci_min Ci_max case
-      prot_1          0.01   0.99    1
-      prot_2          0.01   0.99    2
-      prot_3            NA     NA    3
-      prot_4;prot_5     NA     NA    3
-
----
-
-    Code
-      SummarizedExperiment::assays(X)$sample1_sample3
-    Output
-                    graphID proteinNr   error_min     RiLog RiLog_min RiLog_max   Ci
-      prot_1             NA         1 0.000264500 0.9910000        NA        NA   NA
-      prot_2             NA         2 0.000264500        NA 0.9975651  1.528617   NA
-      prot_3             NA         2 0.005563039 1.0854065        NA        NA 0.01
-      prot_4;prot_5      NA         1 0.005563039 0.9528013        NA        NA 0.99
-                    Ci_min Ci_max case
-      prot_1          0.01   0.99    1
-      prot_2          0.01   0.99    2
-      prot_3            NA     NA    3
-      prot_4;prot_5     NA     NA    3
-
----
-
-    Code
-      SummarizedExperiment::assays(X)$sample2_sample3
-    Output
-                    graphID proteinNr   error_min     RiLog RiLog_min RiLog_max   Ci
-      prot_1             NA         1 0.003884500        NA 0.9634997 0.9635009   NA
-      prot_2             NA         2 0.003884500        NA 0.9831944 2.2027825   NA
-      prot_3             NA         1 0.006082681 1.0323458        NA        NA 0.01
-      prot_4;prot_5      NA         2 0.006082681 0.9827164        NA        NA 0.99
-                    Ci_min Ci_max case
-      prot_1          0.01   0.99    2
-      prot_2          0.01   0.99    2
-      prot_3            NA     NA    3
-      prot_4;prot_5     NA     NA    3
+                            graphID proteinNr error_min       RiLog  RiLog_min
+      sp|P07262|DHE4_YEAST       NA         2  1.264748 -0.04778300         NA
+      sp|P09938|RIR2_YEAST       NA         1  2.011747 -0.01770424         NA
+      sp|P39708|DHE5_YEAST       NA         1  1.264748  0.21612300         NA
+      sp|P40212|RL13B_YEAST      NA         1  1.302607          NA  0.5632699
+      sp|Q12690|RL13A_YEAST      NA         2  1.302607          NA -5.2291086
+                              RiLog_max Ci Ci_min Ci_max case
+      sp|P07262|DHE4_YEAST           NA NA   0.35   0.35    4
+      sp|P09938|RIR2_YEAST           NA  1     NA     NA    3
+      sp|P39708|DHE5_YEAST           NA NA   0.65   0.65    4
+      sp|P40212|RL13B_YEAST  0.56327184 NA   0.01   0.63    5
+      sp|Q12690|RL13A_YEAST -0.09643997 NA   0.37   0.99    5
 
 ---
 
     Code
       SummarizedExperiment::rowData(X)
     Output
-      DataFrame with 4 rows and 1 column
-                        accession
-                      <character>
-      prot_1               prot_1
-      prot_2               prot_2
-      prot_3               prot_3
-      prot_4;prot_5 prot_4;prot_5
+      DataFrame with 5 rows and 1 column
+                                        accession
+                                      <character>
+      sp|P07262|DHE4_YEAST   sp|P07262|DHE4_YEAST
+      sp|P09938|RIR2_YEAST   sp|P09938|RIR2_YEAST
+      sp|P39708|DHE5_YEAST   sp|P39708|DHE5_YEAST
+      sp|P40212|RL13B_YEAST sp|P40212|RL13B_YEAST
+      sp|Q12690|RL13A_YEAST sp|Q12690|RL13A_YEAST
 
 ---
 

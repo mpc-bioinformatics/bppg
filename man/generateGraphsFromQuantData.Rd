@@ -70,7 +70,7 @@ The suffix for output files.}
 
 \item{protOrigin}{\strong{list or data.frame} \cr
 A list with the protein orgin corresponding to
-\link[seqinr:fasta]{seqinr::fasta}, proteins are used as rownames/index.}
+\link[seqinr:fasta]{fasta}, proteins are used as rownames/index.}
 
 \item{verbose}{\strong{logical} \cr
 If \code{TRUE}, additional information on each iteration
@@ -88,11 +88,14 @@ Generate graphs from quantitative peptide-level data
 }
 \examples{
 library(seqinr)
-file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
+    package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 
-file <- system.file("extdata", "peptides.txt", package = "bppg")
-D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
+group <- factor(rep(1:9, each = 3))
+D <- readMqPeptideTable(path = file, group = group, LFQ = TRUE,
+    remove_contaminants = FALSE)
 
 graphs <- bppg::generateGraphsFromQuantData(D, fasta)
 

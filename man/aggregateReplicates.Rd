@@ -15,7 +15,7 @@ aggregateReplicates(
 \arguments{
 \item{D}{\strong{SummarizedExperiment} \cr
 SummarizedExperiment Dataset containing peptide
-intensities, e.g. the result of
+intensities, e.g. the result of \link{readMqPeptideTable} or
 \link{normalizePeptideIntensities}.}
 
 \item{group}{\strong{character factor} \cr
@@ -43,10 +43,10 @@ A SummarizedExperiment with aggregated intensities ($intensities).
 Aggregate replicates of the same experimental group.
 }
 \examples{
-file <- system.file("extdata", "peptides.txt", package = "bppg")
-D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
-D_norm <- bppg::normalizePeptideIntensities(D)
+file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
 group <- factor(rep(1:9, each = 3))
-aggregateReplicates(D_norm, group = group)
+D <- readMqPeptideTable(path = file, group = group, LFQ = TRUE, remove_contaminants = FALSE)
+D_norm <- bppg::normalizePeptideIntensities(D)
+aggregateReplicates(D_norm)
 
 }

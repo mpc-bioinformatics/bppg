@@ -4,77 +4,424 @@
       e
     Output
       $res_Mat
-           [,1] [,2]
-      [1,] 0.50 0.00
-      [2,] 0.15 0.91
+                                    sp|P40212|RL13B_YEAST sp|Q12690|RL13A_YEAST
+      AAGLTAAYAR                                     0.15                  0.91
+      APEAEQVLSAAATFPIAQPATDVEAR                     0.15                  0.91
+      AVQDNGESAFR                                    0.15                  0.91
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR                  0.50                  0.00
+      GFTLAEVK                                       0.15                  0.91
+      IAPRPLDLLRPVVR                                 0.15                  0.91
+      IIVFPR                                         0.15                  0.91
+      NQEIFDANVQR                                    0.15                  0.91
+      TIGIAVDHR                                      0.15                  0.91
       
       $res_equ
-      [1] 0.2630344 0.1789701
+                         AAGLTAAYAR    APEAEQVLSAAATFPIAQPATDVEAR 
+                        -0.07105360                   -0.47947908 
+                        AVQDNGESAFR DGKAPEAEQVLSAAATFPIAQPATDVEAR 
+                         0.16689343                    1.56327139 
+                           GFTLAEVK                IAPRPLDLLRPVVR 
+                         0.05991893                    0.50544032 
+                             IIVFPR                   NQEIFDANVQR 
+                        -0.85978167                   -0.21889842 
+                          TIGIAVDHR 
+                        -0.48033455 
+      attr(,"na.action")
+      [1] 1 2
+      attr(,"class")
+      [1] "omit"
       
       $res_squ_err
-      [1] 0.1012174
+      [1] 3.983542
       
       $W
-           [,1] [,2]
-      [1,]  1.0  0.0
-      [2,]  0.3  0.7
+                                    sp|P40212|RL13B_YEAST sp|Q12690|RL13A_YEAST
+      AAGLTAAYAR                                      0.3                   0.7
+      APEAEQVLSAAATFPIAQPATDVEAR                      0.3                   0.7
+      AVQDNGESAFR                                     0.3                   0.7
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR                   1.0                   0.0
+      GFTLAEVK                                        0.3                   0.7
+      IAPRPLDLLRPVVR                                  0.3                   0.7
+      IIVFPR                                          0.3                   0.7
+      NQEIFDANVQR                                     0.3                   0.7
+      TIGIAVDHR                                       0.3                   0.7
       
 
-# test automated analysis
+# test .minimizeSquaredError
 
     Code
-      SummarizedExperiment::assay(res)
+      res
     Output
-                    graphID proteinNr   error_min    RiLog RiLog_min RiLog_max Ci
-      prot_4;prot_5      NA         1 0.001632667 1.056333        NA        NA  1
-                    Ci_min Ci_max case
-      prot_4;prot_5     NA     NA    3
+      $RiLog
+      [1]  0.5632703 -0.7553009
+      
+      $Ci
+      [1] 0.3935184 0.6064816
+      
+      $RES
+      $RES$res_Mat
+                                    sp|P40212|RL13B_YEAST sp|Q12690|RL13A_YEAST
+      AAGLTAAYAR                                0.5814686             0.3592935
+      APEAEQVLSAAATFPIAQPATDVEAR                0.5814686             0.3592935
+      AVQDNGESAFR                               0.5814686             0.3592935
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR             1.4776149             0.0000000
+      GFTLAEVK                                  0.5814686             0.3592935
+      IAPRPLDLLRPVVR                            0.5814686             0.3592935
+      IIVFPR                                    0.5814686             0.3592935
+      NQEIFDANVQR                               0.5814686             0.3592935
+      TIGIAVDHR                                 0.5814686             0.3592935
+      
+      $RES$res_equ
+                         AAGLTAAYAR    APEAEQVLSAAATFPIAQPATDVEAR 
+                            0.10111                      -0.30732 
+                        AVQDNGESAFR DGKAPEAEQVLSAAATFPIAQPATDVEAR 
+                            0.33906                       0.00000 
+                           GFTLAEVK                IAPRPLDLLRPVVR 
+                            0.23208                       0.67760 
+                             IIVFPR                   NQEIFDANVQR 
+                           -0.68762                      -0.04674 
+                          TIGIAVDHR 
+                           -0.30817 
+      attr(,"na.action")
+      [1] 1 2
+      attr(,"class")
+      [1] "omit"
+      
+      $RES$res_squ_err
+      [1] 1.302607
+      
+      $RES$W
+                                    sp|P40212|RL13B_YEAST sp|Q12690|RL13A_YEAST
+      AAGLTAAYAR                                0.3935184             0.6064816
+      APEAEQVLSAAATFPIAQPATDVEAR                0.3935184             0.6064816
+      AVQDNGESAFR                               0.3935184             0.6064816
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR             1.0000000             0.0000000
+      GFTLAEVK                                  0.3935184             0.6064816
+      IAPRPLDLLRPVVR                            0.3935184             0.6064816
+      IIVFPR                                    0.3935184             0.6064816
+      NQEIFDANVQR                               0.3935184             0.6064816
+      TIGIAVDHR                                 0.3935184             0.6064816
+      
+      
+      $Tracking
+        iter  squ_err     RLog1       RLog2        C1        C2
+      1    0 2.351756 0.5632714 -0.08809757 0.5000000 0.5000000
+      2    1 1.302607 0.5632703 -0.75530091 0.3935184 0.6064816
+      
+      $outer.iter
+      [1] 2
+      
+      $convergence
+      [1] 0
+      
 
 ---
 
     Code
-      SummarizedExperiment::assay(res2)
+      res2
     Output
-             graphID proteinNr error_min  RiLog RiLog_min RiLog_max Ci Ci_min Ci_max
-      prot_1      NA         1 0.0038845 0.9635        NA        NA NA    0.1    0.9
-      prot_2      NA         2 0.0038845     NA 0.9851504  1.147567 NA    0.1    0.9
-             case
-      prot_1    1
-      prot_2    2
+      $RiLog
+      [1]  0.5632714 -0.4927231
+      
+      $Ci
+      [1] 0.3 0.7
+      
+      $RES
+      $RES$res_Mat
+                                    sp|P40212|RL13B_YEAST sp|Q12690|RL13A_YEAST
+      AAGLTAAYAR                                0.4432848             0.4974777
+      APEAEQVLSAAATFPIAQPATDVEAR                0.4432848             0.4974777
+      AVQDNGESAFR                               0.4432848             0.4974777
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR             1.4776160             0.0000000
+      GFTLAEVK                                  0.4432848             0.4974777
+      IAPRPLDLLRPVVR                            0.4432848             0.4974777
+      IIVFPR                                    0.4432848             0.4974777
+      NQEIFDANVQR                               0.4432848             0.4974777
+      TIGIAVDHR                                 0.4432848             0.4974777
+      
+      $RES$res_equ
+                         AAGLTAAYAR    APEAEQVLSAAATFPIAQPATDVEAR 
+                            0.10111                      -0.30732 
+                        AVQDNGESAFR DGKAPEAEQVLSAAATFPIAQPATDVEAR 
+                            0.33906                       0.00000 
+                           GFTLAEVK                IAPRPLDLLRPVVR 
+                            0.23208                       0.67760 
+                             IIVFPR                   NQEIFDANVQR 
+                           -0.68762                      -0.04674 
+                          TIGIAVDHR 
+                           -0.30817 
+      attr(,"na.action")
+      [1] 1 2
+      attr(,"class")
+      [1] "omit"
+      
+      $RES$res_squ_err
+      [1] 1.302607
+      
+      $RES$W
+                                    sp|P40212|RL13B_YEAST sp|Q12690|RL13A_YEAST
+      AAGLTAAYAR                                      0.3                   0.7
+      APEAEQVLSAAATFPIAQPATDVEAR                      0.3                   0.7
+      AVQDNGESAFR                                     0.3                   0.7
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR                   1.0                   0.0
+      GFTLAEVK                                        0.3                   0.7
+      IAPRPLDLLRPVVR                                  0.3                   0.7
+      IIVFPR                                          0.3                   0.7
+      NQEIFDANVQR                                     0.3                   0.7
+      TIGIAVDHR                                       0.3                   0.7
+      
+      
+      $Tracking
+        iter  squ_err     RLog1       RLog2  C1  C2
+      1    0 1.718422 0.5632714 -0.08809757 0.3 0.7
+      2    1 1.302607 0.5632714 -0.49272312 0.3 0.7
+      
+      $outer.iter
+      [1] 2
+      
+      $convergence
+      [1] 0
+      
+
+# test iterateOverCi and automated analysis
+
+    Code
+      round(res_I, 4)
+    Output
+        protein grid   RLog1 C1  error
+      1       1    1 -0.0177  1 2.0117
 
 ---
 
     Code
-      SummarizedExperiment::assay(res3)
+      res_I2
     Output
-                    graphID proteinNr  error_min     RiLog RiLog_min RiLog_max  Ci
-      prot_3             NA         1 0.00663525 1.0260321        NA        NA 0.1
-      prot_4;prot_5      NA         2 0.00663525 0.9835544        NA        NA 0.9
-                    Ci_min Ci_max case
-      prot_3            NA     NA    3
-      prot_4;prot_5     NA     NA    3
+      class: SummarizedExperiment 
+      dim: 1 10 
+      metadata(0):
+      assays(1): results
+      rownames(1): sp|P09938|RIR2_YEAST
+      rowData names(1): accession
+      colnames(10): graphID proteinNr ... Ci_max case
+      colData names(1): colnames
 
 ---
 
     Code
-      SummarizedExperiment::assay(res4)
+      round(res_N, 4)
     Output
-                    graphID proteinNr  error_min    RiLog RiLog_min RiLog_max Ci
-      prot_3             NA         1 0.00663525 1.026032        NA        NA NA
-      prot_4;prot_5      NA         2 0.00663525 0.983554        NA        NA NA
-                    Ci_min Ci_max case
-      prot_3           0.1    0.1    4
-      prot_4;prot_5    0.9    0.9    4
+         protein grid  RLog1  RLog2  C1  C2  error
+      1        1  0.1 -0.357 0.1035 0.1 0.9 0.0637
+      2        1  0.2 -0.357 0.1520 0.2 0.8 0.0637
+      3        1  0.3 -0.357 0.2120 0.3 0.7 0.0637
+      4        1  0.4 -0.357 0.2883 0.4 0.6 0.0637
+      5        1  0.5 -0.357 0.3888 0.5 0.5 0.0637
+      6        1  0.6 -0.357 0.5275 0.6 0.4 0.0637
+      7        1  0.7 -0.357 0.7326 0.7 0.3 0.0637
+      8        1  0.8 -0.357 1.0718 0.8 0.2 0.0637
+      9        1  0.9 -0.357 1.7754 0.9 0.1 0.0637
+      10       2  0.1 -0.357 1.7754 0.9 0.1 0.0637
+      11       2  0.2 -0.357 1.0718 0.8 0.2 0.0637
+      12       2  0.3 -0.357 0.7326 0.7 0.3 0.0637
+      13       2  0.4 -0.357 0.5275 0.6 0.4 0.0637
+      14       2  0.5 -0.357 0.3888 0.5 0.5 0.0637
+      15       2  0.6 -0.357 0.2883 0.4 0.6 0.0637
+      16       2  0.7 -0.357 0.2120 0.3 0.7 0.0637
+      17       2  0.8 -0.357 0.1520 0.2 0.8 0.0637
+      18       2  0.9 -0.357 0.1035 0.1 0.9 0.0637
 
 ---
 
     Code
-      SummarizedExperiment::assay(res5)
+      res_N2
     Output
-                    graphID proteinNr  error_min     RiLog RiLog_min RiLog_max  Ci
-      prot_3             NA         1 0.00663525 1.0260321        NA        NA 0.1
-      prot_4;prot_5      NA         2 0.00663525 0.9835544        NA        NA 0.9
-                    Ci_min Ci_max case
-      prot_3            NA     NA    3
-      prot_4;prot_5     NA     NA    3
+      class: SummarizedExperiment 
+      dim: 2 10 
+      metadata(0):
+      assays(1): results
+      rownames(2): sp|P40212|RL13B_YEAST sp|Q12690|RL13A_YEAST
+      rowData names(1): accession
+      colnames(10): graphID proteinNr ... Ci_max case
+      colData names(1): colnames
+
+---
+
+    Code
+      round(res_M, 4)
+    Output
+         protein grid  RLog1   RLog2  C1  C2  error
+      1        1  0.1 0.2273 -0.0240 0.1 0.9 1.3206
+      2        1  0.2 0.2340 -0.0308 0.2 0.8 1.3017
+      3        1  0.3 0.2362 -0.0367 0.3 0.7 1.2864
+      4        1  0.4 0.2342 -0.0414 0.4 0.6 1.2752
+      5        1  0.5 0.2287 -0.0448 0.5 0.5 1.2683
+      6        1  0.6 0.2208 -0.0471 0.6 0.4 1.2651
+      7        1  0.7 0.2112 -0.0483 0.7 0.3 1.2651
+      8        1  0.8 0.2006 -0.0487 0.8 0.2 1.2676
+      9        1  0.9 0.1897 -0.0485 0.9 0.1 1.2721
+      10       2  0.1 0.1897 -0.0485 0.9 0.1 1.2721
+      11       2  0.2 0.2006 -0.0487 0.8 0.2 1.2676
+      12       2  0.3 0.2112 -0.0483 0.7 0.3 1.2651
+      13       2  0.4 0.2208 -0.0471 0.6 0.4 1.2651
+      14       2  0.5 0.2287 -0.0448 0.5 0.5 1.2683
+      15       2  0.6 0.2342 -0.0414 0.4 0.6 1.2752
+      16       2  0.7 0.2362 -0.0367 0.3 0.7 1.2864
+      17       2  0.8 0.2340 -0.0308 0.2 0.8 1.3017
+      18       2  0.9 0.2273 -0.0240 0.1 0.9 1.3206
+
+---
+
+    Code
+      res_M2
+    Output
+      class: SummarizedExperiment 
+      dim: 2 10 
+      metadata(0):
+      assays(1): results
+      rownames(2): sp|P39708|DHE5_YEAST sp|P07262|DHE4_YEAST
+      rowData names(1): accession
+      colnames(10): graphID proteinNr ... Ci_max case
+      colData names(1): colnames
+
+---
+
+    Code
+      SummarizedExperiment::assay(res_M3)
+    Output
+                           graphID proteinNr error_min     RiLog RiLog_min RiLog_max
+      sp|P39708|DHE5_YEAST      NA         1  1.265101  0.220769        NA        NA
+      sp|P07262|DHE4_YEAST      NA         2  1.265101 -0.047055        NA        NA
+                           Ci Ci_min Ci_max case
+      sp|P39708|DHE5_YEAST NA    0.6    0.6    4
+      sp|P07262|DHE4_YEAST NA    0.4    0.4    4
+
+# test iterateOverCi with extended grid
+
+    Code
+      round(res_I, 4)
+    Output
+        protein grid   RLog1 C1  error
+      1       1    1 -0.0177  1 2.0117
+
+---
+
+    Code
+      round(res_N, 4)
+    Output
+         protein grid  RLog1  RLog2   C1   C2  error
+      1        1 0.01 -0.357 0.0672 0.01 0.99 0.0637
+      2        1 0.02 -0.357 0.0710 0.02 0.98 0.0637
+      3        1 0.03 -0.357 0.0748 0.03 0.97 0.0637
+      4        1 0.04 -0.357 0.0787 0.04 0.96 0.0637
+      5        1 0.05 -0.357 0.0826 0.05 0.95 0.0637
+      6        1 0.06 -0.357 0.0866 0.06 0.94 0.0637
+      7        1 0.07 -0.357 0.0907 0.07 0.93 0.0637
+      8        1 0.08 -0.357 0.0949 0.08 0.92 0.0637
+      9        1 0.09 -0.357 0.0992 0.09 0.91 0.0637
+      10       1 0.10 -0.357 0.1035 0.10 0.90 0.0637
+      11       1 0.20 -0.357 0.1520 0.20 0.80 0.0637
+      12       1 0.30 -0.357 0.2120 0.30 0.70 0.0637
+      13       1 0.40 -0.357 0.2883 0.40 0.60 0.0637
+      14       1 0.50 -0.357 0.3888 0.50 0.50 0.0637
+      15       1 0.60 -0.357 0.5275 0.60 0.40 0.0637
+      16       1 0.70 -0.357 0.7326 0.70 0.30 0.0637
+      17       1 0.80 -0.357 1.0718 0.80 0.20 0.0637
+      18       1 0.90 -0.357 1.7754 0.90 0.10 0.0637
+      19       1 0.91 -0.357 1.8942 0.91 0.09 0.0637
+      20       1 0.92 -0.357 2.0300 0.92 0.08 0.0637
+      21       1 0.93 -0.357 2.1878 0.93 0.07 0.0637
+      22       1 0.94 -0.357 2.3744 0.94 0.06 0.0637
+      23       1 0.95 -0.357 2.6008 0.95 0.05 0.0637
+      24       1 0.96 -0.357 2.8851 0.96 0.04 0.0637
+      25       1 0.97 -0.357 3.2615 0.97 0.03 0.0637
+      26       1 0.98 -0.357 3.8067 0.98 0.02 0.0637
+      27       1 0.99 -0.357 4.7659 0.99 0.01 0.0637
+      28       2 0.01 -0.357 4.7659 0.99 0.01 0.0637
+      29       2 0.02 -0.357 3.8067 0.98 0.02 0.0637
+      30       2 0.03 -0.357 3.2615 0.97 0.03 0.0637
+      31       2 0.04 -0.357 2.8851 0.96 0.04 0.0637
+      32       2 0.05 -0.357 2.6008 0.95 0.05 0.0637
+      33       2 0.06 -0.357 2.3744 0.94 0.06 0.0637
+      34       2 0.07 -0.357 2.1878 0.93 0.07 0.0637
+      35       2 0.08 -0.357 2.0300 0.92 0.08 0.0637
+      36       2 0.09 -0.357 1.8942 0.91 0.09 0.0637
+      37       2 0.10 -0.357 1.7754 0.90 0.10 0.0637
+      38       2 0.20 -0.357 1.0718 0.80 0.20 0.0637
+      39       2 0.30 -0.357 0.7326 0.70 0.30 0.0637
+      40       2 0.40 -0.357 0.5275 0.60 0.40 0.0637
+      41       2 0.50 -0.357 0.3888 0.50 0.50 0.0637
+      42       2 0.60 -0.357 0.2883 0.40 0.60 0.0637
+      43       2 0.70 -0.357 0.2120 0.30 0.70 0.0637
+      44       2 0.80 -0.357 0.1520 0.20 0.80 0.0637
+      45       2 0.90 -0.357 0.1035 0.10 0.90 0.0637
+      46       2 0.91 -0.357 0.0992 0.09 0.91 0.0637
+      47       2 0.92 -0.357 0.0949 0.08 0.92 0.0637
+      48       2 0.93 -0.357 0.0907 0.07 0.93 0.0637
+      49       2 0.94 -0.357 0.0866 0.06 0.94 0.0637
+      50       2 0.95 -0.357 0.0826 0.05 0.95 0.0637
+      51       2 0.96 -0.357 0.0787 0.04 0.96 0.0637
+      52       2 0.97 -0.357 0.0748 0.03 0.97 0.0637
+      53       2 0.98 -0.357 0.0710 0.02 0.98 0.0637
+      54       2 0.99 -0.357 0.0672 0.01 0.99 0.0637
+
+---
+
+    Code
+      round(res_M, 4)
+    Output
+         protein grid  RLog1   RLog2   C1   C2  error
+      1        1 0.01 0.2175 -0.0173 0.01 0.99 1.3397
+      2        1 0.02 0.2187 -0.0181 0.02 0.98 1.3375
+      3        1 0.03 0.2199 -0.0188 0.03 0.97 1.3353
+      4        1 0.04 0.2211 -0.0196 0.04 0.96 1.3331
+      5        1 0.05 0.2222 -0.0203 0.05 0.95 1.3310
+      6        1 0.06 0.2233 -0.0211 0.06 0.94 1.3289
+      7        1 0.07 0.2244 -0.0218 0.07 0.93 1.3268
+      8        1 0.08 0.2254 -0.0225 0.08 0.92 1.3247
+      9        1 0.09 0.2263 -0.0233 0.09 0.91 1.3226
+      10       1 0.10 0.2273 -0.0240 0.10 0.90 1.3206
+      11       1 0.20 0.2340 -0.0308 0.20 0.80 1.3017
+      12       1 0.30 0.2362 -0.0367 0.30 0.70 1.2864
+      13       1 0.40 0.2342 -0.0414 0.40 0.60 1.2752
+      14       1 0.50 0.2287 -0.0448 0.50 0.50 1.2683
+      15       1 0.60 0.2208 -0.0471 0.60 0.40 1.2651
+      16       1 0.70 0.2112 -0.0483 0.70 0.30 1.2651
+      17       1 0.80 0.2006 -0.0487 0.80 0.20 1.2676
+      18       1 0.90 0.1897 -0.0485 0.90 0.10 1.2721
+      19       1 0.91 0.1886 -0.0484 0.91 0.09 1.2726
+      20       1 0.92 0.1875 -0.0484 0.92 0.08 1.2731
+      21       1 0.93 0.1864 -0.0483 0.93 0.07 1.2737
+      22       1 0.94 0.1853 -0.0483 0.94 0.06 1.2742
+      23       1 0.95 0.1842 -0.0482 0.95 0.05 1.2748
+      24       1 0.96 0.1832 -0.0481 0.96 0.04 1.2754
+      25       1 0.97 0.1821 -0.0480 0.97 0.03 1.2760
+      26       1 0.98 0.1810 -0.0479 0.98 0.02 1.2766
+      27       1 0.99 0.1799 -0.0479 0.99 0.01 1.2772
+      28       2 0.01 0.1799 -0.0479 0.99 0.01 1.2772
+      29       2 0.02 0.1810 -0.0479 0.98 0.02 1.2766
+      30       2 0.03 0.1821 -0.0480 0.97 0.03 1.2760
+      31       2 0.04 0.1832 -0.0481 0.96 0.04 1.2754
+      32       2 0.05 0.1842 -0.0482 0.95 0.05 1.2748
+      33       2 0.06 0.1853 -0.0483 0.94 0.06 1.2742
+      34       2 0.07 0.1864 -0.0483 0.93 0.07 1.2737
+      35       2 0.08 0.1875 -0.0484 0.92 0.08 1.2731
+      36       2 0.09 0.1886 -0.0484 0.91 0.09 1.2726
+      37       2 0.10 0.1897 -0.0485 0.90 0.10 1.2721
+      38       2 0.20 0.2006 -0.0487 0.80 0.20 1.2676
+      39       2 0.30 0.2112 -0.0483 0.70 0.30 1.2651
+      40       2 0.40 0.2208 -0.0471 0.60 0.40 1.2651
+      41       2 0.50 0.2287 -0.0448 0.50 0.50 1.2683
+      42       2 0.60 0.2342 -0.0414 0.40 0.60 1.2752
+      43       2 0.70 0.2362 -0.0367 0.30 0.70 1.2864
+      44       2 0.80 0.2340 -0.0308 0.20 0.80 1.3017
+      45       2 0.90 0.2273 -0.0240 0.10 0.90 1.3206
+      46       2 0.91 0.2263 -0.0233 0.09 0.91 1.3226
+      47       2 0.92 0.2254 -0.0225 0.08 0.92 1.3247
+      48       2 0.93 0.2244 -0.0218 0.07 0.93 1.3268
+      49       2 0.94 0.2233 -0.0211 0.06 0.94 1.3289
+      50       2 0.95 0.2222 -0.0203 0.05 0.95 1.3310
+      51       2 0.96 0.2211 -0.0196 0.04 0.96 1.3331
+      52       2 0.97 0.2199 -0.0188 0.03 0.97 1.3353
+      53       2 0.98 0.2187 -0.0181 0.02 0.98 1.3375
+      54       2 0.99 0.2175 -0.0173 0.01 0.99 1.3397
 
