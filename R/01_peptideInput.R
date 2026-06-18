@@ -73,7 +73,6 @@ readFpPeptideTable <- function(path, group = NULL,
     further_columns_to_keep = NULL,
     verbose = FALSE) {
     checkmate::assertFileExists(path, access = "", extension = NULL)
-    checkmate::assertFlag(remove_contaminants)
     checkmate::assertFlag(rename_columns)
     checkmate::assertFlag(remove_empty_rows)
     checkmate::assertVector(further_columns_to_keep, null.ok = TRUE)
