@@ -72,7 +72,7 @@
 
 .missForest <- function(D, intensities) {
     # missForest imputation
-    D_imp <- missForest::missForest(D, verbose = FALSE)$ximp
+    D_imp <- missForest::missForest(as.matrix(intensities), verbose = FALSE)$ximp
     return(D_imp)
 }
 
@@ -140,18 +140,19 @@
 #' @return A numeric matrix with missing values imputed.
 #'
 #' @references
-#' Based on the \pkg{pcaMethods} package:
-#' \url{https://bioconductor.org/packages/pcaMethods}
+#' Based on the pcaMethods package:
+#' https://bioconductor.org/packages/pcaMethods
 #' 
 
-BPCA <- function(D, intensities) {
-    D_imp <- pcaMethods::pca(
-        as.matrix(D), 
-        method = "bpca", 
-        nPcs = 2
-        )
+.BPCA <- function(D, intensities) {
 
-    D_imp <- pcaMethods::completeObs(D_imp)
-    
+    fit <- pcaMethods::pca(
+        as.matrix(D),
+        method = "bpca",
+        nPcs = 2
+    )
+
+    D_imp <- pcaMethods::completeObs(fit)
+
     return(D_imp)
 }

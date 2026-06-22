@@ -41,3 +41,41 @@
       sample1_run2 20.87668 16.75364
       sample1_run3 21.00017 18.65062
 
+# BPCA
+
+    Code
+      D_BPCA
+    Output
+                   sample1.pep_1 sample1.pep_2 sample1.pep_3 sample1.pep_4
+      sample1_run1      17.57193      15.83758      23.73870      18.29231
+      sample1_run2      16.50317      24.09699      21.87331      15.10140
+      sample1_run3      18.70053      19.72942      17.50231      21.22343
+                   sample1.pep_5 sample1.pep_6 sample1.pep_7 sample1.pep_8
+      sample1_run1      17.22276      19.01648      15.72499      15.02450
+      sample1_run2      23.05993      20.58218      22.14794      21.34943
+      sample1_run3      22.63031      19.72942      15.71257      19.18439
+                   sample1.pep_9 sample1.pep_10 sample2.pep_1 sample2.pep_2
+      sample1_run1      16.37094       16.91909      15.43822      23.27206
+      sample1_run2      21.18414       19.92332      19.70244      18.84700
+      sample1_run3      18.79415       24.08768      17.18089      24.87634
+                   sample2.pep_3 sample2.pep_4 sample2.pep_5 sample2.pep_6
+      sample1_run1      15.43366      24.89333      15.89846      23.17690
+      sample1_run2      16.56922      20.59139      16.46224      23.13152
+      sample1_run3      18.48462      20.56092      15.20986      22.49727
+                   sample2.pep_7 sample2.pep_8 sample2.pep_9 sample2.pep_10
+      sample1_run1      24.38314      21.20169      21.01243       20.86509
+      sample1_run2      21.84061      18.87477      19.28098       15.45872
+      sample1_run3      16.62958      18.19041      20.97890       20.87997
+                   sample3.pep_1 sample3.pep_2 sample3.pep_3 sample3.pep_4
+      sample1_run1      23.24674      16.16851      21.03924      18.56561
+      sample1_run2      18.46458      20.08279      22.56324      19.81107
+      sample1_run3      18.83131      18.90382      19.38635      19.63025
+                   sample3.pep_5 sample3.pep_6 sample3.pep_7 sample3.pep_8
+      sample1_run1      24.65195      24.67561      21.03924      18.32156
+      sample1_run2      18.95437      22.02452      18.33825      17.18413
+      sample1_run3      20.83005      18.83131      15.05981      17.18942
+                   sample3.pep_9 sample3.pep_10
+      sample1_run1      21.53844       21.14550
+      sample1_run2      20.87668       19.81107
+      sample1_run3      21.00017       18.65062
+
