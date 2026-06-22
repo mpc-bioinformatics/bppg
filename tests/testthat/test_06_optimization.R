@@ -45,7 +45,7 @@ test_that("test iterateOverCi and automated analysis", {
   G_N <- graphs[[2]][[2]] # N
   G_M <- graphs[[1]][[3]] # M
 
-   igraph::V(G_I)$protOrigin[igraph::V(G_I)$type] <- c("test_origin")
+  igraph::V(G_I)$protOrigin[igraph::V(G_I)$type] <- c("test_origin")
   res_I <- iterateOverCi(G_I, gridSize = 10)
 
   res_I2 <- automatedAnalysisIteratedCi(G_I, res_I,
@@ -62,7 +62,7 @@ test_that("test iterateOverCi and automated analysis", {
 
   expect_snapshot(round(res_I, 4))
   expect_snapshot(res_I2)
-  expect_snapshot(SummarizedExperiment::rowData(res_I))
+  expect_snapshot(SummarizedExperiment::rowData(res_I2))
   expect_snapshot(round(res_N, 4))
   expect_snapshot(res_N2)
   expect_snapshot(round(res_M, 4))

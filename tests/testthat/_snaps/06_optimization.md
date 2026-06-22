@@ -201,9 +201,19 @@
       metadata(0):
       assays(1): results
       rownames(1): sp|P09938|RIR2_YEAST
-      rowData names(1): accession
+      rowData names(2): accession protOrigin
       colnames(10): graphID proteinNr ... Ci_max case
       colData names(1): colnames
+
+---
+
+    Code
+      SummarizedExperiment::rowData(res_I2)
+    Output
+      DataFrame with 1 row and 2 columns
+                                      accession  protOrigin
+                                    <character> <character>
+      sp|P09938|RIR2_YEAST sp|P09938|RIR2_YEAST test_origin
 
 ---
 
