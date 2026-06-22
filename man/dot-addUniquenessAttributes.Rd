@@ -20,15 +20,17 @@ Adds vertex attributes with uniqueness of peptides and number of unique
 peptides for proteins.
 }
 \examples{
+file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
+graphs <- readRDS(file)
 
-library(seqinr)
-file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
-fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-edgelist <- digestFASTA(fasta)
-graph <- bppg::generateGraphsFromEdgelist(edgelist)
+res <- bppg:::.addUniquenessAttributes(graphs[[1]][[2]])
 
-res <- bppg:::.addUniquenessAttributes(graph[[1]])
+# get uniqueness of all nodes (NA means it is a protein node, not a peptide)
+igraph::V(res)$uniqueness
 
+# get number of unique and shared peptides per protein node:
+igraph::V(res)$nr_unique_peptides
+igraph::V(res)$nr_shared_peptides
 }
 \seealso{
 \code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}, \code{\link[=generateQuantGraphs]{generateQuantGraphs()}}

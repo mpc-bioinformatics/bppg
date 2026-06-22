@@ -20,11 +20,11 @@
 #'
 #' @examples
 #' library(seqinr)
-#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' edgelist <- digestFASTA(fasta)
 #' res <- bppg:::.getContractMapping(edgelist)
-#' 
+#'
 #' @importFrom stats aggregate
 
 .getContractMapping <- function(edgelist,
@@ -67,7 +67,7 @@
 #'
 #' @examples
 #' library(seqinr)
-#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' edgelist <- digestFASTA(fasta)
 #' vMapping <- bppg:::.getContractMapping(edgelist)
@@ -75,7 +75,7 @@
 #' igraph::V(G)[igraph::V(G)$name %in% edgelist[, 1]]$type <- TRUE
 #' igraph::V(G)[igraph::V(G)$name %in% edgelist[, 2]]$type <- FALSE
 #' res <- bppg:::.contractGraph(G, vMapping)
-#' 
+#'
 #' @importFrom igraph contract set_vertex_attr simplify V
 #' @importFrom stats na.omit
 
@@ -96,7 +96,7 @@
             match(igraph::V(G)$name[!igraph::V(G)$type],
                 vMapping$peptides$peptide)])
 
-    gColl <- igraph::contract(G, 
+    gColl <- igraph::contract(G,
         factor(stats::na.omit(igraph::V(G)$collSignature)),
         vertex.attr.comb = c)
 
@@ -107,7 +107,7 @@
     igraph::V(gColl)$type <- vapply(igraph::V(gColl)$type, "[", 1,
         FUN.VALUE = logical(1))
     igraph::V(gColl)$name <- vapply(igraph::V(gColl)$name, paste, collapse=";",
-        FUN.VALUE = character(1)) 
+        FUN.VALUE = character(1))
     # this is not ordered - > same ratio order
 
 
@@ -124,12 +124,12 @@
     if (!is.null(igraph::V(gColl)$protOrigin)) {
         if (collProtNodes) {
             igraph::V(gColl)$protOrigin[igraph::V(gColl)$type] <- vapply(
-                    igraph::V(gColl)$protOrigin[igraph::V(gColl)$type], 
+                    igraph::V(gColl)$protOrigin[igraph::V(gColl)$type],
                     function(x) { paste(unique(x), collapse = ";")
                     }, FUN.VALUE = character(1))
         }
         # igraph::V(gColl)$protOrigin[!igraph::V(gColl)$type] <- NA
-        igraph::V(gColl)$protOrigin <- vapply(igraph::V(gColl)$protOrigin, "[", 
+        igraph::V(gColl)$protOrigin <- vapply(igraph::V(gColl)$protOrigin, "[",
         1, FUN.VALUE = character(1))
     }
 
@@ -151,11 +151,12 @@
 #'
 #' @examples
 #' library(seqinr)
-#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' edgelist <- digestFASTA(fasta)
-#' res <- bppg::generateGraphsFromEdgelist(edgelist)
-#' 
+#' res <- bppg::generateGraphsFromEdgelist(edgelist, collProtNodes = TRUE,
+#'     collPeptNodes = TRUE)
+#'
 #' @importFrom igraph graph_from_edgelist set_vertex_attr V
 #'
 generateGraphsFromEdgelist <- function(edgelist,
@@ -186,7 +187,7 @@ generateGraphsFromEdgelist <- function(edgelist,
                 match(igraph::V(G)$name[!igraph::V(G)$type],
                     edgelist$peptide)])
     }
-    
+
     if (!is.null(edgelist$protOrigin)) {
         protOriginDF <- edgelist[, c("protein", "protOrigin")]
         protOriginDF <- protOriginDF[!duplicated(protOriginDF), ]
@@ -237,26 +238,26 @@ generateGraphsFromEdgelist <- function(edgelist,
 #'
 #' @examples
 #' library(seqinr)
-#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' edgelist <- digestFASTA(fasta)
 #'
-#' file <- system.file("extdata", "peptides.txt", package = "bppg")
-#' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
 #' group <- factor(rep(1:9, each = 3))
-#' dAgg <- aggregateReplicates(D, group = group)
+#' D <- readMqPeptideTable(path = file, group = group, LFQ = TRUE, remove_contaminants = FALSE)
+#' D_norm <- bppg::normalizePeptideIntensities(D)
+#' dAgg <- aggregateReplicates(D_norm)
 #' exp_peptide_ratios <- calculatePeptideRatios(dAgg)
 #'
 #' res <- generateQuantGraphs(exp_peptide_ratios, edgelist)
 
 generateQuantGraphs <- function(exp_peptide_ratios,
     fasta_edgelist,
-    seq_column = "Sequence", 
+    seq_column = "Sequence",
     outpath = NULL,
     collProtNodes = TRUE,
     collPeptNodes = FALSE,
     suffix = "") {
-    ## How to assert? could be int, maybe if 
     checkmate::assertClass(exp_peptide_ratios, "SummarizedExperiment")
     checkmate::assertDataFrame(SummarizedExperiment::assays(
         exp_peptide_ratios)$logRatios, all.missing=FALSE)
@@ -287,9 +288,9 @@ generateQuantGraphs <- function(exp_peptide_ratios,
 
             compEdgelist <- edgelist_filtered[edgelist_filtered$peptide
                 %in% rownames(compRatio), ]
-            compEdgelist$pep_logRatio <- compRatio[match(compEdgelist$peptide, 
+            compEdgelist$pep_logRatio <- compRatio[match(compEdgelist$peptide,
                 rownames(compRatio)), 1]
-            generateGraphsFromEdgelist(compEdgelist, collProtNodes, 
+            generateGraphsFromEdgelist(compEdgelist, collProtNodes,
                 collPeptNodes)
         })
 

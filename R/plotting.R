@@ -13,7 +13,7 @@
 #' @param params                \strong{data.frame} \cr
 #'                              parameters for color and size.
 #' @return symbole that can be used by igraph for plotting
-#' 
+#'
 #' @importFrom graphics symbols
 
 .myDiamond <- function(coords, v = NULL, params) {
@@ -94,9 +94,6 @@
 }
 
 
-#### TODO: Farbskala für die Peptid-Knoten einbauen, um die Peptid-Ratios
-# darzustellen (Studienprojekt)
-
 #' Plotting of bipartite peptide-protein graphs.
 #'
 #' @param G                         \strong{igraph graph object} \cr
@@ -151,9 +148,13 @@
 #' @export
 #'
 #' @examples
-#' biadjacency_matrix <- matrix(c(1,1,1,0), nrow = 2)
-#' G <- igraph::graph_from_biadjacency_matrix(biadjacency_matrix)
-#' plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
+#'
+#' file <- system.file("extdata", "quantGraphs_collpept.rds", package = "bppg")
+#' graphs <- readRDS(file)
+#' G <- graphs$"1_2"[[2]]
+#'
+#' plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE,
+#'     legend.x = 0)
 #'
 #' @importFrom igraph add_shape canonical_permutation layout_as_bipartite 
 #' @importFrom igraph permute V

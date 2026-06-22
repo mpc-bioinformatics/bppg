@@ -33,7 +33,7 @@
 #'
 #' @examples
 #' library(seqinr)
-#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' graphs <- bppg::generateGraphsFromFASTA(fasta)
 #'
@@ -65,7 +65,7 @@ generateGraphsFromFASTA <- function(fasta,
     if (!collProtNodes && !collPeptNodes) suffix2 <- NULL
 
     if (!is.null(outpath)) {
-        saveRDS(graphs, file = file.path(outpath, paste0("subgraphs_", 
+        saveRDS(graphs, file = file.path(outpath, paste0("subgraphs_",
                     suffix2, suffix, ".rds")))
     }
     return(graphs)
@@ -127,14 +127,17 @@ generateGraphsFromFASTA <- function(fasta,
 #'
 #' @examples
 #' library(seqinr)
-#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
+#'     package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #'
-#' file <- system.file("extdata", "peptides.txt", package = "bppg")
-#' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
+#' group <- factor(rep(1:9, each = 3))
+#' D <- readMqPeptideTable(path = file, group = group, LFQ = TRUE,
+#'     remove_contaminants = FALSE)
 #'
 #' graphs <- bppg::generateGraphsFromQuantData(D, fasta)
-#' 
+#'
 #' @importFrom checkmate assertPathForOutput
 #' @importFrom openxlsx write.xlsx
 #' @importFrom limma strsplit2
@@ -156,7 +159,7 @@ generateGraphsFromQuantData <- function(D,
 
     if (verbose) message("Digesting FASTA file...")
     edgelist <- digestFASTA(fasta, missed_cleavages = missed_cleavages,
-        min_aa = min_aa, max_aa = max_aa, protOrigin = protOrigin, 
+        min_aa = min_aa, max_aa = max_aa, protOrigin = protOrigin,
         verbose = verbose, ...)
 
     if (!is.null(outpath)) {

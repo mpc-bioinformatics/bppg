@@ -1,17 +1,17 @@
 ## TODO add test for new contracting functions
 test_that("test mapping for graph contraction", {
-    file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+    file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
     fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
     names(fasta) <- limma::strsplit2(names(fasta), "\\|")[,2]
     res <- digestFASTA(fasta)
 
-    mappingCollProtPept <- bppg:::.getContractMapping(res, 
+    mappingCollProtPept <- bppg:::.getContractMapping(res,
         collProtNodes = TRUE, collPeptNodes = TRUE)
-    mappingCollProt <- bppg:::.getContractMapping(res, 
+    mappingCollProt <- bppg:::.getContractMapping(res,
         collProtNodes = TRUE, collPeptNodes = FALSE)
-    mappingCollPept <- bppg:::.getContractMapping(res, 
+    mappingCollPept <- bppg:::.getContractMapping(res,
         collProtNodes = FALSE, collPeptNodes = TRUE)
-    
+
     expect_snapshot(mappingCollProtPept)
     expect_snapshot(mappingCollProt)
     expect_snapshot(mappingCollPept)
@@ -20,123 +20,83 @@ test_that("test mapping for graph contraction", {
 test_that("generation of graphs from edgelist", {
     library(igraph)
 
-    graphs_coll_pept_prot <- readRDS(testthat::test_path("testfiles/graphs_coll_pept_prot_test.rds"))
-    graphs_coll_prot <- readRDS(testthat::test_path("testfiles/graphs_coll_prot_test.rds"))
+    file_fasta <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
+    file1 <- system.file("extdata", "theoGraphs_collpeptprot.rds", package = "bppg")
+    file2 <- system.file("extdata", "theoGraphs_collprot.rds", package = "bppg")
 
-    # with collapsing of peptide and protein nodes
-    edgelist_coll_pept_prot <- readRDS(testthat::test_path("testfiles/edgelist_coll_pept_prot_test.rds"))
+    graphs_coll_pept_prot <- readRDS(file1)
+    graphs_coll_prot <- readRDS(file2)
 
-    res <- bppg::generateGraphsFromEdgelist(edgelist_coll_pept_prot)
+    fasta <- seqinr::read.fasta(file = file_fasta, seqtype = "AA", as.string = TRUE)
+    edgelist <- digestFASTA(fasta)
 
+    res <- bppg::generateGraphsFromEdgelist(edgelist, collProtNodes = TRUE, collPeptNodes = TRUE)
+    res2 <- bppg::generateGraphsFromEdgelist(edgelist, collProtNodes = TRUE, collPeptNodes = FALSE)
 
-    # with collapsing of only protein nodes
-    edgelist_coll_prot <- readRDS(test_path("testfiles/edgelist_coll_prot_test.rds"))
-    res2 <- bppg::generateGraphsFromEdgelist(edgelist_coll_prot)
-
-    expect_true(bppg:::.isomorphicBipartite(res[[1]], graphs_coll_pept_prot[[1]]))
-    expect_true(bppg:::.isomorphicBipartite(res[[2]], graphs_coll_pept_prot[[2]]))
-    expect_true(bppg:::.isomorphicBipartite(res[[3]], graphs_coll_pept_prot[[3]]))
-
-    expect_true(bppg:::.isomorphicBipartite(res2[[1]], graphs_coll_prot[[1]]))
-    expect_true(bppg:::.isomorphicBipartite(res2[[2]], graphs_coll_prot[[2]]))
-    expect_true(bppg:::.isomorphicBipartite(res2[[3]], graphs_coll_prot[[3]]))
+    for (i in 1:4) {
+        expect_true(bppg:::.isomorphicBipartite(res[[i]], graphs_coll_pept_prot[[i]]))
+        expect_true(bppg:::.isomorphicBipartite(res2[[i]], graphs_coll_prot[[i]]))
+    }
 
     # NOTE: snapshots don't work here because of random graph ids
 })
 
 test_that("test generateQuantGraphs", {
-    # Create a temporary directory so no permanent files are put on a package users directory
-    temp_dir <- tempfile(pattern = "test_dir")
-    dir.create(temp_dir)
-    on.exit(unlink(temp_dir, recursive = TRUE))
+    file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
+    fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+    edgelist <- digestFASTA(fasta)
 
-    # Create a ratio table and edgelist
-    set.seed(8)
-    ratio_table <- data.frame(peptides = paste0("pep_", 1:10),
-                                ratio_sample1_sample2 = round(runif(10, min = 0.9, max = 1.1), digits = 3),
-                                ratio_sample1_sample3 = round(runif(10, min = 0.9, max = 1.1), digits = 3),
-                                ratio_sample2_sample3 = round(runif(10, min = 0.9, max = 1.1), digits = 3))
-    for (i in 2:4) {
-        ratio_table[sample(1:10, size = 2), i] <- NA # Insert some NAs
-    }
+    file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
+    group <- factor(rep(1:9, each = 3))
+    D <- readMqPeptideTable(path = file, group = group, LFQ = TRUE, remove_contaminants = FALSE)
+    D_norm <- bppg::normalizePeptideIntensities(D)
+    dAgg <- aggregateReplicates(D_norm)
+    exp_peptide_ratios <- calculatePeptideRatios(dAgg)
 
-    proteins <- rep(paste0("prot_", 1:5), times = c(4,2,3,4,4))
-    peptides <- c(paste0("pep_", 1:4), paste0("pep_", 3:4), paste0("pep_", 5:7), paste0("pep_", 7:10), paste0("pep_", 7:10))
-    edgelist <- data.frame(protein = proteins, peptide = peptides)
-
-    rownames(ratio_table) <- ratio_table$peptides
-
-    expData <- SummarizedExperiment::SummarizedExperiment(
-        assays = list(logRatios = ratio_table[, -1]),
-        rowData = data.frame(peptides = rownames(ratio_table)),
-        colData = data.frame(comparison = colnames(ratio_table[, -1]))
-    )
-    # Compute function
-    graphs <- bppg::generateQuantGraphs(exp_peptide_ratios = expData,
+    graphs <- bppg::generateQuantGraphs(exp_peptide_ratios = exp_peptide_ratios,
                                     fasta_edgelist = edgelist,
-                                    outpath = temp_dir,
-                                    seq_column = "peptides",
                                     collProtNodes = TRUE,
-                                    collPeptNodes = TRUE,
-                                    suffix = "")
+                                    collPeptNodes = TRUE)
 
 
-    ###########
-    ### save graphs for optimization later and not collapsed peptides
-    graphs2 <- bppg::generateQuantGraphs(exp_peptide_ratios = expData,
+    graphs2 <- bppg::generateQuantGraphs(exp_peptide_ratios = exp_peptide_ratios,
                                         fasta_edgelist = edgelist,
-                                        outpath = temp_dir,
-                                        seq_column = "peptides",
                                         collProtNodes = TRUE,
-                                        collPeptNodes = FALSE,
-                                        suffix = "")
+                                        collPeptNodes = FALSE)
 
-    testfile_path <- file.path(testthat::test_path(), "testfiles")
-    # saveRDS(graphs2, file.path(testfile_path, "quantGraphsForTesting.rds"))
-    ###################
-    # check protOrigin with quant
-    protOrigin <- rep(paste0("origin_", 1:2), times = c(13,4))
-    edgelist <- data.frame(protein = proteins, peptide = peptides, 
-        protOrigin = protOrigin)
-    graphs3 <- bppg::generateQuantGraphs(exp_peptide_ratios = expData,
-                                        fasta_edgelist = edgelist,
-                                        outpath = temp_dir,
-                                        seq_column = "peptides",
-                                        collProtNodes = TRUE,
-                                        collPeptNodes = FALSE,
-                                        suffix = "")
-
-
+    testfile1 <- system.file("extdata", "quantGraphs.rds", package = "bppg")
+    testgraphs <- readRDS(testfile1)
+    testfile2 <- system.file("extdata", "quantGraphs_collpept.rds", package = "bppg")
+    testgraphs2 <- readRDS(testfile2)
 
     # Check result attributes
-    expect_true(file.exists(file.path(temp_dir, "edgelist_filtered_.xlsx")))
-    expect_equal(unname(lapply(graphs, length)), list(3,2,2))
-    expect_equal(names(graphs), c("sample1_sample2", "sample1_sample3", "sample2_sample3"))
+    expect_equal(lengths(graphs), lengths(testgraphs))
+    expect_equal(lengths(graphs2), lengths(testgraphs2))
 
     for (i in 1:3) {
         for (j in seq_along(graphs[[i]])) {
         expect_snapshot(igraph::as_edgelist(graphs[[i]][[j]]))
+        expect_snapshot(igraph::as_edgelist(graphs2[[i]][[j]]))
         expect_snapshot(igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio"))
         expect_snapshot(igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio"))
-        expect_snapshot(igraph::vertex_attr(graphs3[[i]][[j]], "protOrigin"))
         }
     }
-
 })
 
 
 test_that("test protOrigin", {
-    file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+    file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
     fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
     names(fasta) <- limma::strsplit2(names(fasta), "\\|")[,2]
-    protOrigin <- as.list(c(rep("yeast", 4), rep("spike_in", 3)))
+    # fake ProtOrigin just for testing
+    protOrigin <- as.list(c(rep("yeast", 7), rep("spike_in", 2)))
     edgelist <- digestFASTA(fasta, protOrigin = protOrigin)
 
     graphs1 <- bppg::generateGraphsFromEdgelist(edgelist)
     graphs2 <- bppg::generateGraphsFromEdgelist(edgelist, collPeptNodes = TRUE)
     graphs3 <- bppg::generateGraphsFromEdgelist(edgelist, collPeptNodes = TRUE,
         collProtNodes = TRUE)
-    
+
     for (i in seq_along(graphs1)) {
         expect_snapshot(igraph::V(graphs1[[i]])$name[
             igraph::V(graphs1[[i]])$type])
@@ -148,5 +108,5 @@ test_that("test protOrigin", {
             igraph::V(graphs3[[i]])$type])
         expect_snapshot(igraph::V(graphs3[[i]])$protOrigin)
     }
-    
+
 })

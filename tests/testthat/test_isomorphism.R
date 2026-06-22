@@ -16,19 +16,14 @@ test_that("test .directBipartiteGraph", {
 
   # from peptide to protein
   directed_graph <- bppg:::.directBipartiteGraph(bipartite_graph, from_type = FALSE)
-  pred_res <- cbind(c("pep_1", "pep_3", "pep_2", "pep_2", "pep_3", "pep_2", "pep_3", "pep_4"),
-                    c("prot_1", "prot_1", "prot_1", "prot_2", "prot_2", "prot_3", "prot_3", "prot_3"))
 
   # from protein to peptide
   directed_graph2 <- bppg:::.directBipartiteGraph(bipartite_graph, from_type = TRUE)
-  pred_res2 <- cbind(c("prot_1", "prot_1", "prot_1", "prot_2", "prot_2", "prot_3", "prot_3", "prot_3"),
-                    c("pep_1", "pep_3", "pep_2", "pep_2", "pep_3", "pep_2", "pep_3", "pep_4"))
-
 
   expect_true(igraph::is_directed(directed_graph))
-  expect_equal(igraph::as_edgelist(directed_graph), pred_res)
+  expect_snapshot(igraph::as_edgelist(directed_graph))
   expect_true(igraph::is_directed(directed_graph2))
-  expect_equal(igraph::as_edgelist(directed_graph2), pred_res2)
+  expect_snapshot(igraph::as_edgelist(directed_graph2))
 
 })
 

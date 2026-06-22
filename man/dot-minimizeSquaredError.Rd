@@ -45,9 +45,9 @@ Function to set up the optimization problem and minimize the sum of squared
 error terms
 }
 \examples{
-file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
 graphs <- readRDS(file)
-G <- graphs$sample1_sample2[[2]]
+G <- graphs$"1_2"[[2]]
 bppg:::.minimizeSquaredError(G)
 
 }

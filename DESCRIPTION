@@ -25,19 +25,21 @@ Imports:
     robustbase,
     Rsolnp,
     stringr,
-    SummarizedExperiment
-Suggests:
+    SummarizedExperiment, 
+    vsn
+Suggests: 
     covr,
     rmarkdown,
     testthat (>= 3.0.0),
-    vsn,
     tidySummarizedExperiment,
     seqinr,
     BiocStyle,
     knitr,
-    pak,
-    RefManageR
+    pak, 
+    RefManageR, 
+    sessioninfo
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 Depends: 
     igraph (>= 2.0.0)
+Config/roxygen2/version: 8.0.0
