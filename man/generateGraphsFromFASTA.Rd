@@ -55,7 +55,8 @@ Generate graphs from a FASTA file
 }
 \examples{
 library(seqinr)
-file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
+file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
+     package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 graphs <- bppg::generateGraphsFromFASTA(fasta)
 

@@ -69,7 +69,8 @@ In silico tryptic digestion of whole FASTA file.
 }
 \examples{
 library(seqinr)
-file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
+file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
+    package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 res <- digestFASTA(fasta)
 

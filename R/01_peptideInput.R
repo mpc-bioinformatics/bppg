@@ -189,7 +189,7 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
             ind_cont <- D$Potential.contaminant == "+"
             D <- D[!ind_cont, ]
             if (verbose) print(paste0("Removed ", sum(ind_cont),
-                                      " contaminant sequences."))
+                " contaminant sequences."))
         }
     }
 
