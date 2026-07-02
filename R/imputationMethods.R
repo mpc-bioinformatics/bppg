@@ -70,7 +70,7 @@
 
 #' @return A numeric matrix with imputed intensity values replacing missing entries.
 
-.missForest <- function(D, intensities) {
+.missForest <- function(intensities) {
     # missForest imputation
     D_imp <- missForest::missForest(as.matrix(intensities), verbose = FALSE)$ximp
     return(D_imp)
@@ -144,7 +144,7 @@
 #' https://bioconductor.org/packages/pcaMethods
 #' 
 
-.BPCA <- function(D, intensities) {
+.BPCA <- function(D) {
 
     fit <- pcaMethods::pca(
         as.matrix(D),

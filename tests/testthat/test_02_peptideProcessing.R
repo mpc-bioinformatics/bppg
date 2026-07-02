@@ -29,7 +29,7 @@ test_that("test aggregateReplicates", {
     # Test imputation
     D3 <- bppg::aggregateReplicates(D = D, 
         group = factor(rep(1:3, each = 3)),
-        imp_method = "min_2_impute")
+        imp_method = ".min2impute",)
 
     expect_snapshot(D1)
     expect_snapshot(SummarizedExperiment::assays(D1)$intensities)
