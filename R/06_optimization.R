@@ -670,8 +670,8 @@ automatedAnalysisIteratedCi <- function(G,
     ind_error_NA <- which(is.na(res$error))
     if (length(ind_error_NA) > 0) {
         if (verbose) {
-            message(paste0(length(ind_error_NA),
-                           " grid points with NA or NaN error term were removed."))
+            message(length(ind_error_NA),
+                           " grid points with NA or NaN error term were removed.")
         }
         res <- res[-ind_error_NA, ]
     }

@@ -42,7 +42,3 @@ For each protein node, get information about protein origin (contaminant,
 spike-in
 or a specific species).
 }
-\examples{
-## TODO
-
-}
