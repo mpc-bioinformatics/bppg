@@ -489,8 +489,7 @@
 #' # small example with a small grid size
 #' iterateOverCi(G, gridSize = 100)
 #'
-#' @importFrom checkmate assertClass assertFlag assertIntegerish assertList
-#'  assertNumeric checkTRUE
+#' @importFrom checkmate assertClass assertFlag assertIntegerish assertList assertNumeric checkTRUE
 #' @importFrom igraph is_bipartite V
 #' @importFrom  pbapply pbmapply pboptions
 iterateOverCi <- function(G,

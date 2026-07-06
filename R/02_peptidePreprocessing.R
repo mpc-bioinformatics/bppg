@@ -42,7 +42,7 @@
 #'
 #' @param D              \strong{SummarizedExperiment} \cr
 #'                       SummarizedExperiment Dataset containing peptide
-#'                       intensities, e.g. the result of 
+#'                       intensities, e.g. the result of
 #'                       [normalizePeptideIntensities].
 #' @param group          \strong{character factor} \cr
 #'                       The groups per sample for aggregation, if not already
@@ -69,8 +69,7 @@
 #' D_norm <- bppg::normalizePeptideIntensities(D)
 #' aggregateReplicates(D_norm)
 #'
-#' @importFrom checkmate assertCharacter assertClass assertDataFrame
-#' assertFactor assertNumber
+#' @importFrom checkmate assertCharacter assertClass assertDataFrame assertFactor assertNumber
 #' @importFrom SummarizedExperiment assays colData rowData SummarizedExperiment
 
 aggregateReplicates <- function(D,
