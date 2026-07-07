@@ -6,7 +6,7 @@ test_that("test aggregateReplicates", {
     for (i in 1:3) {
         for (j in 1:3) {
             set.seed((i + 2)^(j + 2))
-            df[[paste0("sample", i, "_run", j)]] <- runif(10, min = 15, max = 25)
+            df[[paste0("sample", i, "_run", j)]] <- 2^rnorm(10, mean = 20, sd = 2)
             num_na <- sample(1:10, size = sample(1:3, 1))
             df[[paste0("sample", i, "_run", j)]][num_na] <- NA
         }
@@ -18,6 +18,8 @@ test_that("test aggregateReplicates", {
             assays = list(intensities = df),
             colData = data.frame(sample = colnames(df)),
             rowData = data.frame(Sequence = rownames(df)))
+    
+    intensities <- SummarizedExperiment::assays(D)$intensities
 
     D1 <- bppg::aggregateReplicates(D = D, group = factor(rep(1:3, each = 3)))
 
@@ -51,8 +53,6 @@ test_that("test aggregateReplicates", {
     
 })
 
-
-
 test_that("test calculatePeptideRatios", {
 
     # Create test data
@@ -60,7 +60,7 @@ test_that("test calculatePeptideRatios", {
     df <- c(df, sequence = list(paste0("pep_", 1:10)))
     for (i in 1:3) {
         set.seed(i)
-        df[[paste0("sample", i)]] <- runif(10, min = 15, max = 25)
+        df[[paste0("sample", i)]] <- 2^rnorm(10, mean = 20, sd = 2)
         num_na <- sample(1:10, size = sample(0:4, 1))
         df[[paste0("sample", i)]][num_na] <- NA
     }
@@ -121,4 +121,3 @@ test_that("normalize peptide data", {
     expect_snapshot(SummarizedExperiment::rowData(D_norm_lts))
     expect_snapshot(SummarizedExperiment::colData(D_norm_lts))
 })
-

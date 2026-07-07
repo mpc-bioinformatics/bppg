@@ -102,20 +102,24 @@
 #' Based on the {imputeLCMD} package:
 #' {https://bioconductor.org/packages/imputeLCMD}
 
-.QRILC<- function(D, ...) {
+.QRILC <- function(D, ...) {
+    D_log <- log2(as.matrix(D))
 
     model.selector <- matrix(
         1,
-        nrow = nrow(D),
-        ncol = ncol(D)
+        nrow = nrow(D_log),
+        ncol = ncol(D_log)
     )
 
-    D_imp <- imputeLCMD::impute.MAR.MNAR(
-        dataSet.mvs = as.matrix(D),
+    D_imp_log <- imputeLCMD::impute.MAR.MNAR(
+        dataSet.mvs = D_log,
         model.selector = model.selector,
         method.MAR = "MLE",
-        method.MNAR = "QRILC"
+        method.MNAR = "QRILC",
+        ...
     )
+
+    D_imp <- 2^D_imp_log
 
     return(D_imp)
 }
@@ -144,15 +148,17 @@
 #' https://bioconductor.org/packages/pcaMethods
 #' 
 
-.BPCA <- function(D) {
+.BPCA <- function(D, intensities) {
+    D_log <- log2(as.matrix(D))
 
     fit <- pcaMethods::pca(
-        as.matrix(D),
+        D_log,
         method = "bpca",
         nPcs = 2
     )
 
-    D_imp <- pcaMethods::completeObs(fit)
+    D_imp_log <- pcaMethods::completeObs(fit)
+    D_imp <- 2^D_imp_log
 
     return(D_imp)
 }
