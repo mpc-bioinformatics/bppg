@@ -1,6 +1,7 @@
 # Functions in this file:
 # .calculateProteinNodeInfo
 # .calculateSubgraphCharcateristics
+# graphComplexity
 
 
 
@@ -18,8 +19,14 @@
 #' @seealso For the generation of the list of lists of igraphs:
 #'  [generateGraphsFromQuantData()]
 #'
-#' @examples ## TODO
-#' 
+#' @examples
+#'
+#' file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
+#' graphs <- readRDS(file)
+#'
+#' ProtInfo <- bppg:::.calculateProteinNodeInfo(G = graphs, verbose = FALSE)
+#'
+#'
 #' @importFrom pbapply pblapply pboptions
 #' @importFrom igraph V
 
@@ -89,17 +96,18 @@
 #' @return A table with the characteristics.
 #'
 #'
-#' @examples
+#' @examples # TODO
 #'
 #' @importFrom pbapply closepb pboptions startpb setpb
 #' @importFrom igraph gsize V
 #' @importFrom openxlsx write.xlsx
 ## TODO was ist mit dem alten S2? ZU LANG
+## TODO: enthält noch for-Schleifen
 .calculateSubgraphCharacteristics <- function(S, #S2, S3,
     fastalevel = TRUE,
     prototype = FALSE,
     #comparison = NULL,
-    file = NULL, 
+    file = NULL,
     verbose = FALSE) {
     if (!verbose) {
         pbo <- pbapply::pboptions(type = "none")
@@ -132,7 +140,7 @@
             ## S3_tmp <- S3[[j]]
         }
 
-        if (verbose) print(comparisons[j])
+        if (verbose) message(comparisons[j])
 
         ## add progress bar to loop
         pb <- pbapply::startpb(0, length(S_tmp))

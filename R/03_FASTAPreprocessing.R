@@ -17,7 +17,7 @@
 #' @param stop               \strong{integer vector} \cr
 #'                           Index of where peptides stop
 #' @param miss               \strong{integer} \cr
-#'                           which order of missed cleavages, 
+#'                           which order of missed cleavages,
 #'                           e.g. 0 = no missed cleavage
 #'
 #' @return A dataframe with information (inkl. peptide sequence and start value)
@@ -54,9 +54,10 @@
 #'
 #' @examples
 #' library(seqinr)
-#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #'
+#' # digest first protein sequence in the fasta file:
 #' digested_proteins <- bppg:::.digest2(fasta[[1]])
 
 .digest2 <- function(sequence,
@@ -92,8 +93,8 @@
     }
     if (missed > length(stop)) {
         if (warn){
-            warning(paste("number of specified missed cleavages is greater",
-                "than the possible maximum"))
+            warning("number of specified missed cleavages is greater ",
+                "than the possible maximum")
         }
     }
 
@@ -161,9 +162,9 @@
 #'
 #' @param fasta              \strong{list of character sequence} \cr
 #'                           A fasta file, already read into R by
-#'                           [seqinr::read.fasta()]. If several protein origins 
-#'                           are used they should be combined into one flatten  
-#'                           list and a list with the corresponding origins  
+#'                           [seqinr::read.fasta()]. If several protein origins
+#'                           are used they should be combined into one flatten
+#'                           list and a list with the corresponding origins
 #'                           should be provided for \strong{protOrigin}.
 #' @param missed_cleavages   \strong{integer} \cr
 #'                           The maximal number of missed cleavages.
@@ -178,7 +179,7 @@
 #'                           [fasta], proteins are used as index.
 #' @param verbose            \strong{logical} \cr
 #'                           If \code{TRUE}, additional information on
-#'                           each iteration of the digestion is 
+#'                           each iteration of the digestion is
 #'                           printed.
 #' @param ...                Additional arguments for [.digest2()].
 #' @inheritDotParams .digest2
@@ -192,13 +193,13 @@
 #'
 #' @examples
 #' library(seqinr)
-#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' res <- digestFASTA(fasta)
 #'
 #' @importFrom checkmate assertFlag assertInt assertList
 #' @importFrom pbapply pblapply pboptions
-#' 
+#'
 digestFASTA <- function(fasta,
     missed_cleavages = 2,
     min_aa = 6,

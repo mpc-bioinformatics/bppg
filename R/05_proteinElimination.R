@@ -57,13 +57,16 @@
 #' @seealso [bppg::.minimizeSquaredError()]
 #'
 #' @examples ## TODO
-#' file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+#' file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
 #' graphs <- readRDS(file)
-#' G <- graphs$sample1_sample2[[2]]
+#' G <- graphs[[1]][[4]]
+#' # This graph has 4 protein nodes.
+#'
 #' proteinElimination(G)
-#' 
-#' @importFrom checkmate assertClass assertDataFrame assertList assertNumeric
-#'  checkTRUE
+#' # Only 3 protein nodes are kept after protein elimination.
+#' # The error term only increases slightly.
+#'
+#' @importFrom checkmate assertClass assertDataFrame assertList assertNumeric checkTRUE
 #' @importFrom igraph decompose delete_vertices is_bipartite V
 
 
@@ -96,7 +99,7 @@ proteinElimination <- function(G,
         resDF <- data.frame(comb = paste(protsCurrent, collapse = ","),
             n_proteins = length(protsCurrent), error = min_error_ref,
             current_best = TRUE)
-        res_best <- list(G = list(G), 
+        res_best <- list(G = list(G),
             comb = paste(protsCurrent, collapse = ","),
             n_comb = length(protsCurrent), error = min_error_ref)
         protsOriginIDs  <- protsCurrent
@@ -110,7 +113,7 @@ proteinElimination <- function(G,
             n_proteins = length(protsCurrent_tmp),
             error = NA, current_best = FALSE)
         ## skip if deleted protein has unique peptides
-        if (nr_unique_peptides[i] > 0) { 
+        if (nr_unique_peptides[i] > 0) {
             resDF <- rbind(resDF, res_tmp)
             next
         }
@@ -135,7 +138,7 @@ proteinElimination <- function(G,
                 n_comb = res_tmp$n_proteins, error = res_tmp$error)
         }
 
-        RES <- proteinElimination(G = G_tmp, threshold = threshold, 
+        RES <- proteinElimination(G = G_tmp, threshold = threshold,
             control = control, min_error_ref = min_error_ref, resDF = resDF,
             protsOriginIDs  = protsCurrent_tmp, res_best = res_best)
         resDF <- RES$resDF

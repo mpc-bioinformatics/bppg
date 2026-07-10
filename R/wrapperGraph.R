@@ -33,7 +33,7 @@
 #'
 #' @examples
 #' library(seqinr)
-#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' graphs <- bppg::generateGraphsFromFASTA(fasta)
 #'
@@ -65,7 +65,7 @@ generateGraphsFromFASTA <- function(fasta,
     if (!collProtNodes && !collPeptNodes) suffix2 <- NULL
 
     if (!is.null(outpath)) {
-        saveRDS(graphs, file = file.path(outpath, paste0("subgraphs_", 
+        saveRDS(graphs, file = file.path(outpath, paste0("subgraphs_",
                     suffix2, suffix, ".rds")))
     }
     return(graphs)
@@ -74,43 +74,44 @@ generateGraphsFromFASTA <- function(fasta,
 
 #' Generate graphs from quantitative peptide-level data
 #'
-#' @param D                        \strong{data.frame} \cr
-#'                                 A data set with peptide sequence as first
-#'                                 column and peptide intensities in subsequent
-#'                                 columns, e.g. created with
-#'                                 [bppg::readMqPeptideTable()].
-#' @param fasta                    \strong{list of vector of characters} \cr
-#'                                 A fasta file used for identification of
-#'                                 peptides in already read into R by
-#'                                 [seqinr::read.fasta()].
-#' @param outpath                  \strong{character} \cr
-#'                                 The output path for the results.
-#' @param missed_cleavages         \strong{integer} \cr
-#'                                 The number of allowed missed cleavages
-#'                                 in a peptide.
-#' @param min_aa                   \strong{integer} \cr
-#'                                 The minimum number of amino acids
-#'                                 in a peptide.
-#' @param max_aa                   \strong{integer} \cr
-#'                                 The maximum number of amino acids
-#'                                 in a peptide.
-#' @param seq_column               \strong{character} \cr
-#'                                 The column name of the column of D with the
-#'                                 peptide sequences.
-#' @param collProtNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the protein nodes
-#'                                 will be collapsed.
-#' @param collPeptNodes            \strong{logical} \cr
-#'                                 If \code{TRUE}, the peptide nodes
-#'                                 will be collapsed.
-#' @param suffix                   \strong{character} \cr
-#'                                 The suffix for output files.
-#' @param protOrigin             \strong{list or data.frame} \cr
-#'                               A list with the protein orgin corresponding to
-#'                               [fasta], proteins are used as rownames/index.
-#' @param imp_method      \strong{character} \cr
-#'                        Chosen imputation optional approach, current method: 
-#'                        "min_2_impute"
+#' @param D                   \strong{data.frame} \cr
+#'                            A data set with peptide sequence as first
+#'                            column and peptide intensities in subsequent
+#'                            columns, e.g. created with
+#'                            [bppg::readMqPeptideTable()].
+#' @param fasta               \strong{list of vector of characters} \cr
+#'                            A fasta file used for identification of
+#'                            peptides in already read into R by
+#'                            [seqinr::read.fasta()].
+#' @param outpath             \strong{character} \cr
+#'                            The output path for the results.
+#' @param missed_cleavages    \strong{integer} \cr
+#'                            The number of allowed missed cleavages
+#'                            in a peptide.
+#' @param min_aa              \strong{integer} \cr
+#'                            The minimum number of amino acids
+#'                            in a peptide.
+#' @param max_aa              \strong{integer} \cr
+#'                            The maximum number of amino acids
+#'                            in a peptide.
+#' @param seq_column          \strong{character} \cr
+#'                            The column name of the column of D with the
+#'                            peptide sequences.
+#' @param norm_method         \strong{character} \cr
+#'            The method of normalization. Options are "nonorm"
+#'            (no normalization), "median", "loess",  "quantile" or "lts"
+#'             normalization. Default is "loess"
+#' @param collProtNodes       \strong{logical} \cr
+#'                            If \code{TRUE}, the protein nodes
+#'                            will be collapsed.
+#' @param collPeptNodes       \strong{logical} \cr
+#'                            If \code{TRUE}, the peptide nodes
+#'                            will be collapsed.
+#' @param suffix              \strong{character} \cr
+#'                            The suffix for output files.
+#' @param protOrigin          \strong{list or data.frame} \cr
+#'                            A list with the protein orgin corresponding to
+#'                            [fasta], proteins are used as rownames/index.
 #' @param verbose     \strong{logical} \cr
 #'                    If \code{TRUE}, additional information on each iteration
 #'                    of the optimization is printed
@@ -126,14 +127,17 @@ generateGraphsFromFASTA <- function(fasta,
 #'
 #' @examples
 #' library(seqinr)
-#' file <- system.file("extdata", "uniprot_test.fasta", package = "bppg")
+#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
+#'     package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #'
-#' file <- system.file("extdata", "peptides.txt", package = "bppg")
-#' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
+#' group <- factor(rep(1:9, each = 3))
+#' D <- readMqPeptideTable(path = file, group = group, LFQ = TRUE,
+#'     remove_contaminants = FALSE)
 #'
 #' graphs <- bppg::generateGraphsFromQuantData(D, fasta)
-#' 
+#'
 #' @importFrom checkmate assertPathForOutput
 #' @importFrom openxlsx write.xlsx
 #' @importFrom limma strsplit2
@@ -146,6 +150,7 @@ generateGraphsFromQuantData <- function(D,
     min_aa = 6,
     max_aa = 50,
     seq_column = "Sequence",
+    norm_method = "loess",
     collProtNodes = TRUE,
     collPeptNodes = FALSE,
     suffix = "",
@@ -156,7 +161,7 @@ generateGraphsFromQuantData <- function(D,
 
     if (verbose) message("Digesting FASTA file...")
     edgelist <- digestFASTA(fasta, missed_cleavages = missed_cleavages,
-        min_aa = min_aa, max_aa = max_aa, protOrigin = protOrigin, 
+        min_aa = min_aa, max_aa = max_aa, protOrigin = protOrigin,
         verbose = verbose, ...)
 
     if (!is.null(outpath)) {
@@ -166,10 +171,19 @@ generateGraphsFromQuantData <- function(D,
             overwrite = TRUE, keepNA = TRUE)
     }
 
+    ## add normalization
+    D_norm <- bppg::normalizePeptideIntensities(D, method = norm_method)
+
+    if (!is.null(outpath)) {
+        openxlsx::write.xlsx(SummarizedExperiment::assays(D_norm)$intensities_norm,
+            file = paste0(outpath, "peptides_", norm_method, "_", suffix,
+                ".xlsx"), overwrite = TRUE, keepNA = TRUE)
+    }
+
     ## aggregate replicates by calculating the mean
-    group <- factor(limma::strsplit2(colnames(D), split = "_")[, 1])
-    D_aggr <- aggregateReplicates(D, method = "mean", missing.limit = 0.4,
-        group = group, seq_col = seq_column, imp_method = imp_method)
+    group <- factor(limma::strsplit2(colnames(D_norm), split = "_")[, 1])
+    D_aggr <- aggregateReplicates(D_norm, method = "mean", missing.limit = 0.4,
+        group = group, seq_col = seq_column)
 
     if (!is.null(outpath)) {
         openxlsx::write.xlsx(SummarizedExperiment::assays(D_aggr)$intensities,

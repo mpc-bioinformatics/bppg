@@ -1,3 +1,4 @@
+# TODO run exmpales with local data
 test_that(".min2impute", {
 
     # Create test data (3 samples with 3 runs each)

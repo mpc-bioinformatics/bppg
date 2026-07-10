@@ -16,7 +16,12 @@
 #' @export
 #'
 #' @examples
-# # TODO
+#' # prepared result list. Check "inst/scripts/filter_fasta_and_quantData.R" for
+#' # details on how it was generated.
+#' file <- system.file("extdata", "resultsList.rds", package = "bppg")
+#' resultList <- readRDS(file)
+#' SE <- combineComparisons(resultList)
+#'
 combineComparisons <- function(compResultList) {
 
     # get union of all row names and sort them
@@ -24,7 +29,7 @@ combineComparisons <- function(compResultList) {
         return(rownames(SummarizedExperiment::assay(x)))
     }), init = NULL)
 
-    # helper function to harmonize row names 
+    # helper function to harmonize row names
     # (introduce NA rows for missing proteins)
     harmonizeRowNames <- function(se) {
         df <- SummarizedExperiment::assays(se)$results
@@ -71,8 +76,14 @@ combineComparisons <- function(compResultList) {
 #' @export
 #'
 #' @examples
-#' # TODO
-#' 
+#' # prepared result list. Check "inst/scripts/filter_fasta_and_quantData.R" for
+#' # details on how it was generated.
+#' file <- system.file("extdata", "resultsList.rds", package = "bppg")
+#' resultList <- readRDS(file)
+#' SE <- combineComparisons(resultList)
+#' TMP <- tempdir()
+#' exportSE(SE, file.path(TMP,"results.xlsx"))
+#'
 #' @importFrom openxlsx addWorksheet createWorkbook saveWorkbook writeData
 #' @importFrom SummarizedExperiment assay assayNames
 exportSE <- function(SE, file) {

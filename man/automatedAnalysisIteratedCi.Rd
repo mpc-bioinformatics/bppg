@@ -7,7 +7,7 @@
 automatedAnalysisIteratedCi(
   G,
   res,
-  use_results_from_other_proteins = FALSE,
+  use_results_from_other_proteins = TRUE,
   verbose = FALSE,
   job = NULL,
   error_tol = 1e-10,
@@ -29,7 +29,7 @@ If \code{TRUE}, the results from
 other proteins within the same graph
 will be used to calculate the
 optimal solution for each protein
-node.}
+node. Default is TRUE}
 
 \item{verbose}{\strong{logical} \cr
 If \code{TRUE}, additional information
@@ -55,9 +55,9 @@ assay.
 Extract protein ratio solutions from the result of iterateOverCi()
 }
 \examples{
-file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
 graphs <- readRDS(file)
-G <- graphs$sample1_sample2[[2]]
+G <- graphs$"1_2"[[2]]
 # small example with a small grid size
 res <- iterateOverCi(G, gridSize = 100)
 automatedAnalysisIteratedCi(G, res)

@@ -1,5 +1,6 @@
 # Functions in this file:
 # .errorEquation
+# .trackingDataFrame
 # .initializeCi
 # .initializeRi
 # .calcConstraints
@@ -60,6 +61,28 @@
 	res_squ_err <- sum(res_equ^2)
 	return(list(res_Mat = res_Mat, res_equ = res_equ,
 			res_squ_err = res_squ_err, W = W))
+}
+
+
+#' Funktion to format Tracking information into a dataframe with columnnames.
+#'
+#' @param i     \strong{numeric} \cr
+#'              iterrator, for when this tracking was performed
+#' @param RES   \strong{list} \cr
+#'              The result from [.errorEquation]
+#' @param RiLog \strong{numeric vector} \cr
+#'              Contains the (estimated) protein ratios (log2-scale).
+#' @param Ci    \strong{numeric vector} \cr
+#'              Contains the protein weights (estimated, sum up to 1)
+#' @return      \strong{data.frame} \cr
+#'              combined information in one data.frame.
+.trackingDataFrame <- function(i, RES, RiLog, Ci){
+    track_colnames <- c("iter", "squ_err",
+        paste0("RLog", seq_along(RiLog)), paste0("C", seq_along(Ci)))
+    Tracking <- matrix(c(i, RES$res_squ_err, RiLog, Ci), nrow = 1)
+    Tracking <- as.data.frame(Tracking)
+    colnames(Tracking) <- track_colnames
+    return(Tracking)
 }
 
 
@@ -175,7 +198,7 @@
 #' x is a vector containing first the RiLog values and then the Ci values
 #' (length 2*m if no Ci are fixed).
 #'
-#' For the equality constraint (eqfun with corresponding bound eqB), the 
+#' For the equality constraint (eqfun with corresponding bound eqB), the
 #' difference of the sum of the Ci values and 1 is calculated. The bound is set
 #' to 0, i.e. forcing the sum of the Ci to be 1. In case of fixed Ci values, the
 #' sum of the fixed and the free Ci values is considered.
@@ -289,16 +312,16 @@
 #' \item{RES}{final result of \code{\link[bppg]{.errorEquation}}, which also
 #' contains the final, minimal error term}
 #' \item{Tracking}{Tracking of Ri, Ci and error term for the
-#'  different iterations}
+#'  different iterations (-1: no optimization)}
 #' \item{outer.iter}{Number of outer iterations needed for the optimization
 #'  algorithm to converge or stop (see also \code{\link[Rsolnp]{solnp}})}
 #' \item{convergence}{Indicates whether the solver has converged (0) or
 #' not (1 or 2) (see also \code{\link[Rsolnp]{solnp}})}
 #'
 #' @examples
-#' file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+#' file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
 #' graphs <- readRDS(file)
-#' G <- graphs$sample1_sample2[[2]]
+#' G <- graphs$"1_2"[[2]]
 #' bppg:::.minimizeSquaredError(G)
 #'
 #' @importFrom igraph as_biadjacency_matrix vertex_attr
@@ -316,6 +339,16 @@
     rjLog <- stats::na.omit(igraph::vertex_attr(G, "pep_logRatio"))
     if (is.null(rjLog)) stop("G does not contain peptide ratios.")
     checkmate::assertNumeric(rjLog)
+    if (m == 1){
+        RiLog <- mean(rjLog, na.rm = TRUE)
+        RES <- .errorEquation(RiLog = c(RiLog),
+            Ci = c(1.0), M = M, rjLog = rjLog)
+        Tracking <- .trackingDataFrame(-1, RES, c(RiLog), c(1.0))
+        result <- list(RiLog = c(RiLog), Ci = 1.0, RES = RES,
+            Tracking = Tracking, outer.iter = 0, convergence = 0)
+        return(result)
+    }
+
     checkmate::assertNumeric(fixedCi, len = m, lower = 0, upper = 1,
         null.ok = TRUE)
     stopifnot(sum(fixedCi, na.rm = TRUE) <= 1)
@@ -332,12 +365,7 @@
     ## initial error term
     RES <- .errorEquation(RiLog = RiLog_start, Ci = Ci_start, M = M,
         rjLog = rjLog)
-
-    track_colnames <- c("iter", "squ_err",
-        paste0("RLog", seq_len(m)), paste0("C", seq_len(m)))
-    Tracking <- matrix(c(0, RES$res_squ_err, RiLog_start, Ci_start), nrow = 1)
-    Tracking <- as.data.frame(Tracking)
-    colnames(Tracking) <- track_colnames
+    Tracking <- .trackingDataFrame(0, RES, RiLog_start, Ci_start)
 
     fun <- .calcObjectiveFunction(fixedCi, M, rjLog)
     constr <- .calcConstraints(fixedCi, m)
@@ -433,7 +461,7 @@
 #'                                 [.minimizeSquaredError()] function.
 #'
 #' @return
-#' A dataframe containing the optimal Ci and Ri values together with the reached
+#' A data.frame containing the optimal Ci and Ri values together with the reached
 #' minimal error term for each grid point.
 #'
 #' @export
@@ -456,14 +484,13 @@
 #' [bppg::automatedAnalysisIteratedCi()].
 #'
 #' @examples
-#' file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+#' file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
 #' graphs <- readRDS(file)
-#' G <- graphs$sample1_sample2[[2]]
+#' G <- graphs$"1_2"[[2]]
 #' # small example with a small grid size
 #' iterateOverCi(G, gridSize = 100)
-#' 
-#' @importFrom checkmate assertClass assertFlag assertIntegerish assertList 
-#'  assertNumeric checkTRUE
+#'
+#' @importFrom checkmate assertClass assertFlag assertIntegerish assertList assertNumeric checkTRUE
 #' @importFrom igraph is_bipartite V
 #' @importFrom  pbapply pbmapply pboptions
 iterateOverCi <- function(G,
@@ -525,12 +552,12 @@ iterateOverCi <- function(G,
 #'                                      The data.frame resulting from the
 #'                                      [bppg::iterateOverCi()] function,
 #'                                      filtered for a specific protein.
-#' @param error_tol \strong{numeric(1)} \cr 
+#' @param error_tol \strong{numeric(1)} \cr
 #'                  tolerance for the error term.
-#' @param ratioLog_tol \strong{numeric(1)} \cr 
+#' @param ratioLog_tol \strong{numeric(1)} \cr
 #'                      tolerance for the log protein ratios.
 #'
-#' @returns Vector with minimal error, estimate for Ri (single value 
+#' @returns Vector with minimal error, estimate for Ri (single value
 #' or min/max), estimate for Ci (single value or min/max).
 #'
 .analyseResultSingleProt <- function(protNr, resProt,
@@ -554,7 +581,7 @@ iterateOverCi <- function(G,
             res_tmp <- c(mean(e_tmp), RLog_tmp_mean_rounded, NA, NA, NA,
                 min(C_tmp), max(C_tmp), NA)
             # all(R[ind_min_tol] == 0) |???
-            res_tmp[8] <- ifelse(length(indMinError) == nrow(resProt), 1, 4) 
+            res_tmp[8] <- ifelse(length(indMinError) == nrow(resProt), 1, 4)
         } else {
             # case 2 and 5: range solution for Rlog
             res_tmp <- c(mean(e_tmp), NA, min(RLog_tmp), max(RLog_tmp), NA,
@@ -591,7 +618,7 @@ iterateOverCi <- function(G,
 #'                                          other proteins within the same graph
 #'                                          will be used to calculate the
 #'                                          optimal solution for each protein
-#'                                          node.
+#'                                          node. Default is TRUE
 #' @param verbose                       \strong{logical} \cr
 #'                                      If \code{TRUE}, additional information
 #'                                      will be printed.
@@ -605,46 +632,58 @@ iterateOverCi <- function(G,
 #'                                      Tolerance for a constant log2 protein
 #'                                      ratios. The default is 1e-6.
 #'
-#' @return A SummarizedExperiment object with one row for each protein in the 
+#' @return A SummarizedExperiment object with one row for each protein in the
 #'  assay.
 #' @export
 #'
 #' @seealso [bppg::iterateOverCi()], [.minimizeSquaredError()]
 #'
 #' @examples
-#' file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+#' file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
 #' graphs <- readRDS(file)
-#' G <- graphs$sample1_sample2[[2]]
+#' G <- graphs$"1_2"[[2]]
 #' # small example with a small grid size
 #' res <- iterateOverCi(G, gridSize = 100)
 #' automatedAnalysisIteratedCi(G, res)
 automatedAnalysisIteratedCi <- function(G,
-										res,
-										use_results_from_other_proteins = FALSE,
-										verbose = FALSE,
-										job = NULL,
-										error_tol = 1e-10,
-										ratioLog_tol = 1e-6) {
+                                        res,
+                                        use_results_from_other_proteins = TRUE,
+                                        verbose = FALSE,
+                                        job = NULL,
+                                        error_tol = 1e-10,
+                                        ratioLog_tol = 1e-6) {
 
 	n <- sum(igraph::V(G)$type) ## number of protein groups
 	protData <- data.frame(accessions = igraph::V(G)$name[igraph::V(G)$type])
 
+    # add protOrigin here?
 	if (!is.null(igraph::V(G)$imputed)) {
 		protData$imputed <- igraph::V(G)$imputed[igraph::V(G)$type]
 	} 
 	
 
-	if (!is.null(job)) {
-		graphID <- job$pars$prob.pars$k
-		comparison <- job$prob.name
-		job.id <- job$job.id
-	} else {
-		graphID <- NA
-		comparison <- NA
-		job.id <- NA
-	}
+    if (!is.null(job)) {
+        graphID <- job$pars$prob.pars$k
+        comparison <- job$prob.name
+        job.id <- job$job.id
+    } else {
+        graphID <- NA
+        comparison <- NA
+        job.id <- NA
+    }
 
-    f <- function(x, res, error_tol, ratioLog_tol, 
+    # filter res for potential NaNs in the error column (could occur if a Ci
+    # is estimated as 0)
+    ind_error_NA <- which(is.na(res$error))
+    if (length(ind_error_NA) > 0) {
+        if (verbose) {
+            message(length(ind_error_NA),
+                           " grid points with NA or NaN error term were removed.")
+        }
+        res <- res[-ind_error_NA, ]
+    }
+
+    f <- function(x, res, error_tol, ratioLog_tol,
         use_results_from_other_proteins) {
 
 		cols <- c("protein", "error", paste0("RLog", x), paste0("C", x))
@@ -656,7 +695,7 @@ automatedAnalysisIteratedCi <- function(G,
             resProt2 <- res[res$protein != x, cols]
             colnames(resProt2) <- c("protein", "error", "RLog", "C")
             # remove too extreme Ci
-            resProt2 <- resProt2[resProt2$C > 0.01 | resProt2$C < 0.99,] 
+            resProt2 <- resProt2[resProt2$C > 0.01 & resProt2$C < 0.99,]
             resProt <- rbind(resProt, resProt2)
         }
         return(.analyseResultSingleProt(x, resProt, error_tol = error_tol,

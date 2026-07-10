@@ -2,7 +2,7 @@
 % Please edit documentation in R/01_peptideInput.R
 \name{.extractIntensities}
 \alias{.extractIntensities}
-\title{Helper function that extracts the itensitie columns and columns of interest
+\title{Helper function that extracts the intensity columns and columns of interest
 from a given dataframe.}
 \usage{
 .extractIntensities(D, col_pattern, rename_columns)
@@ -23,6 +23,6 @@ If \code{TRUE}, "Intensity." or
 returns intensity dataframe
 }
 \description{
-Helper function that extracts the itensitie columns and columns of interest
+Helper function that extracts the intensity columns and columns of interest
 from a given dataframe.
 }
