@@ -13,9 +13,9 @@ normalizePeptideIntensities(
 }
 \arguments{
 \item{D}{\strong{SummarizedExperiment} \cr
-SummarizedExperiment Dataset containing peptide
-intensities, e.g. the result of \link{readMqPeptideTable} or
-\link{normalizePeptideIntensities}.}
+SummarizedExperiment dataset containing peptide
+intensities, e.g.
+\link{readMqPeptideTable}.}
 
 \item{method}{\strong{character} \cr
 The method of normalization. Options are "nonorm"
@@ -36,7 +36,7 @@ Dataset containing normalized peptide intensities.
 Normalization of peptide intensities
 }
 \examples{
-file <- system.file("extdata", "peptides.txt", package = "bppg")
+file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
 D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 D_norm <- normalizePeptideIntensities(D, method = "loess")
 

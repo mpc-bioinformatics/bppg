@@ -1,11 +1,8 @@
 test_that("plot a bipartite graph", {
-    # skip("Plotting color needs to be fixed")
     # Skip this test on continuous integration systems like GitHub Actions
     # The function expect_snapshot_file is otherwise too strict
     # and there is no way to get a few pixel of tolerance
     testthat::skip_on_ci()
-
-    library(igraph)
 
     # Create a temporary directory so no permanent files are put on a package users directory
     temp_dir <- tempfile(pattern = "test_dir")
@@ -64,10 +61,14 @@ test_that("plot a bipartite graph", {
     dev.off()
 
 
-    expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph.png"), name = "plotBipartitGraph.png", variant = Sys.info()[["sysname"]])
-    expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph2.png"), name = "plotBipartitGraph2.png", variant = Sys.info()[["sysname"]])
-    expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph3.png"), name = "plotBipartitGraph3.png", variant = Sys.info()[["sysname"]])
-    expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph4.png"), name = "plotBipartitGraph4.png", variant = Sys.info()[["sysname"]])
+    expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph.png"),
+                         name = "plotBipartitGraph.png", variant = Sys.info()[["sysname"]])
+    expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph2.png"),
+                         name = "plotBipartitGraph2.png", variant = Sys.info()[["sysname"]])
+    expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph3.png"),
+                         name = "plotBipartitGraph3.png", variant = Sys.info()[["sysname"]])
+    expect_snapshot_file(path = file.path(temp_dir, "bipartitGraph4.png"),
+                         name = "plotBipartitGraph4.png", variant = Sys.info()[["sysname"]])
 
 })
 

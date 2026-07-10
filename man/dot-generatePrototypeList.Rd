@@ -8,8 +8,8 @@ and their occurence.}
 .generatePrototypeList(G, sort_by_nr_edges = FALSE)
 }
 \arguments{
-\item{G}{\strong{igraph graph object} \cr
-A graph.}
+\item{G}{\strong{list of igraph graph objects} \cr
+A list of graphs.}
 
 \item{sort_by_nr_edges}{\strong{logical} \cr
 If \code{TRUE}, the list of prototypes is sorted by
@@ -23,6 +23,11 @@ Generates a list of graph prototypes for the different isomorphism classes
 and their occurence.
 }
 \examples{
-## TODO
+file <- system.file("extdata", "quantGraphs_collpept.rds", package = "bppg")
+graphs <- readRDS(file)
+graphs <- unlist(graphs, recursive = FALSE)
+
+PL <- bppg:::.generatePrototypeList(graphs, sort_by_nr_edges = FALSE)
+# prototype list contains 3 isomorphism classes (I, N and M shaped graphs)
 
 }

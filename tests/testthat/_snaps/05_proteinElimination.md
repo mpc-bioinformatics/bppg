@@ -4,62 +4,64 @@
       res
     Output
       $min_error_ref
-      [1] 0.02231625
+      [1] 1.005431
       
       $protsOriginIDs
-      [1] "prot_1" "prot_2" "prot_3" "prot_4" "prot_5"
+      [1] "sp|P00330|ADH1_YEAST" "sp|P00331|ADH2_YEAST" "sp|P07246|ADH3_YEAST"
+      [4] "sp|P38113|ADH5_YEAST"
       
       $resDF
-               comb n_proteins   error current_best
-      1  1,5,6,8,10          5 0.02232         TRUE
-      2    5,6,8,10          4 0.02232         TRUE
-      3      6,8,10          3      NA        FALSE
-      4      5,8,10          3 0.02232         TRUE
-      5        8,10          2      NA        FALSE
-      6        5,10          2 0.05975        FALSE
-      7         5,8          2      NA        FALSE
-      8      5,6,10          3 0.05975        FALSE
-      9       5,6,8          3 0.02232         TRUE
-      10        6,8          2      NA        FALSE
-      11        5,6          2      NA        FALSE
-      12   1,6,8,10          4 0.02232        FALSE
-      13     1,8,10          3 0.02232         TRUE
-      14       1,10          2 0.02232         TRUE
-      15         10          1      NA        FALSE
-      16          1          1      NA        FALSE
-      17        1,8          2 0.04905        FALSE
-      18     1,6,10          3 0.02232        FALSE
-      19       6,10          2      NA        FALSE
-      20        1,6          2      NA        FALSE
-      21      1,6,8          3 0.03459        FALSE
-      22   1,5,8,10          4 0.02232        FALSE
-      23     1,5,10          3 0.02232        FALSE
-      24        1,5          2      NA        FALSE
-      25      1,5,8          3 0.02232        FALSE
-      26   1,5,6,10          4 0.02232        FALSE
-      27      1,5,6          3      NA        FALSE
-      28    1,5,6,8          4 0.00788        FALSE
+           comb n_proteins  error current_best
+      1 1,2,3,4          4 1.0054         TRUE
+      2   2,3,4          3     NA        FALSE
+      3   1,3,4          3     NA        FALSE
+      4   1,2,4          3     NA        FALSE
+      5   1,2,3          3 1.0056         TRUE
+      6     2,3          2     NA        FALSE
+      7     1,3          2     NA        FALSE
+      8     1,2          2     NA        FALSE
       
       $res_best
       $res_best$G
       $res_best$G[[1]]
-           [,1]     [,2]    
-      [1,] "prot_1" "pep_1" 
-      [2,] "prot_1" "pep_2" 
-      [3,] "prot_1" "pep_3" 
-      [4,] "pep_3"  "prot_5"
-      [5,] "pep_4"  "prot_5"
-      [6,] "pep_5"  "prot_5"
+            [,1]                   [,2]                          
+       [1,] "sp|P00330|ADH1_YEAST" "ANELLINVK"                   
+       [2,] "sp|P00331|ADH2_YEAST" "ANGTVVLVGLPAGAK"             
+       [3,] "sp|P00330|ADH1_YEAST" "ATDGGAHGVINVSVSEAAIEASTR"    
+       [4,] "sp|P00330|ADH1_YEAST" "CCSDVFNQVVK"                 
+       [5,] "sp|P07246|ADH3_YEAST" "DIPVPEPKPNEILINVK"           
+       [6,] "sp|P00330|ADH1_YEAST" "EALDFFAR"                    
+       [7,] "sp|P00331|ADH2_YEAST" "EALDFFAR"                    
+       [8,] "sp|P07246|ADH3_YEAST" "EALDFFSR"                    
+       [9,] "sp|P00330|ADH1_YEAST" "EKDIVGAVLK"                  
+      [10,] "sp|P00330|ADH1_YEAST" "GVIFYESHGK"                  
+      [11,] "sp|P00330|ADH1_YEAST" "IGDYAGIK"                    
+      [12,] "sp|P00331|ADH2_YEAST" "IGDYAGIK"                    
+      [13,] "sp|P07246|ADH3_YEAST" "IQQGTDLAEVAPILCAGVTVYK"      
+      [14,] "sp|P07246|ADH3_YEAST" "IVGLSELPK"                   
+      [15,] "sp|P00330|ADH1_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
+      [16,] "sp|P00331|ADH2_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
+      [17,] "sp|P00330|ADH1_YEAST" "SANLMAGHWVAISGAAGGLGSLAVQYAK"
+      [18,] "sp|P00330|ADH1_YEAST" "SIGGEVFIDFTK"                
+      [19,] "sp|P00330|ADH1_YEAST" "SIPETQK"                     
+      [20,] "sp|P00331|ADH2_YEAST" "SIPETQK"                     
+      [21,] "sp|P00330|ADH1_YEAST" "SISIVGSYVGNR"                
+      [22,] "sp|P00331|ADH2_YEAST" "SISIVGSYVGNR"                
+      [23,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGKEELFR"             
+      [24,] "sp|P00331|ADH2_YEAST" "VVGLSSLPEIYEK"               
+      [25,] "sp|P00330|ADH1_YEAST" "VVGLSTLPEIYEK"               
+      [26,] "sp|P00330|ADH1_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
+      [27,] "sp|P07246|ADH3_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
       
       
       $res_best$comb
-      [1] "1,10"
+      [1] "1,2,3"
       
       $res_best$n_comb
-      [1] 2
+      [1] 3
       
       $res_best$error
-      [1] 0.02231625
+      [1] 1.00567
       
       
 

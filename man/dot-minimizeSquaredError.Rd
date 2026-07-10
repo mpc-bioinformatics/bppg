@@ -34,7 +34,7 @@ list containing the following elements:
 \item{RES}{final result of \code{\link[bppg]{.errorEquation}}, which also
 contains the final, minimal error term}
 \item{Tracking}{Tracking of Ri, Ci and error term for the
-different iterations}
+different iterations (-1: no optimization)}
 \item{outer.iter}{Number of outer iterations needed for the optimization
 algorithm to converge or stop (see also \code{\link[Rsolnp]{solnp}})}
 \item{convergence}{Indicates whether the solver has converged (0) or
@@ -45,9 +45,9 @@ Function to set up the optimization problem and minimize the sum of squared
 error terms
 }
 \examples{
-file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
 graphs <- readRDS(file)
-G <- graphs$sample1_sample2[[2]]
+G <- graphs$"1_2"[[2]]
 bppg:::.minimizeSquaredError(G)
 
 }

@@ -73,10 +73,14 @@ iteration for all future iterations.
 }
 \examples{
 ## TODO
-file <- system.file("extdata", "quantGraphsForTesting.rds", package = "bppg")
+file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
 graphs <- readRDS(file)
-G <- graphs$sample1_sample2[[2]]
+G <- graphs[[1]][[4]]
+# This graph has 4 protein nodes.
+
 proteinElimination(G)
+# Only 3 protein nodes are kept after protein elimination.
+# The error term only increases slightly.
 
 }
 \seealso{
