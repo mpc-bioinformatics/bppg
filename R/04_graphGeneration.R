@@ -14,12 +14,6 @@
     print("currently not used")
 }
 
-# Functions in this file:
-# .getContractMapping
-# .contractGraph
-# generateGraphsFromEdgelist()
-# generateQuantGraphs()
-
 
 
 #' Create Mapping signature for igraph::contract function.
