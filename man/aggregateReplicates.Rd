@@ -10,7 +10,7 @@ aggregateReplicates(
   missing.limit = 0,
   method = "mean",
   seq_col = "Sequence",
-  imp_method = "NULL",
+  imp_method = NULL,
   ...
 )
 }

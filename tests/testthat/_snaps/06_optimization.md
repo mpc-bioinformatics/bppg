@@ -201,7 +201,7 @@
       metadata(0):
       assays(1): results
       rownames(1): sp|P09938|RIR2_YEAST
-      rowData names(1): accession
+      rowData names(1): accessions
       colnames(10): graphID proteinNr ... Ci_max case
       colData names(1): colnames
 
@@ -240,7 +240,7 @@
       metadata(0):
       assays(1): results
       rownames(2): sp|P40212|RL13B_YEAST sp|Q12690|RL13A_YEAST
-      rowData names(1): accession
+      rowData names(1): accessions
       colnames(10): graphID proteinNr ... Ci_max case
       colData names(1): colnames
 
@@ -279,7 +279,7 @@
       metadata(0):
       assays(1): results
       rownames(2): sp|P39708|DHE5_YEAST sp|P07262|DHE4_YEAST
-      rowData names(1): accession
+      rowData names(1): accessions
       colnames(10): graphID proteinNr ... Ci_max case
       colData names(1): colnames
 

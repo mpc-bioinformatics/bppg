@@ -12,9 +12,9 @@ test_that("test aggregateReplicates", {
                                     method = "median")
 
     # Test imputation
-    D3 <- bppg::aggregateReplicates(D = D, 
+    D3 <- bppg::aggregateReplicates(D = D_norm, 
         group = factor(rep(1:3, each = 3)),
-        imp_method = ".min2impute",)
+        imp_method = ".min2impute")
 
 
     expect_snapshot(D1)
@@ -45,27 +45,13 @@ test_that("test calculatePeptideRatios", {
     D1 <- bppg::aggregateReplicates(D = D_norm, group = factor(rep(1:9, each = 3)))
     D1 <- bppg::calculatePeptideRatios(D = D1)
 
-    # Test imputed data
-    na_mask <- is.na(df)
-    df[is.na(df)] <- min(df, na.rm = TRUE) / 2
-    D <- SummarizedExperiment::SummarizedExperiment(
-        assays = list(intensities = df, maskImputation = na_mask),
-        colData = data.frame(group = colnames(df)),
-        rowData = data.frame(Sequence = rownames(df)),
-        metadata = list(imputed = TRUE))
-    
-    D2 <- bppg::calculatePeptideRatios(D = D)
 
     # Test imputed data
-    na_mask <- is.na(df)
-    df[is.na(df)] <- min(df, na.rm = TRUE) / 2
-    D <- SummarizedExperiment::SummarizedExperiment(
-        assays = list(intensities = df, maskImputation = na_mask),
-        colData = data.frame(group = colnames(df)),
-        rowData = data.frame(Sequence = rownames(df)),
-        metadata = list(imputed = TRUE))
-    
-    D2 <- bppg::calculatePeptideRatios(D = D)
+   
+    D2 <- bppg::aggregateReplicates(D = D_norm,
+        group = factor(rep(1:9, each = 3)),
+        imp_method = ".min2impute")
+    D2 <- bppg::calculatePeptideRatios(D = D2)
 
     expect_snapshot(D1)
     expect_snapshot(SummarizedExperiment::assays(D1)$logRatios)
