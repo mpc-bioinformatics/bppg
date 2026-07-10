@@ -66,8 +66,7 @@
 #' # Only 3 protein nodes are kept after protein elimination.
 #' # The error term only increases slightly.
 #'
-#' @importFrom checkmate assertClass assertDataFrame assertList assertNumeric
-#'  checkTRUE
+#' @importFrom checkmate assertClass assertDataFrame assertList assertNumeric checkTRUE
 #' @importFrom igraph decompose delete_vertices is_bipartite V
 
 

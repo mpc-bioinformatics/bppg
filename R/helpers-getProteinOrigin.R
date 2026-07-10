@@ -16,13 +16,10 @@
 #'                       accessions.
 #' @param verbose            \strong{logical} \cr
 #'                           If \code{TRUE}, additional information on
-#'                           each iteration is 
+#'                           each iteration is
 #'                           printed.
 #' @return A character vector with protein origin for each protein accession
-#' @export
 #'
-#' @examples ## TODO
-#' 
 #' @importFrom pbapply pboptions pbvapply
 
 .getProteinOrigin <- function(accessions,
