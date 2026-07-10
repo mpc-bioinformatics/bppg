@@ -139,10 +139,14 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
 }
 
 
-#' Import of Spectronauts's peptide_quant-table, with raw.PEP.Quantity values.
+#' Import of Spectronauts's peptide_quant-table, where PEP.GroupingKey and 
+#' EG.IsDeco are the peptide identifies followed by the peptide quantification
+#' values (PEP.Quantity). All other columns, besides 
+#' \code{further_columns_to_keep} will be ignored and removed.
+#' 
 #'
 #' @param path                      \strong{character} \cr
-#'                                  The path to the peptides.txt table
+#'                                  The path to the peptides quant table
 #' @param group                     \strong{character} \cr
 #'                                  List or vector of group names corresponding
 #'                                  to the order of samples.
@@ -152,15 +156,20 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
 #' @param remove_decoys             \strong{logical} \cr
 #'                                  If \code{TRUE}, decoy peptides are removed
 #' @param rename_columns            \strong{logical} \cr
-#'                                  If \code{TRUE}, "raw.PEP.Quantity" are removed
+#'                                  If \code{TRUE}, "raw.PEP.Quantity" are 
+#'                                  removed
 #' @param cut_off                   \strong{integer} \cr
-#'                                  Values below this threshold will be set to zero
+#'                                  Values below this threshold will be set to 
+#'                                  zero
 #' @param zeroToNA                  \strong{logical} \cr
-#'                                  If \code{TRUE}, zeros are converted to NAs. Should be NA for downstream analysis
+#'                                  If \code{TRUE}, zeros are converted to NAs.
+#'                                  Should be NA for downstream analysis
 #' @param remove_empty_rows         \strong{logical} \cr
-#'                                  If \code{TRUE}, rows with only NAs are removed.
+#'                                  If \code{TRUE}, rows with only NAs are
+#'                                  removed.
 #' @param further_columns_to_keep   \strong{integer vector} \cr
-#'                                  Indices of additional columns to keep, except peptide sequence and intensities
+#'                                  Indices of additional columns to keep,
+#'                                  except peptide sequence and intensities
 #'
 #' @return A data frame with sequences and intensities.
 #' @export
@@ -169,7 +178,8 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
 #' file <- system.file("extdata", "spec_peptides.tsv", package = "bppg") # TODO
 #' D <- readSpecPeptideTable(path = file, remove_contaminants = FALSE)
 
-readSpecPeptideTable <- function(path, group = NULL, remove_contaminants = FALSE,
+readSpecPeptideTable <- function(path, group = NULL,
+    remove_contaminants = FALSE,
     remove_decoys = TRUE, rename_columns = TRUE,
     cut_off = 1000, zeroToNA = TRUE,
     remove_empty_rows = TRUE, 
@@ -184,7 +194,9 @@ readSpecPeptideTable <- function(path, group = NULL, remove_contaminants = FALSE
     checkmate::assertVector(further_columns_to_keep, null.ok = TRUE)
     checkmate::assertFlag(verbose)
     
-    D <- utils::read.table(path, sep = "\t", header = TRUE)
+    # TODO, needs to be dec = "."
+    D <- utils::read.table(path, sep = "\t", header = TRUE,
+        na.strings = c("NaN", "NA"))
 
     # all columns in Spectronaut are optional
     # need to check which ones are there/ communicate which ones have to be
@@ -196,17 +208,19 @@ readSpecPeptideTable <- function(path, group = NULL, remove_contaminants = FALSE
         if (verbose) print(paste("Removed", sum(ind_decoy), "decoy sequences."))
     }
 
-  # remove duplicates
+    # remove duplicates
     ind_dub <- duplicated(D)
     D <- D[!ind_dub, ]
-    intensities <- D[, grep("raw.PEP.Quantity", colnames(D))]
+    intensities <- D[, grep("PEP.Quantity", colnames(D))] # tof has no raw.
     rownames(intensities) <- D$PEP.GroupingKey
 
-    # structure: [1] C1_R1.raw.PEP.Quantity zu X.1..C1_R1.raw.PEP.Quantity, leave sample name
+    # structure: [1] C1_R1.raw.PEP.Quantity zu X.1..C1_R1.raw.PEP.Quantity,
+    # leave sample name
     if (rename_columns) colnames(intensities) <- lapply(colnames(intensities), 
         FUN = function(x) {stringr::str_split(x, "\\.")[[1]][4]})
 
-    # valid intensity cut off, values too low tend to be false positive identifications
+    # valid intensity cut off, values too low tend to be false positive 
+    # identifications
     low_intensity <- intensities < cut_off
     intensities[low_intensity] <- 0
     if (verbose) print(paste("Removed", sum(low_intensity, na.rm = TRUE), 

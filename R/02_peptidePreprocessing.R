@@ -80,7 +80,8 @@ aggregateReplicates <- function(D,
     missing.limit = 0,
     method = "mean",
     seq_col = "Sequence", 
-    imp_method = NULL) {
+    imp_method = NULL,
+    ...) {
     checkmate::assertClass(D, "SummarizedExperiment")
     checkmate::assertDataFrame(SummarizedExperiment::assays(D)$intensities_norm,
         all.missing=FALSE)
@@ -88,7 +89,7 @@ aggregateReplicates <- function(D,
     checkmate::assertNumber(missing.limit, lower = 0, upper = 1)
     checkmate::assertCharacter(method, pattern = "mean|sum|median")
     checkmate::assertCharacter(seq_col)
-    checkmate::assertCharacter(imp_method, pattern = "min_2_impute",
+    checkmate::assertCharacter(imp_method, pattern = ".min2impute|.colImputation|.missForest|.QRILC|.BPCA",
         null.ok = TRUE)
 
     id <- SummarizedExperiment::rowData(D)[, seq_col]
@@ -113,21 +114,38 @@ aggregateReplicates <- function(D,
         return(mask_tmp)
     }, FUN.VALUE = logical(length(id)))
 
+    group_imp <- c(".min2impute", ".colImputation")
+    global_imp <- c(".missForest", ".QRILC", ".BPCA")
+
+    if (!is.null(imp_method) && imp_method %in% global_imp) {
+        FUN_imp <- switch(imp_method,
+            .missForest = .missForest,
+            .QRILC = .QRILC,
+            .BPCA = .BPCA
+        )
+
+        intensities <- FUN_imp(intensities, ...)
+    }
+
     res <- vapply(seq_along(levels(group)), function(i, mask_impute) {
         X_tmp <- intensities[, group == levels(group)[i]]
         X_tmp <- as.matrix(X_tmp)
 
         res_tmp <- FUN(X_tmp, na.rm = TRUE)
-        res_tmp[mask_impute[, i]] <- NA
 
-        # apply imputation on missing values
-        if (!is.null(imp_method)) {
+        if(is.null(imp_method)){
+            res_tmp[mask_impute[, i]] <- NA
+        }
+        if (!is.null(imp_method) && imp_method %in% group_imp) {
             FUN_imp <- switch(imp_method,
-                min_2_impute = min_2_impute)
-            vals_imp <- FUN_imp(X_tmp, intensities) 
-            # only replace missing values
+                .min2impute = .min2impute,
+                .colImputation = .colImputation
+            )
+
+            vals_imp <- FUN_imp(X_tmp, intensities, ...)
             res_tmp[mask_impute[, i]] <- vals_imp[mask_impute[, i]]
         }
+
         return(res_tmp)
     }, FUN.VALUE = numeric(length(id)), mask_impute)
 
@@ -147,7 +165,8 @@ aggregateReplicates <- function(D,
             metadata = list(imputed = TRUE))
         res <- res[!all_imputed, ]
 
-    } else {
+    } 
+    else {
         res <- SummarizedExperiment::SummarizedExperiment(
             assays = list(intensities = res),
             colData = data.frame(group = colnames(res)),

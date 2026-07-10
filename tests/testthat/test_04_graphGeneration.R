@@ -58,34 +58,20 @@ test_that("test generateQuantGraphs", {
                                     collProtNodes = TRUE,
                                     collPeptNodes = TRUE)
 
-    ## imputed case
-
-    imputionMask <- is.na(ratio_table)
-    ratio_table[imputionMask] <- min(ratio_table, na.rm = TRUE)
-
-    imputionMask <- as.data.frame(imputionMask)
-    rownames(imputionMask) <- rownames(ratio_table)
-
-    impExpData <- SummarizedExperiment::SummarizedExperiment(
-        assays = list(logRatios = ratio_table,
-            maskImputation = imputionMask),
-        rowData = data.frame(peptides = rownames(ratio_table)),
-        colData = data.frame(comparison = colnames(ratio_table)),
-        metadata = list(imputed = TRUE)
-    )
-    # Compute function
-    graphsImp <- bppg::generateQuantGraphs(exp_peptide_ratios = impExpData,
-        fasta_edgelist = edgelist,
-        outpath = temp_dir,
-        seq_column = "peptides",
-        collProtNodes = TRUE,
-        collPeptNodes = TRUE,
-        suffix = "")
-
     graphs2 <- bppg::generateQuantGraphs(exp_peptide_ratios = exp_peptide_ratios,
                                         fasta_edgelist = edgelist,
                                         collProtNodes = TRUE,
                                         collPeptNodes = FALSE)
+
+    ## imputed case
+    dAgg_min <- aggregateReplicates(D_norm, imp_method = ".min2impute")
+    impExpData <- calculatePeptideRatios(dAgg_min)
+
+    # Compute function
+    graphsImp <- bppg::generateQuantGraphs(exp_peptide_ratios = impExpData,
+        fasta_edgelist = edgelist,
+        collProtNodes = TRUE,
+        collPeptNodes = TRUE)
 
     testfile1 <- system.file("extdata", "quantGraphs.rds", package = "bppg")
     testgraphs <- readRDS(testfile1)
@@ -102,6 +88,7 @@ test_that("test generateQuantGraphs", {
             expect_snapshot(igraph::as_edgelist(graphs2[[i]][[j]]))
             expect_snapshot(igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio"))
             expect_snapshot(igraph::vertex_attr(graphs2[[i]][[j]], "pep_logRatio"))
+        }
         for (j in seq_along(graphsImp[[i]])){
             expect_snapshot(igraph::vertex_attr(graphsImp[[i]][[j]],
                     "pep_ratio_mean"))

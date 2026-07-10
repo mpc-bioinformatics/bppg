@@ -15,6 +15,7 @@
 }
 
 
+
 #' Create Mapping signature for igraph::contract function.
 #'
 #' @inheritParams generateQuantGraphs
@@ -127,18 +128,18 @@
             igraph::V(gColl)$pep_ratio_mean[pepMask] <-
                 vapply(igraph::V(gColl)$pep_logRatio[pepMask],
                     mean, FUN.VALUE = numeric(1))
-            if (!is.null(igraph::V(gCollapsed)$imputed)) {
-                igraph::V(gCollapsed)$anyImputed <- vapply(
-                    igraph::V(gCollapsed)$imputed, any, 
+            if (!is.null(igraph::V(gColl)$imputed)) {
+                igraph::V(gColl)$anyImputed <- vapply(
+                    igraph::V(gColl)$imputed, any, 
                     FUN.VALUE = logical(1))
             }
         } else {
             igraph::V(gColl)$pep_logRatio <- vapply(
                 igraph::V(gColl)$pep_logRatio,  "[", 1, FUN.VALUE = numeric(1))
         if (collProtNodes) {
-            if (!is.null(igraph::V(gCollapsed)$imputed)) {
-                igraph::V(gCollapsed)$imputed[!pepMask] <- vapply(
-                    igraph::V(gCollapsed)$imputed[!pepMask], any, 
+            if (!is.null(igraph::V(gColl)$imputed)) {
+                igraph::V(gColl)$imputed[!pepMask] <- vapply(
+                    igraph::V(gColl)$imputed[!pepMask], any, 
                     FUN.VALUE = logical(1))
             }
             
@@ -294,7 +295,7 @@ generateQuantGraphs <- function(exp_peptide_ratios,
     outpath = NULL,
     collProtNodes = TRUE,
     collPeptNodes = FALSE,
-    suffix = "") {
+    suffix = "") {  
     checkmate::assertClass(exp_peptide_ratios, "SummarizedExperiment")
     checkmate::assertDataFrame(SummarizedExperiment::assays(
         exp_peptide_ratios)$logRatios, all.missing=FALSE)
@@ -304,7 +305,7 @@ generateQuantGraphs <- function(exp_peptide_ratios,
     checkmate::assertFlag(collPeptNodes)
     checkmate::assertCharacter(suffix)
 
-    ## broad filtering for FASTA edgelist for only quantified peptides
+        ## broad filtering for FASTA edgelist for only quantified peptides
     edgelist_filtered <- fasta_edgelist[fasta_edgelist[, 2]
         %in% SummarizedExperiment::rowData(exp_peptide_ratios)[, seq_column], ]
 
@@ -318,6 +319,7 @@ generateQuantGraphs <- function(exp_peptide_ratios,
     colnames_split <- limma::strsplit2(colnames(exp_peptide_ratios), "_")
     comparisons <- paste(colnames_split[, 2], colnames_split[, 3], sep = "_")
     # first built graphs and try to identify missing type after
+    # TODO add some filter again, before it was per graph
     subgraphs <- lapply(seq_len(ncol(exp_peptide_ratios)),
         function(i) {
             # only the data from this comparison

@@ -249,7 +249,6 @@
 #' @return A table with the characteristics, c = collapsed.
 #' @export
 #'
-#' @examples
 #'
 
 graphComplexity <- function(S) {

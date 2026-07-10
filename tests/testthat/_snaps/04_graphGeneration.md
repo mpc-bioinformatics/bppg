@@ -4131,73 +4131,6 @@
 ---
 
     Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
-    Output
-      [1]       NA       NA 0.932000 0.900000 1.056333
-
----
-
-    Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
-    Output
-      [1]  TRUE  TRUE  TRUE  TRUE FALSE
-
----
-
-    Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
-    Output
-      [[1]]
-      [1] TRUE
-      
-      [[2]]
-      [1] TRUE
-      
-      [[3]]
-      [1] FALSE  TRUE
-      
-      [[4]]
-      [1] TRUE
-      
-      [[5]]
-      [1] FALSE FALSE FALSE
-      
-
----
-
-    Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
-    Output
-      [1]     NA     NA 0.9675 1.0450
-
----
-
-    Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
-    Output
-      [1] FALSE FALSE FALSE FALSE
-
----
-
-    Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
-    Output
-      [[1]]
-      [1] FALSE
-      
-      [[2]]
-      [1] FALSE
-      
-      [[3]]
-      [1] FALSE FALSE
-      
-      [[4]]
-      [1] FALSE FALSE
-      
-
----
-
-    Code
       igraph::as_edgelist(graphs[[i]][[j]])
     Output
             [,1]                  
@@ -4305,6 +4238,152 @@
       [13]  0.21528327 -0.06713498  0.10267535  0.20393169 -0.21849430  0.02842311
       [19]  0.13955118  0.54525818 -0.06334095  0.22186380 -0.10202526 -0.03688890
       [25]  0.02734742
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
+    Output
+      [1]        NA 0.3628317
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
+    Output
+      [1] TRUE TRUE
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
+    Output
+      [[1]]
+      [1] TRUE
+      
+      [[2]]
+       [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+      [13] FALSE  TRUE  TRUE
+      
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
+    Output
+      [1]         NA         NA  0.5629332 -0.1403034
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
+    Output
+      [1]  TRUE  TRUE FALSE  TRUE
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
+    Output
+      [[1]]
+      [1] TRUE
+      
+      [[2]]
+      [1] TRUE
+      
+      [[3]]
+      [1] FALSE
+      
+      [[4]]
+      [1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+      
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
+    Output
+      [1]          NA          NA -0.04774208 -0.60667077  0.21725893
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
+    Output
+      [1]  TRUE  TRUE FALSE  TRUE FALSE
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
+    Output
+      [[1]]
+      [1] TRUE
+      
+      [[2]]
+      [1] TRUE
+      
+      [[3]]
+       [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+      [13] FALSE FALSE
+      
+      [[4]]
+      [1] FALSE  TRUE FALSE FALSE  TRUE  TRUE  TRUE
+      
+      [[5]]
+      [1] FALSE FALSE FALSE FALSE
+      
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
+    Output
+       [1]          NA          NA          NA          NA -0.01258444  0.04907199
+       [7]  0.02230337  0.02734742  0.99041912 -0.35334983
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
+    Output
+       [1]  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE  TRUE
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
+    Output
+      [[1]]
+      [1] TRUE
+      
+      [[2]]
+      [1] TRUE
+      
+      [[3]]
+      [1] TRUE
+      
+      [[4]]
+      [1] FALSE
+      
+      [[5]]
+       [1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+      
+      [[6]]
+      [1] FALSE FALSE FALSE FALSE
+      
+      [[7]]
+      [1] FALSE
+      
+      [[8]]
+      [1] FALSE
+      
+      [[9]]
+      [1] FALSE  TRUE FALSE
+      
+      [[10]]
+      [1]  TRUE FALSE FALSE  TRUE FALSE FALSE
+      
 
 ---
 
@@ -4425,73 +4504,6 @@
     Output
        [1]          NA          NA  0.14834775  0.08832752  0.09826568 -0.35713437
        [7] -0.01198712 -0.11155284  0.14990035  0.00222587  0.06050205  0.14782409
-
----
-
-    Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
-    Output
-      [1]        NA        NA 0.9930000 0.9000000 0.9706667
-
----
-
-    Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
-    Output
-      [1] FALSE  TRUE  TRUE FALSE FALSE
-
----
-
-    Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
-    Output
-      [[1]]
-      [1] FALSE
-      
-      [[2]]
-      [1] TRUE
-      
-      [[3]]
-      [1]  TRUE FALSE
-      
-      [[4]]
-      [1] FALSE
-      
-      [[5]]
-      [1] FALSE FALSE FALSE
-      
-
----
-
-    Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
-    Output
-      [1]     NA     NA 0.9455 0.9975
-
----
-
-    Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
-    Output
-      [1]  TRUE FALSE  TRUE FALSE
-
----
-
-    Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
-    Output
-      [[1]]
-      [1] TRUE
-      
-      [[2]]
-      [1] FALSE
-      
-      [[3]]
-      [1] FALSE  TRUE
-      
-      [[4]]
-      [1] FALSE FALSE
-      
 
 ---
 
@@ -4690,6 +4702,152 @@
       [16] -0.049339340  0.021620209 -0.203647867  0.061413417  0.350475752
       [21]  0.057447208 -0.487936174  0.051791133 -0.113497572  0.105025168
       [26] -0.027087276  0.057844117
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
+    Output
+      [1]        NA 0.1384335
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
+    Output
+      [1] TRUE TRUE
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
+    Output
+      [[1]]
+      [1] TRUE
+      
+      [[2]]
+       [1] FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+      [13] FALSE FALSE
+      
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
+    Output
+      [1]          NA          NA -0.35713437  0.06353926
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
+    Output
+      [1] FALSE FALSE FALSE FALSE
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
+    Output
+      [[1]]
+      [1] FALSE
+      
+      [[2]]
+      [1] FALSE
+      
+      [[3]]
+      [1] FALSE
+      
+      [[4]]
+      [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+      
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
+    Output
+      [1]          NA          NA  0.04450473  0.38331468 -0.06639132
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
+    Output
+      [1]  TRUE  TRUE  TRUE  TRUE FALSE
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
+    Output
+      [[1]]
+      [1] TRUE
+      
+      [[2]]
+      [1] TRUE
+      
+      [[3]]
+       [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+      [13]  TRUE FALSE FALSE
+      
+      [[4]]
+      [1] FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE
+      
+      [[5]]
+      [1] FALSE FALSE FALSE FALSE
+      
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
+    Output
+       [1]          NA          NA          NA          NA  0.20409342 -0.09896299
+       [7]  0.04043034  0.05784412  0.09339009  0.02399048
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
+    Output
+       [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
+    Output
+      [[1]]
+      [1] TRUE
+      
+      [[2]]
+      [1] FALSE
+      
+      [[3]]
+      [1] FALSE
+      
+      [[4]]
+      [1] FALSE
+      
+      [[5]]
+       [1] FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE
+      
+      [[6]]
+      [1] FALSE FALSE FALSE FALSE
+      
+      [[7]]
+      [1] FALSE
+      
+      [[8]]
+      [1] FALSE
+      
+      [[9]]
+      [1] FALSE FALSE
+      
+      [[10]]
+      [1] FALSE FALSE FALSE FALSE FALSE FALSE
+      
 
 ---
 
@@ -5004,6 +5162,152 @@
       [21]  0.038706117  0.067920600 -0.013644879  0.028237026 -0.025764915
       [26]  0.008793523  0.607323895
 
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
+    Output
+      [1]         NA 0.01057132
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
+    Output
+      [1] FALSE FALSE
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
+    Output
+      [[1]]
+      [1] FALSE
+      
+      [[2]]
+       [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+      [13] FALSE
+      
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
+    Output
+      [1]         NA         NA -0.1963693 -0.1325674
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
+    Output
+      [1]  TRUE  TRUE FALSE  TRUE
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
+    Output
+      [[1]]
+      [1] TRUE
+      
+      [[2]]
+      [1] TRUE
+      
+      [[3]]
+      [1] FALSE
+      
+      [[4]]
+      [1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+      
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
+    Output
+      [1]          NA          NA -0.07497009 -0.35363573  0.22363659
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
+    Output
+      [1] TRUE TRUE TRUE TRUE TRUE
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
+    Output
+      [[1]]
+      [1] TRUE
+      
+      [[2]]
+      [1] TRUE
+      
+      [[3]]
+       [1] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE
+      [13] FALSE FALSE
+      
+      [[4]]
+      [1] FALSE  TRUE FALSE  TRUE FALSE FALSE  TRUE
+      
+      [[5]]
+      [1]  TRUE FALSE FALSE FALSE FALSE
+      
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
+    Output
+       [1]           NA           NA           NA           NA  0.040928456
+       [6]  0.007316706  0.082845209  0.607323895 -0.017570572  0.125949363
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
+    Output
+       [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE
+
+---
+
+    Code
+      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
+    Output
+      [[1]]
+      [1] TRUE
+      
+      [[2]]
+      [1] FALSE
+      
+      [[3]]
+      [1] FALSE
+      
+      [[4]]
+      [1] FALSE
+      
+      [[5]]
+       [1] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+      
+      [[6]]
+      [1] FALSE FALSE FALSE FALSE
+      
+      [[7]]
+      [1] FALSE
+      
+      [[8]]
+      [1] FALSE
+      
+      [[9]]
+      [1] FALSE FALSE
+      
+      [[10]]
+      [1] FALSE FALSE FALSE FALSE FALSE FALSE
+      
+
 # test protOrigin
 
     Code
@@ -5268,71 +5572,4 @@
        [1] "spike_in" "yeast"    "yeast"    "spike_in" NA         NA        
        [7] NA         NA         NA         NA         NA         NA        
       [13] NA        
-
----
-
-    Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
-    Output
-      [1]     NA     NA 0.9665 0.9200 0.9760
-
----
-
-    Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
-    Output
-      [1]  TRUE  TRUE  TRUE FALSE  TRUE
-
----
-
-    Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
-    Output
-      [[1]]
-      [1] TRUE
-      
-      [[2]]
-      [1] TRUE
-      
-      [[3]]
-      [1] FALSE  TRUE
-      
-      [[4]]
-      [1] FALSE
-      
-      [[5]]
-      [1] FALSE FALSE  TRUE
-      
-
----
-
-    Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "pep_ratio_mean")
-    Output
-      [1]     NA     NA 0.9635 0.9830
-
----
-
-    Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "anyImputed")
-    Output
-      [1] FALSE FALSE FALSE FALSE
-
----
-
-    Code
-      igraph::vertex_attr(graphsImp[[i]][[j]], "imputed")
-    Output
-      [[1]]
-      [1] FALSE
-      
-      [[2]]
-      [1] FALSE
-      
-      [[3]]
-      [1] FALSE FALSE
-      
-      [[4]]
-      [1] FALSE FALSE
-      
 

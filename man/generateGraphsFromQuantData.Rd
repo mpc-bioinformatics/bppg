@@ -73,10 +73,6 @@ The suffix for output files.}
 A list with the protein orgin corresponding to
 \link[seqinr:fasta]{fasta}, proteins are used as rownames/index.}
 
-\item{imp_method}{\strong{character} \cr
-Chosen imputation optional approach, current method:
-"min_2_impute"}
-
 \item{verbose}{\strong{logical} \cr
 If \code{TRUE}, additional information on each iteration
 of the optimization is printed}
