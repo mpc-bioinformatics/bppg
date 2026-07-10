@@ -302,7 +302,6 @@ generateQuantGraphs <- function(exp_peptide_ratios,
     collProtNodes = TRUE,
     collPeptNodes = FALSE,
     suffix = "") {  
-
     checkmate::assertClass(exp_peptide_ratios, "SummarizedExperiment")
     checkmate::assertDataFrame(SummarizedExperiment::assays(
         exp_peptide_ratios)$logRatios, all.missing=FALSE)

@@ -4,7 +4,6 @@
 # graphComplexity
 
 
-
 #' Table with information on each protein node
 #'
 #' @param G   \strong{list of list of igraph objects} \cr
@@ -250,7 +249,6 @@
 #' @return A table with the characteristics, c = collapsed.
 #' @export
 #'
-#' @examples
 #'
 
 graphComplexity <- function(S) {

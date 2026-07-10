@@ -118,35 +118,36 @@ aggregateReplicates <- function(D,
     global_imp <- c(".missForest", ".QRILC", ".BPCA")
 
     if (!is.null(imp_method) && imp_method %in% global_imp) {
-    FUN_imp <- switch(imp_method,
-        .missForest = .missForest,
-        .QRILC = .QRILC,
-        .BPCA = .BPCA
-    )
-
-    intensities <- FUN_imp(intensities, ...)
-}
-
-res <- vapply(seq_along(levels(group)), function(i, mask_impute) {
-    X_tmp <- intensities[, group == levels(group)[i]]
-    X_tmp <- as.matrix(X_tmp)
-
-    res_tmp <- FUN(X_tmp, na.rm = TRUE)
-
-    if (!is.null(imp_method) && imp_method %in% group_imp) {
-        res_tmp[mask_impute[, i]] <- NA
-
         FUN_imp <- switch(imp_method,
-            .min2impute = .min2impute,
-            .colImputation = .colImputation
+            .missForest = .missForest,
+            .QRILC = .QRILC,
+            .BPCA = .BPCA
         )
 
-        vals_imp <- FUN_imp(X_tmp, intensities, ...)
-        res_tmp[mask_impute[, i]] <- vals_imp[mask_impute[, i]]
+        intensities <- FUN_imp(intensities, ...)
     }
 
-    return(res_tmp)
-}, FUN.VALUE = numeric(length(id)), mask_impute)
+    res <- vapply(seq_along(levels(group)), function(i, mask_impute) {
+        X_tmp <- intensities[, group == levels(group)[i]]
+        X_tmp <- as.matrix(X_tmp)
+
+        res_tmp <- FUN(X_tmp, na.rm = TRUE)
+
+        if(is.null(imp_method)){
+            res_tmp[mask_impute[, i]] <- NA
+        }
+        if (!is.null(imp_method) && imp_method %in% group_imp) {
+            FUN_imp <- switch(imp_method,
+                .min2impute = .min2impute,
+                .colImputation = .colImputation
+            )
+
+            vals_imp <- FUN_imp(X_tmp, intensities, ...)
+            res_tmp[mask_impute[, i]] <- vals_imp[mask_impute[, i]]
+        }
+
+        return(res_tmp)
+    }, FUN.VALUE = numeric(length(id)), mask_impute)
 
     res <- as.data.frame(res)
     colnames(res) <- levels(group)

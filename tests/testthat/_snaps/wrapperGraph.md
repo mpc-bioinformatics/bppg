@@ -93,8 +93,6 @@
       [15,] "sp|Q12690|RL13A_YEAST" "NQEIFDANVQR"                  
       [16,] "sp|P40212|RL13B_YEAST" "TIGIAVDHR"                    
       [17,] "sp|Q12690|RL13A_YEAST" "TIGIAVDHR"                    
-      [18,] "sp|P40212|RL13B_YEAST" "VHFDQAGK"                     
-      [19,] "sp|Q12690|RL13A_YEAST" "VHFDQAGK"                     
 
 ---
 
@@ -102,7 +100,7 @@
       igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
     Output
        [1]          NA          NA  0.01301067 -0.39541482  0.25095770  0.56327139
-       [7]  0.14398320  0.58950458 -0.77571740 -0.13483416 -0.39627028  0.44146882
+       [7]  0.14398320  0.58950458 -0.77571740 -0.13483416 -0.39627028
 
 ---
 
@@ -122,28 +120,26 @@
       [10,] "sp|P39708|DHE5_YEAST" "GANIASFVMVADAMLDQGDVF"        
       [11,] "sp|P39708|DHE5_YEAST" "GCIISETGITSEQIHDIASAK"        
       [12,] "sp|P07262|DHE4_YEAST" "GCIISETGITSEQVADISSAK"        
-      [13,] "sp|P39708|DHE5_YEAST" "GGLCVDLK"                     
-      [14,] "sp|P07262|DHE4_YEAST" "GGLCVDLK"                     
-      [15,] "sp|P07262|DHE4_YEAST" "HIGQDTDVPAGDIGVGGR"           
-      [16,] "sp|P39708|DHE5_YEAST" "ICYAFMR"                      
-      [17,] "sp|P07262|DHE4_YEAST" "ICYAFMR"                      
-      [18,] "sp|P07262|DHE4_YEAST" "IMINCFNECIDYAK"               
-      [19,] "sp|P07262|DHE4_YEAST" "ITWTSER"                      
-      [20,] "sp|P39708|DHE5_YEAST" "NSWEGVLTGK"                   
-      [21,] "sp|P07262|DHE4_YEAST" "NSWEGVLTGK"                   
-      [22,] "sp|P07262|DHE4_YEAST" "SEPEFQQAYEEVVSSLEDSTLFEQHPEYR"
-      [23,] "sp|P39708|DHE5_YEAST" "SLEEIVDEYSTFSESK"             
-      [24,] "sp|P07262|DHE4_YEAST" "SLEQIVNEYSTFSENK"             
-      [25,] "sp|P07262|DHE4_YEAST" "STATGPSEAVWYGPPK"             
-      [26,] "sp|P07262|DHE4_YEAST" "VDIALPCATQNEVSGEEAK"          
-      [27,] "sp|P07262|DHE4_YEAST" "VIELGGTVVSLSDSK"              
-      [28,] "sp|P39708|DHE5_YEAST" "VLPIVSVPER"                   
-      [29,] "sp|P07262|DHE4_YEAST" "VLPIVSVPER"                   
-      [30,] "sp|P07262|DHE4_YEAST" "VQYIAGARPWTHVQK"              
-      [31,] "sp|P39708|DHE5_YEAST" "VTISGSGNVAQYAALK"             
-      [32,] "sp|P07262|DHE4_YEAST" "VTISGSGNVAQYAALK"             
-      [33,] "sp|P07262|DHE4_YEAST" "VTWENDKGEQEVAQGYR"            
-      [34,] "sp|P39708|DHE5_YEAST" "VTWENDNGEQEVAQGYR"            
+      [13,] "sp|P07262|DHE4_YEAST" "HIGQDTDVPAGDIGVGGR"           
+      [14,] "sp|P39708|DHE5_YEAST" "ICYAFMR"                      
+      [15,] "sp|P07262|DHE4_YEAST" "ICYAFMR"                      
+      [16,] "sp|P07262|DHE4_YEAST" "IMINCFNECIDYAK"               
+      [17,] "sp|P07262|DHE4_YEAST" "ITWTSER"                      
+      [18,] "sp|P39708|DHE5_YEAST" "NSWEGVLTGK"                   
+      [19,] "sp|P07262|DHE4_YEAST" "NSWEGVLTGK"                   
+      [20,] "sp|P07262|DHE4_YEAST" "SEPEFQQAYEEVVSSLEDSTLFEQHPEYR"
+      [21,] "sp|P39708|DHE5_YEAST" "SLEEIVDEYSTFSESK"             
+      [22,] "sp|P07262|DHE4_YEAST" "SLEQIVNEYSTFSENK"             
+      [23,] "sp|P07262|DHE4_YEAST" "STATGPSEAVWYGPPK"             
+      [24,] "sp|P07262|DHE4_YEAST" "VDIALPCATQNEVSGEEAK"          
+      [25,] "sp|P07262|DHE4_YEAST" "VIELGGTVVSLSDSK"              
+      [26,] "sp|P39708|DHE5_YEAST" "VLPIVSVPER"                   
+      [27,] "sp|P07262|DHE4_YEAST" "VLPIVSVPER"                   
+      [28,] "sp|P07262|DHE4_YEAST" "VQYIAGARPWTHVQK"              
+      [29,] "sp|P39708|DHE5_YEAST" "VTISGSGNVAQYAALK"             
+      [30,] "sp|P07262|DHE4_YEAST" "VTISGSGNVAQYAALK"             
+      [31,] "sp|P07262|DHE4_YEAST" "VTWENDKGEQEVAQGYR"            
+      [32,] "sp|P39708|DHE5_YEAST" "VTWENDNGEQEVAQGYR"            
 
 ---
 
@@ -152,9 +148,9 @@
     Output
        [1]          NA          NA  0.34485174 -0.18344358  0.22632477  0.09075235
        [7]  0.19377265  0.19368206  0.14552313  0.50823246 -0.02677579 -0.38078692
-      [13]  0.12241773  0.10749690  0.37479644 -0.07557933 -0.62041663  0.28544390
-      [19]  0.16716561  0.03865488 -0.35837351 -0.03775721  0.02416326 -0.14626485
-      [25] -0.18176647 -0.56307667 -0.07056382  0.26938130 -0.46539090
+      [13]  0.10749690  0.37479644 -0.07557933 -0.62041663  0.28544390  0.16716561
+      [19]  0.03865488 -0.35837351 -0.03775721  0.02416326 -0.14626485 -0.18176647
+      [25] -0.56307667 -0.07056382  0.26938130 -0.46539090
 
 ---
 
@@ -167,33 +163,32 @@
        [3,] "sp|P00330|ADH1_YEAST" "ATDGGAHGVINVSVSEAAIEASTR"    
        [4,] "sp|P00330|ADH1_YEAST" "CCSDVFNQVVK"                 
        [5,] "sp|P07246|ADH3_YEAST" "DIPVPEPKPNEILINVK"           
-       [6,] "sp|P00330|ADH1_YEAST" "DIVGAVLK"                    
-       [7,] "sp|P00330|ADH1_YEAST" "EALDFFAR"                    
-       [8,] "sp|P00331|ADH2_YEAST" "EALDFFAR"                    
-       [9,] "sp|P38113|ADH5_YEAST" "EALDFFAR"                    
-      [10,] "sp|P07246|ADH3_YEAST" "EALDFFSR"                    
-      [11,] "sp|P00330|ADH1_YEAST" "EKDIVGAVLK"                  
-      [12,] "sp|P07246|ADH3_YEAST" "GVIFYENK"                    
-      [13,] "sp|P00330|ADH1_YEAST" "GVIFYESHGK"                  
-      [14,] "sp|P00330|ADH1_YEAST" "IGDYAGIK"                    
-      [15,] "sp|P00331|ADH2_YEAST" "IGDYAGIK"                    
-      [16,] "sp|P07246|ADH3_YEAST" "IQQGTDLAEVAPILCAGVTVYK"      
-      [17,] "sp|P07246|ADH3_YEAST" "IVGLSELPK"                   
-      [18,] "sp|P00330|ADH1_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
-      [19,] "sp|P00331|ADH2_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
-      [20,] "sp|P07246|ADH3_YEAST" "NMVSDIQEATK"                 
-      [21,] "sp|P00330|ADH1_YEAST" "SANLMAGHWVAISGAAGGLGSLAVQYAK"
-      [22,] "sp|P00330|ADH1_YEAST" "SIGGEVFIDFTK"                
-      [23,] "sp|P00330|ADH1_YEAST" "SIPETQK"                     
-      [24,] "sp|P00331|ADH2_YEAST" "SIPETQK"                     
-      [25,] "sp|P00330|ADH1_YEAST" "SISIVGSYVGNR"                
-      [26,] "sp|P00331|ADH2_YEAST" "SISIVGSYVGNR"                
-      [27,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGK"                  
-      [28,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGKEELFR"             
-      [29,] "sp|P00331|ADH2_YEAST" "VVGLSSLPEIYEK"               
-      [30,] "sp|P00330|ADH1_YEAST" "VVGLSTLPEIYEK"               
-      [31,] "sp|P00330|ADH1_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
-      [32,] "sp|P07246|ADH3_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
+       [6,] "sp|P00330|ADH1_YEAST" "EALDFFAR"                    
+       [7,] "sp|P00331|ADH2_YEAST" "EALDFFAR"                    
+       [8,] "sp|P38113|ADH5_YEAST" "EALDFFAR"                    
+       [9,] "sp|P07246|ADH3_YEAST" "EALDFFSR"                    
+      [10,] "sp|P00330|ADH1_YEAST" "EKDIVGAVLK"                  
+      [11,] "sp|P07246|ADH3_YEAST" "GVIFYENK"                    
+      [12,] "sp|P00330|ADH1_YEAST" "GVIFYESHGK"                  
+      [13,] "sp|P00330|ADH1_YEAST" "IGDYAGIK"                    
+      [14,] "sp|P00331|ADH2_YEAST" "IGDYAGIK"                    
+      [15,] "sp|P07246|ADH3_YEAST" "IQQGTDLAEVAPILCAGVTVYK"      
+      [16,] "sp|P07246|ADH3_YEAST" "IVGLSELPK"                   
+      [17,] "sp|P00330|ADH1_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
+      [18,] "sp|P00331|ADH2_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
+      [19,] "sp|P07246|ADH3_YEAST" "NMVSDIQEATK"                 
+      [20,] "sp|P00330|ADH1_YEAST" "SANLMAGHWVAISGAAGGLGSLAVQYAK"
+      [21,] "sp|P00330|ADH1_YEAST" "SIGGEVFIDFTK"                
+      [22,] "sp|P00330|ADH1_YEAST" "SIPETQK"                     
+      [23,] "sp|P00331|ADH2_YEAST" "SIPETQK"                     
+      [24,] "sp|P00330|ADH1_YEAST" "SISIVGSYVGNR"                
+      [25,] "sp|P00331|ADH2_YEAST" "SISIVGSYVGNR"                
+      [26,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGK"                  
+      [27,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGKEELFR"             
+      [28,] "sp|P00331|ADH2_YEAST" "VVGLSSLPEIYEK"               
+      [29,] "sp|P00330|ADH1_YEAST" "VVGLSTLPEIYEK"               
+      [30,] "sp|P00330|ADH1_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
+      [31,] "sp|P07246|ADH3_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
 
 ---
 
@@ -201,10 +196,10 @@
       igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
     Output
        [1]          NA          NA          NA          NA -0.09213118  0.13908309
-       [7] -0.63089964  0.18150780  0.10852732  0.01636308  0.02228366  0.07937947
-      [13] -0.26744811  0.12388694  0.21514238 -0.06718061  0.10167238  0.20413832
-      [19] -0.21856356 -0.60813279  0.02883078  0.13946039  0.54554499 -0.06322847
-      [25] -0.94480733  0.22201082 -0.10181185 -0.03660714  0.02723379
+       [7] -0.63089964  0.18150780  0.10852732  0.02228366  0.07937947 -0.26744811
+      [13]  0.12388694  0.21514238 -0.06718061  0.10167238  0.20413832 -0.21856356
+      [19] -0.60813279  0.02883078  0.13946039  0.54554499 -0.06322847 -0.94480733
+      [25]  0.22201082 -0.10181185 -0.03660714  0.02723379
 
 ---
 
@@ -234,7 +229,7 @@
     Code
       sum(!igraph::V(graphsImp[[i]][[j]])$type)
     Output
-      [1] 10
+      [1] 9
 
 ---
 
@@ -242,7 +237,7 @@
       igraph::vertex_attr(graphsImp[[i]][[j]], "pep_logRatio")
     Output
        [1]          NA          NA  0.01301067 -0.39541482  0.25095770  0.56327139
-       [7]  0.14398320  0.58950458 -0.77571740 -0.13483416 -0.39627028  0.44146882
+       [7]  0.14398320  0.58950458 -0.77571740 -0.13483416 -0.39627028
 
 ---
 
@@ -256,7 +251,7 @@
     Code
       sum(!igraph::V(graphsImp[[i]][[j]])$type)
     Output
-      [1] 27
+      [1] 26
 
 ---
 
@@ -265,9 +260,9 @@
     Output
        [1]          NA          NA  0.34485174 -0.18344358  0.22632477  0.09075235
        [7]  0.19377265  0.19368206  0.14552313  0.50823246 -0.02677579 -0.38078692
-      [13]  0.12241773  0.10749690  0.37479644 -0.07557933 -0.62041663  0.28544390
-      [19]  0.16716561  0.03865488 -0.35837351 -0.03775721  0.02416326 -0.14626485
-      [25] -0.18176647 -0.56307667 -0.07056382  0.26938130 -0.46539090
+      [13]  0.10749690  0.37479644 -0.07557933 -0.62041663  0.28544390  0.16716561
+      [19]  0.03865488 -0.35837351 -0.03775721  0.02416326 -0.14626485 -0.18176647
+      [25] -0.56307667 -0.07056382  0.26938130 -0.46539090
 
 ---
 
@@ -281,7 +276,7 @@
     Code
       sum(!igraph::V(graphsImp[[i]][[j]])$type)
     Output
-      [1] 25
+      [1] 24
 
 ---
 
@@ -289,10 +284,10 @@
       igraph::vertex_attr(graphsImp[[i]][[j]], "pep_logRatio")
     Output
        [1]          NA          NA          NA          NA -0.09213118  0.13908309
-       [7] -0.63089964  0.18150780  0.10852732  0.01636308  0.02228366  0.07937947
-      [13] -0.26744811  0.12388694  0.21514238 -0.06718061  0.10167238  0.20413832
-      [19] -0.21856356 -0.60813279  0.02883078  0.13946039  0.54554499 -0.06322847
-      [25] -0.94480733  0.22201082 -0.10181185 -0.03660714  0.02723379
+       [7] -0.63089964  0.18150780  0.10852732  0.02228366  0.07937947 -0.26744811
+      [13]  0.12388694  0.21514238 -0.06718061  0.10167238  0.20413832 -0.21856356
+      [19] -0.60813279  0.02883078  0.13946039  0.54554499 -0.06322847 -0.94480733
+      [25]  0.22201082 -0.10181185 -0.03660714  0.02723379
 
 ---
 
@@ -384,28 +379,26 @@
       [10,] "sp|P39708|DHE5_YEAST" "GANIASFVMVADAMLDQGDVF"        
       [11,] "sp|P39708|DHE5_YEAST" "GCIISETGITSEQIHDIASAK"        
       [12,] "sp|P07262|DHE4_YEAST" "GCIISETGITSEQVADISSAK"        
-      [13,] "sp|P39708|DHE5_YEAST" "GGLCVDLK"                     
-      [14,] "sp|P07262|DHE4_YEAST" "GGLCVDLK"                     
-      [15,] "sp|P07262|DHE4_YEAST" "HIGQDTDVPAGDIGVGGR"           
-      [16,] "sp|P39708|DHE5_YEAST" "ICYAFMR"                      
-      [17,] "sp|P07262|DHE4_YEAST" "ICYAFMR"                      
-      [18,] "sp|P07262|DHE4_YEAST" "IMINCFNECIDYAK"               
-      [19,] "sp|P07262|DHE4_YEAST" "ITWTSER"                      
-      [20,] "sp|P39708|DHE5_YEAST" "NSWEGVLTGK"                   
-      [21,] "sp|P07262|DHE4_YEAST" "NSWEGVLTGK"                   
-      [22,] "sp|P07262|DHE4_YEAST" "SEPEFQQAYEEVVSSLEDSTLFEQHPEYR"
-      [23,] "sp|P39708|DHE5_YEAST" "SLEEIVDEYSTFSESK"             
-      [24,] "sp|P07262|DHE4_YEAST" "SLEQIVNEYSTFSENK"             
-      [25,] "sp|P07262|DHE4_YEAST" "STATGPSEAVWYGPPK"             
-      [26,] "sp|P07262|DHE4_YEAST" "VDIALPCATQNEVSGEEAK"          
-      [27,] "sp|P07262|DHE4_YEAST" "VIELGGTVVSLSDSK"              
-      [28,] "sp|P39708|DHE5_YEAST" "VLPIVSVPER"                   
-      [29,] "sp|P07262|DHE4_YEAST" "VLPIVSVPER"                   
-      [30,] "sp|P07262|DHE4_YEAST" "VQYIAGARPWTHVQK"              
-      [31,] "sp|P39708|DHE5_YEAST" "VTISGSGNVAQYAALK"             
-      [32,] "sp|P07262|DHE4_YEAST" "VTISGSGNVAQYAALK"             
-      [33,] "sp|P07262|DHE4_YEAST" "VTWENDKGEQEVAQGYR"            
-      [34,] "sp|P39708|DHE5_YEAST" "VTWENDNGEQEVAQGYR"            
+      [13,] "sp|P07262|DHE4_YEAST" "HIGQDTDVPAGDIGVGGR"           
+      [14,] "sp|P39708|DHE5_YEAST" "ICYAFMR"                      
+      [15,] "sp|P07262|DHE4_YEAST" "ICYAFMR"                      
+      [16,] "sp|P07262|DHE4_YEAST" "IMINCFNECIDYAK"               
+      [17,] "sp|P07262|DHE4_YEAST" "ITWTSER"                      
+      [18,] "sp|P39708|DHE5_YEAST" "NSWEGVLTGK"                   
+      [19,] "sp|P07262|DHE4_YEAST" "NSWEGVLTGK"                   
+      [20,] "sp|P07262|DHE4_YEAST" "SEPEFQQAYEEVVSSLEDSTLFEQHPEYR"
+      [21,] "sp|P39708|DHE5_YEAST" "SLEEIVDEYSTFSESK"             
+      [22,] "sp|P07262|DHE4_YEAST" "SLEQIVNEYSTFSENK"             
+      [23,] "sp|P07262|DHE4_YEAST" "STATGPSEAVWYGPPK"             
+      [24,] "sp|P07262|DHE4_YEAST" "VDIALPCATQNEVSGEEAK"          
+      [25,] "sp|P07262|DHE4_YEAST" "VIELGGTVVSLSDSK"              
+      [26,] "sp|P39708|DHE5_YEAST" "VLPIVSVPER"                   
+      [27,] "sp|P07262|DHE4_YEAST" "VLPIVSVPER"                   
+      [28,] "sp|P07262|DHE4_YEAST" "VQYIAGARPWTHVQK"              
+      [29,] "sp|P39708|DHE5_YEAST" "VTISGSGNVAQYAALK"             
+      [30,] "sp|P07262|DHE4_YEAST" "VTISGSGNVAQYAALK"             
+      [31,] "sp|P07262|DHE4_YEAST" "VTWENDKGEQEVAQGYR"            
+      [32,] "sp|P39708|DHE5_YEAST" "VTWENDNGEQEVAQGYR"            
 
 ---
 
@@ -414,10 +407,10 @@
     Output
        [1]           NA           NA  0.240123495  0.024851220  0.318890663
        [6]  0.521461082  0.150682350 -0.122716431  0.015260966 -0.244874686
-      [11] -0.151223269 -0.104874324  0.105964538  0.092190596 -0.277878261
-      [16] -0.259936809  0.116524754  0.103673570  0.410506928 -0.109239850
-      [21] -0.118725941  0.079106057  0.119379251 -0.021467326  0.198809832
-      [26] -0.352768572 -0.008653108 -0.103829079 -0.534700083
+      [11] -0.151223269 -0.104874324  0.092190596 -0.277878261 -0.259936809
+      [16]  0.116524754  0.103673570  0.410506928 -0.109239850 -0.118725941
+      [21]  0.079106057  0.119379251 -0.021467326  0.198809832 -0.352768572
+      [26] -0.008653108 -0.103829079 -0.534700083
 
 ---
 
@@ -430,33 +423,32 @@
        [3,] "sp|P00330|ADH1_YEAST" "ATDGGAHGVINVSVSEAAIEASTR"    
        [4,] "sp|P00330|ADH1_YEAST" "CCSDVFNQVVK"                 
        [5,] "sp|P07246|ADH3_YEAST" "DIPVPEPKPNEILINVK"           
-       [6,] "sp|P00330|ADH1_YEAST" "DIVGAVLK"                    
-       [7,] "sp|P00330|ADH1_YEAST" "EALDFFAR"                    
-       [8,] "sp|P00331|ADH2_YEAST" "EALDFFAR"                    
-       [9,] "sp|P38113|ADH5_YEAST" "EALDFFAR"                    
-      [10,] "sp|P07246|ADH3_YEAST" "EALDFFSR"                    
-      [11,] "sp|P00330|ADH1_YEAST" "EKDIVGAVLK"                  
-      [12,] "sp|P07246|ADH3_YEAST" "GVIFYENK"                    
-      [13,] "sp|P00330|ADH1_YEAST" "GVIFYESHGK"                  
-      [14,] "sp|P00330|ADH1_YEAST" "IGDYAGIK"                    
-      [15,] "sp|P00331|ADH2_YEAST" "IGDYAGIK"                    
-      [16,] "sp|P07246|ADH3_YEAST" "IQQGTDLAEVAPILCAGVTVYK"      
-      [17,] "sp|P07246|ADH3_YEAST" "IVGLSELPK"                   
-      [18,] "sp|P00330|ADH1_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
-      [19,] "sp|P00331|ADH2_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
-      [20,] "sp|P07246|ADH3_YEAST" "NMVSDIQEATK"                 
-      [21,] "sp|P00330|ADH1_YEAST" "SANLMAGHWVAISGAAGGLGSLAVQYAK"
-      [22,] "sp|P00330|ADH1_YEAST" "SIGGEVFIDFTK"                
-      [23,] "sp|P00330|ADH1_YEAST" "SIPETQK"                     
-      [24,] "sp|P00331|ADH2_YEAST" "SIPETQK"                     
-      [25,] "sp|P00330|ADH1_YEAST" "SISIVGSYVGNR"                
-      [26,] "sp|P00331|ADH2_YEAST" "SISIVGSYVGNR"                
-      [27,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGK"                  
-      [28,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGKEELFR"             
-      [29,] "sp|P00331|ADH2_YEAST" "VVGLSSLPEIYEK"               
-      [30,] "sp|P00330|ADH1_YEAST" "VVGLSTLPEIYEK"               
-      [31,] "sp|P00330|ADH1_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
-      [32,] "sp|P07246|ADH3_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
+       [6,] "sp|P00330|ADH1_YEAST" "EALDFFAR"                    
+       [7,] "sp|P00331|ADH2_YEAST" "EALDFFAR"                    
+       [8,] "sp|P38113|ADH5_YEAST" "EALDFFAR"                    
+       [9,] "sp|P07246|ADH3_YEAST" "EALDFFSR"                    
+      [10,] "sp|P00330|ADH1_YEAST" "EKDIVGAVLK"                  
+      [11,] "sp|P07246|ADH3_YEAST" "GVIFYENK"                    
+      [12,] "sp|P00330|ADH1_YEAST" "GVIFYESHGK"                  
+      [13,] "sp|P00330|ADH1_YEAST" "IGDYAGIK"                    
+      [14,] "sp|P00331|ADH2_YEAST" "IGDYAGIK"                    
+      [15,] "sp|P07246|ADH3_YEAST" "IQQGTDLAEVAPILCAGVTVYK"      
+      [16,] "sp|P07246|ADH3_YEAST" "IVGLSELPK"                   
+      [17,] "sp|P00330|ADH1_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
+      [18,] "sp|P00331|ADH2_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
+      [19,] "sp|P07246|ADH3_YEAST" "NMVSDIQEATK"                 
+      [20,] "sp|P00330|ADH1_YEAST" "SANLMAGHWVAISGAAGGLGSLAVQYAK"
+      [21,] "sp|P00330|ADH1_YEAST" "SIGGEVFIDFTK"                
+      [22,] "sp|P00330|ADH1_YEAST" "SIPETQK"                     
+      [23,] "sp|P00331|ADH2_YEAST" "SIPETQK"                     
+      [24,] "sp|P00330|ADH1_YEAST" "SISIVGSYVGNR"                
+      [25,] "sp|P00331|ADH2_YEAST" "SISIVGSYVGNR"                
+      [26,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGK"                  
+      [27,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGKEELFR"             
+      [28,] "sp|P00331|ADH2_YEAST" "VVGLSSLPEIYEK"               
+      [29,] "sp|P00330|ADH1_YEAST" "VVGLSTLPEIYEK"               
+      [30,] "sp|P00330|ADH1_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
+      [31,] "sp|P07246|ADH3_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
 
 ---
 
@@ -464,11 +456,11 @@
       igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
     Output
        [1]           NA           NA           NA           NA  0.070723529
-       [6]  0.079567338 -0.271105299  0.003768771  0.238051007  0.029163650
-      [11]  0.040454258 -0.081834924 -0.194013837 -0.047158244 -0.007118395
-      [16]  0.243742967 -0.048948307  0.021680998 -0.204002800  0.060607938
-      [21]  0.350490567  0.056808858 -0.487930265  0.052001320  0.285153449
-      [26] -0.113191177  0.104953674 -0.026544879  0.057434838
+       [6]  0.079567338 -0.271105299  0.003768771  0.238051007  0.040454258
+      [11] -0.081834924 -0.194013837 -0.047158244 -0.007118395  0.243742967
+      [16] -0.048948307  0.021680998 -0.204002800  0.060607938  0.350490567
+      [21]  0.056808858 -0.487930265  0.052001320  0.285153449 -0.113191177
+      [26]  0.104953674 -0.026544879  0.057434838
 
 ---
 
@@ -521,7 +513,7 @@
     Code
       sum(!igraph::V(graphsImp[[i]][[j]])$type)
     Output
-      [1] 27
+      [1] 26
 
 ---
 
@@ -530,10 +522,10 @@
     Output
        [1]           NA           NA  0.240123495  0.024851220  0.318890663
        [6]  0.521461082  0.150682350 -0.122716431  0.015260966 -0.244874686
-      [11] -0.151223269 -0.104874324  0.105964538  0.092190596 -0.277878261
-      [16] -0.259936809  0.116524754  0.103673570  0.410506928 -0.109239850
-      [21] -0.118725941  0.079106057  0.119379251 -0.021467326  0.198809832
-      [26] -0.352768572 -0.008653108 -0.103829079 -0.534700083
+      [11] -0.151223269 -0.104874324  0.092190596 -0.277878261 -0.259936809
+      [16]  0.116524754  0.103673570  0.410506928 -0.109239850 -0.118725941
+      [21]  0.079106057  0.119379251 -0.021467326  0.198809832 -0.352768572
+      [26] -0.008653108 -0.103829079 -0.534700083
 
 ---
 
@@ -547,7 +539,7 @@
     Code
       sum(!igraph::V(graphsImp[[i]][[j]])$type)
     Output
-      [1] 25
+      [1] 24
 
 ---
 
@@ -555,11 +547,11 @@
       igraph::vertex_attr(graphsImp[[i]][[j]], "pep_logRatio")
     Output
        [1]           NA           NA           NA           NA  0.070723529
-       [6]  0.079567338 -0.271105299  0.003768771  0.238051007  0.029163650
-      [11]  0.040454258 -0.081834924 -0.194013837 -0.047158244 -0.007118395
-      [16]  0.243742967 -0.048948307  0.021680998 -0.204002800  0.060607938
-      [21]  0.350490567  0.056808858 -0.487930265  0.052001320  0.285153449
-      [26] -0.113191177  0.104953674 -0.026544879  0.057434838
+       [6]  0.079567338 -0.271105299  0.003768771  0.238051007  0.040454258
+      [11] -0.081834924 -0.194013837 -0.047158244 -0.007118395  0.243742967
+      [16] -0.048948307  0.021680998 -0.204002800  0.060607938  0.350490567
+      [21]  0.056808858 -0.487930265  0.052001320  0.285153449 -0.113191177
+      [26]  0.104953674 -0.026544879  0.057434838
 
 ---
 
@@ -577,26 +569,25 @@
        [1,] "sp|P09938|RIR2_YEAST" "AAADALSDLEIKDSK"             
        [2,] "sp|P09938|RIR2_YEAST" "AEWALR"                      
        [3,] "sp|P09938|RIR2_YEAST" "DEGLHTDFACLLFAHLK"           
-       [4,] "sp|P09938|RIR2_YEAST" "DIHDWNNR"                    
-       [5,] "sp|P09938|RIR2_YEAST" "ESEFLFNAIHTIPEIGEK"          
-       [6,] "sp|P09938|RIR2_YEAST" "GMMPGLTFSNELICR"             
-       [7,] "sp|P09938|RIR2_YEAST" "IVTEAVEIEQR"                 
-       [8,] "sp|P09938|RIR2_YEAST" "LLVAFGNK"                    
-       [9,] "sp|P09938|RIR2_YEAST" "NKPDPAIVEK"                  
-      [10,] "sp|P09938|RIR2_YEAST" "TNFFEK"                      
-      [11,] "sp|P09938|RIR2_YEAST" "TVLFPIK"                     
-      [12,] "sp|P09938|RIR2_YEAST" "VENPFDFMENISLAGK"            
-      [13,] "sp|P09938|RIR2_YEAST" "WIQDADALFGER"                
-      [14,] "sp|P09938|RIR2_YEAST" "YFLDALPVALLGMNADLMNQYVEFVADR"
+       [4,] "sp|P09938|RIR2_YEAST" "ESEFLFNAIHTIPEIGEK"          
+       [5,] "sp|P09938|RIR2_YEAST" "GMMPGLTFSNELICR"             
+       [6,] "sp|P09938|RIR2_YEAST" "IVTEAVEIEQR"                 
+       [7,] "sp|P09938|RIR2_YEAST" "LLVAFGNK"                    
+       [8,] "sp|P09938|RIR2_YEAST" "NKPDPAIVEK"                  
+       [9,] "sp|P09938|RIR2_YEAST" "TNFFEK"                      
+      [10,] "sp|P09938|RIR2_YEAST" "TVLFPIK"                     
+      [11,] "sp|P09938|RIR2_YEAST" "VENPFDFMENISLAGK"            
+      [12,] "sp|P09938|RIR2_YEAST" "WIQDADALFGER"                
+      [13,] "sp|P09938|RIR2_YEAST" "YFLDALPVALLGMNADLMNQYVEFVADR"
 
 ---
 
     Code
       igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
     Output
-       [1]           NA  0.067985566  0.008548272  0.714583859 -1.756814764
-       [6] -0.074776715  0.149209984 -0.025286382 -0.237088193 -0.042675710
-      [11] -0.061904228 -0.235351754 -0.115624288  0.172954743 -0.180940859
+       [1]           NA  0.067985566  0.008548272  0.714583859 -0.074776715
+       [6]  0.149209984 -0.025286382 -0.237088193 -0.042675710 -0.061904228
+      [11] -0.235351754 -0.115624288  0.172954743 -0.180940859
 
 ---
 
@@ -650,28 +641,26 @@
       [10,] "sp|P39708|DHE5_YEAST" "GANIASFVMVADAMLDQGDVF"        
       [11,] "sp|P39708|DHE5_YEAST" "GCIISETGITSEQIHDIASAK"        
       [12,] "sp|P07262|DHE4_YEAST" "GCIISETGITSEQVADISSAK"        
-      [13,] "sp|P39708|DHE5_YEAST" "GGLCVDLK"                     
-      [14,] "sp|P07262|DHE4_YEAST" "GGLCVDLK"                     
-      [15,] "sp|P07262|DHE4_YEAST" "HIGQDTDVPAGDIGVGGR"           
-      [16,] "sp|P39708|DHE5_YEAST" "ICYAFMR"                      
-      [17,] "sp|P07262|DHE4_YEAST" "ICYAFMR"                      
-      [18,] "sp|P07262|DHE4_YEAST" "IMINCFNECIDYAK"               
-      [19,] "sp|P07262|DHE4_YEAST" "ITWTSER"                      
-      [20,] "sp|P39708|DHE5_YEAST" "NSWEGVLTGK"                   
-      [21,] "sp|P07262|DHE4_YEAST" "NSWEGVLTGK"                   
-      [22,] "sp|P07262|DHE4_YEAST" "SEPEFQQAYEEVVSSLEDSTLFEQHPEYR"
-      [23,] "sp|P39708|DHE5_YEAST" "SLEEIVDEYSTFSESK"             
-      [24,] "sp|P07262|DHE4_YEAST" "SLEQIVNEYSTFSENK"             
-      [25,] "sp|P07262|DHE4_YEAST" "STATGPSEAVWYGPPK"             
-      [26,] "sp|P07262|DHE4_YEAST" "VDIALPCATQNEVSGEEAK"          
-      [27,] "sp|P07262|DHE4_YEAST" "VIELGGTVVSLSDSK"              
-      [28,] "sp|P39708|DHE5_YEAST" "VLPIVSVPER"                   
-      [29,] "sp|P07262|DHE4_YEAST" "VLPIVSVPER"                   
-      [30,] "sp|P07262|DHE4_YEAST" "VQYIAGARPWTHVQK"              
-      [31,] "sp|P39708|DHE5_YEAST" "VTISGSGNVAQYAALK"             
-      [32,] "sp|P07262|DHE4_YEAST" "VTISGSGNVAQYAALK"             
-      [33,] "sp|P07262|DHE4_YEAST" "VTWENDKGEQEVAQGYR"            
-      [34,] "sp|P39708|DHE5_YEAST" "VTWENDNGEQEVAQGYR"            
+      [13,] "sp|P07262|DHE4_YEAST" "HIGQDTDVPAGDIGVGGR"           
+      [14,] "sp|P39708|DHE5_YEAST" "ICYAFMR"                      
+      [15,] "sp|P07262|DHE4_YEAST" "ICYAFMR"                      
+      [16,] "sp|P07262|DHE4_YEAST" "IMINCFNECIDYAK"               
+      [17,] "sp|P07262|DHE4_YEAST" "ITWTSER"                      
+      [18,] "sp|P39708|DHE5_YEAST" "NSWEGVLTGK"                   
+      [19,] "sp|P07262|DHE4_YEAST" "NSWEGVLTGK"                   
+      [20,] "sp|P07262|DHE4_YEAST" "SEPEFQQAYEEVVSSLEDSTLFEQHPEYR"
+      [21,] "sp|P39708|DHE5_YEAST" "SLEEIVDEYSTFSESK"             
+      [22,] "sp|P07262|DHE4_YEAST" "SLEQIVNEYSTFSENK"             
+      [23,] "sp|P07262|DHE4_YEAST" "STATGPSEAVWYGPPK"             
+      [24,] "sp|P07262|DHE4_YEAST" "VDIALPCATQNEVSGEEAK"          
+      [25,] "sp|P07262|DHE4_YEAST" "VIELGGTVVSLSDSK"              
+      [26,] "sp|P39708|DHE5_YEAST" "VLPIVSVPER"                   
+      [27,] "sp|P07262|DHE4_YEAST" "VLPIVSVPER"                   
+      [28,] "sp|P07262|DHE4_YEAST" "VQYIAGARPWTHVQK"              
+      [29,] "sp|P39708|DHE5_YEAST" "VTISGSGNVAQYAALK"             
+      [30,] "sp|P07262|DHE4_YEAST" "VTISGSGNVAQYAALK"             
+      [31,] "sp|P07262|DHE4_YEAST" "VTWENDKGEQEVAQGYR"            
+      [32,] "sp|P39708|DHE5_YEAST" "VTWENDNGEQEVAQGYR"            
 
 ---
 
@@ -680,10 +669,10 @@
     Output
        [1]           NA           NA  0.360632543  0.191592940  0.069264628
        [6]  0.357116431  0.047761246  0.022189996  0.104338487 -0.018934983
-      [11] -0.158458914 -0.078285974  0.013855982  0.034193021 -0.085904775
-      [16]  0.014579584 -0.070022059  0.003081272  0.514644400 -0.001940633
-      [21] -0.109404832  0.182301634  0.215443910 -0.060726809  0.116976595
-      [26]  0.356825909 -0.239825860 -0.040603877 -0.139176241
+      [11] -0.158458914 -0.078285974  0.034193021 -0.085904775  0.014579584
+      [16] -0.070022059  0.003081272  0.514644400 -0.001940633 -0.109404832
+      [21]  0.182301634  0.215443910 -0.060726809  0.116976595  0.356825909
+      [26] -0.239825860 -0.040603877 -0.139176241
 
 ---
 
@@ -696,33 +685,32 @@
        [3,] "sp|P00330|ADH1_YEAST" "ATDGGAHGVINVSVSEAAIEASTR"    
        [4,] "sp|P00330|ADH1_YEAST" "CCSDVFNQVVK"                 
        [5,] "sp|P07246|ADH3_YEAST" "DIPVPEPKPNEILINVK"           
-       [6,] "sp|P00330|ADH1_YEAST" "DIVGAVLK"                    
-       [7,] "sp|P00330|ADH1_YEAST" "EALDFFAR"                    
-       [8,] "sp|P00331|ADH2_YEAST" "EALDFFAR"                    
-       [9,] "sp|P38113|ADH5_YEAST" "EALDFFAR"                    
-      [10,] "sp|P07246|ADH3_YEAST" "EALDFFSR"                    
-      [11,] "sp|P00330|ADH1_YEAST" "EKDIVGAVLK"                  
-      [12,] "sp|P07246|ADH3_YEAST" "GVIFYENK"                    
-      [13,] "sp|P00330|ADH1_YEAST" "GVIFYESHGK"                  
-      [14,] "sp|P00330|ADH1_YEAST" "IGDYAGIK"                    
-      [15,] "sp|P00331|ADH2_YEAST" "IGDYAGIK"                    
-      [16,] "sp|P07246|ADH3_YEAST" "IQQGTDLAEVAPILCAGVTVYK"      
-      [17,] "sp|P07246|ADH3_YEAST" "IVGLSELPK"                   
-      [18,] "sp|P00330|ADH1_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
-      [19,] "sp|P00331|ADH2_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
-      [20,] "sp|P07246|ADH3_YEAST" "NMVSDIQEATK"                 
-      [21,] "sp|P00330|ADH1_YEAST" "SANLMAGHWVAISGAAGGLGSLAVQYAK"
-      [22,] "sp|P00330|ADH1_YEAST" "SIGGEVFIDFTK"                
-      [23,] "sp|P00330|ADH1_YEAST" "SIPETQK"                     
-      [24,] "sp|P00331|ADH2_YEAST" "SIPETQK"                     
-      [25,] "sp|P00330|ADH1_YEAST" "SISIVGSYVGNR"                
-      [26,] "sp|P00331|ADH2_YEAST" "SISIVGSYVGNR"                
-      [27,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGK"                  
-      [28,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGKEELFR"             
-      [29,] "sp|P00331|ADH2_YEAST" "VVGLSSLPEIYEK"               
-      [30,] "sp|P00330|ADH1_YEAST" "VVGLSTLPEIYEK"               
-      [31,] "sp|P00330|ADH1_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
-      [32,] "sp|P07246|ADH3_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
+       [6,] "sp|P00330|ADH1_YEAST" "EALDFFAR"                    
+       [7,] "sp|P00331|ADH2_YEAST" "EALDFFAR"                    
+       [8,] "sp|P38113|ADH5_YEAST" "EALDFFAR"                    
+       [9,] "sp|P07246|ADH3_YEAST" "EALDFFSR"                    
+      [10,] "sp|P00330|ADH1_YEAST" "EKDIVGAVLK"                  
+      [11,] "sp|P07246|ADH3_YEAST" "GVIFYENK"                    
+      [12,] "sp|P00330|ADH1_YEAST" "GVIFYESHGK"                  
+      [13,] "sp|P00330|ADH1_YEAST" "IGDYAGIK"                    
+      [14,] "sp|P00331|ADH2_YEAST" "IGDYAGIK"                    
+      [15,] "sp|P07246|ADH3_YEAST" "IQQGTDLAEVAPILCAGVTVYK"      
+      [16,] "sp|P07246|ADH3_YEAST" "IVGLSELPK"                   
+      [17,] "sp|P00330|ADH1_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
+      [18,] "sp|P00331|ADH2_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
+      [19,] "sp|P07246|ADH3_YEAST" "NMVSDIQEATK"                 
+      [20,] "sp|P00330|ADH1_YEAST" "SANLMAGHWVAISGAAGGLGSLAVQYAK"
+      [21,] "sp|P00330|ADH1_YEAST" "SIGGEVFIDFTK"                
+      [22,] "sp|P00330|ADH1_YEAST" "SIPETQK"                     
+      [23,] "sp|P00331|ADH2_YEAST" "SIPETQK"                     
+      [24,] "sp|P00330|ADH1_YEAST" "SISIVGSYVGNR"                
+      [25,] "sp|P00331|ADH2_YEAST" "SISIVGSYVGNR"                
+      [26,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGK"                  
+      [27,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGKEELFR"             
+      [28,] "sp|P00331|ADH2_YEAST" "VVGLSSLPEIYEK"               
+      [29,] "sp|P00330|ADH1_YEAST" "VVGLSTLPEIYEK"               
+      [30,] "sp|P00330|ADH1_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
+      [31,] "sp|P07246|ADH3_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
 
 ---
 
@@ -730,27 +718,27 @@
       igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
     Output
        [1]           NA           NA           NA           NA -0.165942403
-       [6] -0.009944959 -0.402737246  0.115159014  0.304261246 -0.090984073
-      [11]  0.082660029  0.187851888 -0.261168113 -0.016081309 -0.088188097
-      [16]  0.019101663 -0.006168545  0.219456480 -0.045053522  0.069013948
-      [21]  0.118699361  0.037229437  0.068071219 -0.013481381 -0.043138486
-      [26]  0.028660015 -0.025245880  0.009888782  0.606720613
+       [6] -0.009944959 -0.402737246  0.115159014  0.304261246  0.082660029
+      [11]  0.187851888 -0.261168113 -0.016081309 -0.088188097  0.019101663
+      [16] -0.006168545  0.219456480 -0.045053522  0.069013948  0.118699361
+      [21]  0.037229437  0.068071219 -0.013481381 -0.043138486  0.028660015
+      [26] -0.025245880  0.009888782  0.606720613
 
 ---
 
     Code
       sum(!igraph::V(graphsImp[[i]][[j]])$type)
     Output
-      [1] 14
+      [1] 13
 
 ---
 
     Code
       igraph::vertex_attr(graphsImp[[i]][[j]], "pep_logRatio")
     Output
-       [1]           NA  0.067985566  0.008548272  0.714583859 -1.756814764
-       [6] -0.074776715  0.149209984 -0.025286382 -0.237088193 -0.042675710
-      [11] -0.061904228 -0.235351754 -0.115624288  0.172954743 -0.180940859
+       [1]           NA  0.067985566  0.008548272  0.714583859 -0.074776715
+       [6]  0.149209984 -0.025286382 -0.237088193 -0.042675710 -0.061904228
+      [11] -0.235351754 -0.115624288  0.172954743 -0.180940859
 
 ---
 
@@ -786,7 +774,7 @@
     Code
       sum(!igraph::V(graphsImp[[i]][[j]])$type)
     Output
-      [1] 27
+      [1] 26
 
 ---
 
@@ -795,10 +783,10 @@
     Output
        [1]           NA           NA  0.360632543  0.191592940  0.069264628
        [6]  0.357116431  0.047761246  0.022189996  0.104338487 -0.018934983
-      [11] -0.158458914 -0.078285974  0.013855982  0.034193021 -0.085904775
-      [16]  0.014579584 -0.070022059  0.003081272  0.514644400 -0.001940633
-      [21] -0.109404832  0.182301634  0.215443910 -0.060726809  0.116976595
-      [26]  0.356825909 -0.239825860 -0.040603877 -0.139176241
+      [11] -0.158458914 -0.078285974  0.034193021 -0.085904775  0.014579584
+      [16] -0.070022059  0.003081272  0.514644400 -0.001940633 -0.109404832
+      [21]  0.182301634  0.215443910 -0.060726809  0.116976595  0.356825909
+      [26] -0.239825860 -0.040603877 -0.139176241
 
 ---
 
@@ -812,7 +800,7 @@
     Code
       sum(!igraph::V(graphsImp[[i]][[j]])$type)
     Output
-      [1] 25
+      [1] 24
 
 ---
 
@@ -820,11 +808,11 @@
       igraph::vertex_attr(graphsImp[[i]][[j]], "pep_logRatio")
     Output
        [1]           NA           NA           NA           NA -0.165942403
-       [6] -0.009944959 -0.402737246  0.115159014  0.304261246 -0.090984073
-      [11]  0.082660029  0.187851888 -0.261168113 -0.016081309 -0.088188097
-      [16]  0.019101663 -0.006168545  0.219456480 -0.045053522  0.069013948
-      [21]  0.118699361  0.037229437  0.068071219 -0.013481381 -0.043138486
-      [26]  0.028660015 -0.025245880  0.009888782  0.606720613
+       [6] -0.009944959 -0.402737246  0.115159014  0.304261246  0.082660029
+      [11]  0.187851888 -0.261168113 -0.016081309 -0.088188097  0.019101663
+      [16] -0.006168545  0.219456480 -0.045053522  0.069013948  0.118699361
+      [21]  0.037229437  0.068071219 -0.013481381 -0.043138486  0.028660015
+      [26] -0.025245880  0.009888782  0.606720613
 
 ---
 
@@ -914,28 +902,26 @@
       [10,] "sp|P39708|DHE5_YEAST" "GANIASFVMVADAMLDQGDVF"        
       [11,] "sp|P39708|DHE5_YEAST" "GCIISETGITSEQIHDIASAK"        
       [12,] "sp|P07262|DHE4_YEAST" "GCIISETGITSEQVADISSAK"        
-      [13,] "sp|P39708|DHE5_YEAST" "GGLCVDLK"                     
-      [14,] "sp|P07262|DHE4_YEAST" "GGLCVDLK"                     
-      [15,] "sp|P07262|DHE4_YEAST" "HIGQDTDVPAGDIGVGGR"           
-      [16,] "sp|P39708|DHE5_YEAST" "ICYAFMR"                      
-      [17,] "sp|P07262|DHE4_YEAST" "ICYAFMR"                      
-      [18,] "sp|P07262|DHE4_YEAST" "IMINCFNECIDYAK"               
-      [19,] "sp|P07262|DHE4_YEAST" "ITWTSER"                      
-      [20,] "sp|P39708|DHE5_YEAST" "NSWEGVLTGK"                   
-      [21,] "sp|P07262|DHE4_YEAST" "NSWEGVLTGK"                   
-      [22,] "sp|P07262|DHE4_YEAST" "SEPEFQQAYEEVVSSLEDSTLFEQHPEYR"
-      [23,] "sp|P39708|DHE5_YEAST" "SLEEIVDEYSTFSESK"             
-      [24,] "sp|P07262|DHE4_YEAST" "SLEQIVNEYSTFSENK"             
-      [25,] "sp|P07262|DHE4_YEAST" "STATGPSEAVWYGPPK"             
-      [26,] "sp|P07262|DHE4_YEAST" "VDIALPCATQNEVSGEEAK"          
-      [27,] "sp|P07262|DHE4_YEAST" "VIELGGTVVSLSDSK"              
-      [28,] "sp|P39708|DHE5_YEAST" "VLPIVSVPER"                   
-      [29,] "sp|P07262|DHE4_YEAST" "VLPIVSVPER"                   
-      [30,] "sp|P07262|DHE4_YEAST" "VQYIAGARPWTHVQK"              
-      [31,] "sp|P39708|DHE5_YEAST" "VTISGSGNVAQYAALK"             
-      [32,] "sp|P07262|DHE4_YEAST" "VTISGSGNVAQYAALK"             
-      [33,] "sp|P07262|DHE4_YEAST" "VTWENDKGEQEVAQGYR"            
-      [34,] "sp|P39708|DHE5_YEAST" "VTWENDNGEQEVAQGYR"            
+      [13,] "sp|P07262|DHE4_YEAST" "HIGQDTDVPAGDIGVGGR"           
+      [14,] "sp|P39708|DHE5_YEAST" "ICYAFMR"                      
+      [15,] "sp|P07262|DHE4_YEAST" "ICYAFMR"                      
+      [16,] "sp|P07262|DHE4_YEAST" "IMINCFNECIDYAK"               
+      [17,] "sp|P07262|DHE4_YEAST" "ITWTSER"                      
+      [18,] "sp|P39708|DHE5_YEAST" "NSWEGVLTGK"                   
+      [19,] "sp|P07262|DHE4_YEAST" "NSWEGVLTGK"                   
+      [20,] "sp|P07262|DHE4_YEAST" "SEPEFQQAYEEVVSSLEDSTLFEQHPEYR"
+      [21,] "sp|P39708|DHE5_YEAST" "SLEEIVDEYSTFSESK"             
+      [22,] "sp|P07262|DHE4_YEAST" "SLEQIVNEYSTFSENK"             
+      [23,] "sp|P07262|DHE4_YEAST" "STATGPSEAVWYGPPK"             
+      [24,] "sp|P07262|DHE4_YEAST" "VDIALPCATQNEVSGEEAK"          
+      [25,] "sp|P07262|DHE4_YEAST" "VIELGGTVVSLSDSK"              
+      [26,] "sp|P39708|DHE5_YEAST" "VLPIVSVPER"                   
+      [27,] "sp|P07262|DHE4_YEAST" "VLPIVSVPER"                   
+      [28,] "sp|P07262|DHE4_YEAST" "VQYIAGARPWTHVQK"              
+      [29,] "sp|P39708|DHE5_YEAST" "VTISGSGNVAQYAALK"             
+      [30,] "sp|P07262|DHE4_YEAST" "VTISGSGNVAQYAALK"             
+      [31,] "sp|P07262|DHE4_YEAST" "VTWENDKGEQEVAQGYR"            
+      [32,] "sp|P39708|DHE5_YEAST" "VTWENDNGEQEVAQGYR"            
 
 ---
 
@@ -944,10 +930,10 @@
     Output
        [1]            NA            NA  0.2534737986  0.3438856627  0.1376682492
        [6]  0.2686097395  0.0535723798  0.1631549138  0.1487584233  0.5048040237
-      [11] -0.0206202525  0.0003247414  0.1914329449  0.1058827853  0.2540715227
-      [16]  0.0715839437 -0.0243024646  0.1290004143  0.6708864931 -0.1101437044
-      [21] -0.0948059632  0.0103997588 -0.0126858870 -0.0850681449 -0.1293403987
-      [26]  0.5847865900 -1.0381501336  0.1635293818 -0.2843747810
+      [11] -0.0206202525  0.0003247414  0.1058827853  0.2540715227  0.0715839437
+      [16] -0.0243024646  0.1290004143  0.6708864931 -0.1101437044 -0.0948059632
+      [21]  0.0103997588 -0.0126858870 -0.0850681449 -0.1293403987  0.5847865900
+      [26] -1.0381501336  0.1635293818 -0.2843747810
 
 ---
 
@@ -960,33 +946,32 @@
        [3,] "sp|P00330|ADH1_YEAST" "ATDGGAHGVINVSVSEAAIEASTR"    
        [4,] "sp|P00330|ADH1_YEAST" "CCSDVFNQVVK"                 
        [5,] "sp|P07246|ADH3_YEAST" "DIPVPEPKPNEILINVK"           
-       [6,] "sp|P00330|ADH1_YEAST" "DIVGAVLK"                    
-       [7,] "sp|P00330|ADH1_YEAST" "EALDFFAR"                    
-       [8,] "sp|P00331|ADH2_YEAST" "EALDFFAR"                    
-       [9,] "sp|P38113|ADH5_YEAST" "EALDFFAR"                    
-      [10,] "sp|P07246|ADH3_YEAST" "EALDFFSR"                    
-      [11,] "sp|P00330|ADH1_YEAST" "EKDIVGAVLK"                  
-      [12,] "sp|P07246|ADH3_YEAST" "GVIFYENK"                    
-      [13,] "sp|P00330|ADH1_YEAST" "GVIFYESHGK"                  
-      [14,] "sp|P00330|ADH1_YEAST" "IGDYAGIK"                    
-      [15,] "sp|P00331|ADH2_YEAST" "IGDYAGIK"                    
-      [16,] "sp|P07246|ADH3_YEAST" "IQQGTDLAEVAPILCAGVTVYK"      
-      [17,] "sp|P07246|ADH3_YEAST" "IVGLSELPK"                   
-      [18,] "sp|P00330|ADH1_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
-      [19,] "sp|P00331|ADH2_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
-      [20,] "sp|P07246|ADH3_YEAST" "NMVSDIQEATK"                 
-      [21,] "sp|P00330|ADH1_YEAST" "SANLMAGHWVAISGAAGGLGSLAVQYAK"
-      [22,] "sp|P00330|ADH1_YEAST" "SIGGEVFIDFTK"                
-      [23,] "sp|P00330|ADH1_YEAST" "SIPETQK"                     
-      [24,] "sp|P00331|ADH2_YEAST" "SIPETQK"                     
-      [25,] "sp|P00330|ADH1_YEAST" "SISIVGSYVGNR"                
-      [26,] "sp|P00331|ADH2_YEAST" "SISIVGSYVGNR"                
-      [27,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGK"                  
-      [28,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGKEELFR"             
-      [29,] "sp|P00331|ADH2_YEAST" "VVGLSSLPEIYEK"               
-      [30,] "sp|P00330|ADH1_YEAST" "VVGLSTLPEIYEK"               
-      [31,] "sp|P00330|ADH1_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
-      [32,] "sp|P07246|ADH3_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
+       [6,] "sp|P00330|ADH1_YEAST" "EALDFFAR"                    
+       [7,] "sp|P00331|ADH2_YEAST" "EALDFFAR"                    
+       [8,] "sp|P38113|ADH5_YEAST" "EALDFFAR"                    
+       [9,] "sp|P07246|ADH3_YEAST" "EALDFFSR"                    
+      [10,] "sp|P00330|ADH1_YEAST" "EKDIVGAVLK"                  
+      [11,] "sp|P07246|ADH3_YEAST" "GVIFYENK"                    
+      [12,] "sp|P00330|ADH1_YEAST" "GVIFYESHGK"                  
+      [13,] "sp|P00330|ADH1_YEAST" "IGDYAGIK"                    
+      [14,] "sp|P00331|ADH2_YEAST" "IGDYAGIK"                    
+      [15,] "sp|P07246|ADH3_YEAST" "IQQGTDLAEVAPILCAGVTVYK"      
+      [16,] "sp|P07246|ADH3_YEAST" "IVGLSELPK"                   
+      [17,] "sp|P00330|ADH1_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
+      [18,] "sp|P00331|ADH2_YEAST" "LPLVGGHEGAGVVVGMGENVK"       
+      [19,] "sp|P07246|ADH3_YEAST" "NMVSDIQEATK"                 
+      [20,] "sp|P00330|ADH1_YEAST" "SANLMAGHWVAISGAAGGLGSLAVQYAK"
+      [21,] "sp|P00330|ADH1_YEAST" "SIGGEVFIDFTK"                
+      [22,] "sp|P00330|ADH1_YEAST" "SIPETQK"                     
+      [23,] "sp|P00331|ADH2_YEAST" "SIPETQK"                     
+      [24,] "sp|P00330|ADH1_YEAST" "SISIVGSYVGNR"                
+      [25,] "sp|P00331|ADH2_YEAST" "SISIVGSYVGNR"                
+      [26,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGK"                  
+      [27,] "sp|P00330|ADH1_YEAST" "VLGIDGGEGKEELFR"             
+      [28,] "sp|P00331|ADH2_YEAST" "VVGLSSLPEIYEK"               
+      [29,] "sp|P00330|ADH1_YEAST" "VVGLSTLPEIYEK"               
+      [30,] "sp|P00330|ADH1_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
+      [31,] "sp|P07246|ADH3_YEAST" "YSGVCHTDLHAWHGDWPLPVK"       
 
 ---
 
@@ -994,11 +979,11 @@
       igraph::vertex_attr(graphs[[i]][[j]], "pep_logRatio")
     Output
        [1]           NA           NA           NA           NA -0.061532659
-       [6]  0.057541179 -0.610953727  0.166435857 -0.399195511  0.067249138
-      [11]  0.044749865  0.150119735 -0.132210732  0.137446952  0.044062637
-      [16] -0.031481565  0.210754820  0.178952464 -0.230811399 -0.030650969
-      [21]  0.099617676 -0.109113758 -0.071731841 -0.067007223 -0.944393615
-      [26]  0.135148664 -0.117533079  0.006010453  0.138091895
+       [6]  0.057541179 -0.610953727  0.166435857 -0.399195511  0.044749865
+      [11]  0.150119735 -0.132210732  0.137446952  0.044062637 -0.031481565
+      [16]  0.210754820  0.178952464 -0.230811399 -0.030650969  0.099617676
+      [21] -0.109113758 -0.071731841 -0.067007223 -0.944393615  0.135148664
+      [26] -0.117533079  0.006010453  0.138091895
 
 ---
 
@@ -1050,7 +1035,7 @@
     Code
       sum(!igraph::V(graphsImp[[i]][[j]])$type)
     Output
-      [1] 27
+      [1] 26
 
 ---
 
@@ -1059,10 +1044,10 @@
     Output
        [1]            NA            NA  0.2534737986  0.3438856627  0.1376682492
        [6]  0.2686097395  0.0535723798  0.1631549138  0.1487584233  0.5048040237
-      [11] -0.0206202525  0.0003247414  0.1914329449  0.1058827853  0.2540715227
-      [16]  0.0715839437 -0.0243024646  0.1290004143  0.6708864931 -0.1101437044
-      [21] -0.0948059632  0.0103997588 -0.0126858870 -0.0850681449 -0.1293403987
-      [26]  0.5847865900 -1.0381501336  0.1635293818 -0.2843747810
+      [11] -0.0206202525  0.0003247414  0.1058827853  0.2540715227  0.0715839437
+      [16] -0.0243024646  0.1290004143  0.6708864931 -0.1101437044 -0.0948059632
+      [21]  0.0103997588 -0.0126858870 -0.0850681449 -0.1293403987  0.5847865900
+      [26] -1.0381501336  0.1635293818 -0.2843747810
 
 ---
 
@@ -1076,7 +1061,7 @@
     Code
       sum(!igraph::V(graphsImp[[i]][[j]])$type)
     Output
-      [1] 25
+      [1] 24
 
 ---
 
@@ -1084,11 +1069,11 @@
       igraph::vertex_attr(graphsImp[[i]][[j]], "pep_logRatio")
     Output
        [1]           NA           NA           NA           NA -0.061532659
-       [6]  0.057541179 -0.610953727  0.166435857 -0.399195511  0.067249138
-      [11]  0.044749865  0.150119735 -0.132210732  0.137446952  0.044062637
-      [16] -0.031481565  0.210754820  0.178952464 -0.230811399 -0.030650969
-      [21]  0.099617676 -0.109113758 -0.071731841 -0.067007223 -0.944393615
-      [26]  0.135148664 -0.117533079  0.006010453  0.138091895
+       [6]  0.057541179 -0.610953727  0.166435857 -0.399195511  0.044749865
+      [11]  0.150119735 -0.132210732  0.137446952  0.044062637 -0.031481565
+      [16]  0.210754820  0.178952464 -0.230811399 -0.030650969  0.099617676
+      [21] -0.109113758 -0.071731841 -0.067007223 -0.944393615  0.135148664
+      [26] -0.117533079  0.006010453  0.138091895
 
 ---
 
