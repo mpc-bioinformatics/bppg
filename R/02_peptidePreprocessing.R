@@ -53,13 +53,14 @@
 #' @param method         \strong{character} \cr
 #'                       The method of aggregation. Options are
 #'                       "mean", "sum" or "median"
-#' @param seq_col         \strong{character} \cr
+#' @param seq_col        \strong{character} \cr
 #'                       The column name containaining the peptide sequences
 #'                       in the rowData of the SummarizedExperiment.
 #'                       Default is "Sequence"
-#' @param imp_method      \strong{character} \cr
-#'                        Chosen imputation optional approach, current method: 
-#'                        "min_2_impute"
+#' @param imp_method     \strong{character} \cr
+#'                       Chosen imputation optional approach, current method: 
+#'                       "min_2_impute", "colMeanImputation", "missForest", 
+#'                       "QRILC", "BPCA"
 #'
 #' @return \strong{SummarizedExperiment} \cr
 #'          A SummarizedExperiment with aggregated intensities ($intensities).
@@ -89,7 +90,7 @@ aggregateReplicates <- function(D,
     checkmate::assertNumber(missing.limit, lower = 0, upper = 1)
     checkmate::assertCharacter(method, pattern = "mean|sum|median")
     checkmate::assertCharacter(seq_col)
-    checkmate::assertCharacter(imp_method, pattern = ".min2impute|.colImputation|.missForest|.QRILC|.BPCA",
+    checkmate::assertCharacter(imp_method, pattern = "min2impute|colMeanImputation|missForest|QRILC|BPCA",
         null.ok = TRUE)
 
     id <- SummarizedExperiment::rowData(D)[, seq_col]
@@ -114,14 +115,14 @@ aggregateReplicates <- function(D,
         return(mask_tmp)
     }, FUN.VALUE = logical(length(id)))
 
-    group_imp <- c(".min2impute", ".colImputation")
-    global_imp <- c(".missForest", ".QRILC", ".BPCA")
+    group_imp <- c("min2impute", "colMeanImputation")
+    global_imp <- c("missForest", "QRILC", "BPCA")
 
     if (!is.null(imp_method) && imp_method %in% global_imp) {
         FUN_imp <- switch(imp_method,
-            .missForest = .missForest,
-            .QRILC = .QRILC,
-            .BPCA = .BPCA
+            "missForest" = .missForest,
+            "QRILC "= .QRILC,
+            "BPCA" = .BPCA
         )
 
         intensities <- FUN_imp(intensities, ...)
@@ -138,8 +139,8 @@ aggregateReplicates <- function(D,
         }
         if (!is.null(imp_method) && imp_method %in% group_imp) {
             FUN_imp <- switch(imp_method,
-                .min2impute = .min2impute,
-                .colImputation = .colImputation
+                "min2impute" = .min2impute,
+                "colMeanImputation" = .colMeanImputation
             )
 
             vals_imp <- FUN_imp(X_tmp, intensities, ...)

@@ -39,7 +39,8 @@ Default is "Sequence"}
 
 \item{imp_method}{\strong{character} \cr
 Chosen imputation optional approach, current method:
-"min_2_impute"}
+"min_2_impute", "colMeanImputation", "missForest",
+"QRILC", "BPCA"}
 }
 \value{
 \strong{SummarizedExperiment} \cr

@@ -32,18 +32,24 @@
 }
 
 
-#' Imputation method using half of the minimum observed intensity per row (peptide) to impute missing values in proteomics data. 
-#' Helper function that extracts intensity columns and applies the half minimum imputation method to the data. 
+#' Imputation method using half of the minimum observed intensity per row 
+#' (peptide) to impute missing values in proteomics data. 
+#' Helper function that extracts intensity columns and applies the half minimum
+#' imputation method to the data. 
 #' 
-#' @param D data.frame of peptides.txt from MaxQuant
-#'          
-#' @param intensities data.frame containing only intensity columns (e.g. "Intensity." or "LFQ.intensity.")
-#'                    extracted from the original data frame D using the .extractIntensities function.
+#' @param D             \strong{data.frame} 
+#'                      Dataframe of peptides.txt from MaxQuant  
+#' @param intensities   \strong{data.frame}
+#'                      containing only intensity columns (e.g. "Intensity." or
+#'                      "LFQ.intensity.")extracted from the original data frame
+#'                      D using the .extractIntensities function.
 #' 
-#' @return D with imputed values for missing entries, where each missing value is replaced by
-#'           half of the minimum observed intensity for the corresponding row (peptide) in the original data matrix D.
+#' @return D    \strong{data.frame} with imputed values for missing entries,
+#'              where each missing value is replaced by half of the minimum 
+#'              observed intensity for the corresponding row (peptide) in the
+#'              original data matrix D.
 
-.colImputation <- function(D, intensities){
+.colMeanImputation <- function(D, intensities){
 
     for (j in seq_len(ncol(D))) {
 
@@ -76,7 +82,7 @@
     return(D_imp)
 }
 
-#' Impute missing values using MLE and QRILC
+#' Impute missing values using QRILC
 #'
 #' Performs missing value imputation using the
 #' package {imputeLCMD}. 
@@ -86,10 +92,6 @@
 #' (MNAR) values are imputed using quantile regression
 #' imputation of left-censored data (QRILC).
 #'
-#' A model selector matrix is used to assign missing values to
-#' either the MAR or MNAR model. In the current implementation,
-#' the selector is initialized with only 1s, meaning all missing
-#' values are treated as MAR.
 #'
 #' @param D [matrix]
 #' Numeric matrix containing peptide intensity values.
@@ -105,19 +107,7 @@
 .QRILC <- function(D, ...) {
     D_log <- log2(as.matrix(D))
 
-    model.selector <- matrix(
-        1,
-        nrow = nrow(D_log),
-        ncol = ncol(D_log)
-    )
-
-    D_imp_log <- imputeLCMD::impute.MAR.MNAR(
-        dataSet.mvs = D_log,
-        model.selector = model.selector,
-        method.MAR = "MLE",
-        method.MNAR = "QRILC",
-        ...
-    )
+    D_imp_log <- imputeLCMD::impute.QRILC(D_log, ...)[[1]]
 
     D_imp <- 2^D_imp_log
 

@@ -64,7 +64,7 @@ test_that("test generateQuantGraphs", {
                                         collPeptNodes = FALSE)
 
     ## imputed case
-    dAgg_min <- aggregateReplicates(D_norm, imp_method = ".min2impute")
+    dAgg_min <- aggregateReplicates(D_norm, imp_method = "min2impute")
     impExpData <- calculatePeptideRatios(dAgg_min)
 
     # Compute function

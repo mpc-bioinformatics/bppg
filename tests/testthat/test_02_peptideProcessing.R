@@ -14,7 +14,7 @@ test_that("test aggregateReplicates", {
     # Test imputation
     D3 <- bppg::aggregateReplicates(D = D_norm, 
         group = factor(rep(1:3, each = 3)),
-        imp_method = ".min2impute")
+        imp_method = "min2impute")
 
 
     expect_snapshot(D1)
@@ -50,7 +50,7 @@ test_that("test calculatePeptideRatios", {
    
     D2 <- bppg::aggregateReplicates(D = D_norm,
         group = factor(rep(1:9, each = 3)),
-        imp_method = ".min2impute")
+        imp_method = "min2impute")
     D2 <- bppg::calculatePeptideRatios(D = D2)
 
     expect_snapshot(D1)
