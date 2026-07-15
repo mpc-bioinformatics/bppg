@@ -87,8 +87,8 @@ The functions and steps include:
 - Normalization of peptide quantities - removes batch effects
 - Aggregation of replicates per sample group - alllows group comparison
 - Calculation of peptide ratios per group comparison - remove co-factors
-- Build bipartite graph per comparison – preserves peptide-level information
-- Optimize for protein ratio/fold change – 
+- Build bipartite graph per comparison - preserves peptide-level information
+- Optimize for protein ratio/fold change -
 accounts for inconsistencies between peptides
 
 More functions are described in additional vignettes:
@@ -412,34 +412,40 @@ The optimization runs per graph. This enables easy parallization, with e.g. batc
 
 # See Also
 
-- Information for *in silico* analysis and plotting can be found in further 
+Information for *in silico* analysis and plotting can be found in further 
 vignettes (currently in preparation)
 
 ## Nextflow
 We also provide a nextflow workflow 
-[here](https://github.com/mpc-bioinformatics/bppg-nf/blob/devel). Which allows 
+[here](https://github.com/mpc-bioinformatics/bppg-nf/). Which allows 
 for the usage of a wider audience.
 
 # Comparison with other related packages
 
-The amount of R packages for mass spectrometry is continously increasing. Many
-are considering spectrum information or downstream analysis. The amount of 
-packages that include methods for protein inference and quantification is limited
-and mostly confind to simple peptide aggregation approaches. With `bppg` we 
-have produced a package, which considers the ambiguity of peptide quantities
-and factors such as detectability and sharedness of a peptide.
+The amount of R packages for mass spectrometry is continuously increasing. Many
+are considering raw spectrum processing or downstream statistical analysis. 
+However, the amount of packages that include methods for protein inference and
+quantification is limited and mostly confined to simple peptide aggregation 
+approaches. 
 
-bppg works with SummarizedExperiments which allows for easy intergreation with 
-other Bioconductor packages.
+With `bppg` we provide a more transparent quantification approach that also 
+handles proteins without unique peptides.
+There are some packages with functionalities for proteomics data that cover 
+other parts of the whole workflow. This could include peptide identification 
+approaches or further statistical analysis.
 
-can you combine it, do they profit from us?
-
-- `MsStats+` performs peptide aggregation using a weighted sum based on the peak quality and downstream analysis in `MsStats`
-- `MSnbase` from raw to quant data different option for protein quantification, but forms of median and weighted average
-- `mzR` parses mass spectrometry data
-- `xcms` metabolomics? 
-- `ComPrAn` Silac data
-- `DEqMS` on top of limma, expectes protein variance (several peptides and PSMs)
+- `MSstats` is a package for statistical analysis of proteomics data. Its 
+extension `MSstats+` quantifies proteins from peptide abundances by aggregating
+them with a weighted sum based on the peak quality.
+- `MSnbase` processes proteomics data from raw to quantification data. For the 
+ protein quantification a median and weighted average function are implemented.
+- `msqrob2` analyses differential abundance with an hurdle model. It can be run with peptide quantifies, which are later aggregated with `iq::maxLFQ`.
+- `mzR` provides parsing for differnt standard file formats used for mass
+spectrometry data.
+- `DEqMS` is implemented on top of limma and expects protein variance depedend on quantified peptides and PSMs.
+- `QFeatures` implements the QFeature object consisting of a 
+SummarizedExperiment and provides functionality for processing and adding meta 
+data.
 
 # R session information
 
