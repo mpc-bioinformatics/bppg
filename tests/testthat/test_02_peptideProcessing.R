@@ -16,6 +16,9 @@ test_that("test aggregateReplicates", {
         group = factor(rep(1:3, each = 3)),
         imp_method = "min2impute")
 
+    D4 <- bppg::aggregateReplicates(D = D_norm, 
+        group = factor(rep(1:3, each = 3)),
+        imp_method = "colMeanImputation")
 
     expect_snapshot(D1)
     expect_snapshot(SummarizedExperiment::assays(D1)$intensities)
@@ -34,7 +37,10 @@ test_that("test aggregateReplicates", {
     expect_snapshot(D3)    
     expect_snapshot(SummarizedExperiment::assays(D3)$intensities)
     expect_snapshot(SummarizedExperiment::assays(D3)$maskImputation)
-    
+
+    expect_snapshot(D4)    
+    expect_snapshot(SummarizedExperiment::assays(D4)$intensities)
+    expect_snapshot(SummarizedExperiment::assays(D4)$maskImputation)    
 })
 
 test_that("test calculatePeptideRatios", {

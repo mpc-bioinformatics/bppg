@@ -1,4 +1,4 @@
-# TODO run exmpales with local data
+
 test_that("min2impute", {
 
     file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
@@ -9,12 +9,13 @@ test_that("min2impute", {
     group <- rep(1:9, each = 3)
 
     imputed <- list()
-    for (g in factor(group)) {
+    for (g in levels(factor(group))) {
         imputed[[g]] <- t(bppg:::.min2impute(D = df[g == group],
                 intensities = df))
     }
 
-    D_min <- as.data.frame(imputed)
+    D_min <- data.frame(imputed) # aggregated values
+    colnames(D_min) <- levels(factor(group))
 
     expect_snapshot(D_min)
 })
@@ -26,16 +27,7 @@ test_that("colMeanImputation", {
     D_norm <- bppg::normalizePeptideIntensities(D)
 
     df <- SummarizedExperiment::assays(D_norm)$intensities_norm
-    group <- rep(1:9, each = 3)
-
-    imputed <- list()
-    for (g in factor(group)) {
-        imputed[[g]] <- bppg:::.colMeanImputation(D = df[g == group],
-                intensities = df)
-    }
-
-    D_mean <- data.frame(imputed)
-    colnames(D_mean) <- colnames(df)
+    D_mean <- bppg:::.colMeanImputation(intensities = df)
 
     expect_snapshot(D_mean)
 })
@@ -50,7 +42,8 @@ test_that("missForest", {
 
     set.seed(8)
 
-    D_missForest <- bppg:::.missForest(df)
+    D_missForest <- data.frame(bppg:::.missForest(df))
+    colnames(D_missForest) <- 
 
     expect_snapshot(D_missForest)
 })

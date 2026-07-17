@@ -2,31 +2,10 @@
 % Please edit documentation in R/imputationMethods.R
 \name{.colMeanImputation}
 \alias{.colMeanImputation}
-\title{Imputation method using half of the minimum observed intensity per row
-(peptide) to impute missing values in proteomics data.
-Helper function that extracts intensity columns and applies the half minimum
-imputation method to the data.}
+\title{was min2impute}
 \usage{
-.colMeanImputation(D, intensities)
-}
-\arguments{
-\item{D}{\strong{data.frame}
-Dataframe of peptides.txt from MaxQuant}
-
-\item{intensities}{\strong{data.frame}
-containing only intensity columns (e.g. "Intensity." or
-"LFQ.intensity.")extracted from the original data frame
-D using the .extractIntensities function.}
-}
-\value{
-D    \strong{data.frame} with imputed values for missing entries,
-where each missing value is replaced by half of the minimum
-observed intensity for the corresponding row (peptide) in the
-original data matrix D.
+.colMeanImputation(intensities)
 }
 \description{
-Imputation method using half of the minimum observed intensity per row
-(peptide) to impute missing values in proteomics data.
-Helper function that extracts intensity columns and applies the half minimum
-imputation method to the data.
+was min2impute
 }

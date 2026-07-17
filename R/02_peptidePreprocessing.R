@@ -115,11 +115,12 @@ aggregateReplicates <- function(D,
         return(mask_tmp)
     }, FUN.VALUE = logical(length(id)))
 
-    group_imp <- c("min2impute", "colMeanImputation")
-    global_imp <- c("missForest", "QRILC", "BPCA")
+    group_imp <- c("min2impute")
+    global_imp <- c("missForest", "QRILC", "BPCA", "colMeanImputation")
 
     if (!is.null(imp_method) && imp_method %in% global_imp) {
         FUN_imp <- switch(imp_method,
+            "colMeanImputation" = .colMeanImputation,
             "missForest" = .missForest,
             "QRILC "= .QRILC,
             "BPCA" = .BPCA
@@ -139,11 +140,10 @@ aggregateReplicates <- function(D,
         }
         if (!is.null(imp_method) && imp_method %in% group_imp) {
             FUN_imp <- switch(imp_method,
-                "min2impute" = .min2impute,
-                "colMeanImputation" = .colMeanImputation
+                "min2impute" = .min2impute
             )
 
-            vals_imp <- FUN_imp(X_tmp, intensities, ...)
+            vals_imp <- FUN_imp(X_tmp, intensities, ...) # "aggregated" values
             res_tmp[mask_impute[, i]] <- vals_imp[mask_impute[, i]]
         }
 

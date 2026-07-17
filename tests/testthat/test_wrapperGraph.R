@@ -40,7 +40,7 @@ test_that("test generateGraphsFromQuantData", {
     # with imputation
     graphsImp <- bppg::generateGraphsFromQuantData(D = D,
         fasta = fasta,
-        imp_method = "min_2_impute")
+        imp_method = "min2impute")
 
     # Check results
     expect_true(file.exists(file.path(temp_dir, "edgelist_fasta_.xlsx")))

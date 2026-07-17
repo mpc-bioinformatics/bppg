@@ -34,16 +34,16 @@
 
 #' was min2impute
 
-.colMeanImputation <- function(D, intensities){ # at this point we expect 
+.colMeanImputation <- function(intensities){ # at this point we expect 
 
-    for (j in seq_len(ncol(D))) {
+    for (j in seq_len(ncol(intensities))) {
 
-        col_mean <- mean(D[, j], na.rm = TRUE)
+        col_mean <- mean(intensities[, j], na.rm = TRUE)
 
-        D[is.na(D[, j]), j] <- col_mean
+        intensities[is.na(intensities[, j]), j] <- col_mean
     }
 
-    return(D)
+    return(intensities)
 }
 
 
@@ -130,7 +130,7 @@
     fit <- pcaMethods::pca(
         D_log,
         method = "bpca",
-        nPcs = 2
+        nPcs = 2, ...
     )
 
     D_imp_log <- pcaMethods::completeObs(fit)

@@ -9,7 +9,7 @@
       assays(1): intensities
       rownames(87): AAADALSDLEIK AAADALSDLEIKDSK ... NMVSDIQEATK VLGIDAGEEK
       rowData names(1): Sequence
-      colnames(27): 12500amol_R1 12500amol_R2 ... 50amol_R2 50amol_R3
+      colnames(27): 12500amol_R1 12500amol_R2 ... 00050amol_R2 00050amol_R3
       colData names(1): sample
 
 ---
@@ -105,622 +105,710 @@
       IVGLSELPK                            17116000     16755000     18598000
       NMVSDIQEATK                           5862500      6862100      5531000
       VLGIDAGEEK                                 NA           NA           NA
-                                       125amol_R1 125amol_R2 125amol_R3 25000amol_R1
-      AAADALSDLEIK                             NA         NA         NA           NA
-      AAADALSDLEIKDSK                    13943000   13983000   13708000      7192900
-      AEWALR                              6547500    6124700    5444000      4615900
-      DEGLHTDFACLLFAHLK                   3246500    5076200    4267500      4885700
-      DIHDWNNR                            2242700         NA    2610400      2465600
-      ELETLREENR                          5610400    5076600    6814900           NA
-      ESEFLFNAIHTIPEIGEK                 36455000   33289000   40969000     31436000
-      GMMPGLTFSNELICR                     7130300    7910400    8181200      7664700
-      IVTEAVEIEQR                        18991000   19841000   19237000     18396000
-      LLVAFGNK                            7028100    7773000    7908900     10491000
-      LLVAFGNKK                           1799600    2124500    1866500           NA
-      NKPDPAIVEK                         20909000   19391000   17646000     14802000
-      TNFFEK                              6258400    5396000    5100800      5498400
-      TVLFPIK                            12527000   10894000   10745000     11764000
-      VENPFDFMENISLAGK                   20237000   18099000   15773000     17240000
-      WIQDADALFGER                       18017000   17161000   17600000     18207000
-      YFLDALPVALLGMNADLMNQYVEFVADR       27361000   23392000   21819000     29568000
-      AANLGGVAVSGLEMAQNSQK               10719000    9895000   10051000      8786800
-      DAVWFGPPK                                NA         NA         NA    159800000
-      EIGYLFGAYR                         26668000   26764000   24466000           NA
-      FHPSVNLSILK                         5295800    5047900    5235400      5660500
-      FLGFEQIFK                          53773000   47516000   48616000     35559000
-      GANIASFVMVADAMLDQGDVF              86972000   87250000   81957000     51152000
-      GCIISETGITSEQIHDIASAK               9025800    7949100    8934400      7395200
-      GGLCVDLK                           11834000         NA         NA      9796900
-      ICYAFMR                            12664000   13967000   12236000      8278600
-      NSWEGVLTGK                         14236000   18501000         NA     13422000
-      SLEEIVDEYSTFSESK                   10091000   10301000    9314000      9655200
-      VLPIVSVPER                         36292000   40343000   33425000     37817000
-      VTISGSGNVAQYAALK                    7343600     119370         NA      1805400
-      VTWENDNGEQEVAQGYR                        NA    3117300    2422600      2411900
-      YVAGARPWTHVSNVDIALPCATQNEVSGDEAK         NA         NA    1900500           NA
-      AANLGGVAVSGLEMAQNSQR               10466000   36693000   35306000     29844000
-      ALVAQGVK                           15672000   14706000   14248000     12006000
-      FIAEGSNMGSTPEAIAVFETAR             44409000   43952000   44726000     36945000
-      GANIASFIK                          20221000   19640000   20105000     17067000
-      GCIISETGITSEQVADISSAK               3172000    3240800    2811200      2897900
-      HIGQDTDVPAGDIGVGGR                 37612000   37002000   34320000     28451000
-      IMINCFNECIDYAK                     13617000   13481000   12787000     11055000
-      ITWTSER                            18865000   17810000     547690     16962000
-      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR      10284000  116890000  102390000     94105000
-      SLEQIVNEYSTFSENK                   50258000   53429000   46404000     52756000
-      STATGPSEAVWYGPPK                   41608000   45023000   48305000     39911000
-      VDIALPCATQNEVSGEEAK                51135000   54550000   51388000     47601000
-      VIELGGTVVSLSDSK                    14253000   13746000   13562000     13397000
-      VQYIAGARPWTHVQK                     4008100         NA    3877400      3455200
-      VTWENDKGEQEVAQGYR                  46883000   42931000   45930000     32372000
-      AAGLTAAYAR                         63726000   62807000   63592000     55107000
-      APEAEQVLSAAATFPIAQPATDVEAR         21441000   25578000   21845000     30201000
-      AVQDNGESAFR                        15719000   14156000   15067000     11313000
-      DGKAPEAEQVLSAAATFPIAQPATDVEAR      43997000   44846000   42539000     18346000
-      GFTLAEVK                           34739000   35198000   32998000     28537000
-      IAPRPLDLLRPVVR                     25130000   29517000   28612000     16477000
-      IIVFPR                             44523000   45875000    3340100     48806000
-      NQEIFDANVQR                        85889000   82847000   81655000     77100000
-      TIGIAVDHR                          21604000   20284000   17968000     24028000
-      VHFDQAGK                                 NA         NA   14104000     11421000
-      VHFDQAGKK                                NA         NA         NA           NA
-      ANELLINVK                         173790000  180130000  170590000    170090000
-      ANGTTVLVGMPAGAK                          NA         NA         NA           NA
-      ATDGGAHGVINVSVSEAAIEASTR           87508000   65342000   82689000     79252000
-      CCSDVFNQVVK                        61137000   61632000   55882000     44176000
-      DIVGAVLK                                 NA   59922000   52610000     46171000
-      EALDFFAR                          208970000  207980000  202700000    181810000
-      EKDIVGAVLK                         34405000   35041000   35662000     36371000
-      GVIFYESHGK                        124240000  120250000  110540000     90064000
-      IGDYAGIK                          142980000  137580000  140680000    136880000
-      LPLVGGHEGAGVVVGMGENVK             119390000   86518000  151200000    117670000
-      SANLMAGHWVAISGAAGGLGSLAVQYAK       24507000   30301000   33693000     26847000
-      SIGGEVFIDFTK                       85771000   64361000   77642000     87411000
-      SIPETQK                            29307000   48695000   48913000     22957000
-      SISIVGSYVGNR                      265970000  283970000  277410000    260490000
-      VLGIDGGEGK                         10689000   12403000   11149000     19578000
-      VLGIDGGEGKEELFR                   426070000  393230000  329780000    289880000
-      VVGLSTLPEIYEK                     556980000  552670000  542120000    478690000
-      YSGVCHTDLHAWHGDWPLPVK              96686000  107560000  118430000    106810000
-      ANGTVVLVGLPAGAK                     5050300    6271600    5139700      4222300
-      CSSDVFNHVVK                         4415100    5249200    4326400      4108400
-      DIPVPKPKPNELLINVK                        NA    1314000         NA           NA
-      VVGLSSLPEIYEK                      39008000   37893000   36593000     37920000
-      DIPVPEPKPNEILINVK                  19507000   22611000   21317000     20720000
-      EALDFFSR                            7301700    7672700    6622600      6106700
-      GVIFYENK                                 NA    6334500    5832400      4436100
-      IQQGTDLAEVAPILCAGVTVYK              8458400    7946200    8348700      7789300
-      IVGLSELPK                          20153000   20323000   21720000     18189000
-      NMVSDIQEATK                         3941000    4566400         NA      5529400
-      VLGIDAGEEK                               NA         NA         NA           NA
-                                       25000amol_R2 25000amol_R3 2500amol_R1
-      AAADALSDLEIK                               NA     35053000          NA
-      AAADALSDLEIKDSK                      10952000      6025900     5887600
-      AEWALR                                6170000      6064200     5716200
-      DEGLHTDFACLLFAHLK                     3738400      6394700     5054000
-      DIHDWNNR                               727870      2221900      643630
-      ELETLREENR                            1213400           NA          NA
-      ESEFLFNAIHTIPEIGEK                   33646000     39093000    35195000
-      GMMPGLTFSNELICR                       9847600      8268200     8556100
-      IVTEAVEIEQR                          24877000     25800000    17987000
-      LLVAFGNK                             17078000     13451000    11012000
-      LLVAFGNKK                                  NA           NA      779900
-      NKPDPAIVEK                           19010000     22291000    14737000
-      TNFFEK                                7485700      8294600     6806400
-      TVLFPIK                              16786000     15000000    10413000
-      VENPFDFMENISLAGK                     19130000     16778000    17083000
-      WIQDADALFGER                         21147000     19526000    19619000
-      YFLDALPVALLGMNADLMNQYVEFVADR         26404000     25418000    25305000
-      AANLGGVAVSGLEMAQNSQK                 11839000      9545800    11004000
-      DAVWFGPPK                                  NA           NA          NA
-      EIGYLFGAYR                                 NA           NA          NA
-      FHPSVNLSILK                           8174000      7422800     5560900
-      FLGFEQIFK                            44617000     37842000    40621000
-      GANIASFVMVADAMLDQGDVF                50108000     49410000    51325000
-      GCIISETGITSEQIHDIASAK                 7776800      9688500     6224400
-      GGLCVDLK                             13306000     13294000     9968700
-      ICYAFMR                               7658500     10137000     8646800
-      NSWEGVLTGK                           17262000     14892000    12989000
-      SLEEIVDEYSTFSESK                      8237200      9886000     8573600
-      VLPIVSVPER                           59266000     45293000    41889000
-      VTISGSGNVAQYAALK                      6027100      1079900     7008300
-      VTWENDNGEQEVAQGYR                          NA      2126200     3445500
-      YVAGARPWTHVSNVDIALPCATQNEVSGDEAK           NA           NA          NA
-      AANLGGVAVSGLEMAQNSQR                 36953000     30967000    32562000
-      ALVAQGVK                             20015000     19315000          NA
-      FIAEGSNMGSTPEAIAVFETAR               50101000     41112000    36885000
-      GANIASFIK                            20310000           NA    18302000
-      GCIISETGITSEQVADISSAK                 3574700      3716000     3803500
-      HIGQDTDVPAGDIGVGGR                   39839000     39590000    34777000
-      IMINCFNECIDYAK                       13628000     12623000    13253000
-      ITWTSER                              25263000     23153000          NA
-      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR        81729000     93146000    90039000
-      SLEQIVNEYSTFSENK                     59400000     62596000    53447000
-      STATGPSEAVWYGPPK                     59007000     45462000    49846000
-      VDIALPCATQNEVSGEEAK                  62988000     54776000    54355000
-      VIELGGTVVSLSDSK                      18401000     16469000    14090000
-      VQYIAGARPWTHVQK                       7421700      3188300     8375800
-      VTWENDKGEQEVAQGYR                    35704000     34888000    34650000
-      AAGLTAAYAR                           79100000     75756000    55590000
-      APEAEQVLSAAATFPIAQPATDVEAR           34877000     36377000    26962000
-      AVQDNGESAFR                          15848000     16196000    13520000
-      DGKAPEAEQVLSAAATFPIAQPATDVEAR        27729000     26263000    28675000
-      GFTLAEVK                             33399000     30838000    30524000
-      IAPRPLDLLRPVVR                       16456000     21089000     8927100
-      IIVFPR                               69788000     57519000    60220000
-      NQEIFDANVQR                         104840000     97118000    86931000
-      TIGIAVDHR                            29831000     31734000    22671000
-      VHFDQAGK                             12641000     13595000     9328900
-      VHFDQAGKK                                  NA           NA          NA
-      ANELLINVK                           219780000    194190000   155870000
-      ANGTTVLVGMPAGAK                            NA           NA          NA
-      ATDGGAHGVINVSVSEAAIEASTR            103380000    123260000    72284000
-      CCSDVFNQVVK                          59682000     53120000    52898000
-      DIVGAVLK                             67228000     56161000    48102000
-      EALDFFAR                            248070000    195260000   196550000
-      EKDIVGAVLK                           37263000     35050000    30028000
-      GVIFYESHGK                          108230000    106310000    86113000
-      IGDYAGIK                            201320000    185230000   138400000
-      LPLVGGHEGAGVVVGMGENVK               112120000    127430000   102290000
-      SANLMAGHWVAISGAAGGLGSLAVQYAK         51399000     36144000    38113000
-      SIGGEVFIDFTK                         67298000     55269000    52802000
-      SIPETQK                              24969000     15891000    40728000
-      SISIVGSYVGNR                        331790000    300530000   264570000
-      VLGIDGGEGK                           33797000     32987000    19685000
-      VLGIDGGEGKEELFR                     311870000    299540000   280620000
-      VVGLSTLPEIYEK                       630360000    547410000   532120000
-      YSGVCHTDLHAWHGDWPLPVK               102470000    117790000   148340000
-      ANGTVVLVGLPAGAK                       5826900      5251000     5045100
-      CSSDVFNHVVK                                NA           NA          NA
-      DIPVPKPKPNELLINVK                          NA           NA          NA
-      VVGLSSLPEIYEK                        49298000     42723000    37048000
-      DIPVPEPKPNEILINVK                    27639000     25243000    22230000
-      EALDFFSR                              7973600      5746300     7275100
-      GVIFYENK                              4909200      6790200     5046300
-      IQQGTDLAEVAPILCAGVTVYK                8260600      6990600     6779400
-      IVGLSELPK                            20769000     18659000    19479000
-      NMVSDIQEATK                           7627200      6945900     6367200
-      VLGIDAGEEK                                 NA           NA          NA
-                                       2500amol_R2 2500amol_R3 250amol_R1 250amol_R2
-      AAADALSDLEIK                              NA          NA         NA         NA
-      AAADALSDLEIKDSK                      7339300     8671500   10341000   14096000
-      AEWALR                               4576900     4861600    4993800    6270600
-      DEGLHTDFACLLFAHLK                    4938900     3821300         NA         NA
-      DIHDWNNR                                  NA          NA         NA    1872100
-      ELETLREENR                                NA     4632100    4010200    4106000
-      ESEFLFNAIHTIPEIGEK                  25647000    35866000   26978000   25029000
-      GMMPGLTFSNELICR                      9424100     9366600    7382600         NA
-      IVTEAVEIEQR                         17888000    18586000   17648000   17566000
-      LLVAFGNK                            10335000     9589600    6784400    6587700
-      LLVAFGNKK                                 NA          NA         NA    1785100
-      NKPDPAIVEK                          14363000    18185000   16056000   20257000
-      TNFFEK                               5626500     6161400    6504500    5853400
-      TVLFPIK                             11354000    12336000    9104200   10083000
-      VENPFDFMENISLAGK                    15522000    16315000   17117000   18403000
-      WIQDADALFGER                        21316000    19279000   14133000   15309000
-      YFLDALPVALLGMNADLMNQYVEFVADR        23134000    24870000   23305000   23777000
-      AANLGGVAVSGLEMAQNSQK                10264000     8435700   10457000   10661000
-      DAVWFGPPK                                 NA          NA         NA         NA
-      EIGYLFGAYR                                NA          NA         NA   21319000
-      FHPSVNLSILK                          4656600     7816600    4699500    6726600
-      FLGFEQIFK                           41473000    39670000   45495000   46192000
-      GANIASFVMVADAMLDQGDVF               54944000    57841000   72889000   85591000
-      GCIISETGITSEQIHDIASAK                7904100     8613600    8443900    9141200
-      GGLCVDLK                             9283600    11347000   11138000   11812000
-      ICYAFMR                              8668400     9809200   10086000   11127000
-      NSWEGVLTGK                          13175000    11884000   11947000   14347000
-      SLEEIVDEYSTFSESK                    10737000     8354000    8495100    8495100
-      VLPIVSVPER                          38770000    43274000   32402000   34047000
-      VTISGSGNVAQYAALK                      171360          NA    3227900         NA
-      VTWENDNGEQEVAQGYR                    2817000     3205300    2857900    2755000
-      YVAGARPWTHVSNVDIALPCATQNEVSGDEAK          NA          NA         NA         NA
-      AANLGGVAVSGLEMAQNSQR                33356000    33135000   35653000   35405000
-      ALVAQGVK                            12265000    13513000   13491000   13377000
-      FIAEGSNMGSTPEAIAVFETAR              36661000    36512000   41350000   28035000
-      GANIASFIK                           17315000    18563000   17215000   18642000
-      GCIISETGITSEQVADISSAK                3123700     3610500    4042800    3750800
-      HIGQDTDVPAGDIGVGGR                  27898000    32416000   32278000   37415000
-      IMINCFNECIDYAK                      13488000    13728000   14096000   13703000
-      ITWTSER                             16669000    16851000   16990000   17452000
-      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR       93374000    85175000  101350000  100250000
-      SLEQIVNEYSTFSENK                    51379000    59477000   52412000   54575000
-      STATGPSEAVWYGPPK                    48656000    45314000   45139000   46024000
-      VDIALPCATQNEVSGEEAK                 55323000    54875000   47254000   43910000
-      VIELGGTVVSLSDSK                     13965000    13768000   13320000   13588000
-      VQYIAGARPWTHVQK                           NA     6367700   10342000   10344000
-      VTWENDKGEQEVAQGYR                   31506000    34159000   35383000   42910000
-      AAGLTAAYAR                          53946000    56780000   60729000   58496000
-      APEAEQVLSAAATFPIAQPATDVEAR          27494000    29175000   19547000   18843000
-      AVQDNGESAFR                         12810000    13701000     268680   14220000
-      DGKAPEAEQVLSAAATFPIAQPATDVEAR       22185000    21301000   26556000   27642000
-      GFTLAEVK                            31060000    30327000   29765000   35076000
-      IAPRPLDLLRPVVR                      19370000    10253000   12606000   24964000
-      IIVFPR                              55242000    51978000   42118000   49047000
-      NQEIFDANVQR                         84510000    88035000   87449000   83524000
-      TIGIAVDHR                           22573000    23504000   20455000   23590000
-      VHFDQAGK                                  NA    10929000   10531000   11197000
-      VHFDQAGKK                                 NA          NA         NA         NA
-      ANELLINVK                          141810000   155330000  158470000  171860000
-      ANGTTVLVGMPAGAK                           NA          NA         NA         NA
-      ATDGGAHGVINVSVSEAAIEASTR            89717000    90769000   75023000   78213000
-      CCSDVFNQVVK                         50244000    53945000   50024000   57857000
-      DIVGAVLK                                  NA    49740000   51757000   56241000
-      EALDFFAR                           191730000   198810000  184280000  186070000
-      EKDIVGAVLK                          29995000    36681000   32936000   37416000
-      GVIFYESHGK                          83976000    92503000   95943000   92547000
-      IGDYAGIK                           124730000   144010000  129640000  131670000
-      LPLVGGHEGAGVVVGMGENVK              111850000   154880000  114690000  123680000
-      SANLMAGHWVAISGAAGGLGSLAVQYAK        20837000    28932000   26012000   31135000
-      SIGGEVFIDFTK                        69274000    73931000   61723000   61694000
-      SIPETQK                             20992000    24072000   27069000   24214000
-      SISIVGSYVGNR                       254410000   258680000  236710000  255600000
-      VLGIDGGEGK                          19083000    21352000    9778200   11145000
-      VLGIDGGEGKEELFR                    296920000   334390000  305350000  331550000
-      VVGLSTLPEIYEK                      501480000   507720000  514510000  498210000
-      YSGVCHTDLHAWHGDWPLPVK              146850000   143910000   95623000  114260000
-      ANGTVVLVGLPAGAK                      3858500     5154500    4598600    4766400
-      CSSDVFNHVVK                               NA          NA         NA    3945100
-      DIPVPKPKPNELLINVK                         NA          NA         NA         NA
-      VVGLSSLPEIYEK                       37419000    34972000   35779000   34603000
-      DIPVPEPKPNEILINVK                   23146000    22329000     737750   20059000
-      EALDFFSR                             6264500     8938100    7171800         NA
-      GVIFYENK                             5064800     5736000         NA    5737200
-      IQQGTDLAEVAPILCAGVTVYK               8251400     7051200    9353800    6587300
-      IVGLSELPK                           19093000    19870000   17325000   18743000
-      NMVSDIQEATK                          6652600     6190900    5760900    5612700
-      VLGIDAGEEK                                NA          NA         NA         NA
-                                       250amol_R3 50000amol_R1 50000amol_R2
-      AAADALSDLEIK                             NA           NA           NA
-      AAADALSDLEIKDSK                    12612000      4766700      3058100
-      AEWALR                              5127000      5520400      5429300
-      DEGLHTDFACLLFAHLK                        NA           NA      5315500
-      DIHDWNNR                            2191500      3051200      1351100
-      ELETLREENR                          4135400      5888600      5456300
-      ESEFLFNAIHTIPEIGEK                 37364000     42653000     39566000
-      GMMPGLTFSNELICR                     7722400      9980500      8618700
-      IVTEAVEIEQR                        19505000     28079000     27387000
-      LLVAFGNK                            7348000     17607000     17774000
-      LLVAFGNKK                                NA           NA           NA
-      NKPDPAIVEK                         18999000     24252000     25755000
-      TNFFEK                              5505400      6046000      6600700
-      TVLFPIK                            11724000     17670000     16620000
-      VENPFDFMENISLAGK                   18359000     15014000     14837000
-      WIQDADALFGER                       17318000     16929000     14624000
-      YFLDALPVALLGMNADLMNQYVEFVADR       24532000     28543000     27010000
-      AANLGGVAVSGLEMAQNSQK                6016500     11124000     10241000
-      DAVWFGPPK                                NA           NA           NA
-      EIGYLFGAYR                         21963000           NA           NA
-      FHPSVNLSILK                         5435800     14260000      6666500
-      FLGFEQIFK                          44743000     43813000     45200000
-      GANIASFVMVADAMLDQGDVF              78097000     48322000     46906000
-      GCIISETGITSEQIHDIASAK               7073800      8480300      8741000
-      GGLCVDLK                           10782000     13324000     14947000
-      ICYAFMR                            12288000     10431000     10013000
-      NSWEGVLTGK                         14353000     17950000     16552000
-      SLEEIVDEYSTFSESK                    8272500      6270500      7993300
-      VLPIVSVPER                         40022000     50525000     47285000
-      VTISGSGNVAQYAALK                     161920      6703700      5475000
-      VTWENDNGEQEVAQGYR                   3249900           NA      2823000
-      YVAGARPWTHVSNVDIALPCATQNEVSGDEAK         NA           NA           NA
-      AANLGGVAVSGLEMAQNSQR               39915000     35098000     25697000
-      ALVAQGVK                           12267000     17854000     16599000
-      FIAEGSNMGSTPEAIAVFETAR             43205000     22046000     33014000
-      GANIASFIK                          19366000     22495000     21485000
-      GCIISETGITSEQVADISSAK               3558700      4158000      4330000
-      HIGQDTDVPAGDIGVGGR                 31818000     48952000     50479000
-      IMINCFNECIDYAK                     13300000     17419000     12631000
-      ITWTSER                            16791000     18711000     19483000
-      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR      98734000     85893000     11446000
-      SLEQIVNEYSTFSENK                   60259000     61598000     53216000
-      STATGPSEAVWYGPPK                   38452000     46535000           NA
-      VDIALPCATQNEVSGEEAK                50991000     61582000     56936000
-      VIELGGTVVSLSDSK                    13316000     16215000     14363000
-      VQYIAGARPWTHVQK                     4620800      4738300      4920000
-      VTWENDKGEQEVAQGYR                  39544000     38959000     43698000
-      AAGLTAAYAR                         59234000     73831000     73408000
-      APEAEQVLSAAATFPIAQPATDVEAR         15087000     32425000     34162000
-      AVQDNGESAFR                        11806000     15753000     14619000
-      DGKAPEAEQVLSAAATFPIAQPATDVEAR      29389000     16317000     13280000
-      GFTLAEVK                           31584000     35869000     32868000
-      IAPRPLDLLRPVVR                     24360000     22705000     12422000
-      IIVFPR                             44088000     66043000     62327000
-      NQEIFDANVQR                        78580000     94201000     97850000
-      TIGIAVDHR                          20934000           NA     27610000
-      VHFDQAGK                           10452000     21897000     25643000
-      VHFDQAGKK                                NA           NA           NA
-      ANELLINVK                         159160000    255170000    239600000
-      ANGTTVLVGMPAGAK                          NA     24783000     21088000
-      ATDGGAHGVINVSVSEAAIEASTR           66210000    115520000    138720000
-      CCSDVFNQVVK                        56074000     56947000     59907000
-      DIVGAVLK                                 NA     63901000     62136000
-      EALDFFAR                          204420000    224370000    215930000
-      EKDIVGAVLK                         37527000     47384000     48729000
-      GVIFYESHGK                        100630000    128450000    136440000
-      IGDYAGIK                                 NA    170190000    169400000
-      LPLVGGHEGAGVVVGMGENVK              85956000    159280000    162300000
-      SANLMAGHWVAISGAAGGLGSLAVQYAK       29774000     22408000     20918000
-      SIGGEVFIDFTK                       53824000     63157000     68817000
-      SIPETQK                            25389000     15143000     11129000
-      SISIVGSYVGNR                      259950000    347960000    336540000
-      VLGIDGGEGK                         10732000     26500000     27786000
-      VLGIDGGEGKEELFR                   346620000    376900000    366510000
-      VVGLSTLPEIYEK                     529220000    591740000    509800000
-      YSGVCHTDLHAWHGDWPLPVK             110030000    120300000    105060000
-      ANGTVVLVGLPAGAK                     5428000      6666500      6713300
-      CSSDVFNHVVK                         4150700      4862700      4156600
-      DIPVPKPKPNELLINVK                        NA           NA           NA
-      VVGLSSLPEIYEK                      34285000     39762000     40097000
-      DIPVPEPKPNEILINVK                  21287000     24035000     22053000
-      EALDFFSR                            7016600      8182900      8111100
-      GVIFYENK                            6120000           NA      7659100
-      IQQGTDLAEVAPILCAGVTVYK              9297600      7828700      7746200
-      IVGLSELPK                          20155000     24640000     21307000
-      NMVSDIQEATK                         6519300      6084700      4691700
-      VLGIDAGEEK                               NA           NA           NA
-                                       50000amol_R3 5000amol_R1 5000amol_R2
-      AAADALSDLEIK                               NA          NA          NA
-      AAADALSDLEIKDSK                      11509000          NA     2245100
-      AEWALR                                5596700     5855600     4951000
-      DEGLHTDFACLLFAHLK                     2753900     5431700          NA
-      DIHDWNNR                                   NA          NA          NA
-      ELETLREENR                            6315500          NA     4476600
-      ESEFLFNAIHTIPEIGEK                   34175000    29365000    32819000
-      GMMPGLTFSNELICR                       6734000    12050000    10131000
-      IVTEAVEIEQR                          25304000    16551000    16858000
-      LLVAFGNK                             15596000    10618000          NA
-      LLVAFGNKK                                  NA          NA     1405200
-      NKPDPAIVEK                           25026000    16009000    16631000
-      TNFFEK                                6233800     6488500     7516200
-      TVLFPIK                              15766000    11783000    12212000
-      VENPFDFMENISLAGK                     14936000    19204000    16765000
-      WIQDADALFGER                         18249000    19638000    21174000
-      YFLDALPVALLGMNADLMNQYVEFVADR         26928000    23475000    23032000
-      AANLGGVAVSGLEMAQNSQK                  9616500     9171700     5909800
-      DAVWFGPPK                                  NA   163980000          NA
-      EIGYLFGAYR                                 NA          NA          NA
-      FHPSVNLSILK                           8597900     5547700     4855100
-      FLGFEQIFK                            42483000    41632000    43747000
-      GANIASFVMVADAMLDQGDVF                48927000    54392000    50645000
-      GCIISETGITSEQIHDIASAK                10406000     7523500     7752000
-      GGLCVDLK                             12747000    11188000          NA
-      ICYAFMR                               9705300     9772700     9965400
-      NSWEGVLTGK                           15361000    10818000    12374000
-      SLEEIVDEYSTFSESK                      6199500     9056500     8346000
-      VLPIVSVPER                           41443000    44170000    45348000
-      VTISGSGNVAQYAALK                           NA          NA     6520200
-      VTWENDNGEQEVAQGYR                          NA     3797200     3316100
-      YVAGARPWTHVSNVDIALPCATQNEVSGDEAK           NA          NA          NA
-      AANLGGVAVSGLEMAQNSQR                 27071000    36478000    30917000
-      ALVAQGVK                             15913000    11876000    13251000
-      FIAEGSNMGSTPEAIAVFETAR               36481000    41019000    39142000
-      GANIASFIK                            21137000    19327000    16584000
-      GCIISETGITSEQVADISSAK                 5303000     4437000     4159300
-      HIGQDTDVPAGDIGVGGR                   40173000    33222000    31486000
-      IMINCFNECIDYAK                       12105000    15101000    11838000
-      ITWTSER                                    NA    17860000    21368000
-      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR        10779000    81966000    93082000
-      SLEQIVNEYSTFSENK                     60519000    63205000    58515000
-      STATGPSEAVWYGPPK                     44619000    44663000    48340000
-      VDIALPCATQNEVSGEEAK                  49713000    53196000    49142000
-      VIELGGTVVSLSDSK                      14777000    13868000    14514000
-      VQYIAGARPWTHVQK                            NA    13966000     4334500
-      VTWENDKGEQEVAQGYR                    43799000    34863000    35762000
-      AAGLTAAYAR                           74801000    56674000    59860000
-      APEAEQVLSAAATFPIAQPATDVEAR           30033000    28597000    27560000
-      AVQDNGESAFR                          16620000    14360000    14340000
-      DGKAPEAEQVLSAAATFPIAQPATDVEAR        16185000    32396000    28015000
-      GFTLAEVK                             36511000    28625000    30395000
-      IAPRPLDLLRPVVR                       13232000    19446000    16928000
-      IIVFPR                               56243000    55047000    54330000
-      NQEIFDANVQR                          97828000    97314000    88930000
-      TIGIAVDHR                            30487000    28376000    28133000
-      VHFDQAGK                             24551000     9480100     9404800
-      VHFDQAGKK                                  NA          NA          NA
-      ANELLINVK                           232950000   165120000   167430000
-      ANGTTVLVGMPAGAK                      22228000    22431000    18316000
-      ATDGGAHGVINVSVSEAAIEASTR            170230000    83974000    89722000
-      CCSDVFNQVVK                          55909000    49537000    50409000
-      DIVGAVLK                             62045000          NA    54320000
-      EALDFFAR                            209770000   198790000   201530000
-      EKDIVGAVLK                           44169000    31788000    34168000
-      GVIFYESHGK                          150730000    89159000    87110000
-      IGDYAGIK                            169190000   139160000   145850000
-      LPLVGGHEGAGVVVGMGENVK               131700000   126630000   129240000
-      SANLMAGHWVAISGAAGGLGSLAVQYAK         39602000    25320000    14734000
-      SIGGEVFIDFTK                         51520000    66386000    65128000
-      SIPETQK                              10265000    35061000    33558000
-      SISIVGSYVGNR                        320680000   272760000   274860000
-      VLGIDGGEGK                           30555000    19514000    20861000
-      VLGIDGGEGKEELFR                     342830000   300540000   305140000
-      VVGLSTLPEIYEK                       563150000   542550000   536350000
-      YSGVCHTDLHAWHGDWPLPVK               118290000   123800000   136520000
-      ANGTVVLVGLPAGAK                       4377700     4174600     4888700
-      CSSDVFNHVVK                           4399100          NA     3599100
-      DIPVPKPKPNELLINVK                          NA          NA          NA
-      VVGLSSLPEIYEK                        40341000    40341000    41004000
-      DIPVPEPKPNEILINVK                    20636000    19922000    21247000
-      EALDFFSR                                   NA     6808500     6789300
-      GVIFYENK                              5123000          NA          NA
-      IQQGTDLAEVAPILCAGVTVYK                6872100     7543700     9067000
-      IVGLSELPK                            22154000    18601000    20152000
-      NMVSDIQEATK                           6858900     5489200     5901200
-      VLGIDAGEEK                                 NA          NA          NA
-                                       5000amol_R3 500amol_R1 500amol_R2 500amol_R3
-      AAADALSDLEIK                              NA         NA         NA         NA
-      AAADALSDLEIKDSK                           NA   13581000    3857100    3408400
-      AEWALR                               5088000    5981800    5561300    5153400
-      DEGLHTDFACLLFAHLK                         NA         NA         NA         NA
-      DIHDWNNR                                  NA    2065700         NA         NA
-      ELETLREENR                                NA    4544500    3601600    6076700
-      ESEFLFNAIHTIPEIGEK                  34116000   33732000   36075000   33870000
-      GMMPGLTFSNELICR                      8760800   11000000    8619700    8180300
-      IVTEAVEIEQR                         18016000   19916000   18134000   18131000
-      LLVAFGNK                            11095000    7850300    9171900    9439800
-      LLVAFGNKK                                 NA    2434900         NA         NA
-      NKPDPAIVEK                          17552000   19665000   20910000   21316000
-      TNFFEK                               6069900    7301400    5672100    6357000
-      TVLFPIK                             10672000   10149000   10174000   12701000
-      VENPFDFMENISLAGK                    18244000   18620000   15523000   17782000
-      WIQDADALFGER                        19946000   17870000   15877000   15662000
-      YFLDALPVALLGMNADLMNQYVEFVADR        23512000   28671000   26459000   24449000
-      AANLGGVAVSGLEMAQNSQK                 9607500   11134000   10031000   10783000
-      DAVWFGPPK                                 NA         NA         NA  173600000
-      EIGYLFGAYR                                NA         NA         NA         NA
-      FHPSVNLSILK                          4928900    5049900    5412800    4896300
-      FLGFEQIFK                           38452000   44682000   49538000   45829000
-      GANIASFVMVADAMLDQGDVF               53524000   73304000   71656000   72863000
-      GCIISETGITSEQIHDIASAK                6725200    7035500    9470300    8603100
-      GGLCVDLK                             8928500   11027000   10436000         NA
-      ICYAFMR                              8956800   12064000   13340000   11924000
-      NSWEGVLTGK                          12567000   14270000   12867000   15402000
-      SLEEIVDEYSTFSESK                     8665300   10537000    8580900    8875100
-      VLPIVSVPER                          42537000   42713000   45913000   42373000
-      VTISGSGNVAQYAALK                     2968900         NA         NA     114880
-      VTWENDNGEQEVAQGYR                    3540200    3339600    2656700    2754200
-      YVAGARPWTHVSNVDIALPCATQNEVSGDEAK          NA         NA         NA         NA
-      AANLGGVAVSGLEMAQNSQR                 8902700   35660000    9801500   37708000
-      ALVAQGVK                            12316000   13475000   14918000   14473000
-      FIAEGSNMGSTPEAIAVFETAR              37644000   41312000   44045000   42909000
-      GANIASFIK                           18711000   21582000   22035000   22899000
-      GCIISETGITSEQVADISSAK                2672800    4240700    3561200    3530800
-      HIGQDTDVPAGDIGVGGR                  27562000   36389000   43352000   34656000
-      IMINCFNECIDYAK                      13346000   13809000   14127000   14172000
-      ITWTSER                             18150000   18777000   20111000   20650000
-      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR       78985000   98332000  100620000  103800000
-      SLEQIVNEYSTFSENK                    54849000   57182000   52723000   52679000
-      STATGPSEAVWYGPPK                    49658000   45712000   50203000   45932000
-      VDIALPCATQNEVSGEEAK                 54984000   60393000   56938000   55713000
-      VIELGGTVVSLSDSK                     13164000   15646000   16003000   13963000
-      VQYIAGARPWTHVQK                      9447700    6546500    9333900         NA
-      VTWENDKGEQEVAQGYR                   34957000   41604000   41930000   40345000
-      AAGLTAAYAR                          56589000   67658000   68629000   68448000
-      APEAEQVLSAAATFPIAQPATDVEAR          27790000   20302000   18780000   14549000
-      AVQDNGESAFR                         12363000   13298000   14881000   15462000
-      DGKAPEAEQVLSAAATFPIAQPATDVEAR       27295000   25085000   29607000   27163000
-      GFTLAEVK                            28597000   32146000   35644000   35608000
-      IAPRPLDLLRPVVR                       9539600   31518000   24931000   29313000
-      IIVFPR                              55103000   50827000   52423000   50617000
-      NQEIFDANVQR                         93185000   98888000   92385000   90198000
-      TIGIAVDHR                           25086000   23862000   23404000   25101000
-      VHFDQAGK                             9381100   12013000   11715000   11022000
-      VHFDQAGKK                                 NA         NA         NA         NA
-      ANELLINVK                          161860000  183080000  170030000  152060000
-      ANGTTVLVGMPAGAK                     20300000         NA         NA         NA
-      ATDGGAHGVINVSVSEAAIEASTR            96564000   86872000   96722000  100900000
-      CCSDVFNQVVK                         49880000   50684000   56791000   53475000
-      DIVGAVLK                                  NA   61411000   49703000   51248000
-      EALDFFAR                           192620000  215740000  217940000  209560000
-      EKDIVGAVLK                          34761000   38526000   38143000   34845000
-      GVIFYESHGK                          93689000  101610000  102340000   98705000
-      IGDYAGIK                           131210000  131910000  127840000  136180000
-      LPLVGGHEGAGVVVGMGENVK              128900000  149250000  123430000  151460000
-      SANLMAGHWVAISGAAGGLGSLAVQYAK        22950000   40856000   31000000   37518000
-      SIGGEVFIDFTK                        59226000   58339000   70890000   80179000
-      SIPETQK                             18176000   25544000   21280000   20038000
-      SISIVGSYVGNR                       271630000  288100000  290000000  278750000
-      VLGIDGGEGK                          20564000   10734000    8886300   10019000
-      VLGIDGGEGKEELFR                    301640000  341350000  367580000  364430000
-      VVGLSTLPEIYEK                      543290000  551250000  604480000  555250000
-      YSGVCHTDLHAWHGDWPLPVK              148650000  129790000   92341000  119170000
-      ANGTVVLVGLPAGAK                      4201100    5176000    5871100    5028300
-      CSSDVFNHVVK                          1324300    4628900         NA    1072600
-      DIPVPKPKPNELLINVK                         NA         NA         NA         NA
-      VVGLSSLPEIYEK                       38382000   37040000   34270000   35832000
-      DIPVPEPKPNEILINVK                   20546000         NA   20424000   22525000
-      EALDFFSR                             6528400    7007000    6903200   10314000
-      GVIFYENK                                  NA    5495200    5192100    6189600
-      IQQGTDLAEVAPILCAGVTVYK               8002600    9206400    8705200    8108000
-      IVGLSELPK                           18739000   20179000   22906000   22137000
-      NMVSDIQEATK                          7053100    6515100    6892600    4909200
-      VLGIDAGEEK                           4374200         NA         NA         NA
-                                       50amol_R1 50amol_R2 50amol_R3
-      AAADALSDLEIK                      20886000        NA        NA
-      AAADALSDLEIKDSK                    2214900        NA        NA
-      AEWALR                             5747200   6105600   5694800
-      DEGLHTDFACLLFAHLK                 13861000   8548300   6367100
-      DIHDWNNR                                NA   2247900   2202500
-      ELETLREENR                         8499500   8460600   7902200
-      ESEFLFNAIHTIPEIGEK                38346000  36535000  29781000
-      GMMPGLTFSNELICR                    6151900        NA        NA
-      IVTEAVEIEQR                       30619000  25508000  23114000
-      LLVAFGNK                           8127400   7157900   7904400
-      LLVAFGNKK                          2362900   2802500   3551400
-      NKPDPAIVEK                        22673000  18246000  22252000
-      TNFFEK                             6226000   7341400   6135600
-      TVLFPIK                           10629000  10796000  11721000
-      VENPFDFMENISLAGK                  14715000  15365000  15861000
-      WIQDADALFGER                      17249000  14802000  15931000
-      YFLDALPVALLGMNADLMNQYVEFVADR      33055000  31808000  29785000
-      AANLGGVAVSGLEMAQNSQK                    NA  11810000   8983300
-      DAVWFGPPK                               NA        NA        NA
-      EIGYLFGAYR                        32328000  25658000  28783000
-      FHPSVNLSILK                       14125000   8598000   8592100
-      FLGFEQIFK                         65732000  61723000  58388000
-      GANIASFVMVADAMLDQGDVF            132300000  99299000  92946000
-      GCIISETGITSEQIHDIASAK             10779000  11435000   8390700
-      GGLCVDLK                          12594000  11354000  12042000
-      ICYAFMR                           11076000  10936000  10639000
-      NSWEGVLTGK                        13001000  15028000  15520000
-      SLEEIVDEYSTFSESK                  11166000   8548800   6445100
-      VLPIVSVPER                        36438000  34005000  36401000
-      VTISGSGNVAQYAALK                   4470300   3338400        NA
-      VTWENDNGEQEVAQGYR                  3588500   3160500   3463000
-      YVAGARPWTHVSNVDIALPCATQNEVSGDEAK   9561000   6181500   5222300
-      AANLGGVAVSGLEMAQNSQR              32679000  30286000  31639000
-      ALVAQGVK                                NA    756380        NA
-      FIAEGSNMGSTPEAIAVFETAR            44255000  43687000  42772000
-      GANIASFIK                         17833000  19129000  18912000
-      GCIISETGITSEQVADISSAK              8135900   5579800        NA
-      HIGQDTDVPAGDIGVGGR                48231000  39830000  36437000
-      IMINCFNECIDYAK                    14038000  15355000  14142000
-      ITWTSER                                 NA  20222000  18486000
-      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR    101350000        NA 106000000
-      SLEQIVNEYSTFSENK                  53812000  10437000  48862000
-      STATGPSEAVWYGPPK                  46355000  41778000  41345000
-      VDIALPCATQNEVSGEEAK                9008400  48730000  49888000
-      VIELGGTVVSLSDSK                   20895000  16526000  14645000
-      VQYIAGARPWTHVQK                         NA        NA        NA
-      VTWENDKGEQEVAQGYR                 65052000  54825000  53014000
-      AAGLTAAYAR                        55470000  62138000  59012000
-      APEAEQVLSAAATFPIAQPATDVEAR         5320200   3008100   3149500
-      AVQDNGESAFR                       18130000  18466000  15488000
-      DGKAPEAEQVLSAAATFPIAQPATDVEAR     33564000  25133000  32184000
-      GFTLAEVK                          34750000  37621000  36671000
-      IAPRPLDLLRPVVR                    21233000  10944000  10565000
-      IIVFPR                             2242100   2204500  46295000
-      NQEIFDANVQR                       81259000  85991000  84943000
-      TIGIAVDHR                         35365000  32625000  27458000
-      VHFDQAGK                          14072000  15904000  15879000
-      VHFDQAGKK                          2837100   2097300   1809700
-      ANELLINVK                        184930000 178880000 182820000
-      ANGTTVLVGMPAGAK                   22679000  20585000  20851000
-      ATDGGAHGVINVSVSEAAIEASTR         124550000 101040000  90585000
-      CCSDVFNQVVK                       71812000  66607000  69073000
-      DIVGAVLK                          60042000  61109000  58708000
-      EALDFFAR                         227080000 210410000 212330000
-      EKDIVGAVLK                        62427000  35459000  33921000
-      GVIFYESHGK                       229190000 226950000 171090000
-      IGDYAGIK                                NA 129730000 128600000
-      LPLVGGHEGAGVVVGMGENVK            128030000 110050000 136420000
-      SANLMAGHWVAISGAAGGLGSLAVQYAK      61716000  46075000  44490000
-      SIGGEVFIDFTK                      89599000  44375000  65134000
-      SIPETQK                           33610000  32138000  59548000
-      SISIVGSYVGNR                     299540000 265510000 271690000
-      VLGIDGGEGK                        11276000   9520100   9843400
-      VLGIDGGEGKEELFR                  453940000 460560000 487960000
-      VVGLSTLPEIYEK                    563450000 526950000 557180000
-      YSGVCHTDLHAWHGDWPLPVK             84953000 124150000 106120000
-      ANGTVVLVGLPAGAK                    6290300   5874900   5615000
-      CSSDVFNHVVK                        6555400   4441900   5483200
-      DIPVPKPKPNELLINVK                  8572000   6594800   4489600
-      VVGLSSLPEIYEK                     34226000  31966000  35836000
-      DIPVPEPKPNEILINVK                  4256400  28021000  21048000
-      EALDFFSR                           7828000   6971000   6133400
-      GVIFYENK                           7300500   7597400   6775400
-      IQQGTDLAEVAPILCAGVTVYK             7743900   8589700   8480300
-      IVGLSELPK                         16650000  17530000  17048000
-      NMVSDIQEATK                        7612200   7759200   7525400
-      VLGIDAGEEK                              NA        NA        NA
+                                       00125amol_R1 00125amol_R2 00125amol_R3
+      AAADALSDLEIK                               NA           NA           NA
+      AAADALSDLEIKDSK                      13943000     13983000     13708000
+      AEWALR                                6547500      6124700      5444000
+      DEGLHTDFACLLFAHLK                     3246500      5076200      4267500
+      DIHDWNNR                              2242700           NA      2610400
+      ELETLREENR                            5610400      5076600      6814900
+      ESEFLFNAIHTIPEIGEK                   36455000     33289000     40969000
+      GMMPGLTFSNELICR                       7130300      7910400      8181200
+      IVTEAVEIEQR                          18991000     19841000     19237000
+      LLVAFGNK                              7028100      7773000      7908900
+      LLVAFGNKK                             1799600      2124500      1866500
+      NKPDPAIVEK                           20909000     19391000     17646000
+      TNFFEK                                6258400      5396000      5100800
+      TVLFPIK                              12527000     10894000     10745000
+      VENPFDFMENISLAGK                     20237000     18099000     15773000
+      WIQDADALFGER                         18017000     17161000     17600000
+      YFLDALPVALLGMNADLMNQYVEFVADR         27361000     23392000     21819000
+      AANLGGVAVSGLEMAQNSQK                 10719000      9895000     10051000
+      DAVWFGPPK                                  NA           NA           NA
+      EIGYLFGAYR                           26668000     26764000     24466000
+      FHPSVNLSILK                           5295800      5047900      5235400
+      FLGFEQIFK                            53773000     47516000     48616000
+      GANIASFVMVADAMLDQGDVF                86972000     87250000     81957000
+      GCIISETGITSEQIHDIASAK                 9025800      7949100      8934400
+      GGLCVDLK                             11834000           NA           NA
+      ICYAFMR                              12664000     13967000     12236000
+      NSWEGVLTGK                           14236000     18501000           NA
+      SLEEIVDEYSTFSESK                     10091000     10301000      9314000
+      VLPIVSVPER                           36292000     40343000     33425000
+      VTISGSGNVAQYAALK                      7343600       119370           NA
+      VTWENDNGEQEVAQGYR                          NA      3117300      2422600
+      YVAGARPWTHVSNVDIALPCATQNEVSGDEAK           NA           NA      1900500
+      AANLGGVAVSGLEMAQNSQR                 10466000     36693000     35306000
+      ALVAQGVK                             15672000     14706000     14248000
+      FIAEGSNMGSTPEAIAVFETAR               44409000     43952000     44726000
+      GANIASFIK                            20221000     19640000     20105000
+      GCIISETGITSEQVADISSAK                 3172000      3240800      2811200
+      HIGQDTDVPAGDIGVGGR                   37612000     37002000     34320000
+      IMINCFNECIDYAK                       13617000     13481000     12787000
+      ITWTSER                              18865000     17810000       547690
+      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR        10284000    116890000    102390000
+      SLEQIVNEYSTFSENK                     50258000     53429000     46404000
+      STATGPSEAVWYGPPK                     41608000     45023000     48305000
+      VDIALPCATQNEVSGEEAK                  51135000     54550000     51388000
+      VIELGGTVVSLSDSK                      14253000     13746000     13562000
+      VQYIAGARPWTHVQK                       4008100           NA      3877400
+      VTWENDKGEQEVAQGYR                    46883000     42931000     45930000
+      AAGLTAAYAR                           63726000     62807000     63592000
+      APEAEQVLSAAATFPIAQPATDVEAR           21441000     25578000     21845000
+      AVQDNGESAFR                          15719000     14156000     15067000
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR        43997000     44846000     42539000
+      GFTLAEVK                             34739000     35198000     32998000
+      IAPRPLDLLRPVVR                       25130000     29517000     28612000
+      IIVFPR                               44523000     45875000      3340100
+      NQEIFDANVQR                          85889000     82847000     81655000
+      TIGIAVDHR                            21604000     20284000     17968000
+      VHFDQAGK                                   NA           NA     14104000
+      VHFDQAGKK                                  NA           NA           NA
+      ANELLINVK                           173790000    180130000    170590000
+      ANGTTVLVGMPAGAK                            NA           NA           NA
+      ATDGGAHGVINVSVSEAAIEASTR             87508000     65342000     82689000
+      CCSDVFNQVVK                          61137000     61632000     55882000
+      DIVGAVLK                                   NA     59922000     52610000
+      EALDFFAR                            208970000    207980000    202700000
+      EKDIVGAVLK                           34405000     35041000     35662000
+      GVIFYESHGK                          124240000    120250000    110540000
+      IGDYAGIK                            142980000    137580000    140680000
+      LPLVGGHEGAGVVVGMGENVK               119390000     86518000    151200000
+      SANLMAGHWVAISGAAGGLGSLAVQYAK         24507000     30301000     33693000
+      SIGGEVFIDFTK                         85771000     64361000     77642000
+      SIPETQK                              29307000     48695000     48913000
+      SISIVGSYVGNR                        265970000    283970000    277410000
+      VLGIDGGEGK                           10689000     12403000     11149000
+      VLGIDGGEGKEELFR                     426070000    393230000    329780000
+      VVGLSTLPEIYEK                       556980000    552670000    542120000
+      YSGVCHTDLHAWHGDWPLPVK                96686000    107560000    118430000
+      ANGTVVLVGLPAGAK                       5050300      6271600      5139700
+      CSSDVFNHVVK                           4415100      5249200      4326400
+      DIPVPKPKPNELLINVK                          NA      1314000           NA
+      VVGLSSLPEIYEK                        39008000     37893000     36593000
+      DIPVPEPKPNEILINVK                    19507000     22611000     21317000
+      EALDFFSR                              7301700      7672700      6622600
+      GVIFYENK                                   NA      6334500      5832400
+      IQQGTDLAEVAPILCAGVTVYK                8458400      7946200      8348700
+      IVGLSELPK                            20153000     20323000     21720000
+      NMVSDIQEATK                           3941000      4566400           NA
+      VLGIDAGEEK                                 NA           NA           NA
+                                       25000amol_R1 25000amol_R2 25000amol_R3
+      AAADALSDLEIK                               NA           NA     35053000
+      AAADALSDLEIKDSK                       7192900     10952000      6025900
+      AEWALR                                4615900      6170000      6064200
+      DEGLHTDFACLLFAHLK                     4885700      3738400      6394700
+      DIHDWNNR                              2465600       727870      2221900
+      ELETLREENR                                 NA      1213400           NA
+      ESEFLFNAIHTIPEIGEK                   31436000     33646000     39093000
+      GMMPGLTFSNELICR                       7664700      9847600      8268200
+      IVTEAVEIEQR                          18396000     24877000     25800000
+      LLVAFGNK                             10491000     17078000     13451000
+      LLVAFGNKK                                  NA           NA           NA
+      NKPDPAIVEK                           14802000     19010000     22291000
+      TNFFEK                                5498400      7485700      8294600
+      TVLFPIK                              11764000     16786000     15000000
+      VENPFDFMENISLAGK                     17240000     19130000     16778000
+      WIQDADALFGER                         18207000     21147000     19526000
+      YFLDALPVALLGMNADLMNQYVEFVADR         29568000     26404000     25418000
+      AANLGGVAVSGLEMAQNSQK                  8786800     11839000      9545800
+      DAVWFGPPK                           159800000           NA           NA
+      EIGYLFGAYR                                 NA           NA           NA
+      FHPSVNLSILK                           5660500      8174000      7422800
+      FLGFEQIFK                            35559000     44617000     37842000
+      GANIASFVMVADAMLDQGDVF                51152000     50108000     49410000
+      GCIISETGITSEQIHDIASAK                 7395200      7776800      9688500
+      GGLCVDLK                              9796900     13306000     13294000
+      ICYAFMR                               8278600      7658500     10137000
+      NSWEGVLTGK                           13422000     17262000     14892000
+      SLEEIVDEYSTFSESK                      9655200      8237200      9886000
+      VLPIVSVPER                           37817000     59266000     45293000
+      VTISGSGNVAQYAALK                      1805400      6027100      1079900
+      VTWENDNGEQEVAQGYR                     2411900           NA      2126200
+      YVAGARPWTHVSNVDIALPCATQNEVSGDEAK           NA           NA           NA
+      AANLGGVAVSGLEMAQNSQR                 29844000     36953000     30967000
+      ALVAQGVK                             12006000     20015000     19315000
+      FIAEGSNMGSTPEAIAVFETAR               36945000     50101000     41112000
+      GANIASFIK                            17067000     20310000           NA
+      GCIISETGITSEQVADISSAK                 2897900      3574700      3716000
+      HIGQDTDVPAGDIGVGGR                   28451000     39839000     39590000
+      IMINCFNECIDYAK                       11055000     13628000     12623000
+      ITWTSER                              16962000     25263000     23153000
+      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR        94105000     81729000     93146000
+      SLEQIVNEYSTFSENK                     52756000     59400000     62596000
+      STATGPSEAVWYGPPK                     39911000     59007000     45462000
+      VDIALPCATQNEVSGEEAK                  47601000     62988000     54776000
+      VIELGGTVVSLSDSK                      13397000     18401000     16469000
+      VQYIAGARPWTHVQK                       3455200      7421700      3188300
+      VTWENDKGEQEVAQGYR                    32372000     35704000     34888000
+      AAGLTAAYAR                           55107000     79100000     75756000
+      APEAEQVLSAAATFPIAQPATDVEAR           30201000     34877000     36377000
+      AVQDNGESAFR                          11313000     15848000     16196000
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR        18346000     27729000     26263000
+      GFTLAEVK                             28537000     33399000     30838000
+      IAPRPLDLLRPVVR                       16477000     16456000     21089000
+      IIVFPR                               48806000     69788000     57519000
+      NQEIFDANVQR                          77100000    104840000     97118000
+      TIGIAVDHR                            24028000     29831000     31734000
+      VHFDQAGK                             11421000     12641000     13595000
+      VHFDQAGKK                                  NA           NA           NA
+      ANELLINVK                           170090000    219780000    194190000
+      ANGTTVLVGMPAGAK                            NA           NA           NA
+      ATDGGAHGVINVSVSEAAIEASTR             79252000    103380000    123260000
+      CCSDVFNQVVK                          44176000     59682000     53120000
+      DIVGAVLK                             46171000     67228000     56161000
+      EALDFFAR                            181810000    248070000    195260000
+      EKDIVGAVLK                           36371000     37263000     35050000
+      GVIFYESHGK                           90064000    108230000    106310000
+      IGDYAGIK                            136880000    201320000    185230000
+      LPLVGGHEGAGVVVGMGENVK               117670000    112120000    127430000
+      SANLMAGHWVAISGAAGGLGSLAVQYAK         26847000     51399000     36144000
+      SIGGEVFIDFTK                         87411000     67298000     55269000
+      SIPETQK                              22957000     24969000     15891000
+      SISIVGSYVGNR                        260490000    331790000    300530000
+      VLGIDGGEGK                           19578000     33797000     32987000
+      VLGIDGGEGKEELFR                     289880000    311870000    299540000
+      VVGLSTLPEIYEK                       478690000    630360000    547410000
+      YSGVCHTDLHAWHGDWPLPVK               106810000    102470000    117790000
+      ANGTVVLVGLPAGAK                       4222300      5826900      5251000
+      CSSDVFNHVVK                           4108400           NA           NA
+      DIPVPKPKPNELLINVK                          NA           NA           NA
+      VVGLSSLPEIYEK                        37920000     49298000     42723000
+      DIPVPEPKPNEILINVK                    20720000     27639000     25243000
+      EALDFFSR                              6106700      7973600      5746300
+      GVIFYENK                              4436100      4909200      6790200
+      IQQGTDLAEVAPILCAGVTVYK                7789300      8260600      6990600
+      IVGLSELPK                            18189000     20769000     18659000
+      NMVSDIQEATK                           5529400      7627200      6945900
+      VLGIDAGEEK                                 NA           NA           NA
+                                       02500amol_R1 02500amol_R2 02500amol_R3
+      AAADALSDLEIK                               NA           NA           NA
+      AAADALSDLEIKDSK                       5887600      7339300      8671500
+      AEWALR                                5716200      4576900      4861600
+      DEGLHTDFACLLFAHLK                     5054000      4938900      3821300
+      DIHDWNNR                               643630           NA           NA
+      ELETLREENR                                 NA           NA      4632100
+      ESEFLFNAIHTIPEIGEK                   35195000     25647000     35866000
+      GMMPGLTFSNELICR                       8556100      9424100      9366600
+      IVTEAVEIEQR                          17987000     17888000     18586000
+      LLVAFGNK                             11012000     10335000      9589600
+      LLVAFGNKK                              779900           NA           NA
+      NKPDPAIVEK                           14737000     14363000     18185000
+      TNFFEK                                6806400      5626500      6161400
+      TVLFPIK                              10413000     11354000     12336000
+      VENPFDFMENISLAGK                     17083000     15522000     16315000
+      WIQDADALFGER                         19619000     21316000     19279000
+      YFLDALPVALLGMNADLMNQYVEFVADR         25305000     23134000     24870000
+      AANLGGVAVSGLEMAQNSQK                 11004000     10264000      8435700
+      DAVWFGPPK                                  NA           NA           NA
+      EIGYLFGAYR                                 NA           NA           NA
+      FHPSVNLSILK                           5560900      4656600      7816600
+      FLGFEQIFK                            40621000     41473000     39670000
+      GANIASFVMVADAMLDQGDVF                51325000     54944000     57841000
+      GCIISETGITSEQIHDIASAK                 6224400      7904100      8613600
+      GGLCVDLK                              9968700      9283600     11347000
+      ICYAFMR                               8646800      8668400      9809200
+      NSWEGVLTGK                           12989000     13175000     11884000
+      SLEEIVDEYSTFSESK                      8573600     10737000      8354000
+      VLPIVSVPER                           41889000     38770000     43274000
+      VTISGSGNVAQYAALK                      7008300       171360           NA
+      VTWENDNGEQEVAQGYR                     3445500      2817000      3205300
+      YVAGARPWTHVSNVDIALPCATQNEVSGDEAK           NA           NA           NA
+      AANLGGVAVSGLEMAQNSQR                 32562000     33356000     33135000
+      ALVAQGVK                                   NA     12265000     13513000
+      FIAEGSNMGSTPEAIAVFETAR               36885000     36661000     36512000
+      GANIASFIK                            18302000     17315000     18563000
+      GCIISETGITSEQVADISSAK                 3803500      3123700      3610500
+      HIGQDTDVPAGDIGVGGR                   34777000     27898000     32416000
+      IMINCFNECIDYAK                       13253000     13488000     13728000
+      ITWTSER                                    NA     16669000     16851000
+      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR        90039000     93374000     85175000
+      SLEQIVNEYSTFSENK                     53447000     51379000     59477000
+      STATGPSEAVWYGPPK                     49846000     48656000     45314000
+      VDIALPCATQNEVSGEEAK                  54355000     55323000     54875000
+      VIELGGTVVSLSDSK                      14090000     13965000     13768000
+      VQYIAGARPWTHVQK                       8375800           NA      6367700
+      VTWENDKGEQEVAQGYR                    34650000     31506000     34159000
+      AAGLTAAYAR                           55590000     53946000     56780000
+      APEAEQVLSAAATFPIAQPATDVEAR           26962000     27494000     29175000
+      AVQDNGESAFR                          13520000     12810000     13701000
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR        28675000     22185000     21301000
+      GFTLAEVK                             30524000     31060000     30327000
+      IAPRPLDLLRPVVR                        8927100     19370000     10253000
+      IIVFPR                               60220000     55242000     51978000
+      NQEIFDANVQR                          86931000     84510000     88035000
+      TIGIAVDHR                            22671000     22573000     23504000
+      VHFDQAGK                              9328900           NA     10929000
+      VHFDQAGKK                                  NA           NA           NA
+      ANELLINVK                           155870000    141810000    155330000
+      ANGTTVLVGMPAGAK                            NA           NA           NA
+      ATDGGAHGVINVSVSEAAIEASTR             72284000     89717000     90769000
+      CCSDVFNQVVK                          52898000     50244000     53945000
+      DIVGAVLK                             48102000           NA     49740000
+      EALDFFAR                            196550000    191730000    198810000
+      EKDIVGAVLK                           30028000     29995000     36681000
+      GVIFYESHGK                           86113000     83976000     92503000
+      IGDYAGIK                            138400000    124730000    144010000
+      LPLVGGHEGAGVVVGMGENVK               102290000    111850000    154880000
+      SANLMAGHWVAISGAAGGLGSLAVQYAK         38113000     20837000     28932000
+      SIGGEVFIDFTK                         52802000     69274000     73931000
+      SIPETQK                              40728000     20992000     24072000
+      SISIVGSYVGNR                        264570000    254410000    258680000
+      VLGIDGGEGK                           19685000     19083000     21352000
+      VLGIDGGEGKEELFR                     280620000    296920000    334390000
+      VVGLSTLPEIYEK                       532120000    501480000    507720000
+      YSGVCHTDLHAWHGDWPLPVK               148340000    146850000    143910000
+      ANGTVVLVGLPAGAK                       5045100      3858500      5154500
+      CSSDVFNHVVK                                NA           NA           NA
+      DIPVPKPKPNELLINVK                          NA           NA           NA
+      VVGLSSLPEIYEK                        37048000     37419000     34972000
+      DIPVPEPKPNEILINVK                    22230000     23146000     22329000
+      EALDFFSR                              7275100      6264500      8938100
+      GVIFYENK                              5046300      5064800      5736000
+      IQQGTDLAEVAPILCAGVTVYK                6779400      8251400      7051200
+      IVGLSELPK                            19479000     19093000     19870000
+      NMVSDIQEATK                           6367200      6652600      6190900
+      VLGIDAGEEK                                 NA           NA           NA
+                                       00250amol_R1 00250amol_R2 00250amol_R3
+      AAADALSDLEIK                               NA           NA           NA
+      AAADALSDLEIKDSK                      10341000     14096000     12612000
+      AEWALR                                4993800      6270600      5127000
+      DEGLHTDFACLLFAHLK                          NA           NA           NA
+      DIHDWNNR                                   NA      1872100      2191500
+      ELETLREENR                            4010200      4106000      4135400
+      ESEFLFNAIHTIPEIGEK                   26978000     25029000     37364000
+      GMMPGLTFSNELICR                       7382600           NA      7722400
+      IVTEAVEIEQR                          17648000     17566000     19505000
+      LLVAFGNK                              6784400      6587700      7348000
+      LLVAFGNKK                                  NA      1785100           NA
+      NKPDPAIVEK                           16056000     20257000     18999000
+      TNFFEK                                6504500      5853400      5505400
+      TVLFPIK                               9104200     10083000     11724000
+      VENPFDFMENISLAGK                     17117000     18403000     18359000
+      WIQDADALFGER                         14133000     15309000     17318000
+      YFLDALPVALLGMNADLMNQYVEFVADR         23305000     23777000     24532000
+      AANLGGVAVSGLEMAQNSQK                 10457000     10661000      6016500
+      DAVWFGPPK                                  NA           NA           NA
+      EIGYLFGAYR                                 NA     21319000     21963000
+      FHPSVNLSILK                           4699500      6726600      5435800
+      FLGFEQIFK                            45495000     46192000     44743000
+      GANIASFVMVADAMLDQGDVF                72889000     85591000     78097000
+      GCIISETGITSEQIHDIASAK                 8443900      9141200      7073800
+      GGLCVDLK                             11138000     11812000     10782000
+      ICYAFMR                              10086000     11127000     12288000
+      NSWEGVLTGK                           11947000     14347000     14353000
+      SLEEIVDEYSTFSESK                      8495100      8495100      8272500
+      VLPIVSVPER                           32402000     34047000     40022000
+      VTISGSGNVAQYAALK                      3227900           NA       161920
+      VTWENDNGEQEVAQGYR                     2857900      2755000      3249900
+      YVAGARPWTHVSNVDIALPCATQNEVSGDEAK           NA           NA           NA
+      AANLGGVAVSGLEMAQNSQR                 35653000     35405000     39915000
+      ALVAQGVK                             13491000     13377000     12267000
+      FIAEGSNMGSTPEAIAVFETAR               41350000     28035000     43205000
+      GANIASFIK                            17215000     18642000     19366000
+      GCIISETGITSEQVADISSAK                 4042800      3750800      3558700
+      HIGQDTDVPAGDIGVGGR                   32278000     37415000     31818000
+      IMINCFNECIDYAK                       14096000     13703000     13300000
+      ITWTSER                              16990000     17452000     16791000
+      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR       101350000    100250000     98734000
+      SLEQIVNEYSTFSENK                     52412000     54575000     60259000
+      STATGPSEAVWYGPPK                     45139000     46024000     38452000
+      VDIALPCATQNEVSGEEAK                  47254000     43910000     50991000
+      VIELGGTVVSLSDSK                      13320000     13588000     13316000
+      VQYIAGARPWTHVQK                      10342000     10344000      4620800
+      VTWENDKGEQEVAQGYR                    35383000     42910000     39544000
+      AAGLTAAYAR                           60729000     58496000     59234000
+      APEAEQVLSAAATFPIAQPATDVEAR           19547000     18843000     15087000
+      AVQDNGESAFR                            268680     14220000     11806000
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR        26556000     27642000     29389000
+      GFTLAEVK                             29765000     35076000     31584000
+      IAPRPLDLLRPVVR                       12606000     24964000     24360000
+      IIVFPR                               42118000     49047000     44088000
+      NQEIFDANVQR                          87449000     83524000     78580000
+      TIGIAVDHR                            20455000     23590000     20934000
+      VHFDQAGK                             10531000     11197000     10452000
+      VHFDQAGKK                                  NA           NA           NA
+      ANELLINVK                           158470000    171860000    159160000
+      ANGTTVLVGMPAGAK                            NA           NA           NA
+      ATDGGAHGVINVSVSEAAIEASTR             75023000     78213000     66210000
+      CCSDVFNQVVK                          50024000     57857000     56074000
+      DIVGAVLK                             51757000     56241000           NA
+      EALDFFAR                            184280000    186070000    204420000
+      EKDIVGAVLK                           32936000     37416000     37527000
+      GVIFYESHGK                           95943000     92547000    100630000
+      IGDYAGIK                            129640000    131670000           NA
+      LPLVGGHEGAGVVVGMGENVK               114690000    123680000     85956000
+      SANLMAGHWVAISGAAGGLGSLAVQYAK         26012000     31135000     29774000
+      SIGGEVFIDFTK                         61723000     61694000     53824000
+      SIPETQK                              27069000     24214000     25389000
+      SISIVGSYVGNR                        236710000    255600000    259950000
+      VLGIDGGEGK                            9778200     11145000     10732000
+      VLGIDGGEGKEELFR                     305350000    331550000    346620000
+      VVGLSTLPEIYEK                       514510000    498210000    529220000
+      YSGVCHTDLHAWHGDWPLPVK                95623000    114260000    110030000
+      ANGTVVLVGLPAGAK                       4598600      4766400      5428000
+      CSSDVFNHVVK                                NA      3945100      4150700
+      DIPVPKPKPNELLINVK                          NA           NA           NA
+      VVGLSSLPEIYEK                        35779000     34603000     34285000
+      DIPVPEPKPNEILINVK                      737750     20059000     21287000
+      EALDFFSR                              7171800           NA      7016600
+      GVIFYENK                                   NA      5737200      6120000
+      IQQGTDLAEVAPILCAGVTVYK                9353800      6587300      9297600
+      IVGLSELPK                            17325000     18743000     20155000
+      NMVSDIQEATK                           5760900      5612700      6519300
+      VLGIDAGEEK                                 NA           NA           NA
+                                       50000amol_R1 50000amol_R2 50000amol_R3
+      AAADALSDLEIK                               NA           NA           NA
+      AAADALSDLEIKDSK                       4766700      3058100     11509000
+      AEWALR                                5520400      5429300      5596700
+      DEGLHTDFACLLFAHLK                          NA      5315500      2753900
+      DIHDWNNR                              3051200      1351100           NA
+      ELETLREENR                            5888600      5456300      6315500
+      ESEFLFNAIHTIPEIGEK                   42653000     39566000     34175000
+      GMMPGLTFSNELICR                       9980500      8618700      6734000
+      IVTEAVEIEQR                          28079000     27387000     25304000
+      LLVAFGNK                             17607000     17774000     15596000
+      LLVAFGNKK                                  NA           NA           NA
+      NKPDPAIVEK                           24252000     25755000     25026000
+      TNFFEK                                6046000      6600700      6233800
+      TVLFPIK                              17670000     16620000     15766000
+      VENPFDFMENISLAGK                     15014000     14837000     14936000
+      WIQDADALFGER                         16929000     14624000     18249000
+      YFLDALPVALLGMNADLMNQYVEFVADR         28543000     27010000     26928000
+      AANLGGVAVSGLEMAQNSQK                 11124000     10241000      9616500
+      DAVWFGPPK                                  NA           NA           NA
+      EIGYLFGAYR                                 NA           NA           NA
+      FHPSVNLSILK                          14260000      6666500      8597900
+      FLGFEQIFK                            43813000     45200000     42483000
+      GANIASFVMVADAMLDQGDVF                48322000     46906000     48927000
+      GCIISETGITSEQIHDIASAK                 8480300      8741000     10406000
+      GGLCVDLK                             13324000     14947000     12747000
+      ICYAFMR                              10431000     10013000      9705300
+      NSWEGVLTGK                           17950000     16552000     15361000
+      SLEEIVDEYSTFSESK                      6270500      7993300      6199500
+      VLPIVSVPER                           50525000     47285000     41443000
+      VTISGSGNVAQYAALK                      6703700      5475000           NA
+      VTWENDNGEQEVAQGYR                          NA      2823000           NA
+      YVAGARPWTHVSNVDIALPCATQNEVSGDEAK           NA           NA           NA
+      AANLGGVAVSGLEMAQNSQR                 35098000     25697000     27071000
+      ALVAQGVK                             17854000     16599000     15913000
+      FIAEGSNMGSTPEAIAVFETAR               22046000     33014000     36481000
+      GANIASFIK                            22495000     21485000     21137000
+      GCIISETGITSEQVADISSAK                 4158000      4330000      5303000
+      HIGQDTDVPAGDIGVGGR                   48952000     50479000     40173000
+      IMINCFNECIDYAK                       17419000     12631000     12105000
+      ITWTSER                              18711000     19483000           NA
+      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR        85893000     11446000     10779000
+      SLEQIVNEYSTFSENK                     61598000     53216000     60519000
+      STATGPSEAVWYGPPK                     46535000           NA     44619000
+      VDIALPCATQNEVSGEEAK                  61582000     56936000     49713000
+      VIELGGTVVSLSDSK                      16215000     14363000     14777000
+      VQYIAGARPWTHVQK                       4738300      4920000           NA
+      VTWENDKGEQEVAQGYR                    38959000     43698000     43799000
+      AAGLTAAYAR                           73831000     73408000     74801000
+      APEAEQVLSAAATFPIAQPATDVEAR           32425000     34162000     30033000
+      AVQDNGESAFR                          15753000     14619000     16620000
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR        16317000     13280000     16185000
+      GFTLAEVK                             35869000     32868000     36511000
+      IAPRPLDLLRPVVR                       22705000     12422000     13232000
+      IIVFPR                               66043000     62327000     56243000
+      NQEIFDANVQR                          94201000     97850000     97828000
+      TIGIAVDHR                                  NA     27610000     30487000
+      VHFDQAGK                             21897000     25643000     24551000
+      VHFDQAGKK                                  NA           NA           NA
+      ANELLINVK                           255170000    239600000    232950000
+      ANGTTVLVGMPAGAK                      24783000     21088000     22228000
+      ATDGGAHGVINVSVSEAAIEASTR            115520000    138720000    170230000
+      CCSDVFNQVVK                          56947000     59907000     55909000
+      DIVGAVLK                             63901000     62136000     62045000
+      EALDFFAR                            224370000    215930000    209770000
+      EKDIVGAVLK                           47384000     48729000     44169000
+      GVIFYESHGK                          128450000    136440000    150730000
+      IGDYAGIK                            170190000    169400000    169190000
+      LPLVGGHEGAGVVVGMGENVK               159280000    162300000    131700000
+      SANLMAGHWVAISGAAGGLGSLAVQYAK         22408000     20918000     39602000
+      SIGGEVFIDFTK                         63157000     68817000     51520000
+      SIPETQK                              15143000     11129000     10265000
+      SISIVGSYVGNR                        347960000    336540000    320680000
+      VLGIDGGEGK                           26500000     27786000     30555000
+      VLGIDGGEGKEELFR                     376900000    366510000    342830000
+      VVGLSTLPEIYEK                       591740000    509800000    563150000
+      YSGVCHTDLHAWHGDWPLPVK               120300000    105060000    118290000
+      ANGTVVLVGLPAGAK                       6666500      6713300      4377700
+      CSSDVFNHVVK                           4862700      4156600      4399100
+      DIPVPKPKPNELLINVK                          NA           NA           NA
+      VVGLSSLPEIYEK                        39762000     40097000     40341000
+      DIPVPEPKPNEILINVK                    24035000     22053000     20636000
+      EALDFFSR                              8182900      8111100           NA
+      GVIFYENK                                   NA      7659100      5123000
+      IQQGTDLAEVAPILCAGVTVYK                7828700      7746200      6872100
+      IVGLSELPK                            24640000     21307000     22154000
+      NMVSDIQEATK                           6084700      4691700      6858900
+      VLGIDAGEEK                                 NA           NA           NA
+                                       05000amol_R1 05000amol_R2 05000amol_R3
+      AAADALSDLEIK                               NA           NA           NA
+      AAADALSDLEIKDSK                            NA      2245100           NA
+      AEWALR                                5855600      4951000      5088000
+      DEGLHTDFACLLFAHLK                     5431700           NA           NA
+      DIHDWNNR                                   NA           NA           NA
+      ELETLREENR                                 NA      4476600           NA
+      ESEFLFNAIHTIPEIGEK                   29365000     32819000     34116000
+      GMMPGLTFSNELICR                      12050000     10131000      8760800
+      IVTEAVEIEQR                          16551000     16858000     18016000
+      LLVAFGNK                             10618000           NA     11095000
+      LLVAFGNKK                                  NA      1405200           NA
+      NKPDPAIVEK                           16009000     16631000     17552000
+      TNFFEK                                6488500      7516200      6069900
+      TVLFPIK                              11783000     12212000     10672000
+      VENPFDFMENISLAGK                     19204000     16765000     18244000
+      WIQDADALFGER                         19638000     21174000     19946000
+      YFLDALPVALLGMNADLMNQYVEFVADR         23475000     23032000     23512000
+      AANLGGVAVSGLEMAQNSQK                  9171700      5909800      9607500
+      DAVWFGPPK                           163980000           NA           NA
+      EIGYLFGAYR                                 NA           NA           NA
+      FHPSVNLSILK                           5547700      4855100      4928900
+      FLGFEQIFK                            41632000     43747000     38452000
+      GANIASFVMVADAMLDQGDVF                54392000     50645000     53524000
+      GCIISETGITSEQIHDIASAK                 7523500      7752000      6725200
+      GGLCVDLK                             11188000           NA      8928500
+      ICYAFMR                               9772700      9965400      8956800
+      NSWEGVLTGK                           10818000     12374000     12567000
+      SLEEIVDEYSTFSESK                      9056500      8346000      8665300
+      VLPIVSVPER                           44170000     45348000     42537000
+      VTISGSGNVAQYAALK                           NA      6520200      2968900
+      VTWENDNGEQEVAQGYR                     3797200      3316100      3540200
+      YVAGARPWTHVSNVDIALPCATQNEVSGDEAK           NA           NA           NA
+      AANLGGVAVSGLEMAQNSQR                 36478000     30917000      8902700
+      ALVAQGVK                             11876000     13251000     12316000
+      FIAEGSNMGSTPEAIAVFETAR               41019000     39142000     37644000
+      GANIASFIK                            19327000     16584000     18711000
+      GCIISETGITSEQVADISSAK                 4437000      4159300      2672800
+      HIGQDTDVPAGDIGVGGR                   33222000     31486000     27562000
+      IMINCFNECIDYAK                       15101000     11838000     13346000
+      ITWTSER                              17860000     21368000     18150000
+      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR        81966000     93082000     78985000
+      SLEQIVNEYSTFSENK                     63205000     58515000     54849000
+      STATGPSEAVWYGPPK                     44663000     48340000     49658000
+      VDIALPCATQNEVSGEEAK                  53196000     49142000     54984000
+      VIELGGTVVSLSDSK                      13868000     14514000     13164000
+      VQYIAGARPWTHVQK                      13966000      4334500      9447700
+      VTWENDKGEQEVAQGYR                    34863000     35762000     34957000
+      AAGLTAAYAR                           56674000     59860000     56589000
+      APEAEQVLSAAATFPIAQPATDVEAR           28597000     27560000     27790000
+      AVQDNGESAFR                          14360000     14340000     12363000
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR        32396000     28015000     27295000
+      GFTLAEVK                             28625000     30395000     28597000
+      IAPRPLDLLRPVVR                       19446000     16928000      9539600
+      IIVFPR                               55047000     54330000     55103000
+      NQEIFDANVQR                          97314000     88930000     93185000
+      TIGIAVDHR                            28376000     28133000     25086000
+      VHFDQAGK                              9480100      9404800      9381100
+      VHFDQAGKK                                  NA           NA           NA
+      ANELLINVK                           165120000    167430000    161860000
+      ANGTTVLVGMPAGAK                      22431000     18316000     20300000
+      ATDGGAHGVINVSVSEAAIEASTR             83974000     89722000     96564000
+      CCSDVFNQVVK                          49537000     50409000     49880000
+      DIVGAVLK                                   NA     54320000           NA
+      EALDFFAR                            198790000    201530000    192620000
+      EKDIVGAVLK                           31788000     34168000     34761000
+      GVIFYESHGK                           89159000     87110000     93689000
+      IGDYAGIK                            139160000    145850000    131210000
+      LPLVGGHEGAGVVVGMGENVK               126630000    129240000    128900000
+      SANLMAGHWVAISGAAGGLGSLAVQYAK         25320000     14734000     22950000
+      SIGGEVFIDFTK                         66386000     65128000     59226000
+      SIPETQK                              35061000     33558000     18176000
+      SISIVGSYVGNR                        272760000    274860000    271630000
+      VLGIDGGEGK                           19514000     20861000     20564000
+      VLGIDGGEGKEELFR                     300540000    305140000    301640000
+      VVGLSTLPEIYEK                       542550000    536350000    543290000
+      YSGVCHTDLHAWHGDWPLPVK               123800000    136520000    148650000
+      ANGTVVLVGLPAGAK                       4174600      4888700      4201100
+      CSSDVFNHVVK                                NA      3599100      1324300
+      DIPVPKPKPNELLINVK                          NA           NA           NA
+      VVGLSSLPEIYEK                        40341000     41004000     38382000
+      DIPVPEPKPNEILINVK                    19922000     21247000     20546000
+      EALDFFSR                              6808500      6789300      6528400
+      GVIFYENK                                   NA           NA           NA
+      IQQGTDLAEVAPILCAGVTVYK                7543700      9067000      8002600
+      IVGLSELPK                            18601000     20152000     18739000
+      NMVSDIQEATK                           5489200      5901200      7053100
+      VLGIDAGEEK                                 NA           NA      4374200
+                                       00500amol_R1 00500amol_R2 00500amol_R3
+      AAADALSDLEIK                               NA           NA           NA
+      AAADALSDLEIKDSK                      13581000      3857100      3408400
+      AEWALR                                5981800      5561300      5153400
+      DEGLHTDFACLLFAHLK                          NA           NA           NA
+      DIHDWNNR                              2065700           NA           NA
+      ELETLREENR                            4544500      3601600      6076700
+      ESEFLFNAIHTIPEIGEK                   33732000     36075000     33870000
+      GMMPGLTFSNELICR                      11000000      8619700      8180300
+      IVTEAVEIEQR                          19916000     18134000     18131000
+      LLVAFGNK                              7850300      9171900      9439800
+      LLVAFGNKK                             2434900           NA           NA
+      NKPDPAIVEK                           19665000     20910000     21316000
+      TNFFEK                                7301400      5672100      6357000
+      TVLFPIK                              10149000     10174000     12701000
+      VENPFDFMENISLAGK                     18620000     15523000     17782000
+      WIQDADALFGER                         17870000     15877000     15662000
+      YFLDALPVALLGMNADLMNQYVEFVADR         28671000     26459000     24449000
+      AANLGGVAVSGLEMAQNSQK                 11134000     10031000     10783000
+      DAVWFGPPK                                  NA           NA    173600000
+      EIGYLFGAYR                                 NA           NA           NA
+      FHPSVNLSILK                           5049900      5412800      4896300
+      FLGFEQIFK                            44682000     49538000     45829000
+      GANIASFVMVADAMLDQGDVF                73304000     71656000     72863000
+      GCIISETGITSEQIHDIASAK                 7035500      9470300      8603100
+      GGLCVDLK                             11027000     10436000           NA
+      ICYAFMR                              12064000     13340000     11924000
+      NSWEGVLTGK                           14270000     12867000     15402000
+      SLEEIVDEYSTFSESK                     10537000      8580900      8875100
+      VLPIVSVPER                           42713000     45913000     42373000
+      VTISGSGNVAQYAALK                           NA           NA       114880
+      VTWENDNGEQEVAQGYR                     3339600      2656700      2754200
+      YVAGARPWTHVSNVDIALPCATQNEVSGDEAK           NA           NA           NA
+      AANLGGVAVSGLEMAQNSQR                 35660000      9801500     37708000
+      ALVAQGVK                             13475000     14918000     14473000
+      FIAEGSNMGSTPEAIAVFETAR               41312000     44045000     42909000
+      GANIASFIK                            21582000     22035000     22899000
+      GCIISETGITSEQVADISSAK                 4240700      3561200      3530800
+      HIGQDTDVPAGDIGVGGR                   36389000     43352000     34656000
+      IMINCFNECIDYAK                       13809000     14127000     14172000
+      ITWTSER                              18777000     20111000     20650000
+      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR        98332000    100620000    103800000
+      SLEQIVNEYSTFSENK                     57182000     52723000     52679000
+      STATGPSEAVWYGPPK                     45712000     50203000     45932000
+      VDIALPCATQNEVSGEEAK                  60393000     56938000     55713000
+      VIELGGTVVSLSDSK                      15646000     16003000     13963000
+      VQYIAGARPWTHVQK                       6546500      9333900           NA
+      VTWENDKGEQEVAQGYR                    41604000     41930000     40345000
+      AAGLTAAYAR                           67658000     68629000     68448000
+      APEAEQVLSAAATFPIAQPATDVEAR           20302000     18780000     14549000
+      AVQDNGESAFR                          13298000     14881000     15462000
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR        25085000     29607000     27163000
+      GFTLAEVK                             32146000     35644000     35608000
+      IAPRPLDLLRPVVR                       31518000     24931000     29313000
+      IIVFPR                               50827000     52423000     50617000
+      NQEIFDANVQR                          98888000     92385000     90198000
+      TIGIAVDHR                            23862000     23404000     25101000
+      VHFDQAGK                             12013000     11715000     11022000
+      VHFDQAGKK                                  NA           NA           NA
+      ANELLINVK                           183080000    170030000    152060000
+      ANGTTVLVGMPAGAK                            NA           NA           NA
+      ATDGGAHGVINVSVSEAAIEASTR             86872000     96722000    100900000
+      CCSDVFNQVVK                          50684000     56791000     53475000
+      DIVGAVLK                             61411000     49703000     51248000
+      EALDFFAR                            215740000    217940000    209560000
+      EKDIVGAVLK                           38526000     38143000     34845000
+      GVIFYESHGK                          101610000    102340000     98705000
+      IGDYAGIK                            131910000    127840000    136180000
+      LPLVGGHEGAGVVVGMGENVK               149250000    123430000    151460000
+      SANLMAGHWVAISGAAGGLGSLAVQYAK         40856000     31000000     37518000
+      SIGGEVFIDFTK                         58339000     70890000     80179000
+      SIPETQK                              25544000     21280000     20038000
+      SISIVGSYVGNR                        288100000    290000000    278750000
+      VLGIDGGEGK                           10734000      8886300     10019000
+      VLGIDGGEGKEELFR                     341350000    367580000    364430000
+      VVGLSTLPEIYEK                       551250000    604480000    555250000
+      YSGVCHTDLHAWHGDWPLPVK               129790000     92341000    119170000
+      ANGTVVLVGLPAGAK                       5176000      5871100      5028300
+      CSSDVFNHVVK                           4628900           NA      1072600
+      DIPVPKPKPNELLINVK                          NA           NA           NA
+      VVGLSSLPEIYEK                        37040000     34270000     35832000
+      DIPVPEPKPNEILINVK                          NA     20424000     22525000
+      EALDFFSR                              7007000      6903200     10314000
+      GVIFYENK                              5495200      5192100      6189600
+      IQQGTDLAEVAPILCAGVTVYK                9206400      8705200      8108000
+      IVGLSELPK                            20179000     22906000     22137000
+      NMVSDIQEATK                           6515100      6892600      4909200
+      VLGIDAGEEK                                 NA           NA           NA
+                                       00050amol_R1 00050amol_R2 00050amol_R3
+      AAADALSDLEIK                         20886000           NA           NA
+      AAADALSDLEIKDSK                       2214900           NA           NA
+      AEWALR                                5747200      6105600      5694800
+      DEGLHTDFACLLFAHLK                    13861000      8548300      6367100
+      DIHDWNNR                                   NA      2247900      2202500
+      ELETLREENR                            8499500      8460600      7902200
+      ESEFLFNAIHTIPEIGEK                   38346000     36535000     29781000
+      GMMPGLTFSNELICR                       6151900           NA           NA
+      IVTEAVEIEQR                          30619000     25508000     23114000
+      LLVAFGNK                              8127400      7157900      7904400
+      LLVAFGNKK                             2362900      2802500      3551400
+      NKPDPAIVEK                           22673000     18246000     22252000
+      TNFFEK                                6226000      7341400      6135600
+      TVLFPIK                              10629000     10796000     11721000
+      VENPFDFMENISLAGK                     14715000     15365000     15861000
+      WIQDADALFGER                         17249000     14802000     15931000
+      YFLDALPVALLGMNADLMNQYVEFVADR         33055000     31808000     29785000
+      AANLGGVAVSGLEMAQNSQK                       NA     11810000      8983300
+      DAVWFGPPK                                  NA           NA           NA
+      EIGYLFGAYR                           32328000     25658000     28783000
+      FHPSVNLSILK                          14125000      8598000      8592100
+      FLGFEQIFK                            65732000     61723000     58388000
+      GANIASFVMVADAMLDQGDVF               132300000     99299000     92946000
+      GCIISETGITSEQIHDIASAK                10779000     11435000      8390700
+      GGLCVDLK                             12594000     11354000     12042000
+      ICYAFMR                              11076000     10936000     10639000
+      NSWEGVLTGK                           13001000     15028000     15520000
+      SLEEIVDEYSTFSESK                     11166000      8548800      6445100
+      VLPIVSVPER                           36438000     34005000     36401000
+      VTISGSGNVAQYAALK                      4470300      3338400           NA
+      VTWENDNGEQEVAQGYR                     3588500      3160500      3463000
+      YVAGARPWTHVSNVDIALPCATQNEVSGDEAK      9561000      6181500      5222300
+      AANLGGVAVSGLEMAQNSQR                 32679000     30286000     31639000
+      ALVAQGVK                                   NA       756380           NA
+      FIAEGSNMGSTPEAIAVFETAR               44255000     43687000     42772000
+      GANIASFIK                            17833000     19129000     18912000
+      GCIISETGITSEQVADISSAK                 8135900      5579800           NA
+      HIGQDTDVPAGDIGVGGR                   48231000     39830000     36437000
+      IMINCFNECIDYAK                       14038000     15355000     14142000
+      ITWTSER                                    NA     20222000     18486000
+      SEPEFQQAYEEVVSSLEDSTLFEQHPEYR       101350000           NA    106000000
+      SLEQIVNEYSTFSENK                     53812000     10437000     48862000
+      STATGPSEAVWYGPPK                     46355000     41778000     41345000
+      VDIALPCATQNEVSGEEAK                   9008400     48730000     49888000
+      VIELGGTVVSLSDSK                      20895000     16526000     14645000
+      VQYIAGARPWTHVQK                            NA           NA           NA
+      VTWENDKGEQEVAQGYR                    65052000     54825000     53014000
+      AAGLTAAYAR                           55470000     62138000     59012000
+      APEAEQVLSAAATFPIAQPATDVEAR            5320200      3008100      3149500
+      AVQDNGESAFR                          18130000     18466000     15488000
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR        33564000     25133000     32184000
+      GFTLAEVK                             34750000     37621000     36671000
+      IAPRPLDLLRPVVR                       21233000     10944000     10565000
+      IIVFPR                                2242100      2204500     46295000
+      NQEIFDANVQR                          81259000     85991000     84943000
+      TIGIAVDHR                            35365000     32625000     27458000
+      VHFDQAGK                             14072000     15904000     15879000
+      VHFDQAGKK                             2837100      2097300      1809700
+      ANELLINVK                           184930000    178880000    182820000
+      ANGTTVLVGMPAGAK                      22679000     20585000     20851000
+      ATDGGAHGVINVSVSEAAIEASTR            124550000    101040000     90585000
+      CCSDVFNQVVK                          71812000     66607000     69073000
+      DIVGAVLK                             60042000     61109000     58708000
+      EALDFFAR                            227080000    210410000    212330000
+      EKDIVGAVLK                           62427000     35459000     33921000
+      GVIFYESHGK                          229190000    226950000    171090000
+      IGDYAGIK                                   NA    129730000    128600000
+      LPLVGGHEGAGVVVGMGENVK               128030000    110050000    136420000
+      SANLMAGHWVAISGAAGGLGSLAVQYAK         61716000     46075000     44490000
+      SIGGEVFIDFTK                         89599000     44375000     65134000
+      SIPETQK                              33610000     32138000     59548000
+      SISIVGSYVGNR                        299540000    265510000    271690000
+      VLGIDGGEGK                           11276000      9520100      9843400
+      VLGIDGGEGKEELFR                     453940000    460560000    487960000
+      VVGLSTLPEIYEK                       563450000    526950000    557180000
+      YSGVCHTDLHAWHGDWPLPVK                84953000    124150000    106120000
+      ANGTVVLVGLPAGAK                       6290300      5874900      5615000
+      CSSDVFNHVVK                           6555400      4441900      5483200
+      DIPVPKPKPNELLINVK                     8572000      6594800      4489600
+      VVGLSSLPEIYEK                        34226000     31966000     35836000
+      DIPVPEPKPNEILINVK                     4256400     28021000     21048000
+      EALDFFSR                              7828000      6971000      6133400
+      GVIFYENK                              7300500      7597400      6775400
+      IQQGTDLAEVAPILCAGVTVYK                7743900      8589700      8480300
+      IVGLSELPK                            16650000     17530000     17048000
+      NMVSDIQEATK                           7612200      7759200      7525400
+      VLGIDAGEEK                                 NA           NA           NA
 
 ---
 
@@ -825,30 +913,30 @@
       12500amol_R1 12500amol_R1
       12500amol_R2 12500amol_R2
       12500amol_R3 12500amol_R3
-      125amol_R1     125amol_R1
-      125amol_R2     125amol_R2
-      125amol_R3     125amol_R3
+      00125amol_R1 00125amol_R1
+      00125amol_R2 00125amol_R2
+      00125amol_R3 00125amol_R3
       25000amol_R1 25000amol_R1
       25000amol_R2 25000amol_R2
       25000amol_R3 25000amol_R3
-      2500amol_R1   2500amol_R1
-      2500amol_R2   2500amol_R2
-      2500amol_R3   2500amol_R3
-      250amol_R1     250amol_R1
-      250amol_R2     250amol_R2
-      250amol_R3     250amol_R3
+      02500amol_R1 02500amol_R1
+      02500amol_R2 02500amol_R2
+      02500amol_R3 02500amol_R3
+      00250amol_R1 00250amol_R1
+      00250amol_R2 00250amol_R2
+      00250amol_R3 00250amol_R3
       50000amol_R1 50000amol_R1
       50000amol_R2 50000amol_R2
       50000amol_R3 50000amol_R3
-      5000amol_R1   5000amol_R1
-      5000amol_R2   5000amol_R2
-      5000amol_R3   5000amol_R3
-      500amol_R1     500amol_R1
-      500amol_R2     500amol_R2
-      500amol_R3     500amol_R3
-      50amol_R1       50amol_R1
-      50amol_R2       50amol_R2
-      50amol_R3       50amol_R3
+      05000amol_R1 05000amol_R1
+      05000amol_R2 05000amol_R2
+      05000amol_R3 05000amol_R3
+      00500amol_R1 00500amol_R1
+      00500amol_R2 00500amol_R2
+      00500amol_R3 00500amol_R3
+      00050amol_R1 00050amol_R1
+      00050amol_R2 00050amol_R2
+      00050amol_R3 00050amol_R3
 
 ---
 
