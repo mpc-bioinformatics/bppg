@@ -2,7 +2,7 @@
 % Please edit documentation in R/imputationMethods.R
 \name{.QRILC}
 \alias{.QRILC}
-\title{Impute missing values using MLE and QRILC}
+\title{Impute missing values using QRILC}
 \usage{
 .QRILC(D, ...)
 }
@@ -24,11 +24,6 @@ Missing at random (MAR) values are imputed using maximum
 likelihood estimation (MLE), while missing not at random
 (MNAR) values are imputed using quantile regression
 imputation of left-censored data (QRILC).
-
-A model selector matrix is used to assign missing values to
-either the MAR or MNAR model. In the current implementation,
-the selector is initialized with only 1s, meaning all missing
-values are treated as MAR.
 }
 \references{
 Based on the {imputeLCMD} package:

@@ -32,24 +32,9 @@
 }
 
 
-#' Imputation method using half of the minimum observed intensity per row 
-#' (peptide) to impute missing values in proteomics data. 
-#' Helper function that extracts intensity columns and applies the half minimum
-#' imputation method to the data. 
-#' 
-#' @param D             \strong{data.frame} 
-#'                      Dataframe of peptides.txt from MaxQuant  
-#' @param intensities   \strong{data.frame}
-#'                      containing only intensity columns (e.g. "Intensity." or
-#'                      "LFQ.intensity.")extracted from the original data frame
-#'                      D using the .extractIntensities function.
-#' 
-#' @return D    \strong{data.frame} with imputed values for missing entries,
-#'              where each missing value is replaced by half of the minimum 
-#'              observed intensity for the corresponding row (peptide) in the
-#'              original data matrix D.
+#' was min2impute
 
-.colMeanImputation <- function(D, intensities){
+.colMeanImputation <- function(D, intensities){ # at this point we expect 
 
     for (j in seq_len(ncol(D))) {
 
@@ -120,6 +105,7 @@
 #' Analysis (BPCA) from the \pkg{pcaMethods} package. Missing values are
 #' estimated by modeling the latent structure of the data using principal
 #' components and reconstructing incomplete observations.
+#' Normal distribution is expected and the function will center and scale data
 #'
 #' BPCA is particularly useful for high-dimensional datasets with
 #' correlated features, such as proteomics intensity matrices.
@@ -138,8 +124,8 @@
 #' https://bioconductor.org/packages/pcaMethods
 #' 
 
-.BPCA <- function(D, intensities) {
-    D_log <- log2(as.matrix(D))
+.BPCA <- function(intensities,...) {
+    D_log <- log2(as.matrix(intensities))
 
     fit <- pcaMethods::pca(
         D_log,

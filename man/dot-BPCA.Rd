@@ -5,17 +5,18 @@
 \title{Performs missing value imputation using Bayesian Principal Component
 Analysis (BPCA) from the \pkg{pcaMethods} package. Missing values are
 estimated by modeling the latent structure of the data using principal
-components and reconstructing incomplete observations.}
+components and reconstructing incomplete observations.
+Normal distribution is expected and the function will center and scale data}
 \usage{
-.BPCA(D, intensities)
+.BPCA(intensities, ...)
 }
 \arguments{
-\item{D}{\link{matrix}
-Numeric matrix containing peptide intensity values.}
-
 \item{intensities}{\link{matrix}
 Full intensity matrix passed through aggregateReplicates.
 Currently unused in this imputation method.}
+
+\item{D}{\link{matrix}
+Numeric matrix containing peptide intensity values.}
 }
 \value{
 A numeric matrix with missing values imputed.
