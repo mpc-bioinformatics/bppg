@@ -3,6 +3,43 @@
 # setNodeLabels
 # plotBipartiteGraph
 
+# library(igraph)
+# library(ggraph)
+# plotBPPG <- function(G) {
+#     ## add Node labels for three categories
+#     V(G)$type <- !V(G)$type
+#     type <- integer(length(igraph::V(G)))
+#     type[!igraph::V(G)$type] <- "Protein"
+#     type[igraph::V(G)$type] <- "Shared Peptides"
+#     type[igraph::V(G)$type & igraph::degree(G) == 1] <- "Unique Peptides"
+
+#     #set edge attributes for edges to unique peptides
+#     uniquePeptides <- V(G)[igraph::V(G)$type & igraph::degree(G) == 1]
+#     E(G)$unique <- FALSE
+#     E(G)[.from(uniquePeptides)]$unique <- TRUE
+
+#     layout <- create_layout(G, layout = 'igraph', algorithm = 'bipartite')
+#     layout$nodeType <- type
+#     # layout$name[layout$type] <- round(V(G)$pep_logRatio [layout$type], 2)
+#     layout$name[layout$type] <- "peptide"
+
+#     layout <- layout[order(layout$x),]
+#     layout$x[!layout$type] <- (seq(0, max(layout$x), length.out = sum(!layout$type)) + layout$x[!layout$type])/2
+#     layout <- layout[order(layout$.ggraph.index),]
+
+#     ggraph(G, layout = layout) + 
+#         geom_edge_link0(aes(edge_alpha = factor(unique))) + 
+#         geom_node_point(size = 15, aes(fill = factor(nodeType), shape = factor(nodeType))) +
+#         geom_node_label(aes(label = name, fill = factor(nodeType)), size = 4, show.legend = FALSE)  +
+#         scale_edge_alpha_manual(name = "Edge to unique peptide", values = c(0.3, 1)) + 
+#         scale_shape_manual(values = c(21,22,23), name = "Node Type") + 
+#         scale_fill_manual(values = c("mediumseagreen", "cadetblue2", "#FF8C00"), name = "Node Type") +
+#         coord_cartesian(ylim=c(-0.1,1.1)) + theme_graph()
+
+# }
+
+
+
 
 #' Function do define diamond shape for unique peptides in bipartite graph.
 #' this works for igraph.
