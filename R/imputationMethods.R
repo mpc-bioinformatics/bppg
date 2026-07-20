@@ -1,23 +1,37 @@
-#' Impute missing values with half min value per row
+#' Impute missing values with half min value per row/peptide. This approach is 
+#' applicable for MNAR values in proteomics data. It considers group wise 
+#' information before dataset wide information
 #' 
-#' Missing values are imputated using half of the minimum observed intensity
-#' per peptide row. This method is commonly used for MNAR values in proteomics data, 
-#' where missingness is often associated with low abundance peptides.
-#' By imputing missing values with half of the minimum observed intensity, we can provide 
-#' a conservative estimate for the missing values while preserving the overall distribution of the data.
+#' @param D             \strong{data.frame} \cr
+#'                      Data frame of the columns of one group, includes 
+#'                      missing values needed to be imputed. Used for imputation
+#'                      value first.
+#' @param intensities   \strong{data.frame} \cr
+#'                      Data frame of the complete dataset. Is used as a second 
+#'                      reference for the imputation, if n groupspecific
+#'                      information is available.
+#' @return A vector with imputation values for each peptide for one group. It
+#'  can be used instead of an missing value in the aggregation step of bppg.
 #' 
-#' @param D           Numeric matrix of intensity values with missing values (NA) to be imputed.
-#'                   
-#' @param min_row     Numeric vector containing the minimum observed intensity for each row (peptide) in the data matrix D. 
-#'                    This vector is used to calculate the imputed values for the missing entries in D.              
+#' @examples 
+#' file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
+#' D <- bppg::readMqPeptideTable(file)
+#' D_norm <- bppg::normalizePeptideIntensities(D)
 #'
-#' @return            Numeric matrix with imputed values for missing entries, where each missing value 
-#'                    is replaced by half of the minimum observed intensity for the corresponding row (peptide) in the original data matrix D.
+#' df <- SummarizedExperiment::assays(D_norm)$intensities_norm
+#' group <- rep(1:9, each = 3)
+#'
+#' imputed <- list()
+#' for (g in levels(factor(group))) {
+#'    imputed[[g]] <- bppg:::.min2impute(D = df[g == group],intensities = df)
+#' }
+#' D_min <- data.frame(imputed)
+#' 
+#' @importFrom matrixStats rowMins
 
 .min2impute<- function(D, intensities) {
     lod <- function(x) {
-        # row wise min value halfed, group specific
-        # this is currently not the case
+        # row wise min value halfed x[1], group specific
         if (all(is.na(x[-1]))) {
             imp_val <- x[1] / 2
             # row wise min value halfed, dataset specific
@@ -27,15 +41,28 @@
         return(imp_val)
     }
     min_row <- matrixStats::rowMins(as.matrix(intensities), na.rm = TRUE) 
-    D_imp <- t(apply(cbind(min_row, D), 1, lod)) # TODO vapply
+    D_imp <- apply(cbind(min_row, D), 1, lod) # TODO vapply
     return(D_imp)
 }
 
 
-#' was min2impute
+#' Impute missing values with the mean of column/sample specific value. This 
+#' approach is applicable for MAR values in proteomics data.
+#' 
+#' @param intensities   \strong{data.frame} \cr
+#'                      Data frame of the complete dataset.
+#' @return A data.frame with missing values imputed with the mean of each column
+#' /sample.
+#' @examples 
+#' file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
+#' D <- bppg::readMqPeptideTable(file)
+#' D_norm <- bppg::normalizePeptideIntensities(D)
+#'
+#' df <- SummarizedExperiment::assays(D_norm)$intensities_norm
+#' D_mean <- bppg:::.colMeanImputation(intensities = df)
 
 .colMeanImputation <- function(intensities){ # at this point we expect 
-
+    # TODO vapply
     for (j in seq_len(ncol(intensities))) {
 
         col_mean <- mean(intensities[, j], na.rm = TRUE)

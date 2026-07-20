@@ -2,10 +2,28 @@
 % Please edit documentation in R/imputationMethods.R
 \name{.colMeanImputation}
 \alias{.colMeanImputation}
-\title{was min2impute}
+\title{Impute missing values with the mean of column/sample specific value. This
+approach is applicable for MAR values in proteomics data.}
 \usage{
 .colMeanImputation(intensities)
 }
+\arguments{
+\item{intensities}{\strong{data.frame} \cr
+Data frame of the complete dataset.}
+}
+\value{
+A data.frame with missing values imputed with the mean of each column
+/sample.
+}
 \description{
-was min2impute
+Impute missing values with the mean of column/sample specific value. This
+approach is applicable for MAR values in proteomics data.
+}
+\examples{
+file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
+D <- bppg::readMqPeptideTable(file)
+D_norm <- bppg::normalizePeptideIntensities(D)
+
+df <- SummarizedExperiment::assays(D_norm)$intensities_norm
+D_mean <- bppg:::.colMeanImputation(intensities = df)
 }

@@ -2,25 +2,44 @@
 % Please edit documentation in R/imputationMethods.R
 \name{.min2impute}
 \alias{.min2impute}
-\title{Impute missing values with half min value per row}
+\title{Impute missing values with half min value per row/peptide. This approach is
+applicable for MNAR values in proteomics data. It considers group wise
+information before dataset wide information}
 \usage{
 .min2impute(D, intensities)
 }
 \arguments{
-\item{D}{Numeric matrix of intensity values with missing values (NA) to be imputed.}
+\item{D}{\strong{data.frame} \cr
+Data frame of the columns of one group, includes
+missing values needed to be imputed. Used for imputation
+value first.}
 
-\item{min_row}{Numeric vector containing the minimum observed intensity for each row (peptide) in the data matrix D.
-This vector is used to calculate the imputed values for the missing entries in D.}
+\item{intensities}{\strong{data.frame} \cr
+Data frame of the complete dataset. Is used as a second
+reference for the imputation, if n groupspecific
+information is available.}
 }
 \value{
-\if{html}{\out{<div class="sourceCode">}}\preformatted{       Numeric matrix with imputed values for missing entries, where each missing value 
-               is replaced by half of the minimum observed intensity for the corresponding row (peptide) in the original data matrix D.
-}\if{html}{\out{</div>}}
+A vector with imputation values for each peptide for one group. It
+can be used instead of an missing value in the aggregation step of bppg.
 }
 \description{
-Missing values are imputated using half of the minimum observed intensity
-per peptide row. This method is commonly used for MNAR values in proteomics data,
-where missingness is often associated with low abundance peptides.
-By imputing missing values with half of the minimum observed intensity, we can provide
-a conservative estimate for the missing values while preserving the overall distribution of the data.
+Impute missing values with half min value per row/peptide. This approach is
+applicable for MNAR values in proteomics data. It considers group wise
+information before dataset wide information
+}
+\examples{
+file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
+D <- bppg::readMqPeptideTable(file)
+D_norm <- bppg::normalizePeptideIntensities(D)
+
+df <- SummarizedExperiment::assays(D_norm)$intensities_norm
+group <- rep(1:9, each = 3)
+
+imputed <- list()
+for (g in levels(factor(group))) {
+   imputed[[g]] <- bppg:::.min2impute(D = df[g == group],intensities = df)
+}
+D_min <- data.frame(imputed)
+
 }

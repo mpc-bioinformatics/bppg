@@ -10,8 +10,8 @@ test_that("min2impute", {
 
     imputed <- list()
     for (g in levels(factor(group))) {
-        imputed[[g]] <- t(bppg:::.min2impute(D = df[g == group],
-                intensities = df))
+        imputed[[g]] <- bppg:::.min2impute(D = df[g == group],
+                intensities = df)
     }
 
     D_min <- data.frame(imputed) # aggregated values
