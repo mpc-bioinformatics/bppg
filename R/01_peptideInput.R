@@ -182,14 +182,14 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
         D <- D[!ind_decoy, ]
     }
 
-    if (verbose) print(paste0("Removed ", sum(ind_decoy), " decoy sequences."))
+    if (verbose) message("Removed ", sum(ind_decoy), " decoy sequences.")
 
     if (remove_contaminants) {
         if (!all(is.na(D$Potential.contaminant))) {
             ind_cont <- D$Potential.contaminant == "+"
             D <- D[!ind_cont, ]
-            if (verbose) print(paste0("Removed ", sum(ind_cont),
-                " contaminant sequences."))
+            if (verbose) message("Removed ", sum(ind_cont),
+                                      " contaminant sequences.")
         }
     }
 

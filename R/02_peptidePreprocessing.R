@@ -42,7 +42,7 @@
 #'
 #' @param D              \strong{SummarizedExperiment} \cr
 #'                       SummarizedExperiment Dataset containing peptide
-#'                       intensities, e.g. the result of 
+#'                       intensities, e.g. the result of
 #'                       [normalizePeptideIntensities].
 #' @param group          \strong{character factor} \cr
 #'                       The groups per sample for aggregation, if not already

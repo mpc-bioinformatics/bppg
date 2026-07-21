@@ -100,6 +100,7 @@
 #' @importFrom igraph gsize V
 #' @importFrom openxlsx write.xlsx
 ## TODO was ist mit dem alten S2? ZU LANG
+## TODO: enthält noch for-Schleifen
 .calculateSubgraphCharacteristics <- function(S, #S2, S3,
     fastalevel = TRUE,
     prototype = FALSE,
@@ -137,7 +138,7 @@
             ## S3_tmp <- S3[[j]]
         }
 
-        if (verbose) print(comparisons[j])
+        if (verbose) message(comparisons[j])
 
         ## add progress bar to loop
         pb <- pbapply::startpb(0, length(S_tmp))
