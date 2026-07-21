@@ -43,7 +43,7 @@ test_that("missForest", {
     set.seed(8)
 
     D_missForest <- data.frame(bppg:::.missForest(df))
-    colnames(D_missForest) <- 
+    colnames(D_missForest) <- colnames(df)
 
     expect_snapshot(D_missForest)
 })
@@ -58,7 +58,7 @@ test_that("QRILC", {
     df <- SummarizedExperiment::assays(D_norm)$intensities_norm
 
     set.seed(42)
-    imputed <- bppg:::.QRILC(df) # completly random?
+    imputed <- bppg:::.QRILC(df)
 
     expect_snapshot(imputed)
 })

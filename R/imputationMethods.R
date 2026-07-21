@@ -82,41 +82,38 @@
 #'
 #' This method can be applied to proteomics datasets containing missing
 #' values and does not assume a specific data distribution.
-#'  
-#' @param D data.frame of peptides.txt from MaxQuant
 #' 
-
-#' @return A numeric matrix with imputed intensity values replacing missing entries.
-
+#' @param intensities     \strong{data.frame} \cr
+#'                        Data frame of the complete dataset.
+#' 
+#' @return A complete numeric matrix with imputed values replacing missing 
+#' entries.
+#' @examples 
+#' file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
+#' D <- bppg::readMqPeptideTable(file)
+#' D_norm <- bppg::normalizePeptideIntensities(D)
+#'
+#' df <- SummarizedExperiment::assays(D_norm)$intensities_norm
+#' D_mean <- bppg:::.missForest(intensities = df)
+#' 
 .missForest <- function(intensities) {
     # missForest imputation
     D_imp <- missForest::missForest(as.matrix(intensities), verbose = FALSE)$ximp
     return(D_imp)
 }
 
-#' Impute missing values using QRILC
+#' Impute missing values using quantile regression
+#' imputation of left-censored data (QRILC) implemented in \pkg{imputeLCMD}
 #'
-#' Performs missing value imputation using the
-#' package {imputeLCMD}. 
+#' @param intensities   \strong{data.frame} \cr
+#'                      Numeric matrix containing peptide intensity values.
 #'
-#' Missing at random (MAR) values are imputed using maximum
-#' likelihood estimation (MLE), while missing not at random
-#' (MNAR) values are imputed using quantile regression
-#' imputation of left-censored data (QRILC).
-#'
-#'
-#' @param D [matrix]
-#' Numeric matrix containing peptide intensity values.
-#'
-#' @param ... Additional arguments passed through the pipeline.
+#' @param ...           Additional arguments passed through to QRILIC.
 #'
 #' @return A numeric matrix with imputed intensity values.
 #'
-#' @references
-#' Based on the {imputeLCMD} package:
-#' {https://bioconductor.org/packages/imputeLCMD}
 
-.QRILC <- function(D, ...) {
+.QRILC <- function(intensities, ...) {
     D_log <- log2(as.matrix(D))
 
     D_imp_log <- imputeLCMD::impute.QRILC(D_log, ...)[[1]]

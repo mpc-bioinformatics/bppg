@@ -2,30 +2,21 @@
 % Please edit documentation in R/imputationMethods.R
 \name{.QRILC}
 \alias{.QRILC}
-\title{Impute missing values using QRILC}
+\title{Impute missing values using quantile regression
+imputation of left-censored data (QRILC) implemented in \pkg{imputeLCMD}}
 \usage{
-.QRILC(D, ...)
+.QRILC(intensities, ...)
 }
 \arguments{
-\item{D}{\link{matrix}
+\item{intensities}{\strong{data.frame} \cr
 Numeric matrix containing peptide intensity values.}
 
-\item{...}{Additional arguments passed through the pipeline.}
+\item{...}{Additional arguments passed through to QRILIC.}
 }
 \value{
 A numeric matrix with imputed intensity values.
 }
 \description{
-Performs missing value imputation using the
-package {imputeLCMD}.
-}
-\details{
-Missing at random (MAR) values are imputed using maximum
-likelihood estimation (MLE), while missing not at random
-(MNAR) values are imputed using quantile regression
-imputation of left-censored data (QRILC).
-}
-\references{
-Based on the {imputeLCMD} package:
-{https://bioconductor.org/packages/imputeLCMD}
+Impute missing values using quantile regression
+imputation of left-censored data (QRILC) implemented in \pkg{imputeLCMD}
 }

@@ -10,12 +10,23 @@ forest model.}
 .missForest(intensities)
 }
 \arguments{
-\item{D}{data.frame of peptides.txt from MaxQuant}
+\item{intensities}{\strong{data.frame} \cr
+Data frame of the complete dataset.}
 }
 \value{
-A numeric matrix with imputed intensity values replacing missing entries.
+A complete numeric matrix with imputed values replacing missing
+entries.
 }
 \description{
 This method can be applied to proteomics datasets containing missing
 values and does not assume a specific data distribution.
+}
+\examples{
+file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
+D <- bppg::readMqPeptideTable(file)
+D_norm <- bppg::normalizePeptideIntensities(D)
+
+df <- SummarizedExperiment::assays(D_norm)$intensities_norm
+D_mean <- bppg:::.missForest(intensities = df)
+
 }
