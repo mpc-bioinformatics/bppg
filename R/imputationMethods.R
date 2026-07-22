@@ -53,6 +53,7 @@
 #'                      Data frame of the complete dataset.
 #' @return A data.frame with missing values imputed with the mean of each column
 #' /sample.
+#' 
 #' @examples 
 #' file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
 #' D <- bppg::readMqPeptideTable(file)
@@ -60,6 +61,8 @@
 #'
 #' df <- SummarizedExperiment::assays(D_norm)$intensities_norm
 #' D_mean <- bppg:::.colMeanImputation(intensities = df)
+#' 
+
 
 .colMeanImputation <- function(intensities){ # at this point we expect 
     # TODO vapply
@@ -97,9 +100,12 @@
 #' df <- SummarizedExperiment::assays(D_norm)$intensities_norm
 #' D_mean <- bppg:::.missForest(intensities = df)
 #' 
+#' @importFrom missForest missForest
+
 .missForest <- function(intensities) {
     # missForest imputation
-    D_imp <- missForest::missForest(as.matrix(intensities), verbose = FALSE)$ximp
+    D_imp <- missForest::missForest(as.matrix(intensities), 
+        verbose = FALSE)$ximp
     return(D_imp)
 }
 
@@ -120,6 +126,8 @@
 #'
 #' df <- SummarizedExperiment::assays(D_norm)$intensities_norm
 #' D_mean <- bppg:::.QRILC(intensities = df)
+#' 
+#' @importFrom imputeLCMD impute.QRILC
 
 .QRILC <- function(intensities, ...) {
     D_log <- log2(as.matrix(intensities))
@@ -150,6 +158,8 @@
 #'
 #' df <- SummarizedExperiment::assays(D_norm)$intensities_norm
 #' D_mean <- bppg:::.BPCA(intensities = df)
+#' 
+#' @importFrom pcaMethods pca completeObs
 
 .BPCA <- function(intensities, ...) {
     D_log <- log2(as.matrix(intensities))

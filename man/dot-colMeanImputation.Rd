@@ -26,4 +26,5 @@ D_norm <- bppg::normalizePeptideIntensities(D)
 
 df <- SummarizedExperiment::assays(D_norm)$intensities_norm
 D_mean <- bppg:::.colMeanImputation(intensities = df)
+
 }
