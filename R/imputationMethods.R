@@ -88,6 +88,7 @@
 #' 
 #' @return A complete numeric matrix with imputed values replacing missing 
 #' entries.
+#' 
 #' @examples 
 #' file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
 #' D <- bppg::readMqPeptideTable(file)
@@ -112,9 +113,16 @@
 #'
 #' @return A numeric matrix with imputed intensity values.
 #'
+#' @examples 
+#' file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
+#' D <- bppg::readMqPeptideTable(file)
+#' D_norm <- bppg::normalizePeptideIntensities(D)
+#'
+#' df <- SummarizedExperiment::assays(D_norm)$intensities_norm
+#' D_mean <- bppg:::.QRILC(intensities = df)
 
 .QRILC <- function(intensities, ...) {
-    D_log <- log2(as.matrix(D))
+    D_log <- log2(as.matrix(intensities))
 
     D_imp_log <- imputeLCMD::impute.QRILC(D_log, ...)[[1]]
 
@@ -123,32 +131,27 @@
     return(D_imp)
 }
 
-# Impute missing values using Bayesian PCA
-#'
-#' Performs missing value imputation using Bayesian Principal Component
-#' Analysis (BPCA) from the \pkg{pcaMethods} package. Missing values are
-#' estimated by modeling the latent structure of the data using principal
-#' components and reconstructing incomplete observations.
-#' Normal distribution is expected and the function will center and scale data
-#'
+# Impute missing values using Bayesian Principal Component
+#' Analysis (BPCA) from the \pkg{pcaMethods} package.
 #' BPCA is particularly useful for high-dimensional datasets with
 #' correlated features, such as proteomics intensity matrices.
 #'
-#' @param D [matrix]
-#' Numeric matrix containing peptide intensity values.
+#' @param intensities   \strong{data.frame} \cr
+#'                      Numeric matrix containing peptide intensity values.
 #'
-#' @param intensities [matrix]
-#' Full intensity matrix passed through aggregateReplicates.
-#' Currently unused in this imputation method.
+#' @param ...           Additional arguments passed through to QRILIC.
 #'
-#' @return A numeric matrix with missing values imputed.
-#'
-#' @references
-#' Based on the pcaMethods package:
-#' https://bioconductor.org/packages/pcaMethods
+#' @return A numeric matrix with imputed intensity values.
 #' 
+#' @examples 
+#' file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
+#' D <- bppg::readMqPeptideTable(file)
+#' D_norm <- bppg::normalizePeptideIntensities(D)
+#'
+#' df <- SummarizedExperiment::assays(D_norm)$intensities_norm
+#' D_mean <- bppg:::.BPCA(intensities = df)
 
-.BPCA <- function(intensities,...) {
+.BPCA <- function(intensities, ...) {
     D_log <- log2(as.matrix(intensities))
 
     fit <- pcaMethods::pca(

@@ -20,3 +20,11 @@ A numeric matrix with imputed intensity values.
 Impute missing values using quantile regression
 imputation of left-censored data (QRILC) implemented in \pkg{imputeLCMD}
 }
+\examples{
+file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
+D <- bppg::readMqPeptideTable(file)
+D_norm <- bppg::normalizePeptideIntensities(D)
+
+df <- SummarizedExperiment::assays(D_norm)$intensities_norm
+D_mean <- bppg:::.QRILC(intensities = df)
+}

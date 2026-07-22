@@ -2,30 +2,31 @@
 % Please edit documentation in R/imputationMethods.R
 \name{.BPCA}
 \alias{.BPCA}
-\title{Performs missing value imputation using Bayesian Principal Component
-Analysis (BPCA) from the \pkg{pcaMethods} package. Missing values are
-estimated by modeling the latent structure of the data using principal
-components and reconstructing incomplete observations.
-Normal distribution is expected and the function will center and scale data}
+\title{Analysis (BPCA) from the \pkg{pcaMethods} package.
+BPCA is particularly useful for high-dimensional datasets with
+correlated features, such as proteomics intensity matrices.}
 \usage{
 .BPCA(intensities, ...)
 }
 \arguments{
-\item{intensities}{\link{matrix}
-Full intensity matrix passed through aggregateReplicates.
-Currently unused in this imputation method.}
-
-\item{D}{\link{matrix}
+\item{intensities}{\strong{data.frame} \cr
 Numeric matrix containing peptide intensity values.}
+
+\item{...}{Additional arguments passed through to QRILIC.}
 }
 \value{
-A numeric matrix with missing values imputed.
+A numeric matrix with imputed intensity values.
 }
 \description{
+Analysis (BPCA) from the \pkg{pcaMethods} package.
 BPCA is particularly useful for high-dimensional datasets with
 correlated features, such as proteomics intensity matrices.
 }
-\references{
-Based on the pcaMethods package:
-https://bioconductor.org/packages/pcaMethods
+\examples{
+file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
+D <- bppg::readMqPeptideTable(file)
+D_norm <- bppg::normalizePeptideIntensities(D)
+
+df <- SummarizedExperiment::assays(D_norm)$intensities_norm
+D_mean <- bppg:::.BPCA(intensities = df)
 }
