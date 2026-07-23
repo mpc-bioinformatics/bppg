@@ -127,7 +127,7 @@
         if (collPeptNodes) {
             igraph::V(gColl)$pep_ratio_mean[pepMask] <-
                 vapply(igraph::V(gColl)$pep_logRatio[pepMask],
-                    mean, FUN.VALUE = numeric(1))
+                    median, FUN.VALUE = numeric(1))
             if (!is.null(igraph::V(gColl)$imputed)) {
                 igraph::V(gColl)$anyImputed <- vapply(
                     igraph::V(gColl)$imputed, any, 
