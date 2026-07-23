@@ -100,11 +100,6 @@ aggregateReplicates <- function(D,
         group <- factor(SummarizedExperiment::colData(D)$group)
     }
 
-    FUN <- switch(method,
-        mean  = rowMeans,
-        sum = rowSums,
-        median = robustbase::rowMedians)
-
     # Track missingness and later imputed values
     mask_impute <- vapply(seq_along(levels(group)), function(i) {
         X_tmp <- intensities[, group == levels(group)[i]]
@@ -128,6 +123,11 @@ aggregateReplicates <- function(D,
 
         intensities <- FUN_imp(intensities, ...)
     }
+
+    FUN <- switch(method,
+        mean  = rowMeans,
+        sum = rowSums,
+        median = robustbase::rowMedians)
 
     res <- vapply(seq_along(levels(group)), function(i, mask_impute) {
         X_tmp <- intensities[, group == levels(group)[i]]
