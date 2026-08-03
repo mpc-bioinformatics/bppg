@@ -88,7 +88,6 @@ proteinElimination <- function(G,
         null.ok = TRUE)
     checkmate::assertList(res_best, null.ok = TRUE)
 
-
     G <- .addUniquenessAttributes(G)
     nr_unique_peptides <- igraph::V(G)$nr_unique_peptides[igraph::V(G)$type]
     # in contrast to protsOriginIDs, its based on the ID of the current graph

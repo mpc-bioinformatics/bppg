@@ -300,8 +300,8 @@ The `generateQuantGraphs` function creates a comparison-specific graphs,
 retaining only peptides with a valid ratio.
 Nodes sharing the same set of edges can be collapsed. The options to 
 collapse protein nodes (`collProtNodes = TRUE`) or collapse peptide nodes
-(`collPeptNodes = TRUE`) is given to reduce the complexity in the graph. This means 
-collapsing protein nodes shows protein groups and is recommended since 
+(`collPeptNodes = TRUE`) is given to reduce the complexity in the graph. This 
+means collapsing protein nodes shows protein groups and is recommended since 
 proteins indistinguishable by their peptides are considered a protein group. 
 `collPeptNodes = TRUE` is not recommended for quantification purpose, since  
 each peptide has its own quantification information. 
@@ -338,8 +338,8 @@ graphs[[1]][[1]]
 The quantified graph is the basis for an equation system to calculate protein 
 level ratios. The known variables for this are the peptide ratios ($r_i$) and 
 from which proteins they can originate. The unknown variables are the protein 
-ratios of the protein quantities of sample A and B ($\frac{B_i}{A_i}=R_i$) and the
-proportion of each protein in sample A per connected
+ratios of the protein quantities of sample A and B ($\frac{B_i}{A_i}=R_i$) and
+the proportion of each protein in sample A per connected
 graph ($C_i = \frac{A_i}{\sum A_i}$). 
 For each peptide, the $R_i$ of the contributing proteins is estimated and used
 to reconstruct $r_i$. With $\delta_{ij} = 1$ for contributing proteins and 
@@ -355,7 +355,7 @@ variables than known ones.
 Instead an optimization algorithm (`Rsolnp` `r Citep(bib[["Rsolnp"]])`) is 
 applied to the system. The error
 is defined as the difference between the estimated $R_i$ and reconstructed
- $r_i$ and the measured $r_i$.
+$r_i$ and the measured $r_i$.
 
 The optimization is divided into two steps and is performed per graph.
 
@@ -375,7 +375,8 @@ the following equation:
         \cdot \delta_{kj}} \right] \right)\]
 
 The result of the first iterations show which `protein` was fixed
-to which value (`grid`) and what the log protein ratios (`RLog`) and `error` were.
+to which value (`grid`) and what the log protein ratios (`RLog`) and `error`
+were.
 The best-fitting $C_i$​ combination is then extracted in the second step.
 
 ```{r optimization,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
@@ -407,8 +408,10 @@ the log ratio and concentration range for the given error.
 
 ### Parallelization
 
-The optimization runs per graph. This enables easy parallization, with e.g. batchtools
-`r Citep(bib[["batchtools"]])`, which supports HPC job scheduling. An example for this can be seen in our nextflow  workflow for this package: [here](https://github.com/mpc-bioinformatics/bppg-nf/blob/devel).
+The optimization runs per graph. This enables easy parallization, with e.g. 
+batchtools `r Citep(bib[["batchtools"]])`, which supports HPC job scheduling. 
+An example for this can be seen in our nextflow  workflow for this package:
+[here](https://github.com/mpc-bioinformatics/bppg-nf/blob/devel).
 
 # See Also
 
@@ -438,11 +441,13 @@ approaches or further statistical analysis.
 extension `MSstats+` quantifies proteins from peptide abundances by aggregating
 them with a weighted sum based on the peak quality.
 - `MSnbase` processes proteomics data from raw to quantification data. For the 
- protein quantification a median and weighted average function are implemented.
-- `msqrob2` analyses differential abundance with an hurdle model. It can be run with peptide quantifies, which are later aggregated with `iq::maxLFQ`.
+protein quantification a median and weighted average function are implemented.
+- `msqrob2` analyses differential abundance with an hurdle model. It can be run 
+with peptide quantifies, which are later aggregated with `iq::maxLFQ`.
 - `mzR` provides parsing for differnt standard file formats used for mass
 spectrometry data.
-- `DEqMS` is implemented on top of limma and expects protein variance depedend on quantified peptides and PSMs.
+- `DEqMS` is implemented on top of limma and expects protein variance depedend 
+on quantified peptides and PSMs.
 - `QFeatures` implements the QFeature object consisting of a 
 SummarizedExperiment and provides functionality for processing and adding meta 
 data.

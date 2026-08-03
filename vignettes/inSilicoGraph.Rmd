@@ -102,7 +102,7 @@ For `collPeptNodes` both options (`TRUE`, `FALSE`) can be informative.
 **shared** a protein can have in theory. It gives insights how many peptides
 overlap with other proteins and if an unique identifier is likely. 
 With `collPeptNodes = TRUE` questions about structure and solvability can be
-awnsered. Which is what we will do in this tutorial.
+anwsered. Which is what we will do in this tutorial.
 
 ```{r build_graph,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
 graphs <- generateGraphsFromEdgelist(
@@ -114,6 +114,31 @@ graphs
 ```
 
 # Analyse graph
+While this example is a simplefied version with only four graphs, the analysis 
+can be highlighted. On the one hand, the topolgy of the graphs can be studied.
+On the other hand, the relationship and statistics of the proteins and peptides
+can be analysed. 
+
+The general topolgy and isomorphisms of the graphs can be analyzed with 
+`.generatePrototyeList`. This function identifies graphs of the same structure
+and creates a list of prototype graphs and how often their structure occurs in 
+the given input. These can also be plotted as described in 
+vingette `Visualize bppg`.
+
+```{r isomorphism}
+
+```
+
+Secondly, we can look at graph statistics per graph and over all graphs. How
+many proteins and peptides are there, how many edges. However, also regarding
+**shared** and **unique** peptides and how many protein do not have an unique
+peptide.
+
+```{r graphStats}
+
+```
+
+
 
 # R session information
 

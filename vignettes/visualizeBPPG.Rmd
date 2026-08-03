@@ -44,7 +44,7 @@ bib <- c(
     knitr = citation("knitr")[1],
     RefManageR = citation("RefManageR")[1],
     rmarkdown = citation("rmarkdown")[1],
-    sessioninfo = citation("sessioninfo")[1],
+    sessioninfo = citation("sessioninfo")[1]
 )
 
 BibOptions(max.names = 2, bib.style = "authoryear", style = "citation")
@@ -52,8 +52,30 @@ BibOptions(max.names = 2, bib.style = "authoryear", style = "citation")
 ```
 
 # Introduction
+Interpreation and comprehesion always benefits from some kind of visulization
 
-# Creat Graph
+
+# Import/Create Graph
+First, a bipartite graph which models the realtionship between proteins and 
+peptides needs to be created. This can be done either with or without 
+quantification data, but always needs a FASTA file containing of the proteom of
+interest. As described in our other vignettes.
+
+```{r lib_load, echo=TRUE, message=FALSE}
+library(bppg)
+library(igraph)
+```
+
+Here, we will use in silico graphs from a filtered yeast proteom.
+
+
+```{r import}
+file <- system.file("extdata", "theoGraphs_collpeptprot.rds",
+    package = "bppg")
+
+graphs <- readRDS(file)
+graphs
+```
 
 # Plot default graph
 
