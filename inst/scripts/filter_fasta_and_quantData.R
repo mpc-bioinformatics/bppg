@@ -27,7 +27,7 @@ seqinr::write.fasta(sequences = fasta_filtered, names = names(fasta_filtered),
 
 
 # The file "peptides.txt" is the peptide quantity table generated via
-# MaxQuant. The raw data were downloaded from the PRIDE repository (PXD000279)
+# MaxQuant. The raw data were downloaded from the PRIDE repository (PXD001819)
 # and processed with MaxQuant version 2.7.3.0.
 # It was then filtered for rows belonging to peptides that are present in the
 # 9 selected proteins.
