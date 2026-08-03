@@ -54,7 +54,7 @@ for the rowData dataframe.
 Import of FragPipe's combined_peptide.tsv-table.
 }
 \examples{
-file <- system.file("extdata", "peptides.txt", package = "bppg")
-D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+file <- system.file("extdata", "peptides_FP_filtered.tsv", package = "bppg")
+D1 <- bppg::readFpPeptideTable(file)
 
 }

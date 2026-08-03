@@ -21,6 +21,10 @@
 #'
 .extractIntensities <- function(D, col_pattern, rename_columns){
     intensities <- D[, grep(col_pattern, colnames(D))]
+    if (ncol(intensities) == 0) {
+        message("No intensity column extracted, make sure you are using the",
+            "correct read function")
+    }
     if (rename_columns) {
         colnames(intensities) <- stringr::str_replace(colnames(intensities),
             col_pattern, "")
@@ -59,8 +63,8 @@
 #' @export
 #'
 #' @examples
-#' file <- system.file("extdata", "peptides.txt", package = "bppg")
-#' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
+#' file <- system.file("extdata", "peptides_FP_filtered.tsv", package = "bppg")
+#' D1 <- bppg::readFpPeptideTable(file)
 #' 
 #' @importFrom checkmate assertFileExists assertFlag assertVector
 #' @importFrom utils read.table
@@ -108,10 +112,6 @@ readFpPeptideTable <- function(path, group = NULL,
         assays = list(intensities= intensities), 
         colData = colDF, rowData = rowDF))
 }
-
-
-
-
 
 
 
@@ -180,7 +180,6 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
         ind_decoy <- (D$Reverse == "+")
         D <- D[!ind_decoy, ]
     }
-
     if (verbose) message("Removed ", sum(ind_decoy), " decoy sequences.")
 
     if (remove_contaminants) {
@@ -188,7 +187,7 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
             ind_cont <- D$Potential.contaminant == "+"
             D <- D[!ind_cont, ]
             if (verbose) message("Removed ", sum(ind_cont),
-                                      " contaminant sequences.")
+                " contaminant sequences.")
         }
     }
 

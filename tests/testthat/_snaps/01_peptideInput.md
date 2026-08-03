@@ -1,3 +1,1379 @@
+# read FragPipe Output table
+
+    Code
+      D1
+    Output
+      class: SummarizedExperiment 
+      dim: 56 27 
+      metadata(0):
+      assays(1): intensities
+      rownames(56): AAADALSDLEIK AAADALSDLEIKDSK ...
+        YFLDALPVALLGMNADLMNQYVEFVADR YHEIWQAYK
+      rowData names(1): Sequence
+      colnames(27): X12500amol_1 X12500amol_2 ... X00050amol_26 X00050amol_27
+      colData names(1): sample
+
+---
+
+    Code
+      SummarizedExperiment::assays(D1)$intensities
+    Output
+                                    X12500amol_1 X12500amol_2 X12500amol_3
+      AAADALSDLEIK                      16660091     16323178     17298806
+      AAADALSDLEIKDSK                    6175501      6883170      6649613
+      AAGLTAAYAR                        50664624     45957620     42893008
+      AANLGGVAVSGLEMAQNSQK                    NA           NA           NA
+      AANLGGVAVSGLEMAQNSQR              23208640     21944222     19847992
+      ANELLINVK                        131499184     72217464     58916684
+      ANGTTVLVGMPAGAK                         NA      2615513      1956361
+      APEAEQVLSAAATFPIAQPATDVEAR        22257000     21787972     23117052
+      ATDGGAHGVINVSVSEAAIEASTR          12705491     14613132     16281006
+      AVQDNGESAFR                       10152627     10655229      9850081
+      CCSDVFNQVVK                       41217368     40702972     40272800
+      CSSDVFNHVVK                        2854208           NA           NA
+      DAVWFGPPK                               NA           NA           NA
+      DEGLHTDFACLLFAHLK                  2316547      3489597      2413868
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR     11484816     13142636     12704731
+      DIHDWNNR                           1432926      1572426      1258790
+      DIPVPEPKPNEILINVK                 31843328     30538440     30665996
+      DIPVPKPK                          52647740     51280264     49098492
+      DIPVPKPKPNELLINVK                       NA           NA           NA
+      DIVGAVLK                          35849292     38611148     36694012
+      DIVSAVVK                                NA           NA           NA
+      EALDFFAR                         144335696    143663200    142131168
+      EALDFFSR                           5409440      4937898      5096693
+      FHPSVNLSILK                       41675920     41795460     42734532
+      FIAEGSNMGSTPEAIAVFETAR            26768948     25924216     27617288
+      GMMPGLTFSNELICR                    6749334           NA      6009475
+      IAPRPLDLLRPVVR                    12983798     14764920     16258448
+      ICYAFMR                            7077311      6615372      7313773
+      IGDYAGIK                          17597812     24632956     89244856
+      IMINCFNECIDYAK                    10248893      8864130      8868753
+      ITWTSER                           14094202     14257148     12166455
+      IVGLSELPK                         14039759     12656728     12722021
+      IVTEAVEIEQR                       15241349     15443454     14426457
+      NKPDPAIVEK                        13822061     13179719     12401665
+      SISIVGSYVGNR                     197416112    210896720    197820176
+      SLEEIVDEYSTFSESK                   7038281      5773411      6717431
+      SLEQIVNEYSTFSENK                  31163504     23231938     21285180
+      STATGPSEAVWYGPPK                  33732536     33050214     31739314
+      VDIALPCATQNEVSGEEAK               37521188     34652660     35182592
+      VGDLAGIK                                NA           NA           NA
+      VHFDQAGK                           7162539      7493533      8393470
+      VHFDQAGKK                               NA           NA           NA
+      VIELGGTVVSLSDSK                   12409758     12194792     11933417
+      VKVHFDQAGK                              NA           NA           NA
+      VLGIDAGEEK                         4412748      4592458      2400779
+      VLGIDAGEEKEK                            NA      3150520      2653662
+      VLGIDGGEGK                        16923064     15676497     16576612
+      VLGIDGGEGKEELFR                  245174528    253224576    250229696
+      VLPIVSVPER                        13399222     30700562     30214328
+      VTISGSGNVAQYAALK                        NA           NA           NA
+      VTWENDKGEQEVAQGYR                 27211094     24460330     26592682
+      VTWENDNGEQEVAQGYR                  2225338      1492534      1091157
+      VYDLMEK                                 NA           NA           NA
+      WIQDADALFGER                      15335661     13639781     14241814
+      YFLDALPVALLGMNADLMNQYVEFVADR      17406602     19890862     17477080
+      YHEIWQAYK                               NA           NA           NA
+                                    X00125amol_4 X00125amol_5 X00125amol_6
+      AAADALSDLEIK                    18720484.0           NA           NA
+      AAADALSDLEIKDSK                 10972898.0     11342712     11448656
+      AAGLTAAYAR                      52237876.0     50498304     52709796
+      AANLGGVAVSGLEMAQNSQK             6238824.0      6468571      7061726
+      AANLGGVAVSGLEMAQNSQR            24656808.0     26069882     22964484
+      ANELLINVK                      128104856.0     82886408    133627024
+      ANGTTVLVGMPAGAK                   115821.7      1379707           NA
+      APEAEQVLSAAATFPIAQPATDVEAR       3283848.5     19588008           NA
+      ATDGGAHGVINVSVSEAAIEASTR         9060527.0     10369961     12119284
+      AVQDNGESAFR                     12683695.0     12009032     12704845
+      CCSDVFNQVVK                     48827036.0     48742680     45231516
+      CSSDVFNHVVK                      3700081.2      3772577      3133452
+      DAVWFGPPK                               NA     27085950           NA
+      DEGLHTDFACLLFAHLK                1310319.5      2435262      3021355
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR   22002296.0     18430470     23525034
+      DIHDWNNR                         1448928.5      1576698      1340544
+      DIPVPEPKPNEILINVK               16754882.0     28370870     31989026
+      DIPVPKPK                        30310182.0     68830344     10355419
+      DIPVPKPKPNELLINVK                       NA           NA           NA
+      DIVGAVLK                        40575636.0     23610014     39584316
+      DIVSAVVK                                NA           NA           NA
+      EALDFFAR                       158724608.0    162808080    156249664
+      EALDFFSR                         5116662.5      5538260      4975929
+      FHPSVNLSILK                      7892667.5      8670908      7371482
+      FIAEGSNMGSTPEAIAVFETAR          34401144.0     33077780     29619612
+      GMMPGLTFSNELICR                  6237984.0      5110547      5691994
+      IAPRPLDLLRPVVR                  20587516.0     24595374     25337666
+      ICYAFMR                         10218990.0      9588106           NA
+      IGDYAGIK                        18897402.0     16543222     20737782
+      IMINCFNECIDYAK                   9980778.0     10607803      9567532
+      ITWTSER                         14337010.0     14149094     13645510
+      IVGLSELPK                       14289693.0     16073002     14996138
+      IVTEAVEIEQR                     15306459.0     15447061     14547581
+      NKPDPAIVEK                      15909316.0     16597573     15547880
+      SISIVGSYVGNR                   205461152.0    215511840    209203904
+      SLEEIVDEYSTFSESK                 5226790.0      5974976      7167488
+      SLEQIVNEYSTFSENK                32713454.0     21769342     28367608
+      STATGPSEAVWYGPPK                27358150.0     33949196     38355960
+      VDIALPCATQNEVSGEEAK             37412504.0     39527008     38788088
+      VGDLAGIK                                NA           NA           NA
+      VHFDQAGK                        11492012.0     10871177      9369949
+      VHFDQAGKK                         903016.0           NA           NA
+      VIELGGTVVSLSDSK                 13474723.0     12315129     11844407
+      VKVHFDQAGK                              NA           NA           NA
+      VLGIDAGEEK                              NA      3838526      3578398
+      VLGIDAGEEKEK                     6323846.5      4187851      6123861
+      VLGIDGGEGK                       9281696.0      9012668      7929316
+      VLGIDGGEGKEELFR                362196224.0    316812064    272619168
+      VLPIVSVPER                      29216640.0     12491943     27639594
+      VTISGSGNVAQYAALK                        NA           NA           NA
+      VTWENDKGEQEVAQGYR               35068648.0     32311864     32133120
+      VTWENDNGEQEVAQGYR                1929963.8      2051902      2005732
+      VYDLMEK                                 NA           NA           NA
+      WIQDADALFGER                    13804545.0     13174386     13514189
+      YFLDALPVALLGMNADLMNQYVEFVADR    18513336.0     16200191     16814326
+      YHEIWQAYK                               NA           NA           NA
+                                    X25000amol_7 X25000amol_8 X25000amol_9
+      AAADALSDLEIK                    15095092.0     20916518     18092006
+      AAADALSDLEIKDSK                  6259866.0      6949910      7377443
+      AAGLTAAYAR                      44923996.0     62198864     59805652
+      AANLGGVAVSGLEMAQNSQK                    NA           NA           NA
+      AANLGGVAVSGLEMAQNSQR            19574036.0     27088676     21586448
+      ANELLINVK                       69232104.0    179650752     76754616
+      ANGTTVLVGMPAGAK                   107904.2      2735031           NA
+      APEAEQVLSAAATFPIAQPATDVEAR      23631312.0     30303920           NA
+      ATDGGAHGVINVSVSEAAIEASTR        12925076.0     12641358     16146998
+      AVQDNGESAFR                     10379728.0     14145952     14007958
+      CCSDVFNQVVK                     37673056.0     51322492     44012456
+      CSSDVFNHVVK                             NA      2242423      3574236
+      DAVWFGPPK                               NA           NA           NA
+      DEGLHTDFACLLFAHLK                3204199.5      3446689      3775672
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR   15021760.0     15174610     14032761
+      DIHDWNNR                         1455472.4           NA      2171138
+      DIPVPEPKPNEILINVK               30142702.0     40836680     34420668
+      DIPVPKPK                        56190612.0     70077224     65515364
+      DIPVPKPKPNELLINVK                       NA           NA           NA
+      DIVGAVLK                        32892946.0     51391584     45523748
+      DIVSAVVK                                NA           NA           NA
+      EALDFFAR                       133383192.0    190626192    152814928
+      EALDFFSR                         4256725.0      5947657      4878852
+      FHPSVNLSILK                     41601388.0     54020284     46622904
+      FIAEGSNMGSTPEAIAVFETAR          19833616.0     32803796     27799648
+      GMMPGLTFSNELICR                  7077358.5      8163223      6933592
+      IAPRPLDLLRPVVR                  12680532.0     17169764     14584777
+      ICYAFMR                          6328331.5      7451789      7313330
+      IGDYAGIK                        27150348.0     42932032     34306332
+      IMINCFNECIDYAK                   8091131.5     10226996      9032639
+      ITWTSER                         12805046.0     17750182     16788356
+      IVGLSELPK                       14005584.0     16640459     14837210
+      IVTEAVEIEQR                     15747279.0     21721820     17492600
+      NKPDPAIVEK                      14193911.0     19013752     17844664
+      SISIVGSYVGNR                   202224176.0    268047360    226595568
+      SLEEIVDEYSTFSESK                 5432682.0      5712274      5808808
+      SLEQIVNEYSTFSENK                21781766.0     24832864     26519944
+      STATGPSEAVWYGPPK                 5157583.5     43664056     35949992
+      VDIALPCATQNEVSGEEAK             33570404.0     46171072     39954960
+      VGDLAGIK                                NA           NA           NA
+      VHFDQAGK                         7814195.0      9689494     10426070
+      VHFDQAGKK                               NA           NA           NA
+      VIELGGTVVSLSDSK                 11620443.0     15282994     14178375
+      VKVHFDQAGK                              NA           NA           NA
+      VLGIDAGEEK                       1226333.2      6888371      7021689
+      VLGIDAGEEKEK                            NA           NA           NA
+      VLGIDGGEGK                      16061700.0     25690674     23413072
+      VLGIDGGEGKEELFR                235829472.0    265839488    246467744
+      VLPIVSVPER                      13204528.0     17506694     33422056
+      VTISGSGNVAQYAALK                        NA           NA           NA
+      VTWENDKGEQEVAQGYR               25259102.0     27069982     28076856
+      VTWENDNGEQEVAQGYR                1538274.8      1586699      1493909
+      VYDLMEK                                 NA           NA           NA
+      WIQDADALFGER                    14206174.0     16167786     16288937
+      YFLDALPVALLGMNADLMNQYVEFVADR    17933010.0     19159070     21521144
+      YHEIWQAYK                               NA           NA           NA
+                                    X02500amol_10 X02500amol_11 X02500amol_12
+      AAADALSDLEIK                       15727362      16415339      16067322
+      AAADALSDLEIKDSK                     6846889       6577292       7582225
+      AAGLTAAYAR                         44056176      44803648      47686492
+      AANLGGVAVSGLEMAQNSQK                1954012       5869354       6083535
+      AANLGGVAVSGLEMAQNSQR               23474020      21675104      22744182
+      ANELLINVK                          81229776     112902888     126811848
+      ANGTTVLVGMPAGAK                          NA            NA            NA
+      APEAEQVLSAAATFPIAQPATDVEAR         23715532      22342180      22624620
+      ATDGGAHGVINVSVSEAAIEASTR            9505271      11907872      13282698
+      AVQDNGESAFR                        11621514      11262419      11520064
+      CCSDVFNQVVK                        44495416      42731896      44967616
+      CSSDVFNHVVK                         1988838       2329175       2406157
+      DAVWFGPPK                                NA            NA            NA
+      DEGLHTDFACLLFAHLK                   2799401       3184805       2634233
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR      12696330      15412163      13156537
+      DIHDWNNR                            1446406       1713295       1055331
+      DIPVPEPKPNEILINVK                  32612942      33114798      34667520
+      DIPVPKPK                           53339164      49666280      49900504
+      DIPVPKPKPNELLINVK                        NA            NA            NA
+      DIVGAVLK                           39307684      37201936      36889784
+      DIVSAVVK                                 NA            NA            NA
+      EALDFFAR                          151561552     149299328     152923792
+      EALDFFSR                            5063661       5087528       4908037
+      FHPSVNLSILK                        44386032      45813012      42011908
+      FIAEGSNMGSTPEAIAVFETAR             28224432      29104368      25264640
+      GMMPGLTFSNELICR                     6192352       6879718       7429992
+      IAPRPLDLLRPVVR                     15982781      16664542      14223124
+      ICYAFMR                             6813593       7275324       7596584
+      IGDYAGIK                           21363350      19312496      18705578
+      IMINCFNECIDYAK                      8176213       9238131       9425569
+      ITWTSER                            13814952      12631795      14107541
+      IVGLSELPK                          14463209      15144304      15906892
+      IVTEAVEIEQR                        13986346      13224527      13915042
+      NKPDPAIVEK                         14516588      14533515      13723346
+      SISIVGSYVGNR                      204803792     192159072     199578448
+      SLEEIVDEYSTFSESK                    6867613       8027432       5862909
+      SLEQIVNEYSTFSENK                   29415838      32582280      24691500
+      STATGPSEAVWYGPPK                   11332475      37267528      35095124
+      VDIALPCATQNEVSGEEAK                38288128      38579240      37499464
+      VGDLAGIK                                 NA            NA            NA
+      VHFDQAGK                            7574634       7476079       8151144
+      VHFDQAGKK                                NA            NA            NA
+      VIELGGTVVSLSDSK                    11673200      11399138      11307663
+      VKVHFDQAGK                               NA            NA            NA
+      VLGIDAGEEK                          4179376       3995589       4299318
+      VLGIDAGEEKEK                        2239575       2994430       4336466
+      VLGIDGGEGK                         14642058      14487706      14797706
+      VLGIDGGEGKEELFR                   230019856     243043776     272961824
+      VLPIVSVPER                         10285411      29658798      32330072
+      VTISGSGNVAQYAALK                         NA            NA            NA
+      VTWENDKGEQEVAQGYR                  26390696      24318492      25980540
+      VTWENDNGEQEVAQGYR                   1940408       2117411       1569083
+      VYDLMEK                                  NA            NA            NA
+      WIQDADALFGER                       15902484      17497958      16881698
+      YFLDALPVALLGMNADLMNQYVEFVADR       17174360      16157694      15929807
+      YHEIWQAYK                                NA            NA            NA
+                                    X00250amol_13 X00250amol_14 X00250amol_15
+      AAADALSDLEIK                     14650810.0      14184984    15670659.0
+      AAADALSDLEIKDSK                  10031345.0      11549492    11755899.0
+      AAGLTAAYAR                       47915144.0      46670928    47595672.0
+      AANLGGVAVSGLEMAQNSQK              6309355.0       6400828     6299309.0
+      AANLGGVAVSGLEMAQNSQR             22572020.0      22591486    24018152.0
+      ANELLINVK                        71422992.0     130183680   127739832.0
+      ANGTTVLVGMPAGAK                    153517.2            NA      694539.8
+      APEAEQVLSAAATFPIAQPATDVEAR       12040034.0      14779541    13757152.0
+      ATDGGAHGVINVSVSEAAIEASTR         11895755.0      12689912    13530926.0
+      AVQDNGESAFR                      11732520.0      10788664    10429924.0
+      CCSDVFNQVVK                      41424864.0      47029724    47235608.0
+      CSSDVFNHVVK                       2847702.2       2934318     2814663.0
+      DAVWFGPPK                                NA            NA    24908776.0
+      DEGLHTDFACLLFAHLK                 1387919.4       3157181     2546032.8
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR    19190556.0      20985308    18330854.0
+      DIHDWNNR                          1528940.1       1409498     1203343.4
+      DIPVPEPKPNEILINVK                34813916.0      14746562    30120776.0
+      DIPVPKPK                         58639972.0      61561444    56949416.0
+      DIPVPKPKPNELLINVK                        NA            NA            NA
+      DIVGAVLK                         36628644.0      37856056    34209252.0
+      DIVSAVVK                                 NA            NA            NA
+      EALDFFAR                        142583008.0     147526608   159145664.0
+      EALDFFSR                          4927599.0       4955110     5361476.0
+      FHPSVNLSILK                      12595698.0       7563903     7835772.0
+      FIAEGSNMGSTPEAIAVFETAR           29321504.0      30145512    30795368.0
+      GMMPGLTFSNELICR                   5111623.0       7166785     6644479.5
+      IAPRPLDLLRPVVR                   20452980.0      22524234    20525948.0
+      ICYAFMR                           7981887.0       9527861     9296609.0
+      IGDYAGIK                         19220224.0      25314628    15434977.0
+      IMINCFNECIDYAK                    9908359.0       9914862    11501108.0
+      ITWTSER                          13275469.0      12883100    12714821.0
+      IVGLSELPK                        12360754.0      14196378    15307652.0
+      IVTEAVEIEQR                      14514474.0      14110228    15606699.0
+      NKPDPAIVEK                       15083750.0      15898443    15632512.0
+      SISIVGSYVGNR                    187239360.0     203869008   111068800.0
+      SLEEIVDEYSTFSESK                  5707765.0       6294375     5750519.5
+      SLEQIVNEYSTFSENK                 31463814.0      31653848    31194010.0
+      STATGPSEAVWYGPPK                  6921286.0      34943632     6690480.5
+      VDIALPCATQNEVSGEEAK              34530488.0      30436440    37316732.0
+      VGDLAGIK                                 NA            NA            NA
+      VHFDQAGK                          7661171.5       8479784     7656383.0
+      VHFDQAGKK                                NA            NA            NA
+      VIELGGTVVSLSDSK                  10833894.0      11794306    11652597.0
+      VKVHFDQAGK                               NA            NA            NA
+      VLGIDAGEEK                        3406792.0       3459343            NA
+      VLGIDAGEEKEK                      1447751.5       4310324     7081323.0
+      VLGIDGGEGK                        8179078.5       8392483     8722750.0
+      VLGIDGGEGKEELFR                 254518096.0     272659168   289409184.0
+      VLPIVSVPER                       26107066.0      26715040    30610234.0
+      VTISGSGNVAQYAALK                         NA            NA            NA
+      VTWENDKGEQEVAQGYR                26981580.0      30872694    29173574.0
+      VTWENDNGEQEVAQGYR                 2244020.5       1001634     2084471.9
+      VYDLMEK                                  NA            NA     2658838.2
+      WIQDADALFGER                     12206578.0      12963664    13555982.0
+      YFLDALPVALLGMNADLMNQYVEFVADR     18162096.0      15603493    17345396.0
+      YHEIWQAYK                                NA            NA            NA
+                                    X50000amol_16 X50000amol_17 X50000amol_18
+      AAADALSDLEIK                       20097194      20392496      19201432
+      AAADALSDLEIKDSK                     9461958      10013490       8984850
+      AAGLTAAYAR                         59292308      58201012      60803696
+      AANLGGVAVSGLEMAQNSQK                     NA            NA            NA
+      AANLGGVAVSGLEMAQNSQR               24339804      20682242      21185518
+      ANELLINVK                          94227256      77019728      80819888
+      ANGTTVLVGMPAGAK                     1074806       2821098       1409265
+      APEAEQVLSAAATFPIAQPATDVEAR         25559998      22537076      23814924
+      ATDGGAHGVINVSVSEAAIEASTR           18931180      25493680      20995826
+      AVQDNGESAFR                        13291108      13159595      13049649
+      CCSDVFNQVVK                        51749692      50760936      48235872
+      CSSDVFNHVVK                              NA            NA            NA
+      DAVWFGPPK                                NA            NA      37780732
+      DEGLHTDFACLLFAHLK                   5009634       2993043       4318626
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR      12646471      11515427      10895787
+      DIHDWNNR                            2182686       2083161       2213801
+      DIPVPEPKPNEILINVK                  34932416      30299232      34063552
+      DIPVPKPK                           71682888      73035816      39473344
+      DIPVPKPKPNELLINVK                        NA            NA            NA
+      DIVGAVLK                           50729680      48280100      45695764
+      DIVSAVVK                                 NA            NA            NA
+      EALDFFAR                          175977216     170697696     164780160
+      EALDFFSR                            6354003       5840071       5520620
+      FHPSVNLSILK                        49444708      17229064      20283782
+      FIAEGSNMGSTPEAIAVFETAR             29070728      21219730      25778940
+      GMMPGLTFSNELICR                     7346210       7831343       4947371
+      IAPRPLDLLRPVVR                     18632710      15481304      17142548
+      ICYAFMR                             8750931       7505615       8460419
+      IGDYAGIK                           42090052     133881384     134956272
+      IMINCFNECIDYAK                     10632306       9843538       9488800
+      ITWTSER                            14015593       6118963      14362391
+      IVGLSELPK                          17914548      16627818      16910894
+      IVTEAVEIEQR                        23811012      24928354      22857772
+      NKPDPAIVEK                         19934838      19983408      20535144
+      SISIVGSYVGNR                      273990048     271280128     250265200
+      SLEEIVDEYSTFSESK                         NA       5779023       5104555
+      SLEQIVNEYSTFSENK                   24992194      20035476      25192352
+      STATGPSEAVWYGPPK                   38044188       7203258      34957304
+      VDIALPCATQNEVSGEEAK                46458124      42721952      38366632
+      VGDLAGIK                                 NA            NA            NA
+      VHFDQAGK                           14630182      18862436      18720100
+      VHFDQAGKK                                NA            NA            NA
+      VIELGGTVVSLSDSK                    14932316      12424974      13175102
+      VKVHFDQAGK                               NA            NA            NA
+      VLGIDAGEEK                          6501753       3236959            NA
+      VLGIDAGEEKEK                             NA            NA            NA
+      VLGIDGGEGK                         21730918      22729176      22288298
+      VLGIDGGEGKEELFR                   310732800     308248832     293879648
+      VLPIVSVPER                         38321944      36753872      33245134
+      VTISGSGNVAQYAALK                         NA            NA            NA
+      VTWENDKGEQEVAQGYR                  29334850      34406604      31665038
+      VTWENDNGEQEVAQGYR                   2196545       1868024            NA
+      VYDLMEK                                  NA            NA            NA
+      WIQDADALFGER                       14791715      14164882      13211582
+      YFLDALPVALLGMNADLMNQYVEFVADR       18627628      19885972      18657506
+      YHEIWQAYK                                NA            NA            NA
+                                    X05000amol_19 X05000amol_20 X05000amol_21
+      AAADALSDLEIK                       17433138      16814266      16672050
+      AAADALSDLEIKDSK                     8296377       6493854       6648468
+      AAGLTAAYAR                         46950028      47015204      46579580
+      AANLGGVAVSGLEMAQNSQK                6246498       5735264            NA
+      AANLGGVAVSGLEMAQNSQR               23459172      23548334      21888064
+      ANELLINVK                         120102184      81771072     119824456
+      ANGTTVLVGMPAGAK                          NA       1179761            NA
+      APEAEQVLSAAATFPIAQPATDVEAR         19155002      22861380      22084794
+      ATDGGAHGVINVSVSEAAIEASTR           12064686      11937126      13786568
+      AVQDNGESAFR                        10413330      11146405      11243084
+      CCSDVFNQVVK                        45498428      44087808      42410296
+      CSSDVFNHVVK                         2761542       2245315       2207967
+      DAVWFGPPK                                NA            NA            NA
+      DEGLHTDFACLLFAHLK                   2117499       2761318       3260441
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR      14700162      15770297      13345114
+      DIHDWNNR                            1243385       1565315       1232261
+      DIPVPEPKPNEILINVK                  32025276      31038142      33121140
+      DIPVPKPK                           61558740      59991384      52443080
+      DIPVPKPKPNELLINVK                        NA            NA            NA
+      DIVGAVLK                           39581620      36959604      32796010
+      DIVSAVVK                                 NA            NA            NA
+      EALDFFAR                          155374992     151091568     144267088
+      EALDFFSR                            5077645       4679563       5327363
+      FHPSVNLSILK                        43575888      42147152      44000240
+      FIAEGSNMGSTPEAIAVFETAR             26583856      28080308      24253970
+      GMMPGLTFSNELICR                     6268809       5519152       6372899
+      IAPRPLDLLRPVVR                     14334816      14758060      14172892
+      ICYAFMR                             7657606       7176212       7677985
+      IGDYAGIK                           24982260      20317830      23805188
+      IMINCFNECIDYAK                     10079241       9642958       8843318
+      ITWTSER                            12872000      14573153      13076167
+      IVGLSELPK                          14161978      13632104      15540326
+      IVTEAVEIEQR                        14259755      14327966      14350927
+      NKPDPAIVEK                         14202124      14240775      13066058
+      SISIVGSYVGNR                      211530048     218607776     117287408
+      SLEEIVDEYSTFSESK                    5391340       5250193       5621852
+      SLEQIVNEYSTFSENK                   21868472      31877228      31173398
+      STATGPSEAVWYGPPK                   37784276      38599108      38027720
+      VDIALPCATQNEVSGEEAK                36925748      36069692      35994016
+      VGDLAGIK                                 NA            NA            NA
+      VHFDQAGK                            7371118       6982594       6812696
+      VHFDQAGKK                                NA            NA            NA
+      VIELGGTVVSLSDSK                    11648463      12849290      11471655
+      VKVHFDQAGK                               NA            NA            NA
+      VLGIDAGEEK                          4496660       4463742       4143614
+      VLGIDAGEEKEK                        2582995            NA            NA
+      VLGIDGGEGK                         15327436      15764213      15116934
+      VLGIDGGEGKEELFR                   246493248     247013328     251923296
+      VLPIVSVPER                          8668736      31656514      32286958
+      VTISGSGNVAQYAALK                         NA            NA            NA
+      VTWENDKGEQEVAQGYR                  28550234      29106638      23044130
+      VTWENDNGEQEVAQGYR                   1549740       2254093       1893587
+      VYDLMEK                                  NA            NA            NA
+      WIQDADALFGER                       16542025      17730230      16432177
+      YFLDALPVALLGMNADLMNQYVEFVADR       16353712      14952015      14334848
+      YHEIWQAYK                                NA            NA            NA
+                                    X00500amol_22 X00500amol_23 X00500amol_24
+      AAADALSDLEIK                       16241769      16547102    17103176.0
+      AAADALSDLEIKDSK                    11874900      13444277    11704098.0
+      AAGLTAAYAR                         52204224      52682908    53819564.0
+      AANLGGVAVSGLEMAQNSQK                7022846       8644693     7242016.0
+      AANLGGVAVSGLEMAQNSQR               24304200      24394268    25473692.0
+      ANELLINVK                         146907280     132657224    94289320.0
+      ANGTTVLVGMPAGAK                          NA       1580351      583919.6
+      APEAEQVLSAAATFPIAQPATDVEAR          5336917       2550999    16019116.0
+      ATDGGAHGVINVSVSEAAIEASTR           12315551      14289372    13368371.0
+      AVQDNGESAFR                        11790422      12364597    13021226.0
+      CCSDVFNQVVK                        43381032      49102848    44540428.0
+      CSSDVFNHVVK                         3142080       2816871     2562533.5
+      DAVWFGPPK                                NA            NA    93315200.0
+      DEGLHTDFACLLFAHLK                   2292895       2227302     2777200.8
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR      17737958      19042758    20067188.0
+      DIHDWNNR                            1548212       1302651     1412382.2
+      DIPVPEPKPNEILINVK                  38464368      29523196    12535777.0
+      DIPVPKPK                           71922168      67592464    66379188.0
+      DIPVPKPKPNELLINVK                        NA            NA            NA
+      DIVGAVLK                           42382628      33119636    19413478.0
+      DIVSAVVK                            4910980            NA     7002705.5
+      EALDFFAR                          164647792     166064016   162734352.0
+      EALDFFSR                            4975440       5206034     5671098.0
+      FHPSVNLSILK                        18364534      11798363    13677464.0
+      FIAEGSNMGSTPEAIAVFETAR             30464300      32652292    35043916.0
+      GMMPGLTFSNELICR                     8371603       6020977     5213888.5
+      IAPRPLDLLRPVVR                     21997912      23567238    25495506.0
+      ICYAFMR                             9975436       9904451    10211527.0
+      IGDYAGIK                           20843288      21116736    18582498.0
+      IMINCFNECIDYAK                     11463417      11086691     8852520.0
+      ITWTSER                            15407992      14821705    14381612.0
+      IVGLSELPK                          16283978      17830696    17570164.0
+      IVTEAVEIEQR                        16242140      14818447    12853441.0
+      NKPDPAIVEK                         17914534      18154344    16417652.0
+      SISIVGSYVGNR                      228128208     216813840   215999808.0
+      SLEEIVDEYSTFSESK                    7584804       6661019     5961774.0
+      SLEQIVNEYSTFSENK                   30297990      29393852    21822246.0
+      STATGPSEAVWYGPPK                   37336940      39644956    37020460.0
+      VDIALPCATQNEVSGEEAK                41249888      42061944    39975864.0
+      VGDLAGIK                                 NA            NA            NA
+      VHFDQAGK                            8492644       9026544     8245126.5
+      VHFDQAGKK                                NA            NA            NA
+      VIELGGTVVSLSDSK                    12319118      12544567    11599452.0
+      VKVHFDQAGK                               NA            NA            NA
+      VLGIDAGEEK                          3357659       3395738     3344493.2
+      VLGIDAGEEKEK                        3540508       3736505     7323934.5
+      VLGIDGGEGK                          8632876       8205715     8250291.0
+      VLGIDGGEGKEELFR                   268017216     307231744   301406848.0
+      VLPIVSVPER                         34275200      32848434    16070409.0
+      VTISGSGNVAQYAALK                         NA            NA            NA
+      VTWENDKGEQEVAQGYR                  31237008      31587380    31373820.0
+      VTWENDNGEQEVAQGYR                   2870480       2511262     1913292.9
+      VYDLMEK                                  NA            NA            NA
+      WIQDADALFGER                       12794925      13238218    13029265.0
+      YFLDALPVALLGMNADLMNQYVEFVADR       18498924      16480001    17736366.0
+      YHEIWQAYK                                NA            NA            NA
+                                    X00050amol_25 X00050amol_26 X00050amol_27
+      AAADALSDLEIK                       15837018    15777189.0            NA
+      AAADALSDLEIKDSK                    12706037    11765338.0    12136474.0
+      AAGLTAAYAR                         42405088    48333608.0    48317352.0
+      AANLGGVAVSGLEMAQNSQK                1194559     1853150.4     5294388.0
+      AANLGGVAVSGLEMAQNSQR               25183894    24311752.0    25558928.0
+      ANELLINVK                         143336576   135581888.0   141564000.0
+      ANGTTVLVGMPAGAK                    17193102    15542036.0    15307682.0
+      APEAEQVLSAAATFPIAQPATDVEAR          3471051    15154679.0    16427805.0
+      ATDGGAHGVINVSVSEAAIEASTR           20650100    13667376.0    12610883.0
+      AVQDNGESAFR                        14142187    13486527.0      507371.0
+      CCSDVFNQVVK                        59145592    56774912.0    56625780.0
+      CSSDVFNHVVK                         5384400     3588275.8     4056205.5
+      DAVWFGPPK                                NA            NA            NA
+      DEGLHTDFACLLFAHLK                  11195082     6491461.5     3889717.5
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR      24432896    21866640.0    23865398.0
+      DIHDWNNR                            1702218     1900528.4     1832859.9
+      DIPVPEPKPNEILINVK                  36582944    32649746.0    30100972.0
+      DIPVPKPK                           59278012     9145546.0    22971464.0
+      DIPVPKPKPNELLINVK                   6593733     4241591.0            NA
+      DIVGAVLK                           45896880    43342528.0    40862788.0
+      DIVSAVVK                            3263568     2988572.5            NA
+      EALDFFAR                          170965168    92982664.0   160002416.0
+      EALDFFSR                            5460676     5175909.0     4441994.5
+      FHPSVNLSILK                        18622360    13428560.0    10306000.0
+      FIAEGSNMGSTPEAIAVFETAR             32234260    31165588.0    32545120.0
+      GMMPGLTFSNELICR                          NA            NA            NA
+      IAPRPLDLLRPVVR                     32737580    18788580.0    16102506.0
+      ICYAFMR                             8751272     8884152.0     9116933.0
+      IGDYAGIK                           95170600     6080861.5    19934776.0
+      IMINCFNECIDYAK                      9688477     9144634.0     8501619.0
+      ITWTSER                            14285334    14726336.0    13141825.0
+      IVGLSELPK                          12282748    12649121.0    13683276.0
+      IVTEAVEIEQR                        25305092    18366724.0    17996860.0
+      NKPDPAIVEK                         19266104    17568268.0    17775552.0
+      SISIVGSYVGNR                      102885368   115985832.0   106570152.0
+      SLEEIVDEYSTFSESK                    7220500     6186694.0     5781149.5
+      SLEQIVNEYSTFSENK                   23743364    21521876.0    29627912.0
+      STATGPSEAVWYGPPK                   35844740    35257408.0    32226714.0
+      VDIALPCATQNEVSGEEAK                35204192    35064372.0    35982932.0
+      VGDLAGIK                            3677479     3333634.5     3321836.5
+      VHFDQAGK                            9956600    11518706.0    11343584.0
+      VHFDQAGKK                           2187463     1714626.1     1220787.0
+      VIELGGTVVSLSDSK                    16078928    12727207.0    12856061.0
+      VKVHFDQAGK                          2425198      879336.3            NA
+      VLGIDAGEEK                               NA            NA            NA
+      VLGIDAGEEKEK                             NA            NA     3672123.8
+      VLGIDGGEGK                               NA            NA            NA
+      VLGIDGGEGKEELFR                   346066688   370226496.0   396314560.0
+      VLPIVSVPER                         26081848    26217462.0    27275988.0
+      VTISGSGNVAQYAALK                    3796743            NA            NA
+      VTWENDKGEQEVAQGYR                  50633064    42086216.0    38650968.0
+      VTWENDNGEQEVAQGYR                   2417310     1646048.5     1778971.2
+      VYDLMEK                                  NA            NA            NA
+      WIQDADALFGER                       12766219    12002842.0    11118362.0
+      YFLDALPVALLGMNADLMNQYVEFVADR       23721054    22924006.0    17723496.0
+      YHEIWQAYK                                NA            NA      947155.8
+
+---
+
+    Code
+      as.data.frame(tail(SummarizedExperiment::rowData(D1), n = 1000))
+    Output
+                                                         Sequence
+      AAADALSDLEIK                                   AAADALSDLEIK
+      AAADALSDLEIKDSK                             AAADALSDLEIKDSK
+      AAGLTAAYAR                                       AAGLTAAYAR
+      AANLGGVAVSGLEMAQNSQK                   AANLGGVAVSGLEMAQNSQK
+      AANLGGVAVSGLEMAQNSQR                   AANLGGVAVSGLEMAQNSQR
+      ANELLINVK                                         ANELLINVK
+      ANGTTVLVGMPAGAK                             ANGTTVLVGMPAGAK
+      APEAEQVLSAAATFPIAQPATDVEAR       APEAEQVLSAAATFPIAQPATDVEAR
+      ATDGGAHGVINVSVSEAAIEASTR           ATDGGAHGVINVSVSEAAIEASTR
+      AVQDNGESAFR                                     AVQDNGESAFR
+      CCSDVFNQVVK                                     CCSDVFNQVVK
+      CSSDVFNHVVK                                     CSSDVFNHVVK
+      DAVWFGPPK                                         DAVWFGPPK
+      DEGLHTDFACLLFAHLK                         DEGLHTDFACLLFAHLK
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR DGKAPEAEQVLSAAATFPIAQPATDVEAR
+      DIHDWNNR                                           DIHDWNNR
+      DIPVPEPKPNEILINVK                         DIPVPEPKPNEILINVK
+      DIPVPKPK                                           DIPVPKPK
+      DIPVPKPKPNELLINVK                         DIPVPKPKPNELLINVK
+      DIVGAVLK                                           DIVGAVLK
+      DIVSAVVK                                           DIVSAVVK
+      EALDFFAR                                           EALDFFAR
+      EALDFFSR                                           EALDFFSR
+      FHPSVNLSILK                                     FHPSVNLSILK
+      FIAEGSNMGSTPEAIAVFETAR               FIAEGSNMGSTPEAIAVFETAR
+      GMMPGLTFSNELICR                             GMMPGLTFSNELICR
+      IAPRPLDLLRPVVR                               IAPRPLDLLRPVVR
+      ICYAFMR                                             ICYAFMR
+      IGDYAGIK                                           IGDYAGIK
+      IMINCFNECIDYAK                               IMINCFNECIDYAK
+      ITWTSER                                             ITWTSER
+      IVGLSELPK                                         IVGLSELPK
+      IVTEAVEIEQR                                     IVTEAVEIEQR
+      NKPDPAIVEK                                       NKPDPAIVEK
+      SISIVGSYVGNR                                   SISIVGSYVGNR
+      SLEEIVDEYSTFSESK                           SLEEIVDEYSTFSESK
+      SLEQIVNEYSTFSENK                           SLEQIVNEYSTFSENK
+      STATGPSEAVWYGPPK                           STATGPSEAVWYGPPK
+      VDIALPCATQNEVSGEEAK                     VDIALPCATQNEVSGEEAK
+      VGDLAGIK                                           VGDLAGIK
+      VHFDQAGK                                           VHFDQAGK
+      VHFDQAGKK                                         VHFDQAGKK
+      VIELGGTVVSLSDSK                             VIELGGTVVSLSDSK
+      VKVHFDQAGK                                       VKVHFDQAGK
+      VLGIDAGEEK                                       VLGIDAGEEK
+      VLGIDAGEEKEK                                   VLGIDAGEEKEK
+      VLGIDGGEGK                                       VLGIDGGEGK
+      VLGIDGGEGKEELFR                             VLGIDGGEGKEELFR
+      VLPIVSVPER                                       VLPIVSVPER
+      VTISGSGNVAQYAALK                           VTISGSGNVAQYAALK
+      VTWENDKGEQEVAQGYR                         VTWENDKGEQEVAQGYR
+      VTWENDNGEQEVAQGYR                         VTWENDNGEQEVAQGYR
+      VYDLMEK                                             VYDLMEK
+      WIQDADALFGER                                   WIQDADALFGER
+      YFLDALPVALLGMNADLMNQYVEFVADR   YFLDALPVALLGMNADLMNQYVEFVADR
+      YHEIWQAYK                                         YHEIWQAYK
+
+---
+
+    Code
+      as.data.frame(tail(SummarizedExperiment::colData(D1), n = 1000))
+    Output
+                           sample
+      X12500amol_1   X12500amol_1
+      X12500amol_2   X12500amol_2
+      X12500amol_3   X12500amol_3
+      X00125amol_4   X00125amol_4
+      X00125amol_5   X00125amol_5
+      X00125amol_6   X00125amol_6
+      X25000amol_7   X25000amol_7
+      X25000amol_8   X25000amol_8
+      X25000amol_9   X25000amol_9
+      X02500amol_10 X02500amol_10
+      X02500amol_11 X02500amol_11
+      X02500amol_12 X02500amol_12
+      X00250amol_13 X00250amol_13
+      X00250amol_14 X00250amol_14
+      X00250amol_15 X00250amol_15
+      X50000amol_16 X50000amol_16
+      X50000amol_17 X50000amol_17
+      X50000amol_18 X50000amol_18
+      X05000amol_19 X05000amol_19
+      X05000amol_20 X05000amol_20
+      X05000amol_21 X05000amol_21
+      X00500amol_22 X00500amol_22
+      X00500amol_23 X00500amol_23
+      X00500amol_24 X00500amol_24
+      X00050amol_25 X00050amol_25
+      X00050amol_26 X00050amol_26
+      X00050amol_27 X00050amol_27
+
+---
+
+    Code
+      D2
+    Output
+      class: SummarizedExperiment 
+      dim: 56 27 
+      metadata(0):
+      assays(1): intensities
+      rownames(56): AAADALSDLEIK AAADALSDLEIKDSK ...
+        YFLDALPVALLGMNADLMNQYVEFVADR YHEIWQAYK
+      rowData names(3): Sequence Protein Mapped.Proteins
+      colnames(27): X12500amol_1 X12500amol_2 ... X00050amol_26 X00050amol_27
+      colData names(1): sample
+
+---
+
+    Code
+      SummarizedExperiment::assays(D2)$intensities
+    Output
+                                    X12500amol_1 X12500amol_2 X12500amol_3
+      AAADALSDLEIK                      16660091     16323178     17298806
+      AAADALSDLEIKDSK                    6175501      6883170      6649613
+      AAGLTAAYAR                        50664624     45957620     42893008
+      AANLGGVAVSGLEMAQNSQK                    NA           NA           NA
+      AANLGGVAVSGLEMAQNSQR              23208640     21944222     19847992
+      ANELLINVK                        131499184     72217464     58916684
+      ANGTTVLVGMPAGAK                         NA      2615513      1956361
+      APEAEQVLSAAATFPIAQPATDVEAR        22257000     21787972     23117052
+      ATDGGAHGVINVSVSEAAIEASTR          12705491     14613132     16281006
+      AVQDNGESAFR                       10152627     10655229      9850081
+      CCSDVFNQVVK                       41217368     40702972     40272800
+      CSSDVFNHVVK                        2854208           NA           NA
+      DAVWFGPPK                               NA           NA           NA
+      DEGLHTDFACLLFAHLK                  2316547      3489597      2413868
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR     11484816     13142636     12704731
+      DIHDWNNR                           1432926      1572426      1258790
+      DIPVPEPKPNEILINVK                 31843328     30538440     30665996
+      DIPVPKPK                          52647740     51280264     49098492
+      DIPVPKPKPNELLINVK                       NA           NA           NA
+      DIVGAVLK                          35849292     38611148     36694012
+      DIVSAVVK                                NA           NA           NA
+      EALDFFAR                         144335696    143663200    142131168
+      EALDFFSR                           5409440      4937898      5096693
+      FHPSVNLSILK                       41675920     41795460     42734532
+      FIAEGSNMGSTPEAIAVFETAR            26768948     25924216     27617288
+      GMMPGLTFSNELICR                    6749334           NA      6009475
+      IAPRPLDLLRPVVR                    12983798     14764920     16258448
+      ICYAFMR                            7077311      6615372      7313773
+      IGDYAGIK                          17597812     24632956     89244856
+      IMINCFNECIDYAK                    10248893      8864130      8868753
+      ITWTSER                           14094202     14257148     12166455
+      IVGLSELPK                         14039759     12656728     12722021
+      IVTEAVEIEQR                       15241349     15443454     14426457
+      NKPDPAIVEK                        13822061     13179719     12401665
+      SISIVGSYVGNR                     197416112    210896720    197820176
+      SLEEIVDEYSTFSESK                   7038281      5773411      6717431
+      SLEQIVNEYSTFSENK                  31163504     23231938     21285180
+      STATGPSEAVWYGPPK                  33732536     33050214     31739314
+      VDIALPCATQNEVSGEEAK               37521188     34652660     35182592
+      VGDLAGIK                                NA           NA           NA
+      VHFDQAGK                           7162539      7493533      8393470
+      VHFDQAGKK                               NA           NA           NA
+      VIELGGTVVSLSDSK                   12409758     12194792     11933417
+      VKVHFDQAGK                              NA           NA           NA
+      VLGIDAGEEK                         4412748      4592458      2400779
+      VLGIDAGEEKEK                            NA      3150520      2653662
+      VLGIDGGEGK                        16923064     15676497     16576612
+      VLGIDGGEGKEELFR                  245174528    253224576    250229696
+      VLPIVSVPER                        13399222     30700562     30214328
+      VTISGSGNVAQYAALK                        NA           NA           NA
+      VTWENDKGEQEVAQGYR                 27211094     24460330     26592682
+      VTWENDNGEQEVAQGYR                  2225338      1492534      1091157
+      VYDLMEK                                 NA           NA           NA
+      WIQDADALFGER                      15335661     13639781     14241814
+      YFLDALPVALLGMNADLMNQYVEFVADR      17406602     19890862     17477080
+      YHEIWQAYK                               NA           NA           NA
+                                    X00125amol_4 X00125amol_5 X00125amol_6
+      AAADALSDLEIK                    18720484.0           NA           NA
+      AAADALSDLEIKDSK                 10972898.0     11342712     11448656
+      AAGLTAAYAR                      52237876.0     50498304     52709796
+      AANLGGVAVSGLEMAQNSQK             6238824.0      6468571      7061726
+      AANLGGVAVSGLEMAQNSQR            24656808.0     26069882     22964484
+      ANELLINVK                      128104856.0     82886408    133627024
+      ANGTTVLVGMPAGAK                   115821.7      1379707           NA
+      APEAEQVLSAAATFPIAQPATDVEAR       3283848.5     19588008           NA
+      ATDGGAHGVINVSVSEAAIEASTR         9060527.0     10369961     12119284
+      AVQDNGESAFR                     12683695.0     12009032     12704845
+      CCSDVFNQVVK                     48827036.0     48742680     45231516
+      CSSDVFNHVVK                      3700081.2      3772577      3133452
+      DAVWFGPPK                               NA     27085950           NA
+      DEGLHTDFACLLFAHLK                1310319.5      2435262      3021355
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR   22002296.0     18430470     23525034
+      DIHDWNNR                         1448928.5      1576698      1340544
+      DIPVPEPKPNEILINVK               16754882.0     28370870     31989026
+      DIPVPKPK                        30310182.0     68830344     10355419
+      DIPVPKPKPNELLINVK                       NA           NA           NA
+      DIVGAVLK                        40575636.0     23610014     39584316
+      DIVSAVVK                                NA           NA           NA
+      EALDFFAR                       158724608.0    162808080    156249664
+      EALDFFSR                         5116662.5      5538260      4975929
+      FHPSVNLSILK                      7892667.5      8670908      7371482
+      FIAEGSNMGSTPEAIAVFETAR          34401144.0     33077780     29619612
+      GMMPGLTFSNELICR                  6237984.0      5110547      5691994
+      IAPRPLDLLRPVVR                  20587516.0     24595374     25337666
+      ICYAFMR                         10218990.0      9588106           NA
+      IGDYAGIK                        18897402.0     16543222     20737782
+      IMINCFNECIDYAK                   9980778.0     10607803      9567532
+      ITWTSER                         14337010.0     14149094     13645510
+      IVGLSELPK                       14289693.0     16073002     14996138
+      IVTEAVEIEQR                     15306459.0     15447061     14547581
+      NKPDPAIVEK                      15909316.0     16597573     15547880
+      SISIVGSYVGNR                   205461152.0    215511840    209203904
+      SLEEIVDEYSTFSESK                 5226790.0      5974976      7167488
+      SLEQIVNEYSTFSENK                32713454.0     21769342     28367608
+      STATGPSEAVWYGPPK                27358150.0     33949196     38355960
+      VDIALPCATQNEVSGEEAK             37412504.0     39527008     38788088
+      VGDLAGIK                                NA           NA           NA
+      VHFDQAGK                        11492012.0     10871177      9369949
+      VHFDQAGKK                         903016.0           NA           NA
+      VIELGGTVVSLSDSK                 13474723.0     12315129     11844407
+      VKVHFDQAGK                              NA           NA           NA
+      VLGIDAGEEK                              NA      3838526      3578398
+      VLGIDAGEEKEK                     6323846.5      4187851      6123861
+      VLGIDGGEGK                       9281696.0      9012668      7929316
+      VLGIDGGEGKEELFR                362196224.0    316812064    272619168
+      VLPIVSVPER                      29216640.0     12491943     27639594
+      VTISGSGNVAQYAALK                        NA           NA           NA
+      VTWENDKGEQEVAQGYR               35068648.0     32311864     32133120
+      VTWENDNGEQEVAQGYR                1929963.8      2051902      2005732
+      VYDLMEK                                 NA           NA           NA
+      WIQDADALFGER                    13804545.0     13174386     13514189
+      YFLDALPVALLGMNADLMNQYVEFVADR    18513336.0     16200191     16814326
+      YHEIWQAYK                               NA           NA           NA
+                                    X25000amol_7 X25000amol_8 X25000amol_9
+      AAADALSDLEIK                    15095092.0     20916518     18092006
+      AAADALSDLEIKDSK                  6259866.0      6949910      7377443
+      AAGLTAAYAR                      44923996.0     62198864     59805652
+      AANLGGVAVSGLEMAQNSQK                    NA           NA           NA
+      AANLGGVAVSGLEMAQNSQR            19574036.0     27088676     21586448
+      ANELLINVK                       69232104.0    179650752     76754616
+      ANGTTVLVGMPAGAK                   107904.2      2735031           NA
+      APEAEQVLSAAATFPIAQPATDVEAR      23631312.0     30303920           NA
+      ATDGGAHGVINVSVSEAAIEASTR        12925076.0     12641358     16146998
+      AVQDNGESAFR                     10379728.0     14145952     14007958
+      CCSDVFNQVVK                     37673056.0     51322492     44012456
+      CSSDVFNHVVK                             NA      2242423      3574236
+      DAVWFGPPK                               NA           NA           NA
+      DEGLHTDFACLLFAHLK                3204199.5      3446689      3775672
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR   15021760.0     15174610     14032761
+      DIHDWNNR                         1455472.4           NA      2171138
+      DIPVPEPKPNEILINVK               30142702.0     40836680     34420668
+      DIPVPKPK                        56190612.0     70077224     65515364
+      DIPVPKPKPNELLINVK                       NA           NA           NA
+      DIVGAVLK                        32892946.0     51391584     45523748
+      DIVSAVVK                                NA           NA           NA
+      EALDFFAR                       133383192.0    190626192    152814928
+      EALDFFSR                         4256725.0      5947657      4878852
+      FHPSVNLSILK                     41601388.0     54020284     46622904
+      FIAEGSNMGSTPEAIAVFETAR          19833616.0     32803796     27799648
+      GMMPGLTFSNELICR                  7077358.5      8163223      6933592
+      IAPRPLDLLRPVVR                  12680532.0     17169764     14584777
+      ICYAFMR                          6328331.5      7451789      7313330
+      IGDYAGIK                        27150348.0     42932032     34306332
+      IMINCFNECIDYAK                   8091131.5     10226996      9032639
+      ITWTSER                         12805046.0     17750182     16788356
+      IVGLSELPK                       14005584.0     16640459     14837210
+      IVTEAVEIEQR                     15747279.0     21721820     17492600
+      NKPDPAIVEK                      14193911.0     19013752     17844664
+      SISIVGSYVGNR                   202224176.0    268047360    226595568
+      SLEEIVDEYSTFSESK                 5432682.0      5712274      5808808
+      SLEQIVNEYSTFSENK                21781766.0     24832864     26519944
+      STATGPSEAVWYGPPK                 5157583.5     43664056     35949992
+      VDIALPCATQNEVSGEEAK             33570404.0     46171072     39954960
+      VGDLAGIK                                NA           NA           NA
+      VHFDQAGK                         7814195.0      9689494     10426070
+      VHFDQAGKK                               NA           NA           NA
+      VIELGGTVVSLSDSK                 11620443.0     15282994     14178375
+      VKVHFDQAGK                              NA           NA           NA
+      VLGIDAGEEK                       1226333.2      6888371      7021689
+      VLGIDAGEEKEK                            NA           NA           NA
+      VLGIDGGEGK                      16061700.0     25690674     23413072
+      VLGIDGGEGKEELFR                235829472.0    265839488    246467744
+      VLPIVSVPER                      13204528.0     17506694     33422056
+      VTISGSGNVAQYAALK                        NA           NA           NA
+      VTWENDKGEQEVAQGYR               25259102.0     27069982     28076856
+      VTWENDNGEQEVAQGYR                1538274.8      1586699      1493909
+      VYDLMEK                                 NA           NA           NA
+      WIQDADALFGER                    14206174.0     16167786     16288937
+      YFLDALPVALLGMNADLMNQYVEFVADR    17933010.0     19159070     21521144
+      YHEIWQAYK                               NA           NA           NA
+                                    X02500amol_10 X02500amol_11 X02500amol_12
+      AAADALSDLEIK                       15727362      16415339      16067322
+      AAADALSDLEIKDSK                     6846889       6577292       7582225
+      AAGLTAAYAR                         44056176      44803648      47686492
+      AANLGGVAVSGLEMAQNSQK                1954012       5869354       6083535
+      AANLGGVAVSGLEMAQNSQR               23474020      21675104      22744182
+      ANELLINVK                          81229776     112902888     126811848
+      ANGTTVLVGMPAGAK                          NA            NA            NA
+      APEAEQVLSAAATFPIAQPATDVEAR         23715532      22342180      22624620
+      ATDGGAHGVINVSVSEAAIEASTR            9505271      11907872      13282698
+      AVQDNGESAFR                        11621514      11262419      11520064
+      CCSDVFNQVVK                        44495416      42731896      44967616
+      CSSDVFNHVVK                         1988838       2329175       2406157
+      DAVWFGPPK                                NA            NA            NA
+      DEGLHTDFACLLFAHLK                   2799401       3184805       2634233
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR      12696330      15412163      13156537
+      DIHDWNNR                            1446406       1713295       1055331
+      DIPVPEPKPNEILINVK                  32612942      33114798      34667520
+      DIPVPKPK                           53339164      49666280      49900504
+      DIPVPKPKPNELLINVK                        NA            NA            NA
+      DIVGAVLK                           39307684      37201936      36889784
+      DIVSAVVK                                 NA            NA            NA
+      EALDFFAR                          151561552     149299328     152923792
+      EALDFFSR                            5063661       5087528       4908037
+      FHPSVNLSILK                        44386032      45813012      42011908
+      FIAEGSNMGSTPEAIAVFETAR             28224432      29104368      25264640
+      GMMPGLTFSNELICR                     6192352       6879718       7429992
+      IAPRPLDLLRPVVR                     15982781      16664542      14223124
+      ICYAFMR                             6813593       7275324       7596584
+      IGDYAGIK                           21363350      19312496      18705578
+      IMINCFNECIDYAK                      8176213       9238131       9425569
+      ITWTSER                            13814952      12631795      14107541
+      IVGLSELPK                          14463209      15144304      15906892
+      IVTEAVEIEQR                        13986346      13224527      13915042
+      NKPDPAIVEK                         14516588      14533515      13723346
+      SISIVGSYVGNR                      204803792     192159072     199578448
+      SLEEIVDEYSTFSESK                    6867613       8027432       5862909
+      SLEQIVNEYSTFSENK                   29415838      32582280      24691500
+      STATGPSEAVWYGPPK                   11332475      37267528      35095124
+      VDIALPCATQNEVSGEEAK                38288128      38579240      37499464
+      VGDLAGIK                                 NA            NA            NA
+      VHFDQAGK                            7574634       7476079       8151144
+      VHFDQAGKK                                NA            NA            NA
+      VIELGGTVVSLSDSK                    11673200      11399138      11307663
+      VKVHFDQAGK                               NA            NA            NA
+      VLGIDAGEEK                          4179376       3995589       4299318
+      VLGIDAGEEKEK                        2239575       2994430       4336466
+      VLGIDGGEGK                         14642058      14487706      14797706
+      VLGIDGGEGKEELFR                   230019856     243043776     272961824
+      VLPIVSVPER                         10285411      29658798      32330072
+      VTISGSGNVAQYAALK                         NA            NA            NA
+      VTWENDKGEQEVAQGYR                  26390696      24318492      25980540
+      VTWENDNGEQEVAQGYR                   1940408       2117411       1569083
+      VYDLMEK                                  NA            NA            NA
+      WIQDADALFGER                       15902484      17497958      16881698
+      YFLDALPVALLGMNADLMNQYVEFVADR       17174360      16157694      15929807
+      YHEIWQAYK                                NA            NA            NA
+                                    X00250amol_13 X00250amol_14 X00250amol_15
+      AAADALSDLEIK                     14650810.0      14184984    15670659.0
+      AAADALSDLEIKDSK                  10031345.0      11549492    11755899.0
+      AAGLTAAYAR                       47915144.0      46670928    47595672.0
+      AANLGGVAVSGLEMAQNSQK              6309355.0       6400828     6299309.0
+      AANLGGVAVSGLEMAQNSQR             22572020.0      22591486    24018152.0
+      ANELLINVK                        71422992.0     130183680   127739832.0
+      ANGTTVLVGMPAGAK                    153517.2            NA      694539.8
+      APEAEQVLSAAATFPIAQPATDVEAR       12040034.0      14779541    13757152.0
+      ATDGGAHGVINVSVSEAAIEASTR         11895755.0      12689912    13530926.0
+      AVQDNGESAFR                      11732520.0      10788664    10429924.0
+      CCSDVFNQVVK                      41424864.0      47029724    47235608.0
+      CSSDVFNHVVK                       2847702.2       2934318     2814663.0
+      DAVWFGPPK                                NA            NA    24908776.0
+      DEGLHTDFACLLFAHLK                 1387919.4       3157181     2546032.8
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR    19190556.0      20985308    18330854.0
+      DIHDWNNR                          1528940.1       1409498     1203343.4
+      DIPVPEPKPNEILINVK                34813916.0      14746562    30120776.0
+      DIPVPKPK                         58639972.0      61561444    56949416.0
+      DIPVPKPKPNELLINVK                        NA            NA            NA
+      DIVGAVLK                         36628644.0      37856056    34209252.0
+      DIVSAVVK                                 NA            NA            NA
+      EALDFFAR                        142583008.0     147526608   159145664.0
+      EALDFFSR                          4927599.0       4955110     5361476.0
+      FHPSVNLSILK                      12595698.0       7563903     7835772.0
+      FIAEGSNMGSTPEAIAVFETAR           29321504.0      30145512    30795368.0
+      GMMPGLTFSNELICR                   5111623.0       7166785     6644479.5
+      IAPRPLDLLRPVVR                   20452980.0      22524234    20525948.0
+      ICYAFMR                           7981887.0       9527861     9296609.0
+      IGDYAGIK                         19220224.0      25314628    15434977.0
+      IMINCFNECIDYAK                    9908359.0       9914862    11501108.0
+      ITWTSER                          13275469.0      12883100    12714821.0
+      IVGLSELPK                        12360754.0      14196378    15307652.0
+      IVTEAVEIEQR                      14514474.0      14110228    15606699.0
+      NKPDPAIVEK                       15083750.0      15898443    15632512.0
+      SISIVGSYVGNR                    187239360.0     203869008   111068800.0
+      SLEEIVDEYSTFSESK                  5707765.0       6294375     5750519.5
+      SLEQIVNEYSTFSENK                 31463814.0      31653848    31194010.0
+      STATGPSEAVWYGPPK                  6921286.0      34943632     6690480.5
+      VDIALPCATQNEVSGEEAK              34530488.0      30436440    37316732.0
+      VGDLAGIK                                 NA            NA            NA
+      VHFDQAGK                          7661171.5       8479784     7656383.0
+      VHFDQAGKK                                NA            NA            NA
+      VIELGGTVVSLSDSK                  10833894.0      11794306    11652597.0
+      VKVHFDQAGK                               NA            NA            NA
+      VLGIDAGEEK                        3406792.0       3459343            NA
+      VLGIDAGEEKEK                      1447751.5       4310324     7081323.0
+      VLGIDGGEGK                        8179078.5       8392483     8722750.0
+      VLGIDGGEGKEELFR                 254518096.0     272659168   289409184.0
+      VLPIVSVPER                       26107066.0      26715040    30610234.0
+      VTISGSGNVAQYAALK                         NA            NA            NA
+      VTWENDKGEQEVAQGYR                26981580.0      30872694    29173574.0
+      VTWENDNGEQEVAQGYR                 2244020.5       1001634     2084471.9
+      VYDLMEK                                  NA            NA     2658838.2
+      WIQDADALFGER                     12206578.0      12963664    13555982.0
+      YFLDALPVALLGMNADLMNQYVEFVADR     18162096.0      15603493    17345396.0
+      YHEIWQAYK                                NA            NA            NA
+                                    X50000amol_16 X50000amol_17 X50000amol_18
+      AAADALSDLEIK                       20097194      20392496      19201432
+      AAADALSDLEIKDSK                     9461958      10013490       8984850
+      AAGLTAAYAR                         59292308      58201012      60803696
+      AANLGGVAVSGLEMAQNSQK                     NA            NA            NA
+      AANLGGVAVSGLEMAQNSQR               24339804      20682242      21185518
+      ANELLINVK                          94227256      77019728      80819888
+      ANGTTVLVGMPAGAK                     1074806       2821098       1409265
+      APEAEQVLSAAATFPIAQPATDVEAR         25559998      22537076      23814924
+      ATDGGAHGVINVSVSEAAIEASTR           18931180      25493680      20995826
+      AVQDNGESAFR                        13291108      13159595      13049649
+      CCSDVFNQVVK                        51749692      50760936      48235872
+      CSSDVFNHVVK                              NA            NA            NA
+      DAVWFGPPK                                NA            NA      37780732
+      DEGLHTDFACLLFAHLK                   5009634       2993043       4318626
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR      12646471      11515427      10895787
+      DIHDWNNR                            2182686       2083161       2213801
+      DIPVPEPKPNEILINVK                  34932416      30299232      34063552
+      DIPVPKPK                           71682888      73035816      39473344
+      DIPVPKPKPNELLINVK                        NA            NA            NA
+      DIVGAVLK                           50729680      48280100      45695764
+      DIVSAVVK                                 NA            NA            NA
+      EALDFFAR                          175977216     170697696     164780160
+      EALDFFSR                            6354003       5840071       5520620
+      FHPSVNLSILK                        49444708      17229064      20283782
+      FIAEGSNMGSTPEAIAVFETAR             29070728      21219730      25778940
+      GMMPGLTFSNELICR                     7346210       7831343       4947371
+      IAPRPLDLLRPVVR                     18632710      15481304      17142548
+      ICYAFMR                             8750931       7505615       8460419
+      IGDYAGIK                           42090052     133881384     134956272
+      IMINCFNECIDYAK                     10632306       9843538       9488800
+      ITWTSER                            14015593       6118963      14362391
+      IVGLSELPK                          17914548      16627818      16910894
+      IVTEAVEIEQR                        23811012      24928354      22857772
+      NKPDPAIVEK                         19934838      19983408      20535144
+      SISIVGSYVGNR                      273990048     271280128     250265200
+      SLEEIVDEYSTFSESK                         NA       5779023       5104555
+      SLEQIVNEYSTFSENK                   24992194      20035476      25192352
+      STATGPSEAVWYGPPK                   38044188       7203258      34957304
+      VDIALPCATQNEVSGEEAK                46458124      42721952      38366632
+      VGDLAGIK                                 NA            NA            NA
+      VHFDQAGK                           14630182      18862436      18720100
+      VHFDQAGKK                                NA            NA            NA
+      VIELGGTVVSLSDSK                    14932316      12424974      13175102
+      VKVHFDQAGK                               NA            NA            NA
+      VLGIDAGEEK                          6501753       3236959            NA
+      VLGIDAGEEKEK                             NA            NA            NA
+      VLGIDGGEGK                         21730918      22729176      22288298
+      VLGIDGGEGKEELFR                   310732800     308248832     293879648
+      VLPIVSVPER                         38321944      36753872      33245134
+      VTISGSGNVAQYAALK                         NA            NA            NA
+      VTWENDKGEQEVAQGYR                  29334850      34406604      31665038
+      VTWENDNGEQEVAQGYR                   2196545       1868024            NA
+      VYDLMEK                                  NA            NA            NA
+      WIQDADALFGER                       14791715      14164882      13211582
+      YFLDALPVALLGMNADLMNQYVEFVADR       18627628      19885972      18657506
+      YHEIWQAYK                                NA            NA            NA
+                                    X05000amol_19 X05000amol_20 X05000amol_21
+      AAADALSDLEIK                       17433138      16814266      16672050
+      AAADALSDLEIKDSK                     8296377       6493854       6648468
+      AAGLTAAYAR                         46950028      47015204      46579580
+      AANLGGVAVSGLEMAQNSQK                6246498       5735264            NA
+      AANLGGVAVSGLEMAQNSQR               23459172      23548334      21888064
+      ANELLINVK                         120102184      81771072     119824456
+      ANGTTVLVGMPAGAK                          NA       1179761            NA
+      APEAEQVLSAAATFPIAQPATDVEAR         19155002      22861380      22084794
+      ATDGGAHGVINVSVSEAAIEASTR           12064686      11937126      13786568
+      AVQDNGESAFR                        10413330      11146405      11243084
+      CCSDVFNQVVK                        45498428      44087808      42410296
+      CSSDVFNHVVK                         2761542       2245315       2207967
+      DAVWFGPPK                                NA            NA            NA
+      DEGLHTDFACLLFAHLK                   2117499       2761318       3260441
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR      14700162      15770297      13345114
+      DIHDWNNR                            1243385       1565315       1232261
+      DIPVPEPKPNEILINVK                  32025276      31038142      33121140
+      DIPVPKPK                           61558740      59991384      52443080
+      DIPVPKPKPNELLINVK                        NA            NA            NA
+      DIVGAVLK                           39581620      36959604      32796010
+      DIVSAVVK                                 NA            NA            NA
+      EALDFFAR                          155374992     151091568     144267088
+      EALDFFSR                            5077645       4679563       5327363
+      FHPSVNLSILK                        43575888      42147152      44000240
+      FIAEGSNMGSTPEAIAVFETAR             26583856      28080308      24253970
+      GMMPGLTFSNELICR                     6268809       5519152       6372899
+      IAPRPLDLLRPVVR                     14334816      14758060      14172892
+      ICYAFMR                             7657606       7176212       7677985
+      IGDYAGIK                           24982260      20317830      23805188
+      IMINCFNECIDYAK                     10079241       9642958       8843318
+      ITWTSER                            12872000      14573153      13076167
+      IVGLSELPK                          14161978      13632104      15540326
+      IVTEAVEIEQR                        14259755      14327966      14350927
+      NKPDPAIVEK                         14202124      14240775      13066058
+      SISIVGSYVGNR                      211530048     218607776     117287408
+      SLEEIVDEYSTFSESK                    5391340       5250193       5621852
+      SLEQIVNEYSTFSENK                   21868472      31877228      31173398
+      STATGPSEAVWYGPPK                   37784276      38599108      38027720
+      VDIALPCATQNEVSGEEAK                36925748      36069692      35994016
+      VGDLAGIK                                 NA            NA            NA
+      VHFDQAGK                            7371118       6982594       6812696
+      VHFDQAGKK                                NA            NA            NA
+      VIELGGTVVSLSDSK                    11648463      12849290      11471655
+      VKVHFDQAGK                               NA            NA            NA
+      VLGIDAGEEK                          4496660       4463742       4143614
+      VLGIDAGEEKEK                        2582995            NA            NA
+      VLGIDGGEGK                         15327436      15764213      15116934
+      VLGIDGGEGKEELFR                   246493248     247013328     251923296
+      VLPIVSVPER                          8668736      31656514      32286958
+      VTISGSGNVAQYAALK                         NA            NA            NA
+      VTWENDKGEQEVAQGYR                  28550234      29106638      23044130
+      VTWENDNGEQEVAQGYR                   1549740       2254093       1893587
+      VYDLMEK                                  NA            NA            NA
+      WIQDADALFGER                       16542025      17730230      16432177
+      YFLDALPVALLGMNADLMNQYVEFVADR       16353712      14952015      14334848
+      YHEIWQAYK                                NA            NA            NA
+                                    X00500amol_22 X00500amol_23 X00500amol_24
+      AAADALSDLEIK                       16241769      16547102    17103176.0
+      AAADALSDLEIKDSK                    11874900      13444277    11704098.0
+      AAGLTAAYAR                         52204224      52682908    53819564.0
+      AANLGGVAVSGLEMAQNSQK                7022846       8644693     7242016.0
+      AANLGGVAVSGLEMAQNSQR               24304200      24394268    25473692.0
+      ANELLINVK                         146907280     132657224    94289320.0
+      ANGTTVLVGMPAGAK                          NA       1580351      583919.6
+      APEAEQVLSAAATFPIAQPATDVEAR          5336917       2550999    16019116.0
+      ATDGGAHGVINVSVSEAAIEASTR           12315551      14289372    13368371.0
+      AVQDNGESAFR                        11790422      12364597    13021226.0
+      CCSDVFNQVVK                        43381032      49102848    44540428.0
+      CSSDVFNHVVK                         3142080       2816871     2562533.5
+      DAVWFGPPK                                NA            NA    93315200.0
+      DEGLHTDFACLLFAHLK                   2292895       2227302     2777200.8
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR      17737958      19042758    20067188.0
+      DIHDWNNR                            1548212       1302651     1412382.2
+      DIPVPEPKPNEILINVK                  38464368      29523196    12535777.0
+      DIPVPKPK                           71922168      67592464    66379188.0
+      DIPVPKPKPNELLINVK                        NA            NA            NA
+      DIVGAVLK                           42382628      33119636    19413478.0
+      DIVSAVVK                            4910980            NA     7002705.5
+      EALDFFAR                          164647792     166064016   162734352.0
+      EALDFFSR                            4975440       5206034     5671098.0
+      FHPSVNLSILK                        18364534      11798363    13677464.0
+      FIAEGSNMGSTPEAIAVFETAR             30464300      32652292    35043916.0
+      GMMPGLTFSNELICR                     8371603       6020977     5213888.5
+      IAPRPLDLLRPVVR                     21997912      23567238    25495506.0
+      ICYAFMR                             9975436       9904451    10211527.0
+      IGDYAGIK                           20843288      21116736    18582498.0
+      IMINCFNECIDYAK                     11463417      11086691     8852520.0
+      ITWTSER                            15407992      14821705    14381612.0
+      IVGLSELPK                          16283978      17830696    17570164.0
+      IVTEAVEIEQR                        16242140      14818447    12853441.0
+      NKPDPAIVEK                         17914534      18154344    16417652.0
+      SISIVGSYVGNR                      228128208     216813840   215999808.0
+      SLEEIVDEYSTFSESK                    7584804       6661019     5961774.0
+      SLEQIVNEYSTFSENK                   30297990      29393852    21822246.0
+      STATGPSEAVWYGPPK                   37336940      39644956    37020460.0
+      VDIALPCATQNEVSGEEAK                41249888      42061944    39975864.0
+      VGDLAGIK                                 NA            NA            NA
+      VHFDQAGK                            8492644       9026544     8245126.5
+      VHFDQAGKK                                NA            NA            NA
+      VIELGGTVVSLSDSK                    12319118      12544567    11599452.0
+      VKVHFDQAGK                               NA            NA            NA
+      VLGIDAGEEK                          3357659       3395738     3344493.2
+      VLGIDAGEEKEK                        3540508       3736505     7323934.5
+      VLGIDGGEGK                          8632876       8205715     8250291.0
+      VLGIDGGEGKEELFR                   268017216     307231744   301406848.0
+      VLPIVSVPER                         34275200      32848434    16070409.0
+      VTISGSGNVAQYAALK                         NA            NA            NA
+      VTWENDKGEQEVAQGYR                  31237008      31587380    31373820.0
+      VTWENDNGEQEVAQGYR                   2870480       2511262     1913292.9
+      VYDLMEK                                  NA            NA            NA
+      WIQDADALFGER                       12794925      13238218    13029265.0
+      YFLDALPVALLGMNADLMNQYVEFVADR       18498924      16480001    17736366.0
+      YHEIWQAYK                                NA            NA            NA
+                                    X00050amol_25 X00050amol_26 X00050amol_27
+      AAADALSDLEIK                       15837018    15777189.0            NA
+      AAADALSDLEIKDSK                    12706037    11765338.0    12136474.0
+      AAGLTAAYAR                         42405088    48333608.0    48317352.0
+      AANLGGVAVSGLEMAQNSQK                1194559     1853150.4     5294388.0
+      AANLGGVAVSGLEMAQNSQR               25183894    24311752.0    25558928.0
+      ANELLINVK                         143336576   135581888.0   141564000.0
+      ANGTTVLVGMPAGAK                    17193102    15542036.0    15307682.0
+      APEAEQVLSAAATFPIAQPATDVEAR          3471051    15154679.0    16427805.0
+      ATDGGAHGVINVSVSEAAIEASTR           20650100    13667376.0    12610883.0
+      AVQDNGESAFR                        14142187    13486527.0      507371.0
+      CCSDVFNQVVK                        59145592    56774912.0    56625780.0
+      CSSDVFNHVVK                         5384400     3588275.8     4056205.5
+      DAVWFGPPK                                NA            NA            NA
+      DEGLHTDFACLLFAHLK                  11195082     6491461.5     3889717.5
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR      24432896    21866640.0    23865398.0
+      DIHDWNNR                            1702218     1900528.4     1832859.9
+      DIPVPEPKPNEILINVK                  36582944    32649746.0    30100972.0
+      DIPVPKPK                           59278012     9145546.0    22971464.0
+      DIPVPKPKPNELLINVK                   6593733     4241591.0            NA
+      DIVGAVLK                           45896880    43342528.0    40862788.0
+      DIVSAVVK                            3263568     2988572.5            NA
+      EALDFFAR                          170965168    92982664.0   160002416.0
+      EALDFFSR                            5460676     5175909.0     4441994.5
+      FHPSVNLSILK                        18622360    13428560.0    10306000.0
+      FIAEGSNMGSTPEAIAVFETAR             32234260    31165588.0    32545120.0
+      GMMPGLTFSNELICR                          NA            NA            NA
+      IAPRPLDLLRPVVR                     32737580    18788580.0    16102506.0
+      ICYAFMR                             8751272     8884152.0     9116933.0
+      IGDYAGIK                           95170600     6080861.5    19934776.0
+      IMINCFNECIDYAK                      9688477     9144634.0     8501619.0
+      ITWTSER                            14285334    14726336.0    13141825.0
+      IVGLSELPK                          12282748    12649121.0    13683276.0
+      IVTEAVEIEQR                        25305092    18366724.0    17996860.0
+      NKPDPAIVEK                         19266104    17568268.0    17775552.0
+      SISIVGSYVGNR                      102885368   115985832.0   106570152.0
+      SLEEIVDEYSTFSESK                    7220500     6186694.0     5781149.5
+      SLEQIVNEYSTFSENK                   23743364    21521876.0    29627912.0
+      STATGPSEAVWYGPPK                   35844740    35257408.0    32226714.0
+      VDIALPCATQNEVSGEEAK                35204192    35064372.0    35982932.0
+      VGDLAGIK                            3677479     3333634.5     3321836.5
+      VHFDQAGK                            9956600    11518706.0    11343584.0
+      VHFDQAGKK                           2187463     1714626.1     1220787.0
+      VIELGGTVVSLSDSK                    16078928    12727207.0    12856061.0
+      VKVHFDQAGK                          2425198      879336.3            NA
+      VLGIDAGEEK                               NA            NA            NA
+      VLGIDAGEEKEK                             NA            NA     3672123.8
+      VLGIDGGEGK                               NA            NA            NA
+      VLGIDGGEGKEELFR                   346066688   370226496.0   396314560.0
+      VLPIVSVPER                         26081848    26217462.0    27275988.0
+      VTISGSGNVAQYAALK                    3796743            NA            NA
+      VTWENDKGEQEVAQGYR                  50633064    42086216.0    38650968.0
+      VTWENDNGEQEVAQGYR                   2417310     1646048.5     1778971.2
+      VYDLMEK                                  NA            NA            NA
+      WIQDADALFGER                       12766219    12002842.0    11118362.0
+      YFLDALPVALLGMNADLMNQYVEFVADR       23721054    22924006.0    17723496.0
+      YHEIWQAYK                                NA            NA      947155.8
+
+---
+
+    Code
+      as.data.frame(tail(SummarizedExperiment::rowData(D2), n = 1000))
+    Output
+                                                         Sequence
+      AAADALSDLEIK                                   AAADALSDLEIK
+      AAADALSDLEIKDSK                             AAADALSDLEIKDSK
+      AAGLTAAYAR                                       AAGLTAAYAR
+      AANLGGVAVSGLEMAQNSQK                   AANLGGVAVSGLEMAQNSQK
+      AANLGGVAVSGLEMAQNSQR                   AANLGGVAVSGLEMAQNSQR
+      ANELLINVK                                         ANELLINVK
+      ANGTTVLVGMPAGAK                             ANGTTVLVGMPAGAK
+      APEAEQVLSAAATFPIAQPATDVEAR       APEAEQVLSAAATFPIAQPATDVEAR
+      ATDGGAHGVINVSVSEAAIEASTR           ATDGGAHGVINVSVSEAAIEASTR
+      AVQDNGESAFR                                     AVQDNGESAFR
+      CCSDVFNQVVK                                     CCSDVFNQVVK
+      CSSDVFNHVVK                                     CSSDVFNHVVK
+      DAVWFGPPK                                         DAVWFGPPK
+      DEGLHTDFACLLFAHLK                         DEGLHTDFACLLFAHLK
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR DGKAPEAEQVLSAAATFPIAQPATDVEAR
+      DIHDWNNR                                           DIHDWNNR
+      DIPVPEPKPNEILINVK                         DIPVPEPKPNEILINVK
+      DIPVPKPK                                           DIPVPKPK
+      DIPVPKPKPNELLINVK                         DIPVPKPKPNELLINVK
+      DIVGAVLK                                           DIVGAVLK
+      DIVSAVVK                                           DIVSAVVK
+      EALDFFAR                                           EALDFFAR
+      EALDFFSR                                           EALDFFSR
+      FHPSVNLSILK                                     FHPSVNLSILK
+      FIAEGSNMGSTPEAIAVFETAR               FIAEGSNMGSTPEAIAVFETAR
+      GMMPGLTFSNELICR                             GMMPGLTFSNELICR
+      IAPRPLDLLRPVVR                               IAPRPLDLLRPVVR
+      ICYAFMR                                             ICYAFMR
+      IGDYAGIK                                           IGDYAGIK
+      IMINCFNECIDYAK                               IMINCFNECIDYAK
+      ITWTSER                                             ITWTSER
+      IVGLSELPK                                         IVGLSELPK
+      IVTEAVEIEQR                                     IVTEAVEIEQR
+      NKPDPAIVEK                                       NKPDPAIVEK
+      SISIVGSYVGNR                                   SISIVGSYVGNR
+      SLEEIVDEYSTFSESK                           SLEEIVDEYSTFSESK
+      SLEQIVNEYSTFSENK                           SLEQIVNEYSTFSENK
+      STATGPSEAVWYGPPK                           STATGPSEAVWYGPPK
+      VDIALPCATQNEVSGEEAK                     VDIALPCATQNEVSGEEAK
+      VGDLAGIK                                           VGDLAGIK
+      VHFDQAGK                                           VHFDQAGK
+      VHFDQAGKK                                         VHFDQAGKK
+      VIELGGTVVSLSDSK                             VIELGGTVVSLSDSK
+      VKVHFDQAGK                                       VKVHFDQAGK
+      VLGIDAGEEK                                       VLGIDAGEEK
+      VLGIDAGEEKEK                                   VLGIDAGEEKEK
+      VLGIDGGEGK                                       VLGIDGGEGK
+      VLGIDGGEGKEELFR                             VLGIDGGEGKEELFR
+      VLPIVSVPER                                       VLPIVSVPER
+      VTISGSGNVAQYAALK                           VTISGSGNVAQYAALK
+      VTWENDKGEQEVAQGYR                         VTWENDKGEQEVAQGYR
+      VTWENDNGEQEVAQGYR                         VTWENDNGEQEVAQGYR
+      VYDLMEK                                             VYDLMEK
+      WIQDADALFGER                                   WIQDADALFGER
+      YFLDALPVALLGMNADLMNQYVEFVADR   YFLDALPVALLGMNADLMNQYVEFVADR
+      YHEIWQAYK                                         YHEIWQAYK
+                                                  Protein
+      AAADALSDLEIK                   sp|P09938|RIR2_YEAST
+      AAADALSDLEIKDSK                sp|P09938|RIR2_YEAST
+      AAGLTAAYAR                    sp|P40212|RL13B_YEAST
+      AANLGGVAVSGLEMAQNSQK           sp|P39708|DHE5_YEAST
+      AANLGGVAVSGLEMAQNSQR           sp|P07262|DHE4_YEAST
+      ANELLINVK                      sp|P00330|ADH1_YEAST
+      ANGTTVLVGMPAGAK                sp|P00330|ADH1_YEAST
+      APEAEQVLSAAATFPIAQPATDVEAR    sp|P40212|RL13B_YEAST
+      ATDGGAHGVINVSVSEAAIEASTR       sp|P00330|ADH1_YEAST
+      AVQDNGESAFR                   sp|P40212|RL13B_YEAST
+      CCSDVFNQVVK                    sp|P00330|ADH1_YEAST
+      CSSDVFNHVVK                    sp|P00331|ADH2_YEAST
+      DAVWFGPPK                      sp|P39708|DHE5_YEAST
+      DEGLHTDFACLLFAHLK              sp|P09938|RIR2_YEAST
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR sp|P40212|RL13B_YEAST
+      DIHDWNNR                       sp|P09938|RIR2_YEAST
+      DIPVPEPKPNEILINVK              sp|P07246|ADH3_YEAST
+      DIPVPKPK                       sp|P00330|ADH1_YEAST
+      DIPVPKPKPNELLINVK              sp|P00331|ADH2_YEAST
+      DIVGAVLK                       sp|P00330|ADH1_YEAST
+      DIVSAVVK                       sp|P00331|ADH2_YEAST
+      EALDFFAR                       sp|P00330|ADH1_YEAST
+      EALDFFSR                       sp|P07246|ADH3_YEAST
+      FHPSVNLSILK                    sp|P07262|DHE4_YEAST
+      FIAEGSNMGSTPEAIAVFETAR         sp|P07262|DHE4_YEAST
+      GMMPGLTFSNELICR                sp|P09938|RIR2_YEAST
+      IAPRPLDLLRPVVR                sp|P40212|RL13B_YEAST
+      ICYAFMR                        sp|P07262|DHE4_YEAST
+      IGDYAGIK                       sp|P00330|ADH1_YEAST
+      IMINCFNECIDYAK                 sp|P07262|DHE4_YEAST
+      ITWTSER                        sp|P07262|DHE4_YEAST
+      IVGLSELPK                      sp|P07246|ADH3_YEAST
+      IVTEAVEIEQR                    sp|P09938|RIR2_YEAST
+      NKPDPAIVEK                     sp|P09938|RIR2_YEAST
+      SISIVGSYVGNR                   sp|P00330|ADH1_YEAST
+      SLEEIVDEYSTFSESK               sp|P39708|DHE5_YEAST
+      SLEQIVNEYSTFSENK               sp|P07262|DHE4_YEAST
+      STATGPSEAVWYGPPK               sp|P07262|DHE4_YEAST
+      VDIALPCATQNEVSGEEAK            sp|P07262|DHE4_YEAST
+      VGDLAGIK                       sp|P07246|ADH3_YEAST
+      VHFDQAGK                      sp|P40212|RL13B_YEAST
+      VHFDQAGKK                     sp|P40212|RL13B_YEAST
+      VIELGGTVVSLSDSK                sp|P07262|DHE4_YEAST
+      VKVHFDQAGK                    sp|P40212|RL13B_YEAST
+      VLGIDAGEEK                     sp|P07246|ADH3_YEAST
+      VLGIDAGEEKEK                   sp|P07246|ADH3_YEAST
+      VLGIDGGEGK                     sp|P00330|ADH1_YEAST
+      VLGIDGGEGKEELFR                sp|P00330|ADH1_YEAST
+      VLPIVSVPER                     sp|P07262|DHE4_YEAST
+      VTISGSGNVAQYAALK               sp|P07262|DHE4_YEAST
+      VTWENDKGEQEVAQGYR              sp|P07262|DHE4_YEAST
+      VTWENDNGEQEVAQGYR              sp|P39708|DHE5_YEAST
+      VYDLMEK                        sp|P07246|ADH3_YEAST
+      WIQDADALFGER                   sp|P09938|RIR2_YEAST
+      YFLDALPVALLGMNADLMNQYVEFVADR   sp|P09938|RIR2_YEAST
+      YHEIWQAYK                      sp|P09938|RIR2_YEAST
+                                                               Mapped.Proteins
+      AAADALSDLEIK                                                            
+      AAADALSDLEIKDSK                                                         
+      AAGLTAAYAR                                         sp|Q12690|RL13A_YEAST
+      AANLGGVAVSGLEMAQNSQK                                                    
+      AANLGGVAVSGLEMAQNSQR                                                    
+      ANELLINVK                                                               
+      ANGTTVLVGMPAGAK                                                         
+      APEAEQVLSAAATFPIAQPATDVEAR                         sp|Q12690|RL13A_YEAST
+      ATDGGAHGVINVSVSEAAIEASTR                                                
+      AVQDNGESAFR                                        sp|Q12690|RL13A_YEAST
+      CCSDVFNQVVK                                                             
+      CSSDVFNHVVK                                                             
+      DAVWFGPPK                                                               
+      DEGLHTDFACLLFAHLK                                                       
+      DGKAPEAEQVLSAAATFPIAQPATDVEAR                                           
+      DIHDWNNR                                                                
+      DIPVPEPKPNEILINVK                                                       
+      DIPVPKPK                                                                
+      DIPVPKPKPNELLINVK                                                       
+      DIVGAVLK                                                                
+      DIVSAVVK                                                                
+      EALDFFAR                      sp|P00331|ADH2_YEAST, sp|P38113|ADH5_YEAST
+      EALDFFSR                                                                
+      FHPSVNLSILK                                         sp|P39708|DHE5_YEAST
+      FIAEGSNMGSTPEAIAVFETAR                                                  
+      GMMPGLTFSNELICR                                                         
+      IAPRPLDLLRPVVR                                     sp|Q12690|RL13A_YEAST
+      ICYAFMR                                             sp|P39708|DHE5_YEAST
+      IGDYAGIK                                            sp|P00331|ADH2_YEAST
+      IMINCFNECIDYAK                                                          
+      ITWTSER                                                                 
+      IVGLSELPK                                                               
+      IVTEAVEIEQR                                                             
+      NKPDPAIVEK                                                              
+      SISIVGSYVGNR                                        sp|P00331|ADH2_YEAST
+      SLEEIVDEYSTFSESK                                                        
+      SLEQIVNEYSTFSENK                                                        
+      STATGPSEAVWYGPPK                                                        
+      VDIALPCATQNEVSGEEAK                                                     
+      VGDLAGIK                                                                
+      VHFDQAGK                                           sp|Q12690|RL13A_YEAST
+      VHFDQAGKK                                          sp|Q12690|RL13A_YEAST
+      VIELGGTVVSLSDSK                                                         
+      VKVHFDQAGK                                         sp|Q12690|RL13A_YEAST
+      VLGIDAGEEK                                                              
+      VLGIDAGEEKEK                                                            
+      VLGIDGGEGK                                                              
+      VLGIDGGEGKEELFR                                                         
+      VLPIVSVPER                                          sp|P39708|DHE5_YEAST
+      VTISGSGNVAQYAALK                                    sp|P39708|DHE5_YEAST
+      VTWENDKGEQEVAQGYR                                                       
+      VTWENDNGEQEVAQGYR                                                       
+      VYDLMEK                                                                 
+      WIQDADALFGER                                                            
+      YFLDALPVALLGMNADLMNQYVEFVADR                                            
+      YHEIWQAYK                                                               
+
+---
+
+    Code
+      as.data.frame(tail(SummarizedExperiment::colData(D2), n = 1000))
+    Output
+                           sample
+      X12500amol_1   X12500amol_1
+      X12500amol_2   X12500amol_2
+      X12500amol_3   X12500amol_3
+      X00125amol_4   X00125amol_4
+      X00125amol_5   X00125amol_5
+      X00125amol_6   X00125amol_6
+      X25000amol_7   X25000amol_7
+      X25000amol_8   X25000amol_8
+      X25000amol_9   X25000amol_9
+      X02500amol_10 X02500amol_10
+      X02500amol_11 X02500amol_11
+      X02500amol_12 X02500amol_12
+      X00250amol_13 X00250amol_13
+      X00250amol_14 X00250amol_14
+      X00250amol_15 X00250amol_15
+      X50000amol_16 X50000amol_16
+      X50000amol_17 X50000amol_17
+      X50000amol_18 X50000amol_18
+      X05000amol_19 X05000amol_19
+      X05000amol_20 X05000amol_20
+      X05000amol_21 X05000amol_21
+      X00500amol_22 X00500amol_22
+      X00500amol_23 X00500amol_23
+      X00500amol_24 X00500amol_24
+      X00050amol_25 X00050amol_25
+      X00050amol_26 X00050amol_26
+      X00050amol_27 X00050amol_27
+
 # read MaxQuant Output table
 
     Code
