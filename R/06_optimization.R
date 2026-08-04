@@ -421,7 +421,7 @@
     if ("try-error" %in% class(RES)) {
         res_Ri_Ci <- rep(NA, length(cnames))
         error <- NA
-        message(class(RES))
+        if (verbose == TRUE) message(class(RES))
     } else {
         res_Ri_Ci <- c(RES$RiLog, RES$Ci)
         error <- RES$RES$res_squ_err
@@ -681,7 +681,7 @@ automatedAnalysisIteratedCi <- function(G,
     if (length(ind_error_NA) > 0) {
         if (verbose) {
             message(length(ind_error_NA),
-                " grid points with NA or NaN error term were removed.")
+                "grid points with NA or NaN error term were removed.")
         }
         res <- res[-ind_error_NA, ]
     }

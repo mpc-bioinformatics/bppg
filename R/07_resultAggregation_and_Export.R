@@ -25,8 +25,6 @@
 combineComparisons <- function(compResultList) {
 
     # get union of all row names and sort them
-
-
     if(!is.null(SummarizedExperiment::rowData(compResultList[[1]])$protOrigin)){
         all_origins <- do.call("rbind", lapply(compResultList, function(x) {
             return(SummarizedExperiment::rowData(x))
