@@ -40,9 +40,6 @@
 #' @param group                     \strong{character} \cr
 #'                                  List or vector of group names corresponding
 #'                                  to the order of samples.
-#' @param remove_contaminants       \strong{logical} \cr
-#'                                  If \code{TRUE}, peptide sequences from
-#'                                  potential contaminants are removed
 #' @param rename_columns            \strong{logical} \cr
 #'                                  If \code{TRUE}, "Intensity." or
 #'                                  "LFQ.intensity." are removed

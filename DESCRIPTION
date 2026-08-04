@@ -37,7 +37,8 @@ Suggests:
     knitr,
     pak, 
     RefManageR, 
-    sessioninfo
+    sessioninfo,
+    batchtools
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 Depends: 

@@ -17,6 +17,7 @@ output:
     toc_depth: 2
     code_folding: show
 date: "`r doc_date()`"
+package: "`r pkg_ver('bppg')`"
 vignette: >
   %\VignetteIndexEntry{1. Introduction to BPPG}
   %\VignetteEngine{knitr::rmarkdown}
@@ -57,6 +58,8 @@ BibOptions(max.names = 2, bib.style = "authoryear", style = "citation")
 
 ```
 
+
+
 # Introduction
 
 <!-- This is kind of long and should be  moved into the matching section
@@ -65,38 +68,36 @@ ALso, add bullet points for steps/what it does and what is good about it -->
 Bottom-up mass spectrometry (MS) is an effective tool for analysing
 high-throughput proteomics. This method enables the comprehensive investigation
 of the proteome of cells, tissues, and organisms. This allows diseases such as 
-Parkinson's and the effects of stress to be studied at a proteomic level. 
+Parkinson's and the effects of stress on cells and organisms to be studied at a 
+proteomic level. 
 However, in bottom-up MS, proteins are digested into smaller peptides, which 
-are then measured. Consequently, the resulting abundances correspond to 
+are then measured. Consequently, the resulting intensities correspond to 
 peptides, rather than proteins. This makes differential analysis on peptide-
-level possible, but lacks biological interpretability.
+level possible, but lacks biological interpretability. Instead peptide 
+intensities are aggregated to 
+protein intensities, but this is not straight forward due to shared peptides. 
 
 Our package **b**ipartite **p**eptide **p**rotein **g**raphs (`bppg`) aims to
-preserve the peptide ratios and built on them for the protein quatification. 
+preserve the peptide ratios and built on them for the protein quantification. 
 This is done by using bipartite graphs to model the relationship between the 
-quantified peptides and their proteins. thereby bulding the basis for an 
-equation system, which is then optimized to best explain the measured ratios 
-with 
-protein ratios. The optimization allows for inconsistencies between peptides of 
-the same set of proteins. Due to the nature of MS and biological samples, the 
-peptide intensities are highly variable and can lead to contradictions. 
+quantified peptides and their proteins of origin. Thereby building the basis for
+an equation system, which an optimization nethods is applied to, to best explain
+the measured ratios with protein ratios. This results in calculated protein 
+ratios which incorparate shared peptides. 
 
 The functions and steps include:
 
-- Reading DDA data of peptide quantities - including MaxQuant and FragPipe
-- Normalization of peptide quantities - removes batch effects
-- Aggregation of replicates per sample group - alllows group comparison
+- Reading data of peptide quantities
+- Normalization of peptide quantities - reduce technical variability
+- Aggregation of replicates per sample group - for group comparison
 - Calculation of peptide ratios per group comparison - remove co-factors
-- Build bipartite graph per comparison - preserves peptide-level information
-- Optimize for protein ratio/fold change -
+- Build bipartite graphs per comparison - preserves peptide-level information
+- Optimization step to calculate protein ratios -
 accounts for inconsistencies between peptides
 
-More functions are described in additional vignettes:
+In this vignette we included a quick start guide to use `bppg`.
 
-- Built insilico bipartite graph (WiP, 2. Analysing *inSilico* graphs)
-- Plot bipartite graphs (WiP, 3. Visualize `bppg`)
-
-# Installation of  `bppg`
+# Installation of `bppg`
 
 To install the latest version of `bppg` from Bioconductor use the 
 following code snippet:
@@ -137,9 +138,9 @@ protein quantities. However, more replicates per group are recommended.
 
 - Peptide intensities
     - Output from MaxQuant or FragPipe (more options are in development)
-    - custom SummarizedExperiment with sample metdata in `colData` and peptide
-    information in `rowData`
-- The FASTA file usde for peptide identification
+    - The read functionn creates a custom SummarizedExperiment with sample 
+    metdata in `colData` and peptide information in `rowData`
+- The FASTA file used for peptide identification
 
 
 
@@ -158,8 +159,8 @@ The original dataset includes:
 The example data used in this vignette includes peptides from 9 yeast proteins.
 
 ### Import
-The peptide quantification was performed with MaxQuant and producing a 
-`peptides.txt` file. The
+The peptide quantification was performed with MaxQuant (version 2.7.3.0)
+and resulted in a `peptides.txt` file. The
 corresponding function to extract the columns of interest is
 `readMqPeptideTable`, this includes the peptide sequences and intensity values.
 `remove_contaminants = FALSE` is used to consider contaminants in the downstream
@@ -188,12 +189,12 @@ head(rowData(D))  # peptide metadata (sequence, protein, etc.)
 ### Normalization
 
 Normalization (`normalizePeptideIntensities`) has to be performed to reduce
-batch effects. The following methods are provided:
+technical variability. The following methods are provided:
 
 - `loess` (default): recommended in most cases
 - `median`: quicker alternative
-- `quantile`: ??? TODO
-- `lts`: good for groups which have a specific overlap 
+- `quantile`: stricter alternative
+- `lts`: necessary if a large proportion of the proteome changes between groups
 
 Note: If data is already normalized, use `method = "nonorm"`, since the function
 must
@@ -206,13 +207,14 @@ D_norm <- normalizePeptideIntensities(D, method = "loess")
 
 
 ### Aggregation of Replicates
-To be able to calculate relative protein quantities, the peptides have to be 
-aggregated. This avoids the need to build
-graphs for each combination of replicates. The replicates need to be assigned 
+To be able to calculate relative protein quantities, the peptide intensities 
+have to be aggregated over the replicates per group. This avoids the need to 
+build graphs for each combination of replicates. The replicates need to be 
+assigned to
 their sample group and then they are aggregated in their groups, e.g. by mean. 
 If the group 
-labels cannot be extracted from the column names it is recommended to write a 
-factor vector with the order corresponding to the samples.
+labels cannot be extracted from the column names it is recommended to generate a 
+factor vector with the labels in the order corresponding to the samples.
 
 `missing.limit` (default: 0.4)
 controls the maximum allowed fraction of missing values per group:
@@ -226,10 +228,10 @@ group <- factor(limma::strsplit2(colnames(D_norm), split = "_")[, 1])
 levels(group)
 D_aggr <- aggregateReplicates(D_norm, method = "mean", missing.limit = 0.4,
     group = group)
-
+head(assays(D_aggr)$intensities)
 ```
 
-### Calculating the Ratio
+### Calculating Peptide Ratios
 
 Peptide ratios (fold changes) are calculated between aggregated sample groups 
 using `calculatePeptideRatios`. Calculating ratios at the peptide level removes
@@ -278,7 +280,7 @@ There are two categories of peptides. First, **unique** peptides, which
 originate from one protein or protein group (proteins that cannot be 
 distinguished based on the measured peptides). Second, **shared** peptides, 
 which can derive from more than one protein/protein group. **Unique** peptides
-are strong evidence for the abundance of a protein and information from
+are strong evidence for the presence of a protein and information from
 **shared** peptides is more ambiguous. 
 
 Bipartite graphs have two types of nodes (in this case: proteins and peptides),
@@ -335,7 +337,7 @@ graphs[[1]][[1]]
 
 ## Optimize Relative Quantification
 
-The quantified graph is the basis for an equation system to calculate protein 
+The graph containing peptide ratios is the basis for an equation system to calculate protein 
 level ratios. The known variables for this are the peptide ratios ($r_i$) and 
 from which proteins they can originate. The unknown variables are the protein 
 ratios of the protein quantities of sample A and B ($\frac{B_i}{A_i}=R_i$) and
@@ -470,8 +472,8 @@ This vignette was generated using `r Biocpkg("BiocStyle")`
 `r Citep(bib[["rmarkdown"]])` running behind the scenes.
 
 Citations made with `r CRANpkg("RefManageR")` `r Citep(bib[["RefManageR"]])`.
-
-```{r Biblio, results = "asis", echo = FALSE, warning = FALSE, message = FALSE}
+# References
+<!-- ```{r Biblio, results = "asis", echo = FALSE, warning = FALSE, message = FALSE}
 ## Print bibliography
 PrintBibliography(bib, .opts = list(hyperlink = "to.bib", style = "html"))
-```
+``` -->
