@@ -87,8 +87,8 @@ The functions and steps include:
 
 - Reading data of peptide quantities
 - Normalization of peptide quantities - reduce technical variability
-- Aggregation of replicates per sample group - for group comparison
-- Calculation of peptide ratios per group comparison - remove co-factors
+- Aggregation of replicates per sample group
+- Calculation of peptide ratios per group comparison 
 - Build bipartite graphs per comparison - preserves peptide-level information
 - Optimization step to calculate protein ratios -
 accounts for inconsistencies between peptides
@@ -109,7 +109,8 @@ and the edges exist only between the different types and never within a type
 group. A protein node is connected to all their possible 
 peptide products. **Unique** peptides therefore have only one edge, while 
 **shared** peptides have several. This graph can be based on only *in silico* 
-information, creating a theoretical graph. `r Citep(bib[["schork_improvement_2024"]])`
+information, creating a theoretical graph.
+`r Citep(bib[["schork_improvement_2024"]])`
 
 Alternatively, measurements can be 
 included, therefore removing all peptides without a valid ratio in the 
