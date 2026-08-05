@@ -18,8 +18,6 @@ output:
     code_folding: show
 date: "`r doc_date()`"
 package: "`r pkg_ver('bppg')`"
-abstract: >
-    Put an abstract here?
 vignette: >
     %\VignetteIndexEntry{1. Introduction to BPPG}
     %\VignetteEngine{knitr::rmarkdown}
@@ -205,115 +203,35 @@ assays(D)$intensities[1:5, 1:3]  # peptide intensity matrix
 head(rowData(D))  # peptide metadata (sequence, protein, etc.)
 ```
 
-## Data Preprocessing 
-
-### Normalization
-
-Normalization (`normalizePeptideIntensities`) has to be performed to reduce
-technical variability. The following methods are provided:
-
-- `loess` (default): recommended in most cases
-- `median`: quicker alternative
-- `quantile`: stricter alternative
-- `lts`: necessary if a large proportion of the proteome changes between groups
-
-Note: If data is already normalized, use `method = "nonorm"`, since the function
-must
-still be called to prepare the SummarizedExperiment object for downstream steps.
-
-```{r normalize,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
-D_norm <- normalizePeptideIntensities(D, method = "loess")
-
-```
-
-
-### Aggregation of Replicates
-To be able to calculate relative protein quantities, the peptide intensities 
-have to be aggregated over the replicates per group. This avoids the need to 
-build graphs for each combination of replicates. The replicates need to be 
-assigned to
-their sample group and then they are aggregated in their groups, e.g. by mean. 
-If the group 
-labels cannot be extracted from the column names it is recommended to generate a 
-factor vector with the labels in the order corresponding to the samples.
-
-`missing.limit` (default: 0.4)
-controls the maximum allowed fraction of missing values per group:
-
-- 0.0: quantified in all replicates required
-- 1.0: missing in all replicates allowed 
-
-```{r aggregation,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
-# create group names
-group <- factor(limma::strsplit2(colnames(D_norm), split = "_")[, 1])
-levels(group)
-D_aggr <- aggregateReplicates(D_norm, method = "mean", missing.limit = 0.4,
-    group = group)
-head(assays(D_aggr)$intensities)
-```
-
-### Calculating Peptide Ratios
-
-Peptide ratios (fold changes) are calculated between aggregated sample groups 
-using `calculatePeptideRatios`. Calculating ratios at the peptide level removes
-sample-specific confounding factors such as ionization efficiency, since both
-peptides in a ratio were measured under the same conditions. All pairwise
-comparisons are computed automatically. The result is a `SummarizedExperiment`
-where each column in `colData` represents one pairwise comparison.
-Note: The order of `group_levels` determines the direction of the ratio.
-
-
-```{r ratio,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
-groups  <- levels(group)
-peptide_ratios <- calculatePeptideRatios(D = D_aggr, group_levels = groups)
-colData(peptide_ratios)
-```
-
 
 ## FASTA
 
 To build the bipartite graph, peptides need to be *in silico* digested and 
-matched 
-with their protein of origin. This is done by the function `digestFASTA`, which 
-allows for the control of min and max amino acid length of a peptide 
-(default: 6 and 50) and how
-many miscleavages (default: 2) to allow. Additionally, with the fasta sequences
-a list of
-species can be provided (`protOrigin`), in the same order as the fasta entries.
-The result is an edge list mapping each peptide sequence to its protein(s) of 
-origin, which forms the basis of the bipartite graph.
+matched with their protein of origin. For this we have a reduced FASTA file.
 
 ```{r digest,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
 library(seqinr)
 file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
     package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-
-origin <- as.list(rep("yeast", 9))
-edgelist <- digestFASTA(fasta, protOrigin = origin)
-head(edgelist)
+names(fasta)
 ```
 
-## Build Graph
+## Build Quantification Graph
 
+Now the theoretical information can be combined with quantification data. 
+To simplefy this, we created a wrapper function, which includes the digestion 
+and the data
+preprocessing (normalization, replicate aggreagtion and ratio calculation).
+For the generation of the graph protein nodes are collapsed 
+(`collProtNodes = TRUE`), this creates protein groups of proteins which are 
+indistinguishable by the measured peptides.
 
-For the graph the quantification data and the FASTA edgelist are combined. 
-The `generateQuantGraphs` function creates a comparison-specific graphs, 
-retaining only peptides with a valid ratio.
-Nodes sharing the same set of edges can be collapsed. The options to 
-collapse protein nodes (`collProtNodes = TRUE`) or collapse peptide nodes
-(`collPeptNodes = TRUE`) is given to reduce the complexity in the graph. This 
-means collapsing protein nodes shows protein groups and is recommended since 
-proteins indistinguishable by their peptides are considered a protein group. 
-`collPeptNodes = TRUE` is not recommended for quantification purpose, since  
-each peptide has its own quantification information. 
 
 ```{r build_graph,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
-graphs <- generateQuantGraphs(
-    exp_peptide_ratios = peptide_ratios,
-    fasta_edgelist = edgelist,
-    collProtNodes = TRUE,
-    collPeptNodes = FALSE)
+graphs <- bppg::generateGraphsFromQuantData(D = D,
+    fasta = fasta,
+    collProtNodes = TRUE)
 
 ```
 
@@ -475,7 +393,6 @@ This vignette was generated using `r Biocpkg("BiocStyle")`
 Citations made with `r CRANpkg("RefManageR")` 
 `r Citep(bib[["mclean2017refmanager"]])`.
 
-# References
 
 ```{r Biblio, results = "asis", echo = FALSE, warning = FALSE, message = FALSE}
 ## Print bibliography
