@@ -18,10 +18,12 @@ output:
     code_folding: show
 date: "`r doc_date()`"
 package: "`r pkg_ver('bppg')`"
+abstract: >
+    Put an abstract here?
 vignette: >
-  %\VignetteIndexEntry{1. Introduction to BPPG}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+    %\VignetteIndexEntry{1. Introduction to BPPG}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup, include = FALSE}
@@ -38,21 +40,17 @@ knitr::opts_chunk$set(
 ## Bib setup
 library("BiocStyle")
 library("RefManageR")
+library("bppg")
 
 ## Write bibliography information
-bib <- c(
-    R = citation(),
-    BiocStyle = citation("BiocStyle")[1],
-    knitr = citation("knitr")[1],
-    RefManageR = citation("RefManageR")[1],
-    rmarkdown = citation("rmarkdown")[1],
-    sessioninfo = citation("sessioninfo")[1],
-    testthat = citation("testthat")[1],
-    ggplot2 = citation("ggplot2")[1],
-    Rsolnp = citation("Rsolnp")[1],
-    seqinr = citation("seqinr")[1],
-    batchtools = citation("batchtools")[1]
-)
+file <- system.file("extdata", "ref.bib", package = "bppg")
+bib <- ReadBib(file, check = FALSE)
+
+bib <- as.BibEntry(c(citation(), citation("BiocStyle")[1], citation("knitr")[1], 
+    citation("RefManageR")[1], citation("rmarkdown")[1], 
+    citation("sessioninfo")[1], citation("testthat")[1],
+    citation("ggplot2")[1], citation("Rsolnp")[1],
+    citation("seqinr")[1], citation("batchtools")[1])) + bib
 
 BibOptions(max.names = 2, bib.style = "authoryear", style = "citation")
 
@@ -96,6 +94,28 @@ The functions and steps include:
 accounts for inconsistencies between peptides
 
 In this vignette we included a quick start guide to use `bppg`.
+
+# Background
+## bppg Theory
+There are two categories of peptides. First, **unique** peptides, which 
+originate from one protein or protein group (proteins that cannot be 
+distinguished based on the measured peptides). Second, **shared** peptides, 
+which can derive from more than one protein/protein group. **Unique** peptides
+are strong evidence for the presence of a protein and information from
+**shared** peptides is more ambiguous. 
+
+Bipartite graphs have two types of nodes (in this case: proteins and peptides),
+and the edges exist only between the different types and never within a type
+group. A protein node is connected to all their possible 
+peptide products. **Unique** peptides therefore have only one edge, while 
+**shared** peptides have several. This graph can be based on only *in silico* 
+information, creating a theoretical graph. `r Citep(bib[["schork_improvement_2024"]])`
+
+Alternatively, measurements can be 
+included, therefore removing all peptides without a valid ratio in the 
+sample comparison. This removes proteins without any quantified peptides and
+reduces the number of proteins with unique peptide evidence, leading to more
+proteins being grouped together.
 
 # Installation of `bppg`
 
@@ -149,7 +169,7 @@ protein quantities. However, more replicates per group are recommended.
 ### Example Data
 A test dataset and the matching FASTA file are provided with the package. It is
 a subset of a benchmark dataset which was created to determine the correctness 
-of protein quantification software. 
+of protein quantification software `r Citep(bib[["ramus_spiked_2016"]])`. 
 The original dataset includes: 
 
 - Yeast background, 48 UPS spike-ins
@@ -275,28 +295,7 @@ head(edgelist)
 
 ## Build Graph
 
-### bppg Theory
-There are two categories of peptides. First, **unique** peptides, which 
-originate from one protein or protein group (proteins that cannot be 
-distinguished based on the measured peptides). Second, **shared** peptides, 
-which can derive from more than one protein/protein group. **Unique** peptides
-are strong evidence for the presence of a protein and information from
-**shared** peptides is more ambiguous. 
 
-Bipartite graphs have two types of nodes (in this case: proteins and peptides),
-and the edges exist only between the different types and never within a type
-group. A protein node is connected to all their possible 
-peptide products. **Unique** peptides therefore have only one edge, while 
-**shared** peptides have several. This graph can be based on only *in silico* 
-information, creating a theoretical graph. 
-
-Alternatively, measurements can be 
-included, therefore removing all peptides without a valid ratio in the 
-sample comparison. This removes proteins without any quantified peptides and
-reduces the number of proteins with unique peptide evidence, leading to more
-proteins being grouped together.
-
-### Application
 For the graph the quantification data and the FASTA edgelist are combined. 
 The `generateQuantGraphs` function creates a comparison-specific graphs, 
 retaining only peptides with a valid ratio.
@@ -354,7 +353,8 @@ $\delta_{ij} = 0$ for not contributing proteins in the graph:
 In general, the 
 resulting equation system is underdetermined, since it has more unknown 
 variables than known ones. 
-Instead an optimization algorithm (`Rsolnp` `r Citep(bib[["Rsolnp"]])`) is 
+Instead an optimization algorithm (`Rsolnp` 
+`r Citep(bib[["galanos2025rsolnp"]])`) is 
 applied to the system. The error
 is defined as the difference between the estimated $R_i$ and reconstructed
 $r_i$ and the measured $r_i$.
@@ -411,7 +411,7 @@ the log ratio and concentration range for the given error.
 ### Parallelization
 
 The optimization runs per graph. This enables easy parallization, with e.g. 
-batchtools `r Citep(bib[["batchtools"]])`, which supports HPC job scheduling. 
+batchtools `r Citep(bib[["lang2017batchtools"]])`, which supports HPC job scheduling. 
 An example for this can be seen in our nextflow  workflow for this package:
 [here](https://github.com/mpc-bioinformatics/bppg-nf/blob/devel).
 
@@ -467,13 +467,17 @@ session_info()
 # Bibliography
 
 This vignette was generated using `r Biocpkg("BiocStyle")` 
-`r Citep(bib[["BiocStyle"]])` with `r CRANpkg("knitr")` 
-`r Citep(bib[["knitr"]])` and `r CRANpkg("rmarkdown")` 
-`r Citep(bib[["rmarkdown"]])` running behind the scenes.
+`r Citep(bib[["ole2025biocstyle"]])` with `r CRANpkg("knitr")` 
+`r Citep(bib[["xie2025knitr"]])` and `r CRANpkg("rmarkdown")` 
+`r Citep(bib[["allaire2026rmarkdown"]])` running behind the scenes.
 
-Citations made with `r CRANpkg("RefManageR")` `r Citep(bib[["RefManageR"]])`.
+Citations made with `r CRANpkg("RefManageR")` 
+`r Citep(bib[["mclean2017refmanager"]])`.
+
 # References
-<!-- ```{r Biblio, results = "asis", echo = FALSE, warning = FALSE, message = FALSE}
+
+```{r Biblio, results = "asis", echo = FALSE, warning = FALSE, message = FALSE}
 ## Print bibliography
+
 PrintBibliography(bib, .opts = list(hyperlink = "to.bib", style = "html"))
-``` -->
+```
