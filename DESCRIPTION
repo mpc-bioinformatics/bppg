@@ -26,7 +26,8 @@ Imports:
     Rsolnp,
     stringr,
     SummarizedExperiment, 
-    vsn
+    vsn,
+    ggraph
 Suggests: 
     covr,
     rmarkdown,
