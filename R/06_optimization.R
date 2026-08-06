@@ -679,11 +679,11 @@ automatedAnalysisIteratedCi <- function(G,
     # is estimated as 0)
     ind_error_NA <- which(is.na(res$error))
     if (length(ind_error_NA) > 0) {
+        res <- res[-ind_error_NA, ]
         if (verbose) {
             message(length(ind_error_NA),
                 "grid points with NA or NaN error term were removed.")
-        }
-        res <- res[-ind_error_NA, ]
+        } # BiocCheck note for "error" in message
     }
 
     f <- function(x, res, error_tol, ratioLog_tol,

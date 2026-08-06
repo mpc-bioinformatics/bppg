@@ -28,7 +28,8 @@ Imports:
     stringr,
     SummarizedExperiment, 
     vsn,
-    ggraph
+    ggraph,
+    ggplot2
 Suggests: 
     covr,
     rmarkdown,

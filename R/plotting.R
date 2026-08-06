@@ -103,7 +103,9 @@
 #'
 #' @importFrom igraph add_shape canonical_permutation layout_as_bipartite 
 #' @importFrom igraph permute V
-#' @importFrom graphics par plot
+#' @importFrom ggraph geom_edge_link geom_node_label geom_node_point ggraph
+#' @importFrom ggraph theme_graph
+#' @importFrom ggplot2 aes ggsave scale_fill_manual scale_shape_manual theme
 #' 
 plotBipartiteGraph <- function(G, legend = TRUE,
     vertex.color = c("mediumseagreen", "cadetblue2", "coral1"),
@@ -125,7 +127,7 @@ plotBipartiteGraph <- function(G, legend = TRUE,
     igraph::V(G)$node_type[!igraph::V(G)$type] <- "Protein"
     igraph::V(G)$node_type[igraph::V(G)$type] <- "Shared Peptide"
     igraph::V(G)$node_type[igraph::V(G)$type
-         & igraph::degree(G) == 1] <- "Unique Peptide"
+        & igraph::degree(G) == 1] <- "Unique Peptide"
 
     shape_values <- c(Protein = 21, `Shared Peptide` = 22,
         `Unique Peptide` = 23)
@@ -137,9 +139,10 @@ plotBipartiteGraph <- function(G, legend = TRUE,
         ggraph::geom_edge_link(linewidth = edge.width) + 
         ggraph::geom_node_point(size = vertex.size, 
             ggplot2::aes(fill = factor(node_type), shape = factor(node_type))) +
-        ggraph::geom_node_label(ggplot2::aes(label = name, fill = factor(node_type)), 
-            size = vertex.size/3, show.legend = FALSE, family = "sans") + 
-        ggplot2::scale_shape_manual(values = shape_values, name = "Node Type") + 
+        ggraph::geom_node_label(ggplot2::aes(label = name, 
+            fill = factor(node_type)), size = vertex.size/3, 
+            show.legend = FALSE, family = "sans") + 
+        ggplot2::scale_shape_manual(values = shape_values, name = "Node Type") +
         ggplot2::scale_fill_manual(values = color_values, name = "Node Type") +
         ggraph::theme_graph(base_family = "sans") +
         ggplot2::theme(legend.position = if (legend) "bottom" else "none")
@@ -148,7 +151,7 @@ plotBipartiteGraph <- function(G, legend = TRUE,
         ggplot2::ggsave(
             filename = output_path,
             plot = p,
-           ...
+            ...
         )
     }
 
