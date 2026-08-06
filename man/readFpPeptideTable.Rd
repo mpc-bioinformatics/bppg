@@ -41,10 +41,6 @@ except peptide sequence and intensities}
 If \code{TRUE}, additional information on
 the data extraction is
 printed}
-
-\item{remove_contaminants}{\strong{logical} \cr
-If \code{TRUE}, peptide sequences from
-potential contaminants are removed}
 }
 \value{
 A SummarizedExperiment with intensities, sequences, and optional data
