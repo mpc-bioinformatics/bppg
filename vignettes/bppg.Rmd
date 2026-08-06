@@ -48,7 +48,8 @@ bib <- as.BibEntry(c(citation(), citation("BiocStyle")[1], citation("knitr")[1],
     citation("RefManageR")[1], citation("rmarkdown")[1], 
     citation("sessioninfo")[1], citation("testthat")[1],
     citation("ggplot2")[1], citation("Rsolnp")[1],
-    citation("seqinr")[1], citation("batchtools")[1])) + bib
+    citation("seqinr")[1], citation("batchtools")[1], citation("bppg")[1])) + 
+    bib
 
 BibOptions(max.names = 2, bib.style = "authoryear", style = "citation")
 
@@ -109,6 +110,13 @@ peptide products. **Unique** peptides therefore have only one edge, while
 **shared** peptides have several. This graph can be based on only *in silico* 
 information, creating a theoretical graph.
 `r Citep(bib[["schork_improvement_2024"]])`
+
+```{r example_plot, echo = FALSE, eval = TRUE, include = TRUE, message = FALSE, out.width="70%", fig.asp=0.9}
+file <- system.file("extdata", "quantGraphs_collpept.rds", package = "bppg")
+G_coll <- readRDS(file)[[1]][[3]]
+plotBipartiteGraph(G_coll)
+```
+
 
 Alternatively, measurements can be 
 included, therefore removing all peptides without a valid ratio in the 
@@ -206,8 +214,9 @@ head(rowData(D))  # peptide metadata (sequence, protein, etc.)
 
 ## FASTA
 
-To build the bipartite graph, peptides need to be *in silico* digested and 
-matched with their protein of origin. For this we have a reduced FASTA file.
+To build the bipartite graph, proteins need to be *in silico* digested and 
+peptides matched with their protein of origin. 
+For this we have a reduced FASTA file.
 
 ```{r digest,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
 library(seqinr)
@@ -219,7 +228,8 @@ names(fasta)
 
 ## Build Quantification Graph
 
-Now the theoretical information can be combined with quantification data. 
+Now the theoretical information can be combined with quantification data into
+a bipartite peptide protein graph. 
 To simplefy this, we created a wrapper function, which includes the digestion 
 and the data
 preprocessing (normalization, replicate aggreagtion and ratio calculation).
@@ -240,7 +250,7 @@ multitude of independent graphs for that comparison. The created graph for each
 comparison is not fully interconnected but many independet graphs which are
 considered separately in the downstream analysis. 
 
-`graphs[[1]][[1]]` shows the first graph of the first comparison 50 amol vs 125
+`graphs[[1]][[3]]` shows the first graph of the first comparison 50 amol vs 125
 amol. The `igraph` object shows the amount of nodes and edges, the attributes
 and the first edges. This example is from RIR2 which does not have an overlap
 with another protein. 
@@ -248,30 +258,19 @@ with another protein.
 ```{r graphs,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
 names(graphs)
 
-graphs[[1]][[1]]
+graphs[[1]][[3]]
 ```
 
+```{r graphs_plot, echo = TRUE, eval = TRUE, include = TRUE, message = FALSE, out.width="70%", fig.asp=0.9}
+plotBipartiteGraph(graphs[[1]][[3]])
+```
 
 
 ## Optimize Relative Quantification
 
 The graph containing peptide ratios is the basis for an equation system to calculate protein 
-level ratios. The known variables for this are the peptide ratios ($r_i$) and 
-from which proteins they can originate. The unknown variables are the protein 
-ratios of the protein quantities of sample A and B ($\frac{B_i}{A_i}=R_i$) and
-the proportion of each protein in sample A per connected
-graph ($C_i = \frac{A_i}{\sum A_i}$). 
-For each peptide, the $R_i$ of the contributing proteins is estimated and used
-to reconstruct $r_i$. With $\delta_{ij} = 1$ for contributing proteins and 
-$\delta_{ij} = 0$ for not contributing proteins in the graph:
-
-\[ r_j \approx  \sum_{i = 1}^m \left[ 
-    \frac{R_i \cdot C_i \cdot \delta_{ij}}{\sum_{k = 1}^m C_k 
-        \cdot \delta_{kj}} \right] \]
-
-In general, the 
-resulting equation system is underdetermined, since it has more unknown 
-variables than known ones. 
+level ratios $R_i$. The known variables for this are the peptide ratios ($r_i$) and 
+from which proteins they can originate. 
 Instead an optimization algorithm (`Rsolnp` 
 `r Citep(bib[["galanos2025rsolnp"]])`) is 
 applied to the system. The error
@@ -280,43 +279,20 @@ $r_i$ and the measured $r_i$.
 
 The optimization is divided into two steps and is performed per graph.
 
-### Optimization
-In the first step one $C_i$ is always fixed, while the remaining $C_i$ are 
-optimized with regards to $\sum C_i = 1$. 
-`iterateOverCi` considers a wide range of possible $C_i$ combination. Besides 
-the $C_i$ the protein ratios ($R_i$) are optimized. 
-The optimization aims to reduce the error between estimated peptide 
-ratios, based on the optimized values, and the measured peptide ratios. With 
-the following equation:
-\[\underset{R_i, C_i, i=1,\dots,m}{\mathrm{argmin}} 
-    \left( \sum_{j=1}^m \varepsilon_j^2  \right)\]
-
-\[ \varepsilon_j = \log(r_j) - \log \left( \sum_{i = 1}^m \left[ 
-    \frac{R_i \cdot C_i \cdot \delta_{ij}}{\sum_{k = 1}^m C_k 
-        \cdot \delta_{kj}} \right] \right)\]
-
 The result of the first iterations show which `protein` was fixed
 to which value (`grid`) and what the log protein ratios (`RLog`) and `error`
 were.
 The best-fitting $C_i$​ combination is then extracted in the second step.
 
-```{r optimization,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
-# graphs[[1]][[1]] has only one proteins and does not need to be optimized
-res <- iterateOverCi(graphs[[1]][[2]]) 
-head(res)
-```
-
-### Extract Best Results
-
-From the previous function the results are filtered for the combination of 
-$C_i$s, with the lowest error. Some of the result is not a single value but a 
+Some of the result is not a single value but a 
 range of equally optimal solutions. This occurs if several combinations return 
 the same error and therefore, the result is ambiguous. 
 Nevertheless, that mirrors the information on the
 peptide level, which can be contradicting.
 
-```{r results,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
-protQuant <- automatedAnalysisIteratedCi(graphs[[1]][[2]], res)
+```{r optimization,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
+res <- iterateOverCi(graphs[[1]][[1]]) 
+protQuant <- automatedAnalysisIteratedCi(graphs[[1]][[1]], res)
 protQuant
 head(assays(protQuant)$results)
 ```
@@ -329,20 +305,19 @@ the log ratio and concentration range for the given error.
 
 ### Parallelization
 
-The optimization runs per graph. This enables easy parallization, with e.g. 
+These examples were quick, but a complete dataset can take hours to go through
+all graphs. Since the optimization runs per graph. 
+This enables easy parallization, with e.g. 
 batchtools `r Citep(bib[["lang2017batchtools"]])`, which supports HPC job scheduling. 
 An example for this can be seen in our nextflow  workflow for this package:
 [here](https://github.com/mpc-bioinformatics/bppg-nf/blob/devel).
 
-# See Also
+# Further information
 
-Information for *in silico* analysis and plotting can be found in further 
-vignettes (currently in preparation)
-
-## Nextflow
-We also provide a nextflow workflow 
-[here](https://github.com/mpc-bioinformatics/bppg-nf/). Which allows 
-for the usage of a wider audience.
+- information on the detailed workflow, *in silico* analysis and customizing the
+graphics are planned for future vignettes.
+- more detailed information on the parameters and settings can be found 
+in the documentation `r Citep(bib[["schork2026bppg"]])`
 
 # Comparison with other related packages
 
