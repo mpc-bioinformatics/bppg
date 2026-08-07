@@ -19,7 +19,8 @@ RoxygenNote: 8.0.0
 biocViews: Proteomics, GraphAndNetwork, MassSpectrometry, MultipleComparison, Visualization
 Imports: 
     checkmate,
-    graphics,
+    ggplot2,
+    ggraph,
     limma,
     openxlsx,
     pbapply,
@@ -27,9 +28,7 @@ Imports:
     Rsolnp,
     stringr,
     SummarizedExperiment, 
-    vsn,
-    ggraph,
-    ggplot2
+    vsn
 Suggests: 
     covr,
     rmarkdown,

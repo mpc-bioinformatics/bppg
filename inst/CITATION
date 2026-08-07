@@ -1,0 +1,28 @@
+pkgVer <- function(pkg) {
+    if (!exists("meta") || is.null(meta)) meta <- packageDescription(pkg)
+    ver <- meta$Version
+    paste0('https://github.com/mpc-bioinformatics/bppg/', pkg, ' - R package version ', ver)
+}
+
+c(
+    bibentry(bibtype="manual",
+        title = "bppg: Bipartite peptide-protein graphs",
+        author = c(
+            person("Karin", "Schork"),
+            person("Julika", "Wenzel"),
+            person("Katharina", "Neuhaus"),
+            person("Eisenacher", "Martin")
+        ),
+        year = 2026,
+        url = "https://github.com/mpc-bioinformatics/bppg",
+    ),
+        bibentry(bibtype="phdthesis",
+        title = "Improvement of protein quantification for proteins with shared peptides by using bipartite peptide-protein graphs",
+        author = c(
+            person("Karin", "Schork")
+        ),
+        year = 2024,
+        school = "Technische Universität Dortmund",
+        doi = "http://dx.doi.org/10.17877/DE290R-25361",
+    )
+)
