@@ -30,7 +30,8 @@ Contracting of peptide and protein nodes.
 }
 \examples{
 library(seqinr)
-file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
+file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
+     package = "bppg")
 fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 edgelist <- digestFASTA(fasta)
 vMapping <- bppg:::.getContractMapping(edgelist)

@@ -20,7 +20,8 @@
 #'
 #' @examples
 #' library(seqinr)
-#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
+#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
+#'      package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' edgelist <- digestFASTA(fasta)
 #' res <- bppg:::.getContractMapping(edgelist)
@@ -67,7 +68,8 @@
 #'
 #' @examples
 #' library(seqinr)
-#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
+#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
+#'      package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' edgelist <- digestFASTA(fasta)
 #' vMapping <- bppg:::.getContractMapping(edgelist)
@@ -151,7 +153,8 @@
 #'
 #' @examples
 #' library(seqinr)
-#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
+#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
+#'      package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' edgelist <- digestFASTA(fasta)
 #' res <- bppg::generateGraphsFromEdgelist(edgelist, collProtNodes = TRUE,
@@ -238,13 +241,15 @@ generateGraphsFromEdgelist <- function(edgelist,
 #'
 #' @examples
 #' library(seqinr)
-#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
+#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
+#'      package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' edgelist <- digestFASTA(fasta)
 #'
 #' file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
 #' group <- factor(rep(1:9, each = 3))
-#' D <- readMqPeptideTable(path = file, group = group, LFQ = TRUE, remove_contaminants = FALSE)
+#' D <- readMqPeptideTable(path = file, group = group, LFQ = TRUE,
+#'      remove_contaminants = FALSE)
 #' D_norm <- bppg::normalizePeptideIntensities(D)
 #' dAgg <- aggregateReplicates(D_norm)
 #' exp_peptide_ratios <- calculatePeptideRatios(dAgg)

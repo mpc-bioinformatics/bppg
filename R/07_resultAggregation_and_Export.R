@@ -25,9 +25,20 @@
 combineComparisons <- function(compResultList) {
 
     # get union of all row names and sort them
-    all_rows <- Reduce(union, lapply(compResultList, function(x) {
-        return(rownames(SummarizedExperiment::assay(x)))
-    }), init = NULL)
+    if(!is.null(SummarizedExperiment::rowData(compResultList[[1]])$protOrigin)){
+        all_origins <- do.call("rbind", lapply(compResultList, function(x) {
+            return(SummarizedExperiment::rowData(x))
+        }))
+        dup_mask <- duplicated(all_origins)
+        all_origins <- all_origins[!dup_mask,]
+        all_rows <- as.data.frame(all_origins[order(rownames(all_origins)),])
+    } else {
+        all_rows <- Reduce(union, lapply(compResultList, function(x) {
+            return(rownames(SummarizedExperiment::assay(x)))
+        }), init = NULL)
+        all_rows <- data.frame(accession = all_rows[order(all_rows)])
+    }
+
 
     # helper function to harmonize row names
     # (introduce NA rows for missing proteins)
@@ -36,7 +47,7 @@ combineComparisons <- function(compResultList) {
 
         # introduce NA rows for all protein groups not present in this
         # comparison
-        missing <- setdiff(all_rows, rownames(df))
+        missing <- setdiff(all_rows$accession, rownames(df))
         na_rows <- matrix(NA, nrow = length(missing), ncol = ncol(df),
             dimnames = list(missing, colnames(df)))
         df_tmp <- rbind(df, na_rows)
@@ -50,7 +61,7 @@ combineComparisons <- function(compResultList) {
 
     SE <- SummarizedExperiment::SummarizedExperiment(
         assays = df_list_harmonized,
-        rowData = data.frame(accession = rownames(df_list_harmonized[[1]])),
+        rowData = all_rows,
         colData = data.frame(colnames = colnames(df_list_harmonized[[1]])))
 
     return(SE)
