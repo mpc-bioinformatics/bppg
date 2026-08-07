@@ -66,7 +66,8 @@
 #' # Only 3 protein nodes are kept after protein elimination.
 #' # The error term only increases slightly.
 #'
-#' @importFrom checkmate assertClass assertDataFrame assertList assertNumeric checkTRUE
+#' @importFrom checkmate assertClass assertDataFrame assertList assertNumeric
+#' @importFrom checkmate checkTRUE
 #' @importFrom igraph decompose delete_vertices is_bipartite V
 
 
@@ -86,7 +87,6 @@ proteinElimination <- function(G,
     checkmate::assertClass(protsOriginIDs , classes = "igraph.vs",
         null.ok = TRUE)
     checkmate::assertList(res_best, null.ok = TRUE)
-
 
     G <- .addUniquenessAttributes(G)
     nr_unique_peptides <- igraph::V(G)$nr_unique_peptides[igraph::V(G)$type]

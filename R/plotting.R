@@ -1,36 +1,7 @@
 # Functions in this file:
-# myDiamond
 # setNodeLabels
 # plotBipartiteGraph
 
-
-#' Function do define diamond shape for unique peptides in bipartite graph.
-#' this works for igraph.
-#' @param coords                \strong{matrix} \cr
-#'                              2D-coordinates vor vertices.
-#' @param v                     \strong{numrical} \cr
-#'                              (row) index for vertices.
-#' @param params                \strong{data.frame} \cr
-#'                              parameters for color and size.
-#' @return symbole that can be used by igraph for plotting
-#'
-#' @importFrom graphics symbols
-
-.myDiamond <- function(coords, v = NULL, params) {
-    vertex.color <- params("vertex", "color")
-    if (length(vertex.color) != 1 && !is.null(v)) {
-        vertex.color <- vertex.color[v]
-    }
-    vertex.size <- params("vertex", "size")
-    if (length(vertex.size) != 1 && !is.null(v)) {
-        vertex.size <- vertex.size[v]
-    }
-
-    graphics::symbols(x=coords[, 1], y=coords[, 2], bg=vertex.color,
-        stars=1.2 * cbind(vertex.size, vertex.size,
-            vertex.size, vertex.size),
-        add=TRUE, inches=FALSE)
-}
 
 
 #' Set names for plotting with plotBipartiteGraph.
@@ -60,7 +31,6 @@
     pos_peptides <- Layout[, 1][Layout[, 2] == 0]
 
     if (node_labels_proteins == "letters") {
-        #### TODO: was ist, wenn es mehr als 26 Proteine gibt?
         names_G[Layout[, 2] == 1] <- LETTERS[rank(pos_proteins)]
     }
     if (node_labels_proteins == "accessions") {
@@ -76,18 +46,18 @@
         names_peptides <- seq_len(sum(Layout[, 2] == 0))
         names_G[Layout[, 2] == 0] <- names_peptides[rank(pos_peptides)]
     }
-    if (node_labels_peptides == "pep_ratios") {
-        pep_ratios <- igraph::V(G)$pep_ratio
-        names_G[Layout[, 2] == 0] <- round(pep_ratios[Layout[, 2] == 0],
+    if (node_labels_peptides == "pep_logRatios") {
+        pep_logRatios <- igraph::V(G)$pep_logRatio
+        names_G[Layout[, 2] == 0] <- round(pep_logRatios[Layout[, 2] == 0],
             round_digits)
     }
-    if (node_labels_peptides == "pep_ratio_aggr") {
-        pep_ratios <- igraph::V(G)$pep_ratio_aggr
-        names_G[Layout[, 2] == 0] <- round(pep_ratios[Layout[, 2] == 0],
+    if (node_labels_peptides == "pep_ratios_mean") {
+        pep_logRatios <- igraph::V(G)$pep_ratio_mean
+        names_G[Layout[, 2] == 0] <- round(pep_logRatios[Layout[, 2] == 0],
             round_digits)
     }
     if (node_labels_peptides == "") {
-        names_G[Layout[, 2] == 0] <- NA
+        names_G[Layout[, 2] == 0] <- ""
     }
 
     igraph::set_vertex_attr(G, name = "name", value = names_G)
@@ -98,51 +68,27 @@
 #'
 #' @param G                         \strong{igraph graph object} \cr
 #'                                  A bipartite peptide-protein graph.
-#' @param vertex.label.dist         \strong{numeric} \cr
-#'                                  The distance of the label from center of the
-#'                                  vertex (0 = centered in vertex).
 #' @param legend                    \strong{logical} \cr
 #'                                  If \code{TRUE}, a legend will be added.
 #' @param vertex.color              \strong{character vector} \cr
 #'                                  The colours for the different vertex types.
 #' @param vertex.size               \strong{numeric} \cr
 #'                                  The size of vertices.
-#' @param vertex.label.cex          \strong{numeric} \cr
-#'                                  The size of vertex labels.
 #' @param edge.width                \strong{numeric} \cr
 #'                                  The width of the edges.
-#' @param vertex.size2              \strong{numeric} \cr
-#'                                  The vertex size 2.
-#' @param useCanonicalPermutation   \strong{logical} \cr
-#'                                  If \code{TRUE}, the graph will be converted
-#'                                  into the canonical permutation before
-#'                                  plotting.
-#' @param three_shapes              \strong{logical} \cr
-#'                                  If \code{TRUE}, a separate shape will be
-#'                                  used for the unique peptides.
 #' @param node_labels_proteins      \strong{character} \cr
 #'                                  The type of labels for the proteins. Options
-#'                                  are "letters" or "acessions".
+#'                                  are "letters" or "accessions".
 #' @param node_labels_peptides      \strong{character} \cr
 #'                                  The type of labels for the peptides. Options
-#'                                  are"numbers" or "pep_ratios" or
-#'                                  "pep_ratio_aggr".
+#'                                  are "numbers" or "pep_logRatios" or
+#'                                  "pep_ratio_mean".
 #' @param round_digits              \strong{integer} \cr
 #'                                  The number of digits to round the peptide
 #'                                  ratios to.
-#' @param use_edge_attributes       \strong{logical} \cr
-#'                                  If \code{TRUE}, edge attributes will be used
-#'                                  for plotting (e.g. deleted edges will be
-#'                                  dashed)
-#' @param legend.x                  \strong{numeric or character} \cr
-#'                                  The x-coordinate of the legend or a keyword
-#'                                  for the position. See [graphics::legend()]
-#'                                  for details.
-#' @param legend.y                  \strong{numeric or character} \cr
-#'                                  The y-coordinate of the legend or a keyword
-#'                                  for the position. See [graphics::legend()]
-#'                                  for details.
-#' @param ...                       Additional arguments for plot.igraph.
+#' @param output_path               \strong{character} \cr
+#'                                  file path for optional save of figure.
+#' @param ...                       Additional arguments for ggsave.
 #'
 #' @return Plot of one bipartite graph.
 #' @export
@@ -153,78 +99,62 @@
 #' graphs <- readRDS(file)
 #' G <- graphs$"1_2"[[2]]
 #'
-#' plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE,
-#'     legend.x = 0)
+#' plotBipartiteGraph(G)
 #'
-#' @importFrom igraph add_shape canonical_permutation layout_as_bipartite permute V
-#' @importFrom graphics par plot
-# TODO way more than 50 lines
-# move costumination into sub functions?
-plotBipartiteGraph <- function(G, vertex.label.dist = 0, legend = TRUE,
+#' @importFrom igraph add_shape canonical_permutation layout_as_bipartite 
+#' @importFrom igraph permute V
+#' @importFrom ggraph geom_edge_link geom_node_label geom_node_point ggraph
+#' @importFrom ggraph theme_graph
+#' @importFrom ggplot2 aes ggsave scale_fill_manual scale_shape_manual theme
+#' 
+plotBipartiteGraph <- function(G, legend = TRUE,
     vertex.color = c("mediumseagreen", "cadetblue2", "coral1"),
-    vertex.size = 15, vertex.label.cex = 1, edge.width = 1, vertex.size2=15,
-    useCanonicalPermutation = FALSE, three_shapes = FALSE,
+    vertex.size = 15, edge.width = 0.5,
     node_labels_proteins = "letters",
     node_labels_peptides = "numbers",
-    round_digits = 2, use_edge_attributes = FALSE,
-    legend.x = "bottom", legend.y = NULL,
+    round_digits = 2,
+    output_path = NULL,
     ...) {
 
     ## switch node types so that proteins are at the top
     ## 0 = proteins, 1 = peptides
     igraph::V(G)$type <- !igraph::V(G)$type
 
-    if (useCanonicalPermutation) {
-        cG <- igraph::canonical_permutation(G)
-        G <- igraph::permute(G, cG$labeling)
-    }
-
     G <- .setNodeLabels(G, node_labels_peptides, node_labels_proteins,
-        round_digits = 2)
+        round_digits)
     #################################
 
-    type <- integer(length(igraph::V(G)))
-    type[!igraph::V(G)$type] <- 1                          ## "protein"
-    type[igraph::V(G)$type] <- 2                           ## "shared peptide"
-    type[igraph::V(G)$type & igraph::degree(G) == 1] <- 3  ## "unique peptide"
+    igraph::V(G)$node_type[!igraph::V(G)$type] <- "Protein"
+    igraph::V(G)$node_type[igraph::V(G)$type] <- "Shared Peptide"
+    igraph::V(G)$node_type[igraph::V(G)$type
+        & igraph::degree(G) == 1] <- "Unique Peptide"
 
-    if (three_shapes) {
-        igraph::add_shape("diamond", clip= igraph::shape_noclip,
-            plot=.myDiamond)
-        vertex.shapes <- c("circle", "crectangle", "diamond")[type]
-    } else {
-        vertex.shapes <- c("circle", "crectangle")[igraph::V(G)$type + 1]
+    shape_values <- c(Protein = 21,
+        `Shared Peptide` = 22,
+        `Unique Peptide` = 23)
+    color_values <- c(Protein = vertex.color[1], 
+        `Shared Peptide` = vertex.color[2],
+        `Unique Peptide` = vertex.color[3])
+
+    p <- ggraph::ggraph(G, layout = "bipartite") +
+        ggraph::geom_edge_link(linewidth = edge.width) + 
+        ggraph::geom_node_point(size = vertex.size, 
+            ggplot2::aes(fill = factor(node_type), shape = factor(node_type))) +
+        ggraph::geom_node_label(ggplot2::aes(label = name, 
+            fill = factor(node_type)), size = vertex.size/3, 
+            show.legend = FALSE, family = "sans") + 
+        ggplot2::scale_shape_manual(values = shape_values, name = "Node Type") +
+        ggplot2::scale_fill_manual(values = color_values, name = "Node Type") +
+        ggraph::theme_graph(base_family = "sans") +
+        ggplot2::theme(legend.position = if (legend) "bottom" else "none")
+
+    if (!is.null(output_path)) {
+        ggplot2::ggsave(
+            filename = output_path,
+            plot = p,
+            ...
+        )
     }
 
-    if (legend) {
-        old_par <- graphics::par(no.readonly = TRUE)
-        on.exit(graphics::par(old_par), add = TRUE)
-        graphics::par(mar = c(10, 4, 4, 2) + 0.1)
-    }
-
-    #if (use_edge_attributes) {
-    #    edge.lty <- igraph::E(G)$deleted + 1
-    #} else {
-        edge.lty <- 1
-    #}
-
-    graphics::plot(G, layout = igraph::layout_as_bipartite,
-        vertex.color=vertex.color[type],
-        vertex.shape = vertex.shapes,
-        vertex.label.degree = c(-pi / 2, pi / 2)[igraph::V(G)$type + 1],
-        vertex.label.dist = vertex.label.dist,
-        vertex.size = vertex.size, vertex.label.cex = vertex.label.cex,
-        edge.width = edge.width,
-        vertex.size2=vertex.size2, edge.lty = edge.lty, ...)
-
-    if (legend && three_shapes) {
-        legend(x = legend.x, y = legend.y, legend = c("protein",
-                "shared peptide", "unique peptide"),
-            col = vertex.color, pch = c(19, 15, 18))
-    }
-    if (legend && !three_shapes) {
-        legend(x = legend.x, y = legend.y, legend = c("protein",
-                "shared peptide", "unique peptide"),
-            col = vertex.color, pch = c(19, 15, 15))
-    }
+    return(p)
 }

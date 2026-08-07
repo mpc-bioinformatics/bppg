@@ -50,8 +50,8 @@ The \code{control} object to be passed to the
 \code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}} function.}
 }
 \value{
-A data.frame containing the optimal Ci and Ri values together with the reached
-minimal error term for each grid point.
+A data.frame containing the optimal Ci and Ri values together with the
+reached minimal error term for each grid point.
 }
 \description{
 Iterate over possible Ci values

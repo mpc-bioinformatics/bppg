@@ -1,6 +1,8 @@
 # Functions in this file:
 # .addUniquenessAttributes
 # .geomMean
+# .directBipartiteGraph
+# .isomorphicBipartite
 
 
 #' Adds vertex attributes with uniqueness of peptides and number of unique
@@ -84,4 +86,73 @@
     } else {
         return(exp(mean(log(x), na.rm = na.rm)))
     }
+}
+
+
+
+
+######## Helpers for testing
+
+#' Transform a bipartite graph into a directed graph.
+#'
+#' @param bip_graph   \strong{graph (igraph)} \cr
+#'                    A bipartite graph.
+#' @param from_type   \strong{logical} \cr
+#'                    If \code{TRUE}, the edges will go out from the vertices
+#'                    with the type \code{TRUE} from the bipartite graph.
+#'
+#' @return A bipartite graph that is know directed.
+#'
+#'
+#' @importFrom igraph %->% as_directed E reverse_edges V
+#'
+.directBipartiteGraph <- function(bip_graph, from_type = FALSE) {
+
+    ## turn undirected into directed edges
+    bip_graph <- igraph::as_directed(bip_graph, mode = "arbitrary")
+
+    from_vs <- igraph::V(bip_graph)[igraph::V(bip_graph)$type == from_type]
+    to_vs <- igraph::V(bip_graph)[igraph::V(bip_graph)$type == !from_type]
+
+    ## reverse edges going from the "to-group" to the "from-group"
+    bip_graph <- igraph::reverse_edges(bip_graph,
+        igraph::E(bip_graph)[to_vs %->% from_vs])
+
+    return(bip_graph)
+}
+
+#' Enchanced version of the igraph::isomorphic function that also considers the
+#' node type in bipartite graphs, e.g. that W- and M-shaped graphs are NOT
+#' isomorphic
+#'
+#' @param graph1   \strong{graph (igraph)} \cr
+#'                 First graph.
+#' @param graph2   \strong{graph (igraph)} \cr
+#'                 Second graph.
+#' @param ...      currently unused
+#'
+#' @return TRUE if graphs are isomorphic, FALSE if not.
+#'
+#'
+#' @seealso [generateGraphsFromEdgelist()]
+#'
+#' @examples
+#'
+#' M1 <- matrix(c(1, 0, 1, 1), nrow = 2, byrow = TRUE)
+#' G1 <- igraph::graph_from_biadjacency_matrix(M1)
+#'
+#' M2 <- matrix(c(1, 1, 0, 1), nrow = 2, byrow = TRUE)
+#' G2 <- igraph::graph_from_biadjacency_matrix(M2)
+#'
+#' bppg:::.isomorphicBipartite(G1, G2)
+#'
+#' @importFrom igraph is_directed isomorphic
+
+.isomorphicBipartite <- function(graph1, graph2, ...) {
+
+    ## direct graphs if they are not directed yet
+    if (!igraph::is_directed(graph1))   graph1 <- .directBipartiteGraph(graph1)
+    if (!igraph::is_directed(graph2))   graph2 <- .directBipartiteGraph(graph2)
+
+    igraph::isomorphic(graph1, graph2, method = "vf2")
 }

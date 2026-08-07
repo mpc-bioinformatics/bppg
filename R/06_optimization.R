@@ -362,6 +362,7 @@
         pars <- c(RiLog_start, Ci_start)
     }
     ## initial error term
+    # cat(c("\n\n", Ci_start, "\n"))
     RES <- .errorEquation(RiLog = RiLog_start, Ci = Ci_start, M = M,
         rjLog = rjLog)
     Tracking <- .trackingDataFrame(0, RES, RiLog_start, Ci_start)
@@ -402,6 +403,9 @@
 #'                      bipartite peptide-protein graph
 #' @param n             \strong{integer(1)} \cr
 #'                      number of proteins in the graph
+#' @param verbose       \strong{logical} \cr
+#'                      If \code{TRUE}, print additional information
+#'                      (see \code{\link[Rsolnp]{solnp}} function).   
 #' @param ...           additional arguments for [.minimizeSquaredError()],
 #'                     e.g. verbose, control
 #'
@@ -410,21 +414,22 @@
 #' \item{grid}{gridpoint}
 #' \item{res_Ri_Ci}{multiple values: estimated RiLog and Ci values}
 #' \item{error}{error term}
-.calcResultGridpoint <- function(j, gridpoint, cnames, G, n, ...) {
+.calcResultGridpoint <- function(j, gridpoint, cnames, G, n, verbose, ...) {
     Ci_tmp <- rep(NA, n)
     Ci_tmp[j] <- gridpoint
 
     RES <- try({
-        .minimizeSquaredError(G, fixedCi = Ci_tmp, ...)
+        .minimizeSquaredError(G, fixedCi = Ci_tmp, verbose = verbose, ...)
     })
     if ("try-error" %in% class(RES)) {
         res_Ri_Ci <- rep(NA, length(cnames))
         error <- NA
+        if (verbose == TRUE) message(class(RES))
     } else {
         res_Ri_Ci <- c(RES$RiLog, RES$Ci)
+        error <- RES$RES$res_squ_err
     }
     names(res_Ri_Ci) <- cnames
-    error <- RES$RES$res_squ_err
     result <- c(protein = j, grid = gridpoint, res_Ri_Ci, error = error)
     return(result)
 }
@@ -460,8 +465,8 @@
 #'                                 [.minimizeSquaredError()] function.
 #'
 #' @return
-#' A data.frame containing the optimal Ci and Ri values together with the reached
-#' minimal error term for each grid point.
+#' A data.frame containing the optimal Ci and Ri values together with the 
+#' reached minimal error term for each grid point.
 #'
 #' @export
 #'
@@ -489,7 +494,8 @@
 #' # small example with a small grid size
 #' iterateOverCi(G, gridSize = 100)
 #'
-#' @importFrom checkmate assertClass assertFlag assertIntegerish assertList assertNumeric checkTRUE
+#' @importFrom checkmate assertClass assertFlag assertIntegerish assertList
+#' @importFrom checkmate assertNumeric checkTRUE
 #' @importFrom igraph is_bipartite V
 #' @importFrom  pbapply pbmapply pboptions
 iterateOverCi <- function(G,
@@ -653,7 +659,14 @@ automatedAnalysisIteratedCi <- function(G,
                                         ratioLog_tol = 1e-6) {
 
     n <- sum(igraph::V(G)$type) ## number of protein groups
-    accessions <- igraph::V(G)$name[igraph::V(G)$type]
+    if (!is.null(igraph::V(G)$protOrigin)){
+        metaData <- data.frame(
+            accession = igraph::V(G)$name[igraph::V(G)$type],
+            protOrigin = igraph::V(G)$protOrigin[igraph::V(G)$type])
+    } else {
+        metaData <- data.frame(
+            accession =  igraph::V(G)$name[igraph::V(G)$type])
+    }
 
     if (!is.null(job)) {
         graphID <- job$pars$prob.pars$k
@@ -669,11 +682,11 @@ automatedAnalysisIteratedCi <- function(G,
     # is estimated as 0)
     ind_error_NA <- which(is.na(res$error))
     if (length(ind_error_NA) > 0) {
+        res <- res[-ind_error_NA, ]
         if (verbose) {
             message(length(ind_error_NA),
-                           " grid points with NA or NaN error term were removed.")
-        }
-        res <- res[-ind_error_NA, ]
+                "grid points with NA or NaN error term were removed.")
+        } # BiocCheck note for "error" in message
     }
 
     f <- function(x, res, error_tol, ratioLog_tol,
@@ -702,7 +715,7 @@ automatedAnalysisIteratedCi <- function(G,
         use_results_from_other_proteins = use_results_from_other_proteins)
 
     # comparison=rep(comparison, n),
-    RES_info <- data.frame(accession = accessions,
+    RES_info <- data.frame(accession = metaData$accession,
         graphID = rep(graphID, n), proteinNr = seq_len(n))
 
     RES <- cbind(RES_info, as.data.frame(t(RES)))
@@ -711,7 +724,7 @@ automatedAnalysisIteratedCi <- function(G,
 
     RES_SE <- SummarizedExperiment::SummarizedExperiment(
         assays = list(results = RES),
-        rowData = data.frame(accession = accessions),
+        rowData = metaData,
         colData = data.frame(colnames = colnames(RES)))
     return(RES_SE)
 }

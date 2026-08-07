@@ -33,7 +33,8 @@
 #'
 #' @examples
 #' library(seqinr)
-#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
+#' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
+#'      package = "bppg")
 #' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
 #' graphs <- bppg::generateGraphsFromFASTA(fasta)
 #'
@@ -173,7 +174,8 @@ generateGraphsFromQuantData <- function(D,
     D_norm <- bppg::normalizePeptideIntensities(D, method = norm_method)
 
     if (!is.null(outpath)) {
-        openxlsx::write.xlsx(SummarizedExperiment::assays(D_norm)$intensities_norm,
+        openxlsx::write.xlsx(
+            SummarizedExperiment::assays(D_norm)$intensities_norm,
             file = paste0(outpath, "peptides_", norm_method, "_", suffix,
                 ".xlsx"), overwrite = TRUE, keepNA = TRUE)
     }

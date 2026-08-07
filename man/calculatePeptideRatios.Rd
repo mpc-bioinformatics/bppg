@@ -23,7 +23,8 @@ Calculation of peptide ratios from aggregated intensities.
 \examples{
 file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
 group <- factor(rep(1:9, each = 3))
-D <- readMqPeptideTable(path = file, group = group, LFQ = TRUE, remove_contaminants = FALSE)
+D <- readMqPeptideTable(path = file, group = group, LFQ = TRUE,
+    remove_contaminants = FALSE)
 D_norm <- bppg::normalizePeptideIntensities(D)
 dAgg <- aggregateReplicates(D_norm)
 calculatePeptideRatios(dAgg)

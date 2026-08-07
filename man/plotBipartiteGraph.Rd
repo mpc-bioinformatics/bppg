@@ -6,31 +6,20 @@
 \usage{
 plotBipartiteGraph(
   G,
-  vertex.label.dist = 0,
   legend = TRUE,
   vertex.color = c("mediumseagreen", "cadetblue2", "coral1"),
   vertex.size = 15,
-  vertex.label.cex = 1,
-  edge.width = 1,
-  vertex.size2 = 15,
-  useCanonicalPermutation = FALSE,
-  three_shapes = FALSE,
+  edge.width = 0.5,
   node_labels_proteins = "letters",
   node_labels_peptides = "numbers",
   round_digits = 2,
-  use_edge_attributes = FALSE,
-  legend.x = "bottom",
-  legend.y = NULL,
+  output_path = NULL,
   ...
 )
 }
 \arguments{
 \item{G}{\strong{igraph graph object} \cr
 A bipartite peptide-protein graph.}
-
-\item{vertex.label.dist}{\strong{numeric} \cr
-The distance of the label from center of the
-vertex (0 = centered in vertex).}
 
 \item{legend}{\strong{logical} \cr
 If \code{TRUE}, a legend will be added.}
@@ -41,53 +30,26 @@ The colours for the different vertex types.}
 \item{vertex.size}{\strong{numeric} \cr
 The size of vertices.}
 
-\item{vertex.label.cex}{\strong{numeric} \cr
-The size of vertex labels.}
-
 \item{edge.width}{\strong{numeric} \cr
 The width of the edges.}
 
-\item{vertex.size2}{\strong{numeric} \cr
-The vertex size 2.}
-
-\item{useCanonicalPermutation}{\strong{logical} \cr
-If \code{TRUE}, the graph will be converted
-into the canonical permutation before
-plotting.}
-
-\item{three_shapes}{\strong{logical} \cr
-If \code{TRUE}, a separate shape will be
-used for the unique peptides.}
-
 \item{node_labels_proteins}{\strong{character} \cr
 The type of labels for the proteins. Options
-are "letters" or "acessions".}
+are "letters" or "accessions".}
 
 \item{node_labels_peptides}{\strong{character} \cr
 The type of labels for the peptides. Options
-are"numbers" or "pep_ratios" or
-"pep_ratio_aggr".}
+are "numbers" or "pep_logRatios" or
+"pep_ratio_mean".}
 
 \item{round_digits}{\strong{integer} \cr
 The number of digits to round the peptide
 ratios to.}
 
-\item{use_edge_attributes}{\strong{logical} \cr
-If \code{TRUE}, edge attributes will be used
-for plotting (e.g. deleted edges will be
-dashed)}
+\item{output_path}{\strong{character} \cr
+file path for optional save of figure.}
 
-\item{legend.x}{\strong{numeric or character} \cr
-The x-coordinate of the legend or a keyword
-for the position. See \code{\link[graphics:legend]{graphics::legend()}}
-for details.}
-
-\item{legend.y}{\strong{numeric or character} \cr
-The y-coordinate of the legend or a keyword
-for the position. See \code{\link[graphics:legend]{graphics::legend()}}
-for details.}
-
-\item{...}{Additional arguments for plot.igraph.}
+\item{...}{Additional arguments for ggsave.}
 }
 \value{
 Plot of one bipartite graph.
@@ -101,7 +63,6 @@ file <- system.file("extdata", "quantGraphs_collpept.rds", package = "bppg")
 graphs <- readRDS(file)
 G <- graphs$"1_2"[[2]]
 
-plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE,
-    legend.x = 0)
+plotBipartiteGraph(G)
 
 }
