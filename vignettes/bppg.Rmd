@@ -237,7 +237,7 @@ and the data
 preprocessing (normalization, replicate aggreagtion and ratio calculation).
 For the generation of the graph protein nodes are collapsed 
 (`collProtNodes = TRUE`), this creates protein groups of proteins which are 
-indistinguishable by the measured peptides.
+contain the same measured peptides.
 
 
 ```{r build_graph,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
@@ -271,18 +271,25 @@ plotBipartiteGraph(graphs[[1]][[3]], node_labels_proteins = "accessions",
 
 ## Optimise Relative Quantification
 
-The optization is performed per graph. The bipartite is the basis for an 
-equation system to calculate protein level ratios $R_i$. 
+The optimisation is performed idependently on each graph. The bipartite graph 
+forms the basis of an equation system used to calculate protein level ratios 
+($R_i$). 
 The graph combines information about the peptide ratios ($r_j$) and 
-from which proteins they can originate.
-However, this is not enough to calculate them direct, instead a configuration
+the proteins from which they can originate.
+However, this is not enough to calculate them directly, instead, a configuration
 factor ($C_i$) is needed for each protein. 
-The optimization algorithm `Rsolnp` (`r Citep(bib[["galanos2025rsolnp"]])`) is 
+The optimisation algorithm `Rsolnp` `r Citep(bib[["galanos2025rsolnp"]])` is 
 applied to the resulting equation system.
 
-The optimization is divided into two steps.
+The optimisation process involves two steps.
 First, different protein configurations are tested. 
-The best-fitting $C_i$ combination is then extracted in the second step.
+In the second step, the best-fitting (smallest error) $C_i$ combination is 
+extracted.
+
+```{r optimization,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
+res <- iterateOverCi(graphs[[1]][[1]]) 
+protQuant <- automatedAnalysisIteratedCi(graphs[[1]][[1]], res)
+```
 
 Some of the results are not single values but a 
 range of equally optimal solutions. This occurs if several combinations return 
@@ -290,25 +297,28 @@ the same error and the result is ambiguous.
 Nevertheless, that mirrors the information on the
 peptide level, which can be contradicting.
 
-```{r optimization,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
-res <- iterateOverCi(graphs[[1]][[1]]) 
-protQuant <- automatedAnalysisIteratedCi(graphs[[1]][[1]], res)
+The result is in a `SummarizedExperiment` and the table can be accesed only via 
+the assays function.
+
+```{r res_optimization, eval = TRUE, include = TRUE, message = FALSE}
 protQuant
 head(assays(protQuant)$results)
 ```
+In this example, the `RiLog_min` and `RiLog_max`, as well as the `Ci_min` and 
+`Ci_max` can be seen. This is how the range results are encoded. These values 
+represent the boundaries of the log ratio and range for the given error.
+The `error` shows how well the calculated protein ratios fit the measured peptide 
+ratios.
 
-The result is in a `SummarizedExperiment` and the table can be accesed only via 
-the assays function.
-In this example the `RiLog_min` and `RiLog_max`, as the `Ci_min` and `Ci_max `
-can be seen, which is how range results are encoded. They are the boundaries of 
-the log ratio and concentration range for the given error.
 
 ## Combine and Export
-results from the same comparison can be combiend by using rbind between the 
-quant results.
+Results from the same comparison can be combined by using `rbind()` on the quant
+results. However, running the optimisation for all the sample graphs takes too 
+long for this vignette. 
 
-Lastly, the results over all the graphs can be combined into one result. With
-each comparison as one assay in the final object.
+The results from all the graphs can be combined into a single result. Each 
+comparison is treated as one assay in the final `SummarizedExperiment`.
+
 ```{r combine,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
 file <- system.file("extdata", "resultsList.rds", package = "bppg")
 resultList <- readRDS(file)
@@ -316,19 +326,20 @@ SE <- combineComparisons(resultList)
 SE
 ```
 
-and can be exported in an .xlsx file.
+It can also be exported to an Excel spreadsheet, with the assays on different 
+sheets.
 ```{r export,  echo = TRUE, eval = FALSE, include = TRUE, message = FALSE}
 exportSE(SE, file.path("path_to_folder","results.xlsx"))
 ```
 
-### Parallelization
+### Parallelisation
 
-These examples were quick, but a complete dataset can take hours to go through
-all graphs. Since the optimization runs per graph. 
-This enables easy parallization, with e.g. 
-batchtools `r Citep(bib[["lang2017batchtools"]])`, which supports HPC job 
+Although this example was quick, processing a complete dataset can take hours 
+due to the large number of graphs involved. However, optimisation is applied to
+each graph individually, enabling easy parallelisation using tools such as
+`batchtools` `r Citep(bib[["lang2017batchtools"]])`, which supports HPC job 
 scheduling. 
-An example for this can be seen in our nextflow  workflow for this package:
+You can see an example of this in the Nextflow workflow for this package:
 [here](https://github.com/mpc-bioinformatics/bppg-nf/blob/devel).
 
 # Further information
