@@ -129,7 +129,8 @@ plotBipartiteGraph <- function(G, legend = TRUE,
     igraph::V(G)$node_type[igraph::V(G)$type
         & igraph::degree(G) == 1] <- "Unique Peptide"
 
-    shape_values <- c(Protein = 21, `Shared Peptide` = 22,
+    shape_values <- c(Protein = 21,
+        `Shared Peptide` = 22,
         `Unique Peptide` = 23)
     color_values <- c(Protein = vertex.color[1], 
         `Shared Peptide` = vertex.color[2],

@@ -403,6 +403,9 @@
 #'                      bipartite peptide-protein graph
 #' @param n             \strong{integer(1)} \cr
 #'                      number of proteins in the graph
+#' @param verbose       \strong{logical} \cr
+#'                      If \code{TRUE}, print additional information
+#'                      (see \code{\link[Rsolnp]{solnp}} function).   
 #' @param ...           additional arguments for [.minimizeSquaredError()],
 #'                     e.g. verbose, control
 #'
@@ -411,12 +414,12 @@
 #' \item{grid}{gridpoint}
 #' \item{res_Ri_Ci}{multiple values: estimated RiLog and Ci values}
 #' \item{error}{error term}
-.calcResultGridpoint <- function(j, gridpoint, cnames, G, n, ...) {
+.calcResultGridpoint <- function(j, gridpoint, cnames, G, n, verbose, ...) {
     Ci_tmp <- rep(NA, n)
     Ci_tmp[j] <- gridpoint
 
     RES <- try({
-        .minimizeSquaredError(G, fixedCi = Ci_tmp, ...)
+        .minimizeSquaredError(G, fixedCi = Ci_tmp, verbose = verbose, ...)
     })
     if ("try-error" %in% class(RES)) {
         res_Ri_Ci <- rep(NA, length(cnames))

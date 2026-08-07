@@ -4,7 +4,7 @@
 \alias{.calcResultGridpoint}
 \title{Calculate optimal solution for a single gridpoint}
 \usage{
-.calcResultGridpoint(j, gridpoint, cnames, G, n, ...)
+.calcResultGridpoint(j, gridpoint, cnames, G, n, verbose, ...)
 }
 \arguments{
 \item{j}{\strong{integer(1)} \cr
@@ -21,6 +21,10 @@ bipartite peptide-protein graph}
 
 \item{n}{\strong{integer(1)} \cr
 number of proteins in the graph}
+
+\item{verbose}{\strong{logical} \cr
+If \code{TRUE}, print additional information
+(see \code{\link[Rsolnp]{solnp}} function).}
 
 \item{...}{additional arguments for \code{\link[=.minimizeSquaredError]{.minimizeSquaredError()}},
 e.g. verbose, control}
