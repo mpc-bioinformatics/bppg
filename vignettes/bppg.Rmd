@@ -77,18 +77,18 @@ is not straightforward due to shared peptides.
 Our package, `bppg` (**b**ipartite **p**eptide **p**rotein **g**raphs), is 
 designed to utilise all peptide-level information for protein quantification. 
 This is achieved by modelling the relationship between the quantified peptides 
-and their proteins of origin using bipartite graphs. This forms the basis of an 
-equation system to which an optimisation method is applied in order to best 
-explain the measured ratios using the optimised protein ratios. 
+and their proteins of origin using bipartite graphs. These graphs form the basis
+of an equation system to which an optimisation method is applied  to provide
+the best explanation of  the measured ratios using the optimised protein ratios. 
 
 The functions and steps of the workflow, from peptide quantities to relative 
 protein quantifications, include:
 
-- Reading data of peptide quantities
-- Normalization of peptide quantities - reduce technical variability
+- Reading data of peptide quantities from different software
+- Normalization of peptide quantities
 - Aggregation of replicates per sample group
 - Calculation of peptide ratios per group comparison 
-- Build bipartite graphs per comparison - preserves peptide-level information
+- Build bipartite graphs per comparison
 - Optimization step to calculate protein ratios 
 
 In this vignette we included a quick start guide to use `bppg`.
@@ -101,14 +101,14 @@ There are two categories of peptides. First, **unique** peptides, which
 originate from one protein or protein group (proteins that cannot be 
 distinguished based on the measured peptides). Second, **shared** peptides, 
 which can derive from more than one protein/protein group. **Unique** peptides
-are strong evidence for the presence of a protein and information from
-**shared** peptides is more ambiguous. 
+are strong evidence for the presence of a protein and 
+**shared** peptides provide ambiguous information. 
 `r Citep(bib[["schork2024improvement"]])`
 
 ### Bipartite Graphs
 
-Bipartite graphs have two types of nodes (in this case: proteins and peptides),
-and the edges exist only between the different types and never within a type
+In a bipartite graph, there are two types of nodes (in this case, proteins and
+peptides) and edges only exist between different types, never within a type
 group. A protein node is connected to all their possible 
 peptide products. **Unique** peptides therefore have only one edge, while 
 **shared** peptides have several. This graph can be based on only *in silico* 
@@ -135,6 +135,9 @@ if (!requireNamespace("BiocManager", quietly = TRUE)) {
     }
 
 BiocManager::install("bppg")
+
+# or 
+pak::pak("bppg")
 ```
 
 
@@ -232,11 +235,11 @@ names(fasta)
 
 Now the theoretical information can be combined with quantification data into
 a bipartite peptide protein graph. 
-To simplefy this, we created a wrapper function, which includes the digestion 
+To simplify this, we created a wrapper function, which includes the digestion 
 and the data
 preprocessing (normalization, replicate aggreagtion and ratio calculation).
 For the generation of the graph protein nodes are collapsed 
-(`collProtNodes = TRUE`), this creates protein groups of proteins which are 
+(`collProtNodes = TRUE`), this creates protein groups of proteins which
 contain the same measured peptides.
 
 
@@ -247,12 +250,13 @@ graphs <- bppg::generateGraphsFromQuantData(D = D,
 
 ```
 
-`graphs` is a nested lists, first on the level of comparisons and then the 
-multitude of independent graphs for that comparison. The created graph for each
+The created graph for each
 comparison is not fully interconnected but many independet graphs which are
-considered separately in the downstream analysis. 
+considered separately in the downstream analysis.
+Therefore, `graphs` is a nested list, first on the level of comparisons and 
+then the multitude of independent graphs for that comparison. 
 
-`graphs[[1]][[3]]` shows the first graph of the first comparison 50 amol vs 125
+`graphs[[1]][[3]]` shows one graph of the first comparison 50 amol vs 125
 amol. The `igraph` object shows the amount of nodes and edges, the attributes
 and the first edges. This example is from RIR2 which does not have an overlap
 with another protein. 
@@ -307,7 +311,7 @@ head(assays(protQuant)$results)
 In this example, the `RiLog_min` and `RiLog_max`, as well as the `Ci_min` and 
 `Ci_max` can be seen. This is how the range results are encoded. These values 
 represent the boundaries of the log ratio and range for the given error.
-The `error` shows how well the calculated protein ratios fit the measured peptide 
+The `error_min` shows how well the calculated protein ratios fit the measured peptide 
 ratios.
 
 
@@ -334,7 +338,8 @@ exportSE(SE, file.path("path_to_folder","results.xlsx"))
 
 ### Parallelisation
 
-Although this example was quick, processing a complete dataset can take hours 
+Although the single example was quick, processing a complete dataset can take 
+hours 
 due to the large number of graphs involved. However, optimisation is applied to
 each graph individually, enabling easy parallelisation using tools such as
 `batchtools` `r Citep(bib[["lang2017batchtools"]])`, which supports HPC job 
@@ -369,7 +374,7 @@ them with a weighted sum based on the peak quality.
 - `MSnbase` processes proteomics data from raw to quantification data. For the 
 protein quantification a median and weighted average function are implemented.
 - `msqrob2` analyses differential abundance with an hurdle model. It can be run 
-with peptide quantifies, which are later aggregated with `iq::maxLFQ`.
+with peptide quantities, which are later aggregated with `iq::maxLFQ`.
 - `mzR` provides parsing for differnt standard file formats used for mass
 spectrometry data.
 - `DEqMS` is implemented on top of limma and expects protein variance depedend 
