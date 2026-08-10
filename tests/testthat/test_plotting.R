@@ -33,7 +33,7 @@ test_that("plot a bipartite graph", {
 
     p3 <- plotBipartiteGraph(G_coll,
         node_labels_proteins = "numbers_noord",
-        node_labels_peptides = "pep_ratios_mean",
+        node_labels_peptides = "pep_logRatios_mean",
         round_digits = 2)
     ggplot2::ggsave(plot = p3,
         filename = file.path(temp_dir, "bipartitGraph3.png"),
