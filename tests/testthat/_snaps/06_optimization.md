@@ -305,6 +305,128 @@
       sp|P39708|DHE5_YEAST NA    0.6    0.6    4
       sp|P07262|DHE4_YEAST NA    0.4    0.4    4
 
+# test iterateOverCi and automated analysis collpept
+
+    Code
+      round(res_I, 4)
+    Output
+        protein grid   RLog1 C1 error
+      1       1    1 -0.0705  1     0
+
+---
+
+    Code
+      res_I2
+    Output
+      class: SummarizedExperiment 
+      dim: 1 10 
+      metadata(0):
+      assays(1): results
+      rownames(1): sp|P09938|RIR2_YEAST
+      rowData names(2): accession protOrigin
+      colnames(10): graphID proteinNr ... Ci_max case
+      colData names(1): colnames
+
+---
+
+    Code
+      SummarizedExperiment::rowData(res_I2)
+    Output
+      DataFrame with 1 row and 2 columns
+                                      accession  protOrigin
+                                    <character> <character>
+      sp|P09938|RIR2_YEAST sp|P09938|RIR2_YEAST test_origin
+
+---
+
+    Code
+      round(res_N, 4)
+    Output
+         protein grid  RLog1  RLog2  C1  C2 error
+      1        1  0.1 -0.357 0.1303 0.1 0.9     0
+      2        1  0.2 -0.357 0.1811 0.2 0.8     0
+      3        1  0.3 -0.357 0.2439 0.3 0.7     0
+      4        1  0.4 -0.357 0.3236 0.4 0.6     0
+      5        1  0.5 -0.357 0.4282 0.5 0.5     0
+      6        1  0.6 -0.357 0.5722 0.6 0.4     0
+      7        1  0.7 -0.357 0.7842 0.7 0.3     0
+      8        1  0.8 -0.357 1.1327 0.8 0.2     0
+      9        1  0.9 -0.357 1.8499 0.9 0.1     0
+      10       2  0.1 -0.357 1.8499 0.9 0.1     0
+      11       2  0.2 -0.357 1.1327 0.8 0.2     0
+      12       2  0.3 -0.357 0.7842 0.7 0.3     0
+      13       2  0.4 -0.357 0.5722 0.6 0.4     0
+      14       2  0.5 -0.357 0.4282 0.5 0.5     0
+      15       2  0.6 -0.357 0.3236 0.4 0.6     0
+      16       2  0.7 -0.357 0.2439 0.3 0.7     0
+      17       2  0.8 -0.357 0.1811 0.2 0.8     0
+      18       2  0.9 -0.357 0.1303 0.1 0.9     0
+
+---
+
+    Code
+      res_N2
+    Output
+      class: SummarizedExperiment 
+      dim: 2 10 
+      metadata(0):
+      assays(1): results
+      rownames(2): sp|P40212|RL13B_YEAST sp|Q12690|RL13A_YEAST
+      rowData names(1): accession
+      colnames(10): graphID proteinNr ... Ci_max case
+      colData names(1): colnames
+
+---
+
+    Code
+      round(res_M, 4)
+    Output
+         protein grid  RLog1   RLog2  C1  C2  error
+      1        1  0.1 0.2025  0.0818 0.1 0.9 0.0178
+      2        1  0.2 0.2124  0.0681 0.2 0.8 0.0152
+      3        1  0.3 0.2205  0.0529 0.3 0.7 0.0122
+      4        1  0.4 0.2254  0.0375 0.4 0.6 0.0092
+      5        1  0.5 0.2266  0.0235 0.5 0.5 0.0064
+      6        1  0.6 0.2240  0.0118 0.6 0.4 0.0040
+      7        1  0.7 0.2184  0.0031 0.7 0.3 0.0021
+      8        1  0.8 0.2108 -0.0027 0.8 0.2 0.0009
+      9        1  0.9 0.2020 -0.0058 0.9 0.1 0.0002
+      10       2  0.1 0.2020 -0.0058 0.9 0.1 0.0002
+      11       2  0.2 0.2108 -0.0027 0.8 0.2 0.0009
+      12       2  0.3 0.2184  0.0031 0.7 0.3 0.0021
+      13       2  0.4 0.2240  0.0118 0.6 0.4 0.0040
+      14       2  0.5 0.2266  0.0235 0.5 0.5 0.0064
+      15       2  0.6 0.2254  0.0375 0.4 0.6 0.0092
+      16       2  0.7 0.2205  0.0529 0.3 0.7 0.0122
+      17       2  0.8 0.2124  0.0681 0.2 0.8 0.0152
+      18       2  0.9 0.2025  0.0818 0.1 0.9 0.0178
+
+---
+
+    Code
+      res_M2
+    Output
+      class: SummarizedExperiment 
+      dim: 2 10 
+      metadata(0):
+      assays(1): results
+      rownames(2): sp|P39708|DHE5_YEAST sp|P07262|DHE4_YEAST
+      rowData names(1): accession
+      colnames(10): graphID proteinNr ... Ci_max case
+      colData names(1): colnames
+
+---
+
+    Code
+      SummarizedExperiment::assay(res_M3)
+    Output
+                           graphID proteinNr    error_min     RiLog RiLog_min
+      sp|P39708|DHE5_YEAST      NA         1 0.0002306623  0.201967        NA
+      sp|P07262|DHE4_YEAST      NA         2 0.0002306623 -0.005814        NA
+                           RiLog_max Ci Ci_min Ci_max case
+      sp|P39708|DHE5_YEAST        NA NA    0.9    0.9    4
+      sp|P07262|DHE4_YEAST        NA NA    0.1    0.1    4
+
 # test iterateOverCi with extended grid
 
     Code
