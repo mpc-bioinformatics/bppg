@@ -287,7 +287,7 @@
 
 
 #' Function to set up the optimization problem and minimize the sum of squared
-#' error terms
+#' error terms. If peptides are collapsed, the mean of the peptides is used.
 #'
 #' @param G           \strong{igraph object} \cr
 #'                    bipartite peptide-protein graph
@@ -335,7 +335,11 @@
     M <- igraph::as_biadjacency_matrix(G)
     m <- ncol(M) ## number of proteins
     n <- nrow(M) ## number of peptides
-    rjLog <- stats::na.omit(igraph::vertex_attr(G, "pep_logRatio"))
+    if (!is.null(igraph::V(gColl)$pep_logRatio_mean)){
+        rjLog <- stats::na.omit(igraph::vertex_attr(G, "pep_logRatio_mean"))
+    } else {
+        rjLog <- stats::na.omit(igraph::vertex_attr(G, "pep_logRatio"))
+    }
     if (is.null(rjLog)) stop("G does not contain peptide ratios.")
     checkmate::assertNumeric(rjLog)
     if (m == 1){

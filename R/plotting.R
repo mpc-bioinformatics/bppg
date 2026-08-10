@@ -52,7 +52,7 @@
             round_digits)
     }
     if (node_labels_peptides == "pep_ratios_mean") {
-        pep_logRatios <- igraph::V(G)$pep_ratio_mean
+        pep_logRatios <- igraph::V(G)$pep_logRatio_mean
         names_G[Layout[, 2] == 0] <- round(pep_logRatios[Layout[, 2] == 0],
             round_digits)
     }
@@ -82,7 +82,7 @@
 #' @param node_labels_peptides      \strong{character} \cr
 #'                                  The type of labels for the peptides. Options
 #'                                  are "numbers" or "pep_logRatios" or
-#'                                  "pep_ratio_mean".
+#'                                  "pep_logRatio_mean".
 #' @param round_digits              \strong{integer} \cr
 #'                                  The number of digits to round the peptide
 #'                                  ratios to.
