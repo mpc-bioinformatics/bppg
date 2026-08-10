@@ -11,7 +11,7 @@ c(
             person("Karin", "Schork"),
             person("Julika", "Wenzel"),
             person("Katharina", "Neuhaus"),
-            person("Eisenacher", "Martin")
+            person("Martin", "Eisenacher")
         ),
         year = 2026,
         url = "https://github.com/mpc-bioinformatics/bppg",

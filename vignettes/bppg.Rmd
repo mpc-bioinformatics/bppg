@@ -314,6 +314,21 @@ represent the boundaries of the log ratio and range for the given error.
 The `error_min` shows how well the calculated protein ratios fit the measured peptide 
 ratios.
 
+Considering the RL13A and RL13B graph, the reasons for the high error and
+ambiguity of the results are evident. The log(ratio) of the shared peptides
+ranges from -0.6 to 2.63, with an mean of around 0.55. This explains the high
+margin of error. The wide range of results occurs because the log(ratio) of 
+RL13B must be close to 0.61, depending on $C_i$, the measure of RL13B's effect
+on the shared peptides. The log(ratio) of RL13A must adapt to this, creating the
+range of possibilities.
+
+```{r plot_opti, message = FALSE, out.width="70%", fig.asp=0.9}
+plotBipartiteGraph(graphs[[1]][[1]], node_labels_proteins = "accessions",
+    node_labels_peptides = "pep_logRatios")
+```
+
+
+
 
 ## Combine and Export
 Results from the same comparison can be combined by using `rbind()` on the quant
