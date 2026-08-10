@@ -3,7 +3,8 @@
 \name{.minimizeSquaredError}
 \alias{.minimizeSquaredError}
 \title{Function to set up the optimization problem and minimize the sum of squared
-error terms}
+error terms. If peptides are collapsed, the median of the peptide ratios is
+used.}
 \usage{
 .minimizeSquaredError(G, fixedCi = NULL, verbose = FALSE, control = list())
 }
@@ -42,7 +43,8 @@ not (1 or 2) (see also \code{\link[Rsolnp]{solnp}})}
 }
 \description{
 Function to set up the optimization problem and minimize the sum of squared
-error terms
+error terms. If peptides are collapsed, the median of the peptide ratios is
+used.
 }
 \examples{
 file <- system.file("extdata", "quantGraphs.rds", package = "bppg")

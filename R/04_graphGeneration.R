@@ -117,7 +117,7 @@
         if (collPeptNodes) {
             igraph::V(gColl)$pep_logRatio_mean[!igraph::V(gColl)$type] <-
                 vapply(igraph::V(gColl)$pep_logRatio[!igraph::V(gColl)$type],
-                    mean, FUN.VALUE = numeric(1))
+                    median, FUN.VALUE = numeric(1))
         } else {
             igraph::V(gColl)$pep_logRatio <- vapply(
                 igraph::V(gColl)$pep_logRatio,  "[", 1, FUN.VALUE = numeric(1))
