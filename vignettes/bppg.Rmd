@@ -314,7 +314,7 @@ represent the boundaries of the log ratio and range for the given error.
 The `error_min` shows how well the calculated protein ratios fit the measured peptide 
 ratios.
 
-Considering the RL13A and RL13B graph, the reasons for the high error and
+Considering the RL13A and RL13B graph, the reasons for the error value and
 ambiguity of the results are evident. The log(ratio) of the shared peptides
 ranges from -0.6 to 2.63, with an mean of around 0.55. This explains the high
 margin of error. The wide range of results occurs because the log(ratio) of 
