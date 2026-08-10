@@ -40,7 +40,7 @@ are "letters" or "accessions".}
 \item{node_labels_peptides}{\strong{character} \cr
 The type of labels for the peptides. Options
 are "numbers" or "pep_logRatios" or
-"pep_ratio_mean".}
+"pep_logRatio_mean".}
 
 \item{round_digits}{\strong{integer} \cr
 The number of digits to round the peptide
