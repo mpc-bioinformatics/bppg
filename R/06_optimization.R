@@ -335,7 +335,7 @@
     M <- igraph::as_biadjacency_matrix(G)
     m <- ncol(M) ## number of proteins
     n <- nrow(M) ## number of peptides
-    if (!is.null(igraph::V(gColl)$pep_logRatio_mean)){
+    if (!is.null(igraph::V(G)$pep_logRatio_mean)){
         rjLog <- stats::na.omit(igraph::vertex_attr(G, "pep_logRatio_mean"))
     } else {
         rjLog <- stats::na.omit(igraph::vertex_attr(G, "pep_logRatio"))
