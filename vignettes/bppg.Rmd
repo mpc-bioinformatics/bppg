@@ -63,7 +63,7 @@ BibOptions(max.names = 2, bib.style = "authoryear", style = "citation")
 <!-- This is kind of long and should be  moved into the matching section
 ALso, add bullet points for steps/what it does and what is good about it -->
 
-Bottom-up mass spectrometry (MS) is an effective tool for analysing 
+Bottom-up mass spectrometry (MS) is an effective tool for analyzing 
 high-throughput proteomics. This method allows the proteome of cells, tissues 
 and organisms to be investigated in depth. It allows diseases such as 
 Parkinson's and the effects of stress on cells and organisms to be studied at a 
@@ -75,11 +75,11 @@ Peptide intensities can instead be aggregated to protein intensities, but this
 is not straightforward due to shared peptides. 
 
 Our package, `bppg` (**b**ipartite **p**eptide **p**rotein **g**raphs), is 
-designed to utilise all peptide-level information for protein quantification. 
+designed to utilize all peptide-level information for protein quantification. 
 This is achieved by modelling the relationship between the quantified peptides 
 and their proteins of origin using bipartite graphs. These graphs form the basis
-of an equation system to which an optimisation method is applied  to provide
-the best explanation of  the measured ratios using the optimised protein ratios. 
+of an equation system to which an optimization method is applied  to provide
+the best explanation of  the measured ratios using the optimized protein ratios.
 
 The functions and steps of the workflow, from peptide quantities to relative 
 protein quantifications, include:
@@ -108,7 +108,7 @@ are strong evidence for the presence of a protein and
 ### Bipartite Graphs
 
 In a bipartite graph, there are two types of nodes (in this case, proteins and
-peptides) and edges only exist between different types, never within a type
+peptides) and edges only exist between different types, never within one type of
 group. A protein node is connected to all their possible 
 peptide products. **Unique** peptides therefore have only one edge, while 
 **shared** peptides have several. This graph can be based on only *in silico* 
@@ -143,7 +143,7 @@ pak::pak("bppg")
 
 # Asking for help
 
-If you need help with `bppg`, encountered a bug or have suggestions for 
+If you need help with `bppg`, encounter a bug or have suggestions for 
 improvements leave a post in the 
 [Bioconductor support site](https://support.bioconductor.org/) with the 
 `bppg` tag or start an issue on our 
@@ -173,7 +173,7 @@ protein quantities. However, at least 3 replicates per group are recommended.
 - Peptide intensities
     - Output from MaxQuant or FragPipe (more options are in development)
     - The read function creates a custom SummarizedExperiment with sample 
-    metdata in `colData` and peptide information in `rowData`
+    metadata in `colData` and peptide information in `rowData`
 - The FASTA file used for peptide identification
 
 
@@ -187,7 +187,7 @@ of protein quantification software `r Citep(bib[["ramus_spiked_2016"]])`.
 The original dataset includes: 
 
 - Yeast background, 48 UPS spike-ins
-- 9 different spike in concentrations
+- 9 different spike-in concentrations
 - 3 replicates each = 27 samples total
 
 The example data used in this vignette includes peptides from 9 yeast proteins.
@@ -219,7 +219,7 @@ head(rowData(D))  # peptide metadata (sequence, protein, etc.)
 
 ## FASTA file
 
-To build the bipartite graph, proteins need to be *in silico* digested and 
+To build the bipartite graph, proteins need to be digested *in silico* and 
 peptides matched with their protein of origin. 
 For this we have a reduced FASTA file.
 
@@ -235,10 +235,10 @@ names(fasta)
 
 Now the theoretical information can be combined with quantification data into
 a bipartite peptide protein graph. 
-To simplify this, we created a wrapper function, which includes the digestion 
-and the data
-preprocessing (normalization, replicate aggreagtion and ratio calculation).
-For the generation of the graph protein nodes are collapsed 
+To simplify this, we created a wrapper function, which includes digestion 
+and data
+preprocessing (normalization, replicate aggregation and ratio calculation).
+To generate the quantification graphs, the protein nodes are collapsed
 (`collProtNodes = TRUE`), this creates protein groups of proteins which
 contain the same measured peptides.
 
@@ -250,8 +250,8 @@ graphs <- bppg::generateGraphsFromQuantData(D = D,
 
 ```
 
-The created graph for each
-comparison is not fully interconnected but many independet graphs which are
+The graph created for each
+comparison is not fully interconnected but many independent graphs which are
 considered separately in the downstream analysis.
 Therefore, `graphs` is a nested list, first on the level of comparisons and 
 then the multitude of independent graphs for that comparison. 
@@ -273,21 +273,21 @@ plotBipartiteGraph(graphs[[1]][[3]], node_labels_proteins = "accessions",
 ```
 
 
-## Optimise Relative Quantification
+## Optimize Relative Quantification
 
-The optimisation is performed idependently on each graph. The bipartite graph 
+The optimization is performed independently on each graph. The bipartite graph 
 forms the basis of an equation system used to calculate protein level ratios 
 ($R_i$). 
 The graph combines information about the peptide ratios ($r_j$) and 
 the proteins from which they can originate.
 However, this is not enough to calculate them directly, instead, a configuration
 factor ($C_i$) is needed for each protein. 
-The optimisation algorithm `Rsolnp` `r Citep(bib[["galanos2025rsolnp"]])` is 
+The optimization algorithm `Rsolnp` `r Citep(bib[["galanos2025rsolnp"]])` is 
 applied to the resulting equation system.
 
-The optimisation process involves two steps.
+The optimization process involves two steps.
 First, different protein configurations are tested. 
-In the second step, the best-fitting (smallest error) $C_i$ combination is 
+In the second step, the best fitting (smallest error) $C_i$ combination is 
 extracted.
 
 ```{r optimization,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
@@ -301,8 +301,8 @@ the same error and the result is ambiguous.
 Nevertheless, that mirrors the information on the
 peptide level, which can be contradicting.
 
-The result is in a `SummarizedExperiment` and the table can be accesed only via 
-the assays function.
+The result is in a `SummarizedExperiment`, and the table can be accessed only
+via the assays function.
 
 ```{r res_optimization, eval = TRUE, include = TRUE, message = FALSE}
 protQuant
@@ -311,12 +311,12 @@ head(assays(protQuant)$results)
 In this example, the `RiLog_min` and `RiLog_max`, as well as the `Ci_min` and 
 `Ci_max` can be seen. This is how the range results are encoded. These values 
 represent the boundaries of the log ratio and range for the given error.
-The `error_min` shows how well the calculated protein ratios fit the measured peptide 
-ratios.
+The `error_min` shows how well the calculated protein ratios fit the measured
+peptide ratios.
 
 Considering the RL13A and RL13B graph, the reasons for the error value and
 ambiguity of the results are evident. The log(ratio) of the shared peptides
-ranges from -0.6 to 2.63, with an mean of around 0.55. This explains the high
+ranges from -0.6 to 2.63, with a mean of around 0.55. This explains the high
 margin of error. The wide range of results occurs because the log(ratio) of 
 RL13B must be close to 0.61, depending on $C_i$, the measure of RL13B's effect
 on the shared peptides. The log(ratio) of RL13A must adapt to this, creating the
@@ -332,7 +332,7 @@ plotBipartiteGraph(graphs[[1]][[1]], node_labels_proteins = "accessions",
 
 ## Combine and Export
 Results from the same comparison can be combined by using `rbind()` on the quant
-results. However, running the optimisation for all the sample graphs takes too 
+results. However, running the optimization for all the sample graphs takes too 
 long for this vignette. 
 
 The results from all the graphs can be combined into a single result. Each 
@@ -351,12 +351,12 @@ sheets.
 exportSE(SE, file.path("path_to_folder","results.xlsx"))
 ```
 
-### Parallelisation
+### Parallelization
 
 Although the single example was quick, processing a complete dataset can take 
 hours 
-due to the large number of graphs involved. However, optimisation is applied to
-each graph individually, enabling easy parallelisation using tools such as
+due to the large number of graphs involved. However, optimization is applied to
+each graph individually, enabling easy parallelization using tools such as
 `batchtools` `r Citep(bib[["lang2017batchtools"]])`, which supports HPC job 
 scheduling. 
 You can see an example of this in the Nextflow workflow for this package:
@@ -364,9 +364,9 @@ You can see an example of this in the Nextflow workflow for this package:
 
 # Further information
 
-- information on the detailed workflow, *in silico* analysis and customizing the
+- Information on the detailed workflow, *in silico* analysis and customizing the
 graphics are planned for future vignettes.
-- more detailed information on the parameters and settings can be found 
+- More detailed information on the parameters and settings can be found 
 in the documentation `r Citep(bib[["schork2026bppg"]])`
 
 # Comparison with other related packages
@@ -374,7 +374,7 @@ in the documentation `r Citep(bib[["schork2026bppg"]])`
 The amount of R packages for mass spectrometry is continuously increasing. Many
 are considering raw spectrum processing or downstream statistical analysis. 
 However, the amount of packages that include methods for protein inference and
-quantification is limited and mostly confined to simple peptide aggregation 
+quantification are limited and mostly confined to simple peptide aggregation 
 approaches. 
 
 With `bppg` we provide a more transparent quantification approach that also 
@@ -388,11 +388,11 @@ extension `MSstats+` quantifies proteins from peptide abundances by aggregating
 them with a weighted sum based on the peak quality.
 - `MSnbase` processes proteomics data from raw to quantification data. For the 
 protein quantification a median and weighted average function are implemented.
-- `msqrob2` analyses differential abundance with an hurdle model. It can be run 
+- `msqrob2` analyses differential abundance with a hurdle model. It can be run 
 with peptide quantities, which are later aggregated with `iq::maxLFQ`.
-- `mzR` provides parsing for differnt standard file formats used for mass
+- `mzR` provides parsing for different standard file formats used for mass
 spectrometry data.
-- `DEqMS` is implemented on top of limma and expects protein variance depedend 
+- `DEqMS` is implemented on top of limma and expects protein variance dependent 
 on quantified peptides and PSMs.
 - `QFeatures` implements the QFeature object consisting of a 
 SummarizedExperiment and provides functionality for processing and adding meta 
