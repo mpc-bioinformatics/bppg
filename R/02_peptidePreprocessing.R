@@ -70,9 +70,9 @@
 #' D_norm <- bppg::normalizePeptideIntensities(D)
 #' group <- factor(rep(1:9, each = 3))
 #' aggregateReplicates(D_norm, group = group)
-#' 
-#' @importFrom checkmate assertCharacter assertClass assertDataFrame 
-#' @importFrom checkmate assertFactor assertNumber 
+#'
+#' @importFrom checkmate assertCharacter assertClass assertDataFrame
+#' @importFrom checkmate assertFactor assertNumber
 #' @importFrom SummarizedExperiment assays colData rowData SummarizedExperiment
 
 aggregateReplicates <- function(D,
@@ -218,7 +218,7 @@ normalizePeptideIntensities <- function(D, method = "loess", lts.quantile = 0.8,
         fun <- limma::normalizeBetweenArrays
         args <- switch(method,
             "loess" = list(object = log_DATA, method = "cyclicloess",
-                adaptive.span = FALSE),
+                adaptive.span = TRUE),
             "quantile" = list(object = log_DATA, method = "quantile"),
             "median" = list(object = log_DATA, method = "scale"))
 
