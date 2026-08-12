@@ -1,6 +1,6 @@
 Package: bppg
 Title: Bipartite peptide-protein graphs
-Version: 0.99.0
+Version: 0.99.1
 Date: 2026-08-12
 Authors@R: c(
     person("Karin", "Schork", , "karin.schork@rub.de", role = c("aut", "cre"),
