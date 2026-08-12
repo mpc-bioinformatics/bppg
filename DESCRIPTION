@@ -10,10 +10,13 @@ Authors@R: c(
     person("Katharina", "Neuhaus", , "katharina.neuhaus@rub.de", role = c("aut")), 
     person("Martin", "Eisenacher", , "martin.eisenacher@rub.de", role = c("aut", "fnd"), 
     comment = c(ORCID = "0000-0003-2687-7444")))
-Description: bppg is a tool designed to calculate relative protein 
-    quantifictions in bottom up mass MassSpectrometry. It uses peptide 
-    quantifications and a matching proteom databases to identify and quantify
-    proteins with and without unique evidence. Further, the package offers
+Description: This package contains functionality to create and characterize 
+    bipartite graphs that model the relationship between peptides and proteins 
+    in bottom-up proteomics. With these graphs, protein ratios (fold change 
+    between two sample groups) are calculated from the respective measured
+    peptide ratios. The main aim is to make use of quantitative information
+    contained in shared peptides and making it possible to quantify proteins
+    without shared peptides. Further, the package offers
     general analysis of peptide and protein  relationships using bipartite
     graphs and visualization for these graphs.
 License: BSD_3_clause + file LICENSE

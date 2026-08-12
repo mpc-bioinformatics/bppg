@@ -258,8 +258,9 @@ then the multitude of independent graphs for that comparison.
 
 `graphs[[1]][[3]]` shows one graph of the first comparison 50 amol vs 125
 amol. The `igraph` object shows the amount of nodes and edges, the attributes
-and the first edges. This example is from RIR2 which does not have an overlap
-with another protein. 
+and the first edges. This example is from the RIR2 protein which does not have 
+an overlap with another protein. The peptide nodes show the respective 
+log2-transformed peptide ratios.
 
 ```{r graphs,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
 names(graphs)
@@ -280,13 +281,21 @@ forms the basis of an equation system used to calculate protein level ratios
 ($R_i$). 
 The graph combines information about the peptide ratios ($r_j$) and 
 the proteins from which they can originate.
-However, this is not enough to calculate them directly, instead, a configuration
-factor ($C_i$) is needed for each protein. 
+However, this is not enough to calculate them directly, instead, a weight 
+($C_i$) is needed for each protein. 
 The optimization algorithm `Rsolnp` `r Citep(bib[["galanos2025rsolnp"]])` is 
 applied to the resulting equation system.
 
+As an example we will use the following graph containing the proteins RL13A and 
+RL13B.
+
+```{r plot_opti, message = FALSE, out.width="70%", fig.asp=0.9}
+plotBipartiteGraph(graphs[[1]][[1]], node_labels_proteins = "accessions",
+    node_labels_peptides = "pep_logRatios")
+```
+
 The optimization process involves two steps.
-First, different protein configurations are tested. 
+First, different combinations of protein weights are tested. 
 In the second step, the best fitting (smallest error) $C_i$ combination is 
 extracted.
 
@@ -298,14 +307,13 @@ protQuant <- automatedAnalysisIteratedCi(graphs[[1]][[1]], res)
 Some of the results are not single values but a 
 range of equally optimal solutions. This occurs if several combinations return 
 the same error and the result is ambiguous. 
-Nevertheless, that mirrors the information on the
-peptide level, which can be contradicting.
+This can occur if peptide ratios are contradicting or the equation system is
+underdetermined. 
 
-The result is in a `SummarizedExperiment`, and the table can be accessed only
+The result is in a `SummarizedExperiment` object, and the table can be accessed 
 via the assays function.
 
 ```{r res_optimization, eval = TRUE, include = TRUE, message = FALSE}
-protQuant
 head(assays(protQuant)$results)
 ```
 In this example, the `RiLog_min` and `RiLog_max`, as well as the `Ci_min` and 
@@ -314,19 +322,13 @@ represent the boundaries of the log ratio and range for the given error.
 The `error_min` shows how well the calculated protein ratios fit the measured
 peptide ratios.
 
-Considering the RL13A and RL13B graph, the reasons for the error value and
+Considering the example graph, the reasons for the error value and
 ambiguity of the results are evident. The log(ratio) of the shared peptides
-ranges from -0.6 to 2.63, with a mean of around 0.55. This explains the high
-margin of error. The wide range of results occurs because the log(ratio) of 
-RL13B must be close to 0.61, depending on $C_i$, the measure of RL13B's effect
-on the shared peptides. The log(ratio) of RL13A must adapt to this, creating the
-range of possibilities.
-
-```{r plot_opti, message = FALSE, out.width="70%", fig.asp=0.9}
-plotBipartiteGraph(graphs[[1]][[1]], node_labels_proteins = "accessions",
-    node_labels_peptides = "pep_logRatios")
-```
-
+ranges from -0.6 to 2.63, with a mean of around 0.55. The resulting variability 
+explains the high margin of error. The log(ratio) of  RL13B must be close to its
+unique peptide at 0.61. The size of the effect of RL13B on the shared peptides 
+depends on the value of $C_i$. Therefore, the log(ratio) of RL13A must adapt to 
+this, creating the range of possibilities.
 
 
 
@@ -337,6 +339,9 @@ long for this vignette.
 
 The results from all the graphs can be combined into a single result. Each 
 comparison is treated as one assay in the final `SummarizedExperiment`.
+
+Please note that for simplicity, the comparisons in this example file are
+called "1_2", "1_3" etc instead of using the spike-in concetration levels.
 
 ```{r combine,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
 file <- system.file("extdata", "resultsList.rds", package = "bppg")
@@ -364,10 +369,11 @@ You can see an example of this in the Nextflow workflow for this package:
 
 # Further information
 
+- More detailed information on the parameters and settings can be found 
+in the documentation of the respective functions 
+`r Citep(bib[["schork2026bppg"]])`
 - Information on the detailed workflow, *in silico* analysis and customizing the
 graphics are planned for future vignettes.
-- More detailed information on the parameters and settings can be found 
-in the documentation `r Citep(bib[["schork2026bppg"]])`
 
 # Comparison with other related packages
 
