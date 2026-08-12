@@ -115,6 +115,7 @@ plotBipartiteGraph <- function(G, legend = TRUE,
     round_digits = 2,
     output_path = NULL,
     ...) {
+    name <- node_type <- NULL
 
     ## switch node types so that proteins are at the top
     ## 0 = proteins, 1 = peptides
