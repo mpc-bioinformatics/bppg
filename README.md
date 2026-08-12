@@ -6,33 +6,59 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of bppg is to provide functionality to create and characterize
-bipartite graphs that show the relationship between peptides and
-proteins in bottom-up proteomics. Functionality to use the bipartite graphs for 
-protein quantification will be added in the future.
+The bppg package contains functionality to create and characterize 
+bipartite graphs that model the relationship between peptides and proteins 
+in bottom-up proteomics. With these graphs, protein ratios (fold change 
+between two sample groups) are calculated from the respective measured
+peptide ratios. The main aim is to make use of quantitative information
+contained in shared peptides and making it possible to quantify proteins
+without shared peptides.
 
 ## Installation
 
-You can install the development version of bppg from
+The current release version can be installed from Bioconductor usin the following 
+code:
+
+``` r
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("bppg")
+```
+
+
+You can also install the development version of bppg from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("mpc-bioinformatics/bppg")
+# install.packages("pak")
+pak::pak("mpc-bioinformatics/bppg")
 ```
 
-## Example
+## Usage
 
-Example on how to plot a bipartite peptide-protein graph
+For details on the usage of bppg please see the vignette.
 
-``` r
-library(bppg)
-biadjacency_matrix <- matrix(c(1,1,1,0), nrow = 2)
-G <- igraph::graph_from_incidence_matrix(biadjacency_matrix)
-plotBipartiteGraph(G, three_shapes = TRUE, useCanonicalPermutation = TRUE)
-```
 
-<img src="man/figures/README-example-1.png" width="100%" />
+## Publication
+
+The quantification algorithm in bppg is build on the PhD thesis
+
+"Improvement of protein quantification for proteins with shared peptides by 
+using bipartite peptide-protein graphs"
+
+http://dx.doi.org/10.17877/DE290R-25361
+
+
+## Funding
+
+The development of bppg is funded by the German Research Foundation (DFG, 
+project number 532401634), the German Network for Bioinformatics Infrastructure 
+(de.NBI & ELIXIR-DE, Federal Ministry of Research, Technology and Space, grant 
+number W-de.NBI-005) and the Core Unit for Bioinformatics of the Medical Faculty
+of the Ruhr University Bochum (CUBiMed.RUB). 
+
+
 
 
 
