@@ -17,71 +17,91 @@ export(proteinElimination)
 export(readFpPeptideTable)
 export(readMqPeptideTable)
 importFrom(Rsolnp,solnp)
-importFrom(SummarizedExperiment,SummarizedExperiment)
-importFrom(SummarizedExperiment,assay)
-importFrom(SummarizedExperiment,assayNames)
-importFrom(SummarizedExperiment,assays)
-importFrom(SummarizedExperiment,colData)
-importFrom(SummarizedExperiment,rowData)
-importFrom(checkmate,assertCharacter)
-importFrom(checkmate,assertClass)
-importFrom(checkmate,assertDataFrame)
-importFrom(checkmate,assertFactor)
-importFrom(checkmate,assertFileExists)
-importFrom(checkmate,assertFlag)
-importFrom(checkmate,assertInt)
-importFrom(checkmate,assertIntegerish)
-importFrom(checkmate,assertList)
-importFrom(checkmate,assertNumber)
-importFrom(checkmate,assertNumeric)
-importFrom(checkmate,assertPathForOutput)
-importFrom(checkmate,assertVector)
-importFrom(checkmate,checkTRUE)
-importFrom(ggplot2,aes)
-importFrom(ggplot2,ggsave)
-importFrom(ggplot2,scale_fill_manual)
-importFrom(ggplot2,scale_shape_manual)
-importFrom(ggplot2,theme)
-importFrom(ggraph,geom_edge_link)
-importFrom(ggraph,geom_node_label)
-importFrom(ggraph,geom_node_point)
-importFrom(ggraph,ggraph)
-importFrom(ggraph,theme_graph)
-importFrom(igraph,"%->%")
-importFrom(igraph,E)
-importFrom(igraph,V)
-importFrom(igraph,add_shape)
-importFrom(igraph,as_biadjacency_matrix)
-importFrom(igraph,as_directed)
-importFrom(igraph,canonical_permutation)
-importFrom(igraph,contract)
-importFrom(igraph,decompose)
-importFrom(igraph,degree)
-importFrom(igraph,delete_vertices)
-importFrom(igraph,ego)
-importFrom(igraph,graph_from_edgelist)
-importFrom(igraph,is_bipartite)
-importFrom(igraph,is_directed)
-importFrom(igraph,isomorphic)
-importFrom(igraph,layout_as_bipartite)
-importFrom(igraph,permute)
-importFrom(igraph,reverse_edges)
-importFrom(igraph,set_vertex_attr)
-importFrom(igraph,simplify)
-importFrom(igraph,vertex_attr)
-importFrom(limma,normalizeBetweenArrays)
-importFrom(limma,strsplit2)
-importFrom(openxlsx,addWorksheet)
-importFrom(openxlsx,createWorkbook)
-importFrom(openxlsx,saveWorkbook)
-importFrom(openxlsx,write.xlsx)
-importFrom(openxlsx,writeData)
-importFrom(pbapply,pblapply)
-importFrom(pbapply,pbmapply)
-importFrom(pbapply,pboptions)
-importFrom(stats,aggregate)
-importFrom(stats,na.omit)
+importFrom(SummarizedExperiment,
+  SummarizedExperiment,
+  assay,
+  assayNames,
+  assays,
+  colData,
+  rowData
+)
+importFrom(checkmate,
+  assertCharacter,
+  assertClass,
+  assertDataFrame,
+  assertFactor,
+  assertFileExists,
+  assertFlag,
+  assertInt,
+  assertIntegerish,
+  assertList,
+  assertNumber,
+  assertNumeric,
+  assertPathForOutput,
+  assertVector,
+  checkTRUE
+)
+importFrom(ggplot2,
+  aes,
+  ggsave,
+  scale_fill_manual,
+  scale_shape_manual,
+  theme
+)
+importFrom(ggraph,
+  geom_edge_link,
+  geom_node_label,
+  geom_node_point,
+  ggraph,
+  theme_graph
+)
+importFrom(igraph,
+  "%->%",
+  E,
+  V,
+  add_shape,
+  as_biadjacency_matrix,
+  as_directed,
+  canonical_permutation,
+  contract,
+  decompose,
+  degree,
+  delete_vertices,
+  ego,
+  graph_from_edgelist,
+  is_bipartite,
+  is_directed,
+  isomorphic,
+  layout_as_bipartite,
+  permute,
+  reverse_edges,
+  set_vertex_attr,
+  simplify,
+  vertex_attr
+)
+importFrom(limma,
+  normalizeBetweenArrays,
+  strsplit2
+)
+importFrom(openxlsx,
+  addWorksheet,
+  createWorkbook,
+  saveWorkbook,
+  write.xlsx,
+  writeData
+)
+importFrom(pbapply,
+  pblapply,
+  pbmapply,
+  pboptions
+)
+importFrom(stats,
+  aggregate,
+  na.omit
+)
 importFrom(stringr,str_replace)
-importFrom(utils,read.table)
-importFrom(utils,write.table)
+importFrom(utils,
+  read.table,
+  write.table
+)
 importFrom(vsn,vsn2)

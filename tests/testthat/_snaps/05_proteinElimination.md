@@ -4,7 +4,7 @@
       res
     Output
       $min_error_ref
-      [1] 1.005431
+      [1] 0.9938815
       
       $protsOriginIDs
       [1] "sp|P00330|ADH1_YEAST" "sp|P00331|ADH2_YEAST" "sp|P07246|ADH3_YEAST"
@@ -12,11 +12,11 @@
       
       $resDF
            comb n_proteins  error current_best
-      1 1,2,3,4          4 1.0054         TRUE
+      1 1,2,3,4          4 0.9938         TRUE
       2   2,3,4          3     NA        FALSE
       3   1,3,4          3     NA        FALSE
       4   1,2,4          3     NA        FALSE
-      5   1,2,3          3 1.0056         TRUE
+      5   1,2,3          3 0.9942         TRUE
       6     2,3          2     NA        FALSE
       7     1,3          2     NA        FALSE
       8     1,2          2     NA        FALSE
@@ -61,7 +61,7 @@
       [1] 3
       
       $res_best$error
-      [1] 1.00567
+      [1] 0.9942403
       
       
 
