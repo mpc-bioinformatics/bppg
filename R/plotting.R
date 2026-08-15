@@ -59,6 +59,9 @@
 .setNodeLabels <- function(G, node_labels_peptides, node_labels_proteins,
     round_digits) {
     Layout <- igraph::layout_as_bipartite(G)
+
+    original_names <- igraph::V(G)$name
+
     names_G <- character(length(igraph::V(G)))
 
     pos_proteins <- Layout[, 1][Layout[, 2] == 1]
@@ -81,6 +84,12 @@
         names_peptides <- seq_len(sum(Layout[, 2] == 0))
         names_G[Layout[, 2] == 0] <- names_peptides[rank(pos_peptides)]
     }
+
+    if (node_labels_peptides == "sequences") {
+    names_G[Layout[, 2] == 0] <-
+        original_names[Layout[, 2] == 0]
+    }
+
     if (node_labels_peptides == "pep_ratios") {
         pep_ratios <- igraph::V(G)$pep_ratio
         names_G[Layout[, 2] == 0] <- round(pep_ratios[Layout[, 2] == 0],
@@ -129,10 +138,10 @@
 #' @return A ggplot object representing the bipartite graph.     
 
 
-.plotBipartiteGraph <- function(
+plotBipartiteGraph <- function(
     G,
     legend = TRUE,
-    vertex.color = c("mediumseagreen", "cadetblue2", "coral1"),
+    vertex.color = c("#FAFA02", "#02FAFA", "#FA0202"),
     vertex.size = 15,
     vertex.label.cex = 1,
     edge.width = 1,
