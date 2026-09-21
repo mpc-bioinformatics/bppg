@@ -1,0 +1,145 @@
+---
+title: "Visualisation with BPPG"
+author: 
+  - name: Leonie Laarmann
+    affiliation:
+    - Medizinisches Proteom-Center, Ruhr-Universität Bochum
+    email: leonie.laarmann@rub.de
+
+output: bipartite graphs as pngs
+  BiocStyle::html_document:
+    self_contained: yes
+    toc: true
+    toc_float: true
+    toc_depth: 2
+    code_folding: show
+date: "`r doc_date()`"
+vignette: >
+  %\VignetteIndexEntry{Visualisation with BPPG}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+---
+
+title: "Visualisation with BPPG"
+output: BiocStyle::html_document
+vignette: >
+%\VignetteIndexEntry{Visualisation with BPPG}
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteEncoding{UTF-8}
+-------------------------
+
+## Bib setup
+
+```{r}
+library("RefManageR")
+
+## Write bibliography information
+bib <- c(
+    R = citation(),
+    BiocStyle = citation("BiocStyle")[1],
+    knitr = citation("knitr")[1],
+    RefManageR = citation("RefManageR")[1],
+    rmarkdown = citation("rmarkdown")[1],
+    sessioninfo = citation("sessioninfo")[1],
+    testthat = citation("testthat")[1],
+    ggplot2 = citation("ggplot2")[1],
+    igraph = citation("igraph")[1],
+    ggraph = citation("ggraph")[1]
+)
+
+BibOptions(max.names = 2, bib.style = "authoryear", style = "citation")
+```
+
+# Introduction
+
+This vignette provides an introduction to visualizing bipartite graphs using the BPPG package.
+
+# Visualizing Bipartite Graphs
+
+The BPPG package offers a range of functions for visualizing bipartite peptide-protein graphs.
+In this section, we will explore some of the key visualization options and how to apply them to your data.
+
+You may use the `.plotBipartiteGraph()` function to create a basic visualization of your bipartite graph.
+The function takes a bipartite `igraph` graph object as input and generates a plot that represents the relationships between peptides and proteins.
+
+There are several customization options available, such as adjusting node labels, node shapes, colors, and the legend.
+
+## Customization
+
+# Node Labels
+
+The labels of the nodes can be customized using the `node_labels_proteins` and `node_labels_peptides` parameters.
+For proteins, the available options are `"letters"`, `"accessions"` and `"numbers_noord"`.
+For peptides, the available options are `"numbers"`, `"sequences"`, `"pep_ratios"` and `"pep_ratio_aggr"`.
+
+For example:
+
+```{r}
+plotBipartiteGraph(
+    G,
+    node_labels_proteins = "accessions",
+    node_labels_peptides = "sequences"
+)
+```
+
+When peptide ratios are used as labels, the number of displayed decimal places can be specified using `round_digits`.
+
+# Node Shapes
+
+The shape of the nodes can be customized using the `three_shapes` parameter.
+By default, proteins and peptides are displayed using different shapes. Setting `three_shapes` to `TRUE` additionally distinguishes between shared and unique peptides.
+
+```{r}
+plotBipartiteGraph(
+    G,
+    three_shapes = TRUE
+)
+```
+
+When 'three_shapes' = FALSE, proteins and peptides are displayed using different shapes, but shared and unique peptides are not distinguished. 
+
+# Colors and Edge Width
+
+The colors of the nodes can be customized using the `vertex.color` parameter.
+The colors are specified for proteins, shared peptides, and unique peptides, respectively.
+The default colors are specifically chosen to be colorblind-friendly.
+
+The width of the edges can be adjusted using the `edge.width` parameter.
+
+```{r}
+plotBipartiteGraph(
+    G,
+    vertex.color = c("red", "blue", "green"),
+    edge.width = 2
+)
+```
+
+# Legend
+
+The legend may be hidden using the `legend` parameter.
+By default, the legend is displayed, but it can be hidden by setting this parameter to `FALSE`.
+
+```{r}
+plotBipartiteGraph(
+    G,
+    legend = FALSE
+)
+```
+
+# Saving the Plot
+
+The generated plot can be saved as a JPEG file by providing a path to `save_path`.
+
+```{r}
+plotBipartiteGraph(
+    G,
+    save_path = "bipartite_graph.jpg"
+)
+```
+
+# Summary
+
+Plotting bipartite graphs with the BPPG package provides a way to visualize relationships between peptides and proteins.
+By customizing node labels, node shapes, colors, edge widths, and legends, informative visualizations of the graph structure can be created.

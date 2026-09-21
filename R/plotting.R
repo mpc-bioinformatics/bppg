@@ -188,21 +188,22 @@ plotBipartiteGraph <- function(
         ggraph::geom_node_point(
             ggplot2::aes(shape = node_shape_type, fill = node_type), size = vertex.size) +
         ggraph::geom_node_text(
-            ggplot2::aes(label = name), size = vertex.label.cex, family = "sans") +
-        ggplot2::scale_shape_manual(values = shape_values) +
-        ggplot2::scale_fill_manual(values = c(protein = vertex.color[1], `shared peptide` = vertex.color[2],`unique peptide` = vertex.color[3])) +
+            ggplot2::aes(label = name), size = vertex.label.cex, family = "sans", colour = "black", vjust = 0.5, hjust = 0.5) +
+        ggplot2::scale_shape_manual(name = "Node Type", values = c(protein = 21, `shared peptide` = 22, `unique peptide` = 23),
+                                 labels = c(protein = "Protein", `shared peptide` = "Shared Protein", `unique peptide` = "Unique Peptide"))+
+        ggplot2::scale_fill_manual(name = "Node Type", values = c(protein = vertex.color[1], `shared peptide` = vertex.color[2],`unique peptide` = vertex.color[3]),
+                                    labels = c(protein = "Protein", `shared peptide` = "Shared Protein", `unique peptide` = "Unique Peptide")) +
+        ggplot2::scale_y_continuous(expand = ggplot2::expansion(mult = c(0.08, 0.08))) +
         ggraph::theme_graph(base_family = "sans") +
-        ggplot2::theme(legend.position = if (legend) "bottom" else "none")
+        ggplot2::theme(legend.position = if (legend) "top" else "none",
+                        legend.justification = "right", legend.background = element_rect( fill = "white",colour = "black"),
+                        legend.box.margin = margin(0, 0, 5, 0)
+)
 
     if (!is.null(save_path)) {
         ggplot2::ggsave(
-            filename = save_path,
-            plot = p,
-            width = 10,
-            height = 7,
-            dpi = 300,
-            device = "jpeg"
-        )
+            filename = save_path, plot = p, width = 10,
+            height = 7, dpi = 300, device = "jpeg")
     }
 
     return(p)
