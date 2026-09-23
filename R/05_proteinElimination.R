@@ -144,8 +144,16 @@ proteinElimination <- function(G,
         resDF <- RES$resDF
         res_best <- RES$res_best
     }
+
+    # compare old with new graph -> identify proteins removed
+    kept_prots <- sapply(res_best$G, FUN = function(g){
+        nodeNames <- igraph::V(g)$name
+        nodeNames <- nodeNames[igraph::V(g)$type]
+    })
+    igraph::V(G)$eliminated <- igraph::V(G)$name %in% kept_prots
+    
     return(list(min_error_ref = min_error_ref, protsOriginIDs  = protsCurrent,
-        resDF = resDF, res_best = res_best))
+        resDF = resDF, res_best = res_best, old_graph = G))
 }
 
 

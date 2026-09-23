@@ -64,4 +64,18 @@
       [1] 0.9942403
       
       
+      $old_graph
+      IGRAPH b7b0843 UN-B 25 28 -- 
+      + attr: name (v/c), type (v/l), pep_logRatio (v/n), uniqueness (v/l),
+      | nr_unique_peptides (v/n), nr_shared_peptides (v/n), eliminated (v/l)
+      + edges from b7b0843 (vertex names):
+       [1] sp|P00330|ADH1_YEAST--ANELLINVK               
+       [2] sp|P00331|ADH2_YEAST--ANGTVVLVGLPAGAK         
+       [3] sp|P00330|ADH1_YEAST--ATDGGAHGVINVSVSEAAIEASTR
+       [4] sp|P00330|ADH1_YEAST--CCSDVFNQVVK             
+       [5] sp|P07246|ADH3_YEAST--DIPVPEPKPNEILINVK       
+       [6] sp|P00330|ADH1_YEAST--EALDFFAR                
+       [7] sp|P00331|ADH2_YEAST--EALDFFAR                
+      + ... omitted several edges
+      
 
