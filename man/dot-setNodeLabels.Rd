@@ -12,8 +12,8 @@ A bipartite peptide-protein graph.}
 
 \item{node_labels_peptides}{\strong{character} \cr
 The type of labels for the peptides. Options
-are"numbers" or "pep_ratios" or
-"pep_ratio_aggr".}
+are"numbers" or "pep_logRatios" or
+"pep_logRatios_mean".}
 
 \item{node_labels_proteins}{\strong{character} \cr
 The type of labels for the proteins. Options
