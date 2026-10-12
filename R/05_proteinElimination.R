@@ -76,7 +76,8 @@ proteinElimination <- function(G,
     min_error_ref = NULL,
     resDF = NULL,
     protsOriginIDs  = NULL,
-    res_best = NULL) {
+    res_best = NULL,
+    G_original = NULL) {
     checkmate::assertClass(G, classes = c("igraph"))
     checkmate::checkTRUE(igraph::is_bipartite(G))
     checkmate::assertNumeric(threshold)
@@ -87,6 +88,9 @@ proteinElimination <- function(G,
         null.ok = TRUE)
     checkmate::assertList(res_best, null.ok = TRUE)
 
+    if (is.null(G_original)) {
+        G_original <- G
+    }
 
     G <- .addUniquenessAttributes(G)
     nr_unique_peptides <- igraph::V(G)$nr_unique_peptides[igraph::V(G)$type]
@@ -140,12 +144,32 @@ proteinElimination <- function(G,
 
         RES <- proteinElimination(G = G_tmp, threshold = threshold,
             control = control, min_error_ref = min_error_ref, resDF = resDF,
-            protsOriginIDs  = protsCurrent_tmp, res_best = res_best)
+            protsOriginIDs  = protsCurrent_tmp, res_best = res_best, G_original = G_original)
         resDF <- RES$resDF
         res_best <- RES$res_best
     }
+
+        G_plot <- G_original
+        igraph::V(G_plot)$deleted <- FALSE
+
+
+       remaining_nodes <- unique(unlist(
+            lapply(res_best$G, function(g) {
+                igraph::V(g)$name
+            })
+        ))
+
+        igraph::V(G_plot)$deleted <- !igraph::V(G_plot)$name %in% remaining_nodes
+
+        protein_idx <- which(igraph::V(G_plot)$type)
+
+        igraph::V(G_plot)$deleted[
+            protein_idx
+        ] <- !igraph::V(G_plot)$name[protein_idx] %in% remaining_nodes
+
+
     return(list(min_error_ref = min_error_ref, protsOriginIDs  = protsCurrent,
-        resDF = resDF, res_best = res_best))
+        resDF = resDF, res_best = res_best, G_plot = G_plot))
 }
 
 

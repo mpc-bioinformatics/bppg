@@ -141,7 +141,7 @@
 plotBipartiteGraph <- function(
     G,
     legend = TRUE,
-    vertex.color = c("#FAFA02", "#02FAFA", "#FA0202"),
+    vertex.color = c("#17365c", "#8dae10", "#b61e3e"),
     vertex.size = 15,
     vertex.label.cex = 1,
     edge.width = 1,
@@ -167,32 +167,73 @@ plotBipartiteGraph <- function(
     degree <- igraph::degree(G)
 
     igraph::V(G)$node_type <- ifelse(
-        !igraph::V(G)$type,"protein",
+        !igraph::V(G)$type, "protein",
         ifelse(
-            degree == 1, "unique peptide", "shared peptide")
+            degree == 1, "unique peptide", "shared peptide"
+        )
     )
 
-    if (!three_shapes) {
-        igraph::V(G)$node_shape_type <- ifelse(
-            igraph::V(G)$node_type == "protein", "protein", "peptide")
+   if (!is.null(igraph::vertex_attr(G, "deleted"))) {
+    edge_ends <- igraph::ends(G, igraph::E(G), names = FALSE)
 
-        shape_values <- c(
-            protein = 21, peptide = 22)
+        igraph::E(G)$edge_status <- ifelse(
+            igraph::V(G)$deleted[edge_ends[, 1]] |
+            igraph::V(G)$deleted[edge_ends[, 2]],
+            "deleted",
+            "retained"
+        )
     } else {
-        igraph::V(G)$node_shape_type <- igraph::V(G)$node_type
-        shape_values <- c(protein = 21, `shared peptide` = 22,`unique peptide` = 23)
+        igraph::E(G)$edge_status <- "retained"
     }
 
+    
+    if (!three_shapes) {
+        igraph::V(G)$node_shape_type <- ifelse(
+            igraph::V(G)$node_type %in% c("protein", "deleted protein"),"protein","peptide")
+
+        shape_values <- c(protein = 21, peptide = 22)
+
+    } else {
+        igraph::V(G)$node_shape_type <- ifelse(
+            igraph::V(G)$node_type == "deleted protein",
+            "protein",
+            igraph::V(G)$node_type
+        )
+
+        shape_values <- c(
+            protein = 21,
+            `shared peptide` = 22,
+            `unique peptide` = 23
+        )
+    }   
+
+    edge_ends <- igraph::ends(G, igraph::E(G), names = FALSE)
+
+    igraph::E(G)$edge_status <- ifelse(
+        igraph::V(G)$deleted[edge_ends[, 1]] |
+        igraph::V(G)$deleted[edge_ends[, 2]],
+        "deleted",
+        "retained"
+)   
+
     p <- ggraph::ggraph(G, layout = "bipartite") +
-        ggraph::geom_edge_link(linewidth = edge.width) +
+        ggraph::geom_edge_link(ggplot2::aes(linetype = edge_status),linewidth = edge.width) +
+        ggplot2::scale_linetype_manual(values = c(retained = "solid",deleted = "dashed"),
+                                        breaks = c("retained", "deleted"),labels = c("Retained edge", "Edge to deleted node"),
+                                        name = "Edge Type") +
         ggraph::geom_node_point(
             ggplot2::aes(shape = node_shape_type, fill = node_type), size = vertex.size) +
         ggraph::geom_node_text(
-            ggplot2::aes(label = name), size = vertex.label.cex, family = "sans", colour = "black", vjust = 0.5, hjust = 0.5) +
-        ggplot2::scale_shape_manual(name = "Node Type", values = c(protein = 21, `shared peptide` = 22, `unique peptide` = 23),
-                                 labels = c(protein = "Protein", `shared peptide` = "Shared Protein", `unique peptide` = "Unique Peptide"))+
-        ggplot2::scale_fill_manual(name = "Node Type", values = c(protein = vertex.color[1], `shared peptide` = vertex.color[2],`unique peptide` = vertex.color[3]),
-                                    labels = c(protein = "Protein", `shared peptide` = "Shared Protein", `unique peptide` = "Unique Peptide")) +
+            ggplot2::aes(label = name), size = 4, family = "sans", colour = "black", vjust = 0.5, hjust = 0.5) +
+        ggplot2::scale_shape_manual(name = "Node Type",values = shape_values,
+                                    breaks = if (three_shapes) {
+                                    c("protein", "shared peptide", "unique peptide")} else { c("protein", "peptide")},labels = if (three_shapes) 
+                                    {c("Protein", "Shared Peptide", "Unique Peptide")} 
+                                    else {c("Protein", "Peptide")}) +
+        ggplot2::scale_fill_manual( name = "Node Type", values = c(protein = vertex.color[1],`shared peptide` = vertex.color[2],
+                                    `unique peptide` = vertex.color[3],`deleted protein` = "#e7e7e7", `deleted peptide` = "#e7e7e7"), 
+                                    breaks = c("protein", "shared peptide","unique peptide", "deleted protein", "deleted peptide"),
+                                    labels = c("Protein", "Shared Peptide","Unique Peptide", "Deleted Protein", "Deleted Peptide")) +
         ggplot2::scale_y_continuous(expand = ggplot2::expansion(mult = c(0.08, 0.08))) +
         ggraph::theme_graph(base_family = "sans") +
         ggplot2::theme(legend.position = if (legend) "top" else "none",

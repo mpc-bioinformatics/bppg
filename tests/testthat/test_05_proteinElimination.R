@@ -6,6 +6,24 @@ test_that("test proteinElimination", {
 
     res <- proteinElimination(G = G)
 
+    print(names(res))
+    print(class(res$res_best$G[[1]]))
+    print(is.null(res$G_plot))
+
+    p <- plotBipartiteGraph(
+        res$G_plot,
+        three_shapes = TRUE
+    )
+
+    ggplot2::ggsave(
+        filename = "protein_elimination.png",
+        plot = p,
+        width = 10,
+        height = 8,
+        dpi = 300
+    )
+
+
     ## prepare result object for snapshot (cant deal with random igraph ids)
     res$protsOriginIDs <- names(res$protsOriginIDs)
     res$res_best$G <- lapply(res$res_best$G, igraph::as_edgelist)
