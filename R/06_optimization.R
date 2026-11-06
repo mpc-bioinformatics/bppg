@@ -523,27 +523,35 @@ iterateOverCi <- function(G,
         result <- data.frame(protein = 1, grid = 1, RLog1 = RES$RiLog,
             C1 = 1, error = RES$RES$res_squ_err)
         return(result)
-    } else { # n > 1
-        grid <- seq(gridStart, gridStop, length.out = gridSize + 1)
-        if (extend_grid_at_borders) {
-            grid_min <- grid[2] ## 2nd element, as first is 0
-            grid_max <- grid[length(grid) - 1] ## 2nd to last, last element is 1
-            grid_extend_min <- seq(gridStart, grid_min, length.out = 11)
-            grid_extend_max <- seq(grid_max, gridStop, length.out = 11)
-            grid <- sort(unique(c(grid, grid_extend_min, grid_extend_max)))
-        }
-        if (omit_grid_borders) grid <- grid[-c(1, length(grid))]
-        cnames <- c(paste0("RLog", seq_len(n)), paste0("C", seq_len(n)))
-        if (!verbose) {
-            pbo <- pbapply::pboptions(type = "none")
-            on.exit(pbapply::pboptions(pbo), add = TRUE)
-        }
-        result <- pbapply::pbmapply(FUN = .calcResultGridpoint,
-            j = rep(seq_len(n), each = length(grid)), gridpoint = grid,
-                MoreArgs = list(cnames = cnames, G = G, n = n,
-                    verbose = verbose, control = control))
-        return(as.data.frame(t(result)))
+    
+    } 
+    if (n == 2) { # analytical
+        # create N and M shapes
+        # check N, solve analytically, no we want that in minimize
+        # we want the same datastructure for it --> limited no min max variables
+        # maybe just skip those too and do it later?
+        # return one row for min and one value for max value
+    } 
+    # n > 1
+    grid <- seq(gridStart, gridStop, length.out = gridSize + 1)
+    if (extend_grid_at_borders) {
+        grid_min <- grid[2] ## 2nd element, as first is 0
+        grid_max <- grid[length(grid) - 1] ## 2nd to last, last element is 1
+        grid_extend_min <- seq(gridStart, grid_min, length.out = 11)
+        grid_extend_max <- seq(grid_max, gridStop, length.out = 11)
+        grid <- sort(unique(c(grid, grid_extend_min, grid_extend_max)))
     }
+    if (omit_grid_borders) grid <- grid[-c(1, length(grid))]
+    cnames <- c(paste0("RLog", seq_len(n)), paste0("C", seq_len(n)))
+    if (!verbose) {
+        pbo <- pbapply::pboptions(type = "none")
+        on.exit(pbapply::pboptions(pbo), add = TRUE)
+    }
+    result <- pbapply::pbmapply(FUN = .calcResultGridpoint,
+        j = rep(seq_len(n), each = length(grid)), gridpoint = grid,
+            MoreArgs = list(cnames = cnames, G = G, n = n,
+                verbose = verbose, control = control))
+    return(as.data.frame(t(result)))
 }
 
 
@@ -694,7 +702,7 @@ automatedAnalysisIteratedCi <- function(G,
 
         cols <- c("protein", "error", paste0("RLog", x), paste0("C", x))
 
-        resProt <- res[res$protein == x, cols]
+        resProt <- res[r es$protein == x, cols]
         colnames(resProt) <- c("protein", "error", "RLog", "C")
 
         if (use_results_from_other_proteins) {
