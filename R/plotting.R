@@ -136,6 +136,7 @@
 #' @param save_path                 \strong{character} \cr
 #'                                Path to save the plot as a JPEG file. If NULL, the plot is not saved.
 #' @return A ggplot object representing the bipartite graph.     
+#' @export 
 
 
 plotBipartiteGraph <- function(

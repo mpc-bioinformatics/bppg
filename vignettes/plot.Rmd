@@ -34,6 +34,9 @@ vignette: >
 
 ```{r}
 library("RefManageR")
+library("ggplot2")
+library("ggraph")
+library("bppg")
 
 ## Write bibliography information
 bib <- c(
@@ -56,6 +59,13 @@ BibOptions(max.names = 2, bib.style = "authoryear", style = "citation")
 
 This vignette provides an introduction to visualizing bipartite graphs using the BPPG package.
 
+Bipartite graphs represent relationships between two different types of entities: proteins and peptides. 
+In this context, protein nodes are connected to the peptides that provide evidence for their identification. 
+Visualising these relationships can help identify unique and shared peptides, assess ambiguous protein assignments, 
+and explore the structure of the peptide-protein network.
+
+The BPPG package provides functions to create and customise these visualisations.
+
 # Visualizing Bipartite Graphs
 
 The BPPG package offers a range of functions for visualizing bipartite peptide-protein graphs.
@@ -67,6 +77,8 @@ The function takes a bipartite `igraph` graph object as input and generates a pl
 There are several customization options available, such as adjusting node labels, node shapes, colors, and the legend.
 
 ## Customization
+The visualisation can be adapted to highlight specific aspects of the graph. 
+The following options are particularly useful when preparing figures for different analytical purposes.
 
 # Node Labels
 
@@ -141,5 +153,11 @@ plotBipartiteGraph(
 
 # Summary
 
-Plotting bipartite graphs with the BPPG package provides a way to visualize relationships between peptides and proteins.
-By customizing node labels, node shapes, colors, edge widths, and legends, informative visualizations of the graph structure can be created.
+The plotBipartiteGraph() function provides several options for customising bipartite peptide-protein graph visualisations.
+Node labels determine which identifiers or peptide information are displayed.
+Node shapes can distinguish proteins, unique peptides, and shared peptides. Colours help emphasise different node categories.
+Edge width controls the visibility of connections.
+Legends explain the visual encoding and can be hidden when appropriate.
+Saving options allow plots to be exported for further use.
+Together, these options make it possible to adapt the visualisation to different analytical questions, from inspecting individual 
+peptide-protein assignments to presenting the overall structure of a protein identification network.

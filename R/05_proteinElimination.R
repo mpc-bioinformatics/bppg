@@ -66,7 +66,8 @@
 #' # Only 3 protein nodes are kept after protein elimination.
 #' # The error term only increases slightly.
 #'
-#' @importFrom checkmate assertClass assertDataFrame assertList assertNumeric checkTRUE
+#' @importFrom checkmate assertClass assertDataFrame assertList assertNumeric
+#' @importFrom checkmate checkTRUE
 #' @importFrom igraph decompose delete_vertices is_bipartite V
 
 
@@ -76,8 +77,7 @@ proteinElimination <- function(G,
     min_error_ref = NULL,
     resDF = NULL,
     protsOriginIDs  = NULL,
-    res_best = NULL,
-    G_original = NULL) {
+    res_best = NULL) {
     checkmate::assertClass(G, classes = c("igraph"))
     checkmate::checkTRUE(igraph::is_bipartite(G))
     checkmate::assertNumeric(threshold)
@@ -87,10 +87,6 @@ proteinElimination <- function(G,
     checkmate::assertClass(protsOriginIDs , classes = "igraph.vs",
         null.ok = TRUE)
     checkmate::assertList(res_best, null.ok = TRUE)
-
-    if (is.null(G_original)) {
-        G_original <- G
-    }
 
     G <- .addUniquenessAttributes(G)
     nr_unique_peptides <- igraph::V(G)$nr_unique_peptides[igraph::V(G)$type]
@@ -144,33 +140,9 @@ proteinElimination <- function(G,
 
         RES <- proteinElimination(G = G_tmp, threshold = threshold,
             control = control, min_error_ref = min_error_ref, resDF = resDF,
-            protsOriginIDs  = protsCurrent_tmp, res_best = res_best, G_original = G_original)
+            protsOriginIDs  = protsCurrent_tmp, res_best = res_best)
         resDF <- RES$resDF
         res_best <- RES$res_best
     }
-
-        G_plot <- G_original
-        igraph::V(G_plot)$deleted <- FALSE
-
-
-       remaining_nodes <- unique(unlist(
-            lapply(res_best$G, function(g) {
-                igraph::V(g)$name
-            })
-        ))
-
-        igraph::V(G_plot)$deleted <- !igraph::V(G_plot)$name %in% remaining_nodes
-
-        protein_idx <- which(igraph::V(G_plot)$type)
-
-        igraph::V(G_plot)$deleted[
-            protein_idx
-        ] <- !igraph::V(G_plot)$name[protein_idx] %in% remaining_nodes
-
-
     return(list(min_error_ref = min_error_ref, protsOriginIDs  = protsCurrent,
-        resDF = resDF, res_best = res_best, G_plot = G_plot))
-}
-
-
-
+        resDF = resDF, res_best = res_best))
