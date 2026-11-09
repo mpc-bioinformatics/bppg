@@ -702,7 +702,7 @@ automatedAnalysisIteratedCi <- function(G,
 
         cols <- c("protein", "error", paste0("RLog", x), paste0("C", x))
 
-        resProt <- res[r es$protein == x, cols]
+        resProt <- res[res$protein == x, cols]
         colnames(resProt) <- c("protein", "error", "RLog", "C")
 
         if (use_results_from_other_proteins) {
