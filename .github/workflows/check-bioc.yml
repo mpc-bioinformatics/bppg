@@ -22,8 +22,7 @@
 
 on:
   push:
-    branches:
-    - "devel"
+    branches: [main, master, devel, devel_Karin]
   workflow_dispatch:
   pull_request:
     branches:
