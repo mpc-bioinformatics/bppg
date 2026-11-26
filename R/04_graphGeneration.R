@@ -282,8 +282,10 @@ generateQuantGraphs <- function(exp_peptide_ratios,
                 ".xlsx")), overwrite = TRUE, keepNA = TRUE)
     }
 
-    colnames_split <- limma::strsplit2(colnames(exp_peptide_ratios), "_")
-    comparisons <- paste(colnames_split[, 2], colnames_split[, 3], sep = "_")
+    colnames_split <- t(vapply(strsplit(colnames(exp_peptide_ratios), "_", fixed = TRUE),
+        "[", character(2), 2:3))
+
+    comparisons <- paste(colnames_split[, 1], colnames_split[, 2], sep = "_")
 
     subgraphs <- lapply(seq_len(ncol(exp_peptide_ratios)),
         function(i) {

@@ -29,7 +29,8 @@ test_that("digestion of a FASTA file", {
     file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
                         package = "bppg")
     fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-    names(fasta) <- limma::strsplit2(names(fasta), "\\|")[,2]
+    names(fasta) <- vapply(strsplit(names(fasta), "|", fixed = TRUE), "[", 
+        character(1), 2)
     res <- digestFASTA(fasta)
 
     # fake protOrigin just for testing
