@@ -141,7 +141,6 @@ generateGraphsFromFASTA <- function(fasta,
 #'
 #' @importFrom checkmate assertPathForOutput
 #' @importFrom openxlsx write.xlsx
-#' @importFrom limma strsplit2
 
 generateGraphsFromQuantData <- function(D,
     fasta,
@@ -181,7 +180,8 @@ generateGraphsFromQuantData <- function(D,
     }
 
     ## aggregate replicates by calculating the mean
-    group <- factor(limma::strsplit2(colnames(D_norm), split = "_")[, 1])
+    group <- factor(vapply(strsplit(colnames(D_norm), "_", fixed = TRUE),
+        "[", character(1), 1))
     D_aggr <- aggregateReplicates(D_norm, method = "mean", missing.limit = 0.4,
         group = group, seq_col = seq_column)
 

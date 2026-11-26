@@ -2,7 +2,8 @@
 test_that("test mapping for graph contraction", {
     file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
     fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-    names(fasta) <- limma::strsplit2(names(fasta), "\\|")[,2]
+    names(fasta) <- vapply(strsplit(names(fasta), "|", fixed = TRUE), "[", 
+        character(1), 2)
     res <- digestFASTA(fasta)
 
     mappingCollProtPept <- bppg:::.getContractMapping(res,
@@ -87,7 +88,8 @@ test_that("test generateQuantGraphs", {
 test_that("test protOrigin", {
     file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
     fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
-    names(fasta) <- limma::strsplit2(names(fasta), "\\|")[,2]
+    names(fasta) <- vapply(strsplit(names(fasta), "|", fixed = TRUE), "[", 
+        character(1), 2)
     # fake ProtOrigin just for testing
     protOrigin <- as.list(c(rep("yeast", 7), rep("spike_in", 2)))
     edgelist <- digestFASTA(fasta, protOrigin = protOrigin)
