@@ -49,7 +49,7 @@ test_that("test generateQuantGraphs", {
 
     file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
     group <- factor(rep(1:9, each = 3))
-    D <- readMqPeptideTable(path = file, group = group, LFQ = TRUE, remove_contaminants = FALSE)
+    D <- bppg::readMqPeptideTable(path = file, group = group, LFQ = TRUE, remove_contaminants = FALSE)
     D_norm <- bppg::normalizePeptideIntensities(D)
     dAgg <- aggregateReplicates(D_norm)
     exp_peptide_ratios <- calculatePeptideRatios(dAgg)

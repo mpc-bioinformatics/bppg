@@ -71,7 +71,7 @@
 #' group <- factor(rep(1:9, each = 3))
 #' aggregateReplicates(D_norm, group = group)
 #'
-#' @importFrom checkmate assertCharacter assertClass assertDataFrame
+#' @importFrom checkmate assertCharacter assertClass assertMatrix
 #' @importFrom checkmate assertFactor assertNumber
 #' @importFrom SummarizedExperiment assays colData rowData SummarizedExperiment
 
@@ -81,7 +81,7 @@ aggregateReplicates <- function(D,
     method = "mean",
     seq_col = "Sequence") {
     checkmate::assertClass(D, "SummarizedExperiment")
-    checkmate::assertDataFrame(SummarizedExperiment::assays(D)$intensities_norm,
+    checkmate::assertMatrix(SummarizedExperiment::assays(D)$intensities_norm,
         all.missing=FALSE)
     checkmate::assertFactor(group, null.ok = TRUE)
     checkmate::assertNumber(missing.limit, lower = 0, upper = 1)
@@ -110,11 +110,10 @@ aggregateReplicates <- function(D,
         res_tmp
     }, numeric(length(id)))
 
-    res <- as.data.frame(res)
     colnames(res) <- levels(group)
     rownames(res) <- id
     res <- SummarizedExperiment::SummarizedExperiment(
-        assays = list(intensities = res),
+        assays = list(intensities = as.matrix(res)),
         colData = data.frame(group = colnames(res)),
         rowData = SummarizedExperiment::rowData(D))
     return(res)
@@ -140,12 +139,12 @@ aggregateReplicates <- function(D,
 #' dAgg <- aggregateReplicates(D_norm)
 #' calculatePeptideRatios(dAgg)
 #'
-#' @importFrom checkmate assertClass assertDataFrame assertVector
+#' @importFrom checkmate assertClass assertMatrix assertVector
 #' @importFrom SummarizedExperiment assays colData rowData SummarizedExperiment
 
 calculatePeptideRatios <- function(D, group_levels = NULL) {
     checkmate::assertClass(D, "SummarizedExperiment")
-    checkmate::assertDataFrame(SummarizedExperiment::assays(
+    checkmate::assertMatrix(SummarizedExperiment::assays(
         D)$intensities, all.missing=FALSE)
     checkmate::assertVector(group_levels, unique = TRUE, null.ok = TRUE)
 
@@ -162,7 +161,7 @@ calculatePeptideRatios <- function(D, group_levels = NULL) {
             Y = groupCombinations[2, i]))
     }, numeric(nrow(aggr_intensities)))
 
-    peptide_log_ratios <- data.frame(peptide_log_ratios)
+    # peptide_log_ratios <- data.frame(peptide_log_ratios)
     colnames(peptide_log_ratios) <- paste0("logRatio_", groupCombinations[1, ],
         "_", groupCombinations[2, ])
     rownames(peptide_log_ratios) <- rownames(aggr_intensities)
@@ -228,7 +227,6 @@ normalizePeptideIntensities <- function(D, method = "loess", lts.quantile = 0.8,
             "median" = list(object = log_DATA, method = "scale"))
 
         DATA_norm <- do.call(fun, args)
-        DATA_norm <- as.data.frame(DATA_norm)
         DATA_norm <- log_base^DATA_norm # re-transform
     }
 
@@ -238,7 +236,6 @@ normalizePeptideIntensities <- function(D, method = "loess", lts.quantile = 0.8,
         DATA_norm <- vsn::vsn2(as.matrix(DATA), lts.quantile = lts.quantile,
             verbose = FALSE)
         DATA_norm <- DATA_norm@hx
-        DATA_norm <- as.data.frame(DATA_norm)
         DATA_norm <- log_base^DATA_norm # re-transform
     }
 

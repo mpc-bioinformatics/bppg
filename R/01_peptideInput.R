@@ -217,7 +217,7 @@ readMqPeptideTable <- function(path, group = NULL, LFQ = FALSE,
         rowDF <- data.frame(Sequence = D$Sequence, further_columns)
     }
     return(SummarizedExperiment::SummarizedExperiment(
-        assays = list(intensities=intensities),
+        assays = list(intensities=as.matrix(intensities)),
         colData = colDF, rowData = rowDF))
 }
 
