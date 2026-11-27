@@ -38,13 +38,13 @@ A vector of peptides.
 Digestion of a single protein sequence.
 }
 \examples{
-library(seqinr)
+library(Biostrings)
 file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
     package = "bppg")
-fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+fasta <- Biostrings::readAAStringSet(file)
 
 # digest first protein sequence in the fasta file:
-digested_proteins <- bppg:::.digest2(fasta[[1]])
+digested_proteins <- bppg:::.digest2(as.character(fasta[[1]]))
 }
 \seealso{
 \code{\link[=digestFASTA]{digestFASTA()}}

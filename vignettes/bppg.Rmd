@@ -224,7 +224,7 @@ peptides matched with their protein of origin.
 For this we have a reduced FASTA file.
 
 ```{r digest,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
-library(Biosstrings)
+library(Biostrings)
 file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
     package = "bppg")
 fasta <- Biostrings::readAAStringSet(file) 

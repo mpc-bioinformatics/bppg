@@ -27,10 +27,10 @@ signatures.
 Create Mapping signature for igraph::contract function.
 }
 \examples{
-library(seqinr)
+library(Biostrings)
 file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
      package = "bppg")
-fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+fasta <- Biostrings::readAAStringSet(file)
 edgelist <- digestFASTA(fasta)
 res <- bppg:::.getContractMapping(edgelist)
 

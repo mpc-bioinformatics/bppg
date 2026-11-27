@@ -15,9 +15,9 @@ digestFASTA(
 )
 }
 \arguments{
-\item{fasta}{\strong{list of character sequence} \cr
+\item{fasta}{\strong{AAStringSet} or \strong{list of character sequence} \cr
 A fasta file, already read into R by
-\code{\link[seqinr:read.fasta]{seqinr::read.fasta()}}. If several protein origins
+\code{\link[Biostrings:readAAStringSet]{Biostrings::readAAStringSet()}} or \code{\link[seqinr:read.fasta]{seqinr::read.fasta()}}. If several protein origins
 are used they should be combined into one flatten
 list and a list with the corresponding origins
 should be provided for \strong{protOrigin}.}
@@ -68,10 +68,10 @@ for minimal and maximal number of amino acids.
 In silico tryptic digestion of whole FASTA file.
 }
 \examples{
-library(seqinr)
+library(Biostrings)
 file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
     package = "bppg")
-fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+fasta <- Biostrings::readAAStringSet(file)   
 res <- digestFASTA(fasta)
 
 }

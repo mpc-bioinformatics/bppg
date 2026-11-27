@@ -18,7 +18,7 @@ generateGraphsFromFASTA(
 \arguments{
 \item{fasta}{\strong{list of vector of chars} \cr
 A fasta file, already read into R by
-seqinr::read.fasta().}
+\code{\link[Biostrings:readAAStringSet]{Biostrings::readAAStringSet()}}.}
 
 \item{collProtNodes}{\strong{logical} \cr
 If \code{TRUE}, the protein nodes will
@@ -54,10 +54,10 @@ the FASTA file.
 Generate graphs from a FASTA file
 }
 \examples{
-library(seqinr)
+library(Biostrings
 file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
      package = "bppg")
-fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+fasta <- Biostrings::readAAStringSet(file)
 graphs <- bppg::generateGraphsFromFASTA(fasta)
 
 }

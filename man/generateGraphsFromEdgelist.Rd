@@ -33,10 +33,10 @@ Generate bipartite peptide-protein graphs from a list of digested proteins
 via an edgelist. Peptide and protein nodes can be contracted.
 }
 \examples{
-library(seqinr)
+library(Biostrings)
 file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
      package = "bppg")
-fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+fasta <- Biostrings::readAAStringSet(file)
 edgelist <- digestFASTA(fasta)
 res <- bppg::generateGraphsFromEdgelist(edgelist, collProtNodes = TRUE,
     collPeptNodes = TRUE)

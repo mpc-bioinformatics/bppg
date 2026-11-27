@@ -31,7 +31,7 @@ columns, e.g. created with
 \item{fasta}{\strong{list of vector of characters} \cr
 A fasta file used for identification of
 peptides in already read into R by
-\code{\link[seqinr:read.fasta]{seqinr::read.fasta()}}.}
+\code{\link[Biostrings:readAAStringSet]{Biostrings::readAAStringSet()}}.}
 
 \item{outpath}{\strong{character} \cr
 The output path for the results.}
@@ -87,10 +87,10 @@ that comparison.
 Generate graphs from quantitative peptide-level data
 }
 \examples{
-library(seqinr)
+library(Biostrings)
 file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
     package = "bppg")
-fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+fasta <- Biostrings::readAAStringSet(file)
 
 file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
 group <- factor(rep(1:9, each = 3))
@@ -101,6 +101,6 @@ graphs <- bppg::generateGraphsFromQuantData(D, fasta)
 
 }
 \seealso{
-\code{\link[=readMqPeptideTable]{readMqPeptideTable()}}, \code{\link[seqinr:read.fasta]{seqinr::read.fasta()}},
+\code{\link[=readMqPeptideTable]{readMqPeptideTable()}}, \code{\link[Biostrings:readAAStringSet]{Biostrings::readAAStringSet()}},
 \code{\link[=generateQuantGraphs]{generateQuantGraphs()}}, \code{\link[=generateGraphsFromFASTA]{generateGraphsFromFASTA()}}
 }

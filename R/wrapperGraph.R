@@ -6,7 +6,7 @@
 #'
 #' @param fasta                   \strong{list of vector of chars} \cr
 #'                                A fasta file, already read into R by
-#'                                fasta <- Biostrings::readAAStringSet(file).
+#'                                [Biostrings::readAAStringSet()].
 #' @param collProtNodes           \strong{logical} \cr
 #'                                If \code{TRUE}, the protein nodes will
 #'                                be collapsed.
@@ -83,7 +83,7 @@ generateGraphsFromFASTA <- function(fasta,
 #' @param fasta               \strong{list of vector of characters} \cr
 #'                            A fasta file used for identification of
 #'                            peptides in already read into R by
-#'                            [fasta <- Biostrings::readAAStringSet(file)].
+#'                            [Biostrings::readAAStringSet()].
 #' @param outpath             \strong{character} \cr
 #'                            The output path for the results.
 #' @param missed_cleavages    \strong{integer} \cr
