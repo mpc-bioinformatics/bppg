@@ -53,13 +53,13 @@
 #' @seealso [digestFASTA()]
 #'
 #' @examples
-#' library(seqinr)
+#' library(Biostrings)
 #' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
 #'     package = "bppg")
-#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+#' fasta <- Biostrings::readAAStringSet(file)
 #'
 #' # digest first protein sequence in the fasta file:
-#' digested_proteins <- bppg:::.digest2(fasta[[1]])
+#' digested_proteins <- bppg:::.digest2(as.character(fasta[[1]]))
 
 .digest2 <- function(sequence,
     enzyme = "trypsin",
@@ -161,9 +161,9 @@
 
 #' In silico tryptic digestion of whole FASTA file.
 #'
-#' @param fasta              \strong{list of character sequence} \cr
+#' @param fasta              \strong{AAStringSet} or \strong{list of character sequence} \cr
 #'                           A fasta file, already read into R by
-#'                           [seqinr::read.fasta()]. If several protein origins
+#'                           [Biostrings::readAAStringSet()] or [seqinr::read.fasta()]. If several protein origins
 #'                           are used they should be combined into one flatten
 #'                           list and a list with the corresponding origins
 #'                           should be provided for \strong{protOrigin}.
@@ -193,10 +193,10 @@
 #' @seealso [.digest2()]
 #'
 #' @examples
-#' library(seqinr)
+#' library(Biostrings)
 #' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
 #'     package = "bppg")
-#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+#' fasta <- Biostrings::readAAStringSet(file)   
 #' res <- digestFASTA(fasta)
 #'
 #' @importFrom checkmate assertFlag assertInt assertList
@@ -209,7 +209,7 @@ digestFASTA <- function(fasta,
     protOrigin = NULL,
     verbose = FALSE,
     ...)  {
-    checkmate::assertList(fasta)
+    checkmate::assert(checkmate::check_class(fasta, "AAStringSet"), checkmate::checkList(fasta))
     checkmate::assertInt(missed_cleavages, lower = 0)
     checkmate::assertInt(min_aa, lower = 0, upper = max_aa - 1)
     checkmate::assertInt(max_aa, lower = min_aa + 1)
@@ -226,8 +226,7 @@ digestFASTA <- function(fasta,
     digested_proteins <- do.call("rbind",
         pbapply::pblapply(names(fasta), FUN = function(x) {
 
-            sequ <- fasta[[x]]
-            class(sequ) <- NULL
+            sequ <- as.character(fasta[[x]])
             y <- .digest2(sequ, missed = missed_cleavages, warn = FALSE, ...)
             ind <- nchar(as.character(y)) >= min_aa &
                 nchar(as.character(y)) <= max_aa

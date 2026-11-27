@@ -4,7 +4,7 @@ test_that("generate graphs from fasta",{
   on.exit(unlink(temp_dir, recursive = TRUE))
 
   file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
-  fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+  fasta <- Biostrings::readAAStringSet(file)
 
   res <- bppg::generateGraphsFromFASTA(fasta = fasta,
                                        outpath = temp_dir)

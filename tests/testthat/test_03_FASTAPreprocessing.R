@@ -1,9 +1,9 @@
 test_that("test .digest2", {
     file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
                         package = "bppg")
-    fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+    fasta <- Biostrings::readAAStringSet(file)
 
-    digested_proteins1 <- bppg:::.digest2(sequence = fasta[[1]],
+    digested_proteins1 <- bppg:::.digest2(sequence = as.character(fasta[[1]]),
                                             enzyme = "trypsin",
                                             missed = 0,
                                             remove_initial_M = TRUE)
@@ -28,12 +28,15 @@ test_that("test .digest2", {
 test_that("digestion of a FASTA file", {
     file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
                         package = "bppg")
-    fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+    fasta <- Biostrings::readAAStringSet(file)      
     names(fasta) <- vapply(strsplit(names(fasta), "|", fixed = TRUE), "[", 
         character(1), 2)
     res <- digestFASTA(fasta)
 
-    # fake protOrigin just for testing
+    # fake protOrigin just for testing and list input
+    fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)      
+    names(fasta) <- vapply(strsplit(names(fasta), "|", fixed = TRUE), "[", 
+        character(1), 2)
     protOrigin <- as.list(c(rep("yeast", 7), rep("spike_in", 2)))
     res2 <- digestFASTA(fasta, protOrigin = protOrigin)
 

@@ -6,7 +6,7 @@
 #'
 #' @param fasta                   \strong{list of vector of chars} \cr
 #'                                A fasta file, already read into R by
-#'                                seqinr::read.fasta().
+#'                                fasta <- Biostrings::readAAStringSet(file).
 #' @param collProtNodes           \strong{logical} \cr
 #'                                If \code{TRUE}, the protein nodes will
 #'                                be collapsed.
@@ -32,10 +32,10 @@
 #' @export
 #'
 #' @examples
-#' library(seqinr)
+#' library(Biostrings
 #' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
 #'      package = "bppg")
-#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+#' fasta <- Biostrings::readAAStringSet(file)
 #' graphs <- bppg::generateGraphsFromFASTA(fasta)
 #'
 #' @importFrom checkmate assertPathForOutput
@@ -83,7 +83,7 @@ generateGraphsFromFASTA <- function(fasta,
 #' @param fasta               \strong{list of vector of characters} \cr
 #'                            A fasta file used for identification of
 #'                            peptides in already read into R by
-#'                            [seqinr::read.fasta()].
+#'                            [fasta <- Biostrings::readAAStringSet(file)].
 #' @param outpath             \strong{character} \cr
 #'                            The output path for the results.
 #' @param missed_cleavages    \strong{integer} \cr
@@ -123,14 +123,14 @@ generateGraphsFromFASTA <- function(fasta,
 #'         that comparison.
 #' @export
 #'
-#' @seealso [bppg::readMqPeptideTable()], [seqinr::read.fasta()],
+#' @seealso [bppg::readMqPeptideTable()], [Biostrings::readAAStringSet()],
 #'          [generateQuantGraphs()], [bppg::generateGraphsFromFASTA()]
 #'
 #' @examples
-#' library(seqinr)
+#' library(Biostrings)
 #' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
 #'     package = "bppg")
-#' fasta <- seqinr::read.fasta(file = file, seqtype = "AA", as.string = TRUE)
+#' fasta <- Biostrings::readAAStringSet(file)
 #'
 #' file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
 #' group <- factor(rep(1:9, each = 3))
