@@ -31,9 +31,11 @@ test_that("test generateGraphsFromQuantData", {
     # Load intensity table
     file <- system.file("extdata", "peptides_filtered.txt", package = "bppg")
     D <- readMqPeptideTable(file)
+    group <- factor(vapply(strsplit(colnames(D), "_", fixed = TRUE),
+        "[", character(1), 1))
 
     # Compute function
-    graphs <- bppg::generateGraphsFromQuantData(D = D,
+    graphs <- bppg::generateGraphsFromQuantData(D = D, group = group,
                                             fasta = fasta,
                                             outpath = paste0(temp_dir, "/"))
 

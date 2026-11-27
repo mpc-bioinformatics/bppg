@@ -84,6 +84,9 @@ generateGraphsFromFASTA <- function(fasta,
 #'                            A fasta file used for identification of
 #'                            peptides in already read into R by
 #'                            [Biostrings::readAAStringSet()].
+#' @param group               \strong{character factor} \cr
+#'                            The groups per sample for aggregation, if not already
+#'                            in SummarizedExperiment::colData(D)$group.
 #' @param outpath             \strong{character} \cr
 #'                            The output path for the results.
 #' @param missed_cleavages    \strong{integer} \cr
@@ -144,6 +147,7 @@ generateGraphsFromFASTA <- function(fasta,
 
 generateGraphsFromQuantData <- function(D,
     fasta,
+    group = NULL,
     outpath = NULL,
     missed_cleavages = 2,
     min_aa = 6,
@@ -180,8 +184,9 @@ generateGraphsFromQuantData <- function(D,
     }
 
     ## aggregate replicates by calculating the mean
-    group <- factor(vapply(strsplit(colnames(D_norm), "_", fixed = TRUE),
-        "[", character(1), 1))
+    if (is.null(group)) {
+        group <- factor(SummarizedExperiment::colData(D)$group)
+    }
     D_aggr <- aggregateReplicates(D_norm, method = "mean", missing.limit = 0.4,
         group = group, seq_col = seq_column)
 

@@ -7,6 +7,7 @@
 generateGraphsFromQuantData(
   D,
   fasta,
+  group = NULL,
   outpath = NULL,
   missed_cleavages = 2,
   min_aa = 6,
@@ -32,6 +33,10 @@ columns, e.g. created with
 A fasta file used for identification of
 peptides in already read into R by
 \code{\link[Biostrings:readAAStringSet]{Biostrings::readAAStringSet()}}.}
+
+\item{group}{\strong{character factor} \cr
+The groups per sample for aggregation, if not already
+in SummarizedExperiment::colData(D)$group.}
 
 \item{outpath}{\strong{character} \cr
 The output path for the results.}
