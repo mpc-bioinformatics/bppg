@@ -121,6 +121,8 @@
     if (!isCiFixed) {
         ## the algorithm starts with equal weights for each protein
         Ci_start <- rep(1 / m, m)
+        # Ci_start <- sample(1:100, m, replace = TRUE)
+        # Ci_start <- Ci_start/sum(Ci_start)
     } else {
         ## if at least one Ci is fixed, the algorithm distributes the remaining
         ## weight equally among the non-fixed proteins
@@ -129,7 +131,9 @@
         fixedCiSum <- sum(fixedCi, na.rm = TRUE)
         Ci_start <- fixedCi
         ## starting values for the remaining Ci values
-        Ci_start[is.na(Ci_start)] <- (1 - fixedCiSum) / m2
+        # Ci_start[is.na(Ci_start)] <- (1 - fixedCiSum) / m2
+        tmp_Ci <- sample(1:100, m2, replace = TRUE)
+        Ci_start[is.na(Ci_start)] <- tmp_Ci/sum(tmp_Ci) * (1 - fixedCiSum)
     }
     return(Ci_start)
 }
@@ -157,19 +161,22 @@
 #' rjLog <- log2(c(0.6, 1.2, 1.5))
 #' bppg:::.initializeRi(M, rjLog)
 #'
-.initializeRi <- function(M, rjLog) {
+.initializeRi <- function(M, rjLog) { # TODO Want 0 as initial
     m <- ncol(M)
-    RiLog_start <- rep(NA, m)
-    for (j in seq_len(m)) { # for each protein
-        belongsToProt <- (M[, j] == 1) # peptides belonging to protein j
-        uniquePep <- (rowSums(M) == 1) & (M[, j] == 1)
-        if (any(uniquePep)) {
-            RiLog_start[j] <- mean(rjLog[uniquePep & belongsToProt],
-                na.rm = TRUE)
-        } else {
-            RiLog_start[j] <- mean(rjLog[belongsToProt], na.rm = TRUE)
-        }
-    }
+    RiLog_start <- rep(0, m)
+    # for (j in seq_len(m)) { # for each protein
+    #     belongsToProt <- (M[, j] == 1) # peptides belonging to protein j
+    #     uniquePep <- (rowSums(M) == 1) & (M[, j] == 1)
+    #     if (any(uniquePep)) {
+    #         RiLog_start[j] <- mean(rjLog[uniquePep & belongsToProt],
+    #             na.rm = TRUE)
+    #     } else {
+    #         RiLog_start[j] <- mean(rjLog[belongsToProt], na.rm = TRUE)
+    #     }
+    # }
+    # A_sample <- sample(1:100, m, replace = TRUE)
+    # B_sample <- sample(1:100, m, replace = TRUE)
+    # RiLog_start <- log2(B_sample/A_sample)
     return(RiLog_start)
 }
 

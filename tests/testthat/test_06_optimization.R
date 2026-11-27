@@ -20,11 +20,12 @@ test_that("test .minimizeSquaredError", {
     file <- system.file("extdata", "quantGraphs.rds", package = "bppg")
     graphs <- readRDS(file)
     G_N <- graphs[[1]][[2]] # N-shaped graph
+    # igraph::V(G_N)$pep_logRatio <- -igraph::V(G_N)$pep_logRatio
 
     res <- bppg:::.minimizeSquaredError(G_N, verbose = FALSE)
 
     # test fixed_Ci
-    res2 <- bppg:::.minimizeSquaredError(G_N, verbose = FALSE, fixedCi = c(0.3, NA))
+    res2 <- bppg:::.minimizeSquaredError(G_N, verbose = FALSE, fixedCi = c(0.9, NA), control = list(rho = 0.0001))
 
     res$RES$res_equ<- round(res$RES$res_equ, 5)
     res2$RES$res_equ<- round(res2$RES$res_equ, 5)
@@ -44,6 +45,9 @@ test_that("test iterateOverCi and automated analysis", {
   G_I <- graphs[[1]][[1]] # I
   G_N <- graphs[[2]][[2]] # N
   G_M <- graphs[[1]][[3]] # M
+  igraph::V(G_I)$pep_logRatio <- -igraph::V(G_I)$pep_logRatio
+  igraph::V(G_N)$pep_logRatio <- -igraph::V(G_N)$pep_logRatio
+  igraph::V(G_M)$pep_logRatio <- -igraph::V(G_M)$pep_logRatio
 
   igraph::V(G_I)$protOrigin[igraph::V(G_I)$type] <- c("test_origin")
   res_I <- iterateOverCi(G_I, gridSize = 10)

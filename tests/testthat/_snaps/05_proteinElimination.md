@@ -4,7 +4,7 @@
       res
     Output
       $min_error_ref
-      [1] 0.9938815
+      [1] 0.9938825
       
       $protsOriginIDs
       [1] "sp|P00330|ADH1_YEAST" "sp|P00331|ADH2_YEAST" "sp|P07246|ADH3_YEAST"
@@ -61,7 +61,7 @@
       [1] 3
       
       $res_best$error
-      [1] 0.9942403
+      [1] 0.9942401
       
       
 
