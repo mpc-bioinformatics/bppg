@@ -32,7 +32,7 @@
 #' @export
 #'
 #' @examples
-#' library(Biostrings
+#' library(Biostrings)
 #' file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
 #'      package = "bppg")
 #' fasta <- Biostrings::readAAStringSet(file)

@@ -39,6 +39,7 @@ importFrom(checkmate,
   assertNumeric,
   assertPathForOutput,
   assertVector,
+  assert_character,
   checkTRUE
 )
 importFrom(ggplot2,

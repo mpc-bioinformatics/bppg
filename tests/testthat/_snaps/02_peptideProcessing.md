@@ -1910,7 +1910,7 @@
       class: SummarizedExperiment 
       dim: 87 27 
       metadata(0):
-      assays(1): intensities_norm
+      assays(2): intensities intensities_norm
       rownames(87): AAADALSDLEIK AAADALSDLEIKDSK ... NMVSDIQEATK VLGIDAGEEK
       rowData names(1): Sequence
       colnames(27): 12500amol_R1 12500amol_R2 ... 00050amol_R2 00050amol_R3
@@ -2762,7 +2762,7 @@
       class: SummarizedExperiment 
       dim: 87 27 
       metadata(0):
-      assays(1): intensities_norm
+      assays(2): intensities intensities_norm
       rownames(87): AAADALSDLEIK AAADALSDLEIKDSK ... NMVSDIQEATK VLGIDAGEEK
       rowData names(1): Sequence
       colnames(27): 12500amol_R1 12500amol_R2 ... 00050amol_R2 00050amol_R3

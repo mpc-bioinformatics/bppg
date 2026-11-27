@@ -201,16 +201,21 @@ calculatePeptideRatios <- function(D, group_levels = NULL) {
 #' D <- readMqPeptideTable(path = file, LFQ = TRUE, remove_contaminants = FALSE)
 #' D_norm <- normalizePeptideIntensities(D, method = "loess")
 #'
-#' @importFrom SummarizedExperiment assays colData rowData SummarizedExperiment
+#' @importFrom SummarizedExperiment assay assays colData rowData 
+#' @importFrom SummarizedExperiment SummarizedExperiment
 #' @importFrom limma normalizeBetweenArrays
 #' @importFrom vsn vsn2
+#' @importFrom checkmate assertClass assert_character
 
 normalizePeptideIntensities <- function(D, method = "loess", lts.quantile = 0.8,
-                                        log_base = 2) {
+    log_base = 2) {
+    checkmate::assertClass(D, "SummarizedExperiment")
+    checkmate::assert_character(method, 
+        pattern = "nonorm|median|loess|quantile|lts")
+    checkmate::assert_number(lts.quantile, lower = 0, upper = 1)
+    checkmate::assert_number(lts.quantile, lower = 0)
 
     DATA <- SummarizedExperiment::assays(D)$intensities
-
-
     if (method %in% c("loess", "quantile", "median")) {
 
         log_DATA <- log(DATA, base = log_base)
@@ -240,10 +245,7 @@ normalizePeptideIntensities <- function(D, method = "loess", lts.quantile = 0.8,
     if (method == "nonorm") {
         DATA_norm <- DATA
     }
-    res <- SummarizedExperiment::SummarizedExperiment(
-        assays = list(intensities_norm = DATA_norm),
-        colData = SummarizedExperiment::colData(D),
-        rowData = SummarizedExperiment::rowData(D))
-    return(res)
+    SummarizedExperiment::assay(D, "intensities_norm") <- DATA_norm
+    return(D)
 }
 

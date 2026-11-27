@@ -135,9 +135,6 @@ if (!requireNamespace("BiocManager", quietly = TRUE)) {
     }
 
 BiocManager::install("bppg")
-
-# or 
-pak::pak("bppg")
 ```
 
 
@@ -225,9 +222,10 @@ For this we have a reduced FASTA file.
 
 ```{r digest,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
 library(Biostrings)
-file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta",
-    package = "bppg")
+file <- system.file("extdata", "uniprot_proteome_Scerevisiae_filtered.fasta", package = "bppg")
+
 fasta <- Biostrings::readAAStringSet(file) 
+
 names(fasta)
 ```
 
@@ -244,7 +242,7 @@ contain the same measured peptides.
 
 
 ```{r build_graph,  echo = TRUE, eval = TRUE, include = TRUE, message = FALSE}
-graphs <- bppg::generateGraphsFromQuantData(D = D,
+graphs <- generateGraphsFromQuantData(D = D,
     fasta = fasta,
     collProtNodes = TRUE)
 
